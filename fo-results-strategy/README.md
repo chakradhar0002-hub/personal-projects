@@ -6,6 +6,11 @@ checklist and concrete trades, and backtests them on your data.
 
 **Read the playbook first: [docs/STRATEGY.md](docs/STRATEGY.md).**
 
+> **Tested on real data: no edge after costs.** Over Apr 2024 – May 2025 (71 F&O stocks, every
+> option leg at real NSE closing prices), the event trades were about break-even before costs
+> and lost money after them. The follow-through trade lost money even before costs.
+> See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). Use the rules as a risk framework, not a profit source.
+
 | Day | What you do |
 |---|---|
 | Day-1 | Check eligibility. Compare the options' **implied move** with the stock's **historical move**. Rich → short iron condor, cheap → long straddle, fair → flat. Enter 14:45–15:20 (on Result Day instead if results come after the close) |
@@ -35,8 +40,12 @@ fo-results classify --symbol XYZ --prev-close 1500 --open 1560 --high 1600 --low
 # 3. Reaction-session opening-range trade on 5-minute bars
 fo-results orb --bars examples/reaction_5min_example.csv --prev-close 1000 --hm 3
 
-# 4. Backtest on your own data (formats in examples/)
-fo-results backtest --prices prices.csv --events events.csv --out trades.csv
+# 4. Real data: Yahoo prices + results dates/times, NSE option bhavcopy (needs internet)
+fo-results fetch --out-dir real_data            # or --symbols TCS,INFY,...  (~15 min first run)
+# Yahoo's results calendar ends in May 2025; add later seasons from your own list:
+#   fo-results fetch --results-file my_results.csv   (symbol,announce_date,announce_time|timing)
+fo-results backtest --prices real_data/prices.csv --events real_data/events.csv \
+  --quotes real_data/quotes.csv --out trades.csv
 
 # Pipeline check on synthetic data (says nothing about real-market edge)
 fo-results demo
@@ -55,11 +64,14 @@ expiry rule and change `expiry_weekday` in `config.py` if needed.
 ## Data formats
 
 - `prices.csv`: `date,symbol,open,high,low,close,volume` (daily).
-- `events.csv`: `symbol,announce_date,timing` plus optional `front_iv,front_days,back_iv,back_days,post_iv,lot_size,strike_step`.
+- `events.csv`: `symbol,announce_date,timing` plus optional `front_iv,front_days,back_iv,back_days,post_iv,lot_size,strike_step,front_expiry,base_iv`.
   - `timing` is `BMO`, `DURING`, `AMC` or `UNKNOWN`. IVs are in %.
   - The `*_days` columns count sessions from the pre-results close to each expiry.
-  - `post_iv` is the front IV the morning after.
+  - `post_iv` is the front IV after the results (at the reaction-session close when built by `fetch`).
+  - `base_iv` is the normal (ex-results) vol; it overrides the back-month estimate.
   - Rows without IVs only test the follow-through trade.
+- `quotes.csv` (optional): `symbol,date,expiry,kind,strike,close,settle,volume` closing option prices.
+  With it, event trades are replayed at real prices instead of a Black-Scholes model.
 
 ## Layout
 
@@ -72,10 +84,13 @@ fo_results_strategy/
   strategy.py   event trade (condor / straddle / flat), reaction classification, follow-through
   playbook.py   dated checklist
   intraday.py   reaction-session opening-range rules
-  backtest.py   event-study backtest (no look-ahead)
+  backtest.py   event-study backtest (no look-ahead), real-quote replay, calibration table
+  realdata.py   `fetch`: Yahoo prices and results dates, NSE F&O bhavcopy -> IVs and quotes
   synthetic.py  fake data for the demo and tests
   cli.py        command line
-docs/STRATEGY.md  the playbook
+docs/STRATEGY.md           the playbook
+docs/REAL_DATA_RESULTS.md  real-data backtest: data, results, what was tried
+results/                   results calendar used (2023-2025) and the trade list of that run
 tests/            python -m unittest discover -s tests -t .
 ```
 

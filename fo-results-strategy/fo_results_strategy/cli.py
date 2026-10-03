@@ -10,7 +10,7 @@ from dataclasses import replace
 from datetime import date
 from typing import Optional, Sequence
 
-from .backtest import load_events, load_prices, run_backtest, write_trades
+from .backtest import load_events, load_prices, load_quotes, run_backtest, write_trades
 from .config import StrategyConfig
 from .intraday import load_intraday, run_reaction_session
 from .playbook import render_playbook
@@ -82,11 +82,28 @@ def _cmd_orb(args, cfg: StrategyConfig) -> int:
 
 
 def _cmd_backtest(args, cfg: StrategyConfig) -> int:
-    report = run_backtest(load_prices(args.prices), load_events(args.events), cfg)
+    quotes = load_quotes(args.quotes) if args.quotes else None
+    report = run_backtest(load_prices(args.prices), load_events(args.events), cfg, quotes)
     print(report.render())
     if args.out:
         write_trades(report.trades, args.out)
         print(f"\ntrades written to {args.out}")
+    return 0
+
+
+def _cmd_fetch(args, cfg: StrategyConfig) -> int:
+    from .realdata import DEFAULT_UNIVERSE, build_dataset, load_results_file
+    symbols = [x.strip().upper() for x in args.symbols.split(",")] if args.symbols else list(DEFAULT_UNIVERSE)
+    own = load_results_file(args.results_file) if args.results_file else None
+    if own and not args.symbols:
+        symbols = list(own)            # your file decides the universe
+    end = date.fromisoformat(args.end) if args.end else None
+    stats = build_dataset(symbols, args.out_dir, args.cache_dir, cfg, date.fromisoformat(args.start), end,
+                          own_events=own)
+    for k, v in sorted(stats.items()):
+        print(f"  {k}: {v}")
+    print(f"\nnext: fo-results backtest --prices {args.out_dir}/prices.csv --events {args.out_dir}/events.csv "
+          f"--quotes {args.out_dir}/quotes.csv")
     return 0
 
 
@@ -142,7 +159,16 @@ def build_parser() -> argparse.ArgumentParser:
     bt = sub.add_parser("backtest", parents=[common], help="backtest on your prices.csv + events.csv")
     bt.add_argument("--prices", required=True)
     bt.add_argument("--events", required=True)
+    bt.add_argument("--quotes", help="quotes.csv from `fetch`: replay event trades at real option prices")
     bt.add_argument("--out", help="write the trade list to this CSV")
+
+    fe = sub.add_parser("fetch", parents=[common], help="download real data: Yahoo prices/results dates + NSE bhavcopy")
+    fe.add_argument("--symbols", help="comma-separated NSE symbols (default: a liquid F&O universe)")
+    fe.add_argument("--out-dir", default="real_data")
+    fe.add_argument("--cache-dir", default="real_data/cache")
+    fe.add_argument("--start", default="2022-09-01", help="first price date")
+    fe.add_argument("--end", help="last date (default today)")
+    fe.add_argument("--results-file", help="your own results dates: symbol,announce_date,announce_time|timing")
 
     dm = sub.add_parser("demo", parents=[common], help="generate synthetic data and backtest it")
     dm.add_argument("--out-dir", default="demo_data")
@@ -155,6 +181,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     cfg = StrategyConfig()
     if args.capital:
         cfg = replace(cfg, capital=args.capital)
-    handler = {"plan": _cmd_plan, "classify": _cmd_classify, "orb": _cmd_orb,
-               "backtest": _cmd_backtest, "demo": _cmd_demo}[args.cmd]
+    handler = {"plan": _cmd_plan, "classify": _cmd_classify, "orb": _cmd_orb, "backtest": _cmd_backtest,
+               "fetch": _cmd_fetch, "demo": _cmd_demo}[args.cmd]
     return handler(args, cfg)

@@ -8,6 +8,11 @@ backtest the rules on your own data (`backtest`).
 > Educational material, not investment advice. The thresholds are starting points.
 > Validate them on real data and paper-trade them before you put money in (section 10).
 
+> **Real-data test (Apr 2024 – May 2025, 71 stocks, real option prices):** no edge after costs.
+> The event trades were about break-even before costs, and the follow-through trade lost money.
+> Use these rules to filter, size and limit risk, not as a source of profit.
+> Details: [REAL_DATA_RESULTS.md](REAL_DATA_RESULTS.md).
+
 ---
 
 ## 1. The idea
@@ -294,11 +299,18 @@ the reaction move, the reaction type, and P&L in R. After two results seasons
 - The tail check blocked the trades that would have hurt.
 - CONTINUATION follow-throughs beat MIXED ones. If not, raise the volume and CLV bars.
 
-**Backtester** (`fo-results backtest --prices prices.csv --events events.csv`):
-- *Event trade:* entered at the pre-results close and priced out at the reaction-session open (`vol_exit_at`).
-  Option legs are priced with Black-Scholes at one flat IV per expiry: `front_iv` at entry, `post_iv` at exit.
-  There is no skew, so OTM puts are under-priced. This **models** option P&L; it does not replay real quotes.
-  Slippage is 2% of each leg's premium per side, plus brokerage.
+**Backtester** (`fo-results backtest --prices prices.csv --events events.csv [--quotes quotes.csv]`):
+- *Event trade with `--quotes`:* replayed at **real closing option prices** from the NSE bhavcopy. Entry at the
+  pre-results close, exit at the reaction-session close (the bhavcopy has no 10:00 prices, so this is the
+  "hard exit" of section 6B). Planned strikes are moved onto listed ones, and the credit rule is re-checked
+  against the real credit. Legs that did not trade that day are priced at NSE's settlement price.
+- *Event trade without quotes:* priced out at the reaction-session open (`vol_exit_at`) with Black-Scholes at one
+  flat IV per expiry: `front_iv` at entry, `post_iv` at exit. There is no skew, so OTM puts are under-priced.
+  This **models** option P&L.
+- Either way, slippage is 2% of each leg's premium per side, plus brokerage.
+- *Calibration table:* for every assessed event, traded or not, it shows by IM/HM bucket how big the move was
+  relative to IM and what selling the ATM straddle would have made. This tells you whether the ratio sorts
+  events by how expensive the options really were.
 - *Follow-through:* daily bars. Stop-order entry; skips if the open is more than 0.5R past the trigger.
   If the stop and the target are both inside one bar, it assumes the stop hit first (conservative). Exit at the time-stop close.
 - *No look-ahead:* HM uses only results that came before each event.
@@ -306,8 +318,11 @@ the reaction move, the reaction type, and P&L in R. After two results seasons
 
 **Data you need:** daily OHLCV for each stock; results dates **with timing**, taken from the exchange's
 financial-results filings (the filing timestamp tells you before the open / during market hours / after the close);
-and for the event trade, front/back ATM IV at the entry close plus the front IV the morning after.
-You can back the IVs out of historical option settlement prices with `pricing.implied_vol`.
+and for the event trade, front/back ATM IV at the entry close plus the front IV after the results.
+`fo-results fetch` builds all of this from free sources: Yahoo Finance for prices and results dates with
+release times, and the NSE F&O bhavcopy archive for option prices. It backs out ATM IVs from the straddles.
+Yahoo's results calendar currently ends in May 2025. Add later seasons with `fetch --results-file` (columns `symbol,announce_date,announce_time` or `timing`).
+The results of running it are in [REAL_DATA_RESULTS.md](REAL_DATA_RESULTS.md).
 
 `fo-results demo` runs the whole pipeline on **synthetic** data. That fake market has no drift
 and random option mispricing, so its numbers only show that the plumbing works.
@@ -330,8 +345,10 @@ fo-results classify --symbol XYZ --prev-close 1500 --open 1560 --high 1600 --low
 # Opening-range trade on 5-minute bars of the reaction session
 fo-results orb --bars examples/reaction_5min_example.csv --prev-close 1000 --hm 3
 
-# Backtest on your data
-fo-results backtest --prices prices.csv --events events.csv --out trades.csv
+# Real data (Yahoo + NSE archives), then backtest with real option prices
+fo-results fetch --out-dir real_data
+fo-results backtest --prices real_data/prices.csv --events real_data/events.csv \
+  --quotes real_data/quotes.csv --out trades.csv
 ```
 
 All thresholds are in `fo_results_strategy/config.py` (`StrategyConfig`).

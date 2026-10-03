@@ -68,6 +68,14 @@ class BacktestTest(unittest.TestCase):
                     self.assertNotIn(t.announce_date, first_dates)
         self.assertIn("avg R", report.render())
 
+    def test_events_parse_expiry_and_base_iv(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp, "events.csv")
+            path.write_text("symbol,announce_date,timing,front_iv,front_days,post_iv,front_expiry,base_iv\n"
+                            "xyz,2025-01-15,AMC,34,8,22,2025-01-30,21.5\n")
+            ev = load_events(path)[0]
+        self.assertEqual((ev.symbol, ev.front_expiry, ev.base_iv), ("XYZ", date(2025, 1, 30), 0.215))
+
     def test_events_without_ivs_only_test_follow_through(self):
         with tempfile.TemporaryDirectory() as tmp:
             prices, events = generate(tmp, seed=3, sessions=500)
