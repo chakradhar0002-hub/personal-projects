@@ -7,7 +7,8 @@ from __future__ import annotations
 import argparse
 import sys
 from dataclasses import replace
-from datetime import date
+from datetime import date, timedelta
+from pathlib import Path
 from typing import Optional, Sequence
 
 from .backtest import load_events, load_prices, load_quotes, run_backtest, write_trades
@@ -113,6 +114,36 @@ def _cmd_fetch(args, cfg: StrategyConfig) -> int:
     return 0
 
 
+def _cmd_upcoming(args, cfg: StrategyConfig) -> int:
+    from .realdata import DEFAULT_UNIVERSE, load_results_file, timing_from_ist
+    from .upcoming import build_upcoming, load_history_rows, render
+    cal = TradingCalendar(load_holidays(args.holidays) if args.holidays else ())
+    today = date.fromisoformat(args.today) if args.today else date.today()
+    symbols = [x.strip().upper() for x in args.symbols.split(",")] if args.symbols else list(DEFAULT_UNIVERSE)
+    own = None
+    if args.results_file:
+        own = {}
+        for sym, stamps in load_results_file(args.results_file).items():
+            future = [t for t in stamps if t.date() >= today - timedelta(days=10)]
+            if future:
+                t = min(future)
+                own[sym] = (t.date(), True, timing_from_ist(t))
+        symbols = list(dict.fromkeys(symbols + list(own)))
+    events, days, quote_day = build_upcoming(symbols, today, args.days, cal, cfg, Path(args.cache_dir),
+                                             load_history_rows(args.history), own)
+    if quote_day is None:
+        print("no recent NSE bhavcopy found", file=sys.stderr)
+        return 1
+    text = render(events, days, quote_day, cfg)
+    if not args.holidays:
+        text += "\nHolidays: none given - pass --holidays (one YYYY-MM-DD per line) for dates further out."
+    print(text)
+    if args.out:
+        Path(args.out).write_text(text + "\n")
+        print(f"\nwritten to {args.out}")
+    return 0
+
+
 def _cmd_demo(args, cfg: StrategyConfig) -> int:
     prices, events = generate(args.out_dir, seed=args.seed)
     print(f"synthetic data: {prices}, {events}")
@@ -176,6 +207,19 @@ def build_parser() -> argparse.ArgumentParser:
     fe.add_argument("--end", help="last date (default today)")
     fe.add_argument("--results-file", help="your own results dates: symbol,announce_date,announce_time|timing")
 
+    up = sub.add_parser("upcoming", parents=[common],
+                        help="what to do in the next N sessions: run-up buys/sells and results")
+    up.add_argument("--days", type=int, default=3, help="number of trading sessions to plan (default 3)")
+    up.add_argument("--symbols", help="comma-separated NSE symbols (default: the liquid F&O universe)")
+    up.add_argument("--today", help="plan as of this date, YYYY-MM-DD (default today)")
+    up.add_argument("--holidays", help="exchange holidays, one YYYY-MM-DD per line")
+    up.add_argument("--history", default=str(Path(__file__).resolve().parent.parent / "results" / "events_2023_2025.csv"),
+                    help="past results with timing, used for each company's usual release timing")
+    up.add_argument("--results-file", help="your own results dates (symbol,announce_date,announce_time|timing); "
+                                            "overrides Yahoo")
+    up.add_argument("--cache-dir", default="real_data/cache")
+    up.add_argument("--out", help="also write the plan to this file")
+
     dm = sub.add_parser("demo", parents=[common], help="generate synthetic data and backtest it")
     dm.add_argument("--out-dir", default="demo_data")
     dm.add_argument("--seed", type=int, default=7)
@@ -188,5 +232,5 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     if args.capital:
         cfg = replace(cfg, capital=args.capital)
     handler = {"plan": _cmd_plan, "classify": _cmd_classify, "orb": _cmd_orb, "backtest": _cmd_backtest,
-               "fetch": _cmd_fetch, "demo": _cmd_demo}[args.cmd]
+               "fetch": _cmd_fetch, "upcoming": _cmd_upcoming, "demo": _cmd_demo}[args.cmd]
     return handler(args, cfg)

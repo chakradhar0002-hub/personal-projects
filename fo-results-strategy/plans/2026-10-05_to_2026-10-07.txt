@@ -1,0 +1,42 @@
+F&O RESULTS - ACTIONS FOR Mon 05-Oct TO Wed 07-Oct-2026
+Option prices from the NSE bhavcopy of Thu 01-Oct-2026; re-price live before every order.
+Capital Rs 1,000,000: run-up debit <= 2% per stock, <= 10 open at once.
+
+Mon 05-Oct
+  [ ] MISSED TCS run-up entry (Wed 30-Sep): don't buy late - entries 1-3 sessions before lost money after costs
+  [ ] MISSED DMART run-up entry (Thu 01-Oct): don't buy late - entries 1-3 sessions before lost money after costs
+  [ ] BUY  HCLTECH run-up straddle: 1240 CE + 1240 PE, 27-Oct expiry, 14:45-15:20, est. debit 90.72 x lot 400 = Rs 36,287/lot -> 0 lots (1 lot needs capital >= Rs 1,814,363); sell Mon 12-Oct
+  open after the close: 1 run-up straddle(s) (HCLTECH)
+
+Tue 06-Oct
+  nothing to do
+  open after the close: 1 run-up straddle(s) (HCLTECH)
+
+Wed 07-Oct
+  [ ] BUY  FEDERALBNK run-up straddle: 320 CE + 320 PE, 27-Oct expiry, 14:45-15:20, est. debit 17.07 x lot 2500 = Rs 42,684/lot -> 0 lots (1 lot needs capital >= Rs 2,134,203); sell Wed 14-Oct (date NOT confirmed - check the board-meeting filing)
+  [ ] BUY  HAVELLS run-up straddle: 1040 CE + 1040 PE, 27-Oct expiry, 14:45-15:20, est. debit 57.54 x lot 500 = Rs 28,772/lot -> 0 lots (1 lot needs capital >= Rs 1,438,584); sell Wed 14-Oct
+  [ ] BUY  HDFCLIFE run-up straddle: 535 CE + 535 PE, 27-Oct expiry, 14:45-15:20, est. debit 28.18 x lot 1100 = Rs 31,000/lot -> 0 lots (1 lot needs capital >= Rs 1,550,020); sell Wed 14-Oct
+  [ ] BUY  NESTLEIND run-up straddle: 1310 CE + 1310 PE, 27-Oct expiry, 14:45-15:20, est. debit 61.85 x lot 500 = Rs 30,927/lot -> 0 lots (1 lot needs capital >= Rs 1,546,325); sell Wed 14-Oct
+  [ ] BUY  PNB run-up straddle: 110 CE + 110 PE, 27-Oct expiry, 14:45-15:20, est. debit 6.50 x lot 8000 = Rs 52,003/lot -> 0 lots (1 lot needs capital >= Rs 2,600,171); sell Wed 14-Oct
+  [ ] BUY  POLYCAB run-up straddle: 8000 CE + 8000 PE, 27-Oct expiry, 14:45-15:20, est. debit 420.96 x lot 125 = Rs 52,620/lot -> 0 lots (1 lot needs capital >= Rs 2,630,981); sell Wed 14-Oct (date NOT confirmed - check the board-meeting filing)
+  open after the close: 7 run-up straddle(s) (FEDERALBNK, HAVELLS, HCLTECH, HDFCLIFE, NESTLEIND, PNB, POLYCAB)
+
+COMING UP (next run-up entries)
+  stock       results     timing   buy on     sell on    expiry    status
+  TCS         Thu 08-Oct AMC      Wed 30-Sep Thu 08-Oct 27-Oct    entry passed - skip
+  DMART       Sat 10-Oct AMC      Thu 01-Oct Fri 09-Oct 27-Oct    entry passed - skip
+  HCLTECH     Mon 12-Oct AMC      Mon 05-Oct Mon 12-Oct 27-Oct    trade
+  FEDERALBNK  Thu 15-Oct UNKNOWN  Wed 07-Oct Wed 14-Oct 27-Oct    trade [date unconfirmed]
+  HAVELLS     Thu 15-Oct UNKNOWN  Wed 07-Oct Wed 14-Oct 27-Oct    trade
+  HDFCLIFE    Thu 15-Oct UNKNOWN  Wed 07-Oct Wed 14-Oct 27-Oct    trade
+  NESTLEIND   Thu 15-Oct DURING   Wed 07-Oct Wed 14-Oct 27-Oct    trade
+  PNB         Thu 15-Oct DURING   Wed 07-Oct Wed 14-Oct 27-Oct    trade
+  POLYCAB     Thu 15-Oct DURING   Wed 07-Oct Wed 14-Oct 27-Oct    trade [date unconfirmed]
+  BAJAJ-AUTO  Thu 15-Oct AMC      Thu 08-Oct Thu 15-Oct 27-Oct    trade
+  PERSISTENT  Thu 15-Oct AMC      Thu 08-Oct Thu 15-Oct 27-Oct    trade
+  TECHM       Thu 15-Oct AMC      Thu 08-Oct Thu 15-Oct 27-Oct    trade
+  WIPRO       Thu 15-Oct AMC      Thu 08-Oct Thu 15-Oct 27-Oct    trade
+  AXISBANK    Sat 17-Oct AMC      Fri 09-Oct Fri 16-Oct 27-Oct    trade
+  DIXON       Fri 16-Oct AMC      Fri 09-Oct Fri 16-Oct 27-Oct    trade
+
+Timing used per stock: TCS AMC in 9 of 9 past results; DMART AMC in 7 of 9 past results; HCLTECH AMC in 9 of 9 past results; WIPRO AMC in 9 of 9 past results; TECHM AMC in 8 of 9 past results; PERSISTENT AMC in 7 of 9 past results; BAJAJ-AUTO AMC in 7 of 9 past results; NESTLEIND DURING in 9 of 9 past results; PNB DURING in 8 of 9 past results; FEDERALBNK mixed history (DURING 6, AMC 3): treated as during market hours; HDFCLIFE mixed history (DURING 6, AMC 3): treated as during market hours; HAVELLS mixed history (AMC 5, DURING 4): treated as during market hours; POLYCAB DURING in 8 of 9 past results; RELIANCE AMC in 9 of 9 past results; DIXON AMC in 9 of 9 past results

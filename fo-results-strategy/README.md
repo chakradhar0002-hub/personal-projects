@@ -30,6 +30,10 @@ cd fo-results-strategy
 pip install -e .            # optional: gives the `fo-results` command
 # or run it in place:  python -m fo_results_strategy <command> ...
 
+# 0. What to do in the next 3 sessions across the F&O universe (needs internet):
+#    run-up straddles to buy / sell, with strikes, expiry and size from the latest NSE prices
+fo-results upcoming --days 3 --capital 2500000 --holidays my_nse_holidays.txt
+
 # 1. Plan one stock's results (all percentages in %)
 fo-results plan --symbol XYZ --date 2026-10-15 --timing AMC --spot 1500 --lot-size 550 \
   --strike-step 10 --hist-moves 3.1,-2.4,4.2,-1.8,2.7,-3.5,2.2,-3.3 \
@@ -88,11 +92,13 @@ fo_results_strategy/
   intraday.py   reaction-session opening-range rules
   backtest.py   event-study backtest (no look-ahead), real-quote replay, calibration table
   realdata.py   `fetch`: Yahoo prices and results dates, NSE F&O bhavcopy -> IVs and quotes
+  upcoming.py   `upcoming`: next results dates -> dated buy/sell actions for the next N sessions
   synthetic.py  fake data for the demo and tests
   cli.py        command line
 docs/STRATEGY.md           the playbook
 docs/REAL_DATA_RESULTS.md  real-data backtest: data, results, what was tried
 results/                   results calendar used (2023-2025) and the trade list of that run
+plans/                     saved `upcoming` plans
 tests/            python -m unittest discover -s tests -t .
 ```
 

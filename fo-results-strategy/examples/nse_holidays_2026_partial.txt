@@ -1,0 +1,4 @@
+# NSE trading holidays known from exchange data in this repo's runs (NOT a complete list).
+# Add the rest from NSE's official holiday circular before planning further ahead.
+2026-10-02   # Gandhi Jayanti - no bhavcopy that day
+2026-11-24   # November monthly expiry moved to Mon 23-Nov, so 24-Nov is a holiday
