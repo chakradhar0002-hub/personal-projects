@@ -401,7 +401,7 @@ def build_dataset(symbols: Sequence[str], out_dir: "str | Path", cache_dir: "str
         stats["events"] += len(ev)
     log(f"yahoo{' + your file' if own_events else ''}: {stats['symbols']} symbols, {stats['events']} results dates")
 
-    # Sessions to fetch quotes for: the close before the numbers and the reaction session.
+    # Sessions to fetch quotes for: the IV run-up entry, the close before the numbers and the reaction session.
     need: dict[date, set] = defaultdict(set)
     plan: list[tuple] = []
     for sym, evs in events.items():
@@ -412,9 +412,11 @@ def build_dataset(symbols: Sequence[str], out_dir: "str | Path", cache_dir: "str
             if r <= 0 or r >= len(dates):
                 stats["event: outside price data"] += 1
                 continue
-            plan.append((sym, ts, timing, dates[r - 1], dates[r]))
-            need[dates[r - 1]].add(sym)
-            need[dates[r]].add(sym)
+            entry = dates[r - 1 - cfg.runup_entry_sessions] if r - 1 - cfg.runup_entry_sessions >= 0 else None
+            plan.append((sym, ts, timing, dates[r - 1], dates[r], entry))
+            for day in (dates[r - 1], dates[r], entry):
+                if day is not None:
+                    need[day].add(sym)
     log(f"nse: {len(need)} bhavcopy sessions to load")
 
     quotes: dict[date, dict[str, list[OptionQuote]]] = {}
@@ -442,7 +444,7 @@ def build_dataset(symbols: Sequence[str], out_dir: "str | Path", cache_dir: "str
                 w.writerow([d.isoformat(), sym, round(o, 2), round(h, 2), round(l, 2), round(c, 2), int(v)])
 
     ev_rows, q_rows = [], []
-    for sym, ts, timing, pre, react in plan:
+    for sym, ts, timing, pre, react, entry in plan:
         dates = [b[0] for b in prices[sym]]
         close = {b[0]: b[4] for b in prices[sym]}
         row = [sym, ts.date().isoformat(), timing.value, "", "", "", "", "", lots.get(sym, ""), "", "",
@@ -511,7 +513,8 @@ def build_dataset(symbols: Sequence[str], out_dir: "str | Path", cache_dir: "str
         row += [f"{base * 100:.3f}", f"{factor:g}"]
         ev_rows.append(row)
         stats["event: with IVs"] += 1
-        for q in pre_q + react_q:
+        entry_q = quotes.get(entry, {}).get(sym, []) if entry else []
+        for q in pre_q + react_q + entry_q:     # entry_q: the IV run-up trade's entry session
             if q.expiry == front and abs(q.strike / spot - 1) <= 0.3:
                 q_rows.append([q.symbol, q.day.isoformat(), q.expiry.isoformat(), q.kind, q.strike, q.close,
                                q.settle, int(q.volume)])

@@ -6,11 +6,16 @@ numbers into a dated checklist (`plan`), read the reaction candle (`classify`) a
 backtest the rules on your own data (`backtest`).
 
 > Educational material, not investment advice. The thresholds are starting points.
-> Validate them on real data and paper-trade them before you put money in (section 10).
+> Validate them on real data and paper-trade them before you put money in (section 11).
 
-> **Real-data test (Apr 2024 – May 2025, 71 stocks, real option prices):** no edge after costs.
-> The event trades were about break-even before costs, and the follow-through trade lost money.
-> Use these rules to filter, size and limit risk, not as a source of profit.
+> **Real-data test (2023–2025, 72 F&O stocks, every option leg at real NSE closing prices):**
+> - **One trade made money: the pre-results IV run-up straddle (section 5).** Buy the ATM straddle about a
+>   week before results and sell it at the last close before the numbers: +0.065R a trade after costs,
+>   280 trades, all 9 results seasons positive.
+> - **Trades held across the numbers (condor / straddle, section 6) and the Day+1 follow-through (section 8)
+>   lost money after costs.** They are kept for reference; the dated checklist no longer recommends them.
+> - The opening-range trade (section 7) is untested (no free intraday history).
+>
 > Details: [REAL_DATA_RESULTS.md](REAL_DATA_RESULTS.md).
 
 ---
@@ -19,13 +24,14 @@ backtest the rules on your own data (`backtest`).
 
 A results announcement is a jump you know is coming. Options price that jump in
 advance: implied volatility (IV) builds into the date and collapses right after it
-(the "IV crush"). That gives three separate, testable edges, one for each day:
+(the "IV crush"). That suggests four testable edges:
 
-| Day | Edge | Instrument |
-|---|---|---|
-| **Day-1** (or Result Day for after-close results) | **Volatility.** Compare what options price for the results day (implied move, **IM**) with what the stock usually does (historical move, **HM**). Sell when options are rich, buy when they are cheap, stay flat otherwise. | Iron condor (sell) / ATM straddle (buy), defined risk only |
-| **Reaction session** | **Opening range.** Once the first 15 minutes settle, real surprises tend to trend and failed gaps tend to fill. | Stock futures, or options bought *after* the crush |
-| **Follow-through session** | **Drift / exhaustion.** A strong close on heavy volume tends to follow through (post-earnings drift). A big gap that closed weak tends to keep fading. | Stock futures or ITM debit spread |
+| When | Edge | Instrument | Real-data result |
+|---|---|---|---|
+| **~5 sessions before → last close before the numbers** | **IV run-up.** Option prices build into results faster than they decay; sell before the numbers so you never take the gap | Long ATM straddle | **Worked: +0.065R a trade after costs** |
+| **Day-1** (or Result Day for after-close results) → reaction | **Implied vs historical move.** Sell rich options, buy cheap ones, across the numbers | Iron condor / ATM straddle | Lost money after costs |
+| **Reaction session** | **Opening range.** Real surprises trend after the first 15 minutes; failed gaps fill | Stock futures | Untested |
+| **Follow-through session** | **Drift / exhaustion** after a strong or failed reaction candle | Stock futures | Lost money, even before costs |
 
 The one rule that never changes: **no directional bet is carried across the announcement.**
 Before the numbers come out, you only hold defined-risk volatility structures, or nothing.
@@ -36,13 +42,15 @@ Before the numbers come out, you only hold defined-risk volatility structures, o
 
 When the numbers come out decides which session reacts. Get this right first.
 
-| Results released | Day-1 | Result Day | Day+1 |
+The **last close before the numbers** is the IV run-up exit, and it is where an event trade would be entered:
+
+| Results released | Last close before the numbers | Reaction session | IV run-up entry (5 sessions earlier) |
 |---|---|---|---|
-| **Before market open** (before 09:15) | Setup + **enter event trade** 14:45–15:20 | **Reaction session**: exit event trade, opening-range trade | **Follow-through** trade |
-| **During market hours** | Setup + **enter event trade** 14:45–15:20 | Quiet until the release, then **reaction** from the release time | **Follow-through** trade |
-| **After market close** (after 15:30) | Setup only | **Enter event trade** 14:45–15:20, when IV peaks and there is the least time to decay | **Reaction session**: exit event trade, opening-range trade. Follow-through moves to Day+2 |
-| **Saturday / holiday** | Setup + enter on the last session before | Reaction (first session after) | Follow-through |
-| **Timing unknown** | Treat as *during market hours*: enter on Day-1 and never assume you get an extra session | | |
+| **Before market open** (before 09:15) | **Day-1** | Result Day | 5 sessions before Day-1 |
+| **During market hours** | **Day-1** | Result Day, from the release time | 5 sessions before Day-1 |
+| **After market close** (after 15:30) | **Result Day** | Day+1 | 5 sessions before Result Day |
+| **Saturday / holiday** | the last session before | the first session after | 5 sessions before that last session |
+| **Timing unknown** | treat as *during market hours*: **Day-1**, and never assume you get an extra session | | |
 
 Here, "Result Day" means the first trading session on or after the board-meeting date.
 
@@ -125,7 +133,46 @@ Using the straddle alone (4.83 / 2.90 = 1.67) would have overstated the edge by 
 
 ---
 
-## 5. Day-1 playbook
+## 5. The IV run-up trade (tested positive)
+
+Option prices on a stock with results coming build up through the week before the numbers. In the real data, ATM IV
+rose in 79% of events, by a median of 11%, over those five sessions. That build beat the time decay
+of a five-session hold. Selling at the last close before the numbers keeps you out of the gap
+and the IV crush.
+
+**Rules**
+
+| Step | Rule |
+|---|---|
+| Which stocks | Every eligible stock with results coming (section 3 filters: ban, liquidity). No IM/HM verdict needed |
+| Expiry | The front monthly expiry that includes the results. **Only trade when it expires within 14 sessions after the last close before the numbers.** Further out, the results premium is too small a part of the option price, and those trades lost money |
+| Entry | **5 sessions before** the last close before the numbers, 14:45–15:20: buy the ATM call and put (strike nearest spot), as one order near mid |
+| Exit | **The last close before the numbers**, 15:00–15:25: sell both legs. Never hold through the results: straddles held across lost money |
+| Size | Straddle debit ≤ **2% of capital** per stock (the worst loss in the test was 70% of the debit, 1 in 10 lost more than 23%). At most **10 open at once**: results cluster, and up to 27 positions were open on one day in the test |
+| Execution | Costs decide it: +0.086R a trade at 1% slippage per leg per side, +0.065R at 2%, +0.044R at 3%. Use limit orders near mid |
+
+**Don't shorten it.** Buying 1–3 sessions before lost money after costs (−2.6%, −0.8%, −0.1% of the
+debit, all expiries), because the round-trip cost is the same while the IV build is smaller. A 10-session
+entry also worked (+3.0%, all expiries; 5 sessions: +3.5%), but it carries more decay risk.
+
+**Evidence** (real NSE closing prices, 2% slippage per leg per side + brokerage; details in
+[REAL_DATA_RESULTS.md](REAL_DATA_RESULTS.md)):
+
+| | Trades | Win % | Avg R | Profit factor | t-stat |
+|---|---:|---:|---:|---:|---:|
+| Default rules (expiry ≤ 14 sessions after exit) | 280 | 50% | +0.065 | 1.90 | 3.5 |
+| Without the expiry filter (the version planned before testing) | 485 | 46% | +0.035 | – | 3.0 |
+
+R = P&L ÷ debit. The expiry filter was chosen after seeing the 5-session results, but it repeats with a
+10-session entry and follows from how much of the option price is results premium. Treat
++0.035R to +0.065R as the honest range, and re-check it as new seasons come in.
+
+---
+
+## 6. Day-1 playbook: event trade across the numbers (not recommended)
+
+> **Tested on real data: lost money after costs** (condors −0.09R, straddles −0.08R).
+> Kept for reference. `fo-results plan` no longer recommends it unless you set `recommend_event_trade=True`.
 
 Set up every stock, whatever its timing. Enter on Day-1 only when the reaction comes
 on Result Day (results before the open, during market hours, or timing unknown).
@@ -148,7 +195,7 @@ on Result Day (results before the open, during market hours, or timing unknown).
    - Buy the call and the put at the strike nearest spot.
 
    **FAIR → nothing.** Most stocks land here, and doing nothing is a position.
-5. **Close any earlier "IV run-up" longs** into the entry close (Day-1, or Result Day for after-close results). The IV build into results is over, so keep them only if the verdict is CHEAP.
+5. **Sell the IV run-up straddle** (section 5) at this close: the IV build into results is over.
 6. **Don't** hold futures or naked options for direction into the numbers. Don't sell naked straddles or strangles.
 
 Worked example (XYZ, RICH, small run-up), all prices estimated by the tool:
@@ -163,15 +210,18 @@ Capital Rs 25 lakh, 1% risk → 2 lots
 
 ---
 
-## 6. Result Day playbook
+## 7. Result Day playbook: event-trade exits and opening range (not recommended / untested)
 
-### 6A. Results after the close: this is the entry day
+> The event-trade exits below go with section 6 (not recommended). The opening-range trade is **untested**:
+> there is no free intraday history, so paper-trade it before risking money.
+
+### 7A. Results after the close: this is the entry day
 
 - The session before the numbers. IV usually peaks into this close.
 - Repeat Day-1 step 3 with live quotes at 14:30. If the verdict changed, follow the new one.
 - Enter the event trade 14:45–15:20, exactly as in Day-1 step 4. Entering a day later than Day-1 means one less day of time decay on the long straddle and the highest IV for the condor.
 
-### 6B. Results before the open: this is the reaction session
+### 7B. Results before the open: this is the reaction session
 
 | Time | Action |
 |---|---|
@@ -202,18 +252,21 @@ Use stock futures, or ATM options bought **after** 09:30 when the IV crush has a
 happened. Never buy options for direction before the results: you pay the event premium
 and then lose it in the crush.
 
-### 6C. Results during market hours: quiet, then reaction
+### 7C. Results during market hours: quiet, then reaction
 
 - Before the release: manage nothing new. **No orders from 30 minutes before the board meeting until 15 minutes after the results hit.** Prices move on rumours and spreads widen.
-- The IV crush happens at the release. Exit the event trade by the 6B rules, counting from the release time instead of 09:15.
+- The IV crush happens at the release. Exit the event trade by the 7B rules, counting from the release time instead of 09:15.
 - Opening-range trade: the "opening range" is the **first 15 minutes after the release** (`orb --start HH:MM`).
 - After the close, run `classify`.
 
 ---
 
-## 7. Day+1 playbook
+## 8. Day+1 playbook: follow-through trade (not recommended)
 
-### 7A. Results before the open or during market hours: follow-through day
+> **Tested on real data: lost money even before costs** (−0.09R to −0.13R for the main setups).
+> Kept for reference. `fo-results plan` no longer recommends it.
+
+### 8A. Results before the open or during market hours: follow-through day
 
 Read the reaction candle against the stock's own HM (`classify` does this):
 
@@ -238,16 +291,17 @@ Trade rules for every setup:
 - **Time stop:** exit at the close of Day+1. If you want to test holding winners longer for the drift, change `post_hold_sessions` and backtest it first.
 - **Instrument:** stock futures. If one lot risks more than your budget, use an ITM debit spread sized to the same rupee risk. IV is crushed by now, so option buying is cheaper than it was before the results.
 
-### 7B. Results after the close: Day+1 is the reaction session
+### 8B. Results after the close: Day+1 is the reaction session
 
-Apply the Result-Day reaction rules (6B) on Day+1. The follow-through rules (7A) then apply to Day+2.
+Apply the Result-Day reaction rules (7B) on Day+1. The follow-through rules (8A) then apply to Day+2.
 
 ---
 
-## 8. Position sizing and risk
+## 9. Position sizing and risk
 
 | Rule | Default |
 |---|---|
+| IV run-up straddle debit (section 5) | **2% of capital** per stock, at most 10 open at once |
 | Max loss of one event trade (condor: width − credit; straddle: full debit) | **1% of capital** |
 | Total event risk opened on one day | 3% of capital |
 | Same sector, same day (results cluster by sector and surprises are correlated) | max 2 event trades |
@@ -267,9 +321,16 @@ Hard rules:
 
 ---
 
-## 9. One-page cheat sheet
+## 10. One-page cheat sheet
 
 ```
+RUN-UP       5 sessions before the last close before the numbers, 14:45-15:20:
+  (the one   eligible & front expiry ≤ 14 sessions after that close  →  BUY ATM straddle
+   that      debit ≤ 2% of capital, ≤ 10 open  →  SELL at the last close before the numbers
+   worked)   never hold it through the results; don't enter later than 5 sessions before
+
+---- below: tested negative / untested, reference only ----
+
 DAY-1        eligible?  →  HM (last 8)  →  IM (term structure)  →  IM/HM
              ≥1.20 & no past move > 2×IM  →  SHORT IRON CONDOR  (short ±1.25×IM, wings +0.5×IM)
              ≤0.85                        →  LONG ATM STRADDLE
@@ -290,7 +351,7 @@ DAY+1        CONTINUATION → break of reaction high/low, stop mid-range, 1.5R, 
 
 ---
 
-## 10. Validate before trading
+## 11. Validate before trading
 
 **Journal every event**, traded or not: date, timing, HM, IM, ratio, verdict, structure,
 the reaction move, the reaction type, and P&L in R. After two results seasons
@@ -302,11 +363,13 @@ the reaction move, the reaction type, and P&L in R. After two results seasons
 **Backtester** (`fo-results backtest --prices prices.csv --events events.csv [--quotes quotes.csv]`):
 - *Event trade with `--quotes`:* replayed at **real closing option prices** from the NSE bhavcopy. Entry at the
   pre-results close, exit at the reaction-session close (the bhavcopy has no 10:00 prices, so this is the
-  "hard exit" of section 6B). Planned strikes are moved onto listed ones, and the credit rule is re-checked
+  "hard exit" of section 7B). Planned strikes are moved onto listed ones, and the credit rule is re-checked
   against the real credit. Legs that did not trade that day are priced at NSE's settlement price.
 - *Event trade without quotes:* priced out at the reaction-session open (`vol_exit_at`) with Black-Scholes at one
   flat IV per expiry: `front_iv` at entry, `post_iv` at exit. There is no skew, so OTM puts are under-priced.
   This **models** option P&L.
+- *IV run-up with `--quotes`:* bought at the close `runup_entry_sessions` before the last close before the
+  numbers (the entry leg prices must have traded), sold at that close. `fetch` stores the entry-day prices too.
 - Either way, slippage is 2% of each leg's premium per side, plus brokerage.
 - *Calibration table:* for every assessed event, traded or not, it shows by IM/HM bucket how big the move was
   relative to IM and what selling the ATM straddle would have made. This tells you whether the ratio sorts
@@ -330,7 +393,7 @@ They are **not** evidence that the strategy makes money.
 
 ---
 
-## 11. Running the tool
+## 12. Running the tool
 
 ```bash
 # Dated 3-day plan + event trade for one stock (percent inputs)

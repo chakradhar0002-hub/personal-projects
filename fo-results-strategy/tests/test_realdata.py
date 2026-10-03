@@ -1,8 +1,8 @@
 import unittest
 from datetime import date, datetime
 
-from fo_results_strategy.backtest import (DailyBar, EventRow, OptionQuotes, replay_event_trade, short_straddle_pct,
-                                          snap_to_listed)
+from fo_results_strategy.backtest import (DailyBar, EventRow, OptionQuotes, replay_event_trade, replay_runup,
+                                          short_straddle_pct, snap_to_listed)
 from fo_results_strategy.config import StrategyConfig
 from fo_results_strategy.pricing import bs_price, years
 from fo_results_strategy.realdata import (OptionQuote, atm_iv, atm_straddle_iv, bhavcopy_urls, load_results_file,
@@ -125,6 +125,24 @@ class IvAndReplayTest(unittest.TestCase):
         self.assertGreater(res.pnl_per_lot, 0)                # small move + IV crush
         self.assertLess(res.entry, 0)                         # credit
         self.assertGreater(short_straddle_pct(ev, pre, rx, quotes), 0)
+
+    def test_replay_runup_buys_before_and_sells_before_the_numbers(self):
+        exp = date(2025, 1, 30)
+        days = [date(2025, 1, d) for d in (6, 7, 8, 9, 10, 13, 14, 15, 16)]
+        bars = [DailyBar(d, 1500, 1505, 1495, 1500, 1e6) for d in days]
+        r = 8                                    # reaction session index; pre-results close = days[7]
+        quotes = OptionQuotes()
+        # IV 24% five sessions before (13 sessions to expiry), 36% at the pre-results close (8 sessions)
+        for q in chain(days[2], exp, 1500, 0.24, 13, range(1450, 1560, 10)) + \
+                chain(days[7], exp, 1500, 0.36, 8, range(1450, 1560, 10)):
+            quotes.add(q.symbol, q.day, q.expiry, q.kind, q.strike, q.close, q.settle, q.volume)
+        ev = EventRow("XYZ", days[8], Timing.BMO, 0.34, 8, None, None, 0.22, 550, 10, exp)
+        res, status = replay_runup(ev, bars, r, quotes, StrategyConfig())
+        self.assertEqual(status, "replayed")
+        self.assertEqual((res.entry_date, res.exit_date), (days[2], days[7]))
+        self.assertGreater(res.r_multiple, 0.05)          # IV build beats five sessions of decay
+        far = EventRow("XYZ", days[8], Timing.BMO, 0.34, 20, None, None, 0.22, 550, 10, exp)
+        self.assertEqual(replay_runup(far, bars, r, quotes, StrategyConfig())[1], "front expiry too far")
 
     def test_replay_skips_unlisted(self):
         hist = [0.031, -0.024, 0.042, -0.018, 0.027, -0.035, 0.022, -0.033]

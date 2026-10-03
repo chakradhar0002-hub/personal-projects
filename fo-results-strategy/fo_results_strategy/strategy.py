@@ -281,6 +281,53 @@ def plan_event_trade(inp: EventInputs, cfg: Optional[StrategyConfig] = None) -> 
 
 
 # ---------------------------------------------------------------------------
+# Pre-results IV run-up
+# ---------------------------------------------------------------------------
+
+def plan_runup_trade(symbol: str, spot: float, front_iv: float, expiry_sessions_after_exit: int,
+                     lot_size: int = 1, strike_step: Optional[float] = None, mwpl_pct: Optional[float] = None,
+                     atm_spread_pct: Optional[float] = None, cfg: Optional[StrategyConfig] = None) -> TradePlan:
+    """Long ATM straddle bought `runup_entry_sessions` before the pre-results close and sold at that close.
+
+    Option prices build into results faster than they decay; the trade is out before the numbers,
+    so it never takes the gap. `expiry_sessions_after_exit` counts sessions from the pre-results close
+    to the front expiry (the expiry must include the results).
+    """
+    cfg = cfg or StrategyConfig()
+    n = cfg.runup_entry_sessions
+    reasons = []
+    if mwpl_pct is not None and mwpl_pct >= cfg.max_mwpl_pct:
+        reasons.append(f"MWPL at {mwpl_pct:.0f}% (limit {cfg.max_mwpl_pct:.0f}%): F&O ban risk")
+    if atm_spread_pct is not None and atm_spread_pct > cfg.max_atm_spread_pct:
+        reasons.append(f"ATM option spread {atm_spread_pct:.1f}% of mid: illiquid")
+    if expiry_sessions_after_exit > cfg.runup_max_expiry_sessions:
+        reasons.append(f"front expiry {expiry_sessions_after_exit} sessions after the exit "
+                       f"(max {cfg.runup_max_expiry_sessions}): the results premium is too small a part of the price")
+    if expiry_sessions_after_exit < 1:
+        reasons.append("front expiry is before the results: it holds no results premium")
+    if reasons:
+        return _no_trade(symbol, "RUN_UP", reasons, lot_size=lot_size)
+
+    step = strike_step or default_strike_step(spot)
+    k = round_to_step(spot, step)
+    t = years(expiry_sessions_after_exit + n)
+    legs = [Leg("BUY", kind, k, bs_price(kind, spot, k, t, front_iv, cfg.risk_free_rate)) for kind in ("CE", "PE")]
+    debit = sum(l.est_price for l in legs)
+    plan = TradePlan(
+        symbol, "RUN_UP", "LONG_STRADDLE_RUNUP", legs, lot_size, net_premium=debit, max_loss_per_unit=debit,
+        entry=f"buy the ATM straddle (front expiry) at 14:45-15:20, {n} sessions before the pre-results close",
+        exits=["sell at the pre-results close (15:00-15:25): always out BEFORE the numbers",
+               "do not roll it into an event trade - holding straddles through results lost money"],
+        notes=[f"front expiry {expiry_sessions_after_exit} sessions after the exit; IV usually builds into results"],
+    )
+    budget = cfg.capital * cfg.risk_per_runup_pct / 100
+    plan.lots = int(budget // plan.risk_per_lot) if plan.risk_per_lot > 0 else 0
+    if plan.lots == 0:
+        plan.notes.append(f"one lot costs Rs {plan.risk_per_lot:,.0f} > budget Rs {budget:,.0f}: skip")
+    return plan
+
+
+# ---------------------------------------------------------------------------
 # Post-result directional trade
 # ---------------------------------------------------------------------------
 

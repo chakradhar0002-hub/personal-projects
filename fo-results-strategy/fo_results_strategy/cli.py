@@ -15,7 +15,8 @@ from .config import StrategyConfig
 from .intraday import load_intraday, run_reaction_session
 from .playbook import render_playbook
 from .pricing import straddle_implied_vol, years
-from .strategy import EventInputs, default_strike_step, plan_event_trade, plan_follow_through, round_to_step
+from .strategy import (EventInputs, default_strike_step, plan_event_trade, plan_follow_through, plan_runup_trade,
+                       round_to_step)
 from .synthetic import generate
 from .timeline import Timing, TradingCalendar, build_timeline, choose_expiries, load_holidays
 
@@ -56,7 +57,12 @@ def _cmd_plan(args, cfg: StrategyConfig) -> int:
         sessions_to_expiry_after_reaction=cal.sessions_between(tl.reaction_session, front),
     )
     plan = plan_event_trade(inp, cfg)
-    print(render_playbook(inp, tl, front, plan, cfg))
+    runup_entry = tl.pre_event_session
+    for _ in range(cfg.runup_entry_sessions):
+        runup_entry = cal.prev_session(runup_entry)
+    runup = plan_runup_trade(inp.symbol, args.spot, front_iv, cal.sessions_between(tl.pre_event_session, front),
+                             args.lot_size, step, args.mwpl, args.atm_spread, cfg)
+    print(render_playbook(inp, tl, front, plan, cfg, runup, runup_entry))
     return 0
 
 

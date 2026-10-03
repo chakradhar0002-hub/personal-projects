@@ -6,16 +6,18 @@ checklist and concrete trades, and backtests them on your data.
 
 **Read the playbook first: [docs/STRATEGY.md](docs/STRATEGY.md).**
 
-> **Tested on real data: no edge after costs.** Over Apr 2024 – May 2025 (71 F&O stocks, every
-> option leg at real NSE closing prices), the event trades were about break-even before costs
-> and lost money after them. The follow-through trade lost money even before costs.
-> See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). Use the rules as a risk framework, not a profit source.
+> **Tested on real data (2023–2025, 72 F&O stocks, real NSE option prices):**
+> - **One trade made money: the pre-results IV run-up straddle.** Buy the ATM straddle 5 sessions before the
+>   last close before the numbers, sell at that close: +0.065R a trade after costs, 280 trades, all 9 seasons positive.
+> - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
+>
+> See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.
 
-| Day | What you do |
+| When | What you do |
 |---|---|
-| Day-1 | Check eligibility. Compare the options' **implied move** with the stock's **historical move**. Rich → short iron condor, cheap → long straddle, fair → flat. Enter 14:45–15:20 (on Result Day instead if results come after the close) |
-| Result Day | Reaction session: exit the event trade (IV crush), then trade the opening range (gap-and-go or failed gap). After-close results: this is the entry day |
-| Day+1 | Classify the reaction candle. Trade a continuation or a failed-gap fade with a stop at the reaction-day midpoint, a 1.5R target and a time stop |
+| 5 sessions before the last close before the numbers | **Buy the ATM straddle** (front expiry within 14 sessions of that close; debit ≤ 2% of capital, ≤ 10 open) |
+| Day-1, or Result Day for after-close results | **Sell it at the close**: never hold through the numbers. Check eligibility (ban, liquidity) |
+| Result Day / Day+1 | Nothing recommended: trades across the numbers and the follow-through tested negative; the opening-range trade is untested |
 
 No directional position is ever carried across the announcement.
 

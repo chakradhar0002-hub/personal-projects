@@ -2,7 +2,8 @@ import unittest
 
 from fo_results_strategy.config import StrategyConfig
 from fo_results_strategy.strategy import (EventInputs, ReactionType, VolView, assess_event, ceil_to_step,
-                                          classify_reaction, floor_to_step, plan_event_trade, plan_follow_through)
+                                          classify_reaction, floor_to_step, plan_event_trade, plan_follow_through,
+                                          plan_runup_trade)
 
 from .test_metrics import ivs
 
@@ -86,6 +87,22 @@ class EventPlanTest(unittest.TestCase):
         self.assertEqual(ceil_to_step(1572.1, 10), 1580)
         self.assertEqual(ceil_to_step(1580.0, 10), 1580)
         self.assertEqual(floor_to_step(1427.9, 10), 1420)
+
+
+class RunUpPlanTest(unittest.TestCase):
+    def test_atm_straddle_sized_on_debit(self):
+        cfg = StrategyConfig(capital=5_000_000)
+        plan = plan_runup_trade("TEST", 1503, 0.30, 6, lot_size=550, strike_step=10, cfg=cfg)
+        self.assertEqual(plan.setup, "LONG_STRADDLE_RUNUP")
+        self.assertEqual({(l.action, l.instrument, l.strike) for l in plan.legs}, {("BUY", "CE", 1500), ("BUY", "PE", 1500)})
+        self.assertAlmostEqual(plan.max_loss_per_unit, plan.net_premium)
+        self.assertEqual(plan.lots, int(cfg.capital * cfg.risk_per_runup_pct / 100 // plan.risk_per_lot))
+        self.assertIn("BEFORE the numbers", plan.exits[0])
+
+    def test_filters(self):
+        self.assertFalse(plan_runup_trade("TEST", 1500, 0.3, 20).is_trade)            # expiry too far
+        self.assertFalse(plan_runup_trade("TEST", 1500, 0.3, 0).is_trade)             # expiry before results
+        self.assertFalse(plan_runup_trade("TEST", 1500, 0.3, 6, mwpl_pct=92).is_trade)
 
 
 class ReactionTest(unittest.TestCase):

@@ -95,14 +95,18 @@ class CliTest(unittest.TestCase):
         out = self.run_cli("plan", "--symbol", "demo", "--date", "2026-10-15", "--timing", "AMC", "--spot", "1500",
                            "--lot-size", "550", "--strike-step", "10", "--hist-moves", "3.1,-2.4,4.2,-1.8,2.7,-3.5,2.2,-3.3",
                            "--front-iv", "34", "--back-iv", "26", "--capital", "2500000")
-        self.assertIn("RESULT DAY (Thu 15-Oct) - Pre-event entry", out)
-        self.assertIn("SHORT_IRON_CONDOR", out)
-        self.assertIn("size 2 lot(s)", out)
+        self.assertIn("RUN-UP ENTRY (Thu 08-Oct)", out)
+        self.assertIn("RESULT DAY (Thu 15-Oct) - Last session before the numbers", out)
+        self.assertIn("SELL the IV run-up straddle", out)
+        self.assertIn("LONG_STRADDLE_RUNUP", out)
+        self.assertIn("no trade across the numbers", out)        # event trade tested negative
+        self.assertNotIn("SHORT_IRON_CONDOR", out)
 
     def test_plan_from_straddle(self):
         out = self.run_cli("plan", "--symbol", "demo", "--date", "2026-10-15", "--timing", "BMO", "--spot", "1500",
                            "--lot-size", "550", "--hist-moves", "3.1,-2.4,4.2,-1.8", "--straddle", "75", "--back-iv", "26")
-        self.assertIn("DAY-1 (Wed 14-Oct) - Setup + pre-event entry", out)
+        self.assertIn("DAY-1 (Wed 14-Oct) - Setup; last session before the numbers", out)
+        self.assertIn("RUN-UP ENTRY (Wed 07-Oct)", out)
 
     def test_classify_and_demo(self):
         out = self.run_cli("classify", "--symbol", "x", "--prev-close", "1000", "--open", "1040", "--high", "1065",

@@ -30,6 +30,16 @@ class StrategyConfig:
     runup_stretch_hm: float = 1.0        # run-up beyond this x historical move counts as stretched
     risk_free_rate: float = 0.06
 
+    # --- What the dated playbook recommends (real-data test, docs/REAL_DATA_RESULTS.md) ---
+    recommend_event_trade: bool = False  # condor / straddle held through the numbers: negative after costs
+    recommend_directional: bool = False  # Day+1 follow-through: negative; opening-range trade: untested
+    max_runup_positions: int = 10        # run-up straddles open at once (a sizing rule; the per-trade backtest ignores it)
+
+    # --- Pre-results IV run-up (the only trade that tested positive on real data) ---
+    runup_entry_sessions: int = 5        # buy the ATM straddle this many sessions before the pre-results close
+    runup_max_expiry_sessions: int = 14  # only if the front expiry is at most this many sessions after the exit
+    risk_per_runup_pct: float = 2.0      # straddle debit, % of capital (worst loss in the test: 70% of the debit)
+
     # --- Reaction / follow-through (directional) ---------------------------
     continuation_move_hm: float = 1.0    # |reaction move| >= this x historical move
     continuation_clv: float = 0.70       # close in the top 30% of the day's range (bottom 30% for shorts)

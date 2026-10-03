@@ -299,6 +299,33 @@ def replay_event_trade(plan: TradePlan, ev: EventRow, pre: DailyBar, reaction: D
                        pnl, pnl / risk if risk else 0.0, detail), "replayed"
 
 
+def replay_runup(ev: EventRow, bars: Sequence[DailyBar], r: int, quotes: OptionQuotes,
+                 cfg: StrategyConfig) -> tuple[Optional[TradeResult], str]:
+    """Long ATM straddle from `runup_entry_sessions` before the pre-results close to that close, at real prices."""
+    n = cfg.runup_entry_sessions
+    if ev.front_expiry is None or ev.front_days is None or r - 1 - n < 0:
+        return None, "no entry session"
+    if ev.front_days > cfg.runup_max_expiry_sessions:
+        return None, "front expiry too far"
+    entry_bar, exit_bar = bars[r - 1 - n], bars[r - 1]
+    spot = entry_bar.close * ev.price_factor
+    listed = quotes.strikes(ev.symbol, entry_bar.date, ev.front_expiry)
+    for k in sorted(listed, key=lambda x: abs(x - spot))[:3]:
+        a = [quotes.price(ev.symbol, entry_bar.date, ev.front_expiry, kind, k) for kind in ("CE", "PE")]
+        z = [quotes.price(ev.symbol, exit_bar.date, ev.front_expiry, kind, k) for kind in ("CE", "PE")]
+        if None in a or not all(x[1] for x in a) or None in z:
+            continue
+        cost_in, cost_out = a[0][0] + a[1][0], z[0][0] + z[1][0]
+        slip = (cost_in + cost_out) * cfg.option_slippage_pct / 100
+        pnl = (cost_out - cost_in - slip) * ev.lot_size - cfg.brokerage_per_order * 4
+        risk = cost_in * ev.lot_size
+        detail = f"quotes; K {k:g}; straddle {cost_in:.2f}->{cost_out:.2f}" + ("" if all(x[1] for x in z) else
+                                                                          "; exit leg at settlement price")
+        return TradeResult(ev.symbol, ev.announce_date, "LONG_STRADDLE_RUNUP", entry_bar.date, exit_bar.date,
+                           cost_in, cost_out, pnl, pnl / risk if risk else 0.0, detail), "replayed"
+    return None, "no traded ATM straddle at entry"
+
+
 def snap_to_listed(plan: TradePlan, listed: Sequence[float]) -> Optional[list[float]]:
     """Move planned strikes onto listed ones: short strikes outward, wings beyond them."""
     if not listed:
@@ -374,7 +401,7 @@ def run_backtest(prices: dict[str, list[DailyBar]], events: Sequence[EventRow],
     cfg = cfg or StrategyConfig()
     trades: list[TradeResult] = []
     diags: list[EventDiag] = []
-    views, reactions, replay = Counter(), Counter(), Counter()
+    views, reactions, replay, runup = Counter(), Counter(), Counter(), Counter()
     by_symbol: dict[str, list[EventRow]] = defaultdict(list)
     for ev in events:
         by_symbol[ev.symbol].append(ev)
@@ -391,6 +418,12 @@ def run_backtest(prices: dict[str, list[DailyBar]], events: Sequence[EventRow],
             if r <= 0 or r >= len(bars):
                 continue
             pre, reaction = bars[r - 1], bars[r]
+            if quotes is not None:
+                # Pre-results IV run-up: needs no history, exits before the numbers.
+                res, status = replay_runup(ev, bars, r, quotes, cfg)
+                runup[status] += 1
+                if res:
+                    trades.append(res)
             hist = move_stats(history[-cfg.history_window:])
             if hist and hist.count >= cfg.min_history_events:
                 # Event (volatility) trade: entered at the pre-event close.
@@ -440,6 +473,8 @@ def run_backtest(prices: dict[str, list[DailyBar]], events: Sequence[EventRow],
     counts = {"event verdicts": views, "reaction types": reactions}
     if replay:
         counts["event trades at real prices"] = replay
+    if runup:
+        counts["run-up trades at real prices"] = runup
     return BacktestReport(trades, summarize(trades), counts, diags)
 
 

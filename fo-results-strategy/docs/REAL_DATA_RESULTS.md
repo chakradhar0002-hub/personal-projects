@@ -3,14 +3,18 @@
 The playbook in [STRATEGY.md](STRATEGY.md) was backtested on real NSE data, with every option
 leg replayed at the actual closing prices from the NSE F&O bhavcopy.
 
-> **Verdict: no tradable edge after costs.** Over 71 F&O stocks and about five results seasons
-> (Apr 2024 – May 2025), every part of the strategy as written lost money after realistic costs.
-> - The event trade (iron condor / long straddle) is roughly break-even *before* costs.
->   Options priced the results move about fairly.
-> - The follow-through futures trade lost money even before costs.
+> **Verdict: one trade survived.**
+> - **The pre-results IV run-up straddle made money:** buy the ATM straddle 5 sessions before the last
+>   close before the numbers, sell at that close. After costs: +0.065R a trade over 280 trades, profit
+>   factor 1.9, t = 3.5, all 9 results seasons positive (section 7).
+> - **The original Day-1 / Result Day / Day+1 trades did not.** The event trade (iron condor / long
+>   straddle across the numbers) is roughly break-even *before* costs and loses after them. The Day+1
+>   follow-through futures trade lost money even before costs.
+> - **Other ideas tried and rejected** (section 7): pre- and post-results stock drift (nothing beyond
+>   the market), and calendar spreads across the results (the apparent profit came from stale prices).
 >
-> Treat the playbook as a risk-control framework (what to skip, how to size, defined risk only),
-> not as a source of profit. Don't trade it with real money on the strength of these rules.
+> The playbook now leads with the run-up trade. It is a small edge (a few % of the premium a trade)
+> that depends on getting filled near mid, found in two years of data. Paper-trade a season first.
 
 ---
 
@@ -145,12 +149,84 @@ sessions, these large liquid stocks showed no usable post-results drift after a 
 
 ---
 
-## 7. What to do with this
+## 7. Second round: other ideas, and the one that worked
 
-1. **Don't trade the event structures for profit as written.** Over this sample their expected value is about zero before costs and negative after.
-2. If you still trade results:
+Each idea below was written down before testing, run once on the same data, and checked across the two
+halves of the sample. Directional ideas are measured as excess return over the Nifty 50 (so a rising
+market does not count), after 0.10% round-trip cost.
+
+### 7.1 Rejected
+
+| Idea | Best version | Result |
+|---|---|---|
+| **Pre-results drift**: buy the stock N sessions before results, sell before the numbers | 10 sessions | +0.41% raw (t = 2.0), but only +0.17% over the Nifty (t = 1.0), second half −0.16%: it was the market |
+| **Post-results drift**: hold 5–20 sessions in the reaction's direction | Reaction agrees with a ≥ 5% EPS surprise (Yahoo), 20 sessions | +0.42% over the Nifty (t = 1.1), 254 events: too weak to trade. Big reactions alone (≥ 1 × HM): negative |
+| **Calendar spread**: sell the front straddle, buy the next month's, across the results | – | +4.4% of the debit with all quotes, but **−20%** when every leg must have actually traded (146 events). The "profit" came from stale next-month settlement prices |
+
+### 7.2 The IV run-up straddle
+
+Buy the ATM straddle of the front expiry (the one that includes the results) at the close N sessions before
+the last close before the numbers. Sell it at that close, so the trade never sits through the results.
+Real closing prices, 2% slippage per leg per side plus brokerage, R = P&L ÷ debit.
+
+**Planned test (5 sessions, every expiry): +3.5% of the debit a trade (t = 3.0), 485 trades.**
+
+| Check | Result |
+|---|---|
+| Exit legs that actually traded (no settlement prices) | +2.7% (t = 2.4), 473 trades |
+| Trimmed (drop the best and worst 2.5%) | +2.0% |
+| Slippage 1% / 3% per leg per side | +5.6% / +1.5% |
+| Results seasons positive | 7 of 9 |
+| Without the Apr–Jun 2025 season (tariff shock) | +4.1% |
+| Mechanism | ATM IV rose in 79% of events over the five sessions, by a median of 11% |
+
+**Entry day: the effect builds smoothly, while costs are fixed per trade**
+
+| Entry before the last close before the numbers | 1 session | 2 | 3 | 5 | 10 |
+|---|---:|---:|---:|---:|---:|
+| Avg return on debit, after costs | −2.6% | −0.8% | −0.1% | **+3.5%** | +3.0% |
+
+A one-day version would fit inside the original three-day window (for after-close results, Day-1 close to
+Result Day close), but it loses to costs.
+
+**Expiry: it only works when the results premium is a big part of the option price**
+
+| Front expiry, sessions after the exit | 1–7 | 8–14 | 15+ |
+|---|---:|---:|---:|
+| 5-session entry | +10.4% (126) | +3.8% (154) | −0.9% (205) |
+| 10-session entry | +8.4% (126) | +4.5% (149) | −2.1% (175) |
+
+**Default rules in the backtester** (5-session entry, expiry ≤ 14 sessions after the exit), as now written into
+[STRATEGY.md](STRATEGY.md) section 5:
+
+| | Trades | Win % | Avg R | Median R | Profit factor | t | 1st / 2nd half |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| 2% slippage (default) | 280 | 50% | +0.065 | −0.007 | 1.90 | 3.5 | +0.049 / +0.082 |
+| 1% slippage | 280 | 52% | +0.086 | +0.013 | 2.36 | 4.6 | +0.070 / +0.103 |
+| 3% slippage | 280 | 47% | +0.044 | −0.028 | 1.53 | 2.4 | +0.028 / +0.060 |
+
+- **Seasons:** positive in all 9 (+0.015R to +0.162R).
+- **Loss size:** worst trade −0.70R; 1 in 10 trades lost more than 0.23R.
+- **Exposure:** up to 27 positions were open on one day, hence the 10-position cap in the playbook.
+
+**Caveats**
+- The expiry filter was chosen after seeing the data. It repeats with the 10-session entry and has a clear
+  reason, but the unfiltered version (+3.5%) is the conservative estimate.
+- Closing option prices can be stale. Entry legs had to have traded; a few exits used settlement prices.
+  Restricting to traded exits lowers the result (+2.7%) but keeps it positive.
+- Two years, 72 large liquid stocks, one market regime. Option P&L also depends on how closely your fills
+  match the closing prices.
+
+---
+
+## 8. What to do with this
+
+1. **The only trade to consider is the IV run-up straddle** ([STRATEGY.md](STRATEGY.md) section 5).
+   Paper-trade one results season and compare your fills with the closing prices before risking money.
+2. **Don't trade the event structures or the follow-through for profit as written.** Over this sample their expected value is about zero or negative.
+3. If you still trade around results:
    - Use the playbook's **filters and risk rules**: skip FAIR events, defined risk only, 1% max loss, no direction across the numbers.
    - Measure your **actual fills against mid**. The only gross edge found (condors when IM/HM ≥ 1.2, about +0.03R) disappears above 0.5% slippage per leg.
-3. **Keep the data growing.** Yahoo's calendar ends in May 2025. Add later seasons from the exchange's financial-results filings with
+4. **Keep the data growing.** Yahoo's calendar ends in May 2025. Add later seasons from the exchange's financial-results filings with
    `fo-results fetch --results-file my_results.csv` (columns `symbol,announce_date,announce_time` or `timing`), then re-run the backtest.
    A real edge should still be there as the sample grows.
