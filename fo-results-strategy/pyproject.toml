@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fo-results-strategy"
+version = "0.1.0"
+description = "Rules, planner and backtester for trading NSE F&O stocks around quarterly results (Day-1, Result Day, Day+1)"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+fo-results = "fo_results_strategy.cli:main"
+
+[tool.setuptools]
+packages = ["fo_results_strategy"]
