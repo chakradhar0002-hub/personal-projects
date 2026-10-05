@@ -209,6 +209,25 @@ Result Day close), but it loses to costs.
 - **Loss size:** worst trade −0.70R; 1 in 10 trades lost more than 0.23R.
 - **Exposure:** up to 27 positions were open on one day, hence the 10-position cap in the playbook.
 
+**Quarter by quarter** (default rules; *net* assumes ₹50,000 of premium spent on every trade, after costs).
+Every trade is in [`results/runup_trades_by_quarter.csv`](../results/runup_trades_by_quarter.csv).
+
+| Results | Reported | Trades | Won | Avg per trade | Net (₹50k each) | Best / worst |
+|---|---|---:|---:|---:|---:|---|
+| Q4 FY23 | Apr–Jun 2023 | 31 | 58% | +2.2% | +₹33,915 | DIVISLAB +61% / PNB −46% |
+| Q1 FY24 | Jul–Sep 2023 | 30 | 33% | +9.0% | +₹1,34,465 | MPHASIS +164% / RELIANCE −70% |
+| Q2 FY24 | Oct–Dec 2023 | 29 | 41% | +2.5% | +₹36,690 | HAL +118% / JSWSTEEL −33% |
+| Q3 FY24 | Jan–Mar 2024 | 19 | 63% | +7.2% | +₹67,995 | INDUSINDBK +44% / WIPRO −23% |
+| Q4 FY24 | Apr–Jun 2024 | 27 | 63% | +5.3% | +₹71,960 | BEL +37% / PERSISTENT −18% |
+| Q1 FY25 | Jul–Sep 2024 | 23 | 35% | +3.1% | +₹36,115 | GRASIM +61% / HINDALCO −22% |
+| Q2 FY25 | Oct–Dec 2024 | 54 | 59% | +16.2% | +₹4,37,440 | DLF +191% / HINDALCO −28% |
+| Q3 FY25 | Jan–Mar 2025 | 38 | 50% | +1.5% | +₹29,340 | DIXON +59% / ITC −32% |
+| Q4 FY25 | Apr–Jun 2025 | 29 | 38% | +4.5% | +₹64,835 | BEL +97% / NTPC −37% |
+| **Total** | | **280** | **50%** | **+6.5%** | **+₹9,12,755** | |
+
+All 9 quarters were positive, but Q2 FY25 alone made almost half the profit. Without it, the average is
++4.2% a trade. In weak quarters (+1.5% to +2.5%) a little extra slippage would have turned the result negative.
+
 **Caveats**
 - The expiry filter was chosen after seeing the data. It repeats with the 10-session entry and has a clear
   reason, but the unfiltered version (+3.5%) is the conservative estimate.
