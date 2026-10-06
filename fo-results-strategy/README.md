@@ -10,6 +10,10 @@ checklist and concrete trades, and backtests them on your data.
 > - **One trade made money: the pre-results IV run-up straddle.** Buy the ATM straddle 5 sessions before the
 >   last close before the numbers, sell at that close: +0.065R a trade after costs, 280 trades, all 9 seasons positive; out of sample
 >   (Jun 2025 – Aug 2026, all F&O stocks) +2.2% a trade, so treat it as marginal.
+> - **A second edge, in stock futures: results winners keep winning.** Buy a stock that beat Nifty by more than 4% on
+>   its reaction day and hold 20 sessions: +2.3% a trade over Nifty after costs (300 trades, 13 of 15 quarters positive,
+>   +1.9% in the last 6 quarters). Losers don't keep falling, and the direction can't be predicted before the numbers.
+>   See [docs/PATTERNS.md](docs/PATTERNS.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.

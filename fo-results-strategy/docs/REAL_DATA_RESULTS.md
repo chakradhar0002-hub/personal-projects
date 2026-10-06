@@ -256,7 +256,8 @@ size a little extra slippage removes it. Treat the trade as marginal until more 
 
 ## 8. What to do with this
 
-1. **The only trade to consider is the IV run-up straddle, and its edge has shrunk** (section 7.3) ([STRATEGY.md](STRATEGY.md) section 5).
+1. **The only options trade to consider is the IV run-up straddle, and its edge has shrunk** (section 7.3) ([STRATEGY.md](STRATEGY.md) section 5).
+   A separate stock-futures trade, buying results winners for 20 sessions, is in [PATTERNS.md](PATTERNS.md).
    Paper-trade one results season and compare your fills with the closing prices before risking money.
 2. **Don't trade the event structures or the follow-through for profit as written.** Over this sample their expected value is about zero or negative.
 3. If you still trade around results:
