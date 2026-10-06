@@ -8,6 +8,7 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 
 SRC, OUT = sys.argv[1], sys.argv[2]
+CHECK = json.load(open(sys.argv[3])) if len(sys.argv) > 3 else None     # bse_check_compare.py summary
 events = json.load(open(SRC))
 for r in events:
     if r.get("abs_move") is not None and r.get("implied_move"):
@@ -17,7 +18,7 @@ P, N1, N0, N2, D, T = "0.0%", "#,##0.0", "#,##0", "0.00", "dd-mmm-yy", "@"
 SECTIONS = [
     ("Stock & quarter", "DDEBF7", [
         ("quarter", "Quarter", T, 9), ("period", "Quarter period", T, 13), ("quarter_end", "Quarter end", D, 10),
-        ("symbol", "Symbol", T, 12), ("company", "Company", T, 30), ("industry", "Industry (NSE)", T, 22),
+        ("symbol", "Symbol", T, 12), ("company", "Company", T, 30), ("industry", "Industry", T, 22), ("industry_src", "Industry source", T, 9),
         ("sector_index", "Sector index", T, 20), ("lot", "Lot size", N0, 8)]),
     ("Results timing", "E2EFDA", [
         ("results_date", "Results date", D, 10), ("results_time", "Results time (IST)", T, 9), ("timing", "Timing", T, 14),
@@ -52,7 +53,7 @@ SECTIONS = [
     ("Cash flow (latest half-year or year)", "EDEDED", [
         ("cf_period", "Cash-flow period", T, 9), ("cfo", "Operating cash flow", N0, 10), ("capex", "Capex", N0, 9),
         ("fcf", "Free cash flow", N0, 10), ("cfo_pat", "CFO / net profit (x)", N2, 9)]),
-    ("Peers (same NSE industry, same quarter)", "D9E1F2", [
+    ("Peers (same industry, same quarter)", "D9E1F2", [
         ("peer_n", "Peers (n)", N0, 7), ("peer_sales_yoy", "Peer median sales YoY %", P, 9),
         ("peer_pat_yoy", "Peer median profit YoY %", P, 9), ("pat_yoy_rank", "Profit growth rank", T, 9),
         ("peer_pe", "Peer median P/E", N1, 8), ("pe_vs_peers", "P/E vs peers %", P, 9)]),
@@ -211,7 +212,7 @@ for j in range(3, 3 + len(common_metrics())):
 
 CRIT_COL = rng("industry")
 inds = [k for k, _ in Counter(r["industry"] for r in events if r["industry"]).most_common()]
-write_table(wi, "By industry (NSE industry classification)", "Formulas over the Events sheet, all 15 quarters.", "industry",
+write_table(wi, "By industry (NSE industry labels)", "Formulas over the Events sheet, all 15 quarters.", "industry",
             inds + ["*"], [("Industry", lambda k, row: "All industries" if k == "*" else k)], common_metrics())
 wi.column_dimensions["A"].width = 32
 for j in range(2, 2 + len(common_metrics())):
@@ -223,7 +224,7 @@ syms = sorted({r["symbol"] for r in events})
 write_table(wst, "By stock", "Formulas over the Events sheet, all 15 quarters.", "symbol", syms,
             [("Symbol", lambda k, row: k),
              ("Company", lambda k, row: f'=INDEX({rng("company")},MATCH($A{row},{rng("symbol")},0))'),
-             ("Industry", lambda k, row: f'=INDEX({rng("industry")},MATCH($A{row},{rng("symbol")},0))')], stock_metrics)
+             ("Industry", lambda k, row: f'=INDEX({rng("industry")},MATCH($A{row},{rng("symbol")},0))&""')], stock_metrics)
 wst.column_dimensions["A"].width = 13
 wst.column_dimensions["B"].width = 30
 wst.column_dimensions["C"].width = 24
@@ -248,7 +249,8 @@ notes = [
                         "bonuses and other corporate actions, so the % changes are safe across them."),
     ("Three-day sum %", "Day -1 % + Result day % + Day +1 % (a sum of daily changes, as in your file; not compounded, before costs)."),
     ("Excess vs Nifty / sector", "Three-day sum minus the same sum for the Nifty 50 or the stock's sector index (NSE index closes)."),
-    ("Sector index", "Nifty sector index matched to the NSE industry (e.g. Banks -> Nifty Bank, Computers - Software -> Nifty IT). "
+    ("Industry", "NSE industry label from the company's NSE announcements (Industry source = NSE). 84 stocks, mostly newer listings, carry no industry there and NSE's stock-info page is not reachable from here, so they were assigned one (Industry source = Assigned, list in report_builder/industry_fill.csv), using the same NSE labels plus five new groups (Capital Markets, Insurance, Aerospace & Defence, Internet & E-commerce, Retail) and checked against the sector in NSE's Nifty 500 list."),
+    ("Sector index", "Nifty sector index matched to the industry (e.g. Banks -> Nifty Bank, Computers - Software -> Nifty IT). "
                      "Industries without a matching index use the Nifty 500."),
     ("Before results", "Returns up to the close two sessions before the result day (1W = 5, 1M = 21, 3M = 63, 6M = 126, 1Y = 250 "
                        "sessions)."),
@@ -263,7 +265,7 @@ notes = [
     ("Cash flow", "Companies file the cash-flow statement twice a year (with September and March results), so these columns show "
                   "the latest half-year (H1) or full-year (FY) figures up to this result. Capex = purchase of property, plant and "
                   "equipment. Free cash flow = operating cash flow - capex. Not shown for banks."),
-    ("Peers", "Other F&O stocks in the same NSE industry that reported in the same quarter. Medians; blank if fewer than 2 peers. "
+    ("Peers", "Other F&O stocks in the same industry that reported in the same quarter. Medians; blank if fewer than 2 peers. "
               "Profit growth rank 1 = fastest profit growth among the group."),
     ("Options", "NSE F&O bhavcopy closing prices. Expiry used = first monthly expiry at least 3 sessions after the reaction day. IV "
                 "from the at-the-money straddle. Expected move = straddle price / stock price at the last close before results. "
@@ -275,6 +277,18 @@ notes = [
     ("Corporate actions", "Bonus issues, splits and demergers come from NSE's corporate-actions data. Since NSE's July-2024 "
                           "bhavcopy format the previous close is not adjusted on those ex-dates, so returns on those days are "
                           "corrected (bonus/split) or left blank (demerger). Rows with an action near the results are noted."),
+    ("Trading sessions", "Every NSE session counts, including weekend sessions: Budget days (Sat 1-Feb-2025, Sun 1-Feb-2026), "
+                         "Sat 20-Jan-2024, the special sessions of 2-Mar-2024 and 18-May-2024, and Muhurat trading."),
+    ("Financial checks", "Each results XBRL is read by the dates of its periods, because some filings put half-year or full-year "
+                         "figures where the quarter usually goes. Profit attributable to owners falls back to total profit when "
+                         "the filing leaves it at 0. A share count more than 2x away from the stock's other quarters, or from "
+                         "profit / EPS in the same filing, is replaced (noted in 'Data notes'); a profit more than 500x sales is "
+                         "treated as mis-scaled and left blank. Siemens' Integrated Filings listed for Mar-2025 and Dec-2025 carry "
+                         "other quarters' figures, so those two quarters are blank."),
+] + ([("BSE cross-check", "bseindia.com is not reachable from the build machine, so BSE closes come from Yahoo Finance's BSE "
+                          "tickers and sales / profit from Yahoo Finance. " + "; ".join(f"{a} {b}" for a, b in CHECK["cards"]) +
+                          ". The few large price gaps are stale BSE prices on Yahoo. Full list: results_cross_check.csv; "
+                          "summary: the 'BSE cross-check' tab of the HTML viewer.")] if CHECK else []) + [
     ("Limitations", "Closing prices only (no intraday). Financial-statement tags differ for some companies (insurers, some NBFCs), "
                     "so some fields are blank. Market cap uses the previous quarter's share count; rows flagged in 'Data notes' "
                     "had a split or bonus. Past behaviour does not predict future results."),

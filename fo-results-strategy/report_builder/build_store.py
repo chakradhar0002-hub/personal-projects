@@ -21,7 +21,7 @@ days = set()
 for _, a, b in SEASONS:
     d, end = date.fromisoformat(a) - timedelta(days=12), date.fromisoformat(b) + timedelta(days=6)
     while d <= end:
-        if d.weekday() < 5: days.add(d)
+        days.add(d)          # weekends too (Budget day and special sessions); days with no file are skipped
         d += timedelta(days=1)
 db = sqlite3.connect(f"{SP}/report/options.db")
 db.executescript("""CREATE TABLE IF NOT EXISTS done(day TEXT PRIMARY KEY, ok INTEGER);

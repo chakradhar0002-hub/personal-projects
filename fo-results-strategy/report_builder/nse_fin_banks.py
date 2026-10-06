@@ -1,4 +1,4 @@
-"""Standalone results XBRL for banks (NSE flag B), all quarters, from both the old results API and Integrated Filings."""
+"""Standalone results XBRL for banks (NSE flag B) from the old results API (up to Dec-2024 quarters)."""
 import json, re, sqlite3, sys
 from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
@@ -15,7 +15,7 @@ def bt(s):
     return datetime.min
 pick = {}
 rows = list(db.execute("SELECT symbol, to_date, basis, broadcast, xbrl FROM filings WHERE bank='B' AND basis='Non-Consolidated'"))
-rows += list(db.execute("SELECT symbol, to_date, basis, broadcast, xbrl FROM if_filings WHERE basis='Non-Consolidated'"))
+# Integrated Filings (2025 on) are read by nse_fin_if.py for both bases, by period dates.
 for sym, to, basis, bc, x in rows:
     if sym in banks and x and x.startswith("http"):
         if (sym, to) not in pick or bt(bc) > bt(pick[(sym, to)][3]):

@@ -3,8 +3,9 @@ import csv, json, math, sqlite3, statistics, sys
 from bisect import bisect_left, bisect_right
 from collections import Counter, defaultdict
 from datetime import date, datetime, time, timedelta
+from pathlib import Path
 
-sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from fo_results_strategy.pricing import straddle_implied_vol
 
 SP = sys.argv[1]
@@ -67,6 +68,12 @@ for sym, co in ev.execute("SELECT symbol, company FROM fr"):
     if co:
         company.setdefault(sym, co)
 industry = {s: c.most_common(1)[0][0] for s, c in ind_count.items()}
+# Stocks whose NSE announcements carry no industry: assigned from industry_fill.csv (same NSE label set, checked
+# against the stock's sector in NSE's Nifty 500 list)
+INDUSTRY_SRC = {s: "NSE" for s in industry}
+for r in csv.DictReader(open(Path(__file__).with_name("industry_fill.csv"))):
+    if r["symbol"] not in industry:
+        industry[r["symbol"]], INDUSTRY_SRC[r["symbol"]] = r["industry"], "Assigned"
 
 SECTOR_RULES = [("Bank", "Nifty Bank"), ("Finance", "Nifty Financial Services"), ("Insurance", "Nifty Financial Services"),
                 ("Pharma", "Nifty Pharma"), ("Hospital", "Nifty Healthcare Index"), ("Healthcare", "Nifty Healthcare Index"),
@@ -80,7 +87,7 @@ SECTOR_RULES = [("Bank", "Nifty Bank"), ("Finance", "Nifty Financial Services"),
                 ("Airconditioners", "Nifty Consumer Durables"), ("Consumer", "Nifty Consumer Durables"), ("Jewel", "Nifty Consumer Durables"),
                 ("Electrical", "Nifty India Manufacturing"), ("Electronics", "Nifty India Manufacturing"),
                 ("Diesel Engines", "Nifty India Manufacturing"), ("Engineering", "Nifty India Manufacturing"),
-                ("Defence", "Nifty India Manufacturing"), ("Shipping", "Nifty Services Sector"), ("Travel", "Nifty Services Sector"),
+                ("Defence", "Nifty India Defence"), ("Capital Markets", "Nifty Financial Services"), ("Internet", "Nifty India Digital"), ("Shipping", "Nifty Services Sector"), ("Travel", "Nifty Services Sector"),
                 ("Media", "Nifty Media"), ("Chemicals", "Nifty Commodities"), ("Fertiliser", "Nifty Commodities"),
                 ("Textile", "Nifty India Consumption"), ("Retail", "Nifty India Consumption")]
 
@@ -287,6 +294,15 @@ def val(data, tags, ctx="OneD"):
 CR = 1e7
 
 
+def owners_profit(data, ctx="OneD"):
+    """Profit attributable to owners; the total profit when that line is missing, 0 or a small unrelated figure
+    (some Integrated Filings leave it at 0 or tag the minority share there)."""
+    own, tot = val(data, ["ProfitOrLossAttributableToOwnersOfParent"], ctx), val(data, ["ProfitLossForPeriod"], ctx)
+    if own is None or (tot and (own == 0 or abs(own) < 0.25 * abs(tot))):
+        return tot
+    return own
+
+
 def fin_q(sym, qend):
     rec = FIN.get((sym, qend))
     if not rec:
@@ -322,8 +338,7 @@ def fin_q(sym, qend):
         da, oi = val(data, ["DepreciationDepletionAndAmortisationExpense"]) or 0.0, val(data, ["OtherIncome"]) or 0.0
         # EBITDA is not meaningful for lenders (finance cost is their cost of goods)
         f["ebitda"] = (pbt + fc + da - oi) / CR if pbt is not None and sales and bank != "F" else None
-        pat = val(data, ["ProfitOrLossAttributableToOwnersOfParent", "ProfitLossForPeriod"])
-        pat_ytd = val(data, ["ProfitOrLossAttributableToOwnersOfParent", "ProfitLossForPeriod"], "FourD")
+        pat, pat_ytd = owners_profit(data), owners_profit(data, "FourD")
         f["eps"] = val(data, ["BasicEarningsLossPerShareFromContinuingAndDiscontinuedOperations",
                               "BasicEarningsLossPerShareFromContinuingOperations"])
         eq = val(data, ["EquityAttributableToOwnersOfParent", "Equity"], "OneI")
@@ -333,6 +348,8 @@ def fin_q(sym, qend):
         f["borrow"] = ((bc or 0) + (bn or 0)) / CR if (bc is not None or bn is not None) else (b / CR if b is not None else None)
     f["pat"] = pat / CR if pat is not None else None
     f["pat_ytd"] = pat_ytd / CR if pat_ytd is not None else None
+    if f["pat"] is not None and f["sales"] and abs(f["pat"]) > 500 * abs(f["sales"]):
+        f["pat"] = f["pat_ytd"] = None          # mis-scaled in the filing (e.g. rupees entered as lakhs)
     cfo = val(data, ["CashFlowsFromUsedInOperatingActivities"], "FourD")
     capex = val(data, ["PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities"], "FourD")
     f["cfo"] = cfo / CR if cfo is not None else None
@@ -347,6 +364,39 @@ def share_multiplier(sym, after_day, upto_day):
         if after_day < ex <= upto_day and factor:
             m *= factor
     return m
+
+
+_SHARE_MEDIAN = {}
+
+
+def filing_shares(f):
+    """Paid-up capital / face value, unless profit / basic EPS from the same filing says otherwise by more than 2x."""
+    raw = f.get("shares")
+    implied = f["pat"] * CR / f["eps"] if f.get("pat") and f["pat"] > 0 and f.get("eps") and f["eps"] >= 0.5 else None
+    if implied and (not raw or not 0.5 < raw / implied < 2):
+        return implied
+    return raw
+
+
+def checked_shares(sym, q):
+    """Share count from the quarter's filing, checked against the stock's other quarters on today's share basis (NSE
+    bonus / split factors). A count more than 2x away from the median is a mis-scaled filing value: use the median."""
+    if sym not in _SHARE_MEDIAN:
+        adj = []
+        for (s, qq) in FIN:
+            if s == sym:
+                f = fin_q(sym, qq)
+                if f and filing_shares(f):
+                    adj.append(filing_shares(f) * share_multiplier(sym, qq, SESSIONS[-1]))
+        _SHARE_MEDIAN[sym] = statistics.median(adj) if len(adj) >= 3 else None
+    f, med = fin_q(sym, q), _SHARE_MEDIAN[sym]
+    raw = f.get("shares") if f else None
+    if not med:
+        return raw, False
+    mult = share_multiplier(sym, q, SESSIONS[-1])
+    if raw and 0.5 < raw * mult / med < 2:
+        return raw, False
+    return med / mult, True
 
 
 def qshift(qend, n):
@@ -437,7 +487,7 @@ for qend, qlabel, period in QUARTERS:
         pre_i = react_i - 1
         cut_i = rs_i - 2
         row = {"quarter": qlabel, "period": period, "quarter_end": qend, "symbol": sym, "company": company.get(sym, sym),
-               "industry": industry.get(sym, ""), "lot": LOTS.get(sym), "results_date": rd, "results_time": t.strftime("%H:%M"),
+               "industry": industry.get(sym, ""), "industry_src": INDUSTRY_SRC.get(sym, ""), "lot": LOTS.get(sym), "results_date": rd, "results_time": t.strftime("%H:%M"),
                "timing": timing, "time_source": src, "day_m1": sess(rs_i - 1), "result_day": sess(rs_i),
                "day_p1": sess(rs_i + 1), "reaction_day": sess(react_i)}
         sec = sector_index(row["industry"])
@@ -504,12 +554,15 @@ for qend, qlabel, period in QUARTERS:
             notes.append("no NSE XBRL results for this quarter")
         # valuation before results: last four quarters known before this result
         prev = [fin_q(sym, qshift(qend, k)) for k in (1, 2, 3, 4)]
-        if all(p and p.get("pat") is not None for p in prev) and f1 and f1.get("shares") and row["price_cutoff"]:
+        shares, fixed = checked_shares(sym, qshift(qend, 1))
+        if all(p and p.get("pat") is not None for p in prev) and shares and row["price_cutoff"]:
             ttm = sum(p["pat"] for p in prev)
             mult = share_multiplier(sym, qshift(qend, 1), sess(cut_i))
             if abs(mult - 1) > 0.01:
                 notes.append(f"share count x{mult:.2f} for a bonus/split before results (market cap adjusted)")
-            mcap = row["price_cutoff"] * f1["shares"] * mult / CR
+            if fixed:
+                notes.append("share count in the previous filing looked mis-scaled; used the stock's other quarters")
+            mcap = row["price_cutoff"] * shares * mult / CR
             row["mcap"], row["ttm_pat"] = mcap, ttm
             row["pe"] = mcap / ttm if ttm > 0 else None
             hq = next((q for q in (qshift(qend, k) for k in (1, 2, 3)) if q[5:7] in ("03", "09")), None)

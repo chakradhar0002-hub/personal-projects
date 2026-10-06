@@ -166,7 +166,7 @@ entry also worked (+3.0%, all expiries; 5 sessions: +3.5%), but it carries more 
 R = P&L ÷ debit. The expiry filter was chosen after seeing the 5-session results, but it repeats with a
 10-session entry and follows from how much of the option price is results premium.
 
-**Out of sample (Jun 2025 – Aug 2026, all 213 F&O stocks, 556 trades): +2.1% a trade, 39% winners**, down from
+**Out of sample (Jun 2025 – Aug 2026, all 213 F&O stocks, 556 trades): +2.2% a trade, 39% winners**, down from
 +5% before. Two of the five new seasons were slightly negative. The edge is real but small and may be fading:
 paper-trade it and re-check every season (`reports/results_report_last_15_quarters.xlsx` has every trade).
 

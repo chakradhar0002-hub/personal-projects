@@ -1,4 +1,5 @@
-"""NSE equity bhavcopy (EQ series, universe stocks) and all NSE index closes, every session Sep 2022 - Sep 2026."""
+"""NSE equity bhavcopy (EQ series, universe stocks) and all NSE index closes, every session Sep 2022 - Sep 2026,
+including weekend sessions (Budget day, special Saturday sessions, Muhurat)."""
 import csv, io, sqlite3, sys, zipfile
 from datetime import date, timedelta
 sys.path.insert(0, str(__import__("pathlib").Path(__file__).resolve().parents[1]))
@@ -15,7 +16,7 @@ http = Http(pause=0.1)
 d, end = (date.fromisoformat(sys.argv[2]), date.fromisoformat(sys.argv[3])) if len(sys.argv) > 3 else (date(2022, 9, 1), date(2026, 9, 30))
 todo = []
 while d <= end:
-    if d.weekday() < 5 and d.isoformat() not in have: todo.append(d)
+    if d.isoformat() not in have: todo.append(d)          # weekends too: Budget-day and special sessions
     d += timedelta(days=1)
 print("sessions to fetch:", len(todo), flush=True)
 def f(x):

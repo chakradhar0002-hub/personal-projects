@@ -41,32 +41,42 @@ for n, sym in enumerate(UNIVERSE, 1):
 def bt(s):
     try: return datetime.strptime(s, "%d-%b-%Y %H:%M:%S")
     except Exception: return datetime.min
-pick = {}
-for sym, to, basis, bc, x, co in db.execute("SELECT * FROM if_filings"):
-    if not x or not x.startswith("http"): continue
-    want = "Non-Consolidated" if bank.get(sym) == "Y" else "Consolidated"
-    score = (basis == want, bt(bc))
-    if (sym, to) not in pick or score > pick[(sym, to)][0]:
-        pick[(sym, to)] = (score, sym, to, basis, bank.get(sym, "N"), x)
-have = {r[0] for r in db.execute("SELECT xbrl FROM fin")}
-old_q = {(s, t) for s, t in db.execute("SELECT symbol, to_date FROM fin")}
-todo = [v[1:] for k, v in pick.items() if v[5] not in have and k not in old_q]
-print("integrated xbrl to fetch:", len(todo), flush=True)
-pat = {t: re.compile(rf'<(?:in-bse-fin|in-capmkt):{t} [^>]*contextRef="(OneD|FourD|OneI)"[^>]*>([^<]+)<') for t in TAGS}
+# Read every candidate filing (a quarter can have several: consolidated / standalone, revisions, and filings whose
+# main period is the half-year or full year), keep the facts by their dates, then per (stock, quarter, basis) use the
+# latest filing that has the 3-month quarter.
+sys.path.insert(0, str(__import__("pathlib").Path(__file__).parent))
+from xbrl_periods import fact_patterns, has_quarter, parse
+db.execute("CREATE TABLE IF NOT EXISTS if_parsed(xbrl PRIMARY KEY, data TEXT)")
+old_q = {(s, t) for s, t, x in db.execute("SELECT symbol, to_date, xbrl FROM fin") if "INTEGRATED" not in (x or "")}
+cands = [r for r in db.execute("SELECT * FROM if_filings")
+         if r[4] and r[4].startswith("http") and (r[0], r[1]) not in old_q]
+done = {x for x, d in db.execute("SELECT xbrl, data FROM if_parsed") if has_quarter(json.loads(d))}   # retry the rest
+todo = sorted({(r[1], r[4]) for r in cands if r[4] not in done})
+print("integrated xbrl to read:", len(todo), "of", len(cands), flush=True)
+PATTERNS = fact_patterns(TAGS)
 def work(item):
-    h = Http(pause=0.05)
-    try: body = h.get(item[4])
-    except Exception: return item, None
-    if not body: return item, None
-    text = body.decode("utf-8", "replace"); out = {}
-    for t, rx in pat.items():
-        for ctx, v in rx.findall(text):
-            try: out.setdefault(t, {})[ctx] = float(v)
-            except ValueError: pass
-    return item, out
+    to, url = item
+    try: body = Http(pause=0.05).get(url)
+    except Exception: return url, None
+    if not body: return url, None
+    return url, parse(body.decode("utf-8", "replace"), datetime.strptime(to, "%d-%b-%Y").date(), PATTERNS)
 with ThreadPoolExecutor(6) as pool:
-    for n, (item, data) in enumerate(pool.map(work, todo), 1):
+    for n, (url, data) in enumerate(pool.map(work, todo), 1):
         if data is not None:
-            db.execute("INSERT OR REPLACE INTO fin VALUES (?,?,?,?,?,?)", (*item[:4], item[4], json.dumps(data)))
-        if n % 100 == 0: db.commit(); print(f"xbrl {n}/{len(todo)}", flush=True)
-db.commit(); print("done", flush=True)
+            db.execute("INSERT OR REPLACE INTO if_parsed VALUES (?,?)", (url, json.dumps(data)))
+        if n % 200 == 0: db.commit(); print(f"xbrl {n}/{len(todo)}", flush=True)
+db.commit()
+parsed = {x: json.loads(d) for x, d in db.execute("SELECT * FROM if_parsed")}
+pick = {}
+for sym, to, basis, bc, x, co in cands:
+    if x not in parsed: continue
+    score = (has_quarter(parsed[x]), bt(bc), x)
+    if (sym, to, basis) not in pick or score > pick[(sym, to, basis)][0]:
+        pick[(sym, to, basis)] = (score, sym, to, basis, bank.get(sym, "N"), x)
+db.execute("DELETE FROM fin WHERE xbrl LIKE '%INTEGRATED_FILING%'")
+db.executemany("INSERT OR REPLACE INTO fin VALUES (?,?,?,?,?,?)",
+               [(sym, to, basis, b, x, json.dumps(parsed[x])) for score, sym, to, basis, b, x in pick.values() if score[0]])
+db.commit()
+print("quarters stored:", sum(1 for v in pick.values() if v[0][0]), "without a 3-month quarter:",
+      sorted(f"{v[1]} {v[2]} {v[3]}" for v in pick.values() if not v[0][0]), flush=True)
+print("done", flush=True)

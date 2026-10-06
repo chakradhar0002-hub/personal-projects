@@ -246,11 +246,11 @@ that came after the strategy was designed. Rule pass, after the same costs:
 
 | | Trades | Avg per trade | Median | Win rate |
 |---|---:|---:|---:|---:|
-| Apr 2023 - May 2025, the 72 stocks tested above | 329 | +5.5% | -2.2% | 47% |
-| Apr 2023 - May 2025, the other 141 F&O stocks | 335 | +5.0% | -2.1% | 47% |
-| **Jun 2025 - Aug 2026 (new seasons), all stocks** | **556** | **+2.1%** | -4.9% | 39% |
+| Jan 2023 - May 2025, the 72 stocks tested above | 325 | +5.8% | -2.5% | 46% |
+| Jan 2023 - May 2025, the other 141 F&O stocks | 323 | +4.9% | -2.3% | 46% |
+| **Jun 2025 - Aug 2026 (new seasons), all stocks** | **556** | **+2.2%** | -5.0% | 39% |
 
-By new season: +0.9%, -1.5%, +6.9%, +6.1%, -0.6%. The edge carried over to the wider universe, but in the
+By new season: +0.9%, -1.5%, +7.2%, +6.1%, -0.6%. The edge carried over to the wider universe, but in the
 newest 15 months it was about 40% of its earlier size, and two of five seasons were slightly negative. At that
 size a little extra slippage removes it. Treat the trade as marginal until more seasons confirm it.
 
