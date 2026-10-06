@@ -8,10 +8,15 @@ checklist and concrete trades, and backtests them on your data.
 
 > **Tested on real data (2023–2025, 72 F&O stocks, real NSE option prices):**
 > - **One trade made money: the pre-results IV run-up straddle.** Buy the ATM straddle 5 sessions before the
->   last close before the numbers, sell at that close: +0.065R a trade after costs, 280 trades, all 9 seasons positive.
+>   last close before the numbers, sell at that close: +0.065R a trade after costs, 280 trades, all 9 seasons positive; out of sample
+>   (Jun 2025 – Aug 2026, all F&O stocks) +2.1% a trade, so treat it as marginal.
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.
+
+**15-quarter results report (all NSE data, every F&O stock, no filters):**
+[reports/results_report_last_15_quarters.xlsx](reports/results_report_last_15_quarters.xlsx).
+It shows results timing, 3-day moves, financials, cash flow, ratios, peers and options. Builder: [report_builder/](report_builder/).
 
 | When | What you do |
 |---|---|

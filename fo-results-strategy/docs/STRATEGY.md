@@ -164,8 +164,11 @@ entry also worked (+3.0%, all expiries; 5 sessions: +3.5%), but it carries more 
 | Without the expiry filter (the version planned before testing) | 485 | 46% | +0.035 | – | 3.0 |
 
 R = P&L ÷ debit. The expiry filter was chosen after seeing the 5-session results, but it repeats with a
-10-session entry and follows from how much of the option price is results premium. Treat
-+0.035R to +0.065R as the honest range, and re-check it as new seasons come in.
+10-session entry and follows from how much of the option price is results premium.
+
+**Out of sample (Jun 2025 – Aug 2026, all 213 F&O stocks, 556 trades): +2.1% a trade, 39% winners**, down from
++5% before. Two of the five new seasons were slightly negative. The edge is real but small and may be fading:
+paper-trade it and re-check every season (`reports/results_report_last_15_quarters.xlsx` has every trade).
 
 ---
 
