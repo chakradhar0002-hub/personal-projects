@@ -1,4 +1,4 @@
-"""Download the NSE F&O bhavcopy for every session in 15 results-season windows and keep a compact
+"""Download the NSE F&O bhavcopy for every session in 22 results-season windows and keep a compact
 option store (2 nearest expiries, strikes within +-5% of spot) in sqlite."""
 import csv, io, sqlite3, sys, zipfile
 from datetime import date, datetime, timedelta
@@ -7,7 +7,10 @@ from fo_results_strategy.realdata import Http, bhavcopy_urls
 from fo_results_strategy.pricing import implied_vol
 
 SP = sys.argv[1]
-SEASONS = [("Q3 FY23", "2023-01-05", "2023-02-16"), ("Q4 FY23", "2023-04-05", "2023-05-31"),
+SEASONS = [("Q4 FY21", "2021-04-05", "2021-05-31"), ("Q1 FY22", "2021-07-05", "2021-08-16"),
+           ("Q2 FY22", "2021-10-05", "2021-11-16"), ("Q3 FY22", "2022-01-05", "2022-02-16"),
+           ("Q4 FY22", "2022-04-05", "2022-05-31"), ("Q1 FY23", "2022-07-05", "2022-08-16"),
+           ("Q2 FY23", "2022-10-05", "2022-11-16"), ("Q3 FY23", "2023-01-05", "2023-02-16"), ("Q4 FY23", "2023-04-05", "2023-05-31"),
            ("Q1 FY24", "2023-07-05", "2023-08-16"), ("Q2 FY24", "2023-10-05", "2023-11-16"),
            ("Q3 FY24", "2024-01-05", "2024-02-16"), ("Q4 FY24", "2024-04-05", "2024-05-31"),
            ("Q1 FY25", "2024-07-05", "2024-08-16"), ("Q2 FY25", "2024-10-05", "2024-11-16"),

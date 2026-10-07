@@ -10,7 +10,10 @@ from fo_results_strategy.pricing import straddle_implied_vol
 
 SP = sys.argv[1]
 R = f"{SP}/report"
-QUARTERS = [("2022-12-31", "Q3 FY23", "Oct-Dec 2022"), ("2023-03-31", "Q4 FY23", "Jan-Mar 2023"),
+QUARTERS = [("2021-03-31", "Q4 FY21", "Jan-Mar 2021"), ("2021-06-30", "Q1 FY22", "Apr-Jun 2021"),
+            ("2021-09-30", "Q2 FY22", "Jul-Sep 2021"), ("2021-12-31", "Q3 FY22", "Oct-Dec 2021"),
+            ("2022-03-31", "Q4 FY22", "Jan-Mar 2022"), ("2022-06-30", "Q1 FY23", "Apr-Jun 2022"),
+            ("2022-09-30", "Q2 FY23", "Jul-Sep 2022"), ("2022-12-31", "Q3 FY23", "Oct-Dec 2022"), ("2023-03-31", "Q4 FY23", "Jan-Mar 2023"),
             ("2023-06-30", "Q1 FY24", "Apr-Jun 2023"), ("2023-09-30", "Q2 FY24", "Jul-Sep 2023"),
             ("2023-12-31", "Q3 FY24", "Oct-Dec 2023"), ("2024-03-31", "Q4 FY24", "Jan-Mar 2024"),
             ("2024-06-30", "Q1 FY25", "Apr-Jun 2024"), ("2024-09-30", "Q2 FY25", "Jul-Sep 2024"),
