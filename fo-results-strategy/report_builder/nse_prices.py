@@ -7,11 +7,16 @@ from fo_results_strategy.realdata import Http
 SP = sys.argv[1]
 rows = list(csv.reader(open(f"{SP}/fo_mktlots.csv")))
 UNIVERSE = {r[1].strip() for r in rows[1:] if len(r) > 2 and r[2].strip().isdigit() and "NIFTY" not in r[1]}
+sys.path.insert(0, str(__import__("pathlib").Path(__file__).parent))
+import aliases
+ALIAS = aliases.load(SP, UNIVERSE)      # old symbol -> (today's symbol, rename day): rows before a rename keep the stock's history
 db = sqlite3.connect(f"{SP}/report/nse_prices.db")
 db.executescript("""CREATE TABLE IF NOT EXISTS px(day, symbol, open REAL, high REAL, low REAL, close REAL, prevclose REAL, volume REAL, PRIMARY KEY(day, symbol));
 CREATE TABLE IF NOT EXISTS idx(day, name, open REAL, high REAL, low REAL, close REAL, pe REAL, pb REAL, PRIMARY KEY(day, name));
 CREATE TABLE IF NOT EXISTS done(day PRIMARY KEY, ok INTEGER);""")
-have = {r[0] for r in db.execute("SELECT day FROM done")}
+# "--refresh" re-reads days already stored (after adding aliases or series); rows are replaced, not duplicated
+have = set() if "--refresh" in sys.argv else {r[0] for r in db.execute("SELECT day FROM done")}
+sys.argv = [x for x in sys.argv if x != "--refresh"]
 http = Http(pause=0.1)
 d, end = (date.fromisoformat(sys.argv[2]), date.fromisoformat(sys.argv[3])) if len(sys.argv) > 3 else (date(2022, 9, 1), date(2026, 9, 30))
 todo = []
@@ -54,9 +59,11 @@ for n, (d, raw, idxbody) in enumerate(pool.map(fetch, todo), 1):
             else:
                 sym, ser = r["SYMBOL"].strip(), r["SERIES"].strip()
                 vals = (r["OPEN"], r["HIGH"], r["LOW"], r["CLOSE"], r["PREVCLOSE"], r["TOTTRDQTY"])
-            if sym in UNIVERSE and ser == "EQ":
-                out.append((d.isoformat(), sym, *[f(v) for v in vals]))
-    db.executemany("INSERT OR REPLACE INTO px VALUES (?,?,?,?,?,?,?,?)", out)
+            sym = aliases.resolve(sym, d.isoformat(), ALIAS)
+            if sym in UNIVERSE and ser in ("EQ", "BE"):          # BE = trade-for-trade, e.g. during surveillance
+                out.append((ser, d.isoformat(), sym, *[f(v) for v in vals]))
+    out.sort(key=lambda r: r[0] == "EQ")                         # EQ wins if a stock has both on one day
+    db.executemany("INSERT OR REPLACE INTO px VALUES (?,?,?,?,?,?,?,?)", [r[1:] for r in out])
     try:
         body = idxbody
         if body and not body.startswith(b"<"):
