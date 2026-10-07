@@ -14,7 +14,7 @@ FEAT, OUT = sys.argv[1], sys.argv[2]
 N_SHUFFLES = int(sys.argv[3]) if len(sys.argv) > 3 else 50
 TARGET, FIRST_TEST, ALPHA = 0.02, int(sys.argv[4]) if len(sys.argv) > 4 else 6, 50.0
 NOT_FEATURES = {"symbol", "quarter", "qn", "results_date", "cutoff", "industry", "fin_type", "timing", "three_day",
-                "excess_nifty", "in_fo", "after_close"}       # results time is often not known in advance
+                "excess_nifty", "in_fo", "after_close", "tp3"}       # results time is often not known in advance
 
 d = pd.read_csv(FEAT)
 d = d[d["three_day"].notna()].reset_index(drop=True)

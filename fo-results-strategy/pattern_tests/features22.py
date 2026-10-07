@@ -90,6 +90,9 @@ for r in ev:
     f = {"symbol": sym, "quarter": q, "qn": qn, "results_date": r["results_date"], "cutoff": cut, "industry": r["industry"],
          "fin_type": r.get("fin_type"), "timing": r["timing"], "three_day": r["three_day"], "excess_nifty": r.get("excess_nifty"),
          "in_fo": bool(r.get("opt_expiry"))}
+    # user's +3% take-profit: stop after Day-1 if it is up > 3%, after the Result day if the two days add to > 3%
+    d1, d2, d3 = r["ret_dm1"], r["ret_rd"], r["ret_dp1"]
+    f["tp3"] = d1 if d1 > 0.03 else (d1 + d2 if d1 + d2 > 0.03 else d1 + d2 + d3)
     # momentum and trend
     for lab, n in (("r1w", 5), ("r1m", 21), ("r3m", 63), ("r6m", 126), ("r1y", 250)):
         f[lab] = ret(sym, c - n, c)

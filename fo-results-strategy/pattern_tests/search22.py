@@ -24,7 +24,7 @@ N_SHUFFLES = int(args[2]) if len(args) > 2 else 20
 MIN_PICKS = int(args[3]) if len(args) > 3 else 3
 TARGET, TRAIN_Q, TOP = 0.02, 14, 30
 NOT_FEATURES = {"symbol", "quarter", "qn", "results_date", "cutoff", "industry", "fin_type", "timing", "three_day",
-                "excess_nifty", "in_fo", "after_close"}       # results time is often not known in advance
+                "excess_nifty", "in_fo", "after_close", "tp3"}       # results time is often not known in advance
 
 d = pd.read_csv(FEAT)
 d = d[d["three_day"].notna()].reset_index(drop=True)
@@ -104,9 +104,10 @@ def evaluate(y):
     return pd.DataFrame(rows)
 
 
-y = d["three_day"].values.astype(np.float32)
+OUTCOME = "tp3" if "--tp3" in sys.argv else "three_day"      # --tp3: the user's +3% take-profit version of the window
+y = d[OUTCOME].values.astype(np.float32)
 real = evaluate(y)
-TAG = f"min{MIN_PICKS}" + ("_notrade" if NO_TRADE_OK else "")
+TAG = f"min{MIN_PICKS}" + ("_notrade" if NO_TRADE_OK else "") + ("_tp3" if OUTCOME == "tp3" else "")
 real.to_csv(f"{OUT}/search_top_rules_{TAG}.csv", index=False)
 base = d.groupby("qn")["three_day"].mean()
 print("all stocks: quarters with average >= 2%:", int((base >= TARGET).sum()), "of", nq,
