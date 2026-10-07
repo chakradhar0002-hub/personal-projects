@@ -1,0 +1,149 @@
+sessions 2697 (2015-11-09..2026-09-30), returns (2697, 213), indices (2697, 205), events (4462, 43)
+event session positions match sessions.csv: OK
+
+Index coverage in study window (2021-01-01..):
+  Nifty 500                    nan=   0 of 1425
+  Nifty Auto                   nan=   0 of 1425
+  Nifty Bank                   nan=   0 of 1425
+  Nifty Commodities            nan=   0 of 1425
+  Nifty Consumer Durables      nan=   0 of 1425
+  Nifty Energy                 nan=   0 of 1425
+  Nifty FMCG                   nan=   0 of 1425
+  Nifty Financial Services     nan=   0 of 1425
+  Nifty IT                     nan=   0 of 1425
+  Nifty India Consumption      nan=   0 of 1425
+  Nifty India Defence          nan= 260 of 1425
+  Nifty India Digital          nan= 234 of 1425
+  Nifty India Manufacturing    nan= 154 of 1425
+  Nifty Infrastructure         nan=   0 of 1425
+  Nifty Metal                  nan=   0 of 1425
+  Nifty Oil & Gas              nan=   0 of 1425
+  Nifty Pharma                 nan=   0 of 1425
+  Nifty Services Sector        nan=   0 of 1425
+  Nifty 50                     nan=   0 of 1425
+
+reaction-day return from returns.csv vs events.move: max abs diff 4.96e-07
+events with reaction excess: 4462 / 4462; F&O events: 3278; F&O & grouped: 3216
+F&O peer groups with >=2 members per season (median count): 22
+=== A1-A4: long X when PAT trails peers but reaction beats peers (post-hoc mirror) ===
+variant                           A_long_badPAT25_goodReaction_h10
+main_trades                                                    217
+main_seasons                                                    22
+main_avg_trade                                                0.16
+main_per_season_avg                                           0.29
+main_t_season                                                  0.8
+main_first14                                                   0.4
+main_last8                                                     0.1
+main_n_first14                                                  14
+main_n_last8                                                     8
+main_seasons_pos                                                12
+main_pct_win                                                 47.93
+main_t_date                                                   0.21
+main_n_dates                                                   178
+raw_season_avg                                                0.73
+vs_sector_season_avg                                          0.24
+vs_peer_basket_season_avg                                    -0.12
+baseline_price_only_trades                                     956
+baseline_price_only_season_avg                               -0.08
+baseline_price_only_t                                        -0.26
+share_in_known_edge                                           0.22
+excl_known_edge_trades                                         170
+excl_known_edge_season_avg                                   -0.04
+excl_known_edge_t                                            -0.14 
+
+variant                           A_long_badPAT25_goodReaction_h20
+main_trades                                                    217
+main_seasons                                                    22
+main_avg_trade                                                1.11
+main_per_season_avg                                           1.17
+main_t_season                                                 2.05
+main_first14                                                   1.2
+main_last8                                                    1.11
+main_n_first14                                                  14
+main_n_last8                                                     8
+main_seasons_pos                                                15
+main_pct_win                                                  53.0
+main_t_date                                                   1.83
+main_n_dates                                                   178
+raw_season_avg                                                1.66
+vs_sector_season_avg                                          0.74
+vs_peer_basket_season_avg                                    -0.05
+baseline_price_only_trades                                     956
+baseline_price_only_season_avg                                0.56
+baseline_price_only_t                                         1.46
+share_in_known_edge                                           0.22
+excl_known_edge_trades                                         170
+excl_known_edge_season_avg                                    0.88
+excl_known_edge_t                                             1.93 
+
+variant                           A_long_badPAT50_goodReaction_h10
+main_trades                                                    121
+main_seasons                                                    22
+main_avg_trade                                                0.97
+main_per_season_avg                                           1.16
+main_t_season                                                 1.98
+main_first14                                                   0.8
+main_last8                                                    1.78
+main_n_first14                                                  14
+main_n_last8                                                     8
+main_seasons_pos                                                12
+main_pct_win                                                 52.89
+main_t_date                                                   2.03
+main_n_dates                                                   110
+raw_season_avg                                                1.66
+vs_sector_season_avg                                          1.19
+vs_peer_basket_season_avg                                     0.96
+baseline_price_only_trades                                     956
+baseline_price_only_season_avg                               -0.08
+baseline_price_only_t                                        -0.26
+share_in_known_edge                                           0.24
+excl_known_edge_trades                                          92
+excl_known_edge_season_avg                                     0.8
+excl_known_edge_t                                             1.51 
+
+variant                           A_long_badPAT50_goodReaction_h20
+main_trades                                                    121
+main_seasons                                                    22
+main_avg_trade                                                1.95
+main_per_season_avg                                           2.04
+main_t_season                                                 2.24
+main_first14                                                  1.21
+main_last8                                                    3.48
+main_n_first14                                                  14
+main_n_last8                                                     8
+main_seasons_pos                                                17
+main_pct_win                                                 55.37
+main_t_date                                                   2.91
+main_n_dates                                                   110
+raw_season_avg                                                2.51
+vs_sector_season_avg                                          1.42
+vs_peer_basket_season_avg                                     0.77
+baseline_price_only_trades                                     956
+baseline_price_only_season_avg                                0.56
+baseline_price_only_t                                         1.46
+share_in_known_edge                                           0.24
+excl_known_edge_trades                                          92
+excl_known_edge_season_avg                                    1.97
+excl_known_edge_t                                             2.19 
+
+placebo: shuffle pat_yoy within group-season (200 runs)
+A_long_badPAT25_goodReaction_h20: actual avg 1.17 t 2.05 | placebo avg 0.31 t 0.53 | P(avg>=act) 0.020 P(t>=act) 0.020
+A_long_badPAT50_goodReaction_h20: actual avg 2.04 t 2.24 | placebo avg 0.28 t 0.35 | P(avg>=act) 0.000 P(t>=act) 0.010
+A_long_badPAT25_goodReaction_h10: actual avg 0.29 t 0.8 | placebo avg -0.08 t -0.18 | P(avg>=act) 0.175 P(t>=act) 0.135
+A_long_badPAT50_goodReaction_h10: actual avg 1.16 t 1.98 | placebo avg 0.03 t 0.01 | P(avg>=act) 0.030 P(t>=act) 0.015
+
+=== A5-A6: known edge (reaction excess > +4%, hold 20) with sector / peer hedges ===
+REFERENCE known edge vs Nifty                 trades  392 seasons 22 per-season avg  1.73 t  2.15 first14  1.98 last8  1.28 pos 15/22 season-SD 3.76
+A5 vs own sector index                        trades  392 seasons 22 per-season avg  1.37 t  2.04 first14  1.56 last8  1.04 pos 14/22 season-SD 3.16
+A6 vs basket of already-reported F&O peers    trades  304 seasons 22 per-season avg  0.75 t  1.04 first14  0.85 last8  0.59 pos 13/22 season-SD 3.39
+raw (unhedged)                                trades  392 seasons 22 per-season avg  2.36 t  2.00 first14  3.35 last8  0.61 pos 14/22 season-SD 5.52
+  on the 304 trades that have a peer basket: vs Nifty 1.60, vs peers 0.75
+
+=== diagnostics: a_continue_D8_any_h20 split ===
+winner_in_known_edge=True  trades  1111 pair net  1.32 (t  1.81) | long leg vs Nifty  2.16 (t  2.29) | short leg vs Nifty -0.88 (t -1.87)
+winner_in_known_edge=False trades   620 pair net -0.63 (t -0.89) | long leg vs Nifty -0.10 (t -0.19) | short leg vs Nifty -0.57 (t -1.00)
+winner_is_fresh=True  trades   952 pair net  0.84 (t  1.08) | long leg vs Nifty  1.64 (t  1.91) | short leg vs Nifty -0.84 (t -2.04)
+winner_is_fresh=False trades   779 pair net  0.68 (t  1.26) | long leg vs Nifty  1.37 (t  1.97) | short leg vs Nifty -0.73 (t -1.32)
+
+ADDENDUM variants counted: 6  -> total variants tested 68
+written $SECTOR_LAB/F6_relative_value/addendum_results.csv

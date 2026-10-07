@@ -1,0 +1,25 @@
+K1 random F&O results, same per-quarter counts (2000 reps), hedged vs Nifty
+  B3 XN>4 H20    obs  1.73 t 2.15 | random mean  0.41 95%  1.03 p(q_avg) 0.0010 p(t) 0.0335 random promising-like 0.0115 | median q 0.91, mean w/o best q 1.22, LOO min t 1.82
+  A1 XS>4 H20    obs  2.05 t 2.32 | random mean  0.40 95%  1.03 p(q_avg) 0.0000 p(t) 0.0175 random promising-like 0.0115 | median q 1.39, mean w/o best q 1.45, LOO min t 2.00
+  B5 XN>6 H20    obs  2.25 t 2.90 | random mean  0.41 95%  1.30 p(q_avg) 0.0000 p(t) 0.0045 random promising-like 0.0165 | median q 2.15, mean w/o best q 1.86, LOO min t 2.60
+  BC3 PS>2 H20   obs  2.24 t 1.62 | random mean  0.11 95%  2.79 p(q_avg) 0.0880 p(t) 0.0545 random promising-like 0.0065 | median q 1.78, mean w/o best q 1.48, LOO min t 1.18
+  BC5 n<2 H20    obs  2.53 t 3.40 | random mean  0.39 95%  1.80 p(q_avg) 0.0060 p(t) 0.0015 random promising-like 0.0080 | median q 2.56, mean w/o best q 2.18, LOO min t 3.11
+
+K2 results drift minus non-results big-up-day drift (calendar quarters)
+  B3 XN>4 H20: non-results n=1854 q_avg 0.76 (t 2.13); results q_avg (cal.) 1.73; difference 0.97 t 1.51; first 14 cal. q 1.44, last 8 0.14
+     non-results drift first 14 cal. q 0.54, last 8 1.14
+  B5 XN>6 H20: non-results n=492 q_avg -0.19 (t -0.36); results q_avg (cal.) 2.25; difference 2.44 t 3.88; first 14 cal. q 3.09, last 8 1.31
+     non-results drift first 14 cal. q -0.30, last 8 0.00
+
+K4 BC5 composition
+  no group: 23, group with <2 reported peers: 65 of 88
+  share of quarter F&O results already out at reaction day: BC5 median 0.18, other winners median 0.54
+  BC5 no group: n=23 q_avg 3.06 t 1.68 nq 15
+  BC5 group, <2 peers: n=65 q_avg 2.02 t 2.58 nq 21
+
+K5 (variant #36) winners XN>4%, entry at Day+1 close (events.next20), hold 20
+  net_raw: trade avg 1.41 q_avg 2.17 t 1.89 first14 3.07 last8 0.61 qpos 16/22
+  net_vsN: trade avg 1.36 q_avg 1.62 t 2.10 first14 1.80 last8 1.30 qpos 15/22
+  net_vsS: trade avg 1.14 q_avg 1.38 t 2.12 first14 1.51 last8 1.15 qpos 14/22
+  max |raw - events.next20| = 6.56e-07; during-market/non-trading/before-open winners: 127 of 392
+  first 15 quarters only (prior study span?): raw trade avg 2.20, q_avg 2.87, qpos 12/15

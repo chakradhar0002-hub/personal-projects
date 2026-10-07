@@ -1,0 +1,54 @@
+GROSS (no cost) continuation cells with >=30 trades: 288; |t|>=2.5: 8 (+: 5, -: 3); |t|>=2: 22
+expected by luck at |t|>=2.5 (~2% two-sided, ~20 quarters): 5.8  at |t|>=2 (~6%): 17.3
+  G    BW    H    T leg  trades  gross_q_vsn  gross_t
+IND   BIG   H3 0.03  LS     370        -0.36    -2.55
+IND FIRST   H1 0.05   L     156         0.46     2.51
+ PG   BIG OWN3 0.05   S      71         1.69     2.52
+ PG   BIG OWN3 0.05  LS     120         1.43     2.79
+ PG   BIG   TW 0.05   S      71         2.33     2.77
+ PG   BIG   TW 0.05  LS     120         2.06     3.03
+SEC   BIG   H3 0.03   S     259        -1.14    -3.41
+SEC   BIG   H5 0.03   S     213        -1.29    -2.98
+
+=== C1 SEC BIG H3 T=0.03 leg=S dir=-1: trades 259, triggers 58, q-avg hedged 0.95%, t 2.85
+   PL1 signal permutation: placebo q-avg mean -0.04%, share of draws >= actual mean 0.000, >= actual t 0.001
+   PL2 random non-peers: placebo q-avg mean 0.07%, share of draws >= actual mean 0.000, >= actual t 0.010
+   R1 next-open entry (Nifty hedge still from decision close; approx): q-avg 0.83%, t 2.40
+   R2 leave-one-group-out t range 2.41 .. 3.21 (dropping Nifty India Manufacturing gives the min)
+   R3 drop best quarter (qn 13, 4.62%): q-avg 0.76%, t 2.64
+   per-quarter hedged avg % : {0: 1.15, 1: 1.97, 2: 0.41, 3: 1.63, 4: -0.34, 5: -1.26, 6: 0.85, 7: 2.68, 8: 0.26, 9: 1.3, 11: 2.43, 12: 1.18, 13: 4.62, 14: 0.42, 15: -1.71, 17: -0.23, 18: -0.02, 19: 0.19, 20: 3.06, 21: 0.47}
+   trades by group: {'Nifty Auto': 35, 'Nifty Pharma': 31, 'Nifty IT': 27, 'Nifty India Manufacturing': 27, 'Nifty Consumer Durables': 26, 'Nifty Bank': 19, 'Nifty FMCG': 17, 'Nifty Oil & Gas': 15, 'Nifty Financial Services': 13, 'Nifty Services Sector': 11, 'Nifty Infrastructure': 10, 'Nifty India Consumption': 9, 'Nifty Metal': 7, 'Nifty India Defence': 6, 'Nifty India Digital': 4, 'Nifty Energy': 2}
+
+=== C2 SEC BIG H5 T=0.03 leg=S dir=-1: trades 213, triggers 55, q-avg hedged 1.10%, t 2.54
+   PL1 signal permutation: placebo q-avg mean 0.02%, share of draws >= actual mean 0.001, >= actual t 0.000
+   PL2 random non-peers: placebo q-avg mean 0.14%, share of draws >= actual mean 0.001, >= actual t 0.009
+   R1 next-open entry (Nifty hedge still from decision close; approx): q-avg 1.00%, t 2.28
+   R2 leave-one-group-out t range 1.91 .. 3.06 (dropping Nifty India Manufacturing gives the min)
+   R3 drop best quarter (qn 1, 4.84%): q-avg 0.90%, t 2.22
+   per-quarter hedged avg % : {0: -0.21, 1: 4.84, 2: 3.02, 3: 1.83, 4: -1.67, 5: -0.91, 6: 1.57, 7: 3.4, 8: -1.35, 9: 2.15, 11: -0.16, 12: 1.64, 13: 4.3, 14: 0.6, 15: -1.82, 17: 0.14, 18: -0.39, 19: 1.21, 20: 2.82, 21: 0.98}
+   trades by group: {'Nifty Auto': 33, 'Nifty Pharma': 26, 'Nifty IT': 23, 'Nifty Consumer Durables': 23, 'Nifty India Manufacturing': 22, 'Nifty Bank': 14, 'Nifty FMCG': 11, 'Nifty Financial Services': 10, 'Nifty Oil & Gas': 10, 'Nifty Services Sector': 8, 'Nifty Metal': 7, 'Nifty India Consumption': 7, 'Nifty Infrastructure': 7, 'Nifty India Defence': 6, 'Nifty India Digital': 4, 'Nifty Energy': 2}
+
+=== C3 PG BIG TW T=0.05 leg=LS dir=1: trades 120, triggers 15, q-avg hedged 1.87%, t 2.75
+   PL1 signal permutation: placebo q-avg mean 0.32%, share of draws >= actual mean 0.043, >= actual t 0.005
+   PL2 random non-peers: placebo q-avg mean 0.49%, share of draws >= actual mean 0.031, >= actual t 0.028
+   R1 next-open entry (Nifty hedge still from decision close; approx): q-avg 1.81%, t 2.49
+   R2 leave-one-group-out t range 2.09 .. 3.03 (dropping Consumer brands gives the min)
+   R3 drop best quarter (qn 1, 5.94%): q-avg 1.50%, t 2.41
+   per-quarter hedged avg % : {0: 2.41, 1: 5.94, 2: 0.42, 4: 5.58, 8: -1.25, 11: 0.94, 12: 0.57, 13: 2.01, 14: 3.86, 15: -1.1, 17: 0.36, 20: 2.66}
+   trades by group: {'IT services': 32, 'Pharma': 25, 'Consumer brands': 20, 'FMCG': 13, 'Banks': 11, 'NBFCs': 9, 'Metals': 7, 'Real estate': 3}
+
+=== C4 PG BIG TW T=0.05 leg=S dir=1: trades 71, triggers 10, q-avg hedged 2.14%, t 2.55
+   PL1 signal permutation: placebo q-avg mean 0.26%, share of draws >= actual mean 0.042, >= actual t 0.010
+   PL2 random non-peers: placebo q-avg mean 0.10%, share of draws >= actual mean 0.012, >= actual t 0.008
+   R1 next-open entry (Nifty hedge still from decision close; approx): q-avg 2.16%, t 2.32
+   R2 leave-one-group-out t range 1.49 .. 2.73 (dropping Consumer brands gives the min)
+   R3 drop best quarter (qn 1, 5.94%): q-avg 1.67%, t 2.12
+   per-quarter hedged avg % : {0: 2.41, 1: 5.94, 2: 0.42, 4: 5.58, 8: -1.25, 11: 0.12, 14: 3.86, 17: 0.36, 20: 1.87}
+   trades by group: {'Consumer brands': 20, 'Pharma': 15, 'IT services': 13, 'Banks': 11, 'NBFCs': 9, 'Real estate': 3}
+
+INDEX DIAGNOSTIC (SEC BIG, |signal|>3%, next session, signed by bellwether, gross, % per trigger):
+   index_x            mean   0.27  q-avg   0.27  t_q  3.69  n 113
+   bellwether_own     mean   0.50  q-avg   0.53  t_q  2.10  n 113
+   reported_peers     mean   0.33  q-avg   0.21  t_q  0.80  n 57
+   unreported_peers   mean   0.29  q-avg   0.27  t_q  2.23  n 113
+   sector index split by group (index_x mean %): {'Nifty Auto': 0.35, 'Nifty Bank': -0.02, 'Nifty Commodities': 0.12, 'Nifty Consumer Durables': 0.06, 'Nifty Energy': -0.19, 'Nifty FMCG': 0.75, 'Nifty Financial Services': 0.1, 'Nifty IT': 0.28, 'Nifty India Consumption': 0.27, 'Nifty India Defence': 1.1, 'Nifty India Digital': 0.26, 'Nifty India Manufacturing': 0.18, 'Nifty Infrastructure': -0.17, 'Nifty Metal': -0.81, 'Nifty Oil & Gas': 0.61, 'Nifty Pharma': 0.26, 'Nifty Services Sector': -0.17}

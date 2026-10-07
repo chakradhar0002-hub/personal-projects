@@ -19,6 +19,11 @@ to 20 sessions after each reaction day and NSE option prices.
 5. The pre-results IV run-up straddle ([STRATEGY.md](STRATEGY.md) section 5) is still the only options trade with
    an edge. The winner drift is a second, independent trade, in stock futures.
 
+**Update with 22 quarters (2021-26):** the winner trade made +1.45% a trade over Nifty after costs (392 trades, 15 of
+22 quarters positive, t 2.15). It lost in the 7 earlier quarters (2021-22 results: -1.2% a trade, 2 of 7 positive), and
+in the last 8 quarters it made +1.2% hedged but only +0.4% unhedged. Expect about +1% a trade. Details in
+[SECTOR_STRATEGIES.md](SECTOR_STRATEGIES.md).
+
 ## How it was tested
 
 - 22 ideas were written down before testing (table below). Each was measured on the first 9 quarters

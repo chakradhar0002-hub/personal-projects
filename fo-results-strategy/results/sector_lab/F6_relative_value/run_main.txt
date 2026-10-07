@@ -1,0 +1,200 @@
+sessions 2697 (2015-11-09..2026-09-30), returns (2697, 213), indices (2697, 205), events (4462, 43)
+event session positions match sessions.csv: OK
+
+Index coverage in study window (2021-01-01..):
+  Nifty 500                    nan=   0 of 1425
+  Nifty Auto                   nan=   0 of 1425
+  Nifty Bank                   nan=   0 of 1425
+  Nifty Commodities            nan=   0 of 1425
+  Nifty Consumer Durables      nan=   0 of 1425
+  Nifty Energy                 nan=   0 of 1425
+  Nifty FMCG                   nan=   0 of 1425
+  Nifty Financial Services     nan=   0 of 1425
+  Nifty IT                     nan=   0 of 1425
+  Nifty India Consumption      nan=   0 of 1425
+  Nifty India Defence          nan= 260 of 1425
+  Nifty India Digital          nan= 234 of 1425
+  Nifty India Manufacturing    nan= 154 of 1425
+  Nifty Infrastructure         nan=   0 of 1425
+  Nifty Metal                  nan=   0 of 1425
+  Nifty Oil & Gas              nan=   0 of 1425
+  Nifty Pharma                 nan=   0 of 1425
+  Nifty Services Sector        nan=   0 of 1425
+  Nifty 50                     nan=   0 of 1425
+
+reaction-day return from returns.csv vs events.move: max abs diff 4.96e-07
+events with reaction excess: 4462 / 4462; F&O events: 3278; F&O & grouped: 3216
+F&O peer groups with >=2 members per season (median count): 22
+
+(a) same-group F&O pairs: 11697; share D>4%: 0.43, D>8%: 0.15; near(<=5d): 0.50
+(b) pat_yoy: F&O events with >=2 reported peers: 1896
+(b) sales_yoy: F&O events with >=2 reported peers: 2029
+(c) sector-season observations: 286; SD quantiles: [1.68, 2.23, 3.2, 4.24, 5.75] %; SD>5%: 42, SD<2.5%: 91
+(d) F&O events with >=2 peers reported by cutoff: 1862
+
+TOTAL VARIANTS TESTED: 62
+
+===== PART (a) main hedged metric, % per trade after costs =====
+               variant  main_trades  main_seasons  main_avg_trade  main_per_season_avg  main_t_season  main_first14  main_last8  main_seasons_pos  main_t_date
+  a_continue_D4_any_h5         4993            22           -0.09                -0.05          -0.26          0.04       -0.21                13         1.09
+   a_reverse_D4_any_h5         4993            22           -0.59                -0.63          -3.39         -0.72       -0.47                 4        -6.47
+ a_continue_D4_any_h10         4993            22            0.01                 0.03           0.13          0.06       -0.03                13         1.56
+  a_reverse_D4_any_h10         4993            22           -0.69                -0.71          -3.31         -0.74       -0.65                 4        -5.69
+ a_continue_D4_any_h20         4993            22            0.27                 0.24           0.97          0.21        0.28                12         1.19
+  a_reverse_D4_any_h20         4993            22           -0.95                -0.92          -3.76         -0.89       -0.96                 4        -4.31
+ a_continue_D4_near_h5         2497            22           -0.14                -0.02          -0.07          0.13       -0.28                15         0.49
+  a_reverse_D4_near_h5         2497            22           -0.54                -0.66          -3.03         -0.81       -0.40                 5        -4.80
+a_continue_D4_near_h10         2497            22           -0.12                 0.00           0.01          0.10       -0.16                13         0.86
+ a_reverse_D4_near_h10         2497            22           -0.56                -0.68          -2.53         -0.78       -0.52                 4        -4.20
+a_continue_D4_near_h20         2497            22            0.17                 0.24           0.78          0.28        0.17                16         0.77
+ a_reverse_D4_near_h20         2497            22           -0.85                -0.92          -2.96         -0.96       -0.85                 5        -3.23
+  a_continue_D8_any_h5         1731            22            0.07                 0.17           0.59          0.31       -0.08                13         0.93
+   a_reverse_D8_any_h5         1731            22           -0.75                -0.85          -3.00         -0.99       -0.60                 5        -4.40
+ a_continue_D8_any_h10         1731            22            0.16                 0.24           0.69          0.27        0.18                12         1.81
+  a_reverse_D8_any_h10         1731            22           -0.84                -0.92          -2.64         -0.95       -0.86                 6        -4.65
+ a_continue_D8_any_h20         1731            22            0.71                 0.76           1.30          0.59        1.05                13         1.34
+  a_reverse_D8_any_h20         1731            22           -1.39                -1.44          -2.47         -1.27       -1.73                 6        -3.41
+ a_continue_D8_near_h5          897            22           -0.00                 0.25           0.75          0.52       -0.24                14         1.03
+  a_reverse_D8_near_h5          897            22           -0.68                -0.93          -2.82         -1.20       -0.44                 5        -3.86
+a_continue_D8_near_h10          897            22           -0.09                 0.18           0.40          0.38       -0.17                13         1.03
+ a_reverse_D8_near_h10          897            22           -0.59                -0.86          -1.91         -1.06       -0.51                 8        -3.32
+a_continue_D8_near_h20          897            22            0.55                 0.80           1.19          0.93        0.59                14         0.78
+ a_reverse_D8_near_h20          897            22           -1.23                -1.48          -2.19         -1.61       -1.27                 8        -2.38
+
+===== PART (b) main hedged metric, % per trade after costs =====
+                     variant  main_trades  main_seasons  main_avg_trade  main_per_season_avg  main_t_season  main_first14  main_last8  main_seasons_pos  main_t_date
+  b_long_good_pat_yoy_25_h10          206            22           -0.62                -0.94          -1.84         -0.81       -1.16                 9        -1.54
+  b_long_good_pat_yoy_25_h20          206            22           -0.27                -0.63          -0.98         -0.42       -0.99                11        -0.41
+  b_short_bad_pat_yoy_25_h10          217            22           -0.54                -0.67          -1.84         -0.78       -0.48                 8        -1.26
+  b_short_bad_pat_yoy_25_h20          217            22           -1.49                -1.55          -2.72         -1.58       -1.49                 6        -2.60
+  b_long_good_pat_yoy_50_h10          135            22           -0.78                -1.18          -2.03         -1.12       -1.28                 7        -1.36
+  b_long_good_pat_yoy_50_h20          135            22           -0.27                -0.55          -0.76         -0.35       -0.90                10         0.13
+  b_short_bad_pat_yoy_50_h10          121            22           -1.35                -1.54          -2.63         -1.18       -2.16                 9        -2.83
+  b_short_bad_pat_yoy_50_h20          121            22           -2.33                -2.42          -2.66         -1.59       -3.86                 5        -3.51
+b_long_good_sales_yoy_10_h10          183            22           -0.86                -1.13          -2.53         -1.81        0.07                 6        -1.83
+b_long_good_sales_yoy_10_h20          183            22           -0.63                -0.75          -1.13         -1.04       -0.24                11        -0.99
+b_short_bad_sales_yoy_10_h10          204            22           -0.10                 0.15           0.31          0.02        0.38                11        -0.03
+b_short_bad_sales_yoy_10_h20          204            22           -0.93                -0.72          -1.06         -1.02       -0.18                 6        -1.73
+b_long_good_sales_yoy_20_h10           81            21           -1.07                -0.99          -1.42         -2.12        0.85                 7        -1.29
+b_long_good_sales_yoy_20_h20           81            21           -0.54                 0.61           0.62          0.43        0.91                13        -0.24
+b_short_bad_sales_yoy_20_h10           90            22           -0.92                 0.08           0.10          0.83       -1.24                10        -1.90
+b_short_bad_sales_yoy_20_h20           90            22           -1.62                -0.60          -0.55         -0.24       -1.24                 8        -1.76
+
+===== PART (c) main hedged metric, % per trade after costs =====
+                    variant  main_trades  main_seasons  main_avg_trade  main_per_season_avg  main_t_season  main_first14  main_last8  main_seasons_pos  main_t_date
+          c1_highSD_long_h5           42            19           -0.33                -0.20          -0.73         -0.54        0.26                 8        -1.03
+           c2_lowSD_long_h5           91            22            0.05                 0.01           0.07          0.12       -0.18                 9         0.41
+         c1_highSD_short_h5           42            19            0.01                -0.14          -0.50          0.20       -0.60                10        -0.09
+          c2_lowSD_short_h5           91            22           -0.41                -0.38          -1.91         -0.48       -0.20                 8        -2.20
+  c3_lowSD_signMU_signMU_h5           91            22            0.11                 0.07           0.41          0.06        0.10                11         1.16
+ c4_highSD_signMU_signMU_h5           42            19           -0.22                -0.05          -0.20         -0.25        0.23                 8        -0.61
+         c1_highSD_long_h10           42            19           -0.46                -0.20          -0.53         -0.26       -0.12                 6        -1.30
+          c2_lowSD_long_h10           91            22           -0.02                -0.06          -0.24          0.14       -0.41                11         0.48
+        c1_highSD_short_h10           42            19            0.14                -0.14          -0.37         -0.09       -0.21                 9         0.34
+         c2_lowSD_short_h10           91            22           -0.33                -0.30          -1.17         -0.49        0.03                 8        -1.84
+ c3_lowSD_signMU_signMU_h10           91            22           -0.01                -0.00          -0.00         -0.18        0.32                14         0.44
+c4_highSD_signMU_signMU_h10           42            19            0.01                 0.34           1.10          0.22        0.49                12         0.28
+         c1_highSD_long_h20           42            19            0.17                 0.57           0.69          0.59        0.53                 9         0.33
+          c2_lowSD_long_h20           91            22            0.34                 0.25           0.73          0.45       -0.10                14         1.55
+        c1_highSD_short_h20           42            19           -0.50                -0.91          -1.11         -0.93       -0.87                 9        -0.90
+         c2_lowSD_short_h20           91            22           -0.69                -0.61          -1.81         -0.80       -0.28                 7        -2.54
+ c3_lowSD_signMU_signMU_h20           91            22            0.10                 0.13           0.32          0.34       -0.23                13         0.69
+c4_highSD_signMU_signMU_h20           42            19            0.45                 0.94           1.29          0.88        1.03                12         0.97
+
+===== PART (d) main hedged metric, % per trade after costs =====
+   variant  main_trades  main_seasons  main_avg_trade  main_per_season_avg  main_t_season  main_first14  main_last8  main_seasons_pos  main_t_date
+ d_long_S2           83            20           -0.32                -0.61          -1.01          0.13       -1.71                10        -0.61
+d_short_S2           94            19           -0.30                -0.73          -0.92         -0.73       -0.70                 8        -0.01
+ d_long_S3           35            16            0.25                 0.33           0.63          0.45        0.13                10         0.67
+d_short_S3           49            16            0.44                -0.22          -0.23          0.50       -1.80                 8         0.81
+
+----- (a) legs (per-season averages, % net) -----
+               variant  long_vs_nifty_season_avg  long_vs_nifty_t  short_vs_nifty_season_avg  short_vs_nifty_t  pair_vs_sector_season_avg  pair_gross_season_avg
+  a_continue_D4_any_h5                     -0.14            -0.67                       0.05              0.24                      -0.04                   0.29
+   a_reverse_D4_any_h5                     -0.43            -2.14                      -0.24             -1.19                      -0.64                  -0.29
+ a_continue_D4_any_h10                     -0.12            -0.38                       0.10              0.36                       0.03                   0.37
+  a_reverse_D4_any_h10                     -0.48            -1.68                      -0.26             -0.85                      -0.71                  -0.37
+ a_continue_D4_any_h20                      0.70             1.54                      -0.50             -1.32                       0.24                   0.58
+  a_reverse_D4_any_h20                      0.12             0.31                      -1.08             -2.39                      -0.92                  -0.58
+ a_continue_D4_near_h5                     -0.14            -0.66                       0.08              0.36                      -0.01                   0.32
+  a_reverse_D4_near_h5                     -0.46            -1.99                      -0.24             -1.16                      -0.67                  -0.32
+a_continue_D4_near_h10                     -0.17            -0.48                       0.13              0.41                       0.01                   0.34
+ a_reverse_D4_near_h10                     -0.51            -1.58                      -0.21             -0.60                      -0.69                  -0.34
+a_continue_D4_near_h20                      0.67             1.28                      -0.47             -1.12                       0.25                   0.58
+ a_reverse_D4_near_h20                      0.09             0.21                      -1.05             -2.01                      -0.93                  -0.58
+  a_continue_D8_any_h5                     -0.03            -0.11                       0.16              0.63                       0.15                   0.51
+   a_reverse_D8_any_h5                     -0.54            -2.17                      -0.35             -1.32                      -0.83                  -0.51
+ a_continue_D8_any_h10                      0.03             0.07                       0.17              0.62                       0.21                   0.58
+  a_reverse_D8_any_h10                     -0.55            -1.98                      -0.41             -1.05                      -0.89                  -0.58
+ a_continue_D8_any_h20                      1.42             1.89                      -0.71             -1.69                       0.75                   1.10
+  a_reverse_D8_any_h20                      0.33             0.78                      -1.80             -2.39                      -1.43                  -1.10
+ a_continue_D8_near_h5                     -0.10            -0.34                       0.31              1.07                       0.22                   0.59
+  a_reverse_D8_near_h5                     -0.69            -2.39                      -0.28             -0.93                      -0.90                  -0.59
+a_continue_D8_near_h10                     -0.12            -0.24                       0.26              0.77                       0.13                   0.52
+ a_reverse_D8_near_h10                     -0.64            -1.90                      -0.26             -0.54                      -0.81                  -0.52
+a_continue_D8_near_h20                      1.38             1.73                      -0.61             -1.44                       0.77                   1.14
+ a_reverse_D8_near_h20                      0.23             0.54                      -1.76             -2.21                      -1.45                  -1.14
+
+----- (b) alternative measures (per-season averages, % net) -----
+                     variant  raw_season_avg  vs_sector_season_avg  vs_sector_t  vs_peer_basket_season_avg  vs_peer_basket_t
+  b_long_good_pat_yoy_25_h10           -0.47                 -0.75        -2.05                      -0.95             -2.51
+  b_long_good_pat_yoy_25_h20            0.14                 -0.56        -1.07                      -0.85             -1.69
+  b_short_bad_pat_yoy_25_h10           -1.07                 -0.62        -1.93                      -0.56             -1.70
+  b_short_bad_pat_yoy_25_h20           -2.00                 -1.12        -2.10                      -0.63             -1.04
+  b_long_good_pat_yoy_50_h10           -0.70                 -1.03        -2.34                      -1.18             -2.69
+  b_long_good_pat_yoy_50_h20            0.23                 -0.71        -1.31                      -0.70             -1.11
+  b_short_bad_pat_yoy_50_h10           -2.00                 -1.57        -2.89                      -1.64             -3.14
+  b_short_bad_pat_yoy_50_h20           -2.85                 -1.80        -2.15                      -1.45             -1.67
+b_long_good_sales_yoy_10_h10           -0.78                 -0.65        -1.74                      -1.31             -3.63
+b_long_good_sales_yoy_10_h20           -0.04                 -0.44        -0.87                      -1.07             -1.98
+b_short_bad_sales_yoy_10_h10            0.05                 -0.25        -0.51                      -0.26             -0.48
+b_short_bad_sales_yoy_10_h20           -1.34                 -0.88        -1.34                      -0.90             -1.34
+b_long_good_sales_yoy_20_h10           -1.26                 -0.57        -0.87                      -1.43             -2.46
+b_long_good_sales_yoy_20_h20            0.63                  0.44         0.52                      -0.91             -1.00
+b_short_bad_sales_yoy_20_h10            0.05                 -0.37        -0.52                       0.13              0.16
+b_short_bad_sales_yoy_20_h20           -1.39                 -1.21        -1.23                      -0.39             -0.35
+
+----- (c) decomposition -----
+                    variant  raw_sector_season_avg  nifty_leg_season_avg
+          c1_highSD_long_h5                  -0.23                  0.05
+           c2_lowSD_long_h5                   0.55                 -0.51
+         c1_highSD_short_h5                  -0.07                 -0.05
+          c2_lowSD_short_h5                  -0.87                  0.51
+  c3_lowSD_signMU_signMU_h5                   0.16                 -0.07
+ c4_highSD_signMU_signMU_h5                  -0.64                  0.61
+         c1_highSD_long_h10                   0.12                 -0.30
+          c2_lowSD_long_h10                   0.48                 -0.52
+        c1_highSD_short_h10                  -0.42                  0.30
+         c2_lowSD_short_h10                  -0.80                  0.52
+ c3_lowSD_signMU_signMU_h10                   0.06                 -0.05
+c4_highSD_signMU_signMU_h10                  -0.21                  0.57
+         c1_highSD_long_h20                   0.50                  0.09
+          c2_lowSD_long_h20                   0.55                 -0.29
+        c1_highSD_short_h20                  -0.80                 -0.09
+         c2_lowSD_short_h20                  -0.88                  0.29
+ c3_lowSD_signMU_signMU_h20                   0.30                 -0.15
+c4_highSD_signMU_signMU_h20                   1.05                 -0.09
+
+----- (d) 3-day window raw / vs sector -----
+   variant  raw_season_avg  raw_t  raw_first14  raw_last8  raw_seasons_pos  raw_seasons_ge2  vs_sector_season_avg  vs_sector_t
+ d_long_S2           -0.69  -0.96         0.39      -2.31             10.0              2.0                 -0.56        -0.91
+d_short_S2           -0.69  -0.81        -0.81      -0.35              9.0              4.0                 -0.64        -0.96
+ d_long_S3            0.64   1.03         1.30      -0.46             10.0              6.0                  0.42         0.94
+d_short_S3           -0.11  -0.12         0.34      -1.09              9.0              4.0                 -0.23        -0.27
+
+near-candidates (t>=2, both halves>0, >=30 trades):
+Empty DataFrame
+Columns: [variant, main_trades, main_seasons, main_avg_trade, main_per_season_avg, main_t_season, main_first14, main_last8, main_seasons_pos, main_t_date]
+Index: []
+
+meets statistical bar (before placebo):
+Empty DataFrame
+Columns: [variant, main_trades, main_seasons, main_avg_trade, main_per_season_avg, main_t_season, main_first14, main_last8, main_seasons_pos, main_t_date]
+Index: []
+
+best-t variant per part:
+                     variant  main_trades  main_seasons  main_avg_trade  main_per_season_avg  main_t_season  main_first14  main_last8  main_seasons_pos  main_t_date
+       a_continue_D8_any_h20         1731            22            0.71                 0.76           1.30          0.59        1.05                13         1.34
+b_long_good_sales_yoy_20_h20           81            21           -0.54                 0.61           0.62          0.43        0.91                13        -0.24
+ c4_highSD_signMU_signMU_h20           42            19            0.45                 0.94           1.29          0.88        1.03                12         0.97
+                   d_long_S3           35            16            0.25                 0.33           0.63          0.45        0.13                10         0.67

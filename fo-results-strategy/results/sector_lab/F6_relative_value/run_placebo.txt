@@ -1,0 +1,33 @@
+sessions 2697 (2015-11-09..2026-09-30), returns (2697, 213), indices (2697, 205), events (4462, 43)
+event session positions match sessions.csv: OK
+
+Index coverage in study window (2021-01-01..):
+  Nifty 500                    nan=   0 of 1425
+  Nifty Auto                   nan=   0 of 1425
+  Nifty Bank                   nan=   0 of 1425
+  Nifty Commodities            nan=   0 of 1425
+  Nifty Consumer Durables      nan=   0 of 1425
+  Nifty Energy                 nan=   0 of 1425
+  Nifty FMCG                   nan=   0 of 1425
+  Nifty Financial Services     nan=   0 of 1425
+  Nifty IT                     nan=   0 of 1425
+  Nifty India Consumption      nan=   0 of 1425
+  Nifty India Defence          nan= 260 of 1425
+  Nifty India Digital          nan= 234 of 1425
+  Nifty India Manufacturing    nan= 154 of 1425
+  Nifty Infrastructure         nan=   0 of 1425
+  Nifty Metal                  nan=   0 of 1425
+  Nifty Oil & Gas              nan=   0 of 1425
+  Nifty Pharma                 nan=   0 of 1425
+  Nifty Services Sector        nan=   0 of 1425
+  Nifty 50                     nan=   0 of 1425
+
+reaction-day return from returns.csv vs events.move: max abs diff 4.96e-07
+events with reaction excess: 4462 / 4462; F&O events: 3278; F&O & grouped: 3216
+F&O peer groups with >=2 members per season (median count): 22
+a_continue_D8_any_h20            P1 shuffle reaction in grp-season actual avg   0.76 t  1.30 n  1731 | placebo avg  -0.30 (p95  0.47) t -0.76 n  1731.0 | P(avg>=act) 0.010  P(t>=act) 0.015
+a_continue_D8_any_h20            P2 random non-results days   actual avg   0.76 t  1.30 n  1731 | placebo avg   0.01 (p95  4.12) t -0.00 n    46.9 | P(avg>=act) 0.345  P(t>=act) 0.080
+b_long_good_sales_yoy_20_h20     P1 shuffle sales_yoy grp-season actual avg   0.61 t  0.62 n    81 | placebo avg   0.35 (p95  1.39) t  0.38 n   124.0 | P(avg>=act) 0.370  P(t>=act) 0.430
+c4_highSD_signMU_signMU_h20      P1 shuffle reaction across sectors in season actual avg   0.94 t  1.29 n    42 | placebo avg  -0.24 (p95  0.76) t -0.44 n    50.7 | P(avg>=act) 0.020  P(t>=act) 0.055
+d_long_S3                        P1 shuffle reaction in grp-season actual avg   0.33 t  0.63 n    35 | placebo avg   1.06 (p95  2.34) t  1.35 n    48.7 | P(avg>=act) 0.785  P(t>=act) 0.725
+written $SECTOR_LAB/F6_relative_value/placebo_results.csv

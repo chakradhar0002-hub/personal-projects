@@ -1,0 +1,93 @@
+=== V1 reproduction (h=20) ===
+B all winners {'label': 'vsNifty', 'n': 392, 'avg': np.float64(1.45), 'qavg': np.float64(1.73), 't_q': np.float64(2.15), 't_date': np.float64(3.78), 'nq': 22, 'qpos': 15, 'f14': np.float64(1.98), 'l8': np.float64(1.28), 'win': np.float64(54.1), 'med_q': np.float64(0.91)}
+   raw net avg 1.55  vsSector avg 1.23
+C cand (self excl) {'label': 'vsNifty', 'n': 88, 'avg': np.float64(2.15), 'qavg': np.float64(2.53), 't_q': np.float64(3.4), 't_date': np.float64(3.07), 'nq': 22, 'qpos': 16, 'f14': np.float64(3.14), 'l8': np.float64(1.46), 'win': np.float64(58.0), 'med_q': np.float64(2.56)}
+   raw net avg 2.86  vsSector avg 1.47
+C' self incl {'label': 'vsNifty', 'n': 51, 'avg': np.float64(2.29), 'qavg': np.float64(3.46), 't_q': np.float64(3.09), 't_date': np.float64(2.44), 'nq': 21, 'qpos': 15, 'f14': np.float64(4.99), 'l8': np.float64(0.98), 'win': np.float64(58.8), 'med_q': np.float64(2.49)}
+   raw net avg 2.91  vsSector avg 1.39
+V2 complement {'label': 'vsNifty', 'n': 304, 'avg': np.float64(1.24), 'qavg': np.float64(1.6), 't_q': np.float64(1.71), 't_date': np.float64(3.17), 'nq': 22, 'qpos': 14, 'f14': np.float64(1.74), 'l8': np.float64(1.35), 'win': np.float64(53.0), 'med_q': np.float64(0.74)}
+   raw net avg 1.17  vsSector avg 1.15
+C composition: no group 23  group<2 65
+C by qn trades: {0: 3, 1: 4, 2: 4, 3: 2, 4: 1, 5: 3, 6: 2, 7: 3, 8: 2, 9: 4, 10: 2, 11: 6, 12: 3, 13: 5, 14: 3, 15: 6, 16: 7, 17: 3, 18: 5, 19: 5, 20: 7, 21: 8}
+C per-quarter vsn: {0: 3.49, 1: -0.1, 2: 3.55, 3: 3.53, 4: 5.64, 5: -0.28, 6: -5.39, 7: 0.45, 8: 9.98, 9: 9.33, 10: 6.11, 11: 3.54, 12: 1.5, 13: 2.63, 14: 2.27, 15: -0.64, 16: 2.22, 17: 3.59, 18: -2.18, 19: 4.33, 20: 2.5, 21: -0.39}
+C - B per quarter: mean 0.81 t 1.17 ; first14 1.16 last8 0.19
+C - complement per quarter: mean 0.93 t 1.07 n=22
+=== V3 neighbouring peer thresholds ===
+K< 1 {'label': '', 'n': 51, 'avg': np.float64(2.29), 'qavg': np.float64(3.46), 't_q': np.float64(3.09), 't_date': np.float64(2.44), 'nq': 21, 'qpos': 15, 'f14': np.float64(4.99), 'l8': np.float64(0.98), 'win': np.float64(58.8), 'med_q': np.float64(2.49)}
+K< 2 {'label': '', 'n': 88, 'avg': np.float64(2.15), 'qavg': np.float64(2.53), 't_q': np.float64(3.4), 't_date': np.float64(3.07), 'nq': 22, 'qpos': 16, 'f14': np.float64(3.14), 'l8': np.float64(1.46), 'win': np.float64(58.0), 'med_q': np.float64(2.56)}
+K< 3 {'label': '', 'n': 115, 'avg': np.float64(1.42), 'qavg': np.float64(1.86), 't_q': np.float64(2.49), 't_date': np.float64(2.24), 'nq': 22, 'qpos': 15, 'f14': np.float64(2.69), 'l8': np.float64(0.41), 'win': np.float64(54.8), 'med_q': np.float64(1.96)}
+K< 4 {'label': '', 'n': 155, 'avg': np.float64(1.23), 'qavg': np.float64(1.81), 't_q': np.float64(2.05), 't_date': np.float64(2.51), 'nq': 22, 'qpos': 16, 'f14': np.float64(2.77), 'l8': np.float64(0.15), 'win': np.float64(54.2), 'med_q': np.float64(1.37)}
+group-only (exclude no-group) K<2 {'label': '', 'n': 65, 'avg': np.float64(2.13), 'qavg': np.float64(2.02), 't_q': np.float64(2.58), 't_date': np.float64(2.66), 'nq': 21, 'qpos': 16, 'f14': np.float64(2.04), 'l8': np.float64(1.98), 'win': np.float64(61.5), 'med_q': np.float64(1.98)}
+no-group only {'label': '', 'n': 23, 'avg': np.float64(2.22), 'qavg': np.float64(3.06), 't_q': np.float64(1.68), 't_date': np.float64(1.49), 'nq': 15, 'qpos': 9, 'f14': np.float64(5.91), 'l8': np.float64(-1.22), 'win': np.float64(47.8), 'med_q': np.float64(1.78)}
+=== V4 horizons for C ===
+h 5 C {'label': '', 'n': 88, 'avg': np.float64(0.9), 'qavg': np.float64(0.8), 't_q': np.float64(1.69), 't_date': np.float64(1.66), 'nq': 22, 'qpos': 13, 'f14': np.float64(1.12), 'l8': np.float64(0.23), 'win': np.float64(48.9), 'med_q': np.float64(0.52)} | B {'label': '', 'n': 392, 'avg': np.float64(0.07), 'qavg': np.float64(0.19), 't_q': np.float64(0.61), 't_date': np.float64(1.06), 'nq': 22, 'qpos': 10, 'f14': np.float64(0.37), 'l8': np.float64(-0.12), 'win': np.float64(49.7), 'med_q': np.float64(-0.27)}
+h 10 C {'label': '', 'n': 88, 'avg': np.float64(1.53), 'qavg': np.float64(1.83), 't_q': np.float64(3.01), 't_date': np.float64(2.27), 'nq': 22, 'qpos': 16, 'f14': np.float64(2.8), 'l8': np.float64(0.14), 'win': np.float64(53.4), 'med_q': np.float64(1.25)} | B {'label': '', 'n': 392, 'avg': np.float64(0.22), 'qavg': np.float64(0.38), 't_q': np.float64(0.92), 't_date': np.float64(0.87), 'nq': 22, 'qpos': 14, 'f14': np.float64(0.69), 'l8': np.float64(-0.16), 'win': np.float64(49.0), 'med_q': np.float64(0.34)}
+h 20 C {'label': '', 'n': 88, 'avg': np.float64(2.15), 'qavg': np.float64(2.53), 't_q': np.float64(3.4), 't_date': np.float64(3.07), 'nq': 22, 'qpos': 16, 'f14': np.float64(3.14), 'l8': np.float64(1.46), 'win': np.float64(58.0), 'med_q': np.float64(2.56)} | B {'label': '', 'n': 392, 'avg': np.float64(1.45), 'qavg': np.float64(1.73), 't_q': np.float64(2.15), 't_date': np.float64(3.78), 'nq': 22, 'qpos': 15, 'f14': np.float64(1.98), 'l8': np.float64(1.28), 'win': np.float64(54.1), 'med_q': np.float64(0.91)}
+h 40 C {'label': '', 'n': 86, 'avg': np.float64(1.41), 'qavg': np.float64(1.3), 't_q': np.float64(1.11), 't_date': np.float64(1.52), 'nq': 22, 'qpos': 13, 'f14': np.float64(1.25), 'l8': np.float64(1.4), 'win': np.float64(58.1), 'med_q': np.float64(1.05)} | B {'label': '', 'n': 385, 'avg': np.float64(2.16), 'qavg': np.float64(2.45), 't_q': np.float64(2.15), 't_date': np.float64(4.23), 'nq': 22, 'qpos': 16, 'f14': np.float64(2.5), 'l8': np.float64(2.38), 'win': np.float64(56.4), 'med_q': np.float64(1.39)}
+=== V5 winner thresholds for C ===
+th 0.03 C {'label': '', 'n': 131, 'avg': np.float64(1.55), 'qavg': np.float64(1.71), 't_q': np.float64(2.33), 't_date': np.float64(2.0), 'nq': 22, 'qpos': 17, 'f14': np.float64(2.37), 'l8': np.float64(0.57), 'win': np.float64(55.7), 'med_q': np.float64(1.61)} | B {'label': '', 'n': 576, 'avg': np.float64(1.17), 'qavg': np.float64(1.36), 't_q': np.float64(2.29), 't_date': np.float64(3.28), 'nq': 22, 'qpos': 15, 'f14': np.float64(1.86), 'l8': np.float64(0.48), 'win': np.float64(53.5), 'med_q': np.float64(0.95)}
+th 0.04 C {'label': '', 'n': 88, 'avg': np.float64(2.15), 'qavg': np.float64(2.53), 't_q': np.float64(3.4), 't_date': np.float64(3.07), 'nq': 22, 'qpos': 16, 'f14': np.float64(3.14), 'l8': np.float64(1.46), 'win': np.float64(58.0), 'med_q': np.float64(2.56)} | B {'label': '', 'n': 392, 'avg': np.float64(1.45), 'qavg': np.float64(1.73), 't_q': np.float64(2.15), 't_date': np.float64(3.78), 'nq': 22, 'qpos': 15, 'f14': np.float64(1.98), 'l8': np.float64(1.28), 'win': np.float64(54.1), 'med_q': np.float64(0.91)}
+th 0.05 C {'label': '', 'n': 63, 'avg': np.float64(2.54), 'qavg': np.float64(2.91), 't_q': np.float64(3.95), 't_date': np.float64(3.01), 'nq': 22, 'qpos': 16, 'f14': np.float64(4.03), 'l8': np.float64(0.95), 'win': np.float64(58.7), 'med_q': np.float64(3.46)} | B {'label': '', 'n': 286, 'avg': np.float64(1.84), 'qavg': np.float64(2.31), 't_q': np.float64(2.72), 't_date': np.float64(4.37), 'nq': 22, 'qpos': 17, 'f14': np.float64(2.86), 'l8': np.float64(1.33), 'win': np.float64(56.3), 'med_q': np.float64(1.71)}
+=== V6 early season (all F&O), no sector ===
+median frac in C 0.23, in B 0.55
+frac< 0.2 {'label': '', 'n': 66, 'avg': np.float64(2.21), 'qavg': np.float64(2.38), 't_q': np.float64(1.87), 't_date': np.float64(2.74), 'nq': 20, 'qpos': 15, 'f14': np.float64(3.13), 'l8': np.float64(1.25), 'win': np.float64(63.6), 'med_q': np.float64(2.12)}  | frac>= {'label': '', 'n': 326, 'avg': np.float64(1.29), 'qavg': np.float64(1.68), 't_q': np.float64(1.59), 't_date': np.float64(2.9), 'nq': 22, 'qpos': 14, 'f14': np.float64(1.87), 'l8': np.float64(1.35), 'win': np.float64(52.1), 'med_q': np.float64(0.44)}
+frac< 0.3 {'label': '', 'n': 104, 'avg': np.float64(1.85), 'qavg': np.float64(1.97), 't_q': np.float64(1.99), 't_date': np.float64(2.5), 'nq': 21, 'qpos': 18, 'f14': np.float64(2.33), 'l8': np.float64(1.4), 'win': np.float64(60.6), 'med_q': np.float64(2.1)}  | frac>= {'label': '', 'n': 288, 'avg': np.float64(1.3), 'qavg': np.float64(1.54), 't_q': np.float64(1.37), 't_date': np.float64(2.95), 'nq': 22, 'qpos': 14, 'f14': np.float64(1.67), 'l8': np.float64(1.31), 'win': np.float64(51.7), 'med_q': np.float64(0.52)}
+C restricted frac>=0.3 (late-season C): {'label': '', 'n': 39, 'avg': np.float64(2.6), 'qavg': np.float64(3.74), 't_q': np.float64(3.18), 't_date': np.float64(2.59), 'nq': 20, 'qpos': 15, 'f14': np.float64(5.39), 'l8': np.float64(1.25), 'win': np.float64(64.1), 'med_q': np.float64(3.73)}
+=== Robustness on C ===
+drop top5: {'label': '', 'n': 83, 'avg': np.float64(1.27), 'qavg': np.float64(1.55), 't_q': np.float64(2.57), 't_date': np.float64(1.93), 'nq': 22, 'qpos': 15, 'f14': np.float64(1.75), 'l8': np.float64(1.19), 'win': np.float64(55.4), 'med_q': np.float64(2.25)}
+drop best quarter 8 {'label': '', 'n': 86, 'avg': np.float64(1.97), 'qavg': np.float64(2.18), 't_q': np.float64(3.17), 't_date': np.float64(2.81), 'nq': 21, 'qpos': 15, 'f14': np.float64(2.62), 'l8': np.float64(1.46), 'win': np.float64(57.0), 'med_q': np.float64(2.5)}
+drop top5 + best quarter: {'label': '', 'n': 82, 'avg': np.float64(1.24), 'qavg': np.float64(1.45), 't_q': np.float64(2.33), 't_date': np.float64(1.86), 'nq': 21, 'qpos': 14, 'f14': np.float64(1.62), 'l8': np.float64(1.19), 'win': np.float64(54.9), 'med_q': np.float64(2.22)}
+cost x2: {'label': '', 'n': 88, 'avg': np.float64(1.96), 'qavg': np.float64(2.34), 't_q': np.float64(3.14), 't_date': np.float64(2.79), 'nq': 22, 'qpos': 16, 'f14': np.float64(2.95), 'l8': np.float64(1.27), 'win': np.float64(56.8), 'med_q': np.float64(2.37)}
+cost x4: {'label': '', 'n': 88, 'avg': np.float64(1.58), 'qavg': np.float64(1.96), 't_q': np.float64(2.63), 't_date': np.float64(2.25), 'nq': 22, 'qpos': 15, 'f14': np.float64(2.57), 'l8': np.float64(0.89), 'win': np.float64(54.5), 'med_q': np.float64(1.99)}
+raw net (no hedge): {'label': '', 'n': 88, 'avg': np.float64(2.86), 'qavg': np.float64(3.47), 't_q': np.float64(4.09), 't_date': np.float64(4.04), 'nq': 22, 'qpos': 16, 'f14': np.float64(4.64), 'l8': np.float64(1.42), 'win': np.float64(64.8), 'med_q': np.float64(3.71)}
+vs sector: {'label': '', 'n': 88, 'avg': np.float64(1.47), 'qavg': np.float64(1.74), 't_q': np.float64(2.55), 't_date': np.float64(2.09), 'nq': 22, 'qpos': 17, 'f14': np.float64(2.04), 'l8': np.float64(1.21), 'win': np.float64(53.4), 'med_q': np.float64(1.99)}
+leave one group out:
+  -NBFCs                        n= 85( 3 out) qavg 2.53 t 3.36 f14 3.12 l8 1.50
+  -Insurers                     n= 82( 6 out) qavg 2.52 t 3.40 f14 3.05 l8 1.59
+  -Nifty Auto                   n= 79( 9 out) qavg 2.82 t 3.34 f14 3.80 l8 1.11
+  -NONE                         n= 65(23 out) qavg 2.02 t 2.58 f14 2.04 l8 1.98
+  -Consumer brands              n= 87( 1 out) qavg 2.70 t 3.67 f14 3.41 l8 1.46
+  -FMCG                         n= 82( 6 out) qavg 2.33 t 2.56 f14 2.93 l8 1.35
+  -Banks                        n= 83( 5 out) qavg 2.77 t 3.56 f14 3.41 l8 1.66
+  -Pharma                       n= 84( 4 out) qavg 2.40 t 3.09 f14 2.94 l8 1.46
+  -Nifty India Manufacturing    n= 85( 3 out) qavg 2.43 t 3.54 f14 2.94 l8 1.55
+  -Nifty Commodities            n= 85( 3 out) qavg 2.66 t 3.66 f14 3.30 l8 1.55
+  -Real estate                  n= 84( 4 out) qavg 2.82 t 3.02 f14 3.66 l8 1.36
+  -Nifty Services Sector        n= 84( 4 out) qavg 2.48 t 3.16 f14 3.28 l8 1.08
+  -IT services                  n= 85( 3 out) qavg 2.58 t 3.50 f14 3.15 l8 1.58
+  -Metals                       n= 86( 2 out) qavg 2.42 t 3.26 f14 3.09 l8 1.27
+  -Nifty India Defence          n= 87( 1 out) qavg 2.43 t 3.20 f14 2.98 l8 1.46
+  -Nifty India Consumption      n= 86( 2 out) qavg 2.48 t 3.29 f14 3.14 l8 1.33
+  -Nifty Financial Services     n= 85( 3 out) qavg 2.62 t 3.48 f14 3.14 l8 1.70
+  -Nifty Infrastructure         n= 87( 1 out) qavg 2.58 t 3.46 f14 3.14 l8 1.59
+  -Nifty India Digital          n= 85( 3 out) qavg 2.39 t 3.21 f14 3.14 l8 1.07
+  -Nifty Oil & Gas              n= 87( 1 out) qavg 2.54 t 3.41 f14 3.14 l8 1.48
+  -Nifty Energy                 n= 87( 1 out) qavg 2.56 t 3.44 f14 3.14 l8 1.54
+leave one sector_index out:
+  -Nifty Financial Services     n= 77(11 out) qavg 2.37 t 3.05
+  -Nifty Auto                   n= 79( 9 out) qavg 2.82 t 3.34
+  -Nifty 500                    n= 62(26 out) qavg 2.29 t 2.58
+  -Nifty Consumer Durables      n= 87( 1 out) qavg 2.70 t 3.67
+  -Nifty FMCG                   n= 84( 4 out) qavg 2.16 t 2.64
+  -Nifty Bank                   n= 83( 5 out) qavg 2.77 t 3.56
+  -Nifty Pharma                 n= 84( 4 out) qavg 2.40 t 3.09
+  -Nifty India Manufacturing    n= 85( 3 out) qavg 2.43 t 3.54
+  -Nifty Commodities            n= 85( 3 out) qavg 2.66 t 3.66
+  -Nifty Infrastructure         n= 83( 5 out) qavg 2.87 t 3.07
+  -Nifty Services Sector        n= 84( 4 out) qavg 2.48 t 3.16
+  -Nifty IT                     n= 85( 3 out) qavg 2.58 t 3.50
+  -Nifty Metal                  n= 86( 2 out) qavg 2.42 t 3.26
+  -Nifty India Defence          n= 87( 1 out) qavg 2.43 t 3.20
+  -Nifty India Consumption      n= 86( 2 out) qavg 2.48 t 3.29
+  -Nifty India Digital          n= 85( 3 out) qavg 2.39 t 3.21
+  -Nifty Oil & Gas              n= 87( 1 out) qavg 2.54 t 3.41
+  -Nifty Energy                 n= 87( 1 out) qavg 2.56 t 3.44
+leave-one-quarter-out t: min 3.11 max 4.32
+trades per quarter: mean 4.0 min 1 max 8
+max concurrent positions 7  mean when >0 2.4
+distinct reaction dates 80 for 88 trades
+in_fo NaN rows 2
+=== Placebos ===
+(a) random subsets of winners: avg>=obs 0.157  t>=obs 0.014  promising 0.108
+(b) random peer groups: avg>=obs 0.082 t>=obs 0.028 ; mean placebo qavg 1.64
+(c) same stocks random non-results dates: avg>=obs 0.000 ; mean 0.22 sd 0.73

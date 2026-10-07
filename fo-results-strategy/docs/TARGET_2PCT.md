@@ -15,12 +15,18 @@ candidates are listed below with what they really earn.
 | | Picks | Average 3-day | Quarters at 2% or more |
 |---|---:|---:|---:|
 | All F&O stocks | 4,460 | +0.28% | **0 of 22** (best quarter +1.08%) |
+| Only stocks in F&O at the time (see note below) | 3,278 | +0.04% | **0 of 22** (best quarter +0.96%) |
 | Best open-search rules, on the 8 quarters kept aside | 54 - 173 | +0.3% to +1.4% | 0 - 2 of 8 |
 | Score model fitted on earlier quarters only | 60 - 630 | -3.8% to +0.7% a quarter | 1 - 3 of 16 |
 | Early reporters with a strong week (below) | 42 | +3.4% (+2.8% with the take-profit) | 13 of 22 |
 | Your Condition A (below) | 32 | +3.1% | see below |
 | Sector valuation, P/B financials / P/E consumer-IT-pharma (below) | 27 - 518 | -1.2% to +1.6% | at most 10 of 22 |
 | Sector performance before results (below) | 299 - 730 | -0.2% to +0.9% | at most 4 of 22 |
+| Fresh sector strategies, 619 variants ([SECTOR_STRATEGIES.md](SECTOR_STRATEGIES.md)) | - | none beats chance | at most 5 of 21 |
+
+Note: "All F&O stocks" uses today's F&O list over the whole period, so it includes results from before a stock joined
+F&O (1,182 results, +0.94% on average); stocks that later joined were mostly the ones that grew. On stocks that were
+in F&O at the time, the window averaged +0.04% (-0.05% vs Nifty), i.e. a loss after costs.
 
 ## Data
 

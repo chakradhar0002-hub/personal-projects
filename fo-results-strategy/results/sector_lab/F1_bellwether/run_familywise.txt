@@ -1,0 +1,14 @@
+REAL DATA: best t over all directional rules 2.85; rules passing full screen 4
+PLACEBO (within-quarter signal permutation, 1000 draws): median best t 2.64, 95th pct 4.10; share of draws with best t >= 2.85: 0.355
+   rules passing the full screen per draw: mean 1.27, median 1, share of draws with >= 4: 0.078
+
+C1 trigger-level (one number per bellwether event): n 58, mean 0.61%, t 2.01, positive 35/58
+   path: session d+1 gross excess (long peer) q-avg -0.04%  t -0.22
+   path: session d+2 gross excess (long peer) q-avg 0.20%  t 1.14
+   path: session d+3 gross excess (long peer) q-avg 1.00%  t 3.77
+   peers own excess on the bellwether reaction day d (known at entry): q-avg -0.79%  t -3.87
+   peers that fell on d          : trades 165, q-avg net hedged 0.61%, t 2.07
+   peers that did not fall on d  : trades 94, q-avg net hedged 1.23%, t 2.69
+   SEC BIG H3 long-peer GROSS hedged by bellwether bucket signal < -3%  : trades  259, q-avg 1.14%, t 3.41
+   SEC BIG H3 long-peer GROSS hedged by bellwether bucket -3%..+3%      : trades 1141, q-avg -0.11%, t -0.97
+   SEC BIG H3 long-peer GROSS hedged by bellwether bucket signal > +3%  : trades  192, q-avg 0.77%, t 1.48

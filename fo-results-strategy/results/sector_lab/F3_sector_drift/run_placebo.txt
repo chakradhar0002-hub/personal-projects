@@ -1,0 +1,41 @@
+base H5: n=392 q_avg=0.19 t=0.61 first14=0.37 last8=-0.12
+base H20: n=392 q_avg=1.73 t=2.15 first14=1.98 last8=1.28
+B3 clustered by reaction date: 265 dates, mean 1.68, t 3.78 (overlapping windows -> optimistic)
+
+PL0(i) all F&O results, H20: n=3280 vsN q_avg=0.41 t=1.05 first14=0.55 last8=0.14 | raw q_avg=1.08 first14=1.90 last8=-0.37
+PL0(i) all F&O results, H5: vsN q_avg=-0.11 t=-0.70
+PL0(ii) random F&O results, B3 counts: random q_avg mean 0.39 (95th pct 1.04); P(random >= B3 q_avg 1.73) = 0.0005; P(t>=2.15) = 0.0365; P(both halves>0 & t>=obs) = 0.0350
+
+PL1 non-results days with XN>4%, H20: n=1854 trade avg 0.80, 22 calendar quarters, q_avg 0.76, t 2.13, first half 0.45, second half 1.07
+B3 minus PL1 by calendar quarter (22 common quarters): 0.97, t 1.51
+
+PL2 random subsets of base winners (2000 reps, same count per quarter)
+  B5 XN>6 H20            n= 211 obs q_avg   2.25 t  2.90 | random mean  1.73 95%  2.33 | p(q_avg) 0.075 p(t) 0.018 p(t&halves) 0.018 | random 'promising-like' 0.111
+  A3 XN>4&XS<=4 H5       n=  57 obs q_avg  -0.38 t -0.65 | random mean  0.33 95%  1.38 | p(q_avg) 0.877 p(t) 0.892 p(t&halves) 0.331 | random 'promising-like' 0.007
+  A3 XN>4&XS<=4 H20      n=  57 obs q_avg   0.84 t  0.83 | random mean  2.37 95%  4.36 | p(q_avg) 0.907 p(t) 0.869 p(t&halves) 0.790 | random 'promising-like' 0.138
+  BC1 PS>0 H5            n= 131 obs q_avg   0.01 t  0.01 | random mean  0.19 95%  1.05 | p(q_avg) 0.625 p(t) 0.625 p(t&halves) 0.275 | random 'promising-like' 0.002
+  BC2 PS<=0 H5           n= 173 obs q_avg  -0.20 t -0.48 | random mean  0.19 95%  0.65 | p(q_avg) 0.913 p(t) 0.911 p(t&halves) 0.291 | random 'promising-like' 0.002
+  BC3 PS>2 H5            n=  30 obs q_avg   1.00 t  1.27 | random mean -0.15 95%  1.46 | p(q_avg) 0.112 p(t) 0.081 p(t&halves) 0.072 | random 'promising-like' 0.009
+  BC4 PS<-2 H5           n=  42 obs q_avg   0.30 t  0.39 | random mean -0.08 95%  1.14 | p(q_avg) 0.296 p(t) 0.301 p(t&halves) 0.188 | random 'promising-like' 0.004
+  BC1 PS>0 H20           n= 131 obs q_avg   2.16 t  2.30 | random mean  1.72 95%  3.11 | p(q_avg) 0.295 p(t) 0.133 p(t&halves) 0.133 | random 'promising-like' 0.085
+  BC2 PS<=0 H20          n= 173 obs q_avg   1.30 t  1.01 | random mean  1.73 95%  2.55 | p(q_avg) 0.797 p(t) 0.951 p(t&halves) 0.939 | random 'promising-like' 0.127
+  BC3 PS>2 H20           n=  30 obs q_avg   2.24 t  1.62 | random mean  0.56 95%  3.04 | p(q_avg) 0.135 p(t) 0.095 p(t&halves) 0.091 | random 'promising-like' 0.014
+  BC4 PS<-2 H20          n=  42 obs q_avg  -1.98 t -1.08 | random mean  0.58 95%  2.56 | p(q_avg) 0.983 p(t) 0.947 p(t&halves) 0.402 | random 'promising-like' 0.017
+  BC5 n<2 H20            n=  88 obs q_avg   2.53 t  3.40 | random mean  1.74 95%  3.04 | p(q_avg) 0.163 p(t) 0.014 p(t&halves) 0.014 | random 'promising-like' 0.102
+  C1 above200 H5         n= 295 obs q_avg   0.26 t  0.82 | random mean  0.20 95%  0.52 | p(q_avg) 0.373 p(t) 0.313 p(t&halves) 0.227 | random 'promising-like' 0.000
+  C2 below200 H5         n=  97 obs q_avg  -0.82 t -0.86 | random mean -0.24 95%  0.74 | p(q_avg) 0.848 p(t) 0.678 p(t&halves) 0.135 | random 'promising-like' 0.002
+  C3 sec3m>0 H5          n= 268 obs q_avg   0.11 t  0.30 | random mean  0.20 95%  0.56 | p(q_avg) 0.649 p(t) 0.634 p(t&halves) 0.303 | random 'promising-like' 0.000
+  C4 sec3m<=0 H5         n= 124 obs q_avg  -0.23 t -0.48 | random mean  0.27 95%  1.14 | p(q_avg) 0.835 p(t) 0.840 p(t&halves) 0.322 | random 'promising-like' 0.002
+  C1 above200 H20        n= 295 obs q_avg   1.66 t  1.92 | random mean  1.72 95%  2.12 | p(q_avg) 0.596 p(t) 0.638 p(t&halves) 0.638 | random 'promising-like' 0.104
+  C2 below200 H20        n=  97 obs q_avg   1.75 t  1.16 | random mean  0.85 95%  2.47 | p(q_avg) 0.183 p(t) 0.324 p(t&halves) 0.295 | random 'promising-like' 0.049
+  C3 sec3m>0 H20         n= 268 obs q_avg   1.83 t  2.27 | random mean  1.72 95%  2.33 | p(q_avg) 0.397 p(t) 0.328 p(t&halves) 0.328 | random 'promising-like' 0.191
+  C4 sec3m<=0 H20        n= 124 obs q_avg   0.87 t  0.58 | random mean  1.70 95%  3.30 | p(q_avg) 0.796 p(t) 0.845 p(t&halves) 0.763 | random 'promising-like' 0.062
+
+PL3 random peers for D (300 reps)
+  D1 H5: obs q_avg -0.41 t -2.66 | random-peer mean -0.21 [5%,95%] [-0.38,-0.03] p(random>=obs) 0.953
+  D1 H20: obs q_avg 0.21 t 0.50 | random-peer mean 0.02 [5%,95%] [-0.32,0.36] p(random>=obs) 0.170
+  D2 H5: obs q_avg -0.42 t -1.69 | random-peer mean -0.14 [5%,95%] [-0.36,0.04] p(random>=obs) 0.983
+  D2 H20: obs q_avg -0.00 t -0.01 | random-peer mean 0.10 [5%,95%] [-0.24,0.41] p(random>=obs) 0.703
+
+PL4 random stock->sector map for A1 H20 (300 reps)
+  A1: obs q_avg 2.05 t 2.32 | random-sector mean 1.74 [5%,95%] [1.50,2.01] p(random>=obs) 0.027; p(t>=obs) 0.353

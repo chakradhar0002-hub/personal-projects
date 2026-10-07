@@ -1,0 +1,20 @@
+share of A1 picks (PX>1%) whose stock was promoted into F&O within the previous 4 quarters: 0.153   vs share in the PX pool: 0.108
+mean PX: promoted within 4q 0.481%, others -0.116%
+                              rule  trades  quarters  perq_raw  perq_nifty  t_q_nifty  first14_nifty  last8_nifty qpos_nifty q_ge2_raw  pool_perq_nifty  placebo_share_t_ge
+    R1 A1 with F&O-era-only PX>+1%     551        18     0.347       0.239      1.074          0.020        0.513   14 of 18   2 of 18           -0.255               0.002
+R2 A1 only stocks in F&O since qn0     360        18     0.440       0.364      1.435          0.169        0.607   14 of 18   1 of 18           -0.263               0.002
+   R3 A1 excl. promoted in last 4q     552        18     0.544       0.408      2.075          0.208        0.658   13 of 18   1 of 18           -0.249               0.000
+   A1 (main, re-run for reference)     652        18     0.432       0.269      1.330          0.183        0.378   11 of 18   1 of 18           -0.283               0.002
+R4 A6 winsorised         quarters 18 mean slope 0.170 t 3.01 first14 0.208 last8 0.122
+R6 A6 with F&O-era PX    quarters 18 mean slope 0.138 t 2.54 first14 0.129 last8 0.149
+A6 main                  quarters 18 mean slope 0.137 t 2.78 first14 0.177 last8 0.088
+
+R5 G2 leave-one-sector-out (short stock vs Nifty, net):
+  without Nifty Energy                 trades  445 perq  0.427%  t  2.05  first14  0.316 last8  0.567
+  without Nifty India Consumption      trades  451 perq  0.419%  t  2.09  first14  0.247 last8  0.634
+  without Nifty India Manufacturing    trades  469 perq  0.543%  t  2.66  first14  0.416 last8  0.702
+  without Nifty Infrastructure         trades  412 perq  0.621%  t  2.85  first14  0.389 last8  0.911
+  without Nifty Metal                  trades  414 perq  0.449%  t  1.74  first14  0.247 last8  0.702
+  without Nifty Oil & Gas              trades  426 perq  0.457%  t  2.28  first14  0.315 last8  0.635
+  without Nifty Pharma                 trades  461 perq  0.517%  t  2.49  first14  0.369 last8  0.702
+  without Nifty Services Sector        trades  387 perq  0.509%  t  2.42  first14  0.291 last8  0.783

@@ -1,0 +1,19 @@
+first14: perQ 2.79 t 2.54 nQ 14
+last8: perQ 1.31 t 1.43 nQ 8
+qn0-6: perQ -0.11 t -0.09 nQ 7
+qn7-13: perQ 5.69 t 5.29 nQ 7
+gross hedged after 1 sessions: 0.55
+gross hedged after 2 sessions: 0.65
+gross hedged after 5 sessions: 0.51
+gross hedged after 10 sessions: 0.79
+gross hedged after 20 sessions: 2.07
+                 mean  size
+timing                     
+After close      2.14   150
+Before open      2.15     5
+During market    1.24    40
+Non-trading day  1.00    16
+non-results +-10: n=516 trade 0.82 median -0.71 perCalQ 0.55; trimmed(drop top/bottom 2%) 0.35
+non-results +-20: n=268 trade 0.21 median -1.22 perCalQ -0.17; trimmed(drop top/bottom 2%) -0.37
+non-results +-30: n=36 trade 1.43 median -0.66 perCalQ 1.27; trimmed(drop top/bottom 2%) 1.34
+base median hedged 1.51 trimmed 1.69

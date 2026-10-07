@@ -1,0 +1,2 @@
+actual best t 3.14
+placebo best-t median 1.44 95th 2.67 P(best>=actual) 0.0155

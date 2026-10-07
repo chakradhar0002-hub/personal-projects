@@ -1,0 +1,24 @@
+sessions 2697  2015-11-09 .. 2026-09-30
+returns (2697, 213)  index_close (2697, 205)  events (4462, 43)
+in_fo blanks filled True: 2
+F&O events 3280; reaction excess non-blank 3280
+  index Nifty 500                    first 2015-11-09  blanks since 2021 0  first valid since 2021 2021-01-01
+  index Nifty Auto                   first 2015-11-09  blanks since 2021 0  first valid since 2021 2021-01-01
+  index Nifty Bank                   first 2015-11-09  blanks since 2021 0  first valid since 2021 2021-01-01
+  index Nifty Commodities            first 2015-11-09  blanks since 2021 0  first valid since 2021 2021-01-01
+  index Nifty Consumer Durables      first 2016-07-07  blanks since 2021 0  first valid since 2021 2021-01-01
+  index Nifty Energy                 first 2015-11-09  blanks since 2021 0  first valid since 2021 2021-01-01
+  index Nifty FMCG                   first 2015-11-09  blanks since 2021 0  first valid since 2021 2021-01-01
+  index Nifty Financial Services     first 2015-11-09  blanks since 2021 0  first valid since 2021 2021-01-01
+  index Nifty IT                     first 2015-11-09  blanks since 2021 0  first valid since 2021 2021-01-01
+  index Nifty India Consumption      first 2015-11-09  blanks since 2021 0  first valid since 2021 2021-01-01
+  index Nifty India Defence          first 2022-01-19  blanks since 2021 260  first valid since 2021 2022-01-19
+  index Nifty India Digital          first 2016-07-07  blanks since 2021 234  first valid since 2021 2021-12-14
+  index Nifty India Manufacturing    first 2016-07-07  blanks since 2021 154  first valid since 2021 2021-08-17
+  index Nifty Infrastructure         first 2015-11-09  blanks since 2021 0  first valid since 2021 2021-01-01
+  index Nifty Metal                  first 2015-11-09  blanks since 2021 0  first valid since 2021 2021-01-01
+  index Nifty Oil & Gas              first 2016-07-07  blanks since 2021 0  first valid since 2021 2021-01-01
+  index Nifty Pharma                 first 2015-11-09  blanks since 2021 0  first valid since 2021 2021-01-01
+  index Nifty Services Sector        first 2015-11-09  blanks since 2021 0  first valid since 2021 2021-01-01
+  index Nifty 50                     first 2015-11-09  blanks since 2021 0  first valid since 2021 2021-01-01
+F&O events per qn: 98 117 125 132 131 134 133 133 134 134 132 135 135 135 134 172 178 191 191 196 204 206

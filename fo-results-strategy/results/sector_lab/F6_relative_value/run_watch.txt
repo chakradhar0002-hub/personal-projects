@@ -1,0 +1,79 @@
+sessions 2697 (2015-11-09..2026-09-30), returns (2697, 213), indices (2697, 205), events (4462, 43)
+event session positions match sessions.csv: OK
+
+Index coverage in study window (2021-01-01..):
+  Nifty 500                    nan=   0 of 1425
+  Nifty Auto                   nan=   0 of 1425
+  Nifty Bank                   nan=   0 of 1425
+  Nifty Commodities            nan=   0 of 1425
+  Nifty Consumer Durables      nan=   0 of 1425
+  Nifty Energy                 nan=   0 of 1425
+  Nifty FMCG                   nan=   0 of 1425
+  Nifty Financial Services     nan=   0 of 1425
+  Nifty IT                     nan=   0 of 1425
+  Nifty India Consumption      nan=   0 of 1425
+  Nifty India Defence          nan= 260 of 1425
+  Nifty India Digital          nan= 234 of 1425
+  Nifty India Manufacturing    nan= 154 of 1425
+  Nifty Infrastructure         nan=   0 of 1425
+  Nifty Metal                  nan=   0 of 1425
+  Nifty Oil & Gas              nan=   0 of 1425
+  Nifty Pharma                 nan=   0 of 1425
+  Nifty Services Sector        nan=   0 of 1425
+  Nifty 50                     nan=   0 of 1425
+
+reaction-day return from returns.csv vs events.move: max abs diff 4.96e-07
+events with reaction excess: 4462 / 4462; F&O events: 3278; F&O & grouped: 3216
+F&O peer groups with >=2 members per season (median count): 22
+per-season (qn, trades, avg vs Nifty net, avg raw net):
+qn              0     1     2     3     4     5     6     7      8     9     10    11    12    13     14    15    16    17    18    19    20     21
+trades        5.00  4.00  4.00  4.00  3.00  9.00  4.00  2.00  11.00  3.00  4.00  6.00  4.00  1.00   2.00  8.00  8.00  8.00  7.00  5.00  7.00  12.00
+avg_vs_nifty  4.07 -5.34  0.91 -4.94  4.64  2.34  0.41 -1.44   3.22  0.69  1.03  5.97  2.27  3.17  13.25 -1.56  2.35  0.55 -3.86  8.39  5.43   3.27
+avg_raw       8.43  1.26 -3.18 -7.69  0.71  4.97  2.30 -4.43   5.39  1.74  8.18  8.09  5.42  4.82  13.81 -5.04  3.53  0.82 -2.72  2.92  4.85   1.10
+
+per-season avg 2.04, median season 2.30, t 2.24
+per-trade avg 1.95, median trade 0.76, win% 55.4
+drop best 5% trades: per-season avg 1.38, t 1.82
+winsorised +-15%: per-season avg 1.88, t 2.19
+leave-one-season-out t: min 1.93, max 2.72
+
+by group:
+                                size   mean
+grp                                        
+Pharma                            19   2.43
+Consumer brands                   16   1.57
+Metals                            15   1.11
+Banks                             14   1.38
+Electrical Equipment               9   5.57
+NBFCs                              9   0.84
+FMCG                               6   2.45
+Auto Ancillaries                   5   1.78
+IT services                        4  -1.93
+Refineries                         4   2.88
+Automobiles - 4 Wheelers           4   3.13
+Cement And Cement Products         4   0.35
+Power                              4  -0.30
+Capital Markets                    2  -4.62
+Internet & E-commerce              2   9.11
+Automobiles - 2 And 3 Wheelers     1  -4.87
+Aerospace & Defence                1   8.95
+Real estate                        1  -0.65
+Travel And Transport               1  18.29
+
+by known-edge overlap:
+               size  mean
+in_known_edge            
+False            92  1.72
+True             29  2.66
+
+by X reaction excess bucket (absolute bins):
+              size  mean
+exc_bin                 
+(-1.0, 0.0]     33  2.99
+(0.0, 0.02]     36  0.85
+(0.02, 0.04]    23  1.27
+(0.04, 1.0]     29  2.66
+
+share with own reaction excess < 0 (stock fell vs Nifty but less than peers): 0.27
+
+known edge reference (F&O, reaction excess > +4%, hold 20, vs Nifty net): trades 392, per-trade avg 1.45

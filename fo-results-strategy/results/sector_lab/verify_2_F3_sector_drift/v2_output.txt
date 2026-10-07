@@ -1,0 +1,82 @@
+F&O events 3278 blank reaction-day return 0
+check vs events.move (reaction-day return) max abs diff: 4.963820550984988e-07
+
+=== A. base reproduction (6%, 20, close entry)
+BASE: n=211 raw_net=1.93 hedged=1.88 vs_sector=1.58 perQ=2.25 t=2.90 Qpos=17/22 first14(trade)=2.43 last8(trade)=1.28 first14(perQ)=2.79 last8(perQ)=1.31 last8_raw=0.34 win=56.9%
+per-quarter hedged avg (%): 0:0.40(11) 1:0.10(7) 2:0.73(8) 3:-5.09(9) 4:-0.04(7) 5:4.91(5) 6:-1.75(7) 7:3.95(9) 8:6.85(9) 9:7.87(7) 10:10.60(4) 11:4.37(10) 12:2.87(10) 13:3.32(7) 14:1.62(12) 15:-3.32(10) 16:5.26(13) 17:2.58(9) 18:-1.17(17) 19:1.01(17) 20:2.79(14) 21:1.73(9)
+date-clustered: dates=165 mean=1.96 t=3.57
+calendar-month clustered: months=44 mean=1.93 t=2.49
+Overlap: trades per quarter {'count': 22.0, 'mean': 9.6, 'std': 3.4, 'min': 4.0, '25%': 7.0, '50%': 9.0, '75%': 10.8, 'max': 17.0}
+max concurrent positions 16 mean while any open 4.9
+
+=== B. neighbouring thresholds x horizons (hedged net, % ; perQ mean / t / first14 perQ / last8 perQ / n)
+thr=0.03 H= 5: n= 576 trade= 0.10 perQ= 0.18 t= 0.85 f14= 0.43 l8=-0.26 raw_net= 0.27 vsSect= 0.07
+thr=0.03 H=10: n= 576 trade= 0.22 perQ= 0.33 t= 1.01 f14= 0.68 l8=-0.29 raw_net= 0.44 vsSect= 0.22
+thr=0.03 H=20: n= 576 trade= 1.17 perQ= 1.36 t= 2.29 f14= 1.86 l8= 0.48 raw_net= 1.23 vsSect= 0.97
+thr=0.03 H=30: n= 576 trade= 1.23 perQ= 1.41 t= 2.22 f14= 1.83 l8= 0.67 raw_net= 1.44 vsSect= 1.00
+thr=0.04 H= 5: n= 392 trade= 0.07 perQ= 0.19 t= 0.61 f14= 0.37 l8=-0.12 raw_net= 0.26 vsSect= 0.08
+thr=0.04 H=10: n= 392 trade= 0.22 perQ= 0.38 t= 0.92 f14= 0.69 l8=-0.16 raw_net= 0.51 vsSect= 0.29
+thr=0.04 H=20: n= 392 trade= 1.45 perQ= 1.73 t= 2.15 f14= 1.98 l8= 1.28 raw_net= 1.55 vsSect= 1.23
+thr=0.04 H=30: n= 392 trade= 1.59 perQ= 1.84 t= 1.94 f14= 2.07 l8= 1.44 raw_net= 1.75 vsSect= 1.22
+thr=0.05 H= 5: n= 286 trade= 0.25 perQ= 0.37 t= 1.10 f14= 0.75 l8=-0.29 raw_net= 0.40 vsSect= 0.27
+thr=0.05 H=10: n= 286 trade= 0.48 perQ= 0.68 t= 1.55 f14= 1.17 l8=-0.18 raw_net= 0.72 vsSect= 0.53
+thr=0.05 H=20: n= 286 trade= 1.84 perQ= 2.31 t= 2.72 f14= 2.86 l8= 1.33 raw_net= 1.86 vsSect= 1.57
+thr=0.05 H=30: n= 286 trade= 1.97 perQ= 2.43 t= 2.49 f14= 3.07 l8= 1.30 raw_net= 2.17 vsSect= 1.67
+thr=0.06 H= 5: n= 211 trade= 0.32 perQ= 0.38 t= 1.18 f14= 0.67 l8=-0.13 raw_net= 0.48 vsSect= 0.36
+thr=0.06 H=10: n= 211 trade= 0.60 perQ= 0.67 t= 1.73 f14= 1.11 l8=-0.09 raw_net= 0.92 vsSect= 0.70
+thr=0.06 H=20: n= 211 trade= 1.88 perQ= 2.25 t= 2.90 f14= 2.79 l8= 1.31 raw_net= 1.93 vsSect= 1.58
+thr=0.06 H=30: n= 211 trade= 2.20 perQ= 2.52 t= 2.56 f14= 3.16 l8= 1.39 raw_net= 2.51 vsSect= 1.79
+thr=0.07 H= 5: n= 142 trade= 0.13 perQ= 0.42 t= 1.07 f14= 0.92 l8=-0.47 raw_net= 0.34 vsSect= 0.23
+thr=0.07 H=10: n= 142 trade= 0.57 perQ= 0.93 t= 1.87 f14= 1.42 l8= 0.08 raw_net= 1.04 vsSect= 0.71
+thr=0.07 H=20: n= 142 trade= 1.63 perQ= 2.55 t= 2.61 f14= 3.34 l8= 1.17 raw_net= 1.81 vsSect= 1.40
+thr=0.07 H=30: n= 142 trade= 2.24 perQ= 3.22 t= 2.76 f14= 4.38 l8= 1.19 raw_net= 2.82 vsSect= 1.69
+thr=0.08 H= 5: n=  96 trade=-0.01 perQ= 0.22 t= 0.43 f14= 0.70 l8=-0.62 raw_net= 0.24 vsSect= 0.10
+thr=0.08 H=10: n=  96 trade= 0.39 perQ= 0.75 t= 0.99 f14= 1.32 l8=-0.25 raw_net= 0.84 vsSect= 0.52
+thr=0.08 H=20: n=  96 trade= 1.43 perQ= 2.22 t= 1.78 f14= 2.96 l8= 0.93 raw_net= 1.74 vsSect= 1.12
+thr=0.08 H=30: n=  96 trade= 2.50 perQ= 3.63 t= 2.16 f14= 4.85 l8= 1.50 raw_net= 3.32 vsSect= 1.86
+
+=== C. execution
+entry=open1: n=211 raw_net=1.65 hedged=1.60 vs_sector=1.30 perQ=1.95 t=2.56 Qpos=17/22 first14(trade)=2.02 last8(trade)=1.14 first14(perQ)=2.40 last8(perQ)=1.16 last8_raw=0.20 win=56.9%
+entry=close1: n=211 raw_net=1.30 hedged=1.28 vs_sector=1.04 perQ=1.55 t=1.95 Qpos=15/22 first14(trade)=1.60 last8(trade)=0.94 first14(perQ)=1.91 last8(perQ)=0.91 last8_raw=0.07 win=53.1%
+
+=== D. robustness on base
+drop 5 best trades: n=206 raw_net=1.32 hedged=1.29 vs_sector=1.06 perQ=1.55 t=2.68 Qpos=16/22 first14(trade)=1.70 last8(trade)=0.84 first14(perQ)=1.90 last8(perQ)=0.95 last8_raw=-0.06 win=55.8%
+drop best quarter (qn 10): n=207 raw_net=1.69 hedged=1.71 vs_sector=1.46 perQ=1.86 t=2.65 Qpos=16/21 first14(trade)=2.12 last8(trade)=1.28 first14(perQ)=2.19 last8(perQ)=1.31 last8_raw=0.34 win=56.0%
+leave-one-quarter-out min t 2.6 qn 9 max t 3.58
+  drop sector Nifty Financial Services     ( 37 trades): perQ=2.41 t=2.73 trade=1.74
+  drop sector Nifty Bank                   ( 29 trades): perQ=2.01 t=2.37 trade=1.94
+  drop sector Nifty IT                     ( 24 trades): perQ=2.15 t=2.41 trade=1.68
+  drop sector Nifty 500                    ( 22 trades): perQ=2.09 t=2.77 trade=1.68
+  drop sector Nifty Auto                   ( 18 trades): perQ=2.38 t=2.68 trade=1.97
+  drop sector Nifty India Manufacturing    ( 16 trades): perQ=2.09 t=2.64 trade=1.64
+  drop sector Nifty FMCG                   ( 15 trades): perQ=2.38 t=2.84 trade=2.04
+  drop sector Nifty Consumer Durables      ( 11 trades): perQ=2.21 t=2.95 trade=1.85
+  drop sector Nifty Pharma                 (  9 trades): perQ=2.40 t=3.06 trade=1.96
+  drop sector Nifty Services Sector        (  8 trades): perQ=2.45 t=3.34 trade=2.09
+  drop sector Nifty Commodities            (  5 trades): perQ=2.21 t=2.83 trade=1.88
+  drop sector Nifty India Digital          (  5 trades): perQ=2.27 t=2.92 trade=1.92
+  drop sector Nifty Metal                  (  3 trades): perQ=2.43 t=3.07 trade=2.03
+  drop sector Nifty Infrastructure         (  3 trades): perQ=2.30 t=2.92 trade=1.90
+  drop sector Nifty India Defence          (  3 trades): perQ=2.31 t=2.99 trade=1.96
+  drop sector Nifty Oil & Gas              (  1 trades): perQ=1.96 t=2.91 trade=1.75
+  drop sector Nifty Energy                 (  1 trades): perQ=2.27 t=2.94 trade=1.93
+  drop sector Nifty India Consumption      (  1 trades): perQ=2.25 t=2.90 trade=1.87
+by sector (hedged trade mean, n): {'Nifty 500': {'mean': 3.63, 'size': 22}, 'Nifty Auto': {'mean': 0.95, 'size': 18}, 'Nifty Bank': {'mean': 1.5, 'size': 29}, 'Nifty Commodities': {'mean': 1.83, 'size': 5}, 'Nifty Consumer Durables': {'mean': 2.52, 'size': 11}, 'Nifty Energy': {'mean': -8.14, 'size': 1}, 'Nifty FMCG': {'mean': -0.15, 'size': 15}, 'Nifty Financial Services': {'mean': 2.54, 'size': 37}, 'Nifty IT': {'mean': 3.45, 'size': 24}, 'Nifty India Consumption': {'mean': 3.83, 'size': 1}, 'Nifty India Defence': {'mean': -3.65, 'size': 3}, 'Nifty India Digital': {'mean': 0.32, 'size': 5}, 'Nifty India Manufacturing': {'mean': 4.84, 'size': 16}, 'Nifty Infrastructure': {'mean': 0.98, 'size': 3}, 'Nifty Metal': {'mean': -8.36, 'size': 3}, 'Nifty Oil & Gas': {'mean': 29.82, 'size': 1}, 'Nifty Pharma': {'mean': 0.2, 'size': 9}, 'Nifty Services Sector': {'mean': -3.5, 'size': 8}}
+costs doubled: n=211 raw_net=1.93 hedged=1.69 vs_sector=1.58 perQ=2.06 t=2.66 Qpos=16/22 first14(trade)=2.24 last8(trade)=1.09 first14(perQ)=2.60 last8(perQ)=1.12 last8_raw=0.34 win=56.4%
+trades by symbol top 10: {'MUTHOOTFIN': 6, 'JUBLFOOD': 5, 'COFORGE': 5, 'BHARATFORG': 4, 'APOLLOHOSP': 4, 'FEDERALBNK': 4, 'BANDHANBNK': 4, 'EICHERMOT': 4, 'CUMMINSIND': 4, 'TRENT': 4}
+repeat-symbol share 0.44
+median beta 1.02
+beta-hedged: n=211 raw_net=1.93 hedged=2.08 vs_sector=1.58 perQ=2.44 t=3.13 Qpos=18/22 first14(trade)=2.67 last8(trade)=1.44 first14(perQ)=3.03 last8(perQ)=1.42 last8_raw=0.34 win=59.2%
+trades with beat>15%: 5 their hedged mean 6.33
+corr(hedged, nifty over hold) 0.14
+by year hedged mean %: {'2021': 0.42, '2022': -1.21, '2023': 6.71, '2024': 2.95, '2025': 0.79, '2026': 1.79} {'2021': 26, '2022': 28, '2023': 29, '2024': 39, '2025': 49, '2026': 40}
+
+=== E. placebos
+(i) random results same counts: perQ mean 0.40, 95th pct 1.27, share >= obs 2.25: 0.0000
+    all F&O results unconditional 20d hedged: 0.41
+(ii) non-results >6% beat days: n=516 hedged trade mean 0.82, per-cal-quarter mean 0.55 t=0.59
+(iii) same-date random non-reporting F&O stock: perQ mean 0.31, share >= obs: 0.000
+(iv) random subsets of 4% winners (n=211 of 392): mean 1.73; share >= obs: 0.114
+
+=== multiple testing
+t=2.90 df=21 two-sided p~0.0085; Bonferroni x36 -> 0.306; x(36+prior 4% search) remains > 0.05 if p>0.0014

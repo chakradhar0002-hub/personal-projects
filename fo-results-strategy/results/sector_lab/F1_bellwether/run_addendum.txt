@@ -1,0 +1,12 @@
+#337 POST-HOC SEC BIG H3 |s|>3% long peers: trades 451, triggers 100, quarters 22
+   avg/trade: raw net 0.30%, hedged net 0.39%, vs sector net 0.08%  | win 53%
+   quarter-avg hedged 0.84%  t 2.38  first14 1.27  last8 0.09  positive 15/22  | raw q-avg 0.82% | vs-sector q-avg 0.37% t 1.85 | trigger-level t 1.58
+   PL1 permutation: placebo mean -0.04%, share >= actual mean 0.000, share >= actual t 0.001
+   PL2 random non-peers: placebo mean 0.02%, share >= actual mean 0.000, share >= actual t 0.002
+   per quarter %: {0: 2.51, 1: 1.95, 2: 0.41, 3: 1.63, 4: -0.31, 5: -1.06, 6: 0.85, 7: 0.83, 8: -0.36, 9: 1.3, 10: 6.21, 11: 0.74, 12: 0.68, 13: 2.41, 14: -0.33, 15: -2.25, 16: 1.08, 17: -0.0, 18: -0.12, 19: 0.19, 20: 1.95, 21: 0.17}
+
+INDEX SEC BIG h1 |s|>3% (all sectors) with index future cost 0.04%: trades 113, q-avg 0.23%, t 3.14, first14 0.31, last8 0.08
+
+INDEX SEC BIG h1 |s|>3% (all sectors) with stock-basket cost 0.19%: trades 113, q-avg 0.08%, t 1.06, first14 0.16, last8 -0.07
+   futures-tradeable part (Bank/FinServ): 7 trades
+   PL1 permutation (index): placebo mean -0.00%, share >= actual mean 0.009, share >= actual t 0.000

@@ -1,0 +1,62 @@
+A. their-definition replication, 0.04 cost: {'n': 113, 'q': 22, 'avg': np.float64(0.232), 'qavg': np.float64(0.227), 't': np.float64(3.14), 'f14': np.float64(0.312), 'l8': np.float64(0.077), 'qpos': 18, 't_date': np.float64(2.97)}
+   raw (signed sector) net 0.02: {'n': 113, 'q': 22, 'avg': np.float64(0.41), 'qavg': np.float64(0.446), 't': np.float64(3.36), 'f14': np.float64(0.59), 'l8': np.float64(0.193), 'qpos': 16}
+   basket hedge 0.19: {'n': 113, 'q': 22, 'avg': np.float64(0.082), 'qavg': np.float64(0.077), 't': np.float64(1.06), 'f14': np.float64(0.162), 'l8': np.float64(-0.073), 'qpos': 13, 't_date': np.float64(1.24)}
+   nbw>1 (ties) trades: 6
+   match vs their trades: {'both': 113, 'left_only': 0, 'right_only': 0}  max |vsn diff| 9.952975943416931e-17
+B. bellwether own next-session signed excess: {'n': 113, 'q': 22, 'avg': np.float64(0.502), 'qavg': np.float64(0.529), 't': np.float64(2.1), 'f14': np.float64(0.235), 'l8': np.float64(1.044), 'qpos': 12}
+   other group members (EW, all incl. already reported) signed excess: {'n': 113, 'q': 22, 'avg': np.float64(0.331), 'qavg': np.float64(0.282), 't': np.float64(2.34), 'f14': np.float64(0.217), 'l8': np.float64(0.398), 'qpos': 14}
+C. grid thr x H (vsn net 0.04):
+   thr 0.020 H1: n 165 qavg 0.149 t 2.52 f14 0.163 l8 0.124 qpos 17/22
+   thr 0.020 H2: n 165 qavg 0.205 t 3.41 f14 0.295 l8 0.049 qpos 17/22
+   thr 0.020 H3: n 165 qavg 0.15 t 1.66 f14 0.237 l8 -0.003 qpos 14/22
+   thr 0.020 H5: n 165 qavg 0.108 t 0.79 f14 0.252 l8 -0.143 qpos 13/22
+   thr 0.025 H1: n 136 qavg 0.198 t 3.52 f14 0.258 l8 0.092 qpos 18/22
+   thr 0.025 H2: n 136 qavg 0.253 t 3.54 f14 0.392 l8 0.012 qpos 18/22
+   thr 0.025 H3: n 136 qavg 0.208 t 1.88 f14 0.346 l8 -0.032 qpos 14/22
+   thr 0.025 H5: n 136 qavg 0.204 t 1.2 f14 0.448 l8 -0.222 qpos 13/22
+   thr 0.030 H1: n 113 qavg 0.227 t 3.14 f14 0.312 l8 0.077 qpos 18/22
+   thr 0.030 H2: n 113 qavg 0.293 t 3.03 f14 0.46 l8 0.0 qpos 16/22
+   thr 0.030 H3: n 113 qavg 0.218 t 1.52 f14 0.355 l8 -0.021 qpos 15/22
+   thr 0.030 H5: n 113 qavg 0.15 t 0.64 f14 0.371 l8 -0.239 qpos 15/22
+   thr 0.035 H1: n 76 qavg 0.161 t 2.0 f14 0.263 l8 -0.019 qpos 14/22
+   thr 0.035 H2: n 76 qavg 0.157 t 1.61 f14 0.338 l8 -0.16 qpos 14/22
+   thr 0.035 H3: n 76 qavg 0.158 t 1.09 f14 0.238 l8 0.017 qpos 15/22
+   thr 0.035 H5: n 76 qavg 0.285 t 1.08 f14 0.245 l8 0.355 qpos 10/22
+   thr 0.040 H1: n 62 qavg 0.186 t 2.05 f14 0.34 l8 -0.066 qpos 13/21
+   thr 0.040 H2: n 62 qavg 0.061 t 0.51 f14 0.27 l8 -0.279 qpos 13/21
+   thr 0.040 H3: n 62 qavg 0.001 t 0.01 f14 0.106 l8 -0.169 qpos 12/21
+   thr 0.040 H5: n 62 qavg 0.236 t 0.83 f14 0.267 l8 0.185 qpos 9/21
+   thr 0.050 H1: n 36 qavg 0.249 t 1.71 f14 0.446 l8 -0.145 qpos 8/15
+   thr 0.050 H2: n 36 qavg 0.065 t 0.28 f14 0.363 l8 -0.53 qpos 9/15
+   thr 0.050 H3: n 36 qavg 0.071 t 0.21 f14 0.108 l8 -0.001 qpos 7/15
+   thr 0.050 H5: n 36 qavg 0.577 t 1.36 f14 0.652 l8 0.426 qpos 8/15
+   delayed entry (close d+1, hold 1): {'n': 113, 'q': 22, 'avg': np.float64(-0.049), 'qavg': np.float64(0.025), 't': np.float64(0.26), 'f14': np.float64(0.109), 'l8': np.float64(-0.123), 'qpos': 8}
+   drop top5 trades: {'n': 108, 'q': 22, 'avg': np.float64(0.098), 'qavg': np.float64(0.134), 't': np.float64(1.95), 'f14': np.float64(0.206), 'l8': np.float64(0.006), 'qpos': 15}
+   drop best quarter 6 : {'n': 111, 'q': 21, 'avg': np.float64(0.221), 'qavg': np.float64(0.197), 't': np.float64(2.85), 'f14': np.float64(0.271), 'l8': np.float64(0.077), 'qpos': 17}
+   drop worst5 (symmetry): {'n': 108, 'q': 22, 'avg': np.float64(0.318), 'qavg': np.float64(0.313), 't': np.float64(4.95), 'f14': np.float64(0.388), 'l8': np.float64(0.181), 'qpos': 20}
+   per-quarter %: {0: -0.43, 1: 0.27, 2: 0.42, 3: 0.59, 4: 0.38, 5: 0.1, 6: 0.85, 7: 0.69, 8: 0.41, 9: 0.25, 10: 0.08, 11: 0.18, 12: 0.46, 13: 0.12, 14: 0.09, 15: 0.74, 16: -0.36, 17: 0.02, 18: 0.28, 19: 0.19, 20: -0.32, 21: -0.02}
+   LOSO:
+     -Nifty Auto                   qavg 0.223 t 3.12
+     -Nifty Bank                   qavg 0.232 t 3.19
+     -Nifty Commodities            qavg 0.227 t 2.98
+     -Nifty Consumer Durables      qavg 0.239 t 3.58
+     -Nifty Energy                 qavg 0.242 t 3.21
+     -Nifty FMCG                   qavg 0.174 t 2.05
+     -Nifty Financial Services     qavg 0.232 t 3.13
+     -Nifty IT                     qavg 0.212 t 2.7
+     -Nifty India Consumption      qavg 0.232 t 3.15
+     -Nifty India Defence          qavg 0.164 t 2.27
+     -Nifty India Digital          qavg 0.248 t 3.32
+     -Nifty India Manufacturing    qavg 0.239 t 3.05
+     -Nifty Infrastructure         qavg 0.24 t 3.14
+     -Nifty Metal                  qavg 0.258 t 3.83
+     -Nifty Oil & Gas              qavg 0.204 t 2.54
+     -Nifty Pharma                 qavg 0.245 t 3.08
+     -Nifty Services Sector        qavg 0.242 t 3.29
+   LOQO t range 2.84 3.78
+   costs: {0.0004: np.float64(0.227), 0.0008: np.float64(0.187), 0.0019: np.float64(0.077), 0.0038: np.float64(-0.113)}
+   long vs short: {-1.0: {'n': 66, 'q': 21, 'avg': np.float64(0.174), 'qavg': np.float64(0.164), 't': np.float64(1.55), 'f14': np.float64(0.216), 'l8': np.float64(0.06), 'qpos': 15}, 1.0: {'n': 47, 'q': 17, 'avg': np.float64(0.315), 'qavg': np.float64(0.222), 't': np.float64(1.17), 'f14': np.float64(0.276), 'l8': np.float64(0.145), 'qpos': 12}}
+D1 shuffle-within-quarter: mean placebo -0.004, P(mean>=act) 0.0065, P(t>=act) 0.0000
+D2 non-result big-stock >3% days -> next-day signed sector excess (all such days): {'n': 1590, 'q': 22, 'avg': np.float64(0.001), 'qavg': np.float64(0.0), 't': np.float64(0.0), 'f14': np.float64(0.017), 'l8': np.float64(-0.029), 'qpos': 11, 't_date': np.float64(-0.13)}  own next-day signed: 0.161
+   resampled to actual per-quarter counts: mean placebo 0.002, P(mean>=act) 0.0145, P(t>=act) 0.0030
+D3 random other sector same date/sign: mean placebo -0.032, P(mean>=act) 0.0025, P(t>=act) 0.0000

@@ -13,9 +13,12 @@ checklist and concrete trades, and backtests them on your data.
 > - **A second edge, in stock futures: results winners keep winning.** Buy a stock that beat Nifty by more than 4% on
 >   its reaction day and hold 20 sessions: +2.3% a trade over Nifty after costs (300 trades, 13 of 15 quarters positive,
 >   +1.9% in the last 6 quarters). Losers don't keep falling, and the direction can't be predicted before the numbers.
->   See [docs/PATTERNS.md](docs/PATTERNS.md).
+>   See [docs/PATTERNS.md](docs/PATTERNS.md). Over 22 quarters it is weaker: +1.45% a trade, and it lost in 2021-22.
 > - **No pre-results screen averaged 2% in the 3-day window every quarter** over 22 quarters (2021-26) on quarters it
 >   was not fitted to; the average stock never reached 2% in any quarter. See [docs/TARGET_2PCT.md](docs/TARGET_2PCT.md).
+> - **Sector ideas add nothing:** 619 variants (sector leaders, sector drift and rotation, busy sector weeks, peer pairs,
+>   sector-aware winner trade) gave no new edge. Stocks in F&O at the time averaged only +0.04% in the 3-day window.
+>   See [docs/SECTOR_STRATEGIES.md](docs/SECTOR_STRATEGIES.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.

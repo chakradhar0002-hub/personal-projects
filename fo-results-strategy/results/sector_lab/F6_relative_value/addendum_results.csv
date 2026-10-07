@@ -1,0 +1,11 @@
+variant,main_trades,main_seasons,main_avg_trade,main_per_season_avg,main_t_season,main_first14,main_last8,main_n_first14,main_n_last8,main_seasons_pos,main_pct_win,main_t_date,main_n_dates,raw_season_avg,vs_sector_season_avg,vs_peer_basket_season_avg,baseline_price_only_trades,baseline_price_only_season_avg,baseline_price_only_t,share_in_known_edge,excl_known_edge_trades,excl_known_edge_season_avg,excl_known_edge_t,placebo_season_avg_mean,placebo_t_mean,placebo_share_avg_ge_actual,placebo_share_t_ge_actual,season_sd,long_vs_nifty,short_vs_nifty
+A_long_badPAT25_goodReaction_h10,217,22,0.16,0.29,0.8,0.4,0.1,14,8,12,47.93,0.21,178,0.73,0.24,-0.12,956.0,-0.08,-0.26,0.22,170.0,-0.04,-0.14,-0.08,-0.18,0.175,0.135,,,
+A_long_badPAT25_goodReaction_h20,217,22,1.11,1.17,2.05,1.2,1.11,14,8,15,53.0,1.83,178,1.66,0.74,-0.05,956.0,0.56,1.46,0.22,170.0,0.88,1.93,0.31,0.53,0.02,0.02,,,
+A_long_badPAT50_goodReaction_h10,121,22,0.97,1.16,1.98,0.8,1.78,14,8,12,52.89,2.03,110,1.66,1.19,0.96,956.0,-0.08,-0.26,0.24,92.0,0.8,1.51,0.03,0.01,0.03,0.015,,,
+A_long_badPAT50_goodReaction_h20,121,22,1.95,2.04,2.24,1.21,3.48,14,8,17,55.37,2.91,110,2.51,1.42,0.77,956.0,0.56,1.46,0.24,92.0,1.97,2.19,0.28,0.35,0.0,0.01,,,
+A_known_edge_vs_sector_h20,392,22,1.1,1.37,2.04,1.56,1.04,14,8,14,52.3,3.18,265,,,,,,,,,,,,,,,3.16,,
+A_known_edge_vs_peer_basket_h20,304,22,0.58,0.75,1.04,0.85,0.59,14,8,13,49.67,1.23,213,,,,,,,,,,,,,,,3.39,,
+diag_a_continue_D8_any_h20_winner_in_known_edge=True,1111,22,1.16,1.32,1.81,1.18,1.57,14,8,14,55.18,1.88,318,,,,,,,,,,,,,,,,2.16,-0.88
+diag_a_continue_D8_any_h20_winner_in_known_edge=False,620,22,-0.1,-0.63,-0.89,-0.96,-0.05,14,8,9,50.65,-0.75,240,,,,,,,,,,,,,,,,-0.1,-0.57
+diag_a_continue_D8_any_h20_winner_is_fresh=True,952,22,0.77,0.84,1.08,0.55,1.35,14,8,13,53.47,0.22,272,,,,,,,,,,,,,,,,1.64,-0.84
+diag_a_continue_D8_any_h20_winner_is_fresh=False,779,22,0.64,0.68,1.26,0.68,0.69,14,8,15,53.66,0.97,267,,,,,,,,,,,,,,,,1.37,-0.73

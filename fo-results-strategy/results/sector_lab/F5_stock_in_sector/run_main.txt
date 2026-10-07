@@ -1,0 +1,82 @@
+events (4462, 43) returns (2697, 213) index (2697, 205) sessions 2697
+in_fo NaN->False; tradable events (F&O, ok): 3278  of which real sector: 3033
+  Nifty 500                    events  385  NaN index returns inside windows: 0
+  Nifty Auto                   events  331  NaN index returns inside windows: 0
+  Nifty Bank                   events  440  NaN index returns inside windows: 0
+  Nifty Commodities            events  176  NaN index returns inside windows: 0
+  Nifty Consumer Durables      events  191  NaN index returns inside windows: 0
+  Nifty Energy                 events  176  NaN index returns inside windows: 0
+  Nifty FMCG                   events  254  NaN index returns inside windows: 0
+  Nifty Financial Services     events  636  NaN index returns inside windows: 0
+  Nifty IT                     events  294  NaN index returns inside windows: 0
+  Nifty India Consumption      events   73  NaN index returns inside windows: 0
+  Nifty India Defence          events   76  NaN index returns inside windows: 0
+  Nifty India Digital          events   84  NaN index returns inside windows: 0
+  Nifty India Manufacturing    events  302  NaN index returns inside windows: 0
+  Nifty Infrastructure         events  176  NaN index returns inside windows: 0
+  Nifty Metal                  events  241  NaN index returns inside windows: 0
+  Nifty Oil & Gas              events  175  NaN index returns inside windows: 0
+  Nifty Pharma                 events  278  NaN index returns inside windows: 0
+  Nifty Services Sector        events  172  NaN index returns inside windows: 0
+tradable sector-stock events: 3033  quarters: 22
+
+A6 persistence slope of current excess_sector on past PX (per quarter):
+  quarters 18  mean slope 0.137  t 2.78  first14 0.177  last8 0.088  mean corr 0.057   | slope of raw 3-day on PX: 0.153 t 2.75
+
+B5 (not real time) LOYO: corr(cell mean, other-years mean) = 0.136 over 366 cells
+    after removing each quarter's all-sector mean: corr = 0.142
+    placebo (FQ labels shuffled within sector, 500 draws): mean corr 0.177, share >= actual 0.734
+
+D1 A1&B1: gate A1 PX>+1% first14 0.183, B1 SS>+1% first14 0.043 -> RUN
+
+D2 A1&B3: gate A1 PX>+1% first14 0.183, B3 EQ>+3pp first14 -0.711 -> NOT RUN (gate failed)
+
+=== SUMMARY (percent; per-quarter averages after costs) ===
+                                       rule  trades  quarters  perq_raw  perq_nifty  perq_sector  t_q_nifty  t_date_nifty  first14_nifty  last8_nifty qpos_nifty q_ge2_raw  max_q_raw  win_nifty  promising
+BASELINE all F&O sector stocks (not a rule)    3033      22.0    -0.178      -0.315       -0.407     -3.147        -3.080         -0.352       -0.252    6 of 22   0 of 22      0.812     45.368      False
+     BASELINE eligible PX pool (not a rule)    2601      18.0    -0.137      -0.283       -0.407     -2.448        -2.652         -0.308       -0.252    6 of 18   0 of 18      0.812     45.752      False
+                                  A1 PX>+1%     652      18.0     0.432       0.269        0.050      1.330         1.287          0.183        0.378   11 of 18   1 of 18      2.309     51.994      False
+                                  A2 PX>+2%     267      18.0     0.099      -0.027       -0.203     -0.087        -0.022          0.180       -0.285    8 of 18   2 of 18      3.226     51.685      False
+                            A3 PX>=exp80pct     455      17.0     0.459       0.276        0.037      1.423         1.289          0.170        0.394   10 of 17   1 of 17      2.727     50.989      False
+                                A4 PH>=0.70     279      18.0     0.422       0.284        0.105      1.023         0.700          0.328        0.228    7 of 18   4 of 18      3.153     50.896      False
+                            A5 PX<-1% SHORT     709      18.0     0.149       0.250        0.105      1.369         1.416          0.341        0.135   10 of 18   0 of 18      1.536     56.135      False
+                             A7 ctrl PN>+1%     771      18.0     0.330       0.152       -0.013      0.947         0.818          0.125        0.187   11 of 18   0 of 18      1.886     49.935      False
+                                  B1 SS>+1%     526      18.0     0.044      -0.015       -0.248     -0.055        -0.953          0.043       -0.088    9 of 18   1 of 18      2.252     46.008      False
+                                B2 SS>+0.5%    1042      18.0    -0.282      -0.396       -0.443     -2.748        -2.126         -0.408       -0.381    5 of 18   0 of 18      0.963     44.530      False
+                                 B3 EQ>+3pp     627      18.0    -0.546      -0.628       -0.638     -2.063        -1.490         -0.711       -0.524    6 of 18   0 of 18      1.680     44.498      False
+                                B4 EQs>+5pp     651      18.0    -0.052      -0.163       -0.359     -0.488        -0.565         -0.134       -0.200    8 of 18   2 of 18      2.465     46.083      False
+                            C1 ID>=exp67pct     796      17.0     0.039      -0.101       -0.270     -0.462        -0.730         -0.110       -0.091    8 of 17   1 of 17      2.306     45.352      False
+                            C2 ID<=exp33pct     657      17.0    -0.065      -0.268       -0.416     -1.886        -1.667         -0.326       -0.204    7 of 17   0 of 17      1.283     44.597      False
+                            C3 BW>=exp67pct     696      15.0     0.029      -0.017       -0.209     -0.094        -0.404          0.503       -0.472    5 of 15   0 of 15      1.624     48.420      False
+                            C4 BW<=exp33pct     691      15.0     0.059       0.020       -0.166      0.108         0.037          0.158       -0.100    8 of 15   0 of 15      1.196     47.612      False
+                 G1 GX>+0.5% long-vs-sector     739      18.0     0.198       0.095       -0.165      0.390         0.258          0.351       -0.224   10 of 18   1 of 18      2.196     48.850      False
+                G2 GX<-0.5% short-vs-sector     495      18.0     0.364       0.492        0.305      2.432         2.141          0.323        0.702   13 of 18   1 of 18      2.620     55.758      False
+                     A6 diag slope exsec~PX    2601      18.0       NaN       0.137          NaN      2.777           NaN          0.177        0.088        NaN       NaN        NaN        NaN      False
+             B5 LOYO SS>+1% (NOT REAL TIME)     496      21.0     0.078       0.044        0.026      0.138        -0.312          0.107       -0.058   11 of 21   3 of 21      4.014     46.976      False
+                                   D1 A1&B1     187      18.0     0.092      -0.003       -0.196     -0.010         0.172          0.011       -0.021   11 of 18   1 of 18      2.290     54.011      False
+                                   D2 A1&B3       0       NaN       NaN         NaN          NaN        NaN           NaN            NaN          NaN        NaN       NaN        NaN        NaN      False
+
+=== PLACEBOS ===
+                       rule                                             placebo  draws  actual_t  actual_perq_nifty  placebo_mean_perq_nifty  placebo_mean_perq_raw  placebo_mean_t  share_t_ge_actual  placebo_trades
+                  A1 PX>+1%   P1 random picks from pool, same count per quarter   2000     1.330              0.269                   -0.283                 -0.137          -1.455              0.000             NaN
+                  A2 PX>+2%   P1 random picks from pool, same count per quarter   2000    -0.087             -0.027                   -0.289                 -0.140          -0.944              0.193             NaN
+            A3 PX>=exp80pct   P1 random picks from pool, same count per quarter   2000     1.423              0.276                   -0.253                 -0.081          -1.095              0.004             NaN
+                A4 PH>=0.70   P1 random picks from pool, same count per quarter   2000     1.023              0.284                   -0.291                 -0.146          -0.991              0.022             NaN
+            A5 PX<-1% SHORT   P1 random picks from pool, same count per quarter   2000     1.369              0.250                   -0.096                 -0.203          -0.519              0.014             NaN
+             A7 ctrl PN>+1%   P1 random picks from pool, same count per quarter   2000     0.947              0.152                   -0.280                 -0.136          -1.562              0.002             NaN
+                  B1 SS>+1%          P1 random sectors, same number per quarter   2000    -0.055             -0.015                   -0.378                 -0.231          -1.435              0.088             NaN
+                B2 SS>+0.5%          P1 random sectors, same number per quarter   2000    -2.748             -0.396                   -0.320                 -0.174          -1.767              0.869             NaN
+                 B3 EQ>+3pp          P1 random sectors, same number per quarter   2000    -2.063             -0.628                   -0.320                 -0.175          -1.625              0.703             NaN
+                B4 EQs>+5pp   P1 random picks from pool, same count per quarter   2000    -0.488             -0.163                   -0.289                 -0.153          -1.307              0.188             NaN
+            C1 ID>=exp67pct   P1 random picks from pool, same count per quarter   2000    -0.462             -0.101                   -0.248                 -0.075          -1.372              0.130             NaN
+            C2 ID<=exp33pct   P1 random picks from pool, same count per quarter   2000    -1.886             -0.268                   -0.254                 -0.081          -1.321              0.751             NaN
+            C3 BW>=exp67pct   P1 random picks from pool, same count per quarter   2000    -0.094             -0.017                   -0.154                 -0.126          -0.853              0.188             NaN
+            C4 BW<=exp33pct   P1 random picks from pool, same count per quarter   2000     0.108              0.020                   -0.147                 -0.119          -0.807              0.144             NaN
+ G1 GX>+0.5% long-vs-sector          P1 random sectors, same number per quarter   2000     0.390              0.095                   -0.305                 -0.159          -1.549              0.010             NaN
+G2 GX<-0.5% short-vs-sector          P1 random sectors, same number per quarter   2000     2.432              0.492                   -0.069                 -0.175          -0.358              0.002             NaN
+                   D1 A1&B1   P1 random picks from pool, same count per quarter   2000    -0.010             -0.003                   -0.298                 -0.140          -0.786              0.234             NaN
+                  A1 PX>+1% P2 same rule on pseudo (non-results) window history      1     1.330                NaN                   -0.532                 -0.403          -2.425                NaN           304.0
+                  A2 PX>+2% P2 same rule on pseudo (non-results) window history      1    -0.087                NaN                   -0.863                 -0.614          -1.931                NaN            58.0
+            A5 PX<-1% SHORT P2 same rule on pseudo (non-results) window history      1     1.369                NaN                    0.279                  0.137           0.885                NaN           280.0
+
+Pre-registered rules: 20 (A1-A7, B1-B5, C1-C4, G1-G2, D1-D2), one horizon (3-day window), 3 measures each. Promising: []

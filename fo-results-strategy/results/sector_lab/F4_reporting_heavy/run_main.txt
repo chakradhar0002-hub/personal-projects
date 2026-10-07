@@ -1,0 +1,116 @@
+events 4462 F&O events 3278
+eligible G1 2881 G2 1863
+   name  trades  quarters  avg_raw_net  avg_nifty_net  avg_sector_net  perq_nifty    t_q  t_date  first14  last8  q_pos  q_raw_ge2  max_q_raw  perq_sector  t_q_sector  perq_nifty_gross  t_q_gross  promising_stats
+0   A01     890        22       -0.075         -0.217          -0.325      -0.222 -1.178  -0.857   -0.276 -0.126      9        0.0      1.573       -0.321      -2.044            -0.032     -0.168            False
+1   A02     192        21       -0.008         -0.240          -0.386      -0.594 -1.201  -0.693   -0.605 -0.576      9        4.0      3.686       -0.784      -1.533            -0.404     -0.817            False
+2   A03    1094        22       -0.338         -0.426          -0.556      -0.455 -2.940  -3.273   -0.534 -0.315      5        0.0      1.191       -0.570      -4.399            -0.265     -1.712            False
+3   A04    1274        22       -0.156         -0.278          -0.382      -0.315 -2.149  -1.625   -0.332 -0.286      8        0.0      1.398       -0.395      -3.437            -0.125     -0.854            False
+4   A05     352        22       -0.158         -0.166          -0.252      -0.128 -0.284  -0.413   -0.001 -0.349      9        4.0      5.510       -0.374      -0.830             0.062      0.139            False
+5   A06     415        22       -0.354         -0.450          -0.530      -0.475 -2.069  -1.590   -0.494 -0.442      7        2.0      2.189       -0.559      -2.536            -0.285     -1.241            False
+6   A07     622        22       -0.173         -0.299          -0.353      -0.341 -1.374  -1.548   -0.286 -0.438      8        0.0      1.794       -0.374      -2.150            -0.151     -0.609            False
+7   A08     118        17       -0.480         -0.427          -0.640      -0.142 -0.309  -1.026    0.259 -0.592      7        4.0      3.856       -0.250      -0.448             0.048      0.105            False
+8   A09     670        22       -0.347         -0.429          -0.478      -0.451 -2.396  -2.135   -0.593 -0.201      5        0.0      1.594       -0.490      -2.934            -0.261     -1.386            False
+9   A10     887        22       -0.177         -0.273          -0.303      -0.280 -1.592  -2.028   -0.198 -0.422      9        1.0      2.110       -0.280      -2.556            -0.090     -0.510            False
+10  A11     182        19        0.120          0.138           0.037       0.416  0.668   0.484    1.034 -0.434     10        5.0      5.599        0.100       0.176             0.606      0.973            False
+11  A12     262        22       -0.155         -0.277          -0.343      -0.266 -0.866  -0.849   -0.495  0.135      9        1.0      3.321       -0.313      -1.194            -0.076     -0.248            False
+12  C01     346        22       -0.640         -0.636          -0.747      -0.683 -2.711  -2.953   -0.782 -0.509      7        0.0      1.245       -0.752      -3.821            -0.493     -1.957            False
+13  C02    1405        22       -0.018         -0.195          -0.254      -0.210 -1.275  -1.044   -0.211 -0.208     10        0.0      1.511       -0.243      -2.084            -0.020     -0.121            False
+14  C05     346        22       -0.494         -0.530          -0.792      -0.583 -1.345  -1.813   -0.350 -0.991     10        NaN      3.576       -0.836      -2.759            -0.393     -0.907            False
+15  C06    1405        22        0.260         -0.168          -0.176      -0.265 -0.710  -0.647   -0.371 -0.079     11        NaN      3.808       -0.203      -0.844            -0.075     -0.200            False
+16  C03     229        22       -0.662         -0.727          -0.861      -0.764 -2.725  -3.071   -1.045 -0.273      5        1.0      2.161       -0.852      -3.286            -0.574     -2.048            False
+17  C04     900        22       -0.015         -0.172          -0.203      -0.205 -1.121  -1.169   -0.347  0.043     10        0.0      1.360       -0.217      -1.699            -0.015     -0.083            False
+18  C07     229        22       -0.848         -0.908          -1.025      -0.933 -2.223  -2.137   -0.899 -0.992      9        NaN      4.363       -1.027      -2.619            -0.743     -1.770            False
+19  C08     900        22        0.049         -0.395          -0.224      -0.482 -1.213  -1.214   -0.723 -0.059      8        NaN      4.046       -0.260      -0.905            -0.292     -0.735            False
+20  D01     182        22        0.181         -0.168          -0.311      -0.615 -1.506  -2.545   -1.009  0.075      7        3.0      4.338       -0.537      -1.574            -0.425     -1.040            False
+21  D02     822        22       -0.357         -0.496          -0.472      -0.566 -2.439  -1.545   -0.710 -0.314      9        0.0      1.848       -0.516      -2.624            -0.376     -1.621            False
+22  D03     182        22       -0.511         -0.635          -0.650      -1.146 -2.173  -2.931   -1.262 -0.943      9        NaN      5.192       -0.914      -2.228            -0.956     -1.813            False
+23  D04     822        22       -0.194         -0.521          -0.379      -0.656 -1.389  -0.579   -0.875 -0.274      9        NaN      4.194       -0.459      -1.480            -0.466     -0.987            False
+24  B01     432        22       -0.234         -0.292             NaN      -0.330 -3.117  -3.131   -0.360 -0.277      7        NaN      0.857          NaN         NaN            -0.160     -1.518            False
+25  B02     128        22       -0.146         -0.233             NaN      -0.150 -0.816  -1.753   -0.205 -0.055     10        NaN      0.915          NaN         NaN             0.016      0.088            False
+26  B03     486        22       -0.260         -0.325          -0.342      -0.367 -3.104  -2.763   -0.347 -0.402      7        NaN      0.528       -0.340      -6.059            -0.177     -1.497            False
+27  B04     141        22       -0.192         -0.268          -0.345      -0.213 -1.065  -1.227   -0.135 -0.349     11        NaN      1.239       -0.340      -3.574            -0.023     -0.114            False
+28  B05     266        22       -0.173         -0.263             NaN      -0.299 -2.449  -1.896   -0.251 -0.383      5        NaN      1.139          NaN         NaN            -0.109     -0.895            False
+29  B06     119        22       -0.073         -0.176             NaN      -0.145 -0.792  -1.037   -0.106 -0.214      8        NaN      1.618          NaN         NaN             0.045      0.247            False
+30  B07      32        21       -0.192          0.108             NaN      -0.002 -0.006   0.548   -0.051  0.078     12        NaN      1.974          NaN         NaN             0.038      0.144            False
+31  B08      25        21        0.070          0.018             NaN      -0.050 -0.250   0.076   -0.219  0.287     10        NaN      4.185          NaN         NaN            -0.010     -0.051            False
+
+baselines / minus baseline (event variants):
+   name  baseline_perq_nifty  minus_baseline_perq  t_minus_baseline
+0   A01               -0.295                0.073             0.439
+1   A02               -0.295               -0.293            -0.556
+2   A03               -0.295               -0.160            -1.323
+3   A04               -0.295               -0.020            -0.168
+4   A05               -0.295                0.168             0.361
+5   A06               -0.295               -0.180            -0.713
+6   A07               -0.335               -0.006            -0.030
+7   A08               -0.335                0.201             0.448
+8   A09               -0.335               -0.115            -0.722
+9   A10               -0.335                0.056             0.397
+10  A11               -0.335                0.677             1.108
+11  A12               -0.335                0.069             0.218
+12  C01               -0.295               -0.388            -1.765
+13  C02               -0.295                0.085             0.689
+14  C05               -0.209               -0.374            -1.024
+15  C06               -0.209               -0.056            -0.308
+16  C03               -0.335               -0.429            -1.729
+17  C04               -0.335                0.130             0.948
+18  C07               -0.399               -0.533            -1.361
+19  C08               -0.399               -0.082            -0.355
+20  D01               -0.295               -0.320            -0.849
+21  D02               -0.295               -0.271            -1.367
+22  D03               -0.209               -0.937            -1.749
+23  D04               -0.209               -0.447            -1.427
+
+A busy minus quiet:
+  grouping             signal  perq_diff      t   q  first14  last8
+0       G1  c2>=2 minus c2==0      0.233  1.001  22    0.258  0.189
+1       G1  c5>=3 minus c5==0      0.159  0.552  22    0.162  0.155
+2       G2  c2>=2 minus c2==0      0.109  0.345  22    0.307 -0.237
+3       G2  c5>=3 minus c5==0     -0.013 -0.035  22    0.297 -0.557
+
+B daily diag:
+  name  heavy_days  mean_excess_heavy_day  mean_excess_other_season_day  mean_excess_offseason_day  perq_heavy_minus_season  t_heavy_minus_season
+0  B01        1191                -0.0446                        0.0191                     0.0189                  -0.0689               -1.6564
+1  B02         241                -0.0380                        0.0111                     0.0189                  -0.0448               -0.4454
+2  B03        1329                -0.0491                        0.0285                     0.0391                  -0.0723               -1.7346
+3  B04         265                -0.0430                        0.0188                     0.0391                  -0.0266               -0.2251
+4  B05         691                -0.0274                        0.0059                     0.0333                  -0.0428               -0.7676
+5  B06         225                 0.0065                        0.0016                     0.0333                  -0.0260               -0.2034
+6  B07          84                 0.0573                        0.0084                    -0.0041                   0.0123                0.1405
+7  B08          65                 0.0230                       -0.0004                     0.0037                   0.0049                0.0744
+
+Descriptions:
+A01 | G1(sector_index) c2>=2 [STRICT] other F&O peers reporting in window; 3-day window
+A02 | G1(sector_index) c2>=4 [STRICT] other F&O peers reporting in window; 3-day window
+A03 | G1(sector_index) c2==0 [STRICT] other F&O peers reporting in window; 3-day window
+A04 | G1(sector_index) c5>=3 [FORESIGHT-5] other F&O peers reporting in window; 3-day window
+A05 | G1(sector_index) c5>=6 [FORESIGHT-5] other F&O peers reporting in window; 3-day window
+A06 | G1(sector_index) c5==0 [FORESIGHT-5] other F&O peers reporting in window; 3-day window
+A07 | G2(peer_group) c2>=2 [STRICT] other F&O peers reporting in window; 3-day window
+A08 | G2(peer_group) c2>=4 [STRICT] other F&O peers reporting in window; 3-day window
+A09 | G2(peer_group) c2==0 [STRICT] other F&O peers reporting in window; 3-day window
+A10 | G2(peer_group) c5>=3 [FORESIGHT-5] other F&O peers reporting in window; 3-day window
+A11 | G2(peer_group) c5>=6 [FORESIGHT-5] other F&O peers reporting in window; 3-day window
+A12 | G2(peer_group) c5==0 [FORESIGHT-5] other F&O peers reporting in window; 3-day window
+C01 | G1(sector_index) FIRST reporter of sector this season; o3
+C02 | G1(sector_index) LATE reporter (>=50% of peers already reported); o3
+C05 | G1(sector_index) FIRST reporter of sector this season; o10
+C06 | G1(sector_index) LATE reporter (>=50% of peers already reported); o10
+C03 | G2(peer_group) FIRST reporter of sector this season; o3
+C04 | G2(peer_group) LATE reporter (>=50% of peers already reported); o3
+C07 | G2(peer_group) FIRST reporter of sector this season; o10
+C08 | G2(peer_group) LATE reporter (>=50% of peers already reported); o10
+D01 | G1 early-season (first 5 sessions of season); o3
+D02 | G1 late-season (>=20 sessions after season start); o3
+D03 | G1 early-season (first 5 sessions of season); o10
+D04 | G1 late-season (>=20 sessions after season start); o10
+B01 | G1 sector INDEX long / Nifty short on days when >= 25% of sector F&O members are inside their 3-day results window
+B02 | G1 sector INDEX long / Nifty short on days when >= 40% of sector F&O members are inside their 3-day results window
+B03 | G1 EW basket of sector F&O stocks long / Nifty short on days when >= 25% of sector F&O members are inside their 3-day results window
+B04 | G1 EW basket of sector F&O stocks long / Nifty short on days when >= 40% of sector F&O members are inside their 3-day results window
+B05 | G2 EW basket of sector F&O stocks long / Nifty short on days when >= 25% of sector F&O members are inside their 3-day results window
+B06 | G2 EW basket of sector F&O stocks long / Nifty short on days when >= 40% of sector F&O members are inside their 3-day results window
+B07 | G1 sector INDEX long / Nifty short on days when >= 25% of sector F&O members are inside their 3-day results window (Nifty Bank only)
+B08 | G1 sector INDEX long / Nifty short on days when >= 25% of sector F&O members are inside their 3-day results window (Nifty Financial Services only)
+
+VARIANTS TESTED: 32

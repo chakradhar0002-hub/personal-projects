@@ -1,0 +1,29 @@
+size mean {'n': 113, 'q': 22, 'avg': np.float64(0.232), 'qavg': np.float64(0.227), 't': np.float64(3.14), 'f14': np.float64(0.312), 'l8': np.float64(0.077), 'qpos': 18}
+size largest {'n': 116, 'q': 22, 'avg': np.float64(0.207), 'qavg': np.float64(0.185), 't': np.float64(2.71), 'f14': np.float64(0.248), 'l8': np.float64(0.076), 'qpos': 16}
+mcap mean {'n': 106, 'q': 22, 'avg': np.float64(0.151), 'qavg': np.float64(0.165), 't': np.float64(2.5), 'f14': np.float64(0.234), 'l8': np.float64(0.044), 'qpos': 17}
+mcap largest {'n': 111, 'q': 22, 'avg': np.float64(0.124), 'qavg': np.float64(0.121), 't': np.float64(1.96), 'f14': np.float64(0.161), 'l8': np.float64(0.051), 'qpos': 16}
+distinct (date,bellwether): 113  distinct dates: 102  of 113
+collapsed per (date,bw): {'n': 113, 'q': 22, 'avg': np.float64(0.232), 'qavg': np.float64(0.227), 't': np.float64(3.14), 'f14': np.float64(0.312), 'l8': np.float64(0.077), 'qpos': 18}
+collapsed per date: {'n': 102, 'q': 22, 'avg': np.float64(0.257), 'qavg': np.float64(0.252), 't': np.float64(3.75), 'f14': np.float64(0.309), 'l8': np.float64(0.151), 'qpos': 18}
+bws                 
+RELIANCE    6  0.569
+TCS         6  0.128
+NESTLEIND   5  1.098
+ETERNAL     5  0.350
+MAZDOCK     5  0.949
+CIPLA       4  0.452
+ASIANPAINT  4  0.265
+LODHA       4 -0.212
+PAYTM       4  0.049
+INDIGO      4 -0.299
+BEL         3 -0.108
+BRITANNIA   3  1.078
+ADANIGREEN  3 -0.055
+52   12  2024-05-16      Nifty India Defence        HAL  0.091587  0.041518
+30    7  2023-01-30      Nifty India Defence    MAZDOCK  0.055846  0.037015
+76   15  2025-01-31               Nifty FMCG  NESTLEIND  0.032092  0.030776
+50   12  2024-05-06               Nifty FMCG  BRITANNIA  0.068288  0.026070
+70   14  2024-11-05      Nifty India Defence    MAZDOCK  0.033331  0.021765
+21    4  2022-05-09          Nifty Oil & Gas   RELIANCE -0.032389  0.018707
+11    2  2021-10-18  Nifty India Consumption      DMART -0.087562  0.016702
+105  20  2026-04-21               Nifty FMCG  NESTLEIND  0.063993  0.015132
