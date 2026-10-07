@@ -151,6 +151,11 @@ P/E look cheap (NAUKRI in 2021-22, after its investment gains). The 2nd + 3rd ch
 quarters at 2%), and the 2nd + 3rd most expensive +0.43% (5 of 22). Per-quarter list:
 [results/target_2pct/cheapest_in_peer_group.csv](../results/target_2pct/cheapest_in_peer_group.csv).
 
+**The middle of the peer group** (place = half the group size, so 6 stocks -> 3rd, 14 -> 7th): 107 picks, average
+3-day -0.50%, 49% up, positive in only 9 of 22 quarters (7 at 2% or more), -0.85% against all stocks that quarter;
++0.04% a quarter in the first 14 quarters, -1.62% in the last 8. Two-thirds of the way from the cheapest (6 -> 4th):
+-0.52%, 3 of 22 quarters at 2%. List: [results/target_2pct/middle_place_in_peer_group.csv](../results/target_2pct/middle_place_in_peer_group.csv).
+
 ## The take-profit rule and 1-week vs Nifty
 
 | Group (1-week vs Nifty, before results) | Picks | 3-day hold | Quarters at 2% | Take-profit | Up | Quarters at 2% |
