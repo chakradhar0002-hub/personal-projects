@@ -10,9 +10,10 @@ import json, sys
 import numpy as np
 import pandas as pd
 
-FEAT, OUT = sys.argv[1], sys.argv[2]
-N_SHUFFLES = int(sys.argv[3]) if len(sys.argv) > 3 else 50
-TARGET, FIRST_TEST, ALPHA = 0.02, int(sys.argv[4]) if len(sys.argv) > 4 else 6, 50.0
+ARGS = [a for a in sys.argv[1:] if not a.startswith("--")]
+FEAT, OUT = ARGS[0], ARGS[1]
+N_SHUFFLES = int(ARGS[2]) if len(ARGS) > 2 else 50
+TARGET, FIRST_TEST, ALPHA = 0.02, int(ARGS[3]) if len(ARGS) > 3 else 6, 50.0
 NOT_FEATURES = {"symbol", "quarter", "qn", "results_date", "cutoff", "industry", "fin_type", "timing", "three_day",
                 "excess_nifty", "in_fo", "after_close", "tp3"}       # results time is often not known in advance
 
@@ -50,9 +51,11 @@ def run(y):
     return out
 
 
-y = d["three_day"].values.astype(float)
+OUTCOME = "tp3" if "--tp3" in sys.argv else "three_day"      # --tp3: the user's +3% take-profit version of the window
+y = d[OUTCOME].values.astype(float)
 real = run(y)
 base = [float(y[qn == q].mean()) for q in range(FIRST_TEST, nq)]
+TAG = "_tp3" if OUTCOME == "tp3" else ""
 rows = []
 for k in KS:
     v = np.array([m for m, _ in real[k]])
@@ -63,7 +66,7 @@ for k in KS:
                  "worst_quarter": float(np.nanmin(v)), "quarters_beat_all_stocks": int((np.nan_to_num(v, nan=-1) > np.array(base)).sum()),
                  "per_quarter": [None if np.isnan(x) else round(x, 4) for x in v], "picks": [int(c) for c in n]})
 res = pd.DataFrame(rows)
-res.to_csv(f"{OUT}/walkforward_real.csv", index=False)
+res.to_csv(f"{OUT}/walkforward_real{TAG}.csv", index=False)
 print("all stocks per test quarter:", [round(b * 100, 2) for b in base])
 print(res.drop(columns=["per_quarter"]).to_string())
 
@@ -87,5 +90,5 @@ for k in KS:
     summary[f"top{k}pct"] = {"real_quarters_at_2pct": real_hits, "real_avg": round(real_avg, 4),
                           "shuffled_quarters_at_2pct_median": float(np.median(nh)), "shuffled_avg_median": round(float(np.median(na)), 4),
                           "p_value_avg": float((na >= real_avg).mean()), "p_value_hits": float((nh >= real_hits).mean())}
-json.dump(summary, open(f"{OUT}/walkforward_summary.json", "w"), indent=1)
+json.dump(summary, open(f"{OUT}/walkforward_summary{TAG}.json", "w"), indent=1)
 print(json.dumps(summary, indent=1))
