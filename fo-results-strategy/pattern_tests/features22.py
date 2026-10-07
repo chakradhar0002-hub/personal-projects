@@ -108,7 +108,7 @@ for r in ev:
     v5, v60 = vol_avg(sym, c, 5), vol_avg(sym, c, 60)
     f["volume_5d_vs_60d"] = v5 / v60 if v5 and v60 else None
     # relative strength
-    for lab, n in (("1m", 21), ("3m", 63)):
+    for lab, n in (("1w", 5), ("1m", 21), ("3m", 63)):
         s_ret = index_ret(sec, c - n, c)
         n_ret = index_ret("Nifty 50", c - n, c)
         f[f"sector_{lab}"] = s_ret
