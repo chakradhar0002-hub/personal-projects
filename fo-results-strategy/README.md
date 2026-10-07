@@ -14,13 +14,15 @@ checklist and concrete trades, and backtests them on your data.
 >   its reaction day and hold 20 sessions: +2.3% a trade over Nifty after costs (300 trades, 13 of 15 quarters positive,
 >   +1.9% in the last 6 quarters). Losers don't keep falling, and the direction can't be predicted before the numbers.
 >   See [docs/PATTERNS.md](docs/PATTERNS.md).
+> - **No pre-results screen averaged 2% in the 3-day window every quarter** over 22 quarters (2021-26) on quarters it
+>   was not fitted to; the average stock never reached 2% in any quarter. See [docs/TARGET_2PCT.md](docs/TARGET_2PCT.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.
 
-**15-quarter results report (all NSE data, every F&O stock, no filters):**
-[reports/results_report_last_15_quarters.xlsx](reports/results_report_last_15_quarters.xlsx), or open
-[reports/results_report_last_15_quarters.html](reports/results_report_last_15_quarters.html) in any browser (same data,
+**22-quarter results report (Jan-Mar 2021 to Apr-Jun 2026 results; all NSE data, every F&O stock, no filters):**
+[reports/results_report_last_22_quarters.xlsx](reports/results_report_last_22_quarters.xlsx), or open
+[reports/results_report_last_22_quarters.html](reports/results_report_last_22_quarters.html) in any browser (same data,
 with filters, sorting and CSV download). It shows results timing, 3-day moves, financials, cash flow, ratios, peers and
 options, plus a cross-check against BSE prices and Yahoo Finance financials
 ([reports/results_cross_check.csv](reports/results_cross_check.csv)). Builder: [report_builder/](report_builder/).

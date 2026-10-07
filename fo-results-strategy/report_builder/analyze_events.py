@@ -1,4 +1,4 @@
-"""Build one row per stock per quarter (last 15 quarters) from the NSE data stores -> events.json."""
+"""Build one row per stock per quarter (last 22 quarters) from the NSE data stores -> events.json."""
 import csv, json, math, sqlite3, statistics, sys
 from bisect import bisect_left, bisect_right
 from collections import Counter, defaultdict

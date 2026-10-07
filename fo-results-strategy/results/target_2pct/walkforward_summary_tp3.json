@@ -1,0 +1,34 @@
+{
+ "top2.5pct": {
+  "real_quarters_at_2pct": 3,
+  "real_avg": -0.0382,
+  "shuffled_quarters_at_2pct_median": 1.0,
+  "shuffled_avg_median": 0.0031,
+  "p_value_avg": 1.0,
+  "p_value_hits": 0.17
+ },
+ "top5pct": {
+  "real_quarters_at_2pct": 2,
+  "real_avg": -0.0257,
+  "shuffled_quarters_at_2pct_median": 1.0,
+  "shuffled_avg_median": 0.0032,
+  "p_value_avg": 1.0,
+  "p_value_hits": 0.44
+ },
+ "top10pct": {
+  "real_quarters_at_2pct": 1,
+  "real_avg": 0.001,
+  "shuffled_quarters_at_2pct_median": 1.0,
+  "shuffled_avg_median": 0.0021,
+  "p_value_avg": 0.57,
+  "p_value_hits": 0.7
+ },
+ "top20pct": {
+  "real_quarters_at_2pct": 1,
+  "real_avg": 0.0038,
+  "shuffled_quarters_at_2pct_median": 0.5,
+  "shuffled_avg_median": 0.0025,
+  "p_value_avg": 0.32,
+  "p_value_hits": 0.5
+ }
+}

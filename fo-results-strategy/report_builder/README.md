@@ -1,7 +1,7 @@
 # Results report builder (all NSE data)
 
-Builds `reports/results_report_last_15_quarters.xlsx` (one row per F&O stock per quarter, no filters), the HTML viewer
-`reports/results_report_last_15_quarters.html`, and the cross-check `reports/results_cross_check.csv`.
+Builds `reports/results_report_last_22_quarters.xlsx` (one row per F&O stock per quarter, no filters), the HTML viewer
+`reports/results_report_last_22_quarters.html`, and the cross-check `reports/results_cross_check.csv`.
 
 ```bash
 DATA=report_data                      # any empty folder; ~1.5 GB while building
@@ -21,9 +21,9 @@ python3 fill_exit_legs.py $DATA && python3 analyze_events.py $DATA   # exact run
 python3 -I bse_check_fetch.py $DATA/report/events.json $DATA/report/yahoo_bse.json
 python3 -I bse_check_compare.py $DATA/report/events.json $DATA/report/yahoo_bse.json \
     ../reports/results_cross_check.csv $DATA/report/cross_check_summary.json $DATA/report/nse_prices.db
-python3 build_xlsx.py $DATA/report/events.json ../reports/results_report_last_15_quarters.xlsx $DATA/report/cross_check_summary.json
+python3 build_xlsx.py $DATA/report/events.json ../reports/results_report_last_22_quarters.xlsx $DATA/report/cross_check_summary.json
 # recalculate the formulas (Excel, or LibreOffice: the xlsx skill's recalc.py), then
-python3 build_html.py ../reports/results_report_last_15_quarters.xlsx ../reports/results_report_last_15_quarters.html \
+python3 build_html.py ../reports/results_report_last_22_quarters.xlsx ../reports/results_report_last_22_quarters.html \
     $DATA/report/cross_check_summary.json
 ```
 

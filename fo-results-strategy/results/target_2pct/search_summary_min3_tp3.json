@@ -1,0 +1,20 @@
+{
+ "settings": {
+  "min_picks": 3,
+  "no_trade_ok": false,
+  "target": 0.02,
+  "train_quarters": 14
+ },
+ "best_rule": "vs_nifty_3m >= 0.1049 AND days_since_dividend >= 9999",
+ "train_score": 10,
+ "train_pass": 10,
+ "train_traded": 14,
+ "holdout_pass": 0,
+ "holdout_traded": 6,
+ "train_avg": 0.020353330299258232,
+ "holdout_avg": 0.0028600709047168493,
+ "shuffled_best_train_pass_median": 8.0,
+ "shuffled_best_train_pass_max": 10,
+ "share_of_shuffles_at_least_as_good": 0.07,
+ "shuffled_holdout_pass_median": 1.0
+}

@@ -1,6 +1,6 @@
 """Write a single-file HTML viewer of the results workbook (values as recalculated), plus an optional cross-check tab.
 
-    python3 build_html.py ../reports/results_report_last_15_quarters.xlsx ../reports/results_report_last_15_quarters.html \
+    python3 build_html.py ../reports/results_report_last_22_quarters.xlsx ../reports/results_report_last_22_quarters.html \
         [cross_check_summary.json]
 """
 import json, sys
@@ -134,7 +134,7 @@ p.lead{max-width:110ch;margin:0 0 10px}
 <body>
 <header>
 <button class="chip theme" id="theme" title="Switch light / dark">Theme</button>
-<h1>F&amp;O stocks: results report, last 15 quarters</h1>
+<h1>F&amp;O stocks: results report, last __NQ__ quarters</h1>
 <p class="sub" id="sub"></p>
 </header>
 <nav id="tabs"></nav>
@@ -274,5 +274,6 @@ document.getElementById("theme").onclick = () => { const r = document.documentEl
 </body>
 </html>
 """
-open(OUT, "w").write(HTML.replace("__DATA__", payload))
+NQ = len({r[0] for r in tables["events"]["rows"]})
+open(OUT, "w").write(HTML.replace("__NQ__", str(NQ)).replace("__DATA__", payload))
 print("wrote", OUT, f"{len(HTML) + len(payload):,} bytes", {k: len(v["rows"]) for k, v in tables.items()})

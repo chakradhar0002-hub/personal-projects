@@ -10,6 +10,10 @@ from openpyxl.utils import get_column_letter
 SRC, OUT = sys.argv[1], sys.argv[2]
 CHECK = json.load(open(sys.argv[3])) if len(sys.argv) > 3 else None     # bse_check_compare.py summary
 events = json.load(open(SRC))
+QORDER = list(dict.fromkeys(r["quarter"] for r in sorted(events, key=lambda r: r["quarter_end"])))
+NQ = len(QORDER)
+FIRST_PERIOD = next(r["period"] for r in events if r["quarter"] == QORDER[0])
+LAST_PERIOD = next(r["period"] for r in events if r["quarter"] == QORDER[-1])
 for r in events:
     if r.get("abs_move") is not None and r.get("implied_move"):
         r["actual_vs_expected"] = r["abs_move"] / r["implied_move"]
@@ -83,7 +87,7 @@ wi, ws, wst, wn = wb.create_sheet("By industry"), wb.create_sheet("Events"), wb.
 wb.move_sheet("Events", offset=1)
 
 # ------------------------------------------------------------------ Events
-ws["A1"] = "F&O stocks - results report, last 15 quarters (no conditions applied)"
+ws["A1"] = f"F&O stocks - results report, last {NQ} quarters (no conditions applied)"
 ws["A1"].font = font(bold=True, size=13)
 ws["A2"] = (f"{len(events)} results events, {len({r['symbol'] for r in events})} stocks. All data from NSE: results date/time "
             "(NSE filings), prices (equity bhavcopy), indices, financials (results XBRL), options (F&O bhavcopy). See Notes.")
@@ -212,7 +216,7 @@ for j in range(3, 3 + len(common_metrics())):
 
 CRIT_COL = rng("industry")
 inds = [k for k, _ in Counter(r["industry"] for r in events if r["industry"]).most_common()]
-write_table(wi, "By industry (NSE industry labels)", "Formulas over the Events sheet, all 15 quarters.", "industry",
+write_table(wi, "By industry (NSE industry labels)", f"Formulas over the Events sheet, all {NQ} quarters.", "industry",
             inds + ["*"], [("Industry", lambda k, row: "All industries" if k == "*" else k)], common_metrics())
 wi.column_dimensions["A"].width = 32
 for j in range(2, 2 + len(common_metrics())):
@@ -221,7 +225,7 @@ for j in range(2, 2 + len(common_metrics())):
 CRIT_COL = rng("symbol")
 stock_metrics = [m for m in common_metrics() if m[0] not in ("During market", "Weekend / holiday")]
 syms = sorted({r["symbol"] for r in events})
-write_table(wst, "By stock", "Formulas over the Events sheet, all 15 quarters.", "symbol", syms,
+write_table(wst, "By stock", f"Formulas over the Events sheet, all {NQ} quarters.", "symbol", syms,
             [("Symbol", lambda k, row: k),
              ("Company", lambda k, row: f'=INDEX({rng("company")},MATCH($A{row},{rng("symbol")},0))'),
              ("Industry", lambda k, row: f'=INDEX({rng("industry")},MATCH($A{row},{rng("symbol")},0))&""')], stock_metrics)
@@ -233,10 +237,13 @@ for j in range(4, 4 + len(stock_metrics)):
 
 # ------------------------------------------------------------------ Notes
 notes = [
-    ("Report", "One row per F&O stock per quarter for the last 15 quarters (Oct-Dec 2022 to Apr-Jun 2026 results). No filters or "
-               "conditions: every stock in NSE's current F&O list that filed results for the quarter."),
+    ("Report", f"One row per F&O stock per quarter for the last {NQ} quarters ({FIRST_PERIOD} to {LAST_PERIOD} results). No "
+               "filters or conditions: every stock in NSE's current F&O list that filed results for the quarter. The 'F&O at the "
+               "time' check is the Options columns: blank when the stock had no NSE options then."),
     ("Universe", "Current NSE F&O stocks (fo_mktlots.csv, Oct 2026), 213 stocks. Stocks that left F&O earlier are not included "
-                 "(survivorship); stocks listed later have fewer quarters."),
+                 "(survivorship); stocks listed later have fewer quarters. Stocks that changed symbol (e.g. ZOMATO -> ETERNAL, "
+                 "TATAMOTORS -> TMPV, LTIM -> LTM) keep their full history under today's symbol (NSE's symbol-change list), and "
+                 "days a stock traded in the BE (trade-for-trade) series are included."),
     ("Results date & time", "First NSE announcement about the results (financial results, outcome of board meeting, integrated "
                             "financial filing, or a press release mentioning results) in the 7 days up to the results XBRL filing; "
                             "otherwise the XBRL filing time. 'Time source' says which."),
@@ -273,10 +280,11 @@ notes = [
                 "return after 2% slippage per leg per side and Rs 20 per order."),
     ("Date checks", "Results dates were checked against two independent sources: Yahoo Finance's calendar for Apr 2023 - Feb 2025 "
                     "(99% same day or within 2 days, 97% same before-open / during-market / after-close timing) and the dates in "
-                    "your matched_stocks file for 2025-26 (13 of 13 match)."),
+                    "your matched_stocks file for 2021-26 (35 of 35 match)."),
     ("Corporate actions", "Bonus issues, splits and demergers come from NSE's corporate-actions data. Since NSE's July-2024 "
                           "bhavcopy format the previous close is not adjusted on those ex-dates, so returns on those days are "
-                          "corrected (bonus/split) or left blank (demerger). Rows with an action near the results are noted."),
+                          "corrected (bonus/split) or left blank (demerger). Rows with an action near the results are noted. "
+                          "Two splits missing from NSE's data (SOLARINDS Jul-2016, JSWSTEEL Jan-2017) were added by hand."),
     ("Trading sessions", "Every NSE session counts, including weekend sessions: Budget days (Sat 1-Feb-2025, Sun 1-Feb-2026), "
                          "Sat 20-Jan-2024, the special sessions of 2-Mar-2024 and 18-May-2024, and Muhurat trading."),
     ("Financial checks", "Each results XBRL is read by the dates of its periods, because some filings put half-year or full-year "

@@ -240,7 +240,7 @@ All 9 quarters were positive, but Q2 FY25 alone made almost half the profit. Wit
 
 ### 7.3 Out-of-sample check: all F&O stocks, Jun 2025 - Aug 2026
 
-The 15-quarter report ([`reports/results_report_last_15_quarters.xlsx`](../reports/results_report_last_15_quarters.xlsx),
+The results report ([`reports/results_report_last_22_quarters.xlsx`](../reports/results_report_last_22_quarters.xlsx); these figures come from its first, 15-quarter version,
 built only from NSE data) re-runs the run-up trade on all 213 current F&O stocks, including 5 results seasons
 that came after the strategy was designed. Rule pass, after the same costs:
 

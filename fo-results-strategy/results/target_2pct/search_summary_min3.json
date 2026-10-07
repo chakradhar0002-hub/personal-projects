@@ -1,0 +1,20 @@
+{
+ "settings": {
+  "min_picks": 3,
+  "no_trade_ok": false,
+  "target": 0.02,
+  "train_quarters": 14
+ },
+ "best_rule": "vs_sector_3m >= 0.08603 AND days_since_dividend >= 9999",
+ "train_score": 11,
+ "train_pass": 11,
+ "train_traded": 14,
+ "holdout_pass": 1,
+ "holdout_traded": 6,
+ "train_avg": 0.031226610764861107,
+ "holdout_avg": 0.005298552103340626,
+ "shuffled_best_train_pass_median": 9.0,
+ "shuffled_best_train_pass_max": 11,
+ "share_of_shuffles_at_least_as_good": 0.02,
+ "shuffled_holdout_pass_median": 1.0
+}

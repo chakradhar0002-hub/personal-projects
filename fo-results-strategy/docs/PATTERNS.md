@@ -1,6 +1,6 @@
 # Patterns in 15 quarters of F&O results (Oct-Dec 2022 to Apr-Jun 2026)
 
-Data: the 15-quarter report (3,103 results, 212 F&O stocks, all NSE data), with daily returns from 10 sessions before
+Data: the first, 15-quarter version of the results report (3,103 results, 212 F&O stocks, all NSE data), with daily returns from 10 sessions before
 to 20 sessions after each reaction day and NSE option prices.
 
 ## Bottom line

@@ -168,7 +168,7 @@ R = P&L ÷ debit. The expiry filter was chosen after seeing the 5-session result
 
 **Out of sample (Jun 2025 – Aug 2026, all 213 F&O stocks, 556 trades): +2.2% a trade, 39% winners**, down from
 +5% before. Two of the five new seasons were slightly negative. The edge is real but small and may be fading:
-paper-trade it and re-check every season (`reports/results_report_last_15_quarters.xlsx` has every trade).
+paper-trade it and re-check every season (`reports/results_report_last_22_quarters.xlsx` has every trade).
 
 ---
 
