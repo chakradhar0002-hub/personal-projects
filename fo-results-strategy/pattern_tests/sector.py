@@ -4,6 +4,10 @@ Sector = the Nifty sector index matched to the stock's industry (results mapped 
 out). All measured at the cutoff (2 sessions before the result session). Pre-registered tests; rules are judged on the
 first 14 quarters and checked on the last 8. Also writes a sector-only feature file for search22.py.
 
+Caution: bucket_test ranks each stock against stocks reporting later in the same quarter, whose trailing returns already
+include its three-day window. For trailing-price measures this is biased negative (random price paths give about -0.5%
+to -0.9%); see docs/TARGET_2PCT.md, "Sector performance before results", for the corrected checks.
+
     python3 sector.py DATA features22.csv OUT_DIR
 """
 import csv, json, math, statistics, sys

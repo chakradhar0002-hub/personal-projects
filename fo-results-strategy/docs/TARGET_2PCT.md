@@ -20,6 +20,7 @@ candidates are listed below with what they really earn.
 | Early reporters with a strong week (below) | 42 | +3.4% (+2.8% with the take-profit) | 13 of 22 |
 | Your Condition A (below) | 32 | +3.1% | see below |
 | Sector valuation, P/B financials / P/E consumer-IT-pharma (below) | 27 - 518 | -1.2% to +1.6% | at most 10 of 22 |
+| Sector performance before results (below) | 299 - 730 | -0.2% to +0.9% | at most 4 of 22 |
 
 ## Data
 
@@ -185,6 +186,54 @@ the last 8. The dropped dearest third with rising sales did about the same (+0.3
 - Last week's move does not predict the window (rank correlation -0.01). The "lagged by more than 10%" row (about 2
   picks a quarter) was noticed after looking at this table, so treat it as an idea to test, not a finding.
 
+## Sector performance before results
+
+Each stock's sector index (the Nifty sector index matched to its industry; 4,075 results, the rest only had the Nifty
+500) measured at the cutoff: its 1-week, 1-month and 3-month return, the same against Nifty, its rank among 20 sector
+indices, its distance from its 50-day and 200-day averages and its 52-week high, how the sector's stocks that already
+reported this season did, and the stock against its own sector.
+
+**First look.** Comparing the top and bottom third of stocks each quarter, a hot sector seemed to mean a worse window:
+
+| Sector measure at the cutoff | Hot third | Cold third | Difference | t |
+|---|---:|---:|---:|---:|
+| Sector 1-month return | -0.18% | +0.70% | -0.88% | -3.8 |
+| Sector 3-month return | -0.17% | +0.51% | -0.68% | -3.4 |
+| Sector vs its 50-day average | -0.16% | +0.76% | -0.92% | -3.3 |
+| Sector distance from its 52-week high (near the high = hot) | -0.33% | +0.77% | -1.10% | -4.8 |
+| Same-sector stocks already reported this season | -0.23% | +0.65% | -0.88% | -3.4 |
+| Sector vs Nifty, 1 month | +0.22% | +0.26% | -0.05% | -0.2 |
+| Sector rank among 20 sector indices, 1 month | +0.39% | +0.21% | +0.18% | 0.8 |
+| Stock vs its sector, 1 month | +0.37% | +0.31% | +0.06% | 0.3 |
+
+**Checked, it does not hold.** Two independent checks rebuilt every number from raw index closes (all match) and found:
+
+- **Most of it is made by the test itself.** Ranking stocks against others reporting later in the same season is
+  biased: a later stock's 1-month return already contains an earlier stock's three-day window, so a good early window
+  pushes later stocks into the "hot" third and leaves the early stock in the "cold" third. Random price paths with no
+  real pattern give -0.5% to -0.9% from the same test. Tested without that bias (thirds set across all quarters) the
+  difference is -0.3% (t -1.1) for the 1-month return and -0.4% (t -1.5) for the 52-week high.
+- **The rest is the whole market, not the sector.** About 80% of the 1-month difference is the Nifty's own move over
+  the same three days; against Nifty it is -0.16% (t -0.8). Comparing stocks that report on the same day, a hot sector
+  does no worse than a cold one (+0.04%). That is why sector vs Nifty, sector rank and stock vs sector show nothing.
+- **It is not about results.** Windows 10-20 sessions before results, with no results in them, show the same market
+  part; over all days in 2021-26, Nifty's 1-month return does not predict its next 3 days.
+- **Not tradeable.** The thirds above use the whole quarter's values, not known on the day. Real-time versions, after
+  0.17% costs: buying stocks in the coldest third of sectors that day +0.01% a trade (48% up); using a fixed or rolling
+  threshold +0.15% to +0.22% (against +0.07% for buying every result); hedged with Nifty, about 0. The best real-time
+  version (buy when the sector's stocks that already reported did badly): +0.38% a trade, 4 of 21 quarters at 2%, +0.26%
+  in the last 8 quarters, +0.22% hedged.
+
+Simple rules (strong or weak sector, stock leading or lagging it, sector bounce from far below its 52-week high, sector
+stocks already reported up or down) gave -0.18% to +0.86% a trade and 0-4 of 22 quarters at 2%. The open search on the
+sector measures found rules that passed 9-10 of the first 14 quarters but only 3 and 1 of the last 8, and 9-11% of
+searches on shuffled data did as well. **Sector performance gives no edge for the three-day window.** At most: after
+the market and the sector have run up, the next three days have been slightly weaker, which goes away once hedged.
+
+Files: [sector_bucket_tests.csv](../results/target_2pct/sector_bucket_tests.csv) (the first-look table, without the
+corrections), [sector_rule_tests.csv](../results/target_2pct/sector_rule_tests.csv),
+`sector_search_summary_min1.json` / `_min3.json`.
+
 ## What to do with this
 
 - A 2%-every-quarter rule is not supported by 22 quarters of data. Individual quarters swing too much: even the best
@@ -195,7 +244,8 @@ the last 8. The dropped dearest third with rising sales did about the same (+0.3
   buying results winners for 20 sessions (PATTERNS.md).
 
 Files: [results/target_2pct/](../results/target_2pct/) (search results, shuffled bests, walk-forward, the early-reporter
-trades, Condition A/B matches). Scripts: `pattern_tests/features22.py`, `search22.py`, `walkforward22.py`, `screen.py`, `valuation.py`.
+trades, Condition A/B matches). Scripts: `pattern_tests/features22.py`, `search22.py`, `walkforward22.py`, `screen.py`, `valuation.py`,
+`sector.py`.
 
 ```bash
 cd pattern_tests
@@ -204,4 +254,5 @@ python3 search22.py features.csv OUT 100 3            # also: 100 1, 100 1 --no-
 python3 walkforward22.py features.csv OUT 100 6       # add --tp3 for the take-profit
 python3 screen.py DATA OUT                            # Condition A / B
 python3 valuation.py DATA OUT                         # P/B / P/E by sector (reads OUT/screen_events.csv if present)
+python3 sector.py DATA features.csv OUT               # sector performance; then search22.py on OUT/sector_features.csv
 ```
