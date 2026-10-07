@@ -437,11 +437,12 @@ for sym, an_dt, descr, txt in ev.execute("SELECT symbol, an_dt, descr, txt FROM 
     if not t or not descr or "intimation" in descr.lower():
         continue
     low = (txt or "").lower()
-    if "intimation" in low or "to consider" in low or "will be held" in low or "trading window" in low:
-        continue                # notices about a future board meeting, not the results themselves
+    # notices about a future board meeting, not the results themselves ("held on ... to consider" is an outcome)
+    if "intimation" in low or "will be held" in low or "trading window" in low or ("to consider" in low and "held on" not in low):
+        continue
     if descr in STRONG_DESCS:
         an_by[sym].append((t, True))
-    elif (descr == "Outcome of Board Meeting" or descr in TEXT_DESCS) and "result" in low:
+    elif (descr == "Outcome of Board Meeting" or descr in TEXT_DESCS) and ("result" in low or "financial statement" in low):
         an_by[sym].append((t, False))
 for v in an_by.values():
     v.sort()

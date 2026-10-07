@@ -1,4 +1,4 @@
-"""NSE corporate actions for the universe, Nov 2017 - Sep 2026: bonus, split, consolidation, demerger -> share multipliers
+"""NSE corporate actions for the universe, Oct 2015 - Sep 2026: bonus, split, consolidation, demerger -> share multipliers
 (table ca); dividend ex-dates (table div). Renamed stocks are also queried under their old symbols."""
 import csv, json, re, sqlite3, sys, urllib.parse
 from datetime import datetime
@@ -37,7 +37,7 @@ n_ok, seen = 0, set()
 for query in UNIVERSE + sorted(ALIAS):
     try:
         raw = api.get("https://www.nseindia.com/api/corporates-corporateActions?index=equities&symbol="
-                      f"{urllib.parse.quote(query)}&from_date=01-11-2017&to_date=30-09-2026", timeout=20)
+                      f"{urllib.parse.quote(query)}&from_date=01-10-2015&to_date=30-09-2026", timeout=20)
         j = json.loads(raw or b"[]")
     except Exception as e:
         print(query, "failed", e, flush=True); continue
@@ -57,5 +57,9 @@ for query in UNIVERSE + sorted(ALIAS):
             out.append((sym, ex, kind, factor, subject))
     db.executemany("INSERT INTO ca VALUES (?,?,?,?,?)", out)
     db.executemany("INSERT OR IGNORE INTO div VALUES (?,?,?)", divs); db.commit(); n_ok += 1
+# Splits missing from NSE's corporate-actions API (found as exact 5x / 10x one-day drops in the bhavcopy)
+EXTRA = [("SOLARINDS", "2016-07-13", "split", 5.0, "Face value split Rs 10 to Rs 2 (not in NSE's corporate-actions data)"),
+         ("JSWSTEEL", "2017-01-04", "split", 10.0, "Face value split Rs 10 to Re 1 (not in NSE's corporate-actions data)")]
+db.executemany("INSERT INTO ca VALUES (?,?,?,?,?)", [e for e in EXTRA if e[0] in UNIVERSE]); db.commit()
 print("symbols queried:", n_ok, "dividends:", db.execute("SELECT COUNT(*) FROM div").fetchone()[0])
 for r in db.execute("SELECT * FROM ca ORDER BY ex_date"): print(r)
