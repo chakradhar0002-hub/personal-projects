@@ -1,0 +1,20 @@
+{
+ "settings": {
+  "min_picks": 1,
+  "no_trade_ok": false,
+  "target": 0.02,
+  "train_quarters": 14
+ },
+ "best_rule": "stock_vs_sec_1w >= 0.04948 AND peers_reported_3d >= 0.04672",
+ "train_score": 10,
+ "train_pass": 10,
+ "train_traded": 14,
+ "holdout_pass": 1,
+ "holdout_traded": 7,
+ "train_avg": 0.04328109696507454,
+ "holdout_avg": 0.005082600750029087,
+ "shuffled_best_train_pass_median": 8.0,
+ "shuffled_best_train_pass_max": 11,
+ "share_of_shuffles_at_least_as_good": 0.09,
+ "shuffled_holdout_pass_median": 1.0
+}
