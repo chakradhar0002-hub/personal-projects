@@ -142,6 +142,15 @@ in filings, handled correctly) and reproduced every figure.
 - "Expensive IT and FMCG did better" is not a valuation effect: it is a few always-expensive midcap winners (COFORGE,
   KPIT, PERSISTENT, VBL) and reverses when each stock is compared with itself.
 
+**The single cheapest stock in each peer group** (ranked on its cutoff date; groups with 4+ valued stocks): 111 picks
+over 22 quarters, about 5 a quarter. Average 3-day +0.84% (+0.67% after costs), 57% up, 8 of 22 quarters at 2% or more,
+15 of 22 positive. But +1.62% a quarter in the first 14 quarters and +0.00% in the last 8 (only 1 at 2%; the last two
+quarters -2.4% and -3.0%). It is the same names again and again (GODFRYPHLP 14 times, CROMPTON 12, WIPRO 12, DRREDDY 9,
+BANKINDIA 8), the median pick is +0.52%, and without the 3 best events the average is +0.44%. One-off gains can make a
+P/E look cheap (NAUKRI in 2021-22, after its investment gains). The 2nd + 3rd cheapest averaged +0.51% (4 of 22
+quarters at 2%), and the 2nd + 3rd most expensive +0.43% (5 of 22). Per-quarter list:
+[results/target_2pct/cheapest_in_peer_group.csv](../results/target_2pct/cheapest_in_peer_group.csv).
+
 ## The take-profit rule and 1-week vs Nifty
 
 | Group (1-week vs Nifty, before results) | Picks | 3-day hold | Quarters at 2% | Take-profit | Up | Quarters at 2% |
