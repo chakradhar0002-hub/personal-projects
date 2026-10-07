@@ -8,7 +8,7 @@ quarters' profit (P/E) or the latest published half-year book value (P/B). Only 
 quarter being reported are used. P/B exists from the Oct-Dec 2022 results on (earlier results filings have no balance
 sheet).
 
-    python3 valuation_test.py DATA OUT_DIR
+    python3 valuation.py DATA OUT_DIR
 """
 import csv, json, math, statistics, sys
 from pathlib import Path
