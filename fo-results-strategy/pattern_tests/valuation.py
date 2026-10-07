@@ -89,6 +89,7 @@ for r in ev:
     v = valuation(r["symbol"], r["quarter_end"], cut, metric)
     peers = [valuation(p, r["quarter_end"], cut, metric) for p in members[(g, r["quarter"])] if p != r["symbol"]]
     peers = [x for x in peers if x]
+    rank_cheap = 1 + sum(x < v for x in peers) if v else None      # 1 = cheapest in the group on that date
     own = []
     qn = QORDER.index(r["quarter"])
     for k in range(1, 9):                      # the stock's own valuation at its previous 8 cutoffs
@@ -103,6 +104,8 @@ for r in ev:
     rows.append({"symbol": r["symbol"], "quarter": r["quarter"], "qn": qn, "group": g, "metric": metric, "cutoff": cut,
                  "value": v, "peer_median": statistics.median(peers) if len(peers) >= 2 else None, "peers": len(peers),
                  "vs_peers": v / statistics.median(peers) - 1 if v and len(peers) >= 2 else None,
+                 "group_size": len(peers) + 1 if v else None, "rank_cheapest": rank_cheap,
+                 "rank_dearest": len(peers) + 2 - rank_cheap if v else None,
                  "own_median_2y": statistics.median(own) if len(own) >= 4 else None,
                  "vs_own_2y": v / statistics.median(own) - 1 if v and len(own) >= 4 else None,
                  "three_day": r["three_day"], "excess_nifty": r.get("excess_nifty"),
