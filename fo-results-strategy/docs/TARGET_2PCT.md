@@ -19,6 +19,7 @@ candidates are listed below with what they really earn.
 | Score model fitted on earlier quarters only | 60 - 630 | -3.8% to +0.7% a quarter | 1 - 3 of 16 |
 | Early reporters with a strong week (below) | 42 | +3.4% (+2.8% with the take-profit) | 13 of 22 |
 | Your Condition A (below) | 32 | +3.1% | see below |
+| Sector valuation, P/B financials / P/E consumer-IT-pharma (below) | 27 - 518 | -1.2% to +1.6% | at most 10 of 22 |
 
 ## Data
 
@@ -109,6 +110,38 @@ because BSE is not reachable from here):
 - Of the individual parts, only "profits rising 4 quarters" (+0.36% vs the quarter) and "no dividend in 365 days"
   (+0.47%) add anything alone.
 
+## Valuation by sector: P/B for financials, P/E for consumer, IT and pharma
+
+Banks and NBFCs (and as a variant metals and real estate) valued on P/B; FMCG, IT services, pharma and consumer brands
+on P/E. Each stock is compared with its sector peers valued on the same date (using only fundamentals already
+published), and with its own last 2 years. Insurers could not be tested (their filings use a format the report cannot
+read), and P/B exists only from the Oct-Dec 2022 results (earlier results filings have no balance sheet). Two
+independent checks rebuilt the valuations from the raw data (1,810 of 1,821 match; the rest are mis-scaled share counts
+in filings, handled correctly) and reproduced every figure.
+
+| Test | Picks | Avg 3-day | vs all stocks that quarter | Quarters at 2% |
+|---|---:|---:|---:|---:|
+| All your sectors | 1,949 | +0.22% | -0.06% | 0 / 22 |
+| Cheapest third vs peers (P/B or P/E) | 518 | +0.49% | +0.37% (t 1.5) | 3 / 22 |
+| Dearest third vs peers | 518 | +0.25% | -0.02% | 4 / 22 |
+| Banks + NBFCs, cheaper on P/B vs peers | 246 | +0.27% | +0.10% | 1 / 15 |
+| Banks + NBFCs, dearer on P/B vs peers | 256 | -0.17% | -0.60% | 1 / 15 |
+| FMCG + IT + pharma + consumer, cheapest third on P/E | 351 | +0.77% | +0.51% (t 2.0) | 4 / 22 |
+| Consumer brands, P/E above peers | 111 | -1.24% | -1.50% (t -3.0) | 2 / 22 |
+| IT services, P/E above peers | 134 | +1.06% | +0.86% (t 1.6) | 10 / 22 |
+| Your Condition A or B in these sectors, valuation above peers | 27 | +1.56% | +0.10% | 6 / 16 |
+
+- No valuation scheme comes close to 2% a quarter (best subset average about +1.2-1.6% on a few dozen picks).
+- Cheap vs expensive on P/B makes little difference for banks and NBFCs; on P/E the cheapest third did a little better
+  in 2021-24 (+0.66% vs the quarter) but not in the last 8 quarters (-0.12%).
+- Expensive consumer brands doing worse is the only result with a consistent link to valuation, but it is fragile: it
+  rests on a few always-expensive names (DMART, TITAN, DIXON, AMBER) and a few crashes (KAYNES twice, AMBER); without the
+  3 biggest crashes t falls to -1.85, it does not show against the stock's own history, and among the 8 groups tested
+  it is consistent with chance (p about 0.11). Shorting them for the three days netted about +1% a trade, +0.5% without
+  those crashes. At most, a reason to be careful buying richly priced consumer names into results.
+- "Expensive IT and FMCG did better" is not a valuation effect: it is a few always-expensive midcap winners (COFORGE,
+  KPIT, PERSISTENT, VBL) and reverses when each stock is compared with itself.
+
 ## The take-profit rule and 1-week vs Nifty
 
 | Group (1-week vs Nifty, before results) | Picks | 3-day hold | Quarters at 2% | Take-profit | Up | Quarters at 2% |
@@ -136,7 +169,7 @@ because BSE is not reachable from here):
   buying results winners for 20 sessions (PATTERNS.md).
 
 Files: [results/target_2pct/](../results/target_2pct/) (search results, shuffled bests, walk-forward, the early-reporter
-trades, Condition A/B matches). Scripts: `pattern_tests/features22.py`, `search22.py`, `walkforward22.py`, `screen.py`.
+trades, Condition A/B matches). Scripts: `pattern_tests/features22.py`, `search22.py`, `walkforward22.py`, `screen.py`, `valuation.py`.
 
 ```bash
 cd pattern_tests
@@ -144,4 +177,5 @@ python3 features22.py DATA features.csv
 python3 search22.py features.csv OUT 100 3            # also: 100 1, 100 1 --no-trade-ok, and --tp3 for the take-profit
 python3 walkforward22.py features.csv OUT 100 6       # add --tp3 for the take-profit
 python3 screen.py DATA OUT                            # Condition A / B
+python3 valuation.py DATA OUT                         # P/B / P/E by sector (reads OUT/screen_events.csv if present)
 ```
