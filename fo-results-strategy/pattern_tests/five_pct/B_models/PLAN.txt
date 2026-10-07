@@ -1,0 +1,63 @@
+PRE-REGISTERED PLAN (written before any model was run) - B_models, walk-forward ML aimed at +5% per trade
+
+Goal: a rule decided at the cutoff whose picks' 3-day window (Day-1 + Result + Day+1) averages > +5% (long)
+or < -5% (short, P&L = -three_day). Main universe: in_fo True (train AND pick). Secondary: all stocks.
+
+FEATURES (all known at cutoff close)
+ A. features.csv: all ~49 features except identifiers/outcomes, after_close and timing (results time NOT used).
+    fin_type encoded as integer code.
+ B. sector_features.csv extra sec_* columns (sec_1w/1m/3m, sec_vs_nifty_*, sec_rank_1m/3m, sec_vs_50dma/200dma,
+    sec_from_52w_high, sec_reported_3d, stock_vs_sec_1m/1w).
+ C. New, built from the data pack (build_features.py), all ending at the cutoff session i_cut:
+    last 3 daily returns, 3d and 10d returns, cutoff-day overnight gap and intraday move, vol5/vol20/vol250,
+    vol5/vol60 ratio, max/min daily return in 20d, count of |r|>4% days in 20d, up/down streak, 5d and 20d
+    return z-scores vs own 60d vol, own-history z-score of 10d return, beta and idiosyncratic vol vs Nifty 50,
+    60d skew, distance from 20d high, Nifty last-day / 3d return and 20d vol, market breadth (share of
+    stocks above 50dma), cross-sectional dispersion of 5d returns, equal-weight market 5d return,
+    stock's past results-window history (completed before cutoff): mean |three_day|, mean |reaction|,
+    share of past windows > +5% and < -5%, mean Day-1 return, mean 10-day pre-cutoff run-up, count;
+    number of companies already reported this season, fiscal quarter (qn mod 4), weekday of result day.
+
+MODEL FAMILIES (scores)
+ Long: HGBc+ (HistGradientBoosting P(y>5%)), RFc+ (RandomForest P(y>5%)), ETc+ (ExtraTrees P(y>5%)),
+       LR+ (logistic P(y>5%)), HGBr (HGB regressor on y winsorised at +-15%), RIDGE (ridge regressor),
+       HGBnet (= P(>5%) - P(<-5%) from HGB), ENS+ (mean of the 4 P(>5%) classifiers).
+ Short: HGBc-, RFc-, ETc-, LR- (P(y<-5%)), -HGBr, -RIDGE, -HGBnet, ENS- (mean of the 4 P(<-5%)).
+ Hyper-parameter grids (small, fixed in advance):
+   HGB (cls and reg): {depth 2, 150 iters, lr .05, leaf 40}, {depth 3, 150 iters, lr .05, leaf 40},
+                      {depth 3, 300 iters, lr .03, leaf 100, l2 1}
+   RF: {200 trees, leaf 20, max_features .3}, {200 trees, leaf 60, max_features .3}  (balanced_subsample off)
+   ET: {200 trees, leaf 20, max_features .5}, {200 trees, leaf 60, max_features .5}
+   LR: C in {0.003, 0.03, 0.3}  (features winsorised at train 1/99 pct, median-imputed + missing flags, standardised)
+   RIDGE: alpha in {10, 100, 1000} (same preprocessing)
+ Configs are chosen ONLY by inner validation: for outer quarter q, each config's one-step-ahead predictions
+ for quarters 3..q-1 (each made by a model trained on quarters before it) are scored by the mean signed
+ 3-day return of the top-5 picks per quarter; best config is used for q (its prediction for q comes from a
+ model trained on quarters < q).
+
+PICK RULES (per family, applied out of sample)
+ top-k per quarter, k in {1,2,3,5,10};
+ threshold rules with cuts set from EARLIER quarters' out-of-sample scores only:
+   T2 = score >= 98th pct of earlier OOS scores, T5 = >= 95th pct,
+   TE = lowest cut among the 80..99.5th pcts of earlier OOS scores whose earlier OOS picks averaged >= +5%
+        (signed) on >= 10 picks; no picks if none qualifies.
+ => 16 families x 8 rules = 128 settings.
+
+PROTOCOLS
+ P1 walk-forward: outer quarters 6..21, expanding window. Report every setting pooled (gross, net of 0.17%).
+ P2 fixed split: config chosen on one-step-ahead preds of quarters 3..13, model fit once on 0..13,
+    applied to 14..21 (thresholds from quarters <= 13 OOS scores).
+ Honest selection: the setting with the best walk-forward pooled net average over quarters 6..13
+    (>= 10 trades) is "chosen before the holdout"; its 14..21 result (P1 and P2) is the honest number.
+ A-priori defaults (no selection): ENS+ top-5 long and ENS- top-5 short.
+
+LUCK CHECK: identical pipeline with three_day (and excess_nifty) shuffled within quarter, >= 20 runs.
+ Record: best in-sample (6..13) setting value, its 14..21 value, max over settings of 6..21 pooled value,
+ and each setting's value, to compare with the real run.
+
+METRICS: pooled avg/trade gross & net, avg of quarter averages, trades, quarters with picks, % winners,
+ median, top-5 trades' share of total, avg without top 5; AUC and precision for y>5% (and y<-5%) vs base rate;
+ permutation feature importance of the fixed-split HGB classifiers.
+
+Note: top-k-per-quarter uses the scores (not outcomes) of later reporters in the same quarter, so it is not
+exactly tradable in real time; threshold rules are the real-time version.

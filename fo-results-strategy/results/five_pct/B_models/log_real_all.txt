@@ -1,0 +1,33 @@
+universe=all rows=4460 features=104
+predictions done 437s
+picks done 437s
+{
+ "best_is_setting": "LR+|top5",
+ "best_is_avg_net": 4.253563068647934,
+ "best_is_n": 40.0,
+ "best_is_oos_wf": 2.142785518736844,
+ "best_is_oos_wf_n": 40.0,
+ "best_is_oos_split": 2.5399860420121634,
+ "best_is_oos_split_n": 40.0,
+ "max_all_wf": 4.801218744294166,
+ "max_all_wf_n20": 3.579325105718106,
+ "max_all_wf_n30": 3.579325105718106,
+ "max_oos_wf": 4.359126755689405,
+ "max_oos_split": 5.512488867550558,
+ "ENS+_top5_all_wf": 2.011803323822045,
+ "ENS+_top5_oos_split": 0.6305741560643843,
+ "ENS-_top5_all_wf": -0.8504121963123218,
+ "ENS-_top5_oos_split": -1.04613963082081,
+ "meta_n_8_21_min10": 36.0,
+ "meta_avg_net_8_21_min10": 1.4918272239807122,
+ "meta_n_14_21_min10": 17.0,
+ "meta_avg_net_14_21_min10": 1.3566949079546928,
+ "meta_n_8_21_min20": 60.0,
+ "meta_avg_net_8_21_min20": 2.5366043624138666,
+ "meta_n_14_21_min20": 22.0,
+ "meta_avg_net_14_21_min20": 1.5034548944287862,
+ "meta_n_8_21_min30": 83.0,
+ "meta_avg_net_8_21_min30": 2.8502532335301614,
+ "meta_n_14_21_min30": 37.0,
+ "meta_avg_net_14_21_min30": 2.0128171909932884
+}

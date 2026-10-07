@@ -1,0 +1,5 @@
+seed 2000 done 410s best_is=RIDGE|top5 1.47 oos=-1.52 max_all=1.11
+seed 2001 done 410s best_is=ETc+|T2 3.14 oos=-0.58 max_all=2.21
+seed 2002 done 397s best_is=RFc-|top3 2.05 oos=0.38 max_all=2.52
+seed 2003 done 408s best_is=ETc+|top2 3.33 oos=-0.73 max_all=1.30
+seed 2004 done 410s best_is=HGBc+|top2 3.52 oos=-0.61 max_all=1.46

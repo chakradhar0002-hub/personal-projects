@@ -1,0 +1,115 @@
+      th     universe    outcome      n    nq    avg    net  avg_q     win    med  top5_share  wo_top5   is_n  is_avg  oos_n  oos_nq  oos_avg
+0   1.00          F&O  three_day    298  22.0   0.21   0.04   0.27   50.00  -0.01        1.24    -0.05  162.0    0.61  136.0     8.0    -0.26
+2   1.00          all  three_day    429  22.0   0.62   0.45   0.80   53.85   0.53        0.37     0.40  250.0    1.01  179.0     8.0     0.08
+4   1.00       preF&O  three_day    131  21.0   1.55   1.38   1.87   62.60   1.11        0.46     0.87   88.0    1.76   43.0     7.0     1.13
+6   1.00  placebo F&O  three_day  10841   NaN   0.55    NaN    NaN     NaN    NaN         NaN      NaN    NaN    0.74    NaN     NaN     0.38
+8   1.25          F&O  three_day    163  21.0   0.75   0.58   1.00   54.60   1.10        0.61     0.30   80.0    1.49   83.0     8.0     0.04
+10  1.25          all  three_day    247  21.0   1.41   1.24   2.14   59.51   1.35        0.28     1.04  131.0    2.01  116.0     8.0     0.73
+12  1.25       preF&O  three_day     84  19.0   2.70   2.53   3.17   69.05   2.41        0.41     1.68   51.0    2.84   33.0     6.0     2.48
+14  1.25  placebo F&O  three_day   5989   NaN   0.79    NaN    NaN     NaN    NaN         NaN      NaN    NaN    1.01    NaN     NaN     0.60
+16  1.50          F&O  three_day     92  18.0   1.66   1.49   1.36   63.04   2.03        0.48     0.91   45.0    2.93   47.0     7.0     0.45
+18  1.50          all  three_day    144  20.0   1.95   1.78   2.33   65.28   2.29        0.34     1.34   78.0    2.83   66.0     7.0     0.92
+20  1.50       preF&O  three_day     52  17.0   2.47   2.30   3.61   69.23   2.41        0.71     0.80   33.0    2.69   19.0     6.0     2.10
+22  1.50  placebo F&O  three_day   3401   NaN   1.08    NaN    NaN     NaN    NaN         NaN      NaN    NaN    1.31    NaN     NaN     0.89
+24  1.75          F&O  three_day     51  14.0   2.17   2.00   1.78   62.75   2.06        0.62     0.91   27.0    3.55   24.0     6.0     0.63
+26  1.75          all  three_day     88  18.0   2.21   2.04   2.21   64.77   2.03        0.45     1.28   51.0    3.20   37.0     7.0     0.83
+28  1.75       preF&O  three_day     37  14.0   2.25   2.08   2.97   67.57   1.93        0.98     0.06   24.0    2.82   13.0     5.0     1.20
+30  1.75  placebo F&O  three_day   1952   NaN   1.39    NaN    NaN     NaN    NaN         NaN      NaN    NaN    1.62    NaN     NaN     1.19
+32  2.00          F&O  three_day     29  12.0   3.27   3.10   3.45   68.97   2.93        0.66     1.34   19.0    3.79   10.0     4.0     2.27
+34  2.00          all  three_day     55  15.0   3.21   3.04   2.95   69.09   2.65        0.50     1.78   36.0    4.08   19.0     5.0     1.56
+36  2.00       preF&O  three_day     26  12.0   3.15   2.98   3.69   69.23   1.74        0.99     0.03   17.0    4.40    9.0     4.0     0.78
+38  2.00  placebo F&O  three_day   1167   NaN   1.60    NaN    NaN     NaN    NaN         NaN      NaN    NaN    1.94    NaN     NaN     1.32
+40  2.25          F&O  three_day     19   7.0   4.05   3.88   4.70   73.68   3.64        0.74     1.44   13.0    3.51    6.0     3.0     5.20
+42  2.25          all  three_day     37  11.0   3.57   3.40   5.25   70.27   3.64        0.66     1.39   26.0    3.92   11.0     3.0     2.74
+44  2.25       preF&O  three_day     18   9.0   3.07   2.90   6.70   66.67   2.73        1.44    -1.88   13.0    4.33    5.0     1.0    -0.20
+46  2.25  placebo F&O  three_day    690   NaN   1.83    NaN    NaN     NaN    NaN         NaN      NaN    NaN    2.16    NaN     NaN     1.58
+48  2.50          F&O  three_day     12   6.0   4.08   3.91   4.58   66.67   2.97        1.09    -0.63    9.0    3.63    3.0     2.0     5.44
+50  2.50          all  three_day     24   9.0   2.87   2.70   5.11   62.50   2.50        1.26    -0.95   18.0    3.26    6.0     2.0     1.68
+52  2.50       preF&O  three_day     12   7.0   1.65   1.48   5.28   58.33   1.26        3.19    -6.20    9.0    2.90    3.0     1.0    -2.08
+54  2.50  placebo F&O  three_day    422   NaN   2.11    NaN    NaN     NaN    NaN         NaN      NaN    NaN    2.50    NaN     NaN     1.81
+56  3.00          F&O  three_day      3   3.0  11.99  11.82  11.99  100.00  14.81        1.00      NaN    2.0   10.57    1.0     1.0    14.81
+58  3.00          all  three_day     10   5.0   3.59   3.42   7.76   60.00   3.00        2.13    -8.12    8.0    4.80    2.0     1.0    -1.26
+60  3.00       preF&O  three_day      7   5.0  -0.01  -0.18   3.36   42.86  -5.00         NaN   -16.16    6.0    2.87    1.0     1.0   -17.33
+62  3.00  placebo F&O  three_day    173   NaN   2.17    NaN    NaN     NaN    NaN         NaN      NaN    NaN    2.52    NaN     NaN     1.92
+      th     universe outcome      n    nq   avg   net  avg_q     win   med  top5_share  wo_top5   is_n  is_avg  oos_n  oos_nq  oos_avg
+1   1.00          F&O     tp3    298  22.0  0.27  0.10   0.38   55.37  0.90        0.85     0.04  162.0    0.58  136.0     8.0    -0.10
+7   1.00  placebo F&O     tp3  10841   NaN  0.45   NaN    NaN     NaN   NaN         NaN      NaN    NaN    0.63    NaN     NaN     0.28
+9   1.25          F&O     tp3    163  21.0  0.77  0.60   0.96   60.74  2.00        0.52     0.38   80.0    1.27   83.0     8.0     0.28
+15  1.25  placebo F&O     tp3   5989   NaN  0.64   NaN    NaN     NaN   NaN         NaN      NaN    NaN    0.86    NaN     NaN     0.44
+17  1.50          F&O     tp3     92  18.0  1.38  1.21   1.43   69.57  2.83        0.46     0.78   45.0    2.15   47.0     7.0     0.64
+23  1.50  placebo F&O     tp3   3401   NaN  0.85   NaN    NaN     NaN   NaN         NaN      NaN    NaN    1.10    NaN     NaN     0.65
+25  1.75          F&O     tp3     51  14.0  2.18  2.01   2.10   72.55  3.09        0.47     1.28   27.0    2.67   24.0     6.0     1.64
+31  1.75  placebo F&O     tp3   1952   NaN  1.08   NaN    NaN     NaN   NaN         NaN      NaN    NaN    1.37    NaN     NaN     0.83
+33  2.00          F&O     tp3     29  12.0  2.71  2.54   2.82   75.86  3.18        0.56     1.45   19.0    2.61   10.0     4.0     2.91
+39  2.00  placebo F&O     tp3   1167   NaN  1.28   NaN    NaN     NaN   NaN         NaN      NaN    NaN    1.63    NaN     NaN     0.98
+41  2.25          F&O     tp3     19   7.0  3.52  3.35   3.75   78.95  3.64        0.63     1.76   13.0    2.57    6.0     3.0     5.58
+47  2.25  placebo F&O     tp3    690   NaN  1.43   NaN    NaN     NaN   NaN         NaN      NaN    NaN    1.88    NaN     NaN     1.09
+49  2.50          F&O     tp3     12   6.0  3.89  3.72   4.14   75.00  3.45        0.90     0.64    9.0    2.77    3.0     2.0     7.24
+55  2.50  placebo F&O     tp3    422   NaN  1.64   NaN    NaN     NaN   NaN         NaN      NaN    NaN    2.23    NaN     NaN     1.17
+57  3.00          F&O     tp3      3   3.0  9.52  9.35   9.52  100.00  9.34        1.00      NaN    2.0    6.87    1.0     1.0    14.81
+63  3.00  placebo F&O     tp3    173   NaN  1.60   NaN    NaN     NaN   NaN         NaN      NaN    NaN    2.33    NaN     NaN     1.08
+{
+ "10": {
+  "real": {
+   "best": [
+    2.0,
+    "3day"
+   ],
+   "is_avg": 3.79106422591743,
+   "is_n": 19,
+   "oos_avg": 2.2655655522539884,
+   "oos_n": 10,
+   "oos_nq": 4,
+   "wf_avg": 2.808923533172586,
+   "wf_n": 20
+  },
+  "frac_shuf_is_ge": 0.0,
+  "shuf_is_median": 0.36798534010046746,
+  "shuf_oos_mean": -0.42981932777676324,
+  "frac_shuf_oos_ge": 0.018,
+  "shuf_wf_mean": -0.161370656871784,
+  "frac_shuf_wf_ge": 0.008
+ },
+ "20": {
+  "real": {
+   "best": [
+    1.75,
+    "3day"
+   ],
+   "is_avg": 3.54510139794873,
+   "is_n": 27,
+   "oos_avg": 0.6322442524915789,
+   "oos_n": 24,
+   "oos_nq": 6,
+   "wf_avg": 2.2710054515552542,
+   "wf_n": 25
+  },
+  "frac_shuf_is_ge": 0.0,
+  "shuf_is_median": 0.24263546916206682,
+  "shuf_oos_mean": -0.4558268979743356,
+  "frac_shuf_oos_ge": 0.062,
+  "shuf_wf_mean": -0.19610199646576376,
+  "frac_shuf_wf_ge": 0.0
+ },
+ "30": {
+  "real": {
+   "best": [
+    1.5,
+    "3day"
+   ],
+   "is_avg": 2.925423614980903,
+   "is_n": 45,
+   "oos_avg": 0.44983015662132936,
+   "oos_n": 47,
+   "oos_nq": 7,
+   "wf_avg": 1.0153942448065316,
+   "wf_n": 53
+  },
+  "frac_shuf_is_ge": 0.0,
+  "shuf_is_median": 0.15445597896042845,
+  "shuf_oos_mean": -0.4282281194256639,
+  "frac_shuf_oos_ge": 0.062,
+  "shuf_wf_mean": -0.18203849783712214,
+  "frac_shuf_wf_ge": 0.008
+ }
+}

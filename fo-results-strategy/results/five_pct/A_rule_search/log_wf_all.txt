@@ -1,0 +1,29 @@
+quarter 6 done 47.8 conds 2289
+quarter 7 done 100.0 conds 2291
+quarter 8 done 165.4 conds 2372
+quarter 9 done 215.2 conds 2379
+quarter 10 done 271.2 conds 2386
+quarter 11 done 325.6 conds 2391
+quarter 12 done 389.8 conds 2389
+quarter 13 done 454.6 conds 2387
+quarter 14 done 522.6 conds 2387
+quarter 15 done 595.3 conds 2404
+quarter 16 done 670.6 conds 2408
+quarter 17 done 746.7 conds 2406
+quarter 18 done 830.1 conds 2408
+quarter 19 done 914.6 conds 2407
+quarter 20 done 1005.9 conds 2407
+quarter 21 done 1098.3 conds 2408
+best_all 10 real WF pooled -0.61% on 11 trades (6 qtrs), q14+ 0.39% on 5 | shuffled mean -0.13 p95 1.71 p=0.75
+best_upto2 10 real WF pooled 1.94% on 20 trades (8 qtrs), q14+ -1.18% on 8 | shuffled mean 0.30 p95 3.03 p=0.2
+best_1 10 real WF pooled 0.79% on 60 trades (13 qtrs), q14+ 0.28% on 40 | shuffled mean 0.24 p95 1.04 p=0.2
+top10_pool 10 real WF pooled -0.58% on 117 trades (15 qtrs), q14+ -0.05% on 67 | shuffled mean 0.22 p95 1.34 p=0.85
+best_all 20 real WF pooled -2.47% on 14 trades (6 qtrs), q14+ -4.52% on 5 | shuffled mean 0.56 p95 1.72 p=1.0
+best_upto2 20 real WF pooled 0.29% on 33 trades (11 qtrs), q14+ -0.10% on 17 | shuffled mean 0.67 p95 2.07 p=0.7
+best_1 20 real WF pooled 0.79% on 60 trades (13 qtrs), q14+ 0.28% on 40 | shuffled mean 0.24 p95 1.04 p=0.2
+top10_pool 20 real WF pooled 0.35% on 219 trades (15 qtrs), q14+ 0.82% on 75 | shuffled mean 0.60 p95 1.37 p=0.7
+best_all 30 real WF pooled -1.09% on 21 trades (8 qtrs), q14+ -2.18% on 10 | shuffled mean 0.38 p95 1.86 p=1.0
+best_upto2 30 real WF pooled -0.16% on 42 trades (12 qtrs), q14+ -2.40% on 16 | shuffled mean 0.30 p95 1.43 p=0.7
+best_1 30 real WF pooled 0.79% on 60 trades (13 qtrs), q14+ 0.28% on 40 | shuffled mean 0.24 p95 1.04 p=0.2
+top10_pool 30 real WF pooled 0.86% on 247 trades (16 qtrs), q14+ -0.30% on 117 | shuffled mean 0.49 p95 1.20 p=0.2
+done 1098.3

@@ -1,0 +1,65 @@
+{
+ "10": {
+  "real": {
+   "best": [
+    2.0,
+    "3day"
+   ],
+   "is_avg": 3.79106422591743,
+   "is_n": 19,
+   "oos_avg": 2.2655655522539884,
+   "oos_n": 10,
+   "oos_nq": 4,
+   "wf_avg": 2.808923533172586,
+   "wf_n": 20
+  },
+  "frac_shuf_is_ge": 0.0,
+  "shuf_is_median": 0.36798534010046746,
+  "shuf_oos_mean": -0.42981932777676324,
+  "frac_shuf_oos_ge": 0.018,
+  "shuf_wf_mean": -0.161370656871784,
+  "frac_shuf_wf_ge": 0.008
+ },
+ "20": {
+  "real": {
+   "best": [
+    1.75,
+    "3day"
+   ],
+   "is_avg": 3.54510139794873,
+   "is_n": 27,
+   "oos_avg": 0.6322442524915789,
+   "oos_n": 24,
+   "oos_nq": 6,
+   "wf_avg": 2.2710054515552542,
+   "wf_n": 25
+  },
+  "frac_shuf_is_ge": 0.0,
+  "shuf_is_median": 0.24263546916206682,
+  "shuf_oos_mean": -0.4558268979743356,
+  "frac_shuf_oos_ge": 0.062,
+  "shuf_wf_mean": -0.19610199646576376,
+  "frac_shuf_wf_ge": 0.0
+ },
+ "30": {
+  "real": {
+   "best": [
+    1.5,
+    "3day"
+   ],
+   "is_avg": 2.925423614980903,
+   "is_n": 45,
+   "oos_avg": 0.44983015662132936,
+   "oos_n": 47,
+   "oos_nq": 7,
+   "wf_avg": 1.0153942448065316,
+   "wf_n": 53
+  },
+  "frac_shuf_is_ge": 0.0,
+  "shuf_is_median": 0.15445597896042845,
+  "shuf_oos_mean": -0.4282281194256639,
+  "frac_shuf_oos_ge": 0.062,
+  "shuf_wf_mean": -0.18203849783712214,
+  "frac_shuf_wf_ge": 0.008
+ }
+}

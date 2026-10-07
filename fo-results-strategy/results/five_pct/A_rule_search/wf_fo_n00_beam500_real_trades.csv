@@ -1,0 +1,1544 @@
+variant,min_trades,qn,symbol,pnl,in_fo,rule
+best_all,10,6,BAJFINANCE,0.0265513770352239,True,SHORT: prev_net_margin >= 0.2016 AND iv_t5 >= 0.4019 AND sector_index == Nifty Financial Services
+best_all,10,6,IEX,0.0368913207901877,True,SHORT: prev_net_margin >= 0.2016 AND iv_t5 >= 0.4019 AND sector_index == Nifty Financial Services
+best_1,10,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398
+best_1,10,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398
+top10_pool,10,6,BAJFINANCE,0.0265513770352239,True,SHORT: prev_net_margin >= 0.2016 AND iv_t5 >= 0.4019 AND sector_index == Nifty Financial Services
+top10_pool,10,6,IEX,0.0368913207901877,True,SHORT: prev_net_margin >= 0.2016 AND iv_t5 >= 0.4019 AND sector_index == Nifty Financial Services
+top10_pool,10,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND log_mcap <= 10.82 AND days_after_quarter_end >= 29
+top10_pool,10,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398 AND log_mcap <= 10.82 AND days_after_quarter_end >= 29
+top10_pool,10,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND log_mcap <= 10.82 AND gap0 >= 0.0003965
+top10_pool,10,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398 AND log_mcap <= 10.82 AND gap0 >= 0.0003965
+best_all,20,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND vol60 >= 0.3357 AND gap0 >= 0.0003965
+best_all,20,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398 AND vol60 >= 0.3357 AND gap0 >= 0.0003965
+best_upto2,20,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND log_mcap <= 11.27
+best_upto2,20,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398 AND log_mcap <= 11.27
+best_1,20,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398
+best_1,20,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398
+top10_pool,20,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND vol60 >= 0.3357 AND gap0 >= 0.0003965
+top10_pool,20,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398 AND vol60 >= 0.3357 AND gap0 >= 0.0003965
+top10_pool,20,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND iv_t5 >= 0.2856 AND gap0 >= 0.0003965
+top10_pool,20,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398 AND iv_t5 >= 0.2856 AND gap0 >= 0.0003965
+top10_pool,20,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND iv_t5 >= 0.2704 AND gap0 >= 0.0003965
+top10_pool,20,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398 AND iv_t5 >= 0.2704 AND gap0 >= 0.0003965
+top10_pool,20,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND gap0 >= 0.0003965 AND nifty_3d >= -0.01545
+top10_pool,20,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398 AND gap0 >= 0.0003965 AND nifty_3d >= -0.01545
+top10_pool,20,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND nifty_1w >= -0.00818 AND gap0 >= 0.0003965
+top10_pool,20,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398 AND nifty_1w >= -0.00818 AND gap0 >= 0.0003965
+top10_pool,20,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND vol60 >= 0.2944 AND gap0 >= 0.0003965
+top10_pool,20,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398 AND vol60 >= 0.2944 AND gap0 >= 0.0003965
+top10_pool,20,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND vol60 >= 0.3143 AND gap0 >= 0.0003965
+top10_pool,20,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398 AND vol60 >= 0.3143 AND gap0 >= 0.0003965
+top10_pool,20,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND vol60 >= 0.2737 AND gap0 >= 0.0003965
+top10_pool,20,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398 AND vol60 >= 0.2737 AND gap0 >= 0.0003965
+top10_pool,20,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND vs_nifty_1m >= 0.06531 AND gap0 >= 0.0003965
+top10_pool,20,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398 AND vs_nifty_1m >= 0.06531 AND gap0 >= 0.0003965
+top10_pool,20,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND iv_t5 >= 0.4253 AND nifty_d0 >= -0.009562
+top10_pool,20,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398 AND iv_t5 >= 0.4253 AND nifty_d0 >= -0.009562
+best_all,30,6,BAJFINANCE,0.0265513770352239,True,SHORT: iv_t5 >= 0.329 AND d2 >= 0.01325 AND gap0 >= 0.00504
+best_all,30,6,CANBK,-0.0720371095582254,True,SHORT: iv_t5 >= 0.329 AND d2 >= 0.01325 AND gap0 >= 0.00504
+best_all,30,6,AMBUJACEM,-0.01224401899939,True,SHORT: iv_t5 >= 0.329 AND d2 >= 0.01325 AND gap0 >= 0.00504
+best_all,30,6,BEL,-0.0058591274120819,True,SHORT: iv_t5 >= 0.329 AND d2 >= 0.01325 AND gap0 >= 0.00504
+best_all,30,6,PNB,0.0914268228184581,True,SHORT: iv_t5 >= 0.329 AND d2 >= 0.01325 AND gap0 >= 0.00504
+best_upto2,30,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND vol60 >= 0.3357
+best_upto2,30,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398 AND vol60 >= 0.3357
+best_1,30,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398
+best_1,30,6,BHEL,0.0454820810283499,True,SHORT: vs_ma50 >= 0.1398
+top10_pool,30,6,BAJFINANCE,0.0265513770352239,True,SHORT: iv_t5 >= 0.329 AND d2 >= 0.01325 AND gap0 >= 0.00504
+top10_pool,30,6,CANBK,-0.0720371095582254,True,SHORT: iv_t5 >= 0.329 AND d2 >= 0.01325 AND gap0 >= 0.00504
+top10_pool,30,6,AMBUJACEM,-0.01224401899939,True,SHORT: iv_t5 >= 0.329 AND d2 >= 0.01325 AND gap0 >= 0.00504
+top10_pool,30,6,BEL,-0.0058591274120819,True,SHORT: iv_t5 >= 0.329 AND d2 >= 0.01325 AND gap0 >= 0.00504
+top10_pool,30,6,PNB,0.0914268228184581,True,SHORT: iv_t5 >= 0.329 AND d2 >= 0.01325 AND gap0 >= 0.00504
+top10_pool,30,6,BAJFINANCE,0.0265513770352239,True,SHORT: vs_sector_1m >= -0.06887 AND days_since_dividend >= 63 AND industry == Finance
+top10_pool,30,6,LTF,0.0012067024103634,True,SHORT: vs_sector_1m >= -0.06887 AND days_since_dividend >= 63 AND industry == Finance
+top10_pool,30,6,SHRIRAMFIN,0.0217003054318072,True,SHORT: vs_sector_1m >= -0.06887 AND days_since_dividend >= 63 AND industry == Finance
+top10_pool,30,6,BAJAJFINSV,-0.0022314612359927,True,SHORT: vs_sector_1m >= -0.06887 AND days_since_dividend >= 63 AND industry == Finance
+top10_pool,30,6,CHOLAFIN,-0.0397757169248176,True,SHORT: vs_sector_1m >= -0.06887 AND days_since_dividend >= 63 AND industry == Finance
+top10_pool,30,6,ABCAPITAL,-0.0881238876518273,True,SHORT: vs_sector_1m >= -0.06887 AND days_since_dividend >= 63 AND industry == Finance
+top10_pool,30,6,MUTHOOTFIN,0.0354537990255284,True,SHORT: vs_sector_1m >= -0.06887 AND days_since_dividend >= 63 AND industry == Finance
+top10_pool,30,6,MANAPPURAM,-0.1019948909282109,True,SHORT: vs_sector_1m >= -0.06887 AND days_since_dividend >= 63 AND industry == Finance
+top10_pool,30,6,BAJFINANCE,0.0265513770352239,True,SHORT: days_since_dividend >= 63 AND n_prior >= 1 AND industry == Finance
+top10_pool,30,6,LTF,0.0012067024103634,True,SHORT: days_since_dividend >= 63 AND n_prior >= 1 AND industry == Finance
+top10_pool,30,6,SHRIRAMFIN,0.0217003054318072,True,SHORT: days_since_dividend >= 63 AND n_prior >= 1 AND industry == Finance
+top10_pool,30,6,BAJAJFINSV,-0.0022314612359927,True,SHORT: days_since_dividend >= 63 AND n_prior >= 1 AND industry == Finance
+top10_pool,30,6,SBICARD,0.0524659034372413,True,SHORT: days_since_dividend >= 63 AND n_prior >= 1 AND industry == Finance
+top10_pool,30,6,CHOLAFIN,-0.0397757169248176,True,SHORT: days_since_dividend >= 63 AND n_prior >= 1 AND industry == Finance
+top10_pool,30,6,ABCAPITAL,-0.0881238876518273,True,SHORT: days_since_dividend >= 63 AND n_prior >= 1 AND industry == Finance
+top10_pool,30,6,MUTHOOTFIN,0.0354537990255284,True,SHORT: days_since_dividend >= 63 AND n_prior >= 1 AND industry == Finance
+top10_pool,30,6,MANAPPURAM,-0.1019948909282109,True,SHORT: days_since_dividend >= 63 AND n_prior >= 1 AND industry == Finance
+top10_pool,30,6,HCLTECH,-0.0203037802016632,True,SHORT: sector_1w >= 0.03109 AND vs_nifty_3m >= -0.1001 AND pe_vs_peers <= 0.3392
+top10_pool,30,6,AXISBANK,-0.1019875066007183,True,SHORT: sector_1w >= 0.03109 AND vs_nifty_3m >= -0.1001 AND pe_vs_peers <= 0.3392
+top10_pool,30,6,ICICIBANK,-0.0405787100421906,True,SHORT: sector_1w >= 0.03109 AND vs_nifty_3m >= -0.1001 AND pe_vs_peers <= 0.3392
+top10_pool,30,6,TATASTEEL,0.0288907193797125,True,SHORT: sector_1w >= 0.03109 AND vs_nifty_3m >= -0.1001 AND pe_vs_peers <= 0.3392
+top10_pool,30,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND nifty_d0 >= -0.0105 AND vol5_60 >= 0.5864
+top10_pool,30,6,PNB,0.0914268228184581,True,SHORT: vs_ma50 >= 0.1398 AND nifty_d0 >= -0.009562 AND vol5_60 >= 0.5864
+top10_pool,30,6,HCLTECH,-0.0203037802016632,True,SHORT: iv_vs_realised >= 1.24 AND d2 >= 0.01325 AND vol5_60 <= 1.123
+top10_pool,30,6,COFORGE,-0.006678273850886,True,SHORT: iv_vs_realised >= 1.24 AND d2 >= 0.01325 AND vol5_60 <= 1.123
+top10_pool,30,6,AMBUJACEM,-0.01224401899939,True,SHORT: iv_vs_realised >= 1.24 AND d2 >= 0.01325 AND vol5_60 <= 1.123
+top10_pool,30,6,LT,-0.0305964628618817,True,SHORT: iv_vs_realised >= 1.24 AND d2 >= 0.01325 AND vol5_60 <= 1.123
+top10_pool,30,6,PNB,0.0914268228184581,True,SHORT: iv_vs_realised >= 1.24 AND d2 >= 0.01325 AND vol5_60 <= 1.123
+top10_pool,30,6,ICICIGI,-0.0101112082904205,True,SHORT: vs_nifty_1m >= -0.1156 AND iv_t5 >= 0.4019 AND sector_index == Nifty Financial Services
+top10_pool,30,6,BAJFINANCE,0.0265513770352239,True,SHORT: vs_nifty_1m >= -0.1156 AND iv_t5 >= 0.4019 AND sector_index == Nifty Financial Services
+top10_pool,30,6,IEX,0.0368913207901877,True,SHORT: vs_nifty_1m >= -0.1156 AND iv_t5 >= 0.4019 AND sector_index == Nifty Financial Services
+top10_pool,30,6,LTF,0.0012067024103634,True,SHORT: vs_nifty_1m >= -0.1156 AND iv_t5 >= 0.4019 AND sector_index == Nifty Financial Services
+top10_pool,30,6,SHRIRAMFIN,0.0217003054318072,True,SHORT: vs_nifty_1m >= -0.1156 AND iv_t5 >= 0.4019 AND sector_index == Nifty Financial Services
+top10_pool,30,6,BAJAJFINSV,-0.0022314612359927,True,SHORT: vs_nifty_1m >= -0.1156 AND iv_t5 >= 0.4019 AND sector_index == Nifty Financial Services
+top10_pool,30,6,ABCAPITAL,-0.0881238876518273,True,SHORT: vs_nifty_1m >= -0.1156 AND iv_t5 >= 0.4019 AND sector_index == Nifty Financial Services
+top10_pool,30,6,ICICIGI,-0.0101112082904205,True,SHORT: iv_t5 >= 0.4019 AND gap5 >= -0.02035 AND sector_index == Nifty Financial Services
+top10_pool,30,6,BAJFINANCE,0.0265513770352239,True,SHORT: iv_t5 >= 0.4019 AND gap5 >= -0.02035 AND sector_index == Nifty Financial Services
+top10_pool,30,6,IEX,0.0368913207901877,True,SHORT: iv_t5 >= 0.4019 AND gap5 >= -0.02035 AND sector_index == Nifty Financial Services
+top10_pool,30,6,LTF,0.0012067024103634,True,SHORT: iv_t5 >= 0.4019 AND gap5 >= -0.02035 AND sector_index == Nifty Financial Services
+top10_pool,30,6,SHRIRAMFIN,0.0217003054318072,True,SHORT: iv_t5 >= 0.4019 AND gap5 >= -0.02035 AND sector_index == Nifty Financial Services
+top10_pool,30,6,BAJAJFINSV,-0.0022314612359927,True,SHORT: iv_t5 >= 0.4019 AND gap5 >= -0.02035 AND sector_index == Nifty Financial Services
+top10_pool,30,6,ABCAPITAL,-0.0881238876518273,True,SHORT: iv_t5 >= 0.4019 AND gap5 >= -0.02035 AND sector_index == Nifty Financial Services
+top10_pool,30,6,SBICARD,0.0524659034372413,True,SHORT: vol60 >= 0.2325 AND nifty_1w >= 0.02351 AND intra0 <= -0.01071
+top10_pool,30,6,TVSMOTOR,0.0017004903197984,True,SHORT: vol60 >= 0.2325 AND nifty_1w >= 0.02351 AND intra0 <= -0.01071
+best_1,10,7,IEX,0.0052774750068967,True,SHORT: own_dm1 <= -0.01355
+best_1,10,7,SRF,-0.0252501404117848,True,SHORT: own_dm1 <= -0.01355
+top10_pool,10,7,SHRIRAMFIN,-0.044980605214927,True,SHORT: prev_sales_yoy >= -0.03139 AND pe <= 12.9 AND sector_index == Nifty Financial Services
+top10_pool,10,7,MANAPPURAM,-0.0216288147278699,True,SHORT: prev_sales_yoy >= -0.03139 AND pe <= 12.9 AND sector_index == Nifty Financial Services
+top10_pool,10,7,LICHSGFIN,0.0476579334433218,True,SHORT: prev_sales_yoy >= -0.03139 AND pe <= 12.9 AND sector_index == Nifty Financial Services
+best_upto2,20,7,MFSL,0.1020013713457496,True,SHORT: vs_ma50 >= 0.1367 AND gap0 >= 0.005039
+best_1,20,7,IEX,0.0052774750068967,True,SHORT: own_dm1 <= -0.01355
+best_1,20,7,SRF,-0.0252501404117848,True,SHORT: own_dm1 <= -0.01355
+best_all,30,7,ADANIPORTS,-0.1908725044206758,True,SHORT: iv_t5 >= 0.5614 AND nifty_d0 >= -0.006205 AND sec_3d >= -0.01632
+best_all,30,7,AMBUJACEM,-0.0293469916517588,True,SHORT: iv_t5 >= 0.5614 AND nifty_d0 >= -0.006205 AND sec_3d >= -0.01632
+best_all,30,7,ADANIENT,0.0345452142294122,True,SHORT: iv_t5 >= 0.5614 AND nifty_d0 >= -0.006205 AND sec_3d >= -0.01632
+best_all,30,7,IDEA,0.0126147737612704,True,SHORT: iv_t5 >= 0.5614 AND nifty_d0 >= -0.006205 AND sec_3d >= -0.01632
+best_upto2,30,7,ADANIPORTS,-0.1908725044206758,True,SHORT: iv_t5 >= 0.5614 AND sec_3d >= -0.01632
+best_upto2,30,7,AMBUJACEM,-0.0293469916517588,True,SHORT: iv_t5 >= 0.5614 AND sec_3d >= -0.01632
+best_upto2,30,7,ADANIENT,0.0345452142294122,True,SHORT: iv_t5 >= 0.5614 AND sec_3d >= -0.01632
+best_upto2,30,7,IDEA,0.0126147737612704,True,SHORT: iv_t5 >= 0.5614 AND sec_3d >= -0.01632
+best_1,30,7,IEX,0.0052774750068967,True,SHORT: own_dm1 <= -0.01355
+best_1,30,7,SRF,-0.0252501404117848,True,SHORT: own_dm1 <= -0.01355
+top10_pool,30,7,ADANIPORTS,-0.1908725044206758,True,SHORT: iv_t5 >= 0.5614 AND nifty_d0 >= -0.006205 AND sec_3d >= -0.01632
+top10_pool,30,7,AMBUJACEM,-0.0293469916517588,True,SHORT: iv_t5 >= 0.5614 AND nifty_d0 >= -0.006205 AND sec_3d >= -0.01632
+top10_pool,30,7,ADANIENT,0.0345452142294122,True,SHORT: iv_t5 >= 0.5614 AND nifty_d0 >= -0.006205 AND sec_3d >= -0.01632
+top10_pool,30,7,IDEA,0.0126147737612704,True,SHORT: iv_t5 >= 0.5614 AND nifty_d0 >= -0.006205 AND sec_3d >= -0.01632
+top10_pool,30,7,ADANIPORTS,-0.1908725044206758,True,SHORT: iv_t5 >= 0.5614 AND sec_3d >= -0.01632 AND maxabs5 >= 0.01699
+top10_pool,30,7,AMBUJACEM,-0.0293469916517588,True,SHORT: iv_t5 >= 0.5614 AND sec_3d >= -0.01632 AND maxabs5 >= 0.01699
+top10_pool,30,7,ADANIENT,0.0345452142294122,True,SHORT: iv_t5 >= 0.5614 AND sec_3d >= -0.01632 AND maxabs5 >= 0.01699
+top10_pool,30,7,IDEA,0.0126147737612704,True,SHORT: iv_t5 >= 0.5614 AND sec_3d >= -0.01632 AND maxabs5 >= 0.01699
+top10_pool,30,7,ADANIPORTS,-0.1908725044206758,True,SHORT: iv_t5 >= 0.5614 AND sec_3d >= -0.01632 AND maxabs5 >= 0.02028
+top10_pool,30,7,AMBUJACEM,-0.0293469916517588,True,SHORT: iv_t5 >= 0.5614 AND sec_3d >= -0.01632 AND maxabs5 >= 0.02028
+top10_pool,30,7,ADANIENT,0.0345452142294122,True,SHORT: iv_t5 >= 0.5614 AND sec_3d >= -0.01632 AND maxabs5 >= 0.02028
+top10_pool,30,7,IDEA,0.0126147737612704,True,SHORT: iv_t5 >= 0.5614 AND sec_3d >= -0.01632 AND maxabs5 >= 0.02028
+best_all,10,8,RECLTD,0.0507909937923458,True,SHORT: vs_ma200 >= 0.2248 AND prev_net_margin >= 0.2004 AND log_mcap <= 11.29
+best_all,10,8,PFC,-0.0610080766592697,True,SHORT: vs_ma200 >= 0.2248 AND prev_net_margin >= 0.2004 AND log_mcap <= 11.29
+best_upto2,10,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344 AND pe <= 20.04
+best_1,10,8,GODREJPROP,-0.0082319401409119,True,SHORT: vs_ma50 >= 0.1344
+best_1,10,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344
+best_1,10,8,INDIGO,0.0060884429284971,True,SHORT: vs_ma50 >= 0.1344
+best_1,10,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344
+top10_pool,10,8,RECLTD,0.0507909937923458,True,SHORT: vs_ma200 >= 0.2248 AND prev_net_margin >= 0.2004 AND log_mcap <= 11.29
+top10_pool,10,8,PFC,-0.0610080766592697,True,SHORT: vs_ma200 >= 0.2248 AND prev_net_margin >= 0.2004 AND log_mcap <= 11.29
+top10_pool,10,8,RECLTD,0.0507909937923458,True,SHORT: vs_ma200 >= 0.2248 AND prev_net_margin >= 0.2004 AND log_mcap <= 11.09
+top10_pool,10,8,PFC,-0.0610080766592697,True,SHORT: vs_ma200 >= 0.2248 AND prev_net_margin >= 0.2004 AND log_mcap <= 11.09
+top10_pool,10,8,RBLBANK,0.0275073448488644,True,SHORT: sec_from_52w_high >= -0.02459 AND r20d >= 0.1631 AND nifty_3d >= -0.001557
+top10_pool,10,8,CHOLAFIN,-0.0894720871267005,True,SHORT: sec_from_52w_high >= -0.02459 AND r20d >= 0.1631 AND nifty_3d >= -0.001557
+top10_pool,10,8,GODREJPROP,-0.0082319401409119,True,SHORT: sec_from_52w_high >= -0.02459 AND r20d >= 0.1631 AND nifty_3d >= -0.001557
+top10_pool,10,8,RBLBANK,0.0275073448488644,True,SHORT: sec_from_52w_high >= -0.02459 AND r20d >= 0.1631 AND nifty_3d >= 0.002419
+top10_pool,10,8,CHOLAFIN,-0.0894720871267005,True,SHORT: sec_from_52w_high >= -0.02459 AND r20d >= 0.1631 AND nifty_3d >= 0.002419
+top10_pool,10,8,GODREJPROP,-0.0082319401409119,True,SHORT: sec_from_52w_high >= -0.02459 AND r20d >= 0.1631 AND nifty_3d >= 0.002419
+top10_pool,10,8,LICHSGFIN,0.0093826418934404,True,SHORT: volume_5d_vs_60d >= 0.7705 AND india_vix <= 18.16 AND prev2_sum <= -0.1287
+top10_pool,10,8,JUBLFOOD,-0.0125419644399621,True,SHORT: volume_5d_vs_60d >= 0.7705 AND india_vix <= 18.16 AND prev2_sum <= -0.1287
+top10_pool,10,8,DIVISLAB,-0.0732978071743413,True,SHORT: volume_5d_vs_60d >= 0.7705 AND india_vix <= 18.16 AND prev2_sum <= -0.1287
+top10_pool,10,8,DIXON,-0.1511408159676783,True,SHORT: volume_5d_vs_60d >= 0.7705 AND india_vix <= 18.16 AND prev2_sum <= -0.1287
+top10_pool,10,8,ADANIENT,-0.0019101122771213,True,SHORT: iv_t5 >= 0.5534 AND gap0 >= -0.0002082 AND sec_3d >= 0.01738
+top10_pool,10,8,ADANIENT,-0.0019101122771213,True,SHORT: iv_t5 >= 0.5534 AND gap0 >= -0.003594 AND sec_3d >= 0.01738
+top10_pool,10,8,ADANIENT,-0.0019101122771213,True,SHORT: iv_t5 >= 0.5534 AND gap0 >= -0.002222 AND sec_3d >= 0.01738
+best_upto2,20,8,GODREJPROP,-0.0082319401409119,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.006215
+best_upto2,20,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.006215
+best_1,20,8,GODREJPROP,-0.0082319401409119,True,SHORT: vs_ma50 >= 0.1344
+best_1,20,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344
+best_1,20,8,INDIGO,0.0060884429284971,True,SHORT: vs_ma50 >= 0.1344
+best_1,20,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344
+top10_pool,20,8,GODREJPROP,-0.0082319401409119,True,SHORT: vs_ma50 >= 0.1344 AND log_mcap <= 11.29 AND gap0 >= 0.0003821
+top10_pool,20,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344 AND log_mcap <= 11.29 AND gap0 >= 0.0003821
+top10_pool,20,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.184 AND nifty_d0 >= -0.008848
+top10_pool,20,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.184 AND nifty_d0 >= -0.01039
+top10_pool,20,8,GODREJPROP,-0.0082319401409119,True,SHORT: vs_ma50 >= 0.1344 AND days_since_dividend >= 18 AND gap0 >= 0.006215
+top10_pool,20,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344 AND days_since_dividend >= 18 AND gap0 >= 0.006215
+best_all,30,8,GODREJPROP,-0.0082319401409119,True,SHORT: vs_ma50 >= 0.1344 AND vol60 >= 0.2573 AND gap0 >= 0.0003821
+best_all,30,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344 AND vol60 >= 0.2573 AND gap0 >= 0.0003821
+best_upto2,30,8,GODREJPROP,-0.0082319401409119,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821
+best_upto2,30,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821
+best_upto2,30,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821
+best_1,30,8,GODREJPROP,-0.0082319401409119,True,SHORT: vs_ma50 >= 0.1344
+best_1,30,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344
+best_1,30,8,INDIGO,0.0060884429284971,True,SHORT: vs_ma50 >= 0.1344
+best_1,30,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344
+top10_pool,30,8,GODREJPROP,-0.0082319401409119,True,SHORT: vs_ma50 >= 0.1344 AND vol60 >= 0.2573 AND gap0 >= 0.0003821
+top10_pool,30,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344 AND vol60 >= 0.2573 AND gap0 >= 0.0003821
+top10_pool,30,8,GODREJPROP,-0.0082319401409119,True,SHORT: vs_ma50 >= 0.1344 AND days_since_dividend >= 18 AND gap0 >= 0.0003821
+top10_pool,30,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344 AND days_since_dividend >= 18 AND gap0 >= 0.0003821
+top10_pool,30,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344 AND days_since_dividend >= 18 AND gap0 >= 0.0003821
+top10_pool,30,8,GODREJPROP,-0.0082319401409119,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821 AND nifty_d0 <= 0.01367
+top10_pool,30,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821 AND nifty_d0 <= 0.01367
+top10_pool,30,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821 AND nifty_d0 <= 0.01367
+top10_pool,30,8,GODREJPROP,-0.0082319401409119,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821 AND exn_d0 >= -0.02008
+top10_pool,30,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821 AND exn_d0 >= -0.02008
+top10_pool,30,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821 AND exn_d0 >= -0.02008
+top10_pool,30,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821 AND vol5_60 >= 0.4465
+top10_pool,30,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821 AND vol5_60 >= 0.4465
+top10_pool,30,8,GODREJPROP,-0.0082319401409119,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821 AND exn_10d >= -0.02669
+top10_pool,30,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821 AND exn_10d >= -0.02669
+top10_pool,30,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821 AND exn_10d >= -0.02669
+top10_pool,30,8,GODREJPROP,-0.0082319401409119,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821 AND dist_20l >= 0.0999
+top10_pool,30,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821 AND dist_20l >= 0.0999
+top10_pool,30,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821 AND dist_20l >= 0.0999
+top10_pool,30,8,GODREJPROP,-0.0082319401409119,True,SHORT: vs_ma50 >= 0.1344 AND vol60 >= 0.2303 AND gap0 >= 0.0003821
+top10_pool,30,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344 AND vol60 >= 0.2303 AND gap0 >= 0.0003821
+top10_pool,30,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344 AND vol60 >= 0.2303 AND gap0 >= 0.0003821
+top10_pool,30,8,GODREJPROP,-0.0082319401409119,True,SHORT: vs_ma50 >= 0.1344 AND r20d >= 0.07438 AND gap0 >= 0.0003821
+top10_pool,30,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344 AND r20d >= 0.07438 AND gap0 >= 0.0003821
+top10_pool,30,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344 AND r20d >= 0.07438 AND gap0 >= 0.0003821
+top10_pool,30,8,TMPV,-0.0415031917646582,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821 AND vol5_60 >= 0.3826
+top10_pool,30,8,GLENMARK,0.0036762510494624,True,SHORT: vs_ma50 >= 0.1344 AND gap0 >= 0.0003821 AND vol5_60 >= 0.3826
+top10_pool,10,9,PNB,-0.0059416702463389,True,SHORT: vs_ma50 >= 0.134 AND iv_t5 >= 0.434 AND gap0 >= 0.006075
+top10_pool,10,9,ALKEM,0.0743193117881925,True,SHORT: sec_vs_200dma >= 0.09422 AND r20d >= 0.1634 AND intra0 <= 0.006218
+top10_pool,10,9,GLENMARK,0.0377492930744777,True,SHORT: sec_vs_200dma >= 0.09422 AND r20d >= 0.1634 AND intra0 <= 0.006218
+top10_pool,10,9,AUROPHARMA,-0.000125258336187,True,SHORT: sec_vs_200dma >= 0.09422 AND r20d >= 0.1634 AND intra0 <= 0.006218
+best_upto2,20,9,ICICIPRULI,0.0490255837349714,True,SHORT: vs_ma50 >= 0.134 AND iv_vs_realised >= 1.243
+best_upto2,20,9,LTF,0.0074312371074537,True,SHORT: vs_ma50 >= 0.134 AND iv_vs_realised >= 1.243
+best_upto2,20,9,PNB,-0.0059416702463389,True,SHORT: vs_ma50 >= 0.134 AND iv_vs_realised >= 1.243
+best_upto2,20,9,GODREJPROP,0.0991917460192788,True,SHORT: vs_ma50 >= 0.134 AND iv_vs_realised >= 1.243
+best_upto2,20,9,ALKEM,0.0743193117881925,True,SHORT: vs_ma50 >= 0.134 AND iv_vs_realised >= 1.243
+best_upto2,20,9,MANAPPURAM,-0.0258593383668651,True,SHORT: vs_ma50 >= 0.134 AND iv_vs_realised >= 1.243
+best_upto2,20,9,GLENMARK,0.0377492930744777,True,SHORT: vs_ma50 >= 0.134 AND iv_vs_realised >= 1.243
+best_upto2,20,9,ZYDUSLIFE,0.0303684505203548,True,SHORT: vs_ma50 >= 0.134 AND iv_vs_realised >= 1.243
+top10_pool,20,9,DRREDDY,-0.0212376853317179,True,SHORT: vs_sector_1w >= 0.006949 AND prev1_3d <= -0.04791 AND own_rd <= -0.01312
+top10_pool,20,9,GAIL,-0.0318310997064432,True,SHORT: vs_sector_1w >= 0.006949 AND prev1_3d <= -0.04791 AND own_rd <= -0.01312
+top10_pool,20,9,JINDALSTEL,0.0230132282119863,True,SHORT: vs_sector_1w >= 0.006949 AND prev1_3d <= -0.04791 AND own_rd <= -0.01312
+top10_pool,20,9,LTF,0.0074312371074537,True,SHORT: vs_ma50 >= 0.134 AND iv_t5 >= 0.402 AND iv_vs_realised >= 1.177
+top10_pool,20,9,PNB,-0.0059416702463389,True,SHORT: vs_ma50 >= 0.134 AND iv_t5 >= 0.402 AND iv_vs_realised >= 1.177
+top10_pool,20,9,MANAPPURAM,-0.0258593383668651,True,SHORT: vs_ma50 >= 0.134 AND iv_t5 >= 0.402 AND iv_vs_realised >= 1.177
+top10_pool,20,9,ICICIPRULI,0.0490255837349714,True,SHORT: vs_ma50 >= 0.134 AND iv_vs_realised >= 1.243
+top10_pool,20,9,LTF,0.0074312371074537,True,SHORT: vs_ma50 >= 0.134 AND iv_vs_realised >= 1.243
+top10_pool,20,9,PNB,-0.0059416702463389,True,SHORT: vs_ma50 >= 0.134 AND iv_vs_realised >= 1.243
+top10_pool,20,9,GODREJPROP,0.0991917460192788,True,SHORT: vs_ma50 >= 0.134 AND iv_vs_realised >= 1.243
+top10_pool,20,9,ALKEM,0.0743193117881925,True,SHORT: vs_ma50 >= 0.134 AND iv_vs_realised >= 1.243
+top10_pool,20,9,MANAPPURAM,-0.0258593383668651,True,SHORT: vs_ma50 >= 0.134 AND iv_vs_realised >= 1.243
+top10_pool,20,9,GLENMARK,0.0377492930744777,True,SHORT: vs_ma50 >= 0.134 AND iv_vs_realised >= 1.243
+top10_pool,20,9,ZYDUSLIFE,0.0303684505203548,True,SHORT: vs_ma50 >= 0.134 AND iv_vs_realised >= 1.243
+top10_pool,30,9,ICICIPRULI,0.0490255837349714,True,SHORT: vs_ma50 >= 0.134 AND nifty_1m <= 0.0688 AND gap0 >= 0.0003408
+top10_pool,30,9,LTF,0.0074312371074537,True,SHORT: vs_ma50 >= 0.134 AND nifty_1m <= 0.0688 AND gap0 >= 0.0003408
+top10_pool,30,9,RBLBANK,-0.0165386700803236,True,SHORT: vs_ma50 >= 0.134 AND nifty_1m <= 0.0688 AND gap0 >= 0.0003408
+top10_pool,30,9,HDFCAMC,-0.0028373146978699,True,SHORT: vs_ma50 >= 0.134 AND nifty_1m <= 0.0688 AND gap0 >= 0.0003408
+top10_pool,30,9,PNB,-0.0059416702463389,True,SHORT: vs_ma50 >= 0.134 AND nifty_1m <= 0.0688 AND gap0 >= 0.0003408
+top10_pool,30,9,RECLTD,-0.0879205419250273,True,SHORT: vs_ma50 >= 0.134 AND nifty_1m <= 0.0688 AND gap0 >= 0.0003408
+top10_pool,30,9,SHRIRAMFIN,0.0030860323603552,True,SHORT: vs_ma50 >= 0.134 AND nifty_1m <= 0.0688 AND gap0 >= 0.0003408
+top10_pool,30,9,GODREJPROP,0.0991917460192788,True,SHORT: vs_ma50 >= 0.134 AND nifty_1m <= 0.0688 AND gap0 >= 0.0003408
+top10_pool,30,9,ALKEM,0.0743193117881925,True,SHORT: vs_ma50 >= 0.134 AND nifty_1m <= 0.0688 AND gap0 >= 0.0003408
+top10_pool,30,9,MANAPPURAM,-0.0258593383668651,True,SHORT: vs_ma50 >= 0.134 AND nifty_1m <= 0.0688 AND gap0 >= 0.0003408
+top10_pool,30,9,GLENMARK,0.0377492930744777,True,SHORT: vs_ma50 >= 0.134 AND nifty_1m <= 0.0688 AND gap0 >= 0.0003408
+top10_pool,30,9,PFC,0.0223429052176118,True,SHORT: vs_ma50 >= 0.134 AND nifty_1m <= 0.0688 AND gap0 >= 0.0003408
+top10_pool,30,9,ZYDUSLIFE,0.0303684505203548,True,SHORT: vs_ma50 >= 0.134 AND nifty_1m <= 0.0688 AND gap0 >= 0.0003408
+top10_pool,30,9,GMRAIRPORT,0.0089602440009146,True,SHORT: vs_ma50 >= 0.134 AND nifty_1m <= 0.0688 AND gap0 >= 0.0003408
+top10_pool,30,9,DRREDDY,-0.0212376853317179,True,SHORT: prev1_3d <= -0.04791 AND r10d >= -0.02117 AND own_rd <= -0.01312
+top10_pool,30,9,GAIL,-0.0318310997064432,True,SHORT: prev1_3d <= -0.04791 AND r10d >= -0.02117 AND own_rd <= -0.01312
+top10_pool,30,9,JINDALSTEL,0.0230132282119863,True,SHORT: prev1_3d <= -0.04791 AND r10d >= -0.02117 AND own_rd <= -0.01312
+top10_pool,30,9,DRREDDY,-0.0212376853317179,True,SHORT: prev1_3d <= -0.04791 AND r10d >= -0.03832 AND own_rd <= -0.01312
+top10_pool,30,9,GAIL,-0.0318310997064432,True,SHORT: prev1_3d <= -0.04791 AND r10d >= -0.03832 AND own_rd <= -0.01312
+top10_pool,30,9,JINDALSTEL,0.0230132282119863,True,SHORT: prev1_3d <= -0.04791 AND r10d >= -0.03832 AND own_rd <= -0.01312
+top10_pool,30,9,DRREDDY,-0.0212376853317179,True,SHORT: vs_sector_1w >= -0.008107 AND prev1_3d <= -0.04791 AND own_rd <= -0.01063
+top10_pool,30,9,GAIL,-0.0318310997064432,True,SHORT: vs_sector_1w >= -0.008107 AND prev1_3d <= -0.04791 AND own_rd <= -0.01063
+top10_pool,30,9,JINDALSTEL,0.0230132282119863,True,SHORT: vs_sector_1w >= -0.008107 AND prev1_3d <= -0.04791 AND own_rd <= -0.01063
+top10_pool,30,9,ICICIPRULI,0.0490255837349714,True,SHORT: vs_ma50 >= 0.134 AND vs_nifty_1m >= 0.07219 AND gap0 >= 0.0003408
+top10_pool,30,9,RBLBANK,-0.0165386700803236,True,SHORT: vs_ma50 >= 0.134 AND vs_nifty_1m >= 0.07219 AND gap0 >= 0.0003408
+top10_pool,30,9,HDFCAMC,-0.0028373146978699,True,SHORT: vs_ma50 >= 0.134 AND vs_nifty_1m >= 0.07219 AND gap0 >= 0.0003408
+top10_pool,30,9,PNB,-0.0059416702463389,True,SHORT: vs_ma50 >= 0.134 AND vs_nifty_1m >= 0.07219 AND gap0 >= 0.0003408
+top10_pool,30,9,GODREJPROP,0.0991917460192788,True,SHORT: vs_ma50 >= 0.134 AND vs_nifty_1m >= 0.07219 AND gap0 >= 0.0003408
+top10_pool,30,9,ALKEM,0.0743193117881925,True,SHORT: vs_ma50 >= 0.134 AND vs_nifty_1m >= 0.07219 AND gap0 >= 0.0003408
+top10_pool,30,9,MANAPPURAM,-0.0258593383668651,True,SHORT: vs_ma50 >= 0.134 AND vs_nifty_1m >= 0.07219 AND gap0 >= 0.0003408
+top10_pool,30,9,GLENMARK,0.0377492930744777,True,SHORT: vs_ma50 >= 0.134 AND vs_nifty_1m >= 0.07219 AND gap0 >= 0.0003408
+top10_pool,30,9,PFC,0.0223429052176118,True,SHORT: vs_ma50 >= 0.134 AND vs_nifty_1m >= 0.07219 AND gap0 >= 0.0003408
+top10_pool,30,9,ZYDUSLIFE,0.0303684505203548,True,SHORT: vs_ma50 >= 0.134 AND vs_nifty_1m >= 0.07219 AND gap0 >= 0.0003408
+top10_pool,30,9,GMRAIRPORT,0.0089602440009146,True,SHORT: vs_ma50 >= 0.134 AND vs_nifty_1m >= 0.07219 AND gap0 >= 0.0003408
+top10_pool,10,10,HINDPETRO,0.0900187747091323,True,LONG: profit_rising_4q >= 1 AND log_mcap <= 11.31 AND peers_reported_3d >= 0.02169
+top10_pool,30,10,NMDC,0.0195725584665041,True,SHORT: vs_ma50 >= 0.1362 AND sec_rank_3m >= 0.1579 AND gap0 >= 0.0004911
+top10_pool,30,10,NMDC,0.0195725584665041,True,SHORT: vs_ma50 >= 0.1362 AND sec_rank_3m >= 0.1111 AND gap0 >= 0.0004911
+top10_pool,30,10,NMDC,0.0195725584665041,True,SHORT: vs_ma50 >= 0.1362 AND sec_vs_200dma >= 0.0759 AND gap0 >= 0.0004911
+best_1,10,11,TVSMOTOR,-0.0352453548646822,True,LONG: debt_equity >= 2.597
+best_1,10,11,CHOLAFIN,0.008888015978468,True,LONG: debt_equity >= 2.597
+best_1,10,11,LICHSGFIN,0.0234759230796366,True,LONG: debt_equity >= 2.597
+best_1,10,11,ASHOKLEY,0.0297759102079389,True,LONG: debt_equity >= 2.597
+top10_pool,10,11,DIXON,0.0426255716832142,True,LONG: pe >= 62.7 AND r20d <= -0.0774 AND vol5_60 <= 0.9239
+top10_pool,10,11,MANAPPURAM,-0.0118800782709189,True,SHORT: vs_sector_1w >= 0.007754 AND prev_net_margin >= 0.2312 AND own_rd <= -0.01193
+top10_pool,10,11,MANAPPURAM,-0.0118800782709189,True,SHORT: log_mcap <= 10.46 AND intra0 <= -0.01715 AND dist_60h >= -0.03026
+top10_pool,10,11,PETRONET,-0.0280261395322984,True,SHORT: r1y <= 0.4117 AND vs_ma50 >= 0.1344 AND sec_vs_200dma >= 0.09438
+top10_pool,10,11,AMBUJACEM,0.0156646456053052,True,SHORT: r1y <= 0.4117 AND vs_ma50 >= 0.1344 AND sec_vs_200dma >= 0.09438
+top10_pool,10,11,BIOCON,0.08661338808506,True,SHORT: r1y <= 0.4117 AND vs_ma50 >= 0.1344 AND sec_vs_200dma >= 0.09438
+top10_pool,10,11,MANAPPURAM,-0.0118800782709189,True,SHORT: prev_net_margin >= 0.2312 AND iv_t5 >= 0.4196 AND sector_index == Nifty Financial Services
+top10_pool,10,11,MANAPPURAM,-0.0118800782709189,True,SHORT: prev_net_margin >= 0.2004 AND iv_t5 >= 0.4196 AND sector_index == Nifty Financial Services
+top10_pool,10,11,LAURUSLABS,0.0574547591380774,True,SHORT: sector_3m >= 0.07222 AND log_mcap <= 10.14 AND vol20_60 >= 1.013
+top10_pool,10,11,CROMPTON,0.0017167684536829,True,SHORT: sector_3m >= 0.07222 AND log_mcap <= 10.14 AND vol20_60 >= 1.013
+best_all,20,11,BHEL,0.0111138029227015,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.4396 AND gap0 >= -0.00171
+best_upto2,20,11,HDFCAMC,-0.0118792782826462,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.25
+best_upto2,20,11,PETRONET,-0.0280261395322984,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.25
+best_upto2,20,11,TMPV,-0.0485180137672432,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.25
+best_upto2,20,11,CUMMINSIND,-0.0983876244283598,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.25
+best_upto2,20,11,ZYDUSLIFE,-0.0810369246600262,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.25
+best_upto2,20,11,MOTHERSON,0.0352130178394312,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.25
+best_1,20,11,MANAPPURAM,-0.0118800782709189,True,SHORT: own_abs3d >= 0.07456
+top10_pool,20,11,BHEL,0.0111138029227015,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.4396 AND gap0 >= -0.00171
+top10_pool,20,11,BHEL,0.0111138029227015,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.4396 AND gap0 >= -9.233e-06
+top10_pool,20,11,BHEL,0.0111138029227015,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.4396 AND gap0 >= 0.001979
+top10_pool,20,11,BHEL,0.0111138029227015,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.4396 AND gap0 >= 0.003269
+top10_pool,20,11,BHEL,0.0111138029227015,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.4396 AND gap0 >= 0.0005429
+top10_pool,20,11,HDFCAMC,-0.0118792782826462,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.25 AND nifty_3d >= -0.01488
+top10_pool,20,11,PETRONET,-0.0280261395322984,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.25 AND nifty_3d >= -0.01488
+top10_pool,20,11,TMPV,-0.0485180137672432,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.25 AND nifty_3d >= -0.01488
+top10_pool,20,11,CUMMINSIND,-0.0983876244283598,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.25 AND nifty_3d >= -0.01488
+top10_pool,20,11,ZYDUSLIFE,-0.0810369246600262,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.25 AND nifty_3d >= -0.01488
+top10_pool,20,11,MOTHERSON,0.0352130178394312,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.25 AND nifty_3d >= -0.01488
+top10_pool,20,11,HINDPETRO,-0.0293637738378809,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.3856 AND sec_vs_200dma >= 0.09438
+top10_pool,20,11,BIOCON,0.08661338808506,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.3856 AND sec_vs_200dma >= 0.09438
+top10_pool,20,11,MOTHERSON,0.0352130178394312,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.3856 AND sec_vs_200dma >= 0.09438
+top10_pool,20,11,BHEL,0.0111138029227015,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.3856 AND sec_vs_200dma >= 0.09438
+top10_pool,20,11,PFC,0.0526493252759161,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.4196 AND gap0 >= -9.233e-06
+top10_pool,20,11,BHEL,0.0111138029227015,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.4196 AND gap0 >= -9.233e-06
+top10_pool,20,11,PFC,0.0526493252759161,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.4196 AND gap0 >= 0.0005429
+top10_pool,20,11,BHEL,0.0111138029227015,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.4196 AND gap0 >= 0.0005429
+best_all,30,11,HDFCAMC,-0.0118792782826462,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+best_all,30,11,PETRONET,-0.0280261395322984,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+best_all,30,11,LICHSGFIN,-0.0234759230796366,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+best_all,30,11,TMPV,-0.0485180137672432,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+best_all,30,11,CUMMINSIND,-0.0983876244283598,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+best_all,30,11,POWERGRID,0.022758590072235,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+best_all,30,11,BIOCON,0.08661338808506,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+best_all,30,11,HEROMOTOCO,0.0210598793509945,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+best_all,30,11,ZYDUSLIFE,-0.0810369246600262,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+best_all,30,11,MOTHERSON,0.0352130178394312,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+best_upto2,30,11,PFC,0.0526493252759161,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.4196
+best_upto2,30,11,BHEL,0.0111138029227015,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.4196
+best_1,30,11,MANAPPURAM,-0.0118800782709189,True,SHORT: own_abs3d >= 0.07456
+top10_pool,30,11,HDFCAMC,-0.0118792782826462,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+top10_pool,30,11,PETRONET,-0.0280261395322984,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+top10_pool,30,11,LICHSGFIN,-0.0234759230796366,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+top10_pool,30,11,TMPV,-0.0485180137672432,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+top10_pool,30,11,CUMMINSIND,-0.0983876244283598,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+top10_pool,30,11,POWERGRID,0.022758590072235,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+top10_pool,30,11,BIOCON,0.08661338808506,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+top10_pool,30,11,HEROMOTOCO,0.0210598793509945,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+top10_pool,30,11,ZYDUSLIFE,-0.0810369246600262,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+top10_pool,30,11,MOTHERSON,0.0352130178394312,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.13 AND gap0 >= 0.0005429
+top10_pool,30,11,HDFCAMC,-0.0118792782826462,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.183 AND nifty_d0 >= -0.008261
+top10_pool,30,11,PETRONET,-0.0280261395322984,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.183 AND nifty_d0 >= -0.008261
+top10_pool,30,11,LICHSGFIN,-0.0234759230796366,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.183 AND nifty_d0 >= -0.008261
+top10_pool,30,11,TMPV,-0.0485180137672432,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.183 AND nifty_d0 >= -0.008261
+top10_pool,30,11,CUMMINSIND,-0.0983876244283598,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.183 AND nifty_d0 >= -0.008261
+top10_pool,30,11,POWERGRID,0.022758590072235,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.183 AND nifty_d0 >= -0.008261
+top10_pool,30,11,ZYDUSLIFE,-0.0810369246600262,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.183 AND nifty_d0 >= -0.008261
+top10_pool,30,11,HDFCAMC,-0.0118792782826462,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.183 AND nifty_d0 >= -0.01011
+top10_pool,30,11,PETRONET,-0.0280261395322984,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.183 AND nifty_d0 >= -0.01011
+top10_pool,30,11,LICHSGFIN,-0.0234759230796366,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.183 AND nifty_d0 >= -0.01011
+top10_pool,30,11,TMPV,-0.0485180137672432,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.183 AND nifty_d0 >= -0.01011
+top10_pool,30,11,CUMMINSIND,-0.0983876244283598,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.183 AND nifty_d0 >= -0.01011
+top10_pool,30,11,POWERGRID,0.022758590072235,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.183 AND nifty_d0 >= -0.01011
+top10_pool,30,11,ZYDUSLIFE,-0.0810369246600262,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.183 AND nifty_d0 >= -0.01011
+top10_pool,30,11,MOTHERSON,0.0352130178394312,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 1.183 AND nifty_d0 >= -0.01011
+top10_pool,30,11,OFSS,-0.2910967891089897,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 0.9368 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,IOC,0.0273372032554944,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 0.9368 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,PETRONET,-0.0280261395322984,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 0.9368 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,AMBUJACEM,0.0156646456053052,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 0.9368 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,TMPV,-0.0485180137672432,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 0.9368 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,GODREJPROP,0.0343704882702697,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 0.9368 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,CUMMINSIND,-0.0983876244283598,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 0.9368 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,LUPIN,-0.0209940548292515,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 0.9368 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,POWERGRID,0.022758590072235,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 0.9368 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,BIOCON,0.08661338808506,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 0.9368 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,HEROMOTOCO,0.0210598793509945,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 0.9368 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,TATAPOWER,0.0840855845673795,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 0.9368 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,ZYDUSLIFE,-0.0810369246600262,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 0.9368 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,COALINDIA,0.0126554137936204,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 0.9368 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,MOTHERSON,0.0352130178394312,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 0.9368 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,BHEL,0.0111138029227015,True,SHORT: vs_ma50 >= 0.1344 AND iv_vs_realised >= 0.9368 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,OFSS,-0.2910967891089897,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,IOC,0.0273372032554944,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,HINDPETRO,-0.0293637738378809,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,PETRONET,-0.0280261395322984,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,AMBUJACEM,0.0156646456053052,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,TMPV,-0.0485180137672432,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,GODREJPROP,0.0343704882702697,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,CUMMINSIND,-0.0983876244283598,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,LUPIN,-0.0209940548292515,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,POWERGRID,0.022758590072235,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,BIOCON,0.08661338808506,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,HEROMOTOCO,0.0210598793509945,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,TATAPOWER,0.0840855845673795,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,ZYDUSLIFE,-0.0810369246600262,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,ONGC,0.0503656255686147,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,COALINDIA,0.0126554137936204,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,MOTHERSON,0.0352130178394312,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,SAIL,0.1603097888397248,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,BHEL,0.0111138029227015,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,NATIONALUM,0.0012486609179962,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2466 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,OFSS,-0.2910967891089897,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,IOC,0.0273372032554944,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,HINDPETRO,-0.0293637738378809,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,PETRONET,-0.0280261395322984,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,AMBUJACEM,0.0156646456053052,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,TMPV,-0.0485180137672432,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,GODREJPROP,0.0343704882702697,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,CUMMINSIND,-0.0983876244283598,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,LUPIN,-0.0209940548292515,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,POWERGRID,0.022758590072235,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,BIOCON,0.08661338808506,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,HEROMOTOCO,0.0210598793509945,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,TATAPOWER,0.0840855845673795,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,ZYDUSLIFE,-0.0810369246600262,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,ONGC,0.0503656255686147,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,COALINDIA,0.0126554137936204,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,MOTHERSON,0.0352130178394312,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,SAIL,0.1603097888397248,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,BHEL,0.0111138029227015,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,NATIONALUM,0.0012486609179962,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2079 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,OFSS,-0.2910967891089897,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,IOC,0.0273372032554944,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,HINDPETRO,-0.0293637738378809,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,PETRONET,-0.0280261395322984,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,AMBUJACEM,0.0156646456053052,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,TMPV,-0.0485180137672432,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,GODREJPROP,0.0343704882702697,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,CUMMINSIND,-0.0983876244283598,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,LUPIN,-0.0209940548292515,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,POWERGRID,0.022758590072235,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,BIOCON,0.08661338808506,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,HEROMOTOCO,0.0210598793509945,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,TATAPOWER,0.0840855845673795,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,ZYDUSLIFE,-0.0810369246600262,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,ONGC,0.0503656255686147,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,COALINDIA,0.0126554137936204,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,MOTHERSON,0.0352130178394312,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,SAIL,0.1603097888397248,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,BHEL,0.0111138029227015,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,NATIONALUM,0.0012486609179962,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.26 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,OFSS,-0.2910967891089897,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,IOC,0.0273372032554944,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,HINDPETRO,-0.0293637738378809,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,PETRONET,-0.0280261395322984,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,AMBUJACEM,0.0156646456053052,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,TMPV,-0.0485180137672432,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,GODREJPROP,0.0343704882702697,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,CUMMINSIND,-0.0983876244283598,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,LUPIN,-0.0209940548292515,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,POWERGRID,0.022758590072235,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,BIOCON,0.08661338808506,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,TATAPOWER,0.0840855845673795,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,ZYDUSLIFE,-0.0810369246600262,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,COALINDIA,0.0126554137936204,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,MOTHERSON,0.0352130178394312,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,SAIL,0.1603097888397248,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,BHEL,0.0111138029227015,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+top10_pool,30,11,NATIONALUM,0.0012486609179962,True,SHORT: vs_ma50 >= 0.1344 AND iv_t5 >= 0.2835 AND sec_vs_200dma >= 0.09438
+best_all,10,12,BAJFINANCE,-0.0724075849110021,True,LONG: days_since_dividend >= 235 AND peers_reported_3d >= 0.05763 AND d1 >= 0.0001989
+best_1,10,12,TRENT,0.0201219685936165,True,LONG: pb >= 20.62
+best_1,10,12,BRITANNIA,0.0602378669487029,True,LONG: pb >= 20.62
+best_1,10,12,TITAN,-0.0872816793048564,True,LONG: pb >= 20.62
+best_1,10,12,COLPAL,-0.0449080612242248,True,LONG: pb >= 20.62
+best_1,10,12,DIXON,0.0001406196611366,True,LONG: pb >= 20.62
+best_1,10,12,PAGEIND,0.0096365577819999,True,LONG: pb >= 20.62
+top10_pool,10,12,BAJFINANCE,-0.0724075849110021,True,LONG: days_since_dividend >= 235 AND peers_reported_3d >= 0.05763 AND d1 >= 0.0001989
+top10_pool,10,12,CROMPTON,0.1735221581485961,True,LONG: roe >= 0.08663 AND iv_t5 >= 0.3086 AND vol5_60 >= 1.501
+top10_pool,10,12,CROMPTON,0.1735221581485961,True,LONG: roe >= 0.1113 AND iv_t5 >= 0.3086 AND vol5_60 >= 1.501
+top10_pool,10,12,CROMPTON,0.1735221581485961,True,LONG: roe >= 0.07441 AND iv_t5 >= 0.3086 AND vol5_60 >= 1.501
+top10_pool,10,12,OBEROIRLTY,0.0696663605606191,True,LONG: peers_reported_3d >= 0.03064 AND gap5 >= 0.02163 AND vol5_60 >= 0.9484
+top10_pool,10,12,NMDC,-0.0271101953336154,True,LONG: peers_reported_3d >= 0.03064 AND gap5 >= 0.02163 AND vol5_60 >= 0.9484
+top10_pool,10,12,BAJFINANCE,-0.0724075849110021,True,LONG: days_since_dividend >= 235 AND peers_reported_3d >= 0.05763 AND dist_60h >= -0.09448
+top10_pool,10,12,BAJAJFINSV,-0.0207619393154391,True,LONG: days_since_dividend >= 235 AND peers_reported_3d >= 0.05763 AND dist_60h >= -0.09448
+top10_pool,10,12,LTF,-0.0057588811580343,True,LONG: days_since_dividend >= 235 AND peers_reported_3d >= 0.05763 AND dist_60h >= -0.09448
+best_all,20,12,VEDL,-0.0513919879799659,True,SHORT: vs_ma50 >= 0.1412 AND vol60 >= 0.3214 AND iv_vs_realised >= 1.082
+best_all,20,12,HAL,-0.1115243252264475,True,SHORT: vs_ma50 >= 0.1412 AND vol60 >= 0.3214 AND iv_vs_realised >= 1.082
+best_upto2,20,12,NATIONALUM,-0.0014969740394722,True,SHORT: nifty_1w >= 0.02502 AND intra0 <= -0.01733
+best_upto2,20,12,NMDC,0.0271101953336154,True,SHORT: nifty_1w >= 0.02502 AND intra0 <= -0.01733
+best_1,20,12,TRENT,0.0201219685936165,True,LONG: pb >= 20.62
+best_1,20,12,BRITANNIA,0.0602378669487029,True,LONG: pb >= 20.62
+best_1,20,12,TITAN,-0.0872816793048564,True,LONG: pb >= 20.62
+best_1,20,12,COLPAL,-0.0449080612242248,True,LONG: pb >= 20.62
+best_1,20,12,DIXON,0.0001406196611366,True,LONG: pb >= 20.62
+best_1,20,12,PAGEIND,0.0096365577819999,True,LONG: pb >= 20.62
+top10_pool,20,12,VEDL,-0.0513919879799659,True,SHORT: vs_ma50 >= 0.1412 AND vol60 >= 0.3214 AND iv_vs_realised >= 1.082
+top10_pool,20,12,HAL,-0.1115243252264475,True,SHORT: vs_ma50 >= 0.1412 AND vol60 >= 0.3214 AND iv_vs_realised >= 1.082
+top10_pool,20,12,INDUSTOWER,0.0009392521458535,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.4374 AND gap0 >= 0
+top10_pool,20,12,BHEL,-0.0093197863294568,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.4374 AND gap0 >= 0
+top10_pool,20,12,MOTHERSON,-0.0553925660776174,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.4374 AND gap0 >= 0
+top10_pool,20,12,INDUSTOWER,0.0009392521458535,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.4374 AND gap0 >= -0.001456
+top10_pool,20,12,BHEL,-0.0093197863294568,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.4374 AND gap0 >= -0.001456
+top10_pool,20,12,MOTHERSON,-0.0553925660776174,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.4374 AND gap0 >= -0.001456
+top10_pool,20,12,MOTHERSON,-0.0553925660776174,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.4374 AND gap0 >= 0.002116
+top10_pool,20,12,MOTHERSON,-0.0553925660776174,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.4374 AND gap0 >= 0.003483
+top10_pool,20,12,INDUSTOWER,0.0009392521458535,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.4374 AND gap0 >= 0.0006632
+top10_pool,20,12,BHEL,-0.0093197863294568,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.4374 AND gap0 >= 0.0006632
+top10_pool,20,12,MOTHERSON,-0.0553925660776174,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.4374 AND gap0 >= 0.0006632
+top10_pool,20,12,WIPRO,0.0304131169461949,True,LONG: vs_ma50 <= -0.09166 AND nifty_1w <= -0.01243 AND d2 >= -0.01421
+top10_pool,20,12,PFC,0.0074254910090133,True,SHORT: vs_ma50 >= 0.1124 AND iv_t5 >= 0.4634 AND gap0 >= 0.003483
+top10_pool,20,12,MOTHERSON,-0.0553925660776174,True,SHORT: vs_ma50 >= 0.1124 AND iv_t5 >= 0.4634 AND gap0 >= 0.003483
+top10_pool,20,12,PFC,0.0074254910090133,True,SHORT: vs_ma50 >= 0.1124 AND iv_t5 >= 0.4634 AND gap0 >= 0.002116
+top10_pool,20,12,NMDC,0.0271101953336154,True,SHORT: vs_ma50 >= 0.1124 AND iv_t5 >= 0.4634 AND gap0 >= 0.002116
+top10_pool,20,12,MOTHERSON,-0.0553925660776174,True,SHORT: vs_ma50 >= 0.1124 AND iv_t5 >= 0.4634 AND gap0 >= 0.002116
+best_all,30,12,VEDL,-0.0513919879799659,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.3547 AND gap0 >= 0.0006632
+best_all,30,12,INDUSTOWER,0.0009392521458535,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.3547 AND gap0 >= 0.0006632
+best_all,30,12,HAL,-0.1115243252264475,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.3547 AND gap0 >= 0.0006632
+best_all,30,12,BHEL,-0.0093197863294568,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.3547 AND gap0 >= 0.0006632
+best_all,30,12,ASHOKLEY,-0.088099917926454,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.3547 AND gap0 >= 0.0006632
+best_all,30,12,MOTHERSON,-0.0553925660776174,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.3547 AND gap0 >= 0.0006632
+best_upto2,30,12,VEDL,-0.0513919879799659,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.4169
+best_upto2,30,12,INDUSTOWER,0.0009392521458535,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.4169
+best_upto2,30,12,BHEL,-0.0093197863294568,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.4169
+best_upto2,30,12,MOTHERSON,-0.0553925660776174,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.4169
+best_1,30,12,MANAPPURAM,0.0151376480033479,True,SHORT: own_abs3d >= 0.07317
+top10_pool,30,12,VEDL,-0.0513919879799659,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.3547 AND gap0 >= 0.0006632
+top10_pool,30,12,INDUSTOWER,0.0009392521458535,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.3547 AND gap0 >= 0.0006632
+top10_pool,30,12,HAL,-0.1115243252264475,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.3547 AND gap0 >= 0.0006632
+top10_pool,30,12,BHEL,-0.0093197863294568,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.3547 AND gap0 >= 0.0006632
+top10_pool,30,12,ASHOKLEY,-0.088099917926454,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.3547 AND gap0 >= 0.0006632
+top10_pool,30,12,MOTHERSON,-0.0553925660776174,True,SHORT: vs_ma50 >= 0.1412 AND iv_t5 >= 0.3547 AND gap0 >= 0.0006632
+top10_pool,30,12,VEDL,-0.0513919879799659,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND nifty_d0 >= -0.01016
+top10_pool,30,12,INDUSTOWER,0.0009392521458535,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND nifty_d0 >= -0.01016
+top10_pool,30,12,BHEL,-0.0093197863294568,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND nifty_d0 >= -0.01016
+top10_pool,30,12,INDIGO,0.0131229330051451,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND nifty_d0 >= -0.01016
+top10_pool,30,12,ASHOKLEY,-0.088099917926454,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND nifty_d0 >= -0.01016
+top10_pool,30,12,HINDALCO,0.0097340490567219,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND nifty_d0 >= -0.01016
+top10_pool,30,12,CUMMINSIND,0.0543047125866845,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND nifty_d0 >= -0.01016
+top10_pool,30,12,VEDL,-0.0513919879799659,True,SHORT: r5y <= 2.488 AND from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412
+top10_pool,30,12,INDUSTOWER,0.0009392521458535,True,SHORT: r5y <= 2.488 AND from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412
+top10_pool,30,12,INDIGO,0.0131229330051451,True,SHORT: r5y <= 2.488 AND from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412
+top10_pool,30,12,ASHOKLEY,-0.088099917926454,True,SHORT: r5y <= 2.488 AND from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412
+top10_pool,30,12,HINDALCO,0.0097340490567219,True,SHORT: r5y <= 2.488 AND from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412
+top10_pool,30,12,VEDL,-0.0513919879799659,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND volume_5d_vs_60d >= 0.6395
+top10_pool,30,12,INDUSTOWER,0.0009392521458535,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND volume_5d_vs_60d >= 0.6395
+top10_pool,30,12,ASHOKLEY,-0.088099917926454,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND volume_5d_vs_60d >= 0.6395
+top10_pool,30,12,HINDALCO,0.0097340490567219,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND volume_5d_vs_60d >= 0.6395
+top10_pool,30,12,CUMMINSIND,0.0543047125866845,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND volume_5d_vs_60d >= 0.6395
+top10_pool,30,12,VEDL,-0.0513919879799659,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND exn_10d >= -0.009948
+top10_pool,30,12,INDUSTOWER,0.0009392521458535,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND exn_10d >= -0.009948
+top10_pool,30,12,INDIGO,0.0131229330051451,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND exn_10d >= -0.009948
+top10_pool,30,12,ASHOKLEY,-0.088099917926454,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND exn_10d >= -0.009948
+top10_pool,30,12,HINDALCO,0.0097340490567219,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND exn_10d >= -0.009948
+top10_pool,30,12,CUMMINSIND,0.0543047125866845,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND exn_10d >= -0.009948
+top10_pool,30,12,VEDL,-0.0513919879799659,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND maxabs5 >= 0.0181
+top10_pool,30,12,INDUSTOWER,0.0009392521458535,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND maxabs5 >= 0.0181
+top10_pool,30,12,BHEL,-0.0093197863294568,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND maxabs5 >= 0.0181
+top10_pool,30,12,INDIGO,0.0131229330051451,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND maxabs5 >= 0.0181
+top10_pool,30,12,ASHOKLEY,-0.088099917926454,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND maxabs5 >= 0.0181
+top10_pool,30,12,HINDALCO,0.0097340490567219,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND maxabs5 >= 0.0181
+top10_pool,30,12,CUMMINSIND,0.0543047125866845,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND maxabs5 >= 0.0181
+top10_pool,30,12,BHEL,-0.0093197863294568,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND india_vix >= 11.83
+top10_pool,30,12,INDIGO,0.0131229330051451,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND india_vix >= 11.83
+top10_pool,30,12,ASHOKLEY,-0.088099917926454,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND india_vix >= 11.83
+top10_pool,30,12,HINDALCO,0.0097340490567219,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND india_vix >= 11.83
+top10_pool,30,12,CUMMINSIND,0.0543047125866845,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND india_vix >= 11.83
+top10_pool,30,12,VEDL,-0.0513919879799659,True,SHORT: r5y <= 3.224 AND from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412
+top10_pool,30,12,INDUSTOWER,0.0009392521458535,True,SHORT: r5y <= 3.224 AND from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412
+top10_pool,30,12,INDIGO,0.0131229330051451,True,SHORT: r5y <= 3.224 AND from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412
+top10_pool,30,12,ASHOKLEY,-0.088099917926454,True,SHORT: r5y <= 3.224 AND from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412
+top10_pool,30,12,HINDALCO,0.0097340490567219,True,SHORT: r5y <= 3.224 AND from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412
+top10_pool,30,12,INDUSTOWER,0.0009392521458535,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND streak >= -2
+top10_pool,30,12,BHEL,-0.0093197863294568,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND streak >= -2
+top10_pool,30,12,INDIGO,0.0131229330051451,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND streak >= -2
+top10_pool,30,12,ASHOKLEY,-0.088099917926454,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND streak >= -2
+top10_pool,30,12,HINDALCO,0.0097340490567219,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND streak >= -2
+top10_pool,30,12,CUMMINSIND,0.0543047125866845,True,SHORT: from_52w_high <= -0.008236 AND vs_ma50 >= 0.1412 AND streak >= -2
+top10_pool,30,12,INFY,0.0129914861968423,True,LONG: vs_ma50 <= -0.09166 AND nifty_1w <= -0.01243 AND exn_d0 <= 0.003164
+top10_pool,30,12,WIPRO,0.0304131169461949,True,LONG: vs_ma50 <= -0.09166 AND nifty_1w <= -0.01243 AND exn_d0 <= 0.003164
+best_all,10,13,TRENT,0.1602595038305645,True,LONG: roe >= 0.06225 AND iv_t5 >= 0.3313 AND vol5_60 >= 1.486
+best_all,10,13,MOTHERSON,-0.0159820618444535,True,LONG: roe >= 0.06225 AND iv_t5 >= 0.3313 AND vol5_60 >= 1.486
+best_1,10,13,ASHOKLEY,0.0722153616258466,True,LONG: debt_equity >= 2.52
+best_1,10,13,CHOLAFIN,0.0324177307017472,True,LONG: debt_equity >= 2.52
+best_1,10,13,SBICARD,-0.048785060486163,True,LONG: debt_equity >= 2.52
+best_1,10,13,LICHSGFIN,-0.1078793447261516,True,LONG: debt_equity >= 2.52
+best_1,10,13,TVSMOTOR,0.0031936894242977,True,LONG: debt_equity >= 2.52
+top10_pool,10,13,TRENT,0.1602595038305645,True,LONG: roe >= 0.06225 AND iv_t5 >= 0.3313 AND vol5_60 >= 1.486
+top10_pool,10,13,MOTHERSON,-0.0159820618444535,True,LONG: roe >= 0.06225 AND iv_t5 >= 0.3313 AND vol5_60 >= 1.486
+top10_pool,10,13,TRENT,0.1602595038305645,True,LONG: roe >= 0.1125 AND iv_t5 >= 0.3098 AND vol5_60 >= 1.486
+top10_pool,10,13,TRENT,0.1602595038305645,True,LONG: roe >= 0.08909 AND iv_t5 >= 0.3098 AND vol5_60 >= 1.486
+top10_pool,10,13,MOTHERSON,-0.0159820618444535,True,LONG: roe >= 0.08909 AND iv_t5 >= 0.3098 AND vol5_60 >= 1.486
+top10_pool,10,13,TRENT,0.1602595038305645,True,LONG: roe >= 0.07726 AND iv_t5 >= 0.3098 AND vol5_60 >= 1.486
+top10_pool,10,13,MOTHERSON,-0.0159820618444535,True,LONG: roe >= 0.07726 AND iv_t5 >= 0.3098 AND vol5_60 >= 1.486
+top10_pool,10,13,TMPV,-0.0567914728384311,True,LONG: exn_d0 >= 0.02816 AND own_rd >= 0.004486 AND own_rd <= 0.01027
+top10_pool,10,13,TMPV,-0.0567914728384311,True,LONG: roe >= 0.02878 AND maxabs5 >= 0.05843 AND own_rd >= 0.002409
+top10_pool,10,13,BHARATFORG,0.0765511366126099,True,LONG: roe >= 0.02878 AND maxabs5 >= 0.05843 AND own_rd >= 0.002409
+top10_pool,10,13,MOTHERSON,-0.0159820618444535,True,LONG: roe >= 0.02878 AND maxabs5 >= 0.05843 AND own_rd >= 0.002409
+top10_pool,10,13,COFORGE,0.030116991098511,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.05843 AND own_rd >= -0.003132
+top10_pool,10,13,TMPV,-0.0567914728384311,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.05843 AND own_rd >= -0.003132
+top10_pool,10,13,BHARATFORG,0.0765511366126099,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.05843 AND own_rd >= -0.003132
+top10_pool,10,13,NATIONALUM,-0.0154813923017973,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.05843 AND own_rd >= -0.003132
+top10_pool,10,13,TRENT,0.1602595038305645,True,LONG: roe >= 0.06225 AND iv_t5 >= 0.3098 AND vol5_60 >= 1.486
+top10_pool,10,13,MOTHERSON,-0.0159820618444535,True,LONG: roe >= 0.06225 AND iv_t5 >= 0.3098 AND vol5_60 >= 1.486
+best_all,20,13,DIVISLAB,-0.0178784010122686,True,LONG: roe >= 0.1125 AND vol20_60 >= 1.03 AND maxabs5 >= 0.04795
+best_all,20,13,TRENT,0.1602595038305645,True,LONG: roe >= 0.1125 AND vol20_60 >= 1.03 AND maxabs5 >= 0.04795
+best_all,20,13,MANAPPURAM,-0.0152973868265681,True,LONG: roe >= 0.1125 AND vol20_60 >= 1.03 AND maxabs5 >= 0.04795
+best_upto2,20,13,COFORGE,0.030116991098511,True,LONG: roe >= 0.08909 AND maxabs5 >= 0.05843
+best_upto2,20,13,TMPV,-0.0567914728384311,True,LONG: roe >= 0.08909 AND maxabs5 >= 0.05843
+best_upto2,20,13,CUMMINSIND,0.067523900459586,True,LONG: roe >= 0.08909 AND maxabs5 >= 0.05843
+best_upto2,20,13,BHARATFORG,0.0765511366126099,True,LONG: roe >= 0.08909 AND maxabs5 >= 0.05843
+best_upto2,20,13,NATIONALUM,-0.0154813923017973,True,LONG: roe >= 0.08909 AND maxabs5 >= 0.05843
+best_upto2,20,13,MOTHERSON,-0.0159820618444535,True,LONG: roe >= 0.08909 AND maxabs5 >= 0.05843
+best_1,20,13,ASHOKLEY,0.0722153616258466,True,LONG: debt_equity >= 2.52
+best_1,20,13,CHOLAFIN,0.0324177307017472,True,LONG: debt_equity >= 2.52
+best_1,20,13,SBICARD,-0.048785060486163,True,LONG: debt_equity >= 2.52
+best_1,20,13,LICHSGFIN,-0.1078793447261516,True,LONG: debt_equity >= 2.52
+best_1,20,13,TVSMOTOR,0.0031936894242977,True,LONG: debt_equity >= 2.52
+top10_pool,20,13,DIVISLAB,-0.0178784010122686,True,LONG: roe >= 0.1125 AND vol20_60 >= 1.03 AND maxabs5 >= 0.04795
+top10_pool,20,13,TRENT,0.1602595038305645,True,LONG: roe >= 0.1125 AND vol20_60 >= 1.03 AND maxabs5 >= 0.04795
+top10_pool,20,13,MANAPPURAM,-0.0152973868265681,True,LONG: roe >= 0.1125 AND vol20_60 >= 1.03 AND maxabs5 >= 0.04795
+top10_pool,20,13,TRENT,0.1602595038305645,True,LONG: debt_equity <= 0.3732 AND iv_t5 >= 0.3098 AND vol20_60 >= 1.137
+top10_pool,20,13,PIIND,0.0338172820475632,True,LONG: roe >= 0.1125 AND iv_t5 >= 0.2847 AND vol20_60 >= 1.187
+top10_pool,20,13,TRENT,0.1602595038305645,True,LONG: roe >= 0.1125 AND iv_t5 >= 0.2847 AND vol20_60 >= 1.187
+top10_pool,20,13,APOLLOHOSP,-0.0107530386790966,True,LONG: roe >= 0.1125 AND iv_t5 >= 0.2847 AND vol20_60 >= 1.187
+top10_pool,20,13,WIPRO,-0.096040352959127,True,LONG: pe >= 8.188 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,COFORGE,0.030116991098511,True,LONG: pe >= 8.188 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,TMPV,-0.0567914728384311,True,LONG: pe >= 8.188 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,DIVISLAB,-0.0178784010122686,True,LONG: pe >= 8.188 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,CUMMINSIND,0.067523900459586,True,LONG: pe >= 8.188 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,BHARATFORG,0.0765511366126099,True,LONG: pe >= 8.188 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,EICHERMOT,0.0388315547571846,True,LONG: pe >= 8.188 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,TRENT,0.1602595038305645,True,LONG: pe >= 8.188 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,NATIONALUM,-0.0154813923017973,True,LONG: pe >= 8.188 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,NMDC,0.0097346160571613,True,LONG: pe >= 8.188 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,HAL,0.0094236332975922,True,LONG: pe >= 8.188 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,WIPRO,-0.096040352959127,True,LONG: roe >= 0.1125 AND vol20_60 >= 0.973 AND maxabs5 >= 0.04795
+top10_pool,20,13,DIVISLAB,-0.0178784010122686,True,LONG: roe >= 0.1125 AND vol20_60 >= 0.973 AND maxabs5 >= 0.04795
+top10_pool,20,13,BHARATFORG,0.0765511366126099,True,LONG: roe >= 0.1125 AND vol20_60 >= 0.973 AND maxabs5 >= 0.04795
+top10_pool,20,13,EICHERMOT,0.0388315547571846,True,LONG: roe >= 0.1125 AND vol20_60 >= 0.973 AND maxabs5 >= 0.04795
+top10_pool,20,13,TRENT,0.1602595038305645,True,LONG: roe >= 0.1125 AND vol20_60 >= 0.973 AND maxabs5 >= 0.04795
+top10_pool,20,13,MANAPPURAM,-0.0152973868265681,True,LONG: roe >= 0.1125 AND vol20_60 >= 0.973 AND maxabs5 >= 0.04795
+top10_pool,20,13,COFORGE,0.030116991098511,True,LONG: prev_net_margin >= 0.05053 AND roe >= 0.02878 AND maxabs5 >= 0.05843
+top10_pool,20,13,TMPV,-0.0567914728384311,True,LONG: prev_net_margin >= 0.05053 AND roe >= 0.02878 AND maxabs5 >= 0.05843
+top10_pool,20,13,CUMMINSIND,0.067523900459586,True,LONG: prev_net_margin >= 0.05053 AND roe >= 0.02878 AND maxabs5 >= 0.05843
+top10_pool,20,13,BHARATFORG,0.0765511366126099,True,LONG: prev_net_margin >= 0.05053 AND roe >= 0.02878 AND maxabs5 >= 0.05843
+top10_pool,20,13,NATIONALUM,-0.0154813923017973,True,LONG: prev_net_margin >= 0.05053 AND roe >= 0.02878 AND maxabs5 >= 0.05843
+top10_pool,20,13,MOTHERSON,-0.0159820618444535,True,LONG: prev_net_margin >= 0.05053 AND roe >= 0.02878 AND maxabs5 >= 0.05843
+top10_pool,20,13,COFORGE,0.030116991098511,True,LONG: prev_net_margin >= 0.05053 AND roe <= 0.4035 AND maxabs5 >= 0.05843
+top10_pool,20,13,TMPV,-0.0567914728384311,True,LONG: prev_net_margin >= 0.05053 AND roe <= 0.4035 AND maxabs5 >= 0.05843
+top10_pool,20,13,CUMMINSIND,0.067523900459586,True,LONG: prev_net_margin >= 0.05053 AND roe <= 0.4035 AND maxabs5 >= 0.05843
+top10_pool,20,13,BHARATFORG,0.0765511366126099,True,LONG: prev_net_margin >= 0.05053 AND roe <= 0.4035 AND maxabs5 >= 0.05843
+top10_pool,20,13,NATIONALUM,-0.0154813923017973,True,LONG: prev_net_margin >= 0.05053 AND roe <= 0.4035 AND maxabs5 >= 0.05843
+top10_pool,20,13,MOTHERSON,-0.0159820618444535,True,LONG: prev_net_margin >= 0.05053 AND roe <= 0.4035 AND maxabs5 >= 0.05843
+top10_pool,20,13,WIPRO,-0.096040352959127,True,LONG: pb >= 1.85 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,COFORGE,0.030116991098511,True,LONG: pb >= 1.85 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,TMPV,-0.0567914728384311,True,LONG: pb >= 1.85 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,DIVISLAB,-0.0178784010122686,True,LONG: pb >= 1.85 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,CUMMINSIND,0.067523900459586,True,LONG: pb >= 1.85 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,BHARATFORG,0.0765511366126099,True,LONG: pb >= 1.85 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,EICHERMOT,0.0388315547571846,True,LONG: pb >= 1.85 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,TRENT,0.1602595038305645,True,LONG: pb >= 1.85 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,NATIONALUM,-0.0154813923017973,True,LONG: pb >= 1.85 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,NMDC,0.0097346160571613,True,LONG: pb >= 1.85 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+top10_pool,20,13,HAL,0.0094236332975922,True,LONG: pb >= 1.85 AND roe >= 0.1125 AND maxabs5 >= 0.04795
+best_all,30,13,PIIND,0.0338172820475632,True,LONG: roe >= 0.1125 AND iv_t5 >= 0.2607 AND vol20_60 >= 1.187
+best_all,30,13,TRENT,0.1602595038305645,True,LONG: roe >= 0.1125 AND iv_t5 >= 0.2607 AND vol20_60 >= 1.187
+best_all,30,13,APOLLOHOSP,-0.0107530386790966,True,LONG: roe >= 0.1125 AND iv_t5 >= 0.2607 AND vol20_60 >= 1.187
+best_upto2,30,13,WIPRO,-0.096040352959127,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.04795
+best_upto2,30,13,COFORGE,0.030116991098511,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.04795
+best_upto2,30,13,HINDPETRO,0.0580198574517076,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.04795
+best_upto2,30,13,TMPV,-0.0567914728384311,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.04795
+best_upto2,30,13,DIVISLAB,-0.0178784010122686,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.04795
+best_upto2,30,13,CUMMINSIND,0.067523900459586,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.04795
+best_upto2,30,13,BHARATFORG,0.0765511366126099,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.04795
+best_upto2,30,13,EICHERMOT,0.0388315547571846,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.04795
+best_upto2,30,13,TRENT,0.1602595038305645,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.04795
+best_upto2,30,13,NATIONALUM,-0.0154813923017973,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.04795
+best_upto2,30,13,NMDC,0.0097346160571613,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.04795
+best_upto2,30,13,MANAPPURAM,-0.0152973868265681,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.04795
+best_upto2,30,13,GMRAIRPORT,-0.0208252835960686,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.04795
+best_upto2,30,13,HAL,0.0094236332975922,True,LONG: roe >= 0.1125 AND maxabs5 >= 0.04795
+best_1,30,13,ASHOKLEY,0.0722153616258466,True,LONG: debt_equity >= 2.52
+best_1,30,13,CHOLAFIN,0.0324177307017472,True,LONG: debt_equity >= 2.52
+best_1,30,13,SBICARD,-0.048785060486163,True,LONG: debt_equity >= 2.52
+best_1,30,13,LICHSGFIN,-0.1078793447261516,True,LONG: debt_equity >= 2.52
+best_1,30,13,TVSMOTOR,0.0031936894242977,True,LONG: debt_equity >= 2.52
+top10_pool,30,13,PIIND,0.0338172820475632,True,LONG: roe >= 0.1125 AND iv_t5 >= 0.2607 AND vol20_60 >= 1.187
+top10_pool,30,13,TRENT,0.1602595038305645,True,LONG: roe >= 0.1125 AND iv_t5 >= 0.2607 AND vol20_60 >= 1.187
+top10_pool,30,13,APOLLOHOSP,-0.0107530386790966,True,LONG: roe >= 0.1125 AND iv_t5 >= 0.2607 AND vol20_60 >= 1.187
+top10_pool,30,13,DIVISLAB,-0.0178784010122686,True,LONG: roe >= 0.1125 AND vol20_60 >= 1.03 AND maxabs5 >= 0.04165
+top10_pool,30,13,PIIND,0.0338172820475632,True,LONG: roe >= 0.1125 AND vol20_60 >= 1.03 AND maxabs5 >= 0.04165
+top10_pool,30,13,TRENT,0.1602595038305645,True,LONG: roe >= 0.1125 AND vol20_60 >= 1.03 AND maxabs5 >= 0.04165
+top10_pool,30,13,MANAPPURAM,-0.0152973868265681,True,LONG: roe >= 0.1125 AND vol20_60 >= 1.03 AND maxabs5 >= 0.04165
+top10_pool,30,13,LTM,-0.0513625483084707,True,SHORT: nifty_1w >= -0.0003777 AND sec_from_52w_high >= -0.03491 AND intra0 <= -0.02225
+top10_pool,30,13,BAJFINANCE,0.0475896532168286,True,SHORT: nifty_1w >= -0.0003777 AND sec_from_52w_high >= -0.03491 AND intra0 <= -0.02225
+top10_pool,30,13,SRF,-0.0107004715145514,True,SHORT: nifty_1w >= -0.0003777 AND sec_from_52w_high >= -0.03491 AND intra0 <= -0.02225
+top10_pool,30,13,TORNTPHARM,-0.0665600894119993,True,SHORT: nifty_1w >= -0.0003777 AND sec_from_52w_high >= -0.03491 AND intra0 <= -0.02225
+top10_pool,30,13,CROMPTON,-0.0432390168194123,True,SHORT: nifty_1w >= -0.0003777 AND sec_from_52w_high >= -0.03491 AND intra0 <= -0.02225
+top10_pool,30,13,HINDUNILVR,-0.0034260907094066,True,LONG: r1w >= 0.03658 AND roe >= 0.1857 AND exs_3d >= 0.01176
+top10_pool,30,13,HINDPETRO,0.0580198574517076,True,LONG: r1w >= 0.03658 AND roe >= 0.1857 AND exs_3d >= 0.01176
+top10_pool,30,13,INDUSTOWER,-0.0261420877520209,True,LONG: r1w >= 0.03658 AND roe >= 0.1857 AND exs_3d >= 0.01176
+top10_pool,30,13,IOC,0.028945239316213,True,LONG: r1w >= 0.03658 AND roe >= 0.1857 AND exs_3d >= 0.01176
+top10_pool,30,13,COALINDIA,0.0543985570172111,True,LONG: r1w >= 0.03658 AND roe >= 0.1857 AND exs_3d >= 0.01176
+top10_pool,30,13,TMPV,-0.0567914728384311,True,LONG: r1w >= 0.03658 AND roe >= 0.1857 AND exs_3d >= 0.01176
+top10_pool,30,13,PIIND,0.0338172820475632,True,LONG: debt_equity <= 1.28 AND vol20_60 >= 1.251 AND z20 <= 1.894
+top10_pool,30,13,SRF,-0.0107004715145514,True,SHORT: sector_1w >= 0.004654 AND sec_rank_1m <= 0.7895 AND intra0 <= -0.02225
+top10_pool,30,13,CROMPTON,-0.0432390168194123,True,SHORT: sector_1w >= 0.004654 AND sec_rank_1m <= 0.7895 AND intra0 <= -0.02225
+top10_pool,30,13,PIIND,0.0338172820475632,True,LONG: debt_equity <= 2.038 AND d2 <= 0.02095 AND vol20_60 >= 1.251
+top10_pool,30,13,INFY,0.049521292347352,True,LONG: r3m <= 0.3757 AND vs_nifty_1m >= 0.08067 AND pb >= 6.153
+top10_pool,30,13,PERSISTENT,-0.0427501275336623,True,LONG: r3m <= 0.3757 AND vs_nifty_1m >= 0.08067 AND pb >= 6.153
+top10_pool,30,13,COFORGE,0.030116991098511,True,LONG: r3m <= 0.3757 AND vs_nifty_1m >= 0.08067 AND pb >= 6.153
+top10_pool,30,13,MPHASIS,0.0333940768716782,True,LONG: r3m <= 0.3757 AND vs_nifty_1m >= 0.08067 AND pb >= 6.153
+top10_pool,30,13,COLPAL,0.066967867673771,True,LONG: r3m <= 0.3757 AND vs_nifty_1m >= 0.08067 AND pb >= 6.153
+top10_pool,30,13,ITC,-0.0015236579961215,True,LONG: r3m <= 0.3757 AND vs_nifty_1m >= 0.08067 AND pb >= 6.153
+top10_pool,30,13,SUNPHARMA,0.0176083741519634,True,LONG: r3m <= 0.3757 AND vs_nifty_1m >= 0.08067 AND pb >= 6.153
+top10_pool,30,13,MARICO,-0.0687429209255577,True,LONG: r3m <= 0.3757 AND vs_nifty_1m >= 0.08067 AND pb >= 6.153
+top10_pool,30,13,LUPIN,0.0178017111674824,True,LONG: r3m <= 0.3757 AND vs_nifty_1m >= 0.08067 AND pb >= 6.153
+top10_pool,30,13,PIIND,0.0338172820475632,True,LONG: r3m <= 0.3757 AND vs_nifty_1m >= 0.08067 AND pb >= 6.153
+top10_pool,30,13,TVSMOTOR,0.0031936894242977,True,LONG: r3m <= 0.3757 AND vs_nifty_1m >= 0.08067 AND pb >= 6.153
+top10_pool,30,13,GODREJCP,0.0017609209983568,True,LONG: r3m <= 0.3757 AND vs_nifty_1m >= 0.08067 AND pb >= 6.153
+top10_pool,30,13,ZYDUSLIFE,-0.0168685943765899,True,LONG: r3m <= 0.3757 AND vs_nifty_1m >= 0.08067 AND pb >= 6.153
+best_all,10,14,CROMPTON,-0.0344117258524132,True,LONG: roe >= 0.1161 AND iv_t5 >= 0.3303 AND vol5_60 >= 1.474
+best_upto2,10,14,DIXON,-0.0640070239785579,True,LONG: prev_sales_yoy >= 0.404 AND pb >= 12.56
+best_upto2,10,14,TRENT,-0.0982915638246391,True,LONG: prev_sales_yoy >= 0.404 AND pb >= 12.56
+best_upto2,10,14,JUBLFOOD,0.0675226892704873,True,LONG: prev_sales_yoy >= 0.404 AND pb >= 12.56
+best_1,10,14,TVSMOTOR,-0.0963061201159344,True,LONG: debt_equity >= 2.499
+best_1,10,14,CHOLAFIN,-0.091608811127553,True,LONG: debt_equity >= 2.499
+best_1,10,14,LICHSGFIN,0.0611551695322823,True,LONG: debt_equity >= 2.499
+best_1,10,14,SBICARD,-0.009876390913209,True,LONG: debt_equity >= 2.499
+best_1,10,14,ASHOKLEY,0.0401308542328489,True,LONG: debt_equity >= 2.499
+top10_pool,10,14,CROMPTON,-0.0344117258524132,True,LONG: roe >= 0.1161 AND iv_t5 >= 0.3303 AND vol5_60 >= 1.474
+top10_pool,10,14,NAUKRI,-0.0043983754826019,True,LONG: intra0 >= 0.02754 AND sec_d0 >= 0.01026 AND own_rd >= 0.004413
+top10_pool,10,14,DRREDDY,0.0334845307802478,True,LONG: roe >= 0.1363 AND iv_t5 >= 0.3096 AND vol5_60 >= 1.474
+top10_pool,10,14,CROMPTON,-0.0344117258524132,True,LONG: roe >= 0.1363 AND iv_t5 >= 0.3096 AND vol5_60 >= 1.474
+top10_pool,10,14,NAUKRI,-0.0043983754826019,True,LONG: exn_d0 >= 0.02795 AND sec_d0 >= 0.00848 AND own_rd >= 0.004413
+top10_pool,10,14,DRREDDY,0.0334845307802478,True,LONG: roe >= 0.1161 AND iv_t5 >= 0.3096 AND vol5_60 >= 1.474
+top10_pool,10,14,CROMPTON,-0.0344117258524132,True,LONG: roe >= 0.1161 AND iv_t5 >= 0.3096 AND vol5_60 >= 1.474
+top10_pool,10,14,NAUKRI,-0.0043983754826019,True,LONG: intra0 >= 0.02754 AND sec_d0 >= 0.00848 AND own_rd >= 0.004413
+top10_pool,10,14,IDFCFIRSTB,-0.0055856098648809,True,LONG: roe >= 0.06318 AND vol5_60 >= 1.474 AND own_rd >= 0.004413
+top10_pool,10,14,PNB,0.0270929811731527,True,LONG: roe >= 0.06318 AND vol5_60 >= 1.474 AND own_rd >= 0.004413
+top10_pool,10,14,IDFCFIRSTB,-0.0055856098648809,True,LONG: roe >= 0.07781 AND vol5_60 >= 1.474 AND own_rd >= 0.004413
+top10_pool,10,14,PNB,0.0270929811731527,True,LONG: roe >= 0.07781 AND vol5_60 >= 1.474 AND own_rd >= 0.004413
+top10_pool,10,14,PNB,0.0270929811731527,True,LONG: roe >= 0.0905 AND vol5_60 >= 1.474 AND own_rd >= 0.004413
+best_all,20,14,HINDPETRO,-0.0333130577886133,True,LONG: roe >= 0.1161 AND iv_t5 >= 0.3096 AND vol20_60 >= 1.182
+best_all,20,14,MANAPPURAM,-0.0150356417610972,True,LONG: roe >= 0.1161 AND iv_t5 >= 0.3096 AND vol20_60 >= 1.182
+best_all,20,14,LUPIN,-0.0356479681527387,True,LONG: roe >= 0.1161 AND iv_t5 >= 0.3096 AND vol20_60 >= 1.182
+best_upto2,20,14,ADANIENT,0.0992772963887462,True,LONG: pb >= 6.201 AND maxabs5 >= 0.04811
+best_1,20,14,TVSMOTOR,-0.0963061201159344,True,LONG: debt_equity >= 2.499
+best_1,20,14,CHOLAFIN,-0.091608811127553,True,LONG: debt_equity >= 2.499
+best_1,20,14,LICHSGFIN,0.0611551695322823,True,LONG: debt_equity >= 2.499
+best_1,20,14,SBICARD,-0.009876390913209,True,LONG: debt_equity >= 2.499
+best_1,20,14,ASHOKLEY,0.0401308542328489,True,LONG: debt_equity >= 2.499
+top10_pool,20,14,HINDPETRO,-0.0333130577886133,True,LONG: roe >= 0.1161 AND iv_t5 >= 0.3096 AND vol20_60 >= 1.182
+top10_pool,20,14,MANAPPURAM,-0.0150356417610972,True,LONG: roe >= 0.1161 AND iv_t5 >= 0.3096 AND vol20_60 >= 1.182
+top10_pool,20,14,LUPIN,-0.0356479681527387,True,LONG: roe >= 0.1161 AND iv_t5 >= 0.3096 AND vol20_60 >= 1.182
+top10_pool,20,14,HINDPETRO,-0.0333130577886133,True,LONG: roe >= 0.1616 AND iv_t5 >= 0.3096 AND vol20_60 >= 1.128
+top10_pool,20,14,MANAPPURAM,-0.0150356417610972,True,LONG: roe >= 0.1616 AND iv_t5 >= 0.3096 AND vol20_60 >= 1.128
+top10_pool,20,14,ALKEM,-0.0173996777569033,True,LONG: roe >= 0.1616 AND iv_t5 >= 0.3096 AND vol20_60 >= 1.128
+top10_pool,20,14,BANDHANBNK,0.0208303879968596,True,LONG: roe <= 0.3066 AND days_after_quarter_end <= 40 AND maxabs5 >= 0.05845
+top10_pool,20,14,BHEL,0.0363645672886833,True,LONG: roe <= 0.3066 AND days_after_quarter_end <= 40 AND maxabs5 >= 0.05845
+top10_pool,20,14,PNB,0.0270929811731527,True,LONG: roe <= 0.3066 AND days_after_quarter_end <= 40 AND maxabs5 >= 0.05845
+top10_pool,20,14,CANBK,0.0950768465376783,True,LONG: roe <= 0.3066 AND days_after_quarter_end <= 40 AND maxabs5 >= 0.05845
+top10_pool,20,14,BANDHANBNK,0.0208303879968596,True,LONG: roe >= 0.1161 AND vol20_60 >= 1.088 AND maxabs5 >= 0.04811
+top10_pool,20,14,BANKBARODA,0.0505897219002496,True,LONG: roe >= 0.1161 AND vol20_60 >= 1.088 AND maxabs5 >= 0.04811
+top10_pool,20,14,MANAPPURAM,-0.0150356417610972,True,LONG: roe >= 0.1161 AND vol20_60 >= 1.088 AND maxabs5 >= 0.04811
+top10_pool,20,14,BANDHANBNK,0.0208303879968596,True,LONG: roe >= 0.1161 AND vol20_60 >= 1.022 AND maxabs5 >= 0.04811
+top10_pool,20,14,BANKBARODA,0.0505897219002496,True,LONG: roe >= 0.1161 AND vol20_60 >= 1.022 AND maxabs5 >= 0.04811
+top10_pool,20,14,CANBK,0.0950768465376783,True,LONG: roe >= 0.1161 AND vol20_60 >= 1.022 AND maxabs5 >= 0.04811
+top10_pool,20,14,MANAPPURAM,-0.0150356417610972,True,LONG: roe >= 0.1161 AND vol20_60 >= 1.022 AND maxabs5 >= 0.04811
+top10_pool,20,14,BANDHANBNK,0.0208303879968596,True,LONG: roe >= 0.1161 AND maxabs5 >= 0.05845 AND own_rd >= -0.0108
+top10_pool,20,14,CANBK,0.0950768465376783,True,LONG: roe >= 0.1161 AND maxabs5 >= 0.05845 AND own_rd >= -0.0108
+top10_pool,20,14,BANDHANBNK,0.0208303879968596,True,LONG: roe >= 0.1161 AND maxabs5 >= 0.05845 AND own_rd >= -0.00863
+top10_pool,20,14,CANBK,0.0950768465376783,True,LONG: roe >= 0.1161 AND maxabs5 >= 0.05845 AND own_rd >= -0.00863
+top10_pool,20,14,BANDHANBNK,0.0208303879968596,True,LONG: roe >= 0.0905 AND vol20_60 >= 1.128 AND maxabs5 >= 0.04811
+top10_pool,20,14,BANKBARODA,0.0505897219002496,True,LONG: roe >= 0.0905 AND vol20_60 >= 1.128 AND maxabs5 >= 0.04811
+top10_pool,20,14,PNB,0.0270929811731527,True,LONG: roe >= 0.0905 AND vol20_60 >= 1.128 AND maxabs5 >= 0.04811
+top10_pool,20,14,ADANIENT,0.0992772963887462,True,LONG: roe >= 0.0905 AND vol20_60 >= 1.128 AND maxabs5 >= 0.04811
+top10_pool,20,14,MANAPPURAM,-0.0150356417610972,True,LONG: roe >= 0.0905 AND vol20_60 >= 1.128 AND maxabs5 >= 0.04811
+top10_pool,20,14,HINDALCO,0.0055133917568809,True,LONG: roe >= 0.0905 AND vol20_60 >= 1.128 AND maxabs5 >= 0.04811
+best_all,30,14,HDFCAMC,0.0835253293980564,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+best_all,30,14,COLPAL,-0.0788583836788555,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+best_all,30,14,IEX,0.0093344411308053,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+best_all,30,14,SUNPHARMA,0.0126158856175476,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+best_all,30,14,LUPIN,-0.0356479681527387,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+best_all,30,14,NAUKRI,-0.0043983754826019,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+best_all,30,14,EICHERMOT,0.0212101493002694,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+best_all,30,14,PIIND,-0.0743189633302099,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+best_all,30,14,GLENMARK,-0.0588406924367845,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+best_1,30,14,TVSMOTOR,-0.0963061201159344,True,LONG: debt_equity >= 2.499
+best_1,30,14,CHOLAFIN,-0.091608811127553,True,LONG: debt_equity >= 2.499
+best_1,30,14,LICHSGFIN,0.0611551695322823,True,LONG: debt_equity >= 2.499
+best_1,30,14,SBICARD,-0.009876390913209,True,LONG: debt_equity >= 2.499
+best_1,30,14,ASHOKLEY,0.0401308542328489,True,LONG: debt_equity >= 2.499
+top10_pool,30,14,HDFCAMC,0.0835253293980564,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+top10_pool,30,14,COLPAL,-0.0788583836788555,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+top10_pool,30,14,IEX,0.0093344411308053,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+top10_pool,30,14,SUNPHARMA,0.0126158856175476,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+top10_pool,30,14,LUPIN,-0.0356479681527387,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+top10_pool,30,14,NAUKRI,-0.0043983754826019,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+top10_pool,30,14,EICHERMOT,0.0212101493002694,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+top10_pool,30,14,PIIND,-0.0743189633302099,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+top10_pool,30,14,GLENMARK,-0.0588406924367845,True,LONG: vs_sector_3m >= 0.03546 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+top10_pool,30,14,DLF,0.0237219410103303,True,LONG: vs_sector_1w <= -0.0295 AND past_pct_up >= 0.5385 AND maxabs5 >= 0.03824
+top10_pool,30,14,SHRIRAMFIN,0.0217145909815942,True,LONG: vs_sector_1w <= -0.0295 AND past_pct_up >= 0.5385 AND maxabs5 >= 0.03824
+top10_pool,30,14,PNB,0.0270929811731527,True,LONG: vs_sector_1w <= -0.0295 AND past_pct_up >= 0.5385 AND maxabs5 >= 0.03824
+top10_pool,30,14,ADANIENT,0.0992772963887462,True,LONG: vs_sector_1w <= -0.0295 AND past_pct_up >= 0.5385 AND maxabs5 >= 0.03824
+top10_pool,30,14,ABCAPITAL,0.0048681153379002,True,LONG: vs_sector_1w <= -0.0295 AND past_pct_up >= 0.5385 AND maxabs5 >= 0.03824
+top10_pool,30,14,BHEL,0.0363645672886833,True,LONG: debt_equity <= 0.3731 AND iv_t5 >= 0.2852 AND vol20_60 >= 1.128
+top10_pool,30,14,DABUR,-0.0242477847677391,True,LONG: debt_equity <= 0.3731 AND iv_t5 >= 0.2852 AND vol20_60 >= 1.128
+top10_pool,30,14,JINDALSTEL,0.0419459071946004,True,LONG: debt_equity <= 0.3731 AND iv_t5 >= 0.2852 AND vol20_60 >= 1.128
+top10_pool,30,14,LUPIN,-0.0356479681527387,True,LONG: debt_equity <= 0.3731 AND iv_t5 >= 0.2852 AND vol20_60 >= 1.128
+top10_pool,30,14,NAUKRI,-0.0043983754826019,True,LONG: debt_equity <= 0.3731 AND iv_t5 >= 0.2852 AND vol20_60 >= 1.128
+top10_pool,30,14,ALKEM,-0.0173996777569033,True,LONG: debt_equity <= 0.3731 AND iv_t5 >= 0.2852 AND vol20_60 >= 1.128
+top10_pool,30,14,PIIND,-0.0743189633302099,True,LONG: debt_equity <= 0.3731 AND iv_t5 >= 0.2852 AND vol20_60 >= 1.128
+top10_pool,30,14,GLENMARK,-0.0588406924367845,True,LONG: debt_equity <= 0.3731 AND iv_t5 >= 0.2852 AND vol20_60 >= 1.128
+top10_pool,30,14,CHOLAFIN,-0.091608811127553,True,LONG: vs_sector_1w <= -0.0295 AND past_pct_up >= 0.5385 AND own_rd >= 0.007699
+top10_pool,30,14,PNB,0.0270929811731527,True,LONG: vs_sector_1w <= -0.0295 AND past_pct_up >= 0.5385 AND own_rd >= 0.007699
+top10_pool,30,14,TRENT,-0.0982915638246391,True,LONG: vs_sector_1w <= -0.0295 AND past_pct_up >= 0.5385 AND own_rd >= 0.007699
+top10_pool,30,14,BHARATFORG,-0.0414637376666777,True,LONG: vs_sector_1w <= -0.0295 AND past_pct_up >= 0.5385 AND own_rd >= 0.007699
+top10_pool,30,14,HDFCAMC,0.0835253293980564,True,LONG: vs_ma200 >= 0.1208 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+top10_pool,30,14,COLPAL,-0.0788583836788555,True,LONG: vs_ma200 >= 0.1208 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+top10_pool,30,14,SUNPHARMA,0.0126158856175476,True,LONG: vs_ma200 >= 0.1208 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+top10_pool,30,14,LUPIN,-0.0356479681527387,True,LONG: vs_ma200 >= 0.1208 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+top10_pool,30,14,NAUKRI,-0.0043983754826019,True,LONG: vs_ma200 >= 0.1208 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+top10_pool,30,14,PIIND,-0.0743189633302099,True,LONG: vs_ma200 >= 0.1208 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+top10_pool,30,14,GLENMARK,-0.0588406924367845,True,LONG: vs_ma200 >= 0.1208 AND debt_equity <= 0.3731 AND vol20_60 >= 1.128
+top10_pool,30,14,CHOLAFIN,-0.091608811127553,True,LONG: vs_sector_1w <= -0.03692 AND past_pct_up >= 0.5385 AND own_rd >= 0.004413
+top10_pool,30,14,SHRIRAMFIN,0.0217145909815942,True,LONG: vs_sector_1w <= -0.03692 AND past_pct_up >= 0.5385 AND own_rd >= 0.004413
+top10_pool,30,14,PNB,0.0270929811731527,True,LONG: vs_sector_1w <= -0.03692 AND past_pct_up >= 0.5385 AND own_rd >= 0.004413
+top10_pool,30,14,ADANIPORTS,0.0576838314198866,True,LONG: vs_sector_1w <= -0.03692 AND past_pct_up >= 0.5385 AND own_rd >= 0.004413
+top10_pool,30,14,TRENT,-0.0982915638246391,True,LONG: vs_sector_1w <= -0.03692 AND past_pct_up >= 0.5385 AND own_rd >= 0.004413
+top10_pool,30,14,BHARATFORG,-0.0414637376666777,True,LONG: vs_sector_1w <= -0.03692 AND past_pct_up >= 0.5385 AND own_rd >= 0.004413
+top10_pool,30,14,CANBK,0.0950768465376783,True,LONG: volume_5d_vs_60d >= 0.9389 AND roe >= 0.1161 AND maxabs5 >= 0.04811
+top10_pool,30,14,MANAPPURAM,-0.0150356417610972,True,LONG: volume_5d_vs_60d >= 0.9389 AND roe >= 0.1161 AND maxabs5 >= 0.04811
+top10_pool,30,14,NESTLEIND,-0.0547484848655587,True,LONG: debt_equity <= 0.3731 AND pe_vs_peers <= 2.47 AND vol20_60 >= 1.182
+top10_pool,30,14,AMBUJACEM,0.0289570017981319,True,LONG: debt_equity <= 0.3731 AND pe_vs_peers <= 2.47 AND vol20_60 >= 1.182
+top10_pool,30,14,SUNPHARMA,0.0126158856175476,True,LONG: debt_equity <= 0.3731 AND pe_vs_peers <= 2.47 AND vol20_60 >= 1.182
+top10_pool,30,14,CIPLA,-0.047594083292023,True,LONG: debt_equity <= 0.3731 AND pe_vs_peers <= 2.47 AND vol20_60 >= 1.182
+top10_pool,30,14,LUPIN,-0.0356479681527387,True,LONG: debt_equity <= 0.3731 AND pe_vs_peers <= 2.47 AND vol20_60 >= 1.182
+top10_pool,30,14,EICHERMOT,0.0212101493002694,True,LONG: debt_equity <= 0.3731 AND pe_vs_peers <= 2.47 AND vol20_60 >= 1.182
+best_all,10,15,DMART,-0.0907729860284294,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9629 AND maxabs5 >= 0.05841
+best_all,10,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9629 AND maxabs5 >= 0.05841
+best_all,10,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9629 AND maxabs5 >= 0.05841
+best_all,10,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9629 AND maxabs5 >= 0.05841
+best_1,10,15,IRFC,-0.0034403833182821,True,LONG: debt_equity >= 2.481
+best_1,10,15,ADANIGREEN,-0.0324106915926339,True,LONG: debt_equity >= 2.481
+best_1,10,15,SBICARD,0.0041283574931336,True,LONG: debt_equity >= 2.481
+best_1,10,15,TVSMOTOR,0.0846852575671883,True,LONG: debt_equity >= 2.481
+best_1,10,15,CHOLAFIN,-0.0240120927826171,True,LONG: debt_equity >= 2.481
+best_1,10,15,LICHSGFIN,0.0180944639847783,True,LONG: debt_equity >= 2.481
+best_1,10,15,RECLTD,0.032568893618025,True,LONG: debt_equity >= 2.481
+best_1,10,15,ASHOKLEY,0.0406043216892635,True,LONG: debt_equity >= 2.481
+top10_pool,10,15,DMART,-0.0907729860284294,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9629 AND maxabs5 >= 0.05841
+top10_pool,10,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9629 AND maxabs5 >= 0.05841
+top10_pool,10,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9629 AND maxabs5 >= 0.05841
+top10_pool,10,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9629 AND maxabs5 >= 0.05841
+top10_pool,10,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.05841
+top10_pool,10,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.05841
+top10_pool,10,15,CHOLAFIN,-0.0240120927826171,True,LONG: roe >= 0.1176 AND iv_t5 >= 0.3284 AND vol5_60 >= 1.477
+top10_pool,10,15,DIVISLAB,0.0906416829226943,True,LONG: roe >= 0.1176 AND iv_t5 >= 0.3284 AND vol5_60 >= 1.477
+top10_pool,10,15,RECLTD,0.032568893618025,True,LONG: roe >= 0.1176 AND iv_t5 >= 0.3284 AND vol5_60 >= 1.477
+top10_pool,10,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.1176 AND iv_t5 >= 0.3284 AND vol5_60 >= 1.477
+top10_pool,10,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.477 AND own_rd >= 0.004392
+top10_pool,10,15,CHOLAFIN,-0.0240120927826171,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.477 AND own_rd >= 0.004392
+top10_pool,10,15,SUNPHARMA,0.003946277027145,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.477 AND own_rd >= 0.004392
+top10_pool,10,15,RECLTD,0.032568893618025,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.477 AND own_rd >= 0.004392
+top10_pool,10,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.477 AND own_rd >= 0.004392
+top10_pool,10,15,RECLTD,0.032568893618025,True,LONG: gap0 >= 0.008935 AND intra0 >= 0.02755 AND up10 <= 0.6
+top10_pool,10,15,CHOLAFIN,-0.0240120927826171,True,LONG: intra0 >= 0.02755 AND sec_d0 >= 0.01006 AND own_rd >= 0.004392
+top10_pool,10,15,RECLTD,0.032568893618025,True,LONG: intra0 >= 0.02755 AND sec_d0 >= 0.01006 AND own_rd >= 0.004392
+top10_pool,10,15,BAJAJFINSV,-0.0183342198630911,True,LONG: exn_d0 >= 0.02777 AND sec_d0 >= 0.01006 AND own_rd >= 0.004392
+top10_pool,10,15,CHOLAFIN,-0.0240120927826171,True,LONG: exn_d0 >= 0.02777 AND sec_d0 >= 0.01006 AND own_rd >= 0.004392
+top10_pool,10,15,RECLTD,0.032568893618025,True,LONG: exn_d0 >= 0.02777 AND sec_d0 >= 0.01006 AND own_rd >= 0.004392
+best_all,20,15,DMART,-0.0907729860284294,True,LONG: roe >= 0.1176 AND roe <= 0.307 AND maxabs5 >= 0.05841
+best_all,20,15,INDHOTEL,-0.0226168697499759,True,LONG: roe >= 0.1176 AND roe <= 0.307 AND maxabs5 >= 0.05841
+best_all,20,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.1176 AND roe <= 0.307 AND maxabs5 >= 0.05841
+best_all,20,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.1176 AND roe <= 0.307 AND maxabs5 >= 0.05841
+best_upto2,20,15,DMART,-0.0907729860284294,True,LONG: pb >= 6.228 AND maxabs5 >= 0.04797
+best_upto2,20,15,OFSS,-0.061672965071178,True,LONG: pb >= 6.228 AND maxabs5 >= 0.04797
+best_upto2,20,15,LTM,0.0242852251812911,True,LONG: pb >= 6.228 AND maxabs5 >= 0.04797
+best_upto2,20,15,INDHOTEL,-0.0226168697499759,True,LONG: pb >= 6.228 AND maxabs5 >= 0.04797
+best_upto2,20,15,APLAPOLLO,0.0227796844642435,True,LONG: pb >= 6.228 AND maxabs5 >= 0.04797
+best_upto2,20,15,DIXON,-0.1012317321737206,True,LONG: pb >= 6.228 AND maxabs5 >= 0.04797
+best_upto2,20,15,ETERNAL,-0.1129599035749141,True,LONG: pb >= 6.228 AND maxabs5 >= 0.04797
+best_upto2,20,15,SUPREMEIND,-0.0854556653877933,True,LONG: pb >= 6.228 AND maxabs5 >= 0.04797
+best_upto2,20,15,CGPOWER,0.0134797757649079,True,LONG: pb >= 6.228 AND maxabs5 >= 0.04797
+best_upto2,20,15,CAMS,-0.0408274082784769,True,LONG: pb >= 6.228 AND maxabs5 >= 0.04797
+best_upto2,20,15,SOLARINDS,-0.0404757701330931,True,LONG: pb >= 6.228 AND maxabs5 >= 0.04797
+best_upto2,20,15,TRENT,-0.0486983651886482,True,LONG: pb >= 6.228 AND maxabs5 >= 0.04797
+best_upto2,20,15,HAL,-0.0329806141204961,True,LONG: pb >= 6.228 AND maxabs5 >= 0.04797
+best_1,20,15,IRFC,-0.0034403833182821,True,LONG: debt_equity >= 2.481
+best_1,20,15,ADANIGREEN,-0.0324106915926339,True,LONG: debt_equity >= 2.481
+best_1,20,15,SBICARD,0.0041283574931336,True,LONG: debt_equity >= 2.481
+best_1,20,15,TVSMOTOR,0.0846852575671883,True,LONG: debt_equity >= 2.481
+best_1,20,15,CHOLAFIN,-0.0240120927826171,True,LONG: debt_equity >= 2.481
+best_1,20,15,LICHSGFIN,0.0180944639847783,True,LONG: debt_equity >= 2.481
+best_1,20,15,RECLTD,0.032568893618025,True,LONG: debt_equity >= 2.481
+best_1,20,15,ASHOKLEY,0.0406043216892635,True,LONG: debt_equity >= 2.481
+top10_pool,20,15,DMART,-0.0907729860284294,True,LONG: roe >= 0.1176 AND roe <= 0.307 AND maxabs5 >= 0.05841
+top10_pool,20,15,INDHOTEL,-0.0226168697499759,True,LONG: roe >= 0.1176 AND roe <= 0.307 AND maxabs5 >= 0.05841
+top10_pool,20,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.1176 AND roe <= 0.307 AND maxabs5 >= 0.05841
+top10_pool,20,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.1176 AND roe <= 0.307 AND maxabs5 >= 0.05841
+top10_pool,20,15,DMART,-0.0907729860284294,True,LONG: roe >= 0.1176 AND log_mcap >= 10.57 AND maxabs5 >= 0.05841
+top10_pool,20,15,INDHOTEL,-0.0226168697499759,True,LONG: roe >= 0.1176 AND log_mcap >= 10.57 AND maxabs5 >= 0.05841
+top10_pool,20,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.1176 AND log_mcap >= 10.57 AND maxabs5 >= 0.05841
+top10_pool,20,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.1176 AND log_mcap >= 10.57 AND maxabs5 >= 0.05841
+top10_pool,20,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.1176 AND log_mcap >= 10.57 AND maxabs5 >= 0.05841
+top10_pool,20,15,OFSS,-0.061672965071178,True,LONG: roe >= 0.139 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,20,15,INDHOTEL,-0.0226168697499759,True,LONG: roe >= 0.139 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,20,15,OBEROIRLTY,-0.0530667069281813,True,LONG: roe >= 0.139 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,20,15,CGPOWER,0.0134797757649079,True,LONG: roe >= 0.139 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,20,15,CHOLAFIN,-0.0240120927826171,True,LONG: roe >= 0.139 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,20,15,RECLTD,0.032568893618025,True,LONG: roe >= 0.139 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,20,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.139 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,20,15,HAL,-0.0329806141204961,True,LONG: roe >= 0.139 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,20,15,DMART,-0.0907729860284294,True,LONG: roe >= 0.1176 AND vol20_60 >= 1.134 AND maxabs5 >= 0.04797
+top10_pool,20,15,LTM,0.0242852251812911,True,LONG: roe >= 0.1176 AND vol20_60 >= 1.134 AND maxabs5 >= 0.04797
+top10_pool,20,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.1176 AND vol20_60 >= 1.134 AND maxabs5 >= 0.04797
+top10_pool,20,15,CGPOWER,0.0134797757649079,True,LONG: roe >= 0.1176 AND vol20_60 >= 1.134 AND maxabs5 >= 0.04797
+top10_pool,20,15,CAMS,-0.0408274082784769,True,LONG: roe >= 0.1176 AND vol20_60 >= 1.134 AND maxabs5 >= 0.04797
+top10_pool,20,15,CHOLAFIN,-0.0240120927826171,True,LONG: roe >= 0.1176 AND vol20_60 >= 1.134 AND maxabs5 >= 0.04797
+top10_pool,20,15,RECLTD,0.032568893618025,True,LONG: roe >= 0.1176 AND vol20_60 >= 1.134 AND maxabs5 >= 0.04797
+top10_pool,20,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.1176 AND vol20_60 >= 1.134 AND maxabs5 >= 0.04797
+top10_pool,20,15,IDEA,-0.1186007683782405,True,LONG: roe >= 0.1176 AND vol20_60 >= 1.134 AND maxabs5 >= 0.04797
+top10_pool,20,15,HAL,-0.0329806141204961,True,LONG: roe >= 0.1176 AND vol20_60 >= 1.134 AND maxabs5 >= 0.04797
+top10_pool,20,15,DMART,-0.0907729860284294,True,LONG: roe >= 0.06424 AND vol5_60 >= 1.477 AND maxabs5 >= 0.04797
+top10_pool,20,15,LTM,0.0242852251812911,True,LONG: roe >= 0.06424 AND vol5_60 >= 1.477 AND maxabs5 >= 0.04797
+top10_pool,20,15,INDHOTEL,-0.0226168697499759,True,LONG: roe >= 0.06424 AND vol5_60 >= 1.477 AND maxabs5 >= 0.04797
+top10_pool,20,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.06424 AND vol5_60 >= 1.477 AND maxabs5 >= 0.04797
+top10_pool,20,15,LTF,0.0260609295665621,True,LONG: roe >= 0.06424 AND vol5_60 >= 1.477 AND maxabs5 >= 0.04797
+top10_pool,20,15,CHOLAFIN,-0.0240120927826171,True,LONG: roe >= 0.06424 AND vol5_60 >= 1.477 AND maxabs5 >= 0.04797
+top10_pool,20,15,SOLARINDS,-0.0404757701330931,True,LONG: roe >= 0.06424 AND vol5_60 >= 1.477 AND maxabs5 >= 0.04797
+top10_pool,20,15,RECLTD,0.032568893618025,True,LONG: roe >= 0.06424 AND vol5_60 >= 1.477 AND maxabs5 >= 0.04797
+top10_pool,20,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.06424 AND vol5_60 >= 1.477 AND maxabs5 >= 0.04797
+top10_pool,20,15,NHPC,-0.0427338845170705,True,LONG: roe >= 0.06424 AND vol5_60 >= 1.477 AND maxabs5 >= 0.04797
+top10_pool,20,15,DMART,-0.0907729860284294,True,LONG: roe >= 0.1176 AND log_mcap >= 10.43 AND maxabs5 >= 0.05841
+top10_pool,20,15,INDHOTEL,-0.0226168697499759,True,LONG: roe >= 0.1176 AND log_mcap >= 10.43 AND maxabs5 >= 0.05841
+top10_pool,20,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.1176 AND log_mcap >= 10.43 AND maxabs5 >= 0.05841
+top10_pool,20,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.1176 AND log_mcap >= 10.43 AND maxabs5 >= 0.05841
+top10_pool,20,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.1176 AND log_mcap >= 10.43 AND maxabs5 >= 0.05841
+top10_pool,20,15,INDHOTEL,-0.0226168697499759,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.05841 AND own_rd >= -0.01039
+top10_pool,20,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.05841 AND own_rd >= -0.01039
+top10_pool,20,15,CAMS,-0.0408274082784769,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.05841 AND own_rd >= -0.01039
+top10_pool,20,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.05841 AND own_rd >= -0.01039
+top10_pool,20,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.05841 AND own_rd >= -0.01039
+top10_pool,20,15,INDHOTEL,-0.0226168697499759,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.05841 AND own_rd >= -0.008371
+top10_pool,20,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.05841 AND own_rd >= -0.008371
+top10_pool,20,15,CAMS,-0.0408274082784769,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.05841 AND own_rd >= -0.008371
+top10_pool,20,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.05841 AND own_rd >= -0.008371
+top10_pool,20,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.05841 AND own_rd >= -0.008371
+top10_pool,20,15,DMART,-0.0907729860284294,True,LONG: prev_sales_yoy >= 0.02417 AND roe >= 0.1176 AND maxabs5 >= 0.05841
+top10_pool,20,15,INDHOTEL,-0.0226168697499759,True,LONG: prev_sales_yoy >= 0.02417 AND roe >= 0.1176 AND maxabs5 >= 0.05841
+top10_pool,20,15,APLAPOLLO,0.0227796844642435,True,LONG: prev_sales_yoy >= 0.02417 AND roe >= 0.1176 AND maxabs5 >= 0.05841
+top10_pool,20,15,CAMS,-0.0408274082784769,True,LONG: prev_sales_yoy >= 0.02417 AND roe >= 0.1176 AND maxabs5 >= 0.05841
+top10_pool,20,15,TRENT,-0.0486983651886482,True,LONG: prev_sales_yoy >= 0.02417 AND roe >= 0.1176 AND maxabs5 >= 0.05841
+top10_pool,20,15,OFSS,-0.061672965071178,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,20,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,20,15,OBEROIRLTY,-0.0530667069281813,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,20,15,SUPREMEIND,-0.0854556653877933,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,20,15,CGPOWER,0.0134797757649079,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,20,15,RECLTD,0.032568893618025,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,20,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,20,15,IDEA,-0.1186007683782405,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,20,15,HAL,-0.0329806141204961,True,LONG: roe >= 0.1176 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+best_all,30,15,DMART,-0.0907729860284294,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+best_all,30,15,OFSS,-0.061672965071178,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+best_all,30,15,INDHOTEL,-0.0226168697499759,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+best_all,30,15,OBEROIRLTY,-0.0530667069281813,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+best_all,30,15,LODHA,0.0444513651320068,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+best_all,30,15,CGPOWER,0.0134797757649079,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+best_all,30,15,CHOLAFIN,-0.0240120927826171,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+best_all,30,15,RECLTD,0.032568893618025,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+best_all,30,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+best_all,30,15,HAL,-0.0329806141204961,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+best_all,30,15,PFC,-0.0289896193946069,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+best_all,30,15,MOTHERSON,-0.0298103310652173,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+best_upto2,30,15,DMART,-0.0907729860284294,True,LONG: roe >= 0.07901 AND maxabs5 >= 0.05841
+best_upto2,30,15,INDHOTEL,-0.0226168697499759,True,LONG: roe >= 0.07901 AND maxabs5 >= 0.05841
+best_upto2,30,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.07901 AND maxabs5 >= 0.05841
+best_upto2,30,15,LTF,0.0260609295665621,True,LONG: roe >= 0.07901 AND maxabs5 >= 0.05841
+best_upto2,30,15,LODHA,0.0444513651320068,True,LONG: roe >= 0.07901 AND maxabs5 >= 0.05841
+best_upto2,30,15,CAMS,-0.0408274082784769,True,LONG: roe >= 0.07901 AND maxabs5 >= 0.05841
+best_upto2,30,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.07901 AND maxabs5 >= 0.05841
+best_upto2,30,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.07901 AND maxabs5 >= 0.05841
+best_1,30,15,IRFC,-0.0034403833182821,True,LONG: debt_equity >= 2.481
+best_1,30,15,ADANIGREEN,-0.0324106915926339,True,LONG: debt_equity >= 2.481
+best_1,30,15,SBICARD,0.0041283574931336,True,LONG: debt_equity >= 2.481
+best_1,30,15,TVSMOTOR,0.0846852575671883,True,LONG: debt_equity >= 2.481
+best_1,30,15,CHOLAFIN,-0.0240120927826171,True,LONG: debt_equity >= 2.481
+best_1,30,15,LICHSGFIN,0.0180944639847783,True,LONG: debt_equity >= 2.481
+best_1,30,15,RECLTD,0.032568893618025,True,LONG: debt_equity >= 2.481
+best_1,30,15,ASHOKLEY,0.0406043216892635,True,LONG: debt_equity >= 2.481
+top10_pool,30,15,DMART,-0.0907729860284294,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,OFSS,-0.061672965071178,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,INDHOTEL,-0.0226168697499759,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,OBEROIRLTY,-0.0530667069281813,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,LODHA,0.0444513651320068,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,CGPOWER,0.0134797757649079,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,CHOLAFIN,-0.0240120927826171,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,RECLTD,0.032568893618025,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,HAL,-0.0329806141204961,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,PFC,-0.0289896193946069,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,MOTHERSON,-0.0298103310652173,True,LONG: roe >= 0.09205 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,DMART,-0.0907729860284294,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,OFSS,-0.061672965071178,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,LTM,0.0242852251812911,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,INDHOTEL,-0.0226168697499759,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,DIXON,-0.1012317321737206,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,IRFC,-0.0034403833182821,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,OBEROIRLTY,-0.0530667069281813,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,CGPOWER,0.0134797757649079,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,CAMS,-0.0408274082784769,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,CHOLAFIN,-0.0240120927826171,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,SOLARINDS,-0.0404757701330931,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,RECLTD,0.032568893618025,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,IDEA,-0.1186007683782405,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,HAL,-0.0329806141204961,True,LONG: roe >= 0.1176 AND vol20_60 >= 0.971 AND maxabs5 >= 0.04797
+top10_pool,30,15,OFSS,-0.061672965071178,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.04797 AND own_rd >= -0.005389
+top10_pool,30,15,LTM,0.0242852251812911,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.04797 AND own_rd >= -0.005389
+top10_pool,30,15,INDHOTEL,-0.0226168697499759,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.04797 AND own_rd >= -0.005389
+top10_pool,30,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.04797 AND own_rd >= -0.005389
+top10_pool,30,15,DIXON,-0.1012317321737206,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.04797 AND own_rd >= -0.005389
+top10_pool,30,15,OBEROIRLTY,-0.0530667069281813,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.04797 AND own_rd >= -0.005389
+top10_pool,30,15,SUPREMEIND,-0.0854556653877933,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.04797 AND own_rd >= -0.005389
+top10_pool,30,15,CGPOWER,0.0134797757649079,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.04797 AND own_rd >= -0.005389
+top10_pool,30,15,CHOLAFIN,-0.0240120927826171,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.04797 AND own_rd >= -0.005389
+top10_pool,30,15,RECLTD,0.032568893618025,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.04797 AND own_rd >= -0.005389
+top10_pool,30,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.04797 AND own_rd >= -0.005389
+top10_pool,30,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.04797 AND own_rd >= -0.005389
+top10_pool,30,15,HAL,-0.0329806141204961,True,LONG: roe >= 0.1176 AND maxabs5 >= 0.04797 AND own_rd >= -0.005389
+top10_pool,30,15,DMART,-0.0907729860284294,True,LONG: roe >= 0.1176 AND d2 <= 0.01287 AND maxabs5 >= 0.04797
+top10_pool,30,15,OFSS,-0.061672965071178,True,LONG: roe >= 0.1176 AND d2 <= 0.01287 AND maxabs5 >= 0.04797
+top10_pool,30,15,INDHOTEL,-0.0226168697499759,True,LONG: roe >= 0.1176 AND d2 <= 0.01287 AND maxabs5 >= 0.04797
+top10_pool,30,15,OBEROIRLTY,-0.0530667069281813,True,LONG: roe >= 0.1176 AND d2 <= 0.01287 AND maxabs5 >= 0.04797
+top10_pool,30,15,CGPOWER,0.0134797757649079,True,LONG: roe >= 0.1176 AND d2 <= 0.01287 AND maxabs5 >= 0.04797
+top10_pool,30,15,CHOLAFIN,-0.0240120927826171,True,LONG: roe >= 0.1176 AND d2 <= 0.01287 AND maxabs5 >= 0.04797
+top10_pool,30,15,RECLTD,0.032568893618025,True,LONG: roe >= 0.1176 AND d2 <= 0.01287 AND maxabs5 >= 0.04797
+top10_pool,30,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.1176 AND d2 <= 0.01287 AND maxabs5 >= 0.04797
+top10_pool,30,15,HAL,-0.0329806141204961,True,LONG: roe >= 0.1176 AND d2 <= 0.01287 AND maxabs5 >= 0.04797
+top10_pool,30,15,DMART,-0.0907729860284294,True,LONG: roe >= 0.09205 AND vol20_60 >= 1.096 AND maxabs5 >= 0.04797
+top10_pool,30,15,LTM,0.0242852251812911,True,LONG: roe >= 0.09205 AND vol20_60 >= 1.096 AND maxabs5 >= 0.04797
+top10_pool,30,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.09205 AND vol20_60 >= 1.096 AND maxabs5 >= 0.04797
+top10_pool,30,15,LTF,0.0260609295665621,True,LONG: roe >= 0.09205 AND vol20_60 >= 1.096 AND maxabs5 >= 0.04797
+top10_pool,30,15,CGPOWER,0.0134797757649079,True,LONG: roe >= 0.09205 AND vol20_60 >= 1.096 AND maxabs5 >= 0.04797
+top10_pool,30,15,CAMS,-0.0408274082784769,True,LONG: roe >= 0.09205 AND vol20_60 >= 1.096 AND maxabs5 >= 0.04797
+top10_pool,30,15,CHOLAFIN,-0.0240120927826171,True,LONG: roe >= 0.09205 AND vol20_60 >= 1.096 AND maxabs5 >= 0.04797
+top10_pool,30,15,SOLARINDS,-0.0404757701330931,True,LONG: roe >= 0.09205 AND vol20_60 >= 1.096 AND maxabs5 >= 0.04797
+top10_pool,30,15,RECLTD,0.032568893618025,True,LONG: roe >= 0.09205 AND vol20_60 >= 1.096 AND maxabs5 >= 0.04797
+top10_pool,30,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.09205 AND vol20_60 >= 1.096 AND maxabs5 >= 0.04797
+top10_pool,30,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.09205 AND vol20_60 >= 1.096 AND maxabs5 >= 0.04797
+top10_pool,30,15,IDEA,-0.1186007683782405,True,LONG: roe >= 0.09205 AND vol20_60 >= 1.096 AND maxabs5 >= 0.04797
+top10_pool,30,15,HAL,-0.0329806141204961,True,LONG: roe >= 0.09205 AND vol20_60 >= 1.096 AND maxabs5 >= 0.04797
+top10_pool,30,15,MOTHERSON,-0.0298103310652173,True,LONG: roe >= 0.09205 AND vol20_60 >= 1.096 AND maxabs5 >= 0.04797
+top10_pool,30,15,DMART,-0.0907729860284294,True,LONG: roe >= 0.07901 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,OFSS,-0.061672965071178,True,LONG: roe >= 0.07901 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,INDHOTEL,-0.0226168697499759,True,LONG: roe >= 0.07901 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,OBEROIRLTY,-0.0530667069281813,True,LONG: roe >= 0.07901 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,LODHA,0.0444513651320068,True,LONG: roe >= 0.07901 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,CGPOWER,0.0134797757649079,True,LONG: roe >= 0.07901 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,CHOLAFIN,-0.0240120927826171,True,LONG: roe >= 0.07901 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,RECLTD,0.032568893618025,True,LONG: roe >= 0.07901 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.07901 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,HAL,-0.0329806141204961,True,LONG: roe >= 0.07901 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,PFC,-0.0289896193946069,True,LONG: roe >= 0.07901 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,MOTHERSON,-0.0298103310652173,True,LONG: roe >= 0.07901 AND d2 <= 0.008049 AND maxabs5 >= 0.04797
+top10_pool,30,15,ANGELONE,-0.1005406875277945,True,LONG: vs_sector_1w <= -0.0303 AND past_pct_up >= 0.5385 AND maxabs5 >= 0.03824
+top10_pool,30,15,KALYANKJIL,0.1480940309520386,True,LONG: vs_sector_1w <= -0.0303 AND past_pct_up >= 0.5385 AND maxabs5 >= 0.03824
+top10_pool,30,15,CUMMINSIND,0.095331096025369,True,LONG: vs_sector_1w <= -0.0303 AND past_pct_up >= 0.5385 AND maxabs5 >= 0.03824
+top10_pool,30,15,RECLTD,0.032568893618025,True,LONG: vs_sector_1w <= -0.0303 AND past_pct_up >= 0.5385 AND maxabs5 >= 0.03824
+top10_pool,30,15,DMART,-0.0907729860284294,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.163 AND maxabs5 >= 0.04797
+top10_pool,30,15,LTM,0.0242852251812911,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.163 AND maxabs5 >= 0.04797
+top10_pool,30,15,INDHOTEL,-0.0226168697499759,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.163 AND maxabs5 >= 0.04797
+top10_pool,30,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.163 AND maxabs5 >= 0.04797
+top10_pool,30,15,IRFC,-0.0034403833182821,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.163 AND maxabs5 >= 0.04797
+top10_pool,30,15,OBEROIRLTY,-0.0530667069281813,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.163 AND maxabs5 >= 0.04797
+top10_pool,30,15,CGPOWER,0.0134797757649079,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.163 AND maxabs5 >= 0.04797
+top10_pool,30,15,CAMS,-0.0408274082784769,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.163 AND maxabs5 >= 0.04797
+top10_pool,30,15,CHOLAFIN,-0.0240120927826171,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.163 AND maxabs5 >= 0.04797
+top10_pool,30,15,SOLARINDS,-0.0404757701330931,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.163 AND maxabs5 >= 0.04797
+top10_pool,30,15,RECLTD,0.032568893618025,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.163 AND maxabs5 >= 0.04797
+top10_pool,30,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.163 AND maxabs5 >= 0.04797
+top10_pool,30,15,OIL,-0.0617841824644489,True,LONG: roe >= 0.1176 AND vol5_60 >= 1.163 AND maxabs5 >= 0.04797
+top10_pool,30,15,DMART,-0.0907729860284294,True,LONG: roe <= 0.397 AND days_after_quarter_end <= 39 AND maxabs5 >= 0.05841
+top10_pool,30,15,INDHOTEL,-0.0226168697499759,True,LONG: roe <= 0.397 AND days_after_quarter_end <= 39 AND maxabs5 >= 0.05841
+top10_pool,30,15,APLAPOLLO,0.0227796844642435,True,LONG: roe <= 0.397 AND days_after_quarter_end <= 39 AND maxabs5 >= 0.05841
+top10_pool,30,15,ETERNAL,-0.1129599035749141,True,LONG: roe <= 0.397 AND days_after_quarter_end <= 39 AND maxabs5 >= 0.05841
+top10_pool,30,15,LTF,0.0260609295665621,True,LONG: roe <= 0.397 AND days_after_quarter_end <= 39 AND maxabs5 >= 0.05841
+top10_pool,30,15,PAYTM,-0.0452666547035277,True,LONG: roe <= 0.397 AND days_after_quarter_end <= 39 AND maxabs5 >= 0.05841
+top10_pool,30,15,LODHA,0.0444513651320068,True,LONG: roe <= 0.397 AND days_after_quarter_end <= 39 AND maxabs5 >= 0.05841
+top10_pool,30,15,PRESTIGE,0.0681539240907749,True,LONG: roe <= 0.397 AND days_after_quarter_end <= 39 AND maxabs5 >= 0.05841
+top10_pool,30,15,TRENT,-0.0486983651886482,True,LONG: roe <= 0.397 AND days_after_quarter_end <= 39 AND maxabs5 >= 0.05841
+top10_pool,30,15,NHPC,-0.0427338845170705,True,LONG: roe <= 0.397 AND days_after_quarter_end <= 39 AND maxabs5 >= 0.05841
+top10_pool,30,15,OIL,-0.0617841824644489,True,LONG: roe <= 0.397 AND days_after_quarter_end <= 39 AND maxabs5 >= 0.05841
+top10_pool,30,15,OFSS,-0.061672965071178,True,LONG: roe >= 0.09205 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,30,15,APLAPOLLO,0.0227796844642435,True,LONG: roe >= 0.09205 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,30,15,OBEROIRLTY,-0.0530667069281813,True,LONG: roe >= 0.09205 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,30,15,SUPREMEIND,-0.0854556653877933,True,LONG: roe >= 0.09205 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,30,15,LODHA,0.0444513651320068,True,LONG: roe >= 0.09205 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,30,15,CGPOWER,0.0134797757649079,True,LONG: roe >= 0.09205 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,30,15,RECLTD,0.032568893618025,True,LONG: roe >= 0.09205 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,30,15,TRENT,-0.0486983651886482,True,LONG: roe >= 0.09205 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,30,15,IDEA,-0.1186007683782405,True,LONG: roe >= 0.09205 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,30,15,HAL,-0.0329806141204961,True,LONG: roe >= 0.09205 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,30,15,PFC,-0.0289896193946069,True,LONG: roe >= 0.09205 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+top10_pool,30,15,MOTHERSON,-0.0298103310652173,True,LONG: roe >= 0.09205 AND iv_vs_realised >= 0.9987 AND maxabs5 >= 0.04797
+best_upto2,10,16,IDFCFIRSTB,-0.0103855890053971,True,LONG: peers_reported_3d >= 0.06521 AND gap5 >= 0.02413
+best_upto2,10,16,IRFC,-0.0491700091892483,True,LONG: peers_reported_3d >= 0.06521 AND gap5 >= 0.02413
+best_upto2,10,16,CONCOR,-0.008028190809295,True,LONG: peers_reported_3d >= 0.06521 AND gap5 >= 0.02413
+best_1,10,16,TRENT,0.0068531237982375,True,LONG: industry == Miscellaneous
+best_1,10,16,KEI,0.0877512264462727,True,LONG: industry == Miscellaneous
+best_1,10,16,MAXHEALTH,-0.0211092987102767,True,LONG: industry == Miscellaneous
+best_1,10,16,APOLLOHOSP,-0.0058677575291847,True,LONG: industry == Miscellaneous
+top10_pool,10,16,RBLBANK,0.0841760383687946,True,LONG: vs_sector_3m >= -0.08707 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,IDFCFIRSTB,-0.0103855890053971,True,LONG: vs_sector_3m >= -0.08707 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,DMART,-0.0466129590310664,True,LONG: vs_sector_3m >= -0.08707 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,POLYCAB,0.0762369799235016,True,LONG: vs_sector_3m >= -0.08707 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,BHEL,0.0191689501763423,True,LONG: vs_sector_3m >= -0.08707 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,INDIGO,-0.0125870613714748,True,LONG: vs_sector_3m >= -0.08707 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,GMRAIRPORT,-0.0124624845021631,True,LONG: vs_sector_3m >= -0.08707 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,DLF,0.0615293070955036,True,LONG: intra0 >= 0.02752 AND gap5 >= 0.02131 AND nifty_d0 >= 0.008246
+top10_pool,10,16,RBLBANK,0.0841760383687946,True,LONG: r1m >= -0.05841 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,IDFCFIRSTB,-0.0103855890053971,True,LONG: r1m >= -0.05841 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,DMART,-0.0466129590310664,True,LONG: r1m >= -0.05841 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,POLYCAB,0.0762369799235016,True,LONG: r1m >= -0.05841 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,BHEL,0.0191689501763423,True,LONG: r1m >= -0.05841 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,INDIGO,-0.0125870613714748,True,LONG: r1m >= -0.05841 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,GMRAIRPORT,-0.0124624845021631,True,LONG: r1m >= -0.05841 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,RBLBANK,0.0841760383687946,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND up10 >= 0.4
+top10_pool,10,16,IDFCFIRSTB,-0.0103855890053971,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND up10 >= 0.4
+top10_pool,10,16,DMART,-0.0466129590310664,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND up10 >= 0.4
+top10_pool,10,16,POLYCAB,0.0762369799235016,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND up10 >= 0.4
+top10_pool,10,16,BHEL,0.0191689501763423,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND up10 >= 0.4
+top10_pool,10,16,INDIGO,-0.0125870613714748,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND up10 >= 0.4
+top10_pool,10,16,GMRAIRPORT,-0.0124624845021631,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND up10 >= 0.4
+top10_pool,10,16,RBLBANK,0.0841760383687946,True,LONG: vs_ma50 >= -0.006356 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,IDFCFIRSTB,-0.0103855890053971,True,LONG: vs_ma50 >= -0.006356 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,DMART,-0.0466129590310664,True,LONG: vs_ma50 >= -0.006356 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,POLYCAB,0.0762369799235016,True,LONG: vs_ma50 >= -0.006356 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,BHEL,0.0191689501763423,True,LONG: vs_ma50 >= -0.006356 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,INDIGO,-0.0125870613714748,True,LONG: vs_ma50 >= -0.006356 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,GMRAIRPORT,-0.0124624845021631,True,LONG: vs_ma50 >= -0.006356 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,RBLBANK,0.0841760383687946,True,LONG: vs_ma50 >= -0.02421 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,IDFCFIRSTB,-0.0103855890053971,True,LONG: vs_ma50 >= -0.02421 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,DMART,-0.0466129590310664,True,LONG: vs_ma50 >= -0.02421 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,POLYCAB,0.0762369799235016,True,LONG: vs_ma50 >= -0.02421 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,BHEL,0.0191689501763423,True,LONG: vs_ma50 >= -0.02421 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,INDIGO,-0.0125870613714748,True,LONG: vs_ma50 >= -0.02421 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,GMRAIRPORT,-0.0124624845021631,True,LONG: vs_ma50 >= -0.02421 AND days_since_dividend >= 225 AND peers_reported_3d >= 0.06521
+top10_pool,10,16,RBLBANK,0.0841760383687946,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND r20d >= -0.05738
+top10_pool,10,16,IDFCFIRSTB,-0.0103855890053971,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND r20d >= -0.05738
+top10_pool,10,16,DMART,-0.0466129590310664,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND r20d >= -0.05738
+top10_pool,10,16,POLYCAB,0.0762369799235016,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND r20d >= -0.05738
+top10_pool,10,16,BHEL,0.0191689501763423,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND r20d >= -0.05738
+top10_pool,10,16,INDIGO,-0.0125870613714748,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND r20d >= -0.05738
+top10_pool,10,16,GMRAIRPORT,-0.0124624845021631,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND r20d >= -0.05738
+top10_pool,10,16,RBLBANK,0.0841760383687946,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND r20d >= -0.07157
+top10_pool,10,16,IDFCFIRSTB,-0.0103855890053971,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND r20d >= -0.07157
+top10_pool,10,16,DMART,-0.0466129590310664,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND r20d >= -0.07157
+top10_pool,10,16,POLYCAB,0.0762369799235016,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND r20d >= -0.07157
+top10_pool,10,16,BHEL,0.0191689501763423,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND r20d >= -0.07157
+top10_pool,10,16,INDIGO,-0.0125870613714748,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND r20d >= -0.07157
+top10_pool,10,16,GMRAIRPORT,-0.0124624845021631,True,LONG: days_since_dividend >= 225 AND peers_reported_3d >= 0.06521 AND r20d >= -0.07157
+top10_pool,10,16,RBLBANK,0.0841760383687946,True,LONG: days_since_dividend >= 182 AND peers_reported_3d >= 0.06521 AND gap0 >= 0.00484
+top10_pool,10,16,DMART,-0.0466129590310664,True,LONG: days_since_dividend >= 182 AND peers_reported_3d >= 0.06521 AND gap0 >= 0.00484
+top10_pool,10,16,BHEL,0.0191689501763423,True,LONG: days_since_dividend >= 182 AND peers_reported_3d >= 0.06521 AND gap0 >= 0.00484
+best_all,20,16,IEX,0.0042498971202958,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+best_all,20,16,LODHA,-0.0048958548109849,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+best_all,20,16,BSE,0.0562534359379929,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+best_all,20,16,GODREJCP,-0.0077743679756283,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+best_all,20,16,MFSL,0.0545963605770128,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+best_all,20,16,HAL,0.0929336046554405,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+best_all,20,16,SOLARINDS,0.0135399888969053,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+best_all,20,16,ASHOKLEY,-0.0191915697871678,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+best_all,20,16,BOSCHLTD,-0.0152709759360791,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+best_all,20,16,BAJAJ-AUTO,-0.03997981740273,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+best_all,20,16,NBCC,0.0722879019448075,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+best_1,20,16,TRENT,0.0068531237982375,True,LONG: industry == Miscellaneous
+best_1,20,16,KEI,0.0877512264462727,True,LONG: industry == Miscellaneous
+best_1,20,16,MAXHEALTH,-0.0211092987102767,True,LONG: industry == Miscellaneous
+best_1,20,16,APOLLOHOSP,-0.0058677575291847,True,LONG: industry == Miscellaneous
+top10_pool,20,16,IEX,0.0042498971202958,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+top10_pool,20,16,LODHA,-0.0048958548109849,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+top10_pool,20,16,BSE,0.0562534359379929,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+top10_pool,20,16,GODREJCP,-0.0077743679756283,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+top10_pool,20,16,MFSL,0.0545963605770128,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+top10_pool,20,16,HAL,0.0929336046554405,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+top10_pool,20,16,SOLARINDS,0.0135399888969053,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+top10_pool,20,16,ASHOKLEY,-0.0191915697871678,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+top10_pool,20,16,BOSCHLTD,-0.0152709759360791,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+top10_pool,20,16,BAJAJ-AUTO,-0.03997981740273,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+top10_pool,20,16,NBCC,0.0722879019448075,True,LONG: vs_ma50 >= 0.1059 AND pb >= 6.246 AND own_abs3d <= 0.04488
+top10_pool,20,16,TVSMOTOR,-0.0252179544232785,True,LONG: vs_ma50 >= 0.1059 AND prev_sales_yoy <= 0.1401 AND pb >= 6.246
+top10_pool,20,16,GODREJCP,-0.0077743679756283,True,LONG: vs_ma50 >= 0.1059 AND prev_sales_yoy <= 0.1401 AND pb >= 6.246
+top10_pool,20,16,MFSL,0.0545963605770128,True,LONG: vs_ma50 >= 0.1059 AND prev_sales_yoy <= 0.1401 AND pb >= 6.246
+top10_pool,20,16,ASHOKLEY,-0.0191915697871678,True,LONG: vs_ma50 >= 0.1059 AND prev_sales_yoy <= 0.1401 AND pb >= 6.246
+top10_pool,20,16,BOSCHLTD,-0.0152709759360791,True,LONG: vs_ma50 >= 0.1059 AND prev_sales_yoy <= 0.1401 AND pb >= 6.246
+top10_pool,20,16,BAJAJ-AUTO,-0.03997981740273,True,LONG: vs_ma50 >= 0.1059 AND prev_sales_yoy <= 0.1401 AND pb >= 6.246
+top10_pool,20,16,IREDA,-0.1562496565821338,True,SHORT: iv_t5 >= 0.4297 AND exs_3d <= 0.01877 AND own_abs3d >= 0.06927
+top10_pool,20,16,TRENT,-0.0068531237982375,True,SHORT: iv_t5 >= 0.4297 AND exs_3d <= 0.01877 AND own_abs3d >= 0.06927
+top10_pool,20,16,ETERNAL,-0.0376579232175957,True,SHORT: iv_t5 >= 0.4297 AND exs_3d <= 0.01877 AND own_abs3d >= 0.06927
+top10_pool,20,16,TCS,-0.0135586658192123,True,LONG: r6m <= -0.1698 AND dist_60h <= -0.1646 AND z5 <= -1.273
+top10_pool,20,16,INFY,0.0176736785903496,True,LONG: vs_ma200 <= -0.1649 AND vs_nifty_1w <= -0.02672 AND exn_10d <= -0.05904
+top10_pool,20,16,HCLTECH,0.1062808528434128,True,LONG: vs_ma200 <= -0.1649 AND vs_nifty_1w <= -0.02672 AND exn_10d <= -0.05904
+top10_pool,20,16,LTM,0.0547776510014609,True,LONG: vs_ma200 <= -0.1649 AND vs_nifty_1w <= -0.02672 AND exn_10d <= -0.05904
+top10_pool,20,16,KALYANKJIL,0.0342315128224824,True,LONG: vs_ma200 <= -0.1649 AND vs_nifty_1w <= -0.02672 AND exn_10d <= -0.05904
+top10_pool,20,16,RECLTD,-0.0504653957620653,True,LONG: vs_ma200 <= -0.1649 AND vs_nifty_1w <= -0.02672 AND exn_10d <= -0.05904
+top10_pool,20,16,ABB,0.035484036836235,True,LONG: vs_ma200 <= -0.1649 AND vs_nifty_1w <= -0.02672 AND exn_10d <= -0.05904
+top10_pool,20,16,TCS,-0.0135586658192123,True,LONG: r6m <= -0.07838 AND vs_ma50 <= -0.1001 AND z5 <= -1.273
+top10_pool,20,16,WIPRO,-0.0107222203918806,True,LONG: r6m <= -0.07838 AND vs_ma50 <= -0.1001 AND z5 <= -1.273
+top10_pool,20,16,PNBHOUSING,-0.0229151766586724,True,SHORT: vs_ma50 >= 0.1385 AND log_mcap <= 11.29 AND iv_t5 >= 0.4297
+top10_pool,20,16,DELHIVERY,-0.0851835899742069,True,SHORT: vs_ma50 >= 0.1385 AND log_mcap <= 11.29 AND iv_t5 >= 0.4297
+top10_pool,20,16,NBCC,-0.0722879019448075,True,SHORT: vs_ma50 >= 0.1385 AND log_mcap <= 11.29 AND iv_t5 >= 0.4297
+top10_pool,20,16,INOXWIND,0.0433504670477012,True,SHORT: vs_ma50 >= 0.1385 AND log_mcap <= 11.29 AND iv_t5 >= 0.4297
+top10_pool,20,16,YESBANK,-0.0457573774398177,True,SHORT: india_vix <= 17.43 AND iv_t5 >= 0.4544 AND r10d >= 0.05805
+top10_pool,20,16,ADANIGREEN,0.0467971701062649,True,SHORT: india_vix <= 17.43 AND iv_t5 >= 0.4544 AND r10d >= 0.05805
+top10_pool,20,16,KPITTECH,-0.0417418176724979,True,SHORT: india_vix <= 17.43 AND iv_t5 >= 0.4544 AND r10d >= 0.05805
+top10_pool,20,16,TRENT,-0.0068531237982375,True,SHORT: india_vix <= 17.43 AND iv_t5 >= 0.4544 AND r10d >= 0.05805
+top10_pool,20,16,PHOENIXLTD,0.0582231166711308,True,SHORT: india_vix <= 17.43 AND iv_t5 >= 0.4544 AND r10d >= 0.05805
+top10_pool,20,16,SONACOMS,-0.0728211149424022,True,SHORT: india_vix <= 17.43 AND iv_t5 >= 0.4544 AND r10d >= 0.05805
+top10_pool,20,16,ETERNAL,-0.0376579232175957,True,SHORT: india_vix <= 17.43 AND iv_t5 >= 0.4544 AND r10d >= 0.05805
+top10_pool,20,16,RECLTD,-0.0504653957620653,True,LONG: r6m <= -0.07838 AND vs_nifty_1m <= -0.05518 AND pre5_vs_own <= -0.08113
+best_all,30,16,TCS,-0.0135586658192123,True,LONG: r6m <= -0.1211 AND vs_nifty_1w <= -0.04113 AND dist_60h <= -0.1646
+best_upto2,30,16,CHOLAFIN,0.0263728081751397,True,SHORT: nifty_1w >= 0.02441 AND intra0 <= -0.01516
+best_upto2,30,16,KPITTECH,-0.0417418176724979,True,SHORT: nifty_1w >= 0.02441 AND intra0 <= -0.01516
+best_upto2,30,16,OBEROIRLTY,0.0337089414251419,True,SHORT: nifty_1w >= 0.02441 AND intra0 <= -0.01516
+best_upto2,30,16,MAXHEALTH,0.0211092987102767,True,SHORT: nifty_1w >= 0.02441 AND intra0 <= -0.01516
+best_1,30,16,TRENT,0.0068531237982375,True,LONG: industry == Miscellaneous
+best_1,30,16,KEI,0.0877512264462727,True,LONG: industry == Miscellaneous
+best_1,30,16,MAXHEALTH,-0.0211092987102767,True,LONG: industry == Miscellaneous
+best_1,30,16,APOLLOHOSP,-0.0058677575291847,True,LONG: industry == Miscellaneous
+top10_pool,30,16,TCS,-0.0135586658192123,True,LONG: r6m <= -0.1211 AND vs_nifty_1w <= -0.04113 AND dist_60h <= -0.1646
+top10_pool,30,16,PNBHOUSING,-0.0229151766586724,True,SHORT: iv_t5 >= 0.4116 AND gap5 >= 0.005932 AND sector_index == Nifty Financial Services
+top10_pool,30,16,CAMS,0.0778625083428729,True,SHORT: iv_t5 >= 0.4116 AND gap5 >= 0.005932 AND sector_index == Nifty Financial Services
+top10_pool,30,16,BSE,-0.0562534359379929,True,SHORT: iv_t5 >= 0.4116 AND gap5 >= 0.005932 AND sector_index == Nifty Financial Services
+top10_pool,30,16,PNBHOUSING,-0.0229151766586724,True,SHORT: iv_t5 >= 0.4116 AND exn_3d <= 0.01176 AND sector_index == Nifty Financial Services
+top10_pool,30,16,CDSL,0.0454340958633222,True,SHORT: iv_t5 >= 0.4116 AND exn_3d <= 0.01176 AND sector_index == Nifty Financial Services
+top10_pool,30,16,CAMS,0.0778625083428729,True,SHORT: iv_t5 >= 0.4116 AND exn_3d <= 0.01176 AND sector_index == Nifty Financial Services
+top10_pool,30,16,BSE,-0.0562534359379929,True,SHORT: iv_t5 >= 0.4116 AND exn_3d <= 0.01176 AND sector_index == Nifty Financial Services
+top10_pool,30,16,ANGELONE,-0.0398579336176012,True,SHORT: prev1_next20 <= 0.1164 AND iv_t5 >= 0.4116 AND sector_index == Nifty Financial Services
+top10_pool,30,16,HDFCAMC,-0.0778832105115998,True,SHORT: prev1_next20 <= 0.1164 AND iv_t5 >= 0.4116 AND sector_index == Nifty Financial Services
+top10_pool,30,16,JIOFIN,-0.0324798752743148,True,SHORT: prev1_next20 <= 0.1164 AND iv_t5 >= 0.4116 AND sector_index == Nifty Financial Services
+top10_pool,30,16,PNBHOUSING,-0.0229151766586724,True,SHORT: prev1_next20 <= 0.1164 AND iv_t5 >= 0.4116 AND sector_index == Nifty Financial Services
+top10_pool,30,16,CDSL,0.0454340958633222,True,SHORT: prev1_next20 <= 0.1164 AND iv_t5 >= 0.4116 AND sector_index == Nifty Financial Services
+top10_pool,30,16,CAMS,0.0778625083428729,True,SHORT: prev1_next20 <= 0.1164 AND iv_t5 >= 0.4116 AND sector_index == Nifty Financial Services
+top10_pool,30,16,BSE,-0.0562534359379929,True,SHORT: prev1_next20 <= 0.1164 AND iv_t5 >= 0.4116 AND sector_index == Nifty Financial Services
+top10_pool,30,16,ABCAPITAL,-0.1264706308029867,True,SHORT: prev1_next20 <= 0.1164 AND iv_t5 >= 0.4116 AND sector_index == Nifty Financial Services
+top10_pool,30,16,LICHSGFIN,-0.0299339739991293,True,SHORT: prev1_next20 <= 0.1164 AND iv_t5 >= 0.4116 AND sector_index == Nifty Financial Services
+top10_pool,30,16,PNBHOUSING,-0.0229151766586724,True,SHORT: iv_t5 >= 0.4116 AND gap5 >= 0.002549 AND sector_index == Nifty Financial Services
+top10_pool,30,16,CDSL,0.0454340958633222,True,SHORT: iv_t5 >= 0.4116 AND gap5 >= 0.002549 AND sector_index == Nifty Financial Services
+top10_pool,30,16,CAMS,0.0778625083428729,True,SHORT: iv_t5 >= 0.4116 AND gap5 >= 0.002549 AND sector_index == Nifty Financial Services
+top10_pool,30,16,BSE,-0.0562534359379929,True,SHORT: iv_t5 >= 0.4116 AND gap5 >= 0.002549 AND sector_index == Nifty Financial Services
+top10_pool,30,16,TCS,-0.0135586658192123,True,LONG: r1w <= -0.0494 AND r6m <= -0.1211 AND dist_60h <= -0.1646
+top10_pool,30,16,IREDA,0.1562496565821338,True,LONG: r1w <= -0.0494 AND r6m <= -0.1211 AND dist_60h <= -0.1646
+top10_pool,30,16,ANGELONE,-0.0398579336176012,True,SHORT: prev1_3d <= 0.02215 AND iv_t5 >= 0.4116 AND sector_index == Nifty Financial Services
+top10_pool,30,16,JIOFIN,-0.0324798752743148,True,SHORT: prev1_3d <= 0.02215 AND iv_t5 >= 0.4116 AND sector_index == Nifty Financial Services
+top10_pool,30,16,PNBHOUSING,-0.0229151766586724,True,SHORT: prev1_3d <= 0.02215 AND iv_t5 >= 0.4116 AND sector_index == Nifty Financial Services
+top10_pool,30,16,CDSL,0.0454340958633222,True,SHORT: prev1_3d <= 0.02215 AND iv_t5 >= 0.4116 AND sector_index == Nifty Financial Services
+top10_pool,30,16,CAMS,0.0778625083428729,True,SHORT: prev1_3d <= 0.02215 AND iv_t5 >= 0.4116 AND sector_index == Nifty Financial Services
+top10_pool,30,16,ABCAPITAL,-0.1264706308029867,True,SHORT: prev1_3d <= 0.02215 AND iv_t5 >= 0.4116 AND sector_index == Nifty Financial Services
+top10_pool,30,16,LICHSGFIN,-0.0299339739991293,True,SHORT: prev1_3d <= 0.02215 AND iv_t5 >= 0.4116 AND sector_index == Nifty Financial Services
+top10_pool,30,16,CHOLAFIN,0.0263728081751397,True,SHORT: vol60 >= 0.202 AND nifty_1w >= 0.02441 AND intra0 <= -0.01516
+top10_pool,30,16,KPITTECH,-0.0417418176724979,True,SHORT: vol60 >= 0.202 AND nifty_1w >= 0.02441 AND intra0 <= -0.01516
+top10_pool,30,16,OBEROIRLTY,0.0337089414251419,True,SHORT: vol60 >= 0.202 AND nifty_1w >= 0.02441 AND intra0 <= -0.01516
+top10_pool,30,16,MAXHEALTH,0.0211092987102767,True,SHORT: vol60 >= 0.202 AND nifty_1w >= 0.02441 AND intra0 <= -0.01516
+top10_pool,30,16,CHOLAFIN,0.0263728081751397,True,SHORT: vol60 >= 0.2134 AND nifty_1w >= 0.02441 AND intra0 <= -0.01516
+top10_pool,30,16,KPITTECH,-0.0417418176724979,True,SHORT: vol60 >= 0.2134 AND nifty_1w >= 0.02441 AND intra0 <= -0.01516
+top10_pool,30,16,OBEROIRLTY,0.0337089414251419,True,SHORT: vol60 >= 0.2134 AND nifty_1w >= 0.02441 AND intra0 <= -0.01516
+top10_pool,30,16,MAXHEALTH,0.0211092987102767,True,SHORT: vol60 >= 0.2134 AND nifty_1w >= 0.02441 AND intra0 <= -0.01516
+best_all,10,17,BHARATFORG,-0.0130515398747194,True,LONG: intra0 >= 0.02752 AND sec_d0 >= 0.01276 AND own_rd >= 0.004174
+best_1,10,17,KEI,0.0105914737037924,True,LONG: industry == Miscellaneous
+best_1,10,17,FORTIS,0.0258502901724231,True,LONG: industry == Miscellaneous
+best_1,10,17,TRENT,0.0104898577308724,True,LONG: industry == Miscellaneous
+best_1,10,17,APOLLOHOSP,0.1005753733250567,True,LONG: industry == Miscellaneous
+best_1,10,17,MAXHEALTH,-0.0336000361456774,True,LONG: industry == Miscellaneous
+top10_pool,10,17,BHARATFORG,-0.0130515398747194,True,LONG: intra0 >= 0.02752 AND sec_d0 >= 0.01276 AND own_rd >= 0.004174
+top10_pool,10,17,SONACOMS,-0.0049825616735609,True,LONG: vs_ma50 <= -0.07261 AND gap5 <= -0.01948 AND vol5_60 <= 0.9575
+top10_pool,10,17,SOLARINDS,-0.0306944015401452,True,LONG: vs_nifty_3m >= 0.07202 AND roe >= 0.1822 AND vol5_60 >= 1.48
+top10_pool,10,17,ANGELONE,0.0227851688512934,True,LONG: past_avg_3d >= 0.02526 AND exs_3d >= -0.02412 AND pre5_vs_own <= -0.06005
+top10_pool,10,17,POLICYBZR,-0.0048384985938033,True,LONG: past_avg_3d >= 0.02526 AND exs_3d >= -0.02412 AND pre5_vs_own <= -0.06005
+top10_pool,10,17,BOSCHLTD,0.0054263436973518,True,LONG: vs_nifty_1m >= 0.1334 AND pe <= 65.54 AND pb >= 6.303
+best_1,20,17,KEI,0.0105914737037924,True,LONG: industry == Miscellaneous
+best_1,20,17,FORTIS,0.0258502901724231,True,LONG: industry == Miscellaneous
+best_1,20,17,TRENT,0.0104898577308724,True,LONG: industry == Miscellaneous
+best_1,20,17,APOLLOHOSP,0.1005753733250567,True,LONG: industry == Miscellaneous
+best_1,20,17,MAXHEALTH,-0.0336000361456774,True,LONG: industry == Miscellaneous
+top10_pool,20,17,SONACOMS,-0.0049825616735609,True,LONG: vs_ma200 <= -0.1719 AND peers_reported_n <= 1 AND r3d <= -0.03001
+best_all,30,17,COFORGE,0.0264597231543429,True,LONG: nifty_1m <= 0.008754 AND own_rd >= 0.007107 AND pre5_vs_own <= -0.06005
+best_all,30,17,MAZDOCK,-0.0830434453520357,True,LONG: nifty_1m <= 0.008754 AND own_rd >= 0.007107 AND pre5_vs_own <= -0.06005
+best_all,30,17,PGEL,-0.3616289696702621,True,LONG: nifty_1m <= 0.008754 AND own_rd >= 0.007107 AND pre5_vs_own <= -0.06005
+best_all,30,17,PIIND,-0.0377759179000262,True,LONG: nifty_1m <= 0.008754 AND own_rd >= 0.007107 AND pre5_vs_own <= -0.06005
+best_1,30,17,KEI,0.0105914737037924,True,LONG: industry == Miscellaneous
+best_1,30,17,FORTIS,0.0258502901724231,True,LONG: industry == Miscellaneous
+best_1,30,17,TRENT,0.0104898577308724,True,LONG: industry == Miscellaneous
+best_1,30,17,APOLLOHOSP,0.1005753733250567,True,LONG: industry == Miscellaneous
+best_1,30,17,MAXHEALTH,-0.0336000361456774,True,LONG: industry == Miscellaneous
+top10_pool,30,17,COFORGE,0.0264597231543429,True,LONG: nifty_1m <= 0.008754 AND own_rd >= 0.007107 AND pre5_vs_own <= -0.06005
+top10_pool,30,17,MAZDOCK,-0.0830434453520357,True,LONG: nifty_1m <= 0.008754 AND own_rd >= 0.007107 AND pre5_vs_own <= -0.06005
+top10_pool,30,17,PGEL,-0.3616289696702621,True,LONG: nifty_1m <= 0.008754 AND own_rd >= 0.007107 AND pre5_vs_own <= -0.06005
+top10_pool,30,17,PIIND,-0.0377759179000262,True,LONG: nifty_1m <= 0.008754 AND own_rd >= 0.007107 AND pre5_vs_own <= -0.06005
+top10_pool,30,17,WIPRO,0.0369744816359057,True,LONG: from_52w_high <= -0.1714 AND gap5 <= -0.01948 AND sec_d0 <= 0.005428
+top10_pool,30,17,SONACOMS,-0.0049825616735609,True,LONG: from_52w_high <= -0.1714 AND gap5 <= -0.01948 AND sec_d0 <= 0.005428
+top10_pool,30,17,CONCOR,-0.0323211828057976,True,LONG: from_52w_high <= -0.1714 AND gap5 <= -0.01948 AND sec_d0 <= 0.005428
+top10_pool,30,17,LUPIN,-0.0082359311252713,True,LONG: from_52w_high <= -0.1714 AND gap5 <= -0.01948 AND sec_d0 <= 0.005428
+top10_pool,30,17,KALYANKJIL,-0.1214167531374503,True,LONG: from_52w_high <= -0.1714 AND gap5 <= -0.01948 AND sec_d0 <= 0.005428
+top10_pool,30,17,PGEL,-0.3616289696702621,True,LONG: from_52w_high <= -0.1714 AND gap5 <= -0.01948 AND sec_d0 <= 0.005428
+top10_pool,30,17,VOLTAS,-0.0528396767024439,True,LONG: from_52w_high <= -0.1714 AND gap5 <= -0.01948 AND sec_d0 <= 0.005428
+top10_pool,30,17,KPITTECH,0.0293928012780513,True,LONG: r6m <= -0.0874 AND iv_t5 >= 0.2877 AND r3d <= -0.05139
+top10_pool,30,17,LUPIN,-0.0082359311252713,True,LONG: r6m <= -0.0874 AND iv_t5 >= 0.2877 AND r3d <= -0.05139
+top10_pool,30,17,KPITTECH,0.0293928012780513,True,LONG: r6m <= -0.0874 AND iv_t5 >= 0.265 AND r3d <= -0.05139
+top10_pool,30,17,LUPIN,-0.0082359311252713,True,LONG: r6m <= -0.0874 AND iv_t5 >= 0.265 AND r3d <= -0.05139
+top10_pool,30,17,KPITTECH,0.0293928012780513,True,LONG: r6m <= -0.0874 AND vol60 >= 0.2817 AND r3d <= -0.05139
+top10_pool,30,17,SONACOMS,-0.0049825616735609,True,LONG: vs_ma200 <= -0.1719 AND past_pct_up >= 0.4 AND log_mcap <= 10.83
+top10_pool,30,17,INOXWIND,-0.0050319899030564,True,LONG: vs_ma200 <= -0.1719 AND past_pct_up >= 0.4 AND log_mcap <= 10.83
+top10_pool,30,17,KPITTECH,0.0293928012780513,True,LONG: r6m <= -0.0874 AND iv_t5 >= 0.252 AND r3d <= -0.05139
+top10_pool,30,17,LUPIN,-0.0082359311252713,True,LONG: r6m <= -0.0874 AND iv_t5 >= 0.252 AND r3d <= -0.05139
+top10_pool,30,17,KPITTECH,0.0293928012780513,True,LONG: r6m <= -0.0874 AND iv_t5 >= 0.2355 AND r3d <= -0.05139
+top10_pool,30,17,LUPIN,-0.0082359311252713,True,LONG: r6m <= -0.0874 AND iv_t5 >= 0.2355 AND r3d <= -0.05139
+top10_pool,30,17,KPITTECH,0.0293928012780513,True,LONG: r6m <= -0.0874 AND iv_t5 >= 0.3129 AND r3d <= -0.05139
+top10_pool,30,17,LUPIN,-0.0082359311252713,True,LONG: r6m <= -0.0874 AND iv_t5 >= 0.3129 AND r3d <= -0.05139
+best_1,10,18,KEI,-0.0309772990949603,True,LONG: industry == Miscellaneous
+best_1,10,18,APOLLOHOSP,-0.0234284197095512,True,LONG: industry == Miscellaneous
+best_1,10,18,TRENT,-0.0813557022360391,True,LONG: industry == Miscellaneous
+best_1,10,18,FORTIS,-0.0503396502760521,True,LONG: industry == Miscellaneous
+best_1,10,18,MAXHEALTH,0.0163414247808285,True,LONG: industry == Miscellaneous
+top10_pool,10,18,ANGELONE,-0.05947910323517,True,SHORT: r5y >= 0.8037 AND vs_nifty_1m >= 0.01695 AND log_mcap <= 9.998
+best_all,20,18,TRENT,0.0813557022360391,True,SHORT: pe >= 65.92 AND intra0 <= 0.005651 AND own_rd >= 0.01734
+best_1,20,18,KEI,-0.0309772990949603,True,LONG: industry == Miscellaneous
+best_1,20,18,APOLLOHOSP,-0.0234284197095512,True,LONG: industry == Miscellaneous
+best_1,20,18,TRENT,-0.0813557022360391,True,LONG: industry == Miscellaneous
+best_1,20,18,FORTIS,-0.0503396502760521,True,LONG: industry == Miscellaneous
+best_1,20,18,MAXHEALTH,0.0163414247808285,True,LONG: industry == Miscellaneous
+top10_pool,20,18,TRENT,0.0813557022360391,True,SHORT: pe >= 65.92 AND intra0 <= 0.005651 AND own_rd >= 0.01734
+top10_pool,20,18,TRENT,0.0813557022360391,True,SHORT: pe >= 65.92 AND intra0 <= 0.01127 AND own_rd >= 0.01734
+top10_pool,20,18,ANGELONE,-0.05947910323517,True,SHORT: vs_sector_1m >= -0.002964 AND india_vix <= 15.44 AND log_mcap <= 9.998
+top10_pool,20,18,RBLBANK,-0.0608934419509363,True,SHORT: vs_sector_1m >= -0.002964 AND india_vix <= 15.44 AND log_mcap <= 9.998
+top10_pool,20,18,KFINTECH,-0.0303469181670816,True,SHORT: vs_sector_1m >= -0.002964 AND india_vix <= 15.44 AND log_mcap <= 9.998
+top10_pool,20,18,IEX,0.0579242732498149,True,SHORT: vs_sector_1m >= -0.002964 AND india_vix <= 15.44 AND log_mcap <= 9.998
+top10_pool,20,18,TRENT,0.0813557022360391,True,SHORT: pe >= 65.92 AND exn_d0 <= 0.01095 AND own_rd >= 0.01734
+top10_pool,20,18,TRENT,0.0813557022360391,True,SHORT: pe >= 65.92 AND exn_d0 <= 0.01489 AND own_rd >= 0.01734
+best_all,30,18,ANGELONE,-0.05947910323517,True,SHORT: iv_t5 >= 0.3779 AND d2 >= 0.0127 AND own_abs3d >= 0.05909
+best_1,30,18,KEI,-0.0309772990949603,True,LONG: industry == Miscellaneous
+best_1,30,18,APOLLOHOSP,-0.0234284197095512,True,LONG: industry == Miscellaneous
+best_1,30,18,TRENT,-0.0813557022360391,True,LONG: industry == Miscellaneous
+best_1,30,18,FORTIS,-0.0503396502760521,True,LONG: industry == Miscellaneous
+best_1,30,18,MAXHEALTH,0.0163414247808285,True,LONG: industry == Miscellaneous
+top10_pool,30,18,ANGELONE,-0.05947910323517,True,SHORT: iv_t5 >= 0.3779 AND d2 >= 0.0127 AND own_abs3d >= 0.05909
+top10_pool,30,18,IDFCFIRSTB,-0.0694298258738159,True,SHORT: india_vix <= 16.42 AND intra0 <= -0.0189 AND sec_3d >= 0.005619
+top10_pool,30,18,COLPAL,0.0018286692839122,True,SHORT: india_vix <= 16.42 AND intra0 <= -0.0189 AND sec_3d >= 0.005619
+top10_pool,30,18,IOC,-0.0294046598705447,True,SHORT: india_vix <= 16.42 AND intra0 <= -0.0189 AND sec_3d >= 0.005619
+top10_pool,30,18,VOLTAS,-0.0358728835811293,True,SHORT: india_vix <= 16.42 AND intra0 <= -0.0189 AND sec_3d >= 0.005619
+top10_pool,30,18,MAXHEALTH,-0.0163414247808285,True,SHORT: india_vix <= 16.42 AND intra0 <= -0.0189 AND sec_3d >= 0.005619
+top10_pool,30,18,IEX,-0.0579242732498149,True,LONG: r6m <= -0.234 AND volume_5d_vs_60d >= 1.022 AND sec_vs_nifty_1w <= 0.0227
+top10_pool,30,18,IEX,-0.0579242732498149,True,LONG: r6m <= -0.234 AND volume_5d_vs_60d >= 1.022 AND days_since_dividend <= 311
+top10_pool,30,18,IEX,-0.0579242732498149,True,LONG: r6m <= -0.234 AND volume_5d_vs_60d >= 1.022 AND sec_rank_3m <= 0.7222
+best_all,10,19,NATIONALUM,-0.1263842745774305,True,LONG: r3y >= 3.36 AND roe >= 0.1595 AND gap0 >= 0.007063
+best_all,10,19,MAZDOCK,-0.0196594155367634,True,LONG: r3y >= 3.36 AND roe >= 0.1595 AND gap0 >= 0.007063
+best_all,10,19,SUZLON,-0.0221982522328376,True,LONG: r3y >= 3.36 AND roe >= 0.1595 AND gap0 >= 0.007063
+best_1,10,19,KEI,-0.1127088670718939,True,LONG: industry == Miscellaneous
+best_1,10,19,TRENT,0.1066171363770964,True,LONG: industry == Miscellaneous
+best_1,10,19,MAXHEALTH,0.0359297215171663,True,LONG: industry == Miscellaneous
+best_1,10,19,APOLLOHOSP,0.0491830968365933,True,LONG: industry == Miscellaneous
+best_1,10,19,FORTIS,-0.0032421213917692,True,LONG: industry == Miscellaneous
+top10_pool,10,19,NATIONALUM,-0.1263842745774305,True,LONG: r3y >= 3.36 AND roe >= 0.1595 AND gap0 >= 0.007063
+top10_pool,10,19,MAZDOCK,-0.0196594155367634,True,LONG: r3y >= 3.36 AND roe >= 0.1595 AND gap0 >= 0.007063
+top10_pool,10,19,SUZLON,-0.0221982522328376,True,LONG: r3y >= 3.36 AND roe >= 0.1595 AND gap0 >= 0.007063
+top10_pool,10,19,NATIONALUM,-0.1263842745774305,True,LONG: r3y >= 3.36 AND roe >= 0.1795 AND gap0 >= 0.007063
+top10_pool,10,19,MAZDOCK,-0.0196594155367634,True,LONG: r3y >= 3.36 AND roe >= 0.1795 AND gap0 >= 0.007063
+top10_pool,10,19,SUZLON,-0.0221982522328376,True,LONG: r3y >= 3.36 AND roe >= 0.1795 AND gap0 >= 0.007063
+top10_pool,10,19,BDL,0.1371145494175779,True,SHORT: vs_sector_1m >= -0.03069 AND intra0 <= -0.03169 AND sec_3d >= 0.005506
+top10_pool,10,19,NATIONALUM,-0.1263842745774305,True,LONG: r3y >= 3.36 AND roe >= 0.1375 AND gap0 >= 0.007063
+top10_pool,10,19,MAZDOCK,-0.0196594155367634,True,LONG: r3y >= 3.36 AND roe >= 0.1375 AND gap0 >= 0.007063
+top10_pool,10,19,POWERINDIA,0.1139665820333482,True,LONG: r3y >= 3.36 AND roe >= 0.1375 AND gap0 >= 0.007063
+top10_pool,10,19,SUZLON,-0.0221982522328376,True,LONG: r3y >= 3.36 AND roe >= 0.1375 AND gap0 >= 0.007063
+best_all,20,19,TRENT,-0.1066171363770964,True,SHORT: pe >= 66.34 AND intra0 <= 0.005933 AND own_rd >= 0.0172
+best_upto2,20,19,DLF,-0.0398112892564808,True,LONG: vs_ma200 <= -0.1645 AND r3d <= -0.05011
+best_upto2,20,19,LODHA,0.0558060456995435,True,LONG: vs_ma200 <= -0.1645 AND r3d <= -0.05011
+best_upto2,20,19,SWIGGY,-0.0057742044964493,True,LONG: vs_ma200 <= -0.1645 AND r3d <= -0.05011
+best_1,20,19,KEI,-0.1127088670718939,True,LONG: industry == Miscellaneous
+best_1,20,19,TRENT,0.1066171363770964,True,LONG: industry == Miscellaneous
+best_1,20,19,MAXHEALTH,0.0359297215171663,True,LONG: industry == Miscellaneous
+best_1,20,19,APOLLOHOSP,0.0491830968365933,True,LONG: industry == Miscellaneous
+best_1,20,19,FORTIS,-0.0032421213917692,True,LONG: industry == Miscellaneous
+top10_pool,20,19,TRENT,-0.1066171363770964,True,SHORT: pe >= 66.34 AND intra0 <= 0.005933 AND own_rd >= 0.0172
+top10_pool,20,19,TRENT,-0.1066171363770964,True,SHORT: pe >= 66.34 AND intra0 <= 0.01146 AND own_rd >= 0.0172
+top10_pool,20,19,PNB,-0.0217701797372186,True,LONG: season_so_far_3d >= -0.01533 AND exn_d0 >= 0.02708 AND own_rd >= 0.003993
+top10_pool,20,19,PGEL,0.0267713332314603,True,LONG: season_so_far_3d >= -0.01533 AND exn_d0 >= 0.02708 AND own_rd >= 0.003993
+top10_pool,20,19,TRENT,-0.1066171363770964,True,SHORT: pe >= 66.34 AND exn_d0 <= 0.01094 AND own_rd >= 0.0172
+top10_pool,20,19,TRENT,-0.1066171363770964,True,SHORT: pe >= 66.34 AND exn_d0 <= 0.01504 AND own_rd >= 0.0172
+top10_pool,20,19,BDL,0.1371145494175779,True,SHORT: log_mcap <= 12.28 AND intra0 <= -0.03169 AND sec_3d >= 0.005506
+top10_pool,20,19,KAYNES,-0.0446065957413962,True,SHORT: log_mcap <= 12.28 AND intra0 <= -0.03169 AND sec_3d >= 0.005506
+top10_pool,20,19,TRENT,-0.1066171363770964,True,SHORT: prev_net_margin <= 0.09602 AND pe >= 66.34 AND own_rd >= 0.0172
+top10_pool,20,19,DIXON,0.0255155758919976,True,LONG: vs_ma200 <= -0.1645 AND past_avg_3d >= -0.01414 AND sec_vs_nifty_1w <= -0.01613
+top10_pool,20,19,DLF,-0.0398112892564808,True,LONG: vs_ma200 <= -0.1645 AND past_avg_3d >= -0.01414 AND sec_vs_nifty_1w <= -0.01257
+top10_pool,20,19,DIXON,0.0255155758919976,True,LONG: vs_ma200 <= -0.1645 AND past_avg_3d >= -0.01414 AND sec_vs_nifty_1w <= -0.01257
+top10_pool,20,19,DLF,-0.0398112892564808,True,LONG: vs_ma200 <= -0.1645 AND past_pct_up >= 0.4 AND sec_vs_nifty_1w <= -0.01257
+top10_pool,20,19,DIXON,0.0255155758919976,True,LONG: vs_ma200 <= -0.1645 AND past_pct_up >= 0.4 AND sec_vs_nifty_1w <= -0.01257
+best_all,30,19,PREMIERENE,-0.0657137871808499,True,LONG: r6m <= -0.07853 AND dist_60h <= -0.1597 AND pre5_vs_own <= -0.07823
+best_all,30,19,LODHA,0.0558060456995435,True,LONG: r6m <= -0.07853 AND dist_60h <= -0.1597 AND pre5_vs_own <= -0.07823
+best_all,30,19,PRESTIGE,0.0492373793779545,True,LONG: r6m <= -0.07853 AND dist_60h <= -0.1597 AND pre5_vs_own <= -0.07823
+best_all,30,19,SWIGGY,-0.0057742044964493,True,LONG: r6m <= -0.07853 AND dist_60h <= -0.1597 AND pre5_vs_own <= -0.07823
+best_upto2,30,19,DLF,-0.0398112892564808,True,LONG: vs_ma200 <= -0.1645 AND sec_vs_nifty_1w <= -0.01257
+best_upto2,30,19,DIXON,0.0255155758919976,True,LONG: vs_ma200 <= -0.1645 AND sec_vs_nifty_1w <= -0.01257
+best_upto2,30,19,SWIGGY,-0.0057742044964493,True,LONG: vs_ma200 <= -0.1645 AND sec_vs_nifty_1w <= -0.01257
+best_1,30,19,KEI,-0.1127088670718939,True,LONG: industry == Miscellaneous
+best_1,30,19,TRENT,0.1066171363770964,True,LONG: industry == Miscellaneous
+best_1,30,19,MAXHEALTH,0.0359297215171663,True,LONG: industry == Miscellaneous
+best_1,30,19,APOLLOHOSP,0.0491830968365933,True,LONG: industry == Miscellaneous
+best_1,30,19,FORTIS,-0.0032421213917692,True,LONG: industry == Miscellaneous
+top10_pool,30,19,PREMIERENE,-0.0657137871808499,True,LONG: r6m <= -0.07853 AND dist_60h <= -0.1597 AND pre5_vs_own <= -0.07823
+top10_pool,30,19,LODHA,0.0558060456995435,True,LONG: r6m <= -0.07853 AND dist_60h <= -0.1597 AND pre5_vs_own <= -0.07823
+top10_pool,30,19,PRESTIGE,0.0492373793779545,True,LONG: r6m <= -0.07853 AND dist_60h <= -0.1597 AND pre5_vs_own <= -0.07823
+top10_pool,30,19,SWIGGY,-0.0057742044964493,True,LONG: r6m <= -0.07853 AND dist_60h <= -0.1597 AND pre5_vs_own <= -0.07823
+top10_pool,30,19,DLF,-0.0398112892564808,True,LONG: vs_ma200 <= -0.1645 AND volume_5d_vs_60d >= 1.018 AND vs_nifty_1w <= -0.0008832
+top10_pool,30,19,LODHA,0.0558060456995435,True,LONG: vs_ma200 <= -0.1645 AND volume_5d_vs_60d >= 1.018 AND vs_nifty_1w <= -0.0008832
+top10_pool,30,19,DIXON,0.0255155758919976,True,LONG: vs_ma200 <= -0.1645 AND volume_5d_vs_60d >= 1.018 AND vs_nifty_1w <= -0.0008832
+top10_pool,30,19,ITC,0.011047882196936,True,LONG: vs_ma200 <= -0.1645 AND volume_5d_vs_60d >= 1.018 AND vs_nifty_1w <= -0.0008832
+top10_pool,30,19,SWIGGY,-0.0057742044964493,True,LONG: vs_ma200 <= -0.1645 AND volume_5d_vs_60d >= 1.018 AND vs_nifty_1w <= -0.0008832
+top10_pool,30,19,DIXON,0.0255155758919976,True,LONG: from_52w_high <= -0.3029 AND past_avg_3d >= -0.01787 AND sec_vs_nifty_1w <= -0.01613
+top10_pool,30,19,MAZDOCK,-0.0196594155367634,True,LONG: from_52w_high <= -0.3029 AND past_avg_3d >= -0.01787 AND sec_vs_nifty_1w <= -0.01613
+top10_pool,30,19,DIXON,0.0255155758919976,True,LONG: from_52w_high <= -0.3029 AND vs_sector_3m <= -0.02292 AND sec_vs_nifty_1w <= -0.01613
+top10_pool,30,19,SWIGGY,-0.0057742044964493,True,LONG: from_52w_high <= -0.3029 AND vs_sector_3m <= -0.02292 AND sec_vs_nifty_1w <= -0.01613
+top10_pool,30,19,MAZDOCK,-0.0196594155367634,True,LONG: from_52w_high <= -0.3029 AND vs_sector_3m <= -0.02292 AND sec_vs_nifty_1w <= -0.01613
+top10_pool,30,19,DIXON,0.0255155758919976,True,LONG: from_52w_high <= -0.3029 AND past_avg_3d >= -0.02238 AND sec_vs_nifty_1w <= -0.01613
+top10_pool,30,19,MAZDOCK,-0.0196594155367634,True,LONG: from_52w_high <= -0.3029 AND past_avg_3d >= -0.02238 AND sec_vs_nifty_1w <= -0.01613
+top10_pool,30,19,DLF,-0.0398112892564808,True,LONG: r6m <= -0.07853 AND r3d <= -0.05011 AND dist_60h <= -0.1597
+top10_pool,30,19,ADANIGREEN,-0.082250305158729,True,LONG: r6m <= -0.07853 AND r3d <= -0.05011 AND dist_60h <= -0.1597
+top10_pool,30,19,LODHA,0.0558060456995435,True,LONG: r6m <= -0.07853 AND r3d <= -0.05011 AND dist_60h <= -0.1597
+top10_pool,30,19,SWIGGY,-0.0057742044964493,True,LONG: r6m <= -0.07853 AND r3d <= -0.05011 AND dist_60h <= -0.1597
+top10_pool,30,19,DIXON,0.0255155758919976,True,LONG: vs_ma200 <= -0.1645 AND sec_vs_nifty_1w <= 0.003866 AND nifty_d0 >= 0.001728
+top10_pool,30,19,IEX,-0.0058771469959162,True,LONG: vs_ma200 <= -0.1645 AND sec_vs_nifty_1w <= 0.003866 AND nifty_d0 >= 0.001728
+top10_pool,30,19,ITC,0.011047882196936,True,LONG: vs_ma200 <= -0.1645 AND sec_vs_nifty_1w <= 0.003866 AND nifty_d0 >= 0.001728
+top10_pool,30,19,SWIGGY,-0.0057742044964493,True,LONG: vs_ma200 <= -0.1645 AND sec_vs_nifty_1w <= 0.003866 AND nifty_d0 >= 0.001728
+top10_pool,30,19,PAGEIND,0.053351760531811,True,LONG: vs_ma200 <= -0.1645 AND sec_vs_nifty_1w <= 0.003866 AND nifty_d0 >= 0.001728
+top10_pool,30,19,TRENT,-0.1066171363770964,True,SHORT: prev_net_margin <= 0.09602 AND intra0 <= 0.001791 AND own_rd >= 0.0172
+best_all,10,20,LAURUSLABS,-0.0691445325036465,True,SHORT: vs_sector_1m >= -0.01607 AND intra0 <= -0.03174 AND sec_3d >= 0.00555
+best_all,10,20,BHEL,-0.0873098204297545,True,SHORT: vs_sector_1m >= -0.01607 AND intra0 <= -0.03174 AND sec_3d >= 0.00555
+best_upto2,10,20,IEX,0.0222311524992701,True,SHORT: peers_reported_3d >= 0.03514 AND r2d <= -0.04332
+best_1,10,20,JIOFIN,-0.0225091057340105,True,LONG: vs_ma200 <= -0.1675
+best_1,10,20,LODHA,-0.0043392560752769,True,LONG: vs_ma200 <= -0.1675
+best_1,10,20,SBICARD,-0.0491298748004028,True,LONG: vs_ma200 <= -0.1675
+best_1,10,20,COFORGE,0.0733750567387838,True,LONG: vs_ma200 <= -0.1675
+best_1,10,20,KPITTECH,-0.0604636702803519,True,LONG: vs_ma200 <= -0.1675
+best_1,10,20,HYUNDAI,0.0362309361121249,True,LONG: vs_ma200 <= -0.1675
+best_1,10,20,SWIGGY,-0.0575659005988231,True,LONG: vs_ma200 <= -0.1675
+best_1,10,20,DIXON,0.0355319744209,True,LONG: vs_ma200 <= -0.1675
+best_1,10,20,JUBLFOOD,-0.0439141561115469,True,LONG: vs_ma200 <= -0.1675
+best_1,10,20,NAUKRI,-0.0028800412042373,True,LONG: vs_ma200 <= -0.1675
+best_1,10,20,INOXWIND,-0.13206965607859,True,LONG: vs_ma200 <= -0.1675
+top10_pool,10,20,LAURUSLABS,-0.0691445325036465,True,SHORT: vs_sector_1m >= -0.01607 AND intra0 <= -0.03174 AND sec_3d >= 0.00555
+top10_pool,10,20,BHEL,-0.0873098204297545,True,SHORT: vs_sector_1m >= -0.01607 AND intra0 <= -0.03174 AND sec_3d >= 0.00555
+top10_pool,10,20,RBLBANK,-0.027302250117738,True,SHORT: vs_nifty_1m >= 0.01578 AND log_mcap <= 10.01 AND d0 <= -0.008
+top10_pool,10,20,CROMPTON,0.0037624064129991,True,SHORT: vs_nifty_1m >= 0.01578 AND log_mcap <= 10.01 AND d0 <= -0.008
+top10_pool,10,20,LAURUSLABS,-0.0691445325036465,True,SHORT: vs_nifty_1m >= 0.01578 AND intra0 <= -0.03174 AND sec_3d >= 0.00555
+top10_pool,10,20,JINDALSTEL,-0.0270839908970712,True,SHORT: vs_nifty_1m >= 0.01578 AND intra0 <= -0.03174 AND sec_3d >= 0.00555
+top10_pool,10,20,BHEL,-0.0873098204297545,True,SHORT: vs_nifty_1m >= 0.01578 AND intra0 <= -0.03174 AND sec_3d >= 0.00555
+top10_pool,10,20,LAURUSLABS,-0.0691445325036465,True,SHORT: vs_sector_1m >= -0.03113 AND intra0 <= -0.03174 AND sec_3d >= 0.00555
+top10_pool,10,20,BHEL,-0.0873098204297545,True,SHORT: vs_sector_1m >= -0.03113 AND intra0 <= -0.03174 AND sec_3d >= 0.00555
+top10_pool,10,20,CAMS,-0.0516409991826121,True,SHORT: vs_nifty_1m >= 0.03307 AND log_mcap <= 10.01 AND exn_d0 <= -0.003692
+best_all,20,20,LAURUSLABS,-0.0691445325036465,True,SHORT: intra0 <= -0.03174 AND sec_3d >= 0.00555 AND vol5_60 >= 0.8749
+best_upto2,20,20,COFORGE,0.0733750567387838,True,LONG: vs_ma200 <= -0.1675 AND sec_reported_3d <= -0.02166
+best_upto2,20,20,KPITTECH,-0.0604636702803519,True,LONG: vs_ma200 <= -0.1675 AND sec_reported_3d <= -0.02166
+best_upto2,20,20,NAUKRI,-0.0028800412042373,True,LONG: vs_ma200 <= -0.1675 AND sec_reported_3d <= -0.02166
+best_1,20,20,JIOFIN,-0.0225091057340105,True,LONG: vs_ma200 <= -0.1675
+best_1,20,20,LODHA,-0.0043392560752769,True,LONG: vs_ma200 <= -0.1675
+best_1,20,20,SBICARD,-0.0491298748004028,True,LONG: vs_ma200 <= -0.1675
+best_1,20,20,COFORGE,0.0733750567387838,True,LONG: vs_ma200 <= -0.1675
+best_1,20,20,KPITTECH,-0.0604636702803519,True,LONG: vs_ma200 <= -0.1675
+best_1,20,20,HYUNDAI,0.0362309361121249,True,LONG: vs_ma200 <= -0.1675
+best_1,20,20,SWIGGY,-0.0575659005988231,True,LONG: vs_ma200 <= -0.1675
+best_1,20,20,DIXON,0.0355319744209,True,LONG: vs_ma200 <= -0.1675
+best_1,20,20,JUBLFOOD,-0.0439141561115469,True,LONG: vs_ma200 <= -0.1675
+best_1,20,20,NAUKRI,-0.0028800412042373,True,LONG: vs_ma200 <= -0.1675
+best_1,20,20,INOXWIND,-0.13206965607859,True,LONG: vs_ma200 <= -0.1675
+top10_pool,20,20,LAURUSLABS,-0.0691445325036465,True,SHORT: intra0 <= -0.03174 AND sec_3d >= 0.00555 AND vol5_60 >= 0.8749
+top10_pool,20,20,LAURUSLABS,-0.0691445325036465,True,SHORT: intra0 <= -0.03174 AND sec_3d >= 0.00555 AND vol5_60 >= 0.7833
+top10_pool,20,20,BHEL,-0.0873098204297545,True,SHORT: intra0 <= -0.03174 AND sec_3d >= 0.00555 AND vol5_60 >= 0.7833
+top10_pool,20,20,BHEL,-0.0873098204297545,True,SHORT: intra0 <= -0.03174 AND sec_3d >= 0.00555 AND vol20_60 >= 0.8901
+top10_pool,20,20,TRENT,-0.00354366816531,True,SHORT: pe >= 65.95 AND d2 >= -0.007688 AND own_rd >= 0.0169
+top10_pool,20,20,COFORGE,0.0733750567387838,True,LONG: vs_ma200 <= -0.1675 AND past_pct_up >= 0.4 AND sec_vs_nifty_1w <= -0.01553
+best_upto2,30,20,HINDPETRO,0.0015275810609303,True,LONG: r6m <= -0.1685 AND r3d <= -0.05043
+best_upto2,30,20,IRFC,-0.0046500883834783,True,LONG: r6m <= -0.1685 AND r3d <= -0.05043
+best_upto2,30,20,TMPV,0.0581866182622046,True,LONG: r6m <= -0.1685 AND r3d <= -0.05043
+best_1,30,20,JIOFIN,-0.0225091057340105,True,LONG: vs_ma200 <= -0.1675
+best_1,30,20,LODHA,-0.0043392560752769,True,LONG: vs_ma200 <= -0.1675
+best_1,30,20,SBICARD,-0.0491298748004028,True,LONG: vs_ma200 <= -0.1675
+best_1,30,20,COFORGE,0.0733750567387838,True,LONG: vs_ma200 <= -0.1675
+best_1,30,20,KPITTECH,-0.0604636702803519,True,LONG: vs_ma200 <= -0.1675
+best_1,30,20,HYUNDAI,0.0362309361121249,True,LONG: vs_ma200 <= -0.1675
+best_1,30,20,SWIGGY,-0.0575659005988231,True,LONG: vs_ma200 <= -0.1675
+best_1,30,20,DIXON,0.0355319744209,True,LONG: vs_ma200 <= -0.1675
+best_1,30,20,JUBLFOOD,-0.0439141561115469,True,LONG: vs_ma200 <= -0.1675
+best_1,30,20,NAUKRI,-0.0028800412042373,True,LONG: vs_ma200 <= -0.1675
+best_1,30,20,INOXWIND,-0.13206965607859,True,LONG: vs_ma200 <= -0.1675
+top10_pool,30,20,DIXON,0.0355319744209,True,LONG: vs_ma200 <= -0.1675 AND peers_reported_n <= 1 AND r3d <= -0.02415
+top10_pool,30,20,KFINTECH,0.0660104079309288,True,SHORT: prev_sales_yoy >= 0.1674 AND log_mcap <= 10.01 AND season_so_far_3d >= -0.008201
+top10_pool,30,20,PGEL,-0.0240175274012903,True,SHORT: prev_sales_yoy >= 0.1674 AND log_mcap <= 10.01 AND season_so_far_3d >= -0.008201
+top10_pool,30,20,INOXWIND,0.13206965607859,True,SHORT: prev_sales_yoy >= 0.1674 AND log_mcap <= 10.01 AND season_so_far_3d >= -0.008201
+top10_pool,30,20,LODHA,-0.0043392560752769,True,LONG: r6m <= -0.2323 AND past_pct_up >= 0.4 AND vol20_60 >= 1.122
+top10_pool,30,20,LODHA,-0.0043392560752769,True,LONG: r6m <= -0.2323 AND past_avg_3d >= -0.01364 AND vol20_60 >= 1.122
+top10_pool,30,20,JIOFIN,-0.0225091057340105,True,LONG: vs_ma200 <= -0.1675 AND past_pct_up >= 0.4 AND nifty_d0 >= 0.004525
+top10_pool,30,20,KPITTECH,-0.0604636702803519,True,LONG: vs_ma200 <= -0.1675 AND past_pct_up >= 0.4 AND nifty_d0 >= 0.004525
+top10_pool,30,20,HYUNDAI,0.0362309361121249,True,LONG: vs_ma200 <= -0.1675 AND past_pct_up >= 0.4 AND nifty_d0 >= 0.004525
+top10_pool,30,20,MPHASIS,0.0053029525561382,True,LONG: r6m <= -0.08348 AND dist_60h <= -0.1615 AND pre5_vs_own <= -0.07942
+best_all,10,21,PAYTM,0.0448748945531066,True,SHORT: r1w >= 0.05389 AND prev_sales_yoy >= 0.1265 AND intra0 <= -0.01846
+best_all,10,21,KALYANKJIL,0.0718423841385151,True,SHORT: r1w >= 0.05389 AND prev_sales_yoy >= 0.1265 AND intra0 <= -0.01846
+best_1,10,21,TCS,-0.012788850065074,True,LONG: vs_ma200 <= -0.1677
+best_1,10,21,LTM,0.0540890550744769,True,LONG: vs_ma200 <= -0.1677
+best_1,10,21,HCLTECH,0.0163314355626115,True,LONG: vs_ma200 <= -0.1677
+best_1,10,21,TATAELXSI,-0.0447556986142779,True,LONG: vs_ma200 <= -0.1677
+best_1,10,21,WIPRO,-0.0061537307063634,True,LONG: vs_ma200 <= -0.1677
+best_1,10,21,INFY,-0.0306078917382177,True,LONG: vs_ma200 <= -0.1677
+best_1,10,21,KPITTECH,0.0130187360628796,True,LONG: vs_ma200 <= -0.1677
+best_1,10,21,IRFC,0.0229499348631406,True,LONG: vs_ma200 <= -0.1677
+best_1,10,21,SWIGGY,0.062770041802278,True,LONG: vs_ma200 <= -0.1677
+best_1,10,21,INOXWIND,-0.0686191144326023,True,LONG: vs_ma200 <= -0.1677
+best_1,10,21,RVNL,-0.0145169212336532,True,LONG: vs_ma200 <= -0.1677
+best_1,10,21,PATANJALI,0.0037146168219376,True,LONG: vs_ma200 <= -0.1677
+top10_pool,10,21,PAYTM,0.0448748945531066,True,SHORT: r1w >= 0.05389 AND prev_sales_yoy >= 0.1265 AND intra0 <= -0.01846
+top10_pool,10,21,KALYANKJIL,0.0718423841385151,True,SHORT: r1w >= 0.05389 AND prev_sales_yoy >= 0.1265 AND intra0 <= -0.01846
+top10_pool,10,21,PAYTM,0.0448748945531066,True,SHORT: r1w >= 0.0427 AND prev_sales_yoy >= 0.09016 AND intra0 <= -0.01846
+top10_pool,10,21,KALYANKJIL,0.0718423841385151,True,SHORT: r1w >= 0.0427 AND prev_sales_yoy >= 0.09016 AND intra0 <= -0.01846
+top10_pool,10,21,PAYTM,0.0448748945531066,True,SHORT: r1w >= 0.05389 AND prev_sales_yoy >= 0.09016 AND intra0 <= -0.01846
+top10_pool,10,21,KALYANKJIL,0.0718423841385151,True,SHORT: r1w >= 0.05389 AND prev_sales_yoy >= 0.09016 AND intra0 <= -0.01846
+top10_pool,10,21,PAYTM,0.0448748945531066,True,SHORT: r1w >= 0.0427 AND prev_sales_yoy >= 0.1265 AND intra0 <= -0.01846
+top10_pool,10,21,KALYANKJIL,0.0718423841385151,True,SHORT: r1w >= 0.0427 AND prev_sales_yoy >= 0.1265 AND intra0 <= -0.01846
+top10_pool,10,21,ETERNAL,-0.0005977424270451,True,SHORT: prev_sales_yoy >= 0.6568 AND pb <= 24.4 AND sec_vs_nifty_1m >= 0.03193
+top10_pool,10,21,KALYANKJIL,0.0718423841385151,True,SHORT: prev_sales_yoy >= 0.6568 AND pb <= 24.4 AND sec_vs_nifty_1m >= 0.03193
+top10_pool,10,21,ETERNAL,-0.0005977424270451,True,SHORT: prev_sales_yoy >= 0.6568 AND pb <= 16.19 AND sec_vs_nifty_1m >= 0.03193
+top10_pool,10,21,KALYANKJIL,0.0718423841385151,True,SHORT: prev_sales_yoy >= 0.6568 AND pb <= 16.19 AND sec_vs_nifty_1m >= 0.03193
+top10_pool,10,21,DIXON,0.026918090832434,True,SHORT: r3y >= 2.442 AND prev1_3d >= -0.01113 AND industry == Consumer Durables
+top10_pool,10,21,PGEL,-0.0307644902612327,True,SHORT: r3y >= 2.442 AND prev1_3d >= -0.01113 AND industry == Consumer Durables
+top10_pool,10,21,DIXON,0.026918090832434,True,SHORT: r3y >= 2.442 AND prev1_3d >= -0.02353 AND industry == Consumer Durables
+top10_pool,10,21,PGEL,-0.0307644902612327,True,SHORT: r3y >= 2.442 AND prev1_3d >= -0.02353 AND industry == Consumer Durables
+best_upto2,20,21,PAYTM,0.0448748945531066,True,SHORT: r1w >= 0.05389 AND intra0 <= -0.01463
+best_upto2,20,21,KALYANKJIL,0.0718423841385151,True,SHORT: r1w >= 0.05389 AND intra0 <= -0.01463
+best_1,20,21,TCS,-0.012788850065074,True,LONG: vs_ma200 <= -0.1677
+best_1,20,21,LTM,0.0540890550744769,True,LONG: vs_ma200 <= -0.1677
+best_1,20,21,HCLTECH,0.0163314355626115,True,LONG: vs_ma200 <= -0.1677
+best_1,20,21,TATAELXSI,-0.0447556986142779,True,LONG: vs_ma200 <= -0.1677
+best_1,20,21,WIPRO,-0.0061537307063634,True,LONG: vs_ma200 <= -0.1677
+best_1,20,21,INFY,-0.0306078917382177,True,LONG: vs_ma200 <= -0.1677
+best_1,20,21,KPITTECH,0.0130187360628796,True,LONG: vs_ma200 <= -0.1677
+best_1,20,21,IRFC,0.0229499348631406,True,LONG: vs_ma200 <= -0.1677
+best_1,20,21,SWIGGY,0.062770041802278,True,LONG: vs_ma200 <= -0.1677
+best_1,20,21,INOXWIND,-0.0686191144326023,True,LONG: vs_ma200 <= -0.1677
+best_1,20,21,RVNL,-0.0145169212336532,True,LONG: vs_ma200 <= -0.1677
+best_1,20,21,PATANJALI,0.0037146168219376,True,LONG: vs_ma200 <= -0.1677
+top10_pool,20,21,TRENT,0.0355800693132444,True,SHORT: from_52w_low >= 0.3839 AND prev_net_margin <= 0.09605 AND own_rd >= 0.01671
+top10_pool,20,21,BHARATFORG,0.0711119626670808,True,SHORT: from_52w_low >= 0.3839 AND prev_net_margin <= 0.09605 AND own_rd >= 0.01671
+top10_pool,20,21,ETERNAL,-0.0005977424270451,True,SHORT: r3y >= 2.442 AND from_52w_low >= 0.2502 AND own_abs3d >= 0.06771
+top10_pool,20,21,PGEL,-0.0307644902612327,True,SHORT: r3y >= 2.442 AND from_52w_low >= 0.2502 AND own_abs3d >= 0.06771
+top10_pool,20,21,COCHINSHIP,0.0321638152406936,True,SHORT: r3y >= 2.442 AND from_52w_low >= 0.2502 AND own_abs3d >= 0.06771
+best_all,30,21,TATAELXSI,-0.0447556986142779,True,LONG: vs_ma200 <= -0.1677 AND peers_reported_n <= 1 AND dist_20h <= -0.103
+best_1,30,21,TCS,-0.012788850065074,True,LONG: vs_ma200 <= -0.1677
+best_1,30,21,LTM,0.0540890550744769,True,LONG: vs_ma200 <= -0.1677
+best_1,30,21,HCLTECH,0.0163314355626115,True,LONG: vs_ma200 <= -0.1677
+best_1,30,21,TATAELXSI,-0.0447556986142779,True,LONG: vs_ma200 <= -0.1677
+best_1,30,21,WIPRO,-0.0061537307063634,True,LONG: vs_ma200 <= -0.1677
+best_1,30,21,INFY,-0.0306078917382177,True,LONG: vs_ma200 <= -0.1677
+best_1,30,21,KPITTECH,0.0130187360628796,True,LONG: vs_ma200 <= -0.1677
+best_1,30,21,IRFC,0.0229499348631406,True,LONG: vs_ma200 <= -0.1677
+best_1,30,21,SWIGGY,0.062770041802278,True,LONG: vs_ma200 <= -0.1677
+best_1,30,21,INOXWIND,-0.0686191144326023,True,LONG: vs_ma200 <= -0.1677
+best_1,30,21,RVNL,-0.0145169212336532,True,LONG: vs_ma200 <= -0.1677
+best_1,30,21,PATANJALI,0.0037146168219376,True,LONG: vs_ma200 <= -0.1677
+top10_pool,30,21,TATAELXSI,-0.0447556986142779,True,LONG: vs_ma200 <= -0.1677 AND peers_reported_n <= 1 AND dist_20h <= -0.103
+top10_pool,30,21,TATAELXSI,-0.0447556986142779,True,LONG: vs_ma200 <= -0.1677 AND vs_sector_1m <= -0.07411 AND past_pct_up >= 0.45
+top10_pool,30,21,KPITTECH,0.0130187360628796,True,LONG: vs_ma200 <= -0.1677 AND vs_sector_1m <= -0.07411 AND past_pct_up >= 0.45
+top10_pool,30,21,PATANJALI,0.0037146168219376,True,LONG: vs_ma200 <= -0.1677 AND vs_sector_1m <= -0.07411 AND past_pct_up >= 0.45
+top10_pool,30,21,IEX,0.0010807197150483,True,SHORT: prev_sales_yoy >= 0.1641 AND log_mcap <= 10.02 AND season_so_far_3d >= -0.007463
+top10_pool,30,21,KFINTECH,-0.0810046879408133,True,SHORT: prev_sales_yoy >= 0.1641 AND log_mcap <= 10.02 AND season_so_far_3d >= -0.007463
+top10_pool,30,21,IEX,0.0010807197150483,True,SHORT: prev_sales_yoy >= 0.1641 AND log_mcap <= 10.02 AND season_so_far_3d >= -0.003058
+top10_pool,30,21,KFINTECH,-0.0810046879408133,True,SHORT: prev_sales_yoy >= 0.1641 AND log_mcap <= 10.02 AND season_so_far_3d >= -0.003058
+top10_pool,30,21,AMBER,-0.0388749025205286,True,SHORT: prev2_sum >= -0.03391 AND r2d <= -0.01129 AND own_abs3d >= 0.06771
+top10_pool,30,21,AMBER,-0.0388749025205286,True,SHORT: prev2_sum >= -0.05571 AND r2d <= -0.01129 AND own_abs3d >= 0.06771

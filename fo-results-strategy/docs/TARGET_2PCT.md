@@ -23,6 +23,7 @@ candidates are listed below with what they really earn.
 | Sector valuation, P/B financials / P/E consumer-IT-pharma (below) | 27 - 518 | -1.2% to +1.6% | at most 10 of 22 |
 | Sector performance before results (below) | 299 - 730 | -0.2% to +0.9% | at most 4 of 22 |
 | Fresh sector strategies, 619 variants ([SECTOR_STRATEGIES.md](SECTOR_STRATEGIES.md)) | - | none beats chance | at most 5 of 21 |
+| Rules aiming at a +5% average over all quarters ([TARGET_5PCT.md](TARGET_5PCT.md)) | 11 - 125 | +0.5% to +1.9% on unseen quarters | - |
 
 Note: "All F&O stocks" uses today's F&O list over the whole period, so it includes results from before a stock joined
 F&O (1,182 results, +0.94% on average); stocks that later joined were mostly the ones that grew. On stocks that were
