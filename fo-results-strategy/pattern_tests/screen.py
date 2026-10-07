@@ -14,7 +14,7 @@ is the three-day results window (Day-1 + Result day + Day+1), i.e. buy at the cu
 Sector = the NSE sector index matched to the stock's industry (BSE indices are not reachable from the build machine).
 Returns are total (not annualised), as in the user's file. Optional extra filter from that file: P/B above peer median.
 
-    python3 screen_test.py DATA OUT_DIR
+    python3 screen.py DATA OUT_DIR
 """
 import csv, json, math, statistics, sys
 from datetime import date, timedelta
