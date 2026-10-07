@@ -156,6 +156,12 @@ quarters at 2%), and the 2nd + 3rd most expensive +0.43% (5 of 22). Per-quarter 
 +0.04% a quarter in the first 14 quarters, -1.62% in the last 8. Two-thirds of the way from the cheapest (6 -> 4th):
 -0.52%, 3 of 22 quarters at 2%. List: [results/target_2pct/middle_place_in_peer_group.csv](../results/target_2pct/middle_place_in_peer_group.csv).
 
+**At or below the middle place (6 stocks: 1st-3rd cheapest) with sales up in each of the last 4 reported quarters:**
+235 picks, about 11 a quarter, average 3-day +0.32%, 53% up, 5 of 22 quarters at 2% or more, 14 of 22 positive,
++0.28% against all stocks that quarter (t 0.6); +1.00% a quarter in the first 14 quarters, -0.19% in the last 8. Rising
+sales add little on their own (+0.23%, any place). List:
+[results/target_2pct/cheaper_half_sales_rising.csv](../results/target_2pct/cheaper_half_sales_rising.csv).
+
 ## The take-profit rule and 1-week vs Nifty
 
 | Group (1-week vs Nifty, before results) | Picks | 3-day hold | Quarters at 2% | Take-profit | Up | Quarters at 2% |
