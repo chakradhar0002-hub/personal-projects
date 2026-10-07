@@ -162,6 +162,12 @@ quarters at 2%), and the 2nd + 3rd most expensive +0.43% (5 of 22). Per-quarter 
 sales add little on their own (+0.23%, any place). List:
 [results/target_2pct/cheaper_half_sales_rising.csv](../results/target_2pct/cheaper_half_sales_rising.csv).
 
+**Cheapest two-thirds of the peer group (the dearest third dropped; 6 stocks: places 1-4) with sales rising 4
+quarters:** 326 picks, about 15 a quarter, average 3-day +0.18% (+0.01% after costs), 51% up, 4 of 22 quarters at 2% or
+more, 11 of 22 positive, +0.07% against all stocks that quarter; +0.55% a quarter in the first 14 quarters, +0.01% in
+the last 8. The dropped dearest third with rising sales did about the same (+0.30%). List:
+[results/target_2pct/cheapest_two_thirds_sales_rising.csv](../results/target_2pct/cheapest_two_thirds_sales_rising.csv).
+
 ## The take-profit rule and 1-week vs Nifty
 
 | Group (1-week vs Nifty, before results) | Picks | 3-day hold | Quarters at 2% | Take-profit | Up | Quarters at 2% |
