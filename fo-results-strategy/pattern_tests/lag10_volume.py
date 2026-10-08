@@ -22,7 +22,8 @@ COST = 0.0017
 VARIANTS = [("lag > 10%, volume >= 1.0x (main)", 0.10, 1.0), ("lag > 10%, volume < 1.0x (quiet)", 0.10, None),
             ("lag > 10%, volume >= 1.5x", 0.10, 1.5), ("lag > 15%, volume >= 1.0x", 0.15, 1.0),
             ("lag > 12%, volume >= 1.0x", 0.12, 1.0), ("lag > 8%, volume >= 1.0x", 0.08, 1.0),
-            ("lag > 10%, volume >= 0.8x", 0.10, 0.8), ("lag > 10%, volume >= 1.2x", 0.10, 1.2)]
+            ("lag > 10%, volume >= 0.8x", 0.10, 0.8), ("lag > 10%, volume >= 1.2x", 0.10, 1.2),
+            ("lag > 15%, volume >= 1.5x", 0.15, 1.5)]
 
 ev = pd.read_csv(f"{PACK}/events.csv")
 sessions = pd.read_csv(f"{PACK}/sessions.csv").day.tolist()
@@ -99,7 +100,7 @@ S.to_csv(f"{OUT}/summary.csv", index=False)
 pd.set_option("display.width", 250, "display.max_columns", 30, "display.max_colwidth", 140)
 print(S.round(2).to_string())
 quiet = pick(0.10, None).groupby("qn").three_day
-for tag, lag, vmin in (("", 0.10, 1.0), ("_vol15", 0.10, 1.5)):     # per-quarter detail: volume >= 1.0x and >= 1.5x
+for tag, lag, vmin in (("", 0.10, 1.0), ("_vol15", 0.10, 1.5), ("_lag15_vol15", 0.15, 1.5)):     # per-quarter detail
     main = pick(lag, vmin).sort_values(["qn", "cutoff", "symbol"])
     main.to_csv(f"{OUT}/trades{tag}.csv", index=False)
     g3, gt = main.groupby("qn").three_day, main.groupby("qn").take_profit
@@ -109,7 +110,7 @@ for tag, lag, vmin in (("", 0.10, 1.0), ("_vol15", 0.10, 1.5)):     # per-quarte
     tq[["trades", "up", "quiet_trades"]] = tq[["trades", "up", "quiet_trades"]].fillna(0).astype(int)
     tq["stocks"] = main.groupby("qn").apply(lambda g: ", ".join(f"{s} {100 * v:+.1f}" for s, v in zip(g.symbol, g.three_day)))
     tq.to_csv(f"{OUT}/per_quarter{tag}.csv")
-    print(f"volume >= {vmin}x")
+    print(f"lag > {100 * lag:.0f}%, volume >= {vmin}x")
     print(tq.round(4).to_string())
     by_stock = main.groupby("symbol").three_day.agg(["size", "mean"]).sort_values("size", ascending=False)
     print("most frequent stocks:", by_stock.head(8).round(4).to_dict("index"))
