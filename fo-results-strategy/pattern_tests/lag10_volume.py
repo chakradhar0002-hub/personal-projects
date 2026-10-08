@@ -102,6 +102,35 @@ for name, lag, vmin in VARIANTS:
 S = pd.DataFrame(S)
 S.to_csv(f"{OUT}/summary.csv", index=False)
 
+# shallower lags: 2-8% (and 10% for reference) at volume 1.0x and 1.3x, summary plus a per-quarter matrix
+G, M = [], QUARTERS.copy()
+for lag in (0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.10):
+    for vmin in (1.0, 1.3):
+        x = pick(lag, vmin)
+        q3, qt = x.groupby("qn").three_day.mean(), x.groupby("qn").take_profit.mean()
+        p3 = x.three_day.sort_values()
+        G.append({"lag_pct": 100 * lag, "volume": vmin, "trades": len(x), "up_pct": 100 * (x.three_day > 0).mean(),
+                  "avg_pct": 100 * x.three_day.mean(), "avg_after_cost_pct": 100 * (x.three_day.mean() - COST),
+                  "take_profit_pct": 100 * x.take_profit.mean(), "quarters_with_trades": len(q3),
+                  "quarters_positive": int((q3 > 0).sum()), "quarters_positive_tp": int((qt > 0).sum()),
+                  "first14_pct": 100 * x.three_day[x.qn < 14].mean(), "last8_pct": 100 * x.three_day[x.qn >= 14].mean(),
+                  "without_best5_pct": 100 * p3.iloc[:-5].mean()})
+        tag = f"lag{100 * lag:.0f}_v{vmin}"
+        M[f"{tag}_trades"] = x.groupby("qn").size().reindex(M.index).fillna(0).astype(int)
+        M[f"{tag}_avg_pct"] = (100 * q3).reindex(M.index).round(2)
+G = pd.DataFrame(G)
+G.to_csv(f"{OUT}/lag_grid.csv", index=False)
+M.to_csv(f"{OUT}/lag_grid_per_quarter.csv")
+print(G.round(2).to_string())
+bands = []
+for lo, hi in ((-9, 0.0), (0.0, 0.02), (0.02, 0.04), (0.04, 0.06), (0.06, 0.08), (0.08, 0.10), (0.10, 0.15), (0.15, 9)):
+    for side, vm in (("volume >= 1.0x", fo.volume_ratio >= 1.0), ("volume < 1.0x", fo.volume_ratio < 1.0)):
+        x = fo[(fo.vs_nifty_1m < -lo) & (fo.vs_nifty_1m >= -hi) & vm]
+        bands.append({"lag_band": "did not lag" if lo < 0 else f"{100 * lo:.0f}-{100 * hi:.0f}%" if hi < 1 else f"{100 * lo:.0f}%+",
+                      "volume": side, "trades": len(x), "avg_pct": 100 * x.three_day.mean(), "up_pct": 100 * (x.three_day > 0).mean()})
+pd.DataFrame(bands).to_csv(f"{OUT}/lag_bands.csv", index=False)
+print(pd.DataFrame(bands).round(2).to_string())
+
 pd.set_option("display.width", 250, "display.max_columns", 30, "display.max_colwidth", 140)
 print(S.round(2).to_string())
 quiet = pick(0.10, None).groupby("qn").three_day
