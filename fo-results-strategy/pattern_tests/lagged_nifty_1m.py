@@ -14,7 +14,7 @@ import pandas as pd
 
 PACK, FEAT, OUT = sys.argv[1], sys.argv[2], sys.argv[3]
 COST = 0.0017
-THRESHOLDS = (-0.10, -0.12, -0.15, -0.20)
+THRESHOLDS = (-0.05, -0.10, -0.12, -0.15, -0.20)
 
 ev = pd.read_csv(f"{PACK}/events.csv")
 R = pd.read_csv(f"{PACK}/returns.csv", index_col=0)
