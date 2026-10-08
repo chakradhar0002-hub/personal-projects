@@ -62,6 +62,7 @@ It beats random picks of the same size (p < 0.001) and the same filter on dates 
 100%: 14 trades lost (worst -10%), one quarter lost 2.8%, the -15% threshold was chosen after seeing all the data, it
 gives about 2 trades a quarter, and nearby thresholds are weaker (-10%: 17 of 22 quarters, +0.84%; -12%: 15 of 21).
 Without its best 5 trades it averages +1.19%. Worth paper-trading, not betting on as a sure thing.
+Quarter-by-quarter detail: [LAGGED_NIFTY_1M.md](LAGGED_NIFTY_1M.md).
 
 ## Files
 

@@ -24,6 +24,8 @@ checklist and concrete trades, and backtests them on your data.
 >   See [docs/TARGET_5PCT.md](docs/TARGET_5PCT.md).
 > - **No rule is 100% positive**, per trade or per quarter, on quarters it was not chosen on: rules perfect in 2021-24
 >   were right about half the time afterwards. See [docs/TARGET_100PCT.md](docs/TARGET_100PCT.md).
+>   The closest rule (stock lagged Nifty by > 15% over the month, take-profit exit): 51 trades, 72.5% up, +2.2%, 15 of 16
+>   quarters with trades positive, no trade in 6 quarters. See [docs/LAGGED_NIFTY_1M.md](docs/LAGGED_NIFTY_1M.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.
