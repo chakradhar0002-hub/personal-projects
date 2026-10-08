@@ -257,11 +257,11 @@ An independent check rebuilt it and got the same 16 trades (split adjustment cha
 | Oct-Dec 2024 | PRESTIGE | -21.2% | 2.2x | +6.8% | +3.7% |
 | Oct-Dec 2025 | GODREJPROP | -15.6% | 2.0x | +0.0% | +0.0% |
 
-- 9 trades in 6 of 22 quarters, all 6 positive; 8 of 9 rose (only ADANIENT -3.5%). Seven of the 9 come from the
+- 9 trades in 6 of 22 quarters, all 6 positive; 8 of 9 rose (only ADANIENT -3.5%). Eight of the 9 come from the
   Oct-Dec results seasons (late January / early February sell-offs).
-- It is the 2x rule above minus its 7 milder laggards, and those 7 did about as well: picking 9 at random from the
-  lag-over-10% & 2x trades in the same quarters does as well 3 times in 4 (p 0.75). So the deeper 15% lag adds
-  nothing over 10% at 2x volume; it only drops trades.
+- It is the 2x rule above minus its 7 milder laggards (lag 10-15%), which averaged +2.3%. Picking 9 at random from the
+  lag-over-10% & 2x trades in the same quarters does as well 3 times in 4 (p 0.75), so the deeper 15% lag adds no
+  measurable selection over 10% at 2x volume; it mostly drops trades.
 - Three trades carry it (ADANIPORTS +19.1%, KALYANKJIL +14.8%, NAUKRI +8.7%): without the best 3 the average is +1.9%,
   without the best 5 only +0.35%. Nearby cuts behave the same (lag 12% & 2x +0.1%, lag 17% & 2x -0.8%, lag 15% & 2.5x
   -3.5% without their best 5). Volume 1.75x picks exactly the same 9 trades.
