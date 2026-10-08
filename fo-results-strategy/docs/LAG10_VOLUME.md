@@ -35,6 +35,7 @@ it matches the earlier feature file exactly wherever no split or bonus falls ins
 | lag > 10%, volume ≥ 1.0x (this rule) | 85 | 64% | +2.13% | +2.14% | 19 | 18 | +1.36% |
 | lag > 10%, volume ≥ 1.2x | 54 | 70% | +2.51% | +2.75% | 18 | 16 | +1.40% |
 | lag > 10%, volume ≥ 1.3x | 44 | 77% | +2.77% | +3.00% | 18 | 16 | +1.53% |
+| lag > 10%, volume ≥ 1.4x | 38 | 76% | +2.67% | +2.54% | 14 | 12 | +1.19% |
 | lag > 10%, volume ≥ 1.5x | 32 | 78% | +3.05% | +2.44% | 12 | 10 | +1.31% |
 | lag > 12%, volume ≥ 1.0x | 56 | 66% | +2.26% | +1.91% | 17 | 15 | +1.11% |
 | lag > 15%, volume ≥ 1.0x | 32 | 69% | +2.71% | +2.82% | 11 | 10 | +0.68% |
@@ -50,6 +51,7 @@ Stocks in F&O at the time; 3-day exit; "without best 5" removes each rule's five
 | lag > 10%, volume ≥ 1.0x | 85 | 19 | 18 | 64% | +2.13% | +2.14% | +1.36% |
 | lag > 10%, volume ≥ 1.2x | 54 | 18 | 16 | 70% | +2.51% | +2.75% | +1.40% |
 | lag > 10%, volume ≥ 1.3x | 44 | 18 | 16 | 77% | +2.77% | +3.00% | +1.53% |
+| lag > 10%, volume ≥ 1.4x | 38 | 14 | 12 | 76% | +2.67% | +2.54% | +1.19% |
 | lag > 10%, volume ≥ 1.5x | 32 | 12 | 10 | 78% | +3.05% | +2.44% | +1.31% |
 | lag > 10%, volume ≥ 2.0x | 16 | 8 | 7 | 88% | +4.38% | +3.49% | +1.43% |
 | lag > 10%, volume ≥ 3.0x | 6 | 4 | 3 | 67% | +3.52% | +1.70% | - |
@@ -540,8 +542,51 @@ An independent check rebuilt it exactly (split adjustment changes no trade here)
 | Jan-Mar 2026 | Q4 FY26 | 0 | 0 | - | - | -0.31% |  |
 | Apr-Jun 2026 | Q1 FY27 | 1 | 1 | +1.30% | +8.97% | +0.17% | KPITTECH +1.3 |
 
+## Lag over 10% and volume 1.4x or more
+
+| Exit | Trades | Up | Average | After 0.17% cost | Quarters with trades | Positive | Without best 5 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| 3-day | 38 | 76% | +2.67% | +2.50% | 14 of 22 | 12 | +1.19% |
+| Take-profit | 38 | 82% | +2.54% | +2.37% | 14 of 22 | 13 | +1.50% |
+
+- 38 trades in 14 of 22 quarters (8 without a trade); losing quarters Jan-Mar 2021 (-4.1%) and Jan-Mar 2022 (-1.1%).
+  First 14 quarters +2.20% (22 trades), last 8 +3.32% (16 trades, all 5 quarters with trades positive).
+- Same stocks as the neighbours: all 32 trades of 1.5x are inside it, and it is inside the 1.3x list. Compared with
+  1.3x it drops 6 trades with volume 1.3-1.4x that did well (ZYDUSLIFE +6.6, CUMMINSIND +6.8, GODREJCP +6.4, RECLTD
+  +3.3, KPITTECH +1.3, CAMS -4.1; average +3.4%) and that were the only trades in 4 quarters. Compared with 1.5x it
+  adds 6 trades with volume 1.4-1.5x that did worse (AUBANK -7.0, BANDHANBNK -1.3, JSWSTEEL +2.1, PERSISTENT +3.9,
+  COFORGE +2.6, WAAREEENER +3.6; average +0.7%).
+- So 1.3x, 1.4x and 1.5x differ only by which handful of trades sit between the cuts; the differences are noise. The
+  same filter on dates without results makes +0.89%; versus random picks of the same size from the 1.0x or 1.3x
+  trades p = 0.28 and 0.24.
+
+| Results for | Quarter | Trades | Up | 3-day avg | Take-profit avg | All F&O stocks | Stocks (3-day %) |
+|---|---|---:|---:|---:|---:|---:|---|
+| Jan-Mar 2021 | Q4 FY21 | 2 | 0 | -4.14% | +2.26% | +0.82% | AUBANK -7.0, BANDHANBNK -1.3 |
+| Apr-Jun 2021 | Q1 FY22 | 0 | 0 | - | - | +0.06% |  |
+| Jul-Sep 2021 | Q2 FY22 | 1 | 1 | +1.53% | +1.53% | -0.84% | AMBUJACEM +1.5 |
+| Oct-Dec 2021 | Q3 FY22 | 3 | 3 | +6.19% | +5.65% | -0.64% | NAUKRI +8.7, TECHM +5.1, PIIND +4.7 |
+| Jan-Mar 2022 | Q4 FY22 | 2 | 1 | -1.06% | +0.10% | -0.83% | JSWSTEEL +2.1, JINDALSTEL -4.2 |
+| Apr-Jun 2022 | Q1 FY23 | 0 | 0 | - | - | +0.75% |  |
+| Jul-Sep 2022 | Q2 FY23 | 1 | 1 | +3.01% | +3.01% | +0.03% | AUROPHARMA +3.0 |
+| Oct-Dec 2022 | Q3 FY23 | 6 | 4 | +3.75% | +1.65% | -0.16% | INDUSTOWER -7.9, BANKBARODA +8.5, SBIN +3.4, ADANIPORTS +19.1, AMBUJACEM +2.9, ADANIENT -3.5 |
+| Jan-Mar 2023 | Q4 FY23 | 2 | 1 | +0.12% | -0.21% | +0.61% | PERSISTENT +3.9, MANAPPURAM -3.7 |
+| Apr-Jun 2023 | Q1 FY24 | 0 | 0 | - | - | -0.30% |  |
+| Jul-Sep 2023 | Q2 FY24 | 0 | 0 | - | - | +0.41% |  |
+| Oct-Dec 2023 | Q3 FY24 | 3 | 3 | +2.40% | +2.40% | +0.48% | POLYCAB +1.9, IEX +3.0, AUROPHARMA +2.4 |
+| Jan-Mar 2024 | Q4 FY24 | 2 | 2 | +2.84% | +2.24% | +0.88% | INFY +1.3, KOTAKBANK +4.4 |
+| Apr-Jun 2024 | Q1 FY25 | 0 | 0 | - | - | +0.53% |  |
+| Jul-Sep 2024 | Q2 FY25 | 1 | 1 | +3.64% | +3.64% | -1.12% | BHEL +3.6 |
+| Oct-Dec 2024 | Q3 FY25 | 5 | 4 | +4.51% | +3.89% | -0.79% | LODHA +4.4, CGPOWER +1.3, KALYANKJIL +14.8, PRESTIGE +6.8, TRENT -4.9 |
+| Jan-Mar 2025 | Q4 FY25 | 2 | 2 | +6.39% | +5.10% | +0.96% | INFY +1.8, TATAELXSI +11.0 |
+| Apr-Jun 2025 | Q1 FY26 | 1 | 1 | +2.65% | +2.65% | -0.56% | COFORGE +2.6 |
+| Jul-Sep 2025 | Q2 FY26 | 0 | 0 | - | - | +0.67% |  |
+| Oct-Dec 2025 | Q3 FY26 | 7 | 5 | +1.64% | +1.90% | +0.18% | WAAREEENER +3.6, CGPOWER +1.9, LODHA +5.6, PRESTIGE +4.9, SWIGGY -0.6, GODREJPROP +0.0, NAUKRI -4.0 |
+| Jan-Mar 2026 | Q4 FY26 | 0 | 0 | - | - | -0.31% |  |
+| Apr-Jun 2026 | Q1 FY27 | 0 | 0 | - | - | +0.17% |  |
+
 Files: [results/lag10_volume/](../results/lag10_volume/) (summary.csv with the nearby variants; per_quarter.csv and
 trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv and *_lag20_vol15.csv for lag over 15% / 20% & 1.5x; *_vol20.csv, *_lag15_vol20.csv and *_lag20_vol20.csv for lag over 10% / 15% / 20% & 2x; *_vol30.csv,
 *_lag15_vol30.csv and *_lag20_vol30.csv for lag over 10% / 15% / 20% & 3x; *_vol12.csv, *_lag15_vol12.csv and
-*_lag20_vol12.csv for lag over 10% / 15% / 20% & 1.2x; *_vol13.csv for lag over 10% & 1.3x). Script:
+*_lag20_vol12.csv for lag over 10% / 15% / 20% & 1.2x; *_vol13.csv and *_vol14.csv for lag over 10% & 1.3x / 1.4x). Script:
 `pattern_tests/lag10_volume.py PACK_DIR nse_prices.db features22.csv OUT_DIR` (PACK_DIR from `sector_lab_data.py`).
