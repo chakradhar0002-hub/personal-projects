@@ -23,7 +23,7 @@ VARIANTS = [("lag > 10%, volume >= 1.0x (main)", 0.10, 1.0), ("lag > 10%, volume
             ("lag > 10%, volume >= 1.5x", 0.10, 1.5), ("lag > 15%, volume >= 1.0x", 0.15, 1.0),
             ("lag > 12%, volume >= 1.0x", 0.12, 1.0), ("lag > 8%, volume >= 1.0x", 0.08, 1.0),
             ("lag > 10%, volume >= 0.8x", 0.10, 0.8), ("lag > 10%, volume >= 1.2x", 0.10, 1.2),
-            ("lag > 15%, volume >= 1.5x", 0.15, 1.5)]
+            ("lag > 15%, volume >= 1.5x", 0.15, 1.5), ("lag > 20%, volume >= 1.5x", 0.20, 1.5)]
 
 ev = pd.read_csv(f"{PACK}/events.csv")
 sessions = pd.read_csv(f"{PACK}/sessions.csv").day.tolist()
@@ -100,7 +100,7 @@ S.to_csv(f"{OUT}/summary.csv", index=False)
 pd.set_option("display.width", 250, "display.max_columns", 30, "display.max_colwidth", 140)
 print(S.round(2).to_string())
 quiet = pick(0.10, None).groupby("qn").three_day
-for tag, lag, vmin in (("", 0.10, 1.0), ("_vol15", 0.10, 1.5), ("_lag15_vol15", 0.15, 1.5)):     # per-quarter detail
+for tag, lag, vmin in (("", 0.10, 1.0), ("_vol15", 0.10, 1.5), ("_lag15_vol15", 0.15, 1.5), ("_lag20_vol15", 0.20, 1.5)):     # per-quarter detail
     main = pick(lag, vmin).sort_values(["qn", "cutoff", "symbol"])
     main.to_csv(f"{OUT}/trades{tag}.csv", index=False)
     g3, gt = main.groupby("qn").three_day, main.groupby("qn").take_profit

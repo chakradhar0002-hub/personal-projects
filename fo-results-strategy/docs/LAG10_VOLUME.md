@@ -1,4 +1,4 @@
-# Lagged Nifty by more than 10% (or 15%) and above-average volume: every quarter
+# Lagged Nifty by more than 10% (or 15%, 20%) and above-average volume: every quarter
 
 Rule, at the cutoff close (2 sessions before the result session), stocks in F&O at the time:
 
@@ -168,6 +168,38 @@ An independent check rebuilt it and got the same 16 trades (split adjustment cha
 | Jan-Mar 2026 | Q4 FY26 | 0 | 0 | - | - | -0.31% |  |
 | Apr-Jun 2026 | Q1 FY27 | 0 | 0 | - | - | +0.17% |  |
 
+## Deepest: lag over 20% and 1.5x or more
+
+| Exit | Trades | Up | Average | After 0.17% cost | Quarters with trades | Positive | Without best 3 | Without best 5 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 3-day | 9 | 89% | +6.26% | +6.09% | 4 of 22 | 4 | +2.61% | +1.46% |
+| Take-profit | 9 | 89% | +4.66% | +4.49% | 4 of 22 | 4 | | +1.19% |
+
+| Results for | Stock | Lag vs Nifty | Volume vs 60-day | 3-day | Take-profit |
+|---|---|---:|---:|---:|---:|
+| Oct-Dec 2021 | TECHM | -20.4% | 1.7x | +5.1% | +4.8% |
+| Oct-Dec 2021 | PIIND | -20.9% | 1.7x | +4.7% | +3.4% |
+| Oct-Dec 2022 | ADANIPORTS | -37.4% | 6.1x | +19.1% | +9.3% |
+| Oct-Dec 2022 | AMBUJACEM | -26.9% | 5.6x | +2.9% | +2.9% |
+| Oct-Dec 2022 | ADANIENT | -49.0% | 3.3x | -3.5% | -3.5% |
+| Oct-Dec 2023 | POLYCAB | -26.1% | 5.9x | +1.9% | +1.9% |
+| Oct-Dec 2024 | LODHA | -20.7% | 1.6x | +4.4% | +4.4% |
+| Oct-Dec 2024 | KALYANKJIL | -38.2% | 2.8x | +14.8% | +14.8% |
+| Oct-Dec 2024 | PRESTIGE | -21.2% | 2.2x | +6.8% | +3.7% |
+
+- **Only 9 trades in 4 of 22 quarters**, all in the Oct-Dec results seasons (cutoffs in late January / early February)
+  of 2021, 2022, 2023 and 2024: market sell-offs, including the Feb 2023 Adani fall. 18 quarters had no trade, the
+  last one being the Oct-Dec 2024 season.
+- 8 of 9 rose, but two trades (ADANIPORTS +19.1%, KALYANKJIL +14.8%) make up over half of the total; without the best
+  5 trades the average is +1.5%.
+- The same filter on dates without results makes +0.8% over 3 days (+1.2% counting each episode once), and 9 random
+  such episodes reach +6.26% about 2 times in 100, so the results window does add something.
+- But going from 15% to 20% adds nothing measurable: picking 9 trades at random (same quarters) from the "lag over
+  15% & 1.5x" trades does as well about 1 time in 4 (p 0.24); from "lag over 10% & 1.5x", about 1 time in 8 (p 0.13).
+  Nearby volume cuts at a 20% lag: 1.0x +4.7% (14 trades), 1.3x +4.6% (12), 2.0x +7.0% (6); all under +1% once their
+  best 5 trades are removed.
+- Read it as a description of a handful of crash rebounds, not a rule you can size: it fires about once a year.
+
 Files: [results/lag10_volume/](../results/lag10_volume/) (summary.csv with the nearby variants; per_quarter.csv and
-trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv for lag over 15% & 1.5x). Script:
+trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv and *_lag20_vol15.csv for lag over 15% / 20% & 1.5x). Script:
 `pattern_tests/lag10_volume.py PACK_DIR nse_prices.db features22.csv OUT_DIR` (PACK_DIR from `sector_lab_data.py`).
