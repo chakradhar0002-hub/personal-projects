@@ -270,6 +270,32 @@ An independent check rebuilt it and got the same 16 trades (split adjustment cha
 - Read it as a list of nine crash-rebound trades, not a rule: realistic expectation for anything this narrow is at most
   the +1.5% a trade of the wider family.
 
+## Lag over 20% and volume 2x or more
+
+| Exit | Trades | Up | Average | After 0.17% cost | Quarters with trades | Positive | Without best 2 | Without best 3 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 3-day | 6 | 83% | +7.01% | +6.84% | 3 of 22 | 3 | +2.05% | +0.46% |
+| Take-profit | 6 | 83% | +4.87% | +4.70% | 3 of 22 | 3 | | |
+
+| Results for | Stock | Lag vs Nifty | Volume vs 60-day | 3-day | Take-profit |
+|---|---|---:|---:|---:|---:|
+| Oct-Dec 2022 | ADANIPORTS | -37.4% | 6.1x | +19.1% | +9.3% |
+| Oct-Dec 2022 | AMBUJACEM | -26.9% | 5.6x | +2.9% | +2.9% |
+| Oct-Dec 2022 | ADANIENT | -49.0% | 3.3x | -3.5% | -3.5% |
+| Oct-Dec 2023 | POLYCAB | -26.1% | 5.9x | +1.9% | +1.9% |
+| Oct-Dec 2024 | KALYANKJIL | -38.2% | 2.8x | +14.8% | +14.8% |
+| Oct-Dec 2024 | PRESTIGE | -21.2% | 2.2x | +6.8% | +3.7% |
+
+- 6 trades in 3 of 22 quarters, all from the Oct-Dec results seasons; half of them in the same week of the Feb 2023
+  Adani fall. Nothing since the January 2025 trades.
+- Two trades (ADANIPORTS +19.1%, KALYANKJIL +14.8%) are the result: without them the average is +2.05%, without the
+  best 3 +0.46%.
+- Not distinguishable from chance: the same filter on dates without results makes +1.0% (+2.0% counting each episode
+  once), and 6 random such episodes reach +7.0% about 8 times in 100; within the same quarters, the lag-over-10% & 2x
+  trades do as well 3 times in 4.
+- This is the end of the ladder: each tighter version keeps the same few crash-rebound winners and drops everything
+  else, so it says nothing new about the edge.
+
 Files: [results/lag10_volume/](../results/lag10_volume/) (summary.csv with the nearby variants; per_quarter.csv and
-trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv and *_lag20_vol15.csv for lag over 15% / 20% & 1.5x; *_vol20.csv and *_lag15_vol20.csv for lag over 10% / 15% & 2x). Script:
+trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv and *_lag20_vol15.csv for lag over 15% / 20% & 1.5x; *_vol20.csv, *_lag15_vol20.csv and *_lag20_vol20.csv for lag over 10% / 15% / 20% & 2x). Script:
 `pattern_tests/lag10_volume.py PACK_DIR nse_prices.db features22.csv OUT_DIR` (PACK_DIR from `sector_lab_data.py`).
