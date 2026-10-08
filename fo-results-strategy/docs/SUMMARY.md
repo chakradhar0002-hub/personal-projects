@@ -42,6 +42,8 @@ Why it is believable:
 - The same setup on ordinary days without results makes only about +0.7% to +0.8% over 3 days, so about +1.5% a trade
   is linked to the results.
 - Nearby cut-offs (lag 8-12%, volume 0.8-1.5x) give similar numbers; there is no cliff.
+- A shallower lag does not work: below about 10% behind Nifty the trades earn roughly nothing (lag 2-7% with volume
+  1.0x+: +0.4% to +1.1% a trade, and only because the 10%+ trades are still inside; stocks 4-8% behind lost money).
 - In the last 8 quarters, all 7 that had a trade were positive (Jan-Mar 2026 had none): 1.0x +2.86% a trade, 1.3x
   +3.00%.
 

@@ -585,8 +585,65 @@ An independent check rebuilt it exactly (split adjustment changes no trade here)
 | Jan-Mar 2026 | Q4 FY26 | 0 | 0 | - | - | -0.31% |  |
 | Apr-Jun 2026 | Q1 FY27 | 0 | 0 | - | - | +0.17% |  |
 
+## Shallower lags: 2% to 8%
+
+Same rule with the lag cut-off lowered. Each shallower cut keeps all the deeper trades and adds milder laggards.
+
+**Volume 1.0x or more**
+
+| Lag vs Nifty | Trades | Up | 3-day avg | Take-profit avg | Quarters with trades | Positive | Without best 5 | First 14 q / last 8 q |
+|---|---:|---:|---:|---:|---:|---:|---:|---|
+| 2%+ | 348 | 51% | +0.53% | +0.58% | 22 | 15 | +0.30% | +0.38% / +0.70% |
+| 3%+ | 296 | 50% | +0.36% | +0.47% | 22 | 11 | +0.10% | +0.15% / +0.60% |
+| 4%+ | 260 | 52% | +0.41% | +0.54% | 22 | 12 | +0.12% | +0.17% / +0.69% |
+| 5%+ | 220 | 53% | +0.47% | +0.62% | 22 | 13 | +0.14% | +0.19% / +0.81% |
+| 6%+ | 190 | 54% | +0.75% | +0.93% | 22 | 13 | +0.37% | +0.39% / +1.16% |
+| 7%+ | 153 | 57% | +1.05% | +1.26% | 21 | 14 | +0.58% | +0.63% / +1.55% |
+| 8%+ | 124 | 59% | +1.59% | +1.71% | 21 | 17 | +1.03% | +0.95% / +2.41% |
+| 10%+ | 85 | 64% | +2.13% | +2.14% | 19 | 18 | +1.36% | +1.65% / +2.86% |
+
+**Volume 1.3x or more**
+
+| Lag vs Nifty | Trades | Up | 3-day avg | Take-profit avg | Quarters with trades | Positive | Without best 5 | First 14 q / last 8 q |
+|---|---:|---:|---:|---:|---:|---:|---:|---|
+| 2%+ | 136 | 57% | +1.12% | +1.27% | 22 | 10 | +0.56% | +0.68% / +1.66% |
+| 3%+ | 124 | 56% | +1.00% | +1.28% | 22 | 10 | +0.39% | +0.48% / +1.60% |
+| 4%+ | 110 | 57% | +1.05% | +1.42% | 22 | 12 | +0.42% | +0.50% / +1.74% |
+| 5%+ | 93 | 59% | +1.19% | +1.55% | 21 | 12 | +0.43% | +0.90% / +1.54% |
+| 6%+ | 80 | 61% | +1.44% | +1.90% | 21 | 14 | +0.63% | +1.17% / +1.76% |
+| 7%+ | 68 | 66% | +1.80% | +2.27% | 20 | 14 | +0.87% | +1.56% / +2.08% |
+| 8%+ | 59 | 66% | +1.99% | +2.43% | 20 | 15 | +0.92% | +1.72% / +2.32% |
+| 10%+ | 44 | 77% | +2.77% | +3.00% | 18 | 16 | +1.53% | +2.57% / +3.00% |
+
+**Each lag band on its own** (3-day average):
+
+| Lag band | Volume ≥ 1.0x: trades | avg | Volume < 1.0x: trades | avg |
+|---|---:|---:|---:|---:|
+| did not lag | 591 | -0.08% | 1085 | +0.23% |
+| 0-2% | 101 | +0.39% | 279 | -0.67% |
+| 2-4% | 88 | +0.88% | 292 | -0.00% |
+| 4-6% | 70 | -0.52% | 226 | -0.23% |
+| 6-8% | 66 | -0.83% | 146 | +0.81% |
+| 8-10% | 39 | +0.41% | 101 | -1.25% |
+| 10-15% | 53 | +1.79% | 90 | -0.67% |
+| 15%+ | 32 | +2.71% | 19 | +1.06% |
+
+An independent check rebuilt the grid exactly and added:
+
+- **The bounce starts at about a 10% lag.** Every 1-2 point band from 10% upward is positive (+1.6% to +2.7% at volume
+  1.0x+); below 10% the bands are noise around zero, and the 4-6% and 6-8% bands lose (-0.5%, -0.8%).
+- **Shallower cuts only add trades that earn nothing**: at volume 1.0x the trades added by going from 10% down to 5%
+  (135 trades) average -0.57%, down to 2% (263 trades) +0.01%. The averages at 2-7% look positive only because they
+  still contain the 10%+ trades.
+- **No results effect at shallow lags**: the same filters on dates without results make +0.42% to +0.53% at 2-7%, about
+  the same as through results (results minus placebo about 0 for 2-5%, +0.5% at 7%, +1.0% at 8%, +1.5% at 10%).
+- **Luck**: against random picks of the same size from all F&O results with volume 1.0x+, 3-5% lag is not
+  distinguishable from chance (p 0.10-0.16); 6-8% pass only because of the 10%+ trades inside them; 10% p < 0.0001.
+- Keep the 10% cut-off.
+
 Files: [results/lag10_volume/](../results/lag10_volume/) (summary.csv with the nearby variants; per_quarter.csv and
 trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv and *_lag20_vol15.csv for lag over 15% / 20% & 1.5x; *_vol20.csv, *_lag15_vol20.csv and *_lag20_vol20.csv for lag over 10% / 15% / 20% & 2x; *_vol30.csv,
 *_lag15_vol30.csv and *_lag20_vol30.csv for lag over 10% / 15% / 20% & 3x; *_vol12.csv, *_lag15_vol12.csv and
-*_lag20_vol12.csv for lag over 10% / 15% / 20% & 1.2x; *_vol13.csv and *_vol14.csv for lag over 10% & 1.3x / 1.4x). Script:
+*_lag20_vol12.csv for lag over 10% / 15% / 20% & 1.2x; *_vol13.csv and *_vol14.csv for lag over 10% & 1.3x / 1.4x; lag_grid.csv,
+lag_grid_per_quarter.csv and lag_bands.csv for the 2-10% lag grid). Script:
 `pattern_tests/lag10_volume.py PACK_DIR nse_prices.db features22.csv OUT_DIR` (PACK_DIR from `sector_lab_data.py`).
