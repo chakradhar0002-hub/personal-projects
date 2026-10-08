@@ -4,7 +4,7 @@ Rules for trading NSE F&O stocks around quarterly results, organised by day:
 **Day-1**, **Result Day** and **Day+1**. A small Python tool turns the rules into a dated
 checklist and concrete trades, and backtests them on your data.
 
-**Read the playbook first: [docs/STRATEGY.md](docs/STRATEGY.md).**
+**Short version of all the findings: [docs/SUMMARY.md](docs/SUMMARY.md).** The playbook: [docs/STRATEGY.md](docs/STRATEGY.md).
 
 > **Tested on real data (2023–2025, 72 F&O stocks, real NSE option prices):**
 > - **One trade made money: the pre-results IV run-up straddle.** Buy the ATM straddle 5 sessions before the
