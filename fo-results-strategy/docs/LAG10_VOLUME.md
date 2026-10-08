@@ -227,7 +227,7 @@ An independent check rebuilt it and got the same 16 trades (split adjustment cha
 | Oct-Dec 2025 | GODREJPROP | -15.6% | 2.0x | +0.0% | +0.0% |
 
 - 14 of 16 trades rose; the two losers were small (ADANIENT -3.5%, MANAPPURAM -3.7%). 8 quarters had trades (7
-  positive), 14 had none. First 14 quarters +3.78% (11 trades), last 8 +5.70% (5). 11 of the 16 come from the Oct-Dec
+  positive), 14 had none. First 14 quarters +3.78% (11 trades), last 8 +5.70% (5). 13 of the 16 come from the Oct-Dec
   results seasons (cutoffs in late January / early February).
 - The same filter on dates without results makes +1.16% over 3 days (+1.49% counting each episode once, 60% up), so
   about +3% is linked to results; 16 random such episodes reach +4.38% about 2 times in 100.
