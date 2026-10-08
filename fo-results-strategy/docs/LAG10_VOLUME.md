@@ -38,7 +38,7 @@ it matches the earlier feature file exactly wherever no split or bonus falls ins
 | lag > 10%, volume ≥ 1.5x | 32 | 78% | +3.05% | +2.44% | 12 | 10 | +1.31% |
 | lag > 12%, volume ≥ 1.0x | 56 | 66% | +2.26% | +1.91% | 17 | 15 | +1.11% |
 | lag > 15%, volume ≥ 1.0x | 32 | 69% | +2.71% | +2.82% | 11 | 10 | +0.68% |
-| lag > 15%, volume ≥ 1.2x | 23 | 9 | 8 | 74% | +3.20% | +3.52% | +0.60% |
+| lag > 15%, volume ≥ 1.2x | 23 | 74% | +3.20% | +3.52% | 9 | 8 | +0.60% |
 | lag > 10%, volume < 1.0x (quiet) | 109 | 47% | -0.37% | -0.18% | 21 | 11 | -0.98% |
 
 ## All versions at a glance
@@ -54,6 +54,7 @@ Stocks in F&O at the time; 3-day exit; "without best 5" removes each rule's five
 | lag > 10%, volume ≥ 2.0x | 16 | 8 | 7 | 88% | +4.38% | +3.49% | +1.43% |
 | lag > 10%, volume ≥ 3.0x | 6 | 4 | 3 | 67% | +3.52% | +1.70% | - |
 | lag > 15%, volume ≥ 1.0x | 32 | 11 | 10 | 69% | +2.71% | +2.82% | +0.68% |
+| lag > 15%, volume ≥ 1.2x | 23 | 9 | 8 | 74% | +3.20% | +3.52% | +0.60% |
 | lag > 15%, volume ≥ 1.5x | 16 | 8 | 6 | 75% | +3.77% | +3.13% | +0.52% |
 | lag > 15%, volume ≥ 2.0x | 9 | 6 | 6 | 89% | +5.99% | +4.56% | +0.35% |
 | lag > 15%, volume ≥ 3.0x | 4 | 2 | 2 | 75% | +5.12% | +2.68% | - |
