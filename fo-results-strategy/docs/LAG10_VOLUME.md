@@ -335,7 +335,10 @@ Three of the four are the same week of the February 2023 Adani fall, and without
 +0.46%. Nothing since January 2024. Four trades from two events cannot support any conclusion; it is simply the lag
 over 10% & 3x list without its two milder laggards (MANAPPURAM -3.7%, KOTAKBANK +4.4%).
 
+**Lag over 20% and volume 3x or more** picks exactly the same 4 trades (all four lagged Nifty by 26-49%), so the
+numbers are identical: +5.12% 3-day, +2.68% take-profit, 3 of 4 up, 2 quarters with trades.
+
 Files: [results/lag10_volume/](../results/lag10_volume/) (summary.csv with the nearby variants; per_quarter.csv and
-trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv and *_lag20_vol15.csv for lag over 15% / 20% & 1.5x; *_vol20.csv, *_lag15_vol20.csv and *_lag20_vol20.csv for lag over 10% / 15% / 20% & 2x; *_vol30.csv and
-*_lag15_vol30.csv for lag over 10% / 15% & 3x). Script:
+trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv and *_lag20_vol15.csv for lag over 15% / 20% & 1.5x; *_vol20.csv, *_lag15_vol20.csv and *_lag20_vol20.csv for lag over 10% / 15% / 20% & 2x; *_vol30.csv,
+*_lag15_vol30.csv and *_lag20_vol30.csv for lag over 10% / 15% / 20% & 3x). Script:
 `pattern_tests/lag10_volume.py PACK_DIR nse_prices.db features22.csv OUT_DIR` (PACK_DIR from `sector_lab_data.py`).
