@@ -238,6 +238,38 @@ An independent check rebuilt it and got the same 16 trades (split adjustment cha
   lag 8% & 2x +0.5%, lag 12% & 2x +0.1%), against +1.4% here. The p-values above also ignore the 100+ cut-point
   combinations looked at in this family. Realistic: about +1.5% a trade after costs, about once or twice a year.
 
+## Lag over 15% and volume 2x or more
+
+| Exit | Trades | Up | Average | After 0.17% cost | Quarters with trades | Positive | Without best 3 | Without best 5 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 3-day | 9 | 89% | +5.99% | +5.82% | 6 of 22 | 6 | +1.87% | +0.35% |
+| Take-profit | 9 | 89% | +4.56% | +4.39% | 6 of 22 | 6 | | +0.35% |
+
+| Results for | Stock | Lag vs Nifty | Volume vs 60-day | 3-day | Take-profit |
+|---|---|---:|---:|---:|---:|
+| Oct-Dec 2021 | NAUKRI | -17.7% | 2.5x | +8.7% | +8.7% |
+| Jul-Sep 2022 | AUROPHARMA | -15.3% | 2.5x | +3.0% | +3.0% |
+| Oct-Dec 2022 | ADANIPORTS | -37.4% | 6.1x | +19.1% | +9.3% |
+| Oct-Dec 2022 | AMBUJACEM | -26.9% | 5.6x | +2.9% | +2.9% |
+| Oct-Dec 2022 | ADANIENT | -49.0% | 3.3x | -3.5% | -3.5% |
+| Oct-Dec 2023 | POLYCAB | -26.1% | 5.9x | +1.9% | +1.9% |
+| Oct-Dec 2024 | KALYANKJIL | -38.2% | 2.8x | +14.8% | +14.8% |
+| Oct-Dec 2024 | PRESTIGE | -21.2% | 2.2x | +6.8% | +3.7% |
+| Oct-Dec 2025 | GODREJPROP | -15.6% | 2.0x | +0.0% | +0.0% |
+
+- 9 trades in 6 of 22 quarters, all 6 positive; 8 of 9 rose (only ADANIENT -3.5%). Seven of the 9 come from the
+  Oct-Dec results seasons (late January / early February sell-offs).
+- It is the 2x rule above minus its 7 milder laggards, and those 7 did about as well: picking 9 at random from the
+  lag-over-10% & 2x trades in the same quarters does as well 3 times in 4 (p 0.75). So the deeper 15% lag adds
+  nothing over 10% at 2x volume; it only drops trades.
+- Three trades carry it (ADANIPORTS +19.1%, KALYANKJIL +14.8%, NAUKRI +8.7%): without the best 3 the average is +1.9%,
+  without the best 5 only +0.35%. Nearby cuts behave the same (lag 12% & 2x +0.1%, lag 17% & 2x -0.8%, lag 15% & 2.5x
+  -3.5% without their best 5). Volume 1.75x picks exactly the same 9 trades.
+- The same filter on dates without results makes +1.5% over 3 days (+1.85% counting each episode once, positive in
+  15 of 19 quarters), so roughly +4% is linked to results, but on 9 trades.
+- Read it as a list of nine crash-rebound trades, not a rule: realistic expectation for anything this narrow is at most
+  the +1.5% a trade of the wider family.
+
 Files: [results/lag10_volume/](../results/lag10_volume/) (summary.csv with the nearby variants; per_quarter.csv and
-trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv and *_lag20_vol15.csv for lag over 15% / 20% & 1.5x; *_vol20.csv for lag over 10% & 2x). Script:
+trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv and *_lag20_vol15.csv for lag over 15% / 20% & 1.5x; *_vol20.csv and *_lag15_vol20.csv for lag over 10% / 15% & 2x). Script:
 `pattern_tests/lag10_volume.py PACK_DIR nse_prices.db features22.csv OUT_DIR` (PACK_DIR from `sector_lab_data.py`).
