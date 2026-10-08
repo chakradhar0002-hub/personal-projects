@@ -188,8 +188,8 @@ An independent check rebuilt it and got the same 16 trades (split adjustment cha
 | Oct-Dec 2024 | PRESTIGE | -21.2% | 2.2x | +6.8% | +3.7% |
 
 - **Only 9 trades in 4 of 22 quarters**, all in the Oct-Dec results seasons (cutoffs in late January / early February)
-  of 2021, 2022, 2023 and 2024: market sell-offs, including the Feb 2023 Adani fall. 18 quarters had no trade, the
-  last one being the Oct-Dec 2024 season.
+  of 2021, 2022, 2023 and 2024: market sell-offs, including the Feb 2023 Adani fall. 18 quarters had no trade, and
+  there has been none since the Oct-Dec 2024 season (late January 2025).
 - 8 of 9 rose, but two trades (ADANIPORTS +19.1%, KALYANKJIL +14.8%) make up over half of the total; without the best
   5 trades the average is +1.5%.
 - The same filter on dates without results makes +0.8% over 3 days (+1.2% counting each episode once), and 9 random
