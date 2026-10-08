@@ -1,0 +1,104 @@
+PRE-REGISTRATION - post-results fundamental drift ("earnings-quality" trades after the numbers are out)
+Written 2026-10-08 BEFORE any return / outcome was computed or looked at for any rule below.
+Looked at beforehand (probe_features.py): only feature columns - prevalence of each signal per quarter (no returns).
+Everything listed is counted, whatever it shows. Anything added later is marked ADDED AFTER and counted.
+
+DATA (read-only)
+  fundamentals : ../build/fa_panel.csv  (rq_* = REPORTED quarter, public at the results announcement)
+  prices       : ../../sector_lab/data/{sessions,returns,index_close,events}.csv
+                 returns.csv = adjusted daily close-to-close returns (blank = no trade). Nifty 50 from index_close.
+  Join panel <-> events.csv on (symbol, qn); reaction-day session index = events.i_react.
+
+UNIVERSE: panel in_fo == True (3,280 results). A result is TRADABLE if
+  (i)  the stock's return on the reaction day exists (so XN is defined),
+  (ii) the session i_react + 21 exists in the data (data end 2026-09-30),
+  (iii) at most 2 blank daily returns among sessions i_react+1 .. i_react+21.
+  The same tradable set is used for every entry / horizon, so all six windows use the same trades.
+
+TIMING (point-in-time)
+  Reaction day = events.i_react: the result day for before-open / during-market results, the next session for
+  after-close and non-trading-day results. The reported quarter's numbers are public before this close.
+  XN = stock return on the reaction day - Nifty 50 return that day (percent) = price reaction vs Nifty.
+  Entries:  E0 = buy at the reaction-day close;  E1 = buy at the NEXT session's close (i_react + 1).
+  Horizons: H = 5, 10, 20 sessions after the entry close.
+  Stock holding return = compounded daily returns (blank = factor 1). Nifty = close(exit)/close(entry) - 1.
+  raw_gross = stock return;  vsN_gross = stock - Nifty.
+  LONG : raw_net = raw_gross - 0.17 ;           vsN_net = vsN_gross - 0.19   (0.17 stock + 0.02 Nifty hedge)
+  SHORT: raw_net = -raw_gross - 0.17 ;          vsN_net = -vsN_gross - 0.19
+  All in percent. PRIMARY measure = vsN_net (Nifty-hedged, after costs). raw reported alongside.
+
+SIGNALS (thresholds fixed now, textbook-style, not tuned)
+  margin change MCHG = rq_ebitda_margin_chg_yoy_pp for fin_type Company; rq_net_margin_chg_yoy_pp for Bank and
+  NBFC (no EBITDA for financials). Missing -> not eligible.
+  Surprise cut-offs: for each result, P80 / P20 = 80th / 20th percentile of rq_pat_surprise_vs_trend_pp over all
+  in_fo results of EARLIER quarters (qn' < qn) whose reaction day is before this result's reaction day. Needs >= 50
+  earlier values, else not eligible (=> first eligible quarter is qn 3).
+
+  Plain long signals (buy):
+   L1 STRONG     rq_pat_yoy_pct > 25 AND rq_sales_yoy_pct > 15          eligible: both known
+   L2 SURP_TOP   rq_pat_surprise_vs_trend_pp > P80                      eligible: surprise known and P80 defined
+   L3 MARGIN_UP  MCHG > +2 pp                                           eligible: MCHG known
+   L4 TURNAROUND rq_loss_to_profit_yoy == 1 (Q-4 PAT < 0 < Q PAT)       eligible: field known
+  Plain short signals (sell):
+   S1 WEAK       rq_pat_yoy_pct < -25 (positive base; includes profit-to-loss with a positive base)
+                                                                        eligible: rq_pat_yoy_pct known
+   S2 MARGIN_DN  MCHG < -2 pp                                           eligible: MCHG known
+   S3 PROFIT2LOSS rq_profit_to_loss_yoy == 1 (Q PAT < 0 < Q-4 PAT)      eligible: field known
+   S4 SURP_BOT   rq_pat_surprise_vs_trend_pp < P20                      eligible: as L2
+  Interactions with the price reaction (XN):
+   I1 STRONG & XN < 0        long  - good numbers, weak reaction: catch-up?
+   I2 WEAK   & XN > 0        short - bad numbers, strong reaction: fade?
+   I3 STRONG & XN > 4        long  - good numbers + winner: more than the plain winner drift?
+   I4 SURP_TOP & XN < 0      long  - as I1 with the surprise definition of "good"
+   I5 SURP_BOT & XN > 0      short - as I2 with the surprise definition of "bad"
+   I6 SURP_TOP & XN > 4      long  - as I3 with the surprise definition
+  => 14 signals x 2 entries x 3 horizons = 84 PRIMARY TESTS (vsN_net). raw_net reported for each (84 more numbers,
+     a secondary family).
+
+REFERENCES (not counted as tests)
+  ALL   every tradable in_fo result, long, each entry / horizon (general post-results drift / market).
+  WIN   plain results-winner drift: XN > 4, long. Check: E0, H20 should come out near the documented
+        +1.45% vsN_net / 392 trades (small differences from the tradable filter are reported).
+
+STATISTICS PER TEST
+  n trades, mean raw_gross / raw_net / vsN_gross / vsN_net per trade, % trades vsN_net > 0;
+  per-quarter means (vsN_net): quarters with trades, quarters positive, t across quarters
+  (mean of quarter means / (sd / sqrt(nq)));
+  first 14 (qn 0..13) vs last 8 (qn 14..21): per-trade mean vsN_net and raw_net, quarters positive;
+  mean vsN_net without the 5 best trades (best = highest net in the trade's direction);
+  FUNDAMENTAL PLACEBO = comparison with all eligible results in the same quarters: d_q = signal mean - mean of the
+    comparison pool in quarter q; mean d, t across quarters, d in each half.
+  LUCK p (PRIMARY p): 10,000 random draws; in each quarter draw k_q results (k_q = the signal's trades that quarter)
+    without replacement from the comparison pool, same direction (long/short), same entry/horizon; statistic =
+    pooled per-trade mean vsN_net; p = (1 + #draws >= actual) / (1 + 10,000), one-sided.
+    Comparison pool: plain signals -> all eligible tradable in_fo results of the same quarter;
+                     I1, I4 -> eligible results with XN < 0 that quarter;  I2, I5 -> eligible results with XN > 0;
+                     I3, I6 -> eligible results with XN > 4 (= random subsets of the plain winners).
+    So for interactions the luck test asks whether the fundamental adds anything beyond the reaction bucket.
+    The unconditional luck p (pool = all eligible results) is also reported for interactions (secondary).
+  MULTIPLE TESTING: Holm over the 84 primary luck p-values. Also Holm over the 84 one-sided quarter-t p-values
+    (H1: mean of quarter means of vsN_net > 0; t distribution with nq - 1 df), reported.
+
+VERDICT RULE (fixed now). A test "SURVIVES" only if ALL of:
+  (a) >= 30 trades;  (b) vsN_net per trade > 0 in BOTH halves (first 14, last 8);
+  (c) t across quarters (vsN_net) >= 2.0;  (d) Holm-adjusted luck p < 0.05;
+  (e) vsN_net without the best 5 trades > 0.
+  "WATCH" = (a), (b), (c), (e) and raw luck p < 0.05, but fails Holm.  Otherwise "NO".
+  For I3 / I6 "better than the plain winner drift" additionally needs the per-quarter difference vs the plain
+  winners (same entry/horizon) > 0 in both halves.
+  For a SHORT to be tradable it must work hedged (vsN_net); raw short numbers are reported only.
+
+OUTPUTS: results_tests.csv (one row per test), per_quarter.csv (one row per test x quarter), trades.csv
+  (tradable results with all signals, XN and the six outcome windows), references.csv, run.log.
+
+----------------------------------------------------------------------------------------------------------------
+ADDED AFTER the main run (post_results.py) had been looked at - counted, cannot rescue anything (addendum.py):
+  X1 FLIPPED SHORTS: every short signal lost money hedged (the "bad numbers" stocks rose vs Nifty). So the 6 short
+     signals (S1-S4, I2, I5) are re-run as LONGS, same pools, 6 windows each = 36 extra tests (post hoc).
+     [corrected after writing: first draft said 7 signals / 42 tests; there are 6 -> 36]
+     Holm over all 84 + 36 = 120 luck p-values. Same verdict rule.
+  X2 I3 / I6 vs ALL plain winners (XN > 4, every tradable in_fo result, not only those with the fundamental field):
+     per-quarter difference, both halves (this is the pre-registered extra condition for I3 / I6; computing it).
+  X3 Unhedged view of I3 / I6 vs the plain winners, per half (context only).
+  X4 Diagnostic only (no new test, no new p-value used for any verdict): the I5 flipped long split by reaction size
+     (0 < XN <= 4 vs XN > 4) and by fin_type, E0 H20.

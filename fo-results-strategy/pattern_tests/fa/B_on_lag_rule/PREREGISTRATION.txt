@@ -1,0 +1,80 @@
+PRE-REGISTRATION - fundamental filters on the lag-10% + volume rule ("buy quality on the dip")
+Written 2026-10-08 BEFORE any outcome (three_day / tp3 / any return) was looked at against any fundamental column.
+Looked at beforehand: only the coverage of each feature inside the 85 trades (counts, no returns).
+Definitions are fixed, textbook-style, not tuned. Every test listed is counted, whatever it shows.
+
+DATA (read-only)
+  fundamentals : ../build/fa_panel.csv (point-in-time pre-results fields; rq_* = reported quarter, post-results)
+  lag / volume : ../../ta/build/events_ta.csv (lag_pct = stock 21-session return - Nifty 50's, x100;
+                 vol_ratio_5_60 = split/bonus-adjusted 5-session / 60-session mean volume) - same numbers that
+                 rebuild results/lag10_volume/trades.csv exactly (checked by the TA test; re-checked here)
+  placebo days : ../../ta/build/placebo_ta.csv.gz (non-results stock-days, in_fo, 3-day forward return)
+  Universe: in_fo True, three_day not NaN. Returns in percent, gross; net = gross - 0.17.
+  Main outcome three_day; take-profit (tp3) reported alongside for every split and rule.
+
+BASE SETS
+  S85 : lag_pct < -10 and vol_ratio_5_60 >= 1.0   (must equal results/lag10_volume/trades.csv: 85 trades)
+  S44 : lag_pct < -10 and vol_ratio_5_60 >= 1.3   (must equal trades_vol13.csv: 44 trades)
+  Panel three_day must equal the trade file's three_day x 100 (check).
+
+PRE-RESULTS SPLITS (all fields published before the cutoff). "unknown" = field missing -> left out of that split
+(count and mean of the unknown group are reported). Expected better side (the fundamental prior) in [ ].
+  F1  quality          roe_pct > 15 AND, for fin_type Company only, debt_equity < 0.5 (banks / NBFCs: ROE only,
+                       leverage is their business). Known if roe_pct present (and debt_equity for Company). [True]
+  F2  profitable_4q    loss_any_4q == 0 (PAT > 0 in each of the last 4 reported quarters)                 [True]
+  F3  l1_pat_growth    l1_pat_yoy_pct > 0 (last reported quarter's PAT up YoY; base <= 0 -> unknown)     [True]
+  F4  pat_accel        pat_yoy_accel_pp > 0 (L1 PAT YoY growth above L2's)                                [True]
+  F5  sales_accel      sales_yoy_accel_pp > 0 (L1 sales YoY growth above L2's)                            [True]
+  F6  margin_up        Company: l1_ebitda_margin_chg_yoy_pp > 0; Bank/NBFC: l1_net_margin_chg_yoy_pp > 0  [True]
+  F7  cheap_own3y      pe_vs_own3y_pct < 0 (P/E below its own 36-month median; loss-makers unknown)        [True]
+  F8  cheap_peers      pe_vs_peers_pct < 0 (P/E below same-industry median on the same date)              [True]
+  F9  piotroski_high   piotroski_frac >= 5/7, known only if piotroski_n >= 5 (non-financials)            [True]
+  F10 large_cap        log_mcap above the median log_mcap of all in_fo results of the same quarter (qn) [two-sided]
+  F11 good_fund        "unjustified fall": loss_any_4q == 0 AND l1_pat_yoy_pct > 0 AND l1_sales_yoy_pct > 0
+                       (all three known) = True; False if any KNOWN one fails (a loss in 4q, PAT YoY <= 0,
+                       sales YoY <= 0); unknown otherwise                                                 [True]
+  -> 11 splits x 2 base sets = 22. Main family for the multiple-testing adjustment: the 11 on S85, three_day.
+
+POST-RESULTS SPLITS (reported quarter; known only at the result, i.e. INSIDE the 3-day window, so NOT tradable;
+they only explain whether the bounce depends on how the results turned out)
+  Q1  rq_good          rq_sales_yoy_pct > 0 AND rq_pat_yoy_pct > 0 (both known) vs any known one <= 0     [True]
+  Q2  rq_pat_up        rq_pat_yoy_pct > 0                                                                 [True]
+  Q3  rq_sales_up      rq_sales_yoy_pct > 0                                                               [True]
+  Q4  rq_beat_trend    rq_pat_surprise_vs_trend_pp > 0 (PAT YoY above the mean of its last 4 quarters)    [True]
+  -> 4 x 2 base sets = 8; a separate family (Holm over the 4 on S85).
+
+STATISTICS PER SPLIT (both sides): n, mean three_day, net, mean tp3, up% (three_day > 0), quarters with trades /
+  positive, first 14 (qn 0..13) and last 8 (qn 14..21) n and mean, mean without the best 5 trades.
+  D = mean(True) - mean(False) among known rows. p_perm: labels shuffled WITHIN quarter (qn) among the known trades,
+  20,000 shuffles, two-sided. Same for tp3. Holm (and Benjamini-Hochberg) over the family.
+  Comparison 1 (task's fundamental placebo): the same split on all OTHER in_fo results in the quarters where the base
+  set has trades: D_rest, its within-quarter-permutation sd, and z = (D - D_rest) / sqrt(sd^2 + sd_rest^2)
+  (does the fundamental matter more on the dip than on any result?).
+  Comparison 2 (non-results placebo): the same split on placebo lag+volume days (same lag/volume filters), using
+  the fundamentals of the stock's NEXT result row (its L1 = the quarter last published before the placebo day).
+  Price-based fields are moved to the placebo day: P/E and market cap x (adj close day k / adj close at that
+  row's cutoff); peer median P/E x (Nifty 50 day k / Nifty 50 at the cutoff); own-3y median kept. Size median =
+  that next-result quarter's in_fo median. D_plac with a calendar-month cluster bootstrap SE (2,000).
+  Rows after a stock's last result (no next row) are unknown.
+
+PROMOTION RULE (fixed now; decided on S85, pre-results splits only). A split becomes a refined rule only if ALL of
+  (a) the better side beats the other by >= 1.0 pp in BOTH halves (first 14, last 8), >= 5 known trades on each side
+      in each half;
+  (b) Holm-adjusted p_perm < 0.05 over the 11 pre-results splits on S85 (three_day);
+  (c) the better side is the prior side ("makes sense"; F10 two-sided: either side allowed).
+  Reported, not required: D vs D_rest and D vs D_plac. Splits that pass (a) and raw p < 0.05 but fail Holm are
+  listed as "not promoted - possible chance".
+  Refined rule report (if any): at vol >= 1.0 and >= 1.3, as below.
+
+REPLACEMENT RULES (can a fundamental screen replace part of the lag rule?), all in_fo results, three_day:
+  screens G in {F1 quality=True, F11 good_fund=True, F2 profitable_4q=True, F9 piotroski_high=True,
+                F7 cheap_own3y=True}
+  rules: G + lag < -10 (no volume filter); G + vol >= 1.0 (no lag filter); G alone   -> 5 x 3 = 15 rules.
+  references (not counted): lag < -10 alone, vol >= 1.0 alone, S85.
+RULE REPORT: n, mean, net, tp3 (gross/net), up%, quarters with trades / positive, first 14 vs last 8, without best 5,
+  luck = share of 20,000 random same-size-per-quarter picks from all in_fo results of the same quarter with mean >=
+  the rule's mean (one-sided), Holm over the 15 luck p-values; placebo (same filters on non-results days, month-
+  cluster bootstrap 95% CI); overlap with S85 and mean of the trades not in S85; for G + lag: the lag-only trades
+  that fail G (does G add anything inside the lag set). Per-quarter table for every rule.
+
+Total pre-registered things: 22 pre splits + 8 post splits + 15 replacement rules + refined rules (2 per promoted).

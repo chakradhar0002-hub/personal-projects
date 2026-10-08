@@ -1,0 +1,2 @@
+filing records: 6626 symbols: 207
+dropped mis-scaled filings: 6 [('LICHSGFIN', '2021-12-31', 'Consolidated'), ('PAYTM', '2022-12-31', 'Consolidated'), ('PAYTM', '2023-09-30', 'Consolidated'), ('PFC', '2023-12-31', 'Consolidated'), ('SRF', '2023-03-31', 'Consolidated'), ('TRENT', '2022-03-31', 'Consolidated')]

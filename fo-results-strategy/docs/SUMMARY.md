@@ -104,6 +104,7 @@ sit.
 | A +5% average over all quarters | Rules showing +6% exist only in hindsight, and random data finds equally good ones |
 | 100% winning trades or quarters | Perfect records appear in hindsight and in random data; afterwards about half were right |
 | Technical analysis (RSI, Stochastic, Bollinger, CCI, MFI, MACD, moving averages, ADX, candles, OBV; 44 signals) | No signal holds up; none improves or replaces the lag rule ([TECHNICAL_ANALYSIS.md](TECHNICAL_ANALYSIS.md)) |
+| Fundamental analysis (value, quality, growth, GARP, Piotroski, margins, turnarounds; before or after results) | No screen works; none improves or replaces the lag rule; reported numbers give no drift ([FUNDAMENTAL_ANALYSIS.md](FUNDAMENTAL_ANALYSIS.md)) |
 | Shorting (mild laggards, results losers, model "fall" picks) | Nothing worked |
 | Selling the straddle across the numbers | Lost about 3.3% of the premium a trade after costs |
 

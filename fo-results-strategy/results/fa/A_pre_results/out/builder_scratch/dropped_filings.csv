@@ -1,0 +1,7 @@
+symbol,quarter_end,basis,reference_quarter,share_count_ratio,revenue_ratio,reason
+LICHSGFIN,2021-12-31,Consolidated,2021-09-30,0.01,0.01073,money amounts in wrong unit (shares and revenue off by the same power of ten)
+PAYTM,2022-12-31,Consolidated,2022-09-30,0.09985,0.1077,money amounts in wrong unit (shares and revenue off by the same power of ten)
+PAYTM,2023-09-30,Consolidated,2023-06-30,0.1002,0.1076,money amounts in wrong unit (shares and revenue off by the same power of ten)
+PFC,2023-12-31,Consolidated,2023-09-30,0.01,0.01053,money amounts in wrong unit (shares and revenue off by the same power of ten)
+SRF,2023-03-31,Consolidated,2022-12-31,0.01,0.01089,money amounts in wrong unit (shares and revenue off by the same power of ten)
+TRENT,2022-03-31,Consolidated,2021-12-31,0.01,0.008865,money amounts in wrong unit (shares and revenue off by the same power of ten)

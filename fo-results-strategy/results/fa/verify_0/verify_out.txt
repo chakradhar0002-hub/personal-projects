@@ -1,0 +1,128 @@
+============================== trades.csv 85
+mine(a) vs panel mcap_adj: max rel diff 2.220446049250313e-16 n>1%: 0  missing mine: 1 missing panel: 0
+variant b (raw filing shares) vs a: n>5% diff 2
+      symbol  quarter          adj_a          adj_b shares_fixed
+33  ADANIENT  Q3 FY23  255872.366365  127725.588642        False
+39       SRF  Q1 FY24   72200.806222     722.008062         True
+filing published before cutoff in all: False  lag dist {1.0: 84}
+flag disagreements mine vs panel: 0
+        symbol  quarter         adj_a   mcap_adj_cr        ret
+50        SAIL  Q1 FY25  50605.786319  50605.786319  -4.289550
+10       PIIND  Q2 FY22  51216.441844  51216.441844   3.405270
+15   ZYDUSLIFE  Q3 FY22  51415.352353  51415.352353   0.657532
+78    PRESTIGE  Q3 FY26  51677.019948  51677.019948   4.923739
+60    PRESTIGE  Q3 FY25  51748.106193  51748.106193   6.815400
+76       DIXON  Q3 FY26  53107.654297  53107.654297   2.551553
+22  JINDALSTEL  Q4 FY22  53970.958974  53970.958974  -4.189978
+28  INDUSTOWER  Q3 FY23  55616.129271  55616.129271  -7.934132
+42  AUROPHARMA  Q3 FY24  58693.783152  58693.783152   2.360798
+20      NAUKRI  Q4 FY22  58858.321289  58858.321289  12.242380
+61  GODREJPROP  Q3 FY25  60645.698138  60645.698138  -2.393040
+79      SWIGGY  Q3 FY26  62441.565973  62441.565973  -0.577430
+72  WAAREEENER  Q3 FY26  62458.133074  62458.133074   3.617870
+82      NAUKRI  Q3 FY26  63522.967089  63522.967089  -4.018618
+40     POLYCAB  Q3 FY24  64132.947389  64132.947389   1.895017
+62  CUMMINSIND  Q3 FY25  69540.361705  69540.361705   9.533100
+3   BANDHANBNK  Q4 FY21  69950.767541  69950.767541  -1.278193
+51        BHEL  Q2 FY25  70390.658133  70390.658133   3.636450
+59   POLICYBZR  Q3 FY25  70884.187000  70884.187000   5.135630
+39         SRF  Q1 FY24  72200.806222  72200.806222  -3.501195
+12      NAUKRI  Q3 FY22  73085.854503  73085.854503   8.745382
+74     CGPOWER  Q3 FY26  77593.482255  77593.482255   1.927720
+75       LODHA  Q3 FY26  77877.271769  77877.271769   5.580601
+48  JINDALSTEL  Q1 FY25  84543.718833  84543.718833  -1.479835
+9    EICHERMOT  Q2 FY22  84708.384157  84708.384157   4.045781
+49  CUMMINSIND  Q1 FY25  85439.200872  85439.200872   6.752387
+56     CGPOWER  Q3 FY25  89132.614682  89132.614682   1.347980
+8    AMBUJACEM  Q2 FY22  89460.192110  89460.192110   1.525027
+ALL lag10 trades                               n= 85 avg=+2.13 net=+1.96 up%=64 q+=18/19 f14=+1.65(51) l8=+2.86(34) woBest5=+1.36 woBestQ=+2.08 tp=+2.14
+large adj>=67k (mine)                          n= 38 avg=+3.27 net=+3.10 up%=76 q+=14/15 f14=+3.63(21) l8=+2.82(17) woBest5=+1.91 woBestQ=+3.11 tp=+2.47
+not large                                      n= 47 avg=+1.22 net=+1.05 up%=53 q+=11/17 f14=+0.27(30) l8=+2.89(17) woBest5=-0.04 woBestQ=+0.86 tp=+1.88
+adj mcap >= 40000                              n= 65 avg=+2.51 net=+2.34 up%=71 q+=17/18 f14=+2.29(38) l8=+2.83(27) woBest5=+1.57 woBestQ=+2.41 tp=+2.24
+adj mcap >= 50000                              n= 53 avg=+2.63 net=+2.46 up%=72 q+=15/16 f14=+2.77(29) l8=+2.46(24) woBest5=+1.56 woBestQ=+2.50 tp=+2.11
+adj mcap >= 60000                              n= 43 avg=+2.85 net=+2.68 up%=72 q+=15/16 f14=+3.55(22) l8=+2.13(21) woBest5=+1.62 woBestQ=+2.70 tp=+2.25
+adj mcap >= 67000                              n= 38 avg=+3.27 net=+3.10 up%=76 q+=14/15 f14=+3.63(21) l8=+2.82(17) woBest5=+1.91 woBestQ=+3.11 tp=+2.47
+adj mcap >= 75000                              n= 32 avg=+3.18 net=+3.01 up%=78 q+=12/13 f14=+4.01(18) l8=+2.12(14) woBest5=+1.55 woBestQ=+2.88 tp=+2.40
+adj mcap >= 85000                              n= 28 avg=+3.28 net=+3.11 up%=79 q+=11/13 f14=+4.35(16) l8=+1.85(12) woBest5=+1.38 woBestQ=+2.93 tp=+2.46
+adj mcap >= 100000                             n= 20 avg=+2.53 net=+2.36 up%=70 q+=8/10 f14=+4.16(12) l8=+0.09(8) woBest5=-0.16 woBestQ=+2.00 tp=+1.36
+adj mcap >= 150000                             n= 17 avg=+1.72 net=+1.55 up%=71 q+=7/10 f14=+3.17(10) l8=-0.36(7) woBest5=-0.77 woBestQ=+1.03 tp=+0.93
+UNADJUSTED mcap >= 50000                       n= 49 avg=+2.84 net=+2.67 up%=76 q+=16/17 f14=+3.36(23) l8=+2.37(26) woBest5=+1.77 woBestQ=+2.63 tp=+2.42
+UNADJUSTED mcap >= 67000                       n= 38 avg=+3.14 net=+2.97 up%=76 q+=14/14 f14=+4.01(18) l8=+2.35(20) woBest5=+1.76 woBestQ=+2.88 tp=+2.45
+UNADJUSTED mcap >= 100000                      n= 23 avg=+3.08 net=+2.91 up%=74 q+=10/12 f14=+4.16(12) l8=+1.90(11) woBest5=+0.70 woBestQ=+2.64 tp=+2.20
+top 33% mcap of in_fo that quarter             n= 18 avg=+2.68 net=+2.51 up%=72 q+=8/10 f14=+4.62(11) l8=-0.36(7) woBest5=-0.37 woBestQ=+2.09 tp=+1.39
+top 50% mcap of in_fo that quarter             n= 27 avg=+3.25 net=+3.08 up%=78 q+=11/12 f14=+4.18(16) l8=+1.90(11) woBest5=+1.25 woBestQ=+2.89 tp=+2.40
+top 67% mcap of in_fo that quarter             n= 43 avg=+2.78 net=+2.61 up%=70 q+=13/14 f14=+3.18(24) l8=+2.28(19) woBest5=+1.46 woBestQ=+2.63 tp=+2.01
+above median of trades (61,544)                n= 42 avg=+2.98 net=+2.81 up%=74 q+=15/16 f14=+3.55(22) l8=+2.35(20) woBest5=+1.73 woBestQ=+2.83 tp=+2.36
+spearman log mcap vs ret: SignificanceResult(statistic=np.float64(0.15524956970740103), pvalue=np.float64(0.15850091048151768))
+      count        mean      
+large False True  False True 
+qn                           
+0       2.0   2.0 -4.23  5.73
+2       4.0   3.0 -0.31  1.05
+3       3.0   2.0  0.72  6.94
+4       6.0   1.0  0.14  2.06
+5       3.0   NaN  5.36   NaN
+6       2.0   NaN  1.00   NaN
+7       1.0   5.0 -7.93  6.09
+8       3.0   1.0  1.52  5.52
+9       1.0   1.0 -2.79 -3.50
+11      4.0   NaN  1.76   NaN
+12      NaN   4.0   NaN  1.96
+13      1.0   2.0 -4.29  2.64
+14      1.0   1.0 -1.50  3.64
+15      4.0   8.0  3.79  1.10
+16      2.0   3.0  9.15  3.77
+17      1.0   NaN  2.65   NaN
+18      NaN   1.0   NaN  6.43
+19      8.0   3.0  1.65  2.87
+21      1.0   1.0  1.30  9.23
+LOQO large avg range 2.839346298787878 3.8456313166666667  diff range 1.4253645727009219 2.8698164934108537
+within-quarter shuffle: obs diff +2.05 p2=0.063 ; obs large mean +3.27 p(mean>=)=0.052
+large-lag10 +3.27 vs random in_fo picks mean -0.06; p(>=)=0.0001
+all large in_fo results, same-quarter weighted baseline +0.09; all large overall +0.17, not large overall -0.17
+all in_fo: per-quarter large minus not-large: mean 0.248 pos q 14 / 22
+quarter-cluster bootstrap 90% CI of large-lag10 mean: [2.23 3.29 4.58]
+============================== trades_vol13.csv 44
+mine(a) vs panel mcap_adj: max rel diff 2.220446049250313e-16 n>1%: 0  missing mine: 0 missing panel: 0
+variant b (raw filing shares) vs a: n>5% diff 1
+      symbol  quarter          adj_a          adj_b shares_fixed
+15  ADANIENT  Q3 FY23  255872.366365  127725.588642        False
+filing published before cutoff in all: True  lag dist {1.0: 44}
+flag disagreements mine vs panel: 0
+        symbol  quarter         adj_a   mcap_adj_cr       ret
+39    PRESTIGE  Q3 FY26  51677.019948  51677.019948  4.923739
+29    PRESTIGE  Q3 FY25  51748.106193  51748.106193  6.815400
+7   JINDALSTEL  Q4 FY22  53970.958974  53970.958974 -4.189978
+10  INDUSTOWER  Q3 FY23  55616.129271  55616.129271 -7.934132
+20  AUROPHARMA  Q3 FY24  58693.783152  58693.783152  2.360798
+40      SWIGGY  Q3 FY26  62441.565973  62441.565973 -0.577430
+36  WAAREEENER  Q3 FY26  62458.133074  62458.133074  3.617870
+42      NAUKRI  Q3 FY26  63522.967089  63522.967089 -4.018618
+18     POLYCAB  Q3 FY24  64132.947389  64132.947389  1.895017
+1   BANDHANBNK  Q4 FY21  69950.767541  69950.767541 -1.278193
+24        BHEL  Q2 FY25  70390.658133  70390.658133  3.636450
+3       NAUKRI  Q3 FY22  73085.854503  73085.854503  8.745382
+37     CGPOWER  Q3 FY26  77593.482255  77593.482255  1.927720
+38       LODHA  Q3 FY26  77877.271769  77877.271769  5.580601
+23  CUMMINSIND  Q1 FY25  85439.200872  85439.200872  6.752387
+26     CGPOWER  Q3 FY25  89132.614682  89132.614682  1.347980
+2    AMBUJACEM  Q2 FY22  89460.192110  89460.192110  1.525027
+ALL lag10 trades                               n= 44 avg=+2.77 net=+2.60 up%=77 q+=16/18 f14=+2.57(24) l8=+3.00(20) woBest5=+1.53 woBestQ=+2.67 tp=+3.00
+large adj>=67k (mine)                          n= 22 avg=+3.75 net=+3.58 up%=86 q+=11/12 f14=+4.54(13) l8=+2.61(9) woBest5=+1.95 woBestQ=+3.44 tp=+3.10
+not large                                      n= 22 avg=+1.78 net=+1.61 up%=68 q+=10/13 f14=+0.24(11) l8=+3.32(11) woBest5=-0.30 woBestQ=+1.34 tp=+2.91
+adj mcap >= 40000                              n= 38 avg=+2.93 net=+2.76 up%=79 q+=14/16 f14=+2.83(21) l8=+3.05(17) woBest5=+1.62 woBestQ=+2.82 tp=+2.86
+adj mcap >= 50000                              n= 31 avg=+2.76 net=+2.59 up%=77 q+=11/13 f14=+3.01(17) l8=+2.45(14) woBest5=+1.37 woBestQ=+2.47 tp=+2.33
+adj mcap >= 60000                              n= 26 avg=+3.21 net=+3.04 up%=81 q+=12/13 f14=+4.36(14) l8=+1.88(12) woBest5=+1.62 woBestQ=+2.90 tp=+2.82
+adj mcap >= 67000                              n= 22 avg=+3.75 net=+3.58 up%=86 q+=11/12 f14=+4.54(13) l8=+2.61(9) woBest5=+1.95 woBestQ=+3.44 tp=+3.10
+adj mcap >= 75000                              n= 19 avg=+3.76 net=+3.59 up%=89 q+=10/10 f14=+4.69(11) l8=+2.49(8) woBest5=+1.80 woBestQ=+3.60 tp=+3.01
+adj mcap >= 85000                              n= 17 avg=+3.76 net=+3.59 up%=88 q+=9/9 f14=+4.69(11) l8=+2.06(6) woBest5=+1.51 woBestQ=+3.58 tp=+3.06
+adj mcap >= 100000                             n= 10 avg=+3.21 net=+3.04 up%=80 q+=5/6 f14=+4.56(7) l8=+0.05(3) woBest5=-0.64 woBestQ=+1.86 tp=+2.27
+adj mcap >= 150000                             n=  8 avg=+1.22 net=+1.05 up%=75 q+=4/6 f14=+2.14(6) l8=-1.55(2) woBest5=-2.34 woBestQ=+0.66 tp=+1.29
+UNADJUSTED mcap >= 50000                       n= 30 avg=+3.39 net=+3.22 up%=87 q+=13/13 f14=+4.62(14) l8=+2.31(16) woBest5=+2.07 woBestQ=+3.13 tp=+2.94
+UNADJUSTED mcap >= 67000                       n= 23 avg=+3.22 net=+3.05 up%=83 q+=11/11 f14=+4.69(11) l8=+1.88(12) woBest5=+1.55 woBestQ=+3.06 tp=+2.78
+UNADJUSTED mcap >= 100000                      n= 12 avg=+3.58 net=+3.41 up%=83 q+=7/7 f14=+4.56(7) l8=+2.21(5) woBest5=+0.50 woBestQ=+3.32 tp=+2.80
+top 33% mcap of in_fo that quarter             n=  9 avg=+3.20 net=+3.03 up%=78 q+=5/6 f14=+4.56(7) l8=-1.55(2) woBest5=-1.31 woBestQ=+1.63 tp=+2.19
+top 50% mcap of in_fo that quarter             n= 15 avg=+3.73 net=+3.56 up%=87 q+=8/8 f14=+4.49(10) l8=+2.21(5) woBest5=+1.23 woBestQ=+3.53 tp=+2.93
+top 67% mcap of in_fo that quarter             n= 26 avg=+2.53 net=+2.36 up%=73 q+=9/11 f14=+3.13(15) l8=+1.72(11) woBest5=+0.78 woBestQ=+2.17 tp=+2.14
+above median of trades (67,042)                n= 22 avg=+3.75 net=+3.58 up%=86 q+=11/12 f14=+4.54(13) l8=+2.61(9) woBest5=+1.95 woBestQ=+3.44 tp=+3.10
+spearman log mcap vs ret: SignificanceResult(statistic=np.float64(0.06300211416490487), pvalue=np.float64(0.6845354895339381))

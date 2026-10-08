@@ -1,0 +1,7 @@
+           split  n_I5  I5_long_vsN_net  n_pool  pool_vsN_net
+         0<XN<=4   113             1.74     879          0.63
+            XN>4    30             3.41     280          1.83
+         Company   127             2.22     938          0.92
+            Bank     8             0.07     110          1.14
+NBFC / financial     8             1.98     111          0.75
+PAT YoY of I5 trades: median -6.4%, share with PAT YoY < -25%: 39%

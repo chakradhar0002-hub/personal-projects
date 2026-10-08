@@ -1,0 +1,16 @@
+,S85_known,S85_true_share,all_in_fo_true_share,P100_true_share
+F1_quality,50,0.580,0.448,0.558
+F2_profitable_4q,78,0.936,0.888,0.920
+F3_l1_pat_growth,79,0.671,0.712,0.680
+F4_pat_accel,66,0.409,0.482,0.411
+F5_sales_accel,70,0.529,0.498,0.493
+F6_margin_up,83,0.482,0.529,0.509
+F7_cheap_own3y,40,0.600,0.489,0.741
+F8_cheap_peers,62,0.677,0.498,0.559
+F9_piotroski_high,59,0.576,0.669,0.627
+F10_large_cap,85,0.318,0.497,0.405
+F11_good_fund,78,0.577,0.593,0.600
+Q1_rq_good,80,0.562,0.663,
+Q2_rq_pat_up,80,0.600,0.713,
+Q3_rq_sales_up,83,0.831,0.869,
+Q4_rq_beat_trend,68,0.265,0.412,

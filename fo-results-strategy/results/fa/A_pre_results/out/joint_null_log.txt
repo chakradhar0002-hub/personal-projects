@@ -1,0 +1,14 @@
+three_day: observed screens with |z|>=1.96: 2; under the joint null median 2, 90th pct 5, P(count >= observed) 0.59; max|z| observed 2.01, null 95th pct of max|z| 3.20
+tp3: observed screens with |z|>=1.96: 2; under the joint null median 2, 90th pct 5, P(count >= observed) 0.59; max|z| observed 2.34, null 95th pct of max|z| 3.17
+     three_day_excess  three_day_z  three_day_p_single  three_day_p_maxT  tp3_excess  tp3_z  tp3_p_single  tp3_p_maxT
+id                                                                                                                   
+C1             -0.977       -2.005               0.046             0.782      -0.700 -1.517         0.129       0.992
+P2              0.282        1.977               0.051             0.800       0.242  1.800         0.073       0.912
+P1              0.231        1.769               0.080             0.928       0.202  1.650         0.103       0.967
+S1o             0.122        1.720               0.088             0.944       0.110  1.643         0.101       0.969
+S1             -0.197       -1.720               0.088             0.944      -0.178 -1.643         0.101       0.969
+D1o             0.137        1.688               0.093             0.954       0.145  1.894         0.057       0.861
+M1              0.200        1.580               0.113             0.979       0.268  2.342         0.025       0.492
+P1o            -1.324       -1.575               0.116             0.980      -0.839 -1.037         0.304       1.000
+GP1             0.267        1.541               0.116             0.986       0.281  1.761         0.082       0.929
+S2             -0.689       -1.575               0.117             0.980      -0.602 -1.502         0.130       0.992
