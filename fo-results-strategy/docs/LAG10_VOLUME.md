@@ -1,4 +1,4 @@
-# Lagged Nifty by more than 10% and above-average volume: every quarter
+# Lagged Nifty by more than 10% (or 15%) and above-average volume: every quarter
 
 Rule, at the cutoff close (2 sessions before the result session), stocks in F&O at the time:
 
@@ -119,6 +119,55 @@ An independent check rebuilt it from the raw data and agreed after one fix: COFO
 | Jan-Mar 2026 | Q4 FY26 | 0 | 0 | - | - | -0.31% |  |
 | Apr-Jun 2026 | Q1 FY27 | 0 | 0 | - | - | +0.17% |  |
 
+## Deeper lag and stricter volume: lag over 15% and 1.5x or more
+
+| Exit | Trades | Up | Average | After 0.17% cost | Quarters with trades | Positive | Without best 3 | Without best 5 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 3-day | 16 | 75% | +3.77% | +3.60% | 8 of 22 | 6 | +1.36% | +0.52% |
+| Take-profit | 16 | 81% | +3.13% | +2.96% | 8 of 22 | 7 | +1.32% | +0.71% |
+
+An independent check rebuilt it and got the same 16 trades (split adjustment changes nothing here). Its findings:
+
+- **Too few trades.** 16 trades in 8 of 22 quarters; 14 quarters had none, including the last two. 13 of the 16 come
+  from the Oct-Dec results seasons (cutoffs in late January / early February), and 10 sit in three sell-off windows
+  (late Jan 2022, the Feb 2023 Adani fall, late Jan 2025), so it is really about 8 independent bets.
+- **Three trades carry it.** ADANIPORTS +19.1%, KALYANKJIL +14.8%, NAUKRI +8.7%. Without the best 3 trades the average
+  is +1.4%, without the best 5 only +0.5%.
+- **The stricter cuts add nothing measurable.** Picking 16 trades at random from the wider "lag over 15%" results does
+  as well about 1 time in 6 (p 0.17); from "lag over 10% & 1.5x", about 1 time in 2 (p 0.44). Tighter cut points look
+  better only because they keep the same few big winners: every nearby version (lag 12-20%, volume 1.3-2.0x) sits at
+  +0.35% to +1.5% without its best 5 trades.
+- **Results-specific part.** The same filter on dates without results makes about +1.1% over 3 days, so about +2.7%
+  is linked to results, borderline significant (p about 0.03) on 16 trades and before allowing for the ~100 cut
+  combinations looked at.
+- Realistic expectation: about +1.5% a trade after costs at best, with long gaps between trades. The looser
+  "lag over 10% & volume 1.0x" rule gives about the same edge per trade with five times as many trades.
+
+| Results for | Quarter | Trades | Up | 3-day avg | Take-profit avg | All F&O stocks | Stocks (3-day %) |
+|---|---|---:|---:|---:|---:|---:|---|
+| Jan-Mar 2021 | Q4 FY21 | 0 | 0 | - | - | +0.82% |  |
+| Apr-Jun 2021 | Q1 FY22 | 0 | 0 | - | - | +0.06% |  |
+| Jul-Sep 2021 | Q2 FY22 | 0 | 0 | - | - | -0.84% |  |
+| Oct-Dec 2021 | Q3 FY22 | 3 | 3 | +6.19% | +5.65% | -0.64% | NAUKRI +8.7, TECHM +5.1, PIIND +4.7 |
+| Jan-Mar 2022 | Q4 FY22 | 1 | 0 | -4.19% | -4.19% | -0.83% | JINDALSTEL -4.2 |
+| Apr-Jun 2022 | Q1 FY23 | 0 | 0 | - | - | +0.75% |  |
+| Jul-Sep 2022 | Q2 FY23 | 1 | 1 | +3.01% | +3.01% | +0.03% | AUROPHARMA +3.0 |
+| Oct-Dec 2022 | Q3 FY23 | 3 | 2 | +6.19% | +2.94% | -0.16% | ADANIPORTS +19.1, AMBUJACEM +2.9, ADANIENT -3.5 |
+| Jan-Mar 2023 | Q4 FY23 | 0 | 0 | - | - | +0.61% |  |
+| Apr-Jun 2023 | Q1 FY24 | 0 | 0 | - | - | -0.30% |  |
+| Jul-Sep 2023 | Q2 FY24 | 0 | 0 | - | - | +0.41% |  |
+| Oct-Dec 2023 | Q3 FY24 | 1 | 1 | +1.90% | +1.90% | +0.48% | POLYCAB +1.9 |
+| Jan-Mar 2024 | Q4 FY24 | 0 | 0 | - | - | +0.88% |  |
+| Apr-Jun 2024 | Q1 FY25 | 0 | 0 | - | - | +0.53% |  |
+| Jul-Sep 2024 | Q2 FY25 | 0 | 0 | - | - | -1.12% |  |
+| Oct-Dec 2024 | Q3 FY25 | 4 | 3 | +5.30% | +4.53% | -0.79% | LODHA +4.4, KALYANKJIL +14.8, PRESTIGE +6.8, TRENT -4.9 |
+| Jan-Mar 2025 | Q4 FY25 | 1 | 1 | +1.77% | +1.77% | +0.96% | INFY +1.8 |
+| Apr-Jun 2025 | Q1 FY26 | 0 | 0 | - | - | -0.56% |  |
+| Jul-Sep 2025 | Q2 FY26 | 0 | 0 | - | - | +0.67% |  |
+| Oct-Dec 2025 | Q3 FY26 | 2 | 1 | -0.27% | +1.82% | +0.18% | SWIGGY -0.6, GODREJPROP +0.0 |
+| Jan-Mar 2026 | Q4 FY26 | 0 | 0 | - | - | -0.31% |  |
+| Apr-Jun 2026 | Q1 FY27 | 0 | 0 | - | - | +0.17% |  |
+
 Files: [results/lag10_volume/](../results/lag10_volume/) (summary.csv with the nearby variants; per_quarter.csv and
-trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x). Script:
+trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv for lag over 15% & 1.5x). Script:
 `pattern_tests/lag10_volume.py PACK_DIR nse_prices.db features22.csv OUT_DIR` (PACK_DIR from `sector_lab_data.py`).
