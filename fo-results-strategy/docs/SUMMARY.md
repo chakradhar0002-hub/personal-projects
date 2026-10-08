@@ -37,11 +37,13 @@ At the cutoff close (2 sessions before the result session), for each stock that 
 Why it is believable:
 
 - Volume splits the deep laggards cleanly: on rising volume they bounced, on quiet volume they kept drifting down.
-- It beats random picks from all stocks that lagged Nifty by 10%+ (chance of doing as well by luck under 1 in 100).
+- It beats random picks from all stocks that lagged Nifty by 10%+ (for the 1.2x and 1.3x versions, chance of doing as
+  well by luck about 4-6 in 1,000).
 - The same setup on ordinary days without results makes only about +0.7% to +0.8% over 3 days, so about +1.5% a trade
   is linked to the results.
 - Nearby cut-offs (lag 8-12%, volume 0.8-1.5x) give similar numbers; there is no cliff.
-- The last 8 quarters were all positive (1.0x: +2.86% a trade; 1.3x: +3.00%).
+- In the last 8 quarters, all 7 that had a trade were positive (Jan-Mar 2026 had none): 1.0x +2.86% a trade, 1.3x
+  +3.00%.
 
 Why to stay cautious:
 
@@ -55,10 +57,11 @@ Why to stay cautious:
 
 ### Tighter versions: same stocks, fewer trades
 
-Every stricter version is a subset of the one above it (a stock that lagged 15% also lagged 10%; volume above 1.5x is
-also above 1.3x). Tightening keeps the same few big winners (ADANIPORTS, KALYANKJIL, NAUKRI, TATAELXSI) and drops
-other, mostly good, trades, so the headline average rises while the trade count and the number of trading quarters
-fall. Without their best 5 trades they all earn about the same.
+Each stricter version is a subset of the looser one with the same lag or the same volume cut (a stock that lagged 15%
+also lagged 10%; volume above 1.5x is also above 1.3x). Tightening mostly keeps the same big winners (ADANIPORTS,
+KALYANKJIL) and drops other, mostly good, trades, so the headline average rises while the trade count and the number
+of trading quarters fall. Without their best 5 trades they land between about +0.3% and +1.5%: the lag-10% versions
++1.2% to +1.5%, the deeper lag-15% versions only +0.35% to +0.7%.
 
 | Rule | Trades | Quarters with trades | Positive | 3-day avg | Without best 5 |
 |---|---:|---:|---:|---:|---:|
@@ -90,7 +93,7 @@ sit.
 | Idea | Result |
 |---|---|
 | A pre-results rule averaging +2% in every quarter | None on unseen quarters; the average stock never reached +2% in any quarter |
-| Open search over about 350,000 rules, and machine-learning models | Strong in the quarters used to find them, about 0-2% afterwards |
+| Open searches (about 350,000 rules, later about 30 million a run) and machine-learning models | Strong in the quarters used to find them, about -2% to +2% afterwards |
 | Your Condition A / B | A: +3.1% on 32 picks, but only since 2023 and on 14 stocks; A or B: +1.7% |
 | Early reporters with a strong week | +3.4% on 42 trades; realistic about +1% above the market |
 | Valuation (P/B for financials, P/E for consumer, IT, pharma; cheapest or middle of the peer group) | No edge |
@@ -98,7 +101,7 @@ sit.
 | Six fresh sector strategies (619 variants: sector leaders, rotation, busy weeks, peer pairs) | No new edge |
 | A +5% average over all quarters | Rules showing +6% exist only in hindsight, and random data finds equally good ones |
 | 100% winning trades or quarters | Perfect records appear in hindsight and in random data; afterwards about half were right |
-| Shorting (laggards, run-ups, model "fall" picks) | Nothing worked |
+| Shorting (mild laggards, results losers, model "fall" picks) | Nothing worked |
 | Selling the straddle across the numbers | Lost about 3.3% of the premium a trade after costs |
 
 Two corrections along the way: the often-quoted "+0.28% for all stocks" in the 3-day window was inflated by results
