@@ -3,9 +3,10 @@
 Signal at the cutoff close (2 sessions before the result session), stocks in F&O at the time:
   - lag: the stock's 21-session return minus the Nifty 50 21-session return < -10%
   - volume: average traded volume of the last 5 sessions / average of the last 60 sessions (up to the cutoff) >= 1.0
-Buy at the cutoff close; exit at the Day+1 close (3-day) or with the take-profit rule. Volume comes straight from the
-NSE price table (as features22.py does); results with a bonus or split inside the 60 sessions are flagged, since
-unadjusted volume jumps after them. Cross-checked against features22.py's volume_5d_vs_60d.
+Buy at the cutoff close; exit at the Day+1 close (3-day) or with the take-profit rule. Volume comes from the NSE price
+table and is adjusted for bonuses and splits inside the window (volume before an ex-date x the share multiplier), since
+unadjusted volume jumps after them. Cross-checked against features22.py's volume_5d_vs_60d, which is unadjusted, so
+results with a split or bonus in the window can differ.
 
     python3 lag10_volume.py PACK_DIR nse_prices.db features22.csv OUT_DIR
 """
@@ -33,13 +34,19 @@ con = sqlite3.connect(f"file:{DB}?mode=ro", uri=True)
 vol = defaultdict(dict)
 for day, sym, v in con.execute("SELECT day, symbol, volume FROM px"):
     vol[sym][day] = v
-ca_days = defaultdict(list)
-for sym, ex, kind in con.execute("SELECT symbol, ex_date, kind FROM ca WHERE kind IN ('bonus', 'split')"):
-    ca_days[sym].append(ex)
+ca_days = defaultdict(list)                  # (ex-date, share multiplier); multipliers on the same day multiply
+for sym, ex, kind, factor in con.execute("SELECT symbol, ex_date, kind, factor FROM ca WHERE kind IN ('bonus', 'split')"):
+    if factor:
+        ca_days[sym].append((ex, factor))
 
 
 def avg_volume(sym, c, n):
-    vs = [vol[sym][sessions[k]] for k in range(c - n + 1, c + 1) if k >= 0 and vol[sym].get(sessions[k])]
+    """Average volume over sessions c-n+1..c, in shares of the cutoff day's share count."""
+    vs = []
+    for k in range(max(c - n + 1, 0), c + 1):
+        v = vol[sym].get(sessions[k])
+        if v:
+            vs.append(v * np.prod([f for ex, f in ca_days[sym] if sessions[k] < ex <= sessions[c]]))
     return np.mean(vs) if vs else np.nan
 
 
@@ -53,13 +60,15 @@ for e in ev.itertuples():
     rows.append({"symbol": e.symbol, "quarter": e.quarter, "qn": e.qn, "period": e.period, "cutoff": e.cutoff,
                  "in_fo": e.in_fo, "industry": e.industry, "vs_nifty_1m": np.nanprod(1 + ret[c - 20:c + 1, j]) - 1 - n1m,
                  "volume_ratio": avg_volume(e.symbol, c, 5) / avg_volume(e.symbol, c, 60),
-                 "split_in_window": any(sessions[c - 59] <= x <= sessions[c] for x in ca_days[e.symbol]),
+                 "split_in_window": any(sessions[c - 59] < ex <= sessions[c] for ex, _ in ca_days[e.symbol]),
                  "three_day": d1 + d2 + d3, "take_profit": d1 if d1 > 0.03 else (d1 + d2 if d1 + d2 > 0.03 else d1 + d2 + d3)})
 d = pd.DataFrame(rows)
 
 f = pd.read_csv(FEAT)[["symbol", "quarter", "volume_5d_vs_60d", "vs_nifty_1m"]]
 m = d.merge(f, on=["symbol", "quarter"], suffixes=("", "_f")).dropna(subset=["volume_ratio", "volume_5d_vs_60d"])
-print(f"check volume ratio: {len(m)} rows, max difference {np.abs(m.volume_ratio - m.volume_5d_vs_60d).max():.2e}; "
+clean = m[~m.split_in_window]
+print(f"check volume ratio (no split/bonus in window): {len(clean)} rows, max difference "
+      f"{np.abs(clean.volume_ratio - clean.volume_5d_vs_60d).max():.2e}; {int(m.split_in_window.sum())} results adjusted; "
       f"check lag: max difference {np.abs(m.vs_nifty_1m - m.vs_nifty_1m_f).max():.2e}")
 
 fo = d[d.in_fo == True]

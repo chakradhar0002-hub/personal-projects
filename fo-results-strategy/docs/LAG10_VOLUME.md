@@ -3,11 +3,12 @@
 Rule, at the cutoff close (2 sessions before the result session), stocks in F&O at the time:
 
 - the stock's 21-session return is more than 10 points below Nifty 50's, and
-- its average volume over the last 5 sessions is at least its 60-session average.
+- its average volume over the last 5 sessions is at least its 60-session average (volume adjusted for bonuses and
+  splits inside the window).
 
 Buy at the cutoff close; sell at the Day+1 close (3-day) or with the take-profit rule (Day-1 close if Day-1 > +3%,
 else Result-day close if Day-1 + Result day > +3%, else Day+1 close). Rebuilt from the raw daily returns and NSE volume;
-it matches the earlier feature file exactly. Only 1 of the 85 trades had a bonus or split inside the 60 sessions.
+it matches the earlier feature file exactly wherever no split or bonus falls inside the volume window.
 
 ## Summary
 
@@ -22,24 +23,23 @@ it matches the earlier feature file exactly. Only 1 of the 85 trades had a bonus
 - First 14 quarters +1.65% a trade, last 8 +2.86%. Worst trade -11.3% (ETERNAL), best +19.1% (ADANIPORTS). No stock
   appears more than 3 times.
 - Deep laggards on quiet volume did the opposite: -0.37% (109 trades), positive in 11 of 21 quarters.
-- The same filter on dates with no results nearby makes about +0.67% over 3 days (positive in 20 of 22 quarters), so
+- The same filter on dates with no results nearby makes about +0.65% over 3 days (positive in 19-20 of 22 quarters), so
   about +1.5% a trade is linked to results.
 - Caution: the 10% and 1.0x cut points were picked after looking at the data (see [LAG5_PATTERNS.md](LAG5_PATTERNS.md)),
-  so this is not an out-of-sample result. Encouragingly, nearby cut points give similar numbers rather than falling
-  off a cliff:
+  so this is not an out-of-sample result. Nearby cut points give similar numbers rather than falling off a cliff:
 
 | Rule | Trades | Up | 3-day avg | Take-profit avg | Quarters with trades | Positive (3-day) | Without best 5 |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| lag > 8%, volume ≥ 1.0x | 125 | 58% | +1.56% | +1.68% | 21 | 17 | +1.01% |
-| lag > 10%, volume ≥ 0.8x | 133 | 59% | +1.52% | +1.57% | 20 | 18 | +0.98% |
+| lag > 8%, volume ≥ 1.0x | 124 | 59% | +1.59% | +1.71% | 21 | 17 | +1.03% |
+| lag > 10%, volume ≥ 0.8x | 131 | 58% | +1.45% | +1.52% | 20 | 17 | +0.90% |
 | lag > 10%, volume ≥ 1.0x (this rule) | 85 | 64% | +2.13% | +2.14% | 19 | 18 | +1.36% |
 | lag > 10%, volume ≥ 1.2x | 54 | 70% | +2.51% | +2.75% | 18 | 16 | +1.40% |
-| lag > 10%, volume ≥ 1.5x | 33 | 79% | +3.03% | +2.45% | 13 | 11 | +1.36% |
+| lag > 10%, volume ≥ 1.5x | 32 | 78% | +3.05% | +2.44% | 12 | 10 | +1.31% |
 | lag > 12%, volume ≥ 1.0x | 56 | 66% | +2.26% | +1.91% | 17 | 15 | +1.11% |
 | lag > 15%, volume ≥ 1.0x | 32 | 69% | +2.71% | +2.82% | 11 | 10 | +0.68% |
 | lag > 10%, volume < 1.0x (quiet) | 109 | 47% | -0.37% | -0.18% | 21 | 11 | -0.98% |
 
-## Quarter by quarter
+## Quarter by quarter (volume 1.0x or more)
 
 | Results for | Quarter | Trades | Up | 3-day avg | Take-profit avg | Lag 10%+ on quiet volume | All F&O stocks | Stocks (3-day %) |
 |---|---|---:|---:|---:|---:|---:|---:|---|
@@ -68,6 +68,57 @@ it matches the earlier feature file exactly. Only 1 of the 85 trades had a bonus
 
 "Up" counts 3-day trades above zero. "All F&O stocks" is the average 3-day window of every F&O result that quarter.
 
-Files: [results/lag10_volume/](../results/lag10_volume/) (summary.csv with the nearby variants, per_quarter.csv,
-trades.csv). Script: `pattern_tests/lag10_volume.py PACK_DIR nse_prices.db features22.csv OUT_DIR` (PACK_DIR from
-`sector_lab_data.py`).
+## Stricter volume: 1.5x or more
+
+| Exit | Trades | Up | Average | After 0.17% cost | Quarters with trades | Positive | Without best 5 trades |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| 3-day | 32 | 78% | +3.05% | +2.88% | 12 of 22 | 10 | +1.31% |
+| Take-profit | 32 | 81% | +2.44% | +2.27% | 12 of 22 | 10 | +1.15% |
+
+An independent check rebuilt it from the raw data and agreed after one fix: COFORGE (Apr-Jun 2025 results) only passed
+1.5x because of its 1:5 split inside the volume window (adjusted ratio 1.42x), so it is dropped here (it stays in the
+1.0x rule). What the check found:
+
+- **Higher average, fewer trades.** About 1.5 trades a quarter, no trade in 10 of 22 quarters, including the last two.
+  The two losing quarters had a single trade each (JINDALSTEL -4.2%, MANAPPURAM -3.7%). First 14 quarters +2.81% (18
+  trades), last 8 +3.35% (14).
+- **Results matter.** The same filter on dates without results makes about +0.9% over 3 days, so roughly +2% a trade is
+  linked to results; it beat random oversold stocks reporting in the same quarters (p about 0.005).
+- **But 1.5x is not proven better than 1.0x.** Random picks of the same size from the 1.0x trades do as well about 1
+  time in 5 (p 0.18). Without its best 5 trades it averages +1.3%, the same as the 1.0x rule. Higher volume cuts look
+  better (1.6x +3.7% on 27, 2.0x +4.4% on 16) but all sit at +1.2-1.8% without their best 5 trades.
+- **Lumpy.** Many trades come from crash rebounds: Feb 2023 (Adani fall: ADANIPORTS +19%, AMBUJACEM, SBIN, BANKBARODA),
+  Jan 2025 and Jan 2026 (LODHA, PRESTIGE, GODREJPROP).
+- **Take-profit hurts here** (+2.44% vs +3.05% held to Day+1).
+- **About 100 cut-point combinations were looked at** in this family, and the stock list is today's F&O list (stocks
+  that crashed and were dropped from F&O are missing), so +3% is an optimistic estimate. Realistic: about +1% a trade
+  after costs and slippage.
+
+| Results for | Quarter | Trades | Up | 3-day avg | Take-profit avg | All F&O stocks | Stocks (3-day %) |
+|---|---|---:|---:|---:|---:|---:|---|
+| Jan-Mar 2021 | Q4 FY21 | 0 | 0 | - | - | +0.82% |  |
+| Apr-Jun 2021 | Q1 FY22 | 0 | 0 | - | - | +0.06% |  |
+| Jul-Sep 2021 | Q2 FY22 | 1 | 1 | +1.53% | +1.53% | -0.84% | AMBUJACEM +1.5 |
+| Oct-Dec 2021 | Q3 FY22 | 3 | 3 | +6.19% | +5.65% | -0.64% | NAUKRI +8.7, TECHM +5.1, PIIND +4.7 |
+| Jan-Mar 2022 | Q4 FY22 | 1 | 0 | -4.19% | -4.19% | -0.83% | JINDALSTEL -4.2 |
+| Apr-Jun 2022 | Q1 FY23 | 0 | 0 | - | - | +0.75% |  |
+| Jul-Sep 2022 | Q2 FY23 | 1 | 1 | +3.01% | +3.01% | +0.03% | AUROPHARMA +3.0 |
+| Oct-Dec 2022 | Q3 FY23 | 6 | 4 | +3.75% | +1.65% | -0.16% | INDUSTOWER -7.9, BANKBARODA +8.5, SBIN +3.4, ADANIPORTS +19.1, AMBUJACEM +2.9, ADANIENT -3.5 |
+| Jan-Mar 2023 | Q4 FY23 | 1 | 0 | -3.71% | -3.71% | +0.61% | MANAPPURAM -3.7 |
+| Apr-Jun 2023 | Q1 FY24 | 0 | 0 | - | - | -0.30% |  |
+| Jul-Sep 2023 | Q2 FY24 | 0 | 0 | - | - | +0.41% |  |
+| Oct-Dec 2023 | Q3 FY24 | 3 | 3 | +2.40% | +2.40% | +0.48% | POLYCAB +1.9, IEX +3.0, AUROPHARMA +2.4 |
+| Jan-Mar 2024 | Q4 FY24 | 2 | 2 | +2.84% | +2.24% | +0.88% | INFY +1.3, KOTAKBANK +4.4 |
+| Apr-Jun 2024 | Q1 FY25 | 0 | 0 | - | - | +0.53% |  |
+| Jul-Sep 2024 | Q2 FY25 | 1 | 1 | +3.64% | +3.64% | -1.12% | BHEL +3.6 |
+| Oct-Dec 2024 | Q3 FY25 | 5 | 4 | +4.51% | +3.89% | -0.79% | LODHA +4.4, CGPOWER +1.3, KALYANKJIL +14.8, PRESTIGE +6.8, TRENT -4.9 |
+| Jan-Mar 2025 | Q4 FY25 | 2 | 2 | +6.39% | +5.10% | +0.96% | INFY +1.8, TATAELXSI +11.0 |
+| Apr-Jun 2025 | Q1 FY26 | 0 | 0 | - | - | -0.56% |  |
+| Jul-Sep 2025 | Q2 FY26 | 0 | 0 | - | - | +0.67% |  |
+| Oct-Dec 2025 | Q3 FY26 | 6 | 4 | +1.31% | +1.61% | +0.18% | CGPOWER +1.9, LODHA +5.6, PRESTIGE +4.9, SWIGGY -0.6, GODREJPROP +0.0, NAUKRI -4.0 |
+| Jan-Mar 2026 | Q4 FY26 | 0 | 0 | - | - | -0.31% |  |
+| Apr-Jun 2026 | Q1 FY27 | 0 | 0 | - | - | +0.17% |  |
+
+Files: [results/lag10_volume/](../results/lag10_volume/) (summary.csv with the nearby variants; per_quarter.csv and
+trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x). Script:
+`pattern_tests/lag10_volume.py PACK_DIR nse_prices.db features22.csv OUT_DIR` (PACK_DIR from `sector_lab_data.py`).
