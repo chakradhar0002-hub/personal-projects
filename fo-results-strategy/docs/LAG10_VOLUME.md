@@ -478,7 +478,7 @@ An independent check rebuilt it exactly (split adjustment changes no trade here)
 | Oct-Dec 2025 | KALYANKJIL | -21.4% | 1.3x | +13.3% | +13.3% |
 | Apr-Jun 2026 | KPITTECH | -20.9% | 1.4x | +1.3% | +9.0% |
 
-- 14 trades in 7 of 22 quarters, every one of them positive with either exit; 15 quarters had no trade. Six of the
+- 14 trades in 7 of 22 quarters, every one of them positive with either exit; 15 quarters had no trade. Five of the
   seven quarters are Oct-Dec results seasons (late January / early February cutoffs).
 - Without the best 5 trades: +0.74% (take-profit +1.98%). ADANIPORTS +19.1% and KALYANKJIL twice (+14.8%, +13.3%)
   carry most of it.
