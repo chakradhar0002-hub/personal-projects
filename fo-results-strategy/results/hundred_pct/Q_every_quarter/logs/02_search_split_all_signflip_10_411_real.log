@@ -1,0 +1,27 @@
+$LAB_ROOT/hundred_pct/Q_every_quarter/qengine.py:38: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df = df.assign(tp3s=ts)
+Namespace(mode='split', universe='all', null='signflip', nruns=10, seed=411, real=True, beam=1000) conditions 2387 pairs 2833578 req {'strict': 14, 'hi': 11, 'lo': 7}
+real done 142.4
+3day strict False 227430 187096 {'oos_mean_frac_quarters_pos': 0.6676761158941078, 'oos_frac_rules_all_pos': 0.0184279721755648, 'oos_pooled_avg_pct': 0.41839590185567743}
+3day strict True 110594 88159 {'oos_mean_frac_quarters_pos': 0.6404897538442461, 'oos_frac_rules_all_pos': 0.009367766203703705, 'oos_pooled_avg_pct': 0.49602424136059853}
+3day hi False 449596 366783 {'oos_mean_frac_quarters_pos': 0.652723264890476, 'oos_frac_rules_all_pos': 0.02176632585935845, 'oos_pooled_avg_pct': 0.42702761946351603}
+3day hi True 247139 194739 {'oos_mean_frac_quarters_pos': 0.6273357264541252, 'oos_frac_rules_all_pos': 0.017563072929342095, 'oos_pooled_avg_pct': 0.4978752340594277}
+3day lo False 763927 556831 {'oos_mean_frac_quarters_pos': 0.6092453499121652, 'oos_frac_rules_all_pos': 0.060327946144181646, 'oos_pooled_avg_pct': 0.36826973684429287}
+3day lo True 470685 326637 {'oos_mean_frac_quarters_pos': 0.5787380616768052, 'oos_frac_rules_all_pos': 0.06469836205295192, 'oos_pooled_avg_pct': 0.4370882951744752}
+tp strict False 139405 118108 {'oos_mean_frac_quarters_pos': 0.6823774082803853, 'oos_frac_rules_all_pos': 0.03754662840746054, 'oos_pooled_avg_pct': 0.38793642960256025}
+tp strict True 53963 45313 {'oos_mean_frac_quarters_pos': 0.6592342211161707, 'oos_frac_rules_all_pos': 0.021441808747220164, 'oos_pooled_avg_pct': 0.5048273294903894}
+tp hi False 377722 302817 {'oos_mean_frac_quarters_pos': 0.6644258152731491, 'oos_frac_rules_all_pos': 0.0392079344526756, 'oos_pooled_avg_pct': 0.4112111935191114}
+tp hi True 171630 138721 {'oos_mean_frac_quarters_pos': 0.6355480209284268, 'oos_frac_rules_all_pos': 0.030805479387982997, 'oos_pooled_avg_pct': 0.5086468001191239}
+tp lo False 755299 515455 {'oos_mean_frac_quarters_pos': 0.6086695384801523, 'oos_frac_rules_all_pos': 0.08558093760776846, 'oos_pooled_avg_pct': 0.3390869716625001}
+tp lo True 437245 286270 {'oos_mean_frac_quarters_pos': 0.5666837674734441, 'oos_frac_rules_all_pos': 0.09192013648466332, 'oos_pooled_avg_pct': 0.3879122702821763}
+run 0 177.3 [22776, 5186, 126046, 51760, 674147, 379117, 25138, 6341, 224374, 87629, 820667, 463425]
+run 1 214.5 [72345, 13232, 307450, 98611, 582590, 287586, 82610, 17763, 372492, 116622, 706278, 348909]
+run 2 242.6 [29495, 11892, 142724, 68211, 741981, 499647, 34414, 13386, 184993, 87804, 852346, 563149]
+run 3 285.7 [121558, 35302, 345380, 127862, 636626, 327211, 170978, 45383, 382015, 150541, 719780, 388418]
+run 4 312.0 [35971, 15465, 133418, 57661, 773426, 467852, 36848, 11736, 123618, 51793, 818532, 507626]
+run 5 356.5 [52810, 14690, 374160, 167651, 718265, 389281, 87262, 24573, 488847, 227174, 881629, 483692]
+run 6 392.1 [36060, 8376, 244616, 79520, 675982, 358190, 89277, 23866, 376028, 122974, 856722, 433133]
+run 7 421.0 [12209, 2943, 108774, 48397, 843588, 473317, 12973, 5169, 115425, 62977, 951071, 593615]
+run 8 459.8 [101920, 33548, 281571, 131405, 519582, 297204, 106137, 43606, 314447, 161044, 617015, 378938]
+run 9 490.4 [21609, 8139, 111026, 53045, 754716, 506220, 13627, 4745, 102173, 53948, 875546, 582916]
+done 490.4

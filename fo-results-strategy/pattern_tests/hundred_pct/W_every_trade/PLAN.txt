@@ -1,0 +1,42 @@
+PLAN -- reading (W): "is there a cutoff-time rule whose trades are EVERY ONE positive?"
+Written before running any search. Working folder: hundred_pct/W_every_trade (inputs read-only).
+
+Data: five_pct/A_rule_search/features_all.csv (4,460 results, ~95 cutoff features; results timing NOT used)
+      + sector_lab/data/events.csv daily pieces ret_dm1/ret_rd/ret_dp1 (checked: three_day = their sum,
+      tp3 rebuilds exactly from them).  Main universe in_fo True (3,278); all stocks secondary.
+Conditions: copied from rulelib.py -- feature >= / <= cut (cuts = training-row percentiles 5..95),
+      category == value; AND of 1, 2 or 3 conditions; long and short.
+
+Outcomes (P&L per trade):
+  3day : long +three_day, short -three_day
+  tp   : long tp3 (exit D-1 close if D-1 > 3%, else RD close if D-1+RD > 3%, else D+1 close);
+         short = same mirror rule on -returns (take profit once the short is 3% in the money)
+Win = P&L > 0 (gross)  or  P&L > +0.17% ("after costs").
+"100% rule" = zero losing trades, at least m trades (m = 10, 15, 20, 30), picks in >= 4 quarters.
+
+Search engine (bit/boolean matrices, float32 matmul):
+  level 1 and 2 exhaustive (all conditions, all compatible pairs);
+  level 3 = beam: for each (m, side) the top B pairs by shrunk win rate (w+1)/(n+2) and the top B by the
+  Wilson 95% lower bound (n >= m, >= 4 quarters) are each extended by every compatible third condition
+  (exact de-dup of triples).  The SAME beam is used on real and on null data.  Count every rule evaluated.
+
+Runs:
+  A. HINDSIGHT (all 22 quarters, cuts from all rows): number of 100% rules at m=10/15/20/30 by level,
+     the largest 100% rule; identical search on 50 within-quarter shuffles and 50 sign-flips
+     (sign-flip applied to each day's piece around its quarter mean with one random sign per result, then
+     tp rebuilt -- so tp keeps its shape).  Settings: 3day gross, tp gross, 3day net, tp net.
+  B. FIXED SPLIT: choose on qn 0..13 (cuts from those rows only), test on qn 14..21.
+     - every rule with 100% winners in-sample: how many, and their out-of-sample win rate / average /
+       worst trade (aggregate over all of them + the largest ones listed);
+     - choose top-1/10/100 by shrunk win rate (w+1)/(n+2) and by Wilson 95% lower bound: OOS win rate,
+       average, worst trade, quarters positive;
+     - same on 50 shuffles + 50 sign-flips (how many in-sample 100% rules luck makes, and their OOS).
+  C. WALK-FORWARD: for q = 6..21 choose with quarters < q (cuts from those rows), trade quarter q;
+     chosen rule = top-1 by shrunk win rate / Wilson LB / largest 100% rule (m = 10, 20, 30).
+     Pool all walk-forward trades: win rate, average, worst trade, quarters positive.  Nulls as budget allows.
+  D. All-stocks universe (incl. pre-F&O survivors): A and B on real data + fewer nulls; pre-F&O share.
+  E. Pre-registered candidates (no search): r3d <= -8% long; vs_nifty_1m < -15% long (tp and 3day);
+     hindsight vs_ma200 <= -16.85% & peers_reported_n <= 1 & dist_20h <= -10.18% long;
+     ML (B_models final candidates) as reported.  Win rate, average, worst trade on qn 14..21 and all 22,
+     gross and after costs.
+  Everything tried is counted in counts.json.  Returns reported in percent.

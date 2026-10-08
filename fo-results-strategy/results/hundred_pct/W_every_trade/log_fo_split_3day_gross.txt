@@ -1,0 +1,6 @@
+fo_split_3day_gross real done 7.8 {'n_conditions': 2355, 'n_pairs': 2757988, 'n_beam_pairs': 5811, 'n_triples': 13081705, 'rules_evaluated_long_and_short': 31684096}
+{'long_m10_count100': 42592, 'long_m10_largest100': 25, 'long_m15_count100': 3214, 'long_m15_largest100': 25, 'long_m20_count100': 173, 'long_m20_largest100': 25, 'long_m30_count100': 0, 'long_m30_largest100': 0, 'short_m10_count100': 39493, 'short_m10_largest100': 34, 'short_m15_count100': 2488, 'short_m15_largest100': 34, 'short_m20_count100': 122, 'short_m20_largest100': 34, 'short_m30_count100': 1, 'short_m30_largest100': 34, 'both_m10_count100': 82085, 'both_m10_largest100': 34, 'both_m15_count100': 5702, 'both_m15_largest100': 34, 'both_m20_count100': 295, 'both_m20_largest100': 34, 'both_m30_count100': 1, 'both_m30_largest100': 34}
+fo_split_3day_gross shuffle 10 84.7
+fo_split_3day_gross shuffle 20 183.8
+fo_split_3day_gross shuffle 30 300.1
+fo_split_3day_gross shuffle 40 452.6

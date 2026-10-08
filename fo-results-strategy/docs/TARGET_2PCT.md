@@ -24,6 +24,7 @@ candidates are listed below with what they really earn.
 | Sector performance before results (below) | 299 - 730 | -0.2% to +0.9% | at most 4 of 22 |
 | Fresh sector strategies, 619 variants ([SECTOR_STRATEGIES.md](SECTOR_STRATEGIES.md)) | - | none beats chance | at most 5 of 21 |
 | Rules aiming at a +5% average over all quarters ([TARGET_5PCT.md](TARGET_5PCT.md)) | 11 - 125 | +0.5% to +1.9% on unseen quarters | - |
+| Rules with 100% winning trades or quarters ([TARGET_100PCT.md](TARGET_100PCT.md)) | 22 - 71 | 48-70% winners on unseen quarters | 4-5 of 8 positive |
 
 Note: "All F&O stocks" uses today's F&O list over the whole period, so it includes results from before a stock joined
 F&O (1,182 results, +0.94% on average); stocks that later joined were mostly the ones that grew. On stocks that were

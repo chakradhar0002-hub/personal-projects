@@ -1,0 +1,38 @@
+$LAB_ROOT/hundred_pct/Q_every_quarter/qengine.py:38: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df = df.assign(tp3s=ts)
+                                                                        candidate  side exit  trades  win_rate_pct  win_rate_net_pct  avg_pct  worst_trade_pct  quarters_with_picks  quarters_pos  quarters_pos_net first14 last8  first14_avg_pct  last8_avg_pct  worst_quarter_pct  trades_per_quarter_median  avg_wo_best5_pct quarters_pos_wo_best5  randompick_mean_quarters_pos  randompick_p_ge  signflip_mean_quarters_pos  signflip_p_ge
+                     A hindsight: r1w <= -1.642% AND days_after_quarter_end >= 26  long 3day     725        52.690            51.448    0.735          -36.163                   22            22                17   14/14   8/8            0.957          0.464              0.010                       32.0             0.606                 22/22                        10.949            0.000                      11.002            0.0
+                     A hindsight: r1w <= -1.642% AND days_after_quarter_end >= 26  long   tp     725        56.138            55.172    0.603          -36.163                   22            19                17   11/14   8/8            0.746          0.429             -0.349                       32.0             0.502                 18/22                        11.180            0.000                      11.398            0.0
+B hindsight after costs: sector_3m <= 17.16% AND pe <= 89.59 AND vol5_60 >= 1.196  long 3day     348        54.310            53.448    0.925          -13.176                   22            22                22   14/14   8/8            1.229          0.710              0.250                       13.0             0.659                 19/22                        11.148            0.000                      11.394            0.0
+B hindsight after costs: sector_3m <= 17.16% AND pe <= 89.59 AND vol5_60 >= 1.196  long   tp     348        56.322            55.747    0.816          -13.176                   22            20                20   12/14   8/8            1.169          0.567             -0.401                       13.0             0.591                 19/22                        11.538            0.000                      11.478            0.0
+C chosen on first 14: r3d <= -2.782% AND intra0 <= -0.8914% AND sec_3d >= -1.338% short 3day     143        64.336            62.937    1.972          -15.036                   22            19                19   14/14   5/8            2.895          1.036             -2.442                        6.0             1.287                 17/22                        11.037            0.001                      11.044            0.0
+C chosen on first 14: r3d <= -2.782% AND intra0 <= -0.8914% AND sec_3d >= -1.338% short   tp     143        67.832            66.434    1.875          -15.036                   22            19                18   14/14   5/8            2.599          1.141             -1.281                        6.0             1.244                 18/22                        11.335            0.001                      11.146            0.0
+                                               D lagged Nifty: vs_nifty_1m < -15%  long 3day      51        64.706            62.745    2.092          -10.054                   16            14                14    9/10   5/6            2.544          1.496             -2.794                        2.0             0.717                 11/16                         7.444            0.000                       7.667            0.0
+                                               D lagged Nifty: vs_nifty_1m < -15%  long   tp      51        72.549            70.588    2.235          -10.054                   16            15                15    9/10   6/6            2.121          2.386             -2.794                        2.0             1.190                 14/16                         7.831            0.000                       7.741            0.0
+days_after_qe_ge  0   15  20  23  26  30  35  40
+r1w_le_pct                                      
+-5.000            14  14  14  17  18  17  13  12
+-3.000            14  13  13  14  16  14  14  14
+-2.000            14  14  16  17  19  18  15  13
+-1.642            16  17  17  19  22  20  16  13
+-1.000            12  12  13  15  17  20  16  14
+-0.500            13  13  11  13  17  16  16  15
+days_after_qe_ge    0     15    20    23    26    30    35    40
+r1w_le_pct                                                      
+-5.000            0.47  0.49  0.47  0.63  1.14  1.13  0.59  1.05
+-3.000            0.06  0.10  0.17  0.26  0.68  0.64  0.37  0.67
+-2.000            0.20  0.25  0.30  0.40  0.74  0.72  0.48  0.74
+-1.642            0.21  0.26  0.30  0.41  0.74  0.70  0.44  0.57
+-1.000            0.14  0.18  0.21  0.35  0.62  0.60  0.36  0.49
+-0.500            0.02  0.04  0.10  0.22  0.47  0.41  0.16  0.37
+days_after_qe_ge    0     15    20    23    26   30   35   40
+r1w_le_pct                                                   
+-5.000             283   277   261   250   210  138   99   70
+-3.000             610   596   558   532   453  307  217  155
+-2.000             880   855   792   754   645  459  324  221
+-1.642             984   957   887   841   725  518  363  248
+-1.000            1203  1172  1085  1023   883  639  450  302
+-0.500            1382  1341  1232  1158  1003  739  524  347
+r1w <= -1.642% alone                               trades  984 avg  0.21% quarters pos 16/22
+days_after_quarter_end >= 26 alone                 trades 2344 avg  0.30% quarters pos 14/22
+days_after_quarter_end < 26 AND r1w <= -1.642%     trades  259 avg -1.25% quarters pos 7/22

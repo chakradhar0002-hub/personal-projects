@@ -1,0 +1,15 @@
+05_walkforward.py shuffle 15 701
+05_walkforward.py signflip 15 801
+02_search.py split fo none 0 0 --real
+02_search.py split fo signflip 25 401
+02_search.py full fo shuffle 25 102
+05_walkforward.py weekflip 10 901
+02_search.py full fo signflip 25 202
+02_search.py split fo signflip 25 402
+02_search.py split fo shuffle 25 302
+02_search.py full fo weekflip 25 501
+02_search.py split fo weekflip 25 601
+02_search.py full all shuffle 10 111 --real
+02_search.py split all signflip 10 411 --real
+02_search.py full all signflip 10 211
+02_search.py split all shuffle 10 311

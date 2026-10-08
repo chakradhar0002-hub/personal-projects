@@ -1,0 +1,13 @@
+all_3day_gross quarter 6 done 3.6
+all_3day_gross quarter 7 done 8.2
+all_3day_gross quarter 8 done 13.2
+all_3day_gross quarter 9 done 19.1
+all_3day_gross quarter 10 done 23.4
+all_3day_gross quarter 11 done 27.9
+all_3day_gross quarter 12 done 32.8
+all_3day_gross quarter 13 done 38.5
+all_3day_gross quarter 14 done 44.4
+all_3day_gross quarter 15 done 50.2
+all_3day_gross quarter 16 done 56.3
+all_3day_gross quarter 17 done 62.6
+all_3day_gross quarter 18 done 69.9

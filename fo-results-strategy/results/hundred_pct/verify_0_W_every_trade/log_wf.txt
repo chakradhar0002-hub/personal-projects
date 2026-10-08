@@ -1,0 +1,34 @@
+{'q': 6, 'm': 10, 'rule': 'LONG: r5y <= 0.6864 AND sector_3m <= -0.05412 AND sec_vs_nifty_1m >= 0.02532', 'n_is': 22, 'n_trade': 0, 'wins': 0, 'avg': nan}
+{'q': 6, 'm': 20, 'rule': 'LONG: r5y <= 0.6864 AND sector_3m <= -0.05412 AND sec_vs_nifty_1m >= 0.02532', 'n_is': 22, 'n_trade': 0, 'wins': 0, 'avg': nan}
+{'q': 7, 'm': 10, 'rule': 'LONG: intra0 <= -0.01994 AND maxabs5 <= 0.05048 AND z20 <= -0.8078', 'n_is': 21, 'n_trade': 4, 'wins': 1, 'avg': np.float64(-1.9291677429747125)}
+{'q': 7, 'm': 20, 'rule': 'LONG: intra0 <= -0.01994 AND maxabs5 <= 0.05048 AND z20 <= -0.8078', 'n_is': 21, 'n_trade': 4, 'wins': 1, 'avg': np.float64(-1.9291677429747125)}
+{'q': 8, 'm': 10, 'rule': 'LONG: r1w <= -0.06679 AND prev1_next20 <= 0.07074 AND d0 <= -0.02351', 'n_is': 22, 'n_trade': 0, 'wins': 0, 'avg': nan}
+{'q': 8, 'm': 20, 'rule': 'LONG: r1w <= -0.06679 AND prev1_next20 <= 0.07074 AND d0 <= -0.02351', 'n_is': 22, 'n_trade': 0, 'wins': 0, 'avg': nan}
+{'q': 9, 'm': 10, 'rule': 'LONG: sec_reported_3d >= -0.0009028 AND sec_reported_3d <= 0.01893 AND nifty_3d <= -0.009249', 'n_is': 23, 'n_trade': 4, 'wins': 1, 'avg': np.float64(-0.9865520015521998)}
+{'q': 9, 'm': 20, 'rule': 'LONG: sec_reported_3d >= -0.0009028 AND sec_reported_3d <= 0.01893 AND nifty_3d <= -0.009249', 'n_is': 23, 'n_trade': 4, 'wins': 1, 'avg': np.float64(-0.9865520015521998)}
+{'q': 10, 'm': 10, 'rule': 'LONG: vs_nifty_1w >= -0.01642 AND intra0 >= 0.02049 AND nifty_3d <= -0.004644', 'n_is': 26, 'n_trade': 0, 'wins': 0, 'avg': nan}
+{'q': 10, 'm': 20, 'rule': 'LONG: vs_nifty_1w >= -0.01642 AND intra0 >= 0.02049 AND nifty_3d <= -0.004644', 'n_is': 26, 'n_trade': 0, 'wins': 0, 'avg': nan}
+{'q': 11, 'm': 10, 'rule': 'LONG: vs_nifty_1w >= -0.02563 AND intra0 >= 0.01998 AND nifty_3d <= -0.004644', 'n_is': 26, 'n_trade': 5, 'wins': 3, 'avg': np.float64(2.024771011603388)}
+{'q': 11, 'm': 20, 'rule': 'LONG: vs_nifty_1w >= -0.02563 AND intra0 >= 0.01998 AND nifty_3d <= -0.004644', 'n_is': 26, 'n_trade': 5, 'wins': 3, 'avg': np.float64(2.024771011603388)}
+{'q': 12, 'm': 10, 'rule': 'LONG: vol60 >= 0.2763 AND sec_rank_1m >= 0.3158 AND sec_3d <= -0.03484', 'n_is': 26, 'n_trade': 1, 'wins': 1, 'avg': np.float64(6.11180484516278)}
+{'q': 12, 'm': 20, 'rule': 'LONG: vol60 >= 0.2763 AND sec_rank_1m >= 0.3158 AND sec_3d <= -0.03484', 'n_is': 26, 'n_trade': 1, 'wins': 1, 'avg': np.float64(6.11180484516278)}
+{'q': 13, 'm': 10, 'rule': 'LONG: vol60 >= 0.2755 AND sec_rank_1m >= 0.3158 AND sec_3d <= -0.03505', 'n_is': 25, 'n_trade': 3, 'wins': 2, 'avg': np.float64(4.744529021634927)}
+{'q': 13, 'm': 20, 'rule': 'LONG: vol60 >= 0.2755 AND sec_rank_1m >= 0.3158 AND sec_3d <= -0.03505', 'n_is': 25, 'n_trade': 3, 'wins': 2, 'avg': np.float64(4.744529021634927)}
+{'q': 14, 'm': 10, 'rule': 'LONG: days_since_dividend >= 154 AND gap5 <= -0.01678 AND own_dm1 <= 0.003908', 'n_is': 25, 'n_trade': 1, 'wins': 1, 'avg': np.float64(4.4980523889974)}
+{'q': 14, 'm': 20, 'rule': 'LONG: days_since_dividend >= 154 AND gap5 <= -0.01678 AND own_dm1 <= 0.003908', 'n_is': 25, 'n_trade': 1, 'wins': 1, 'avg': np.float64(4.4980523889974)}
+{'q': 15, 'm': 10, 'rule': 'LONG: vs_sector_1m <= -0.02947 AND gap5 <= -0.01638 AND vol20_60 <= 1.029', 'n_is': 26, 'n_trade': 1, 'wins': 0, 'avg': np.float64(-8.54556653877933)}
+{'q': 15, 'm': 20, 'rule': 'LONG: vs_sector_1m <= -0.02947 AND gap5 <= -0.01638 AND vol20_60 <= 1.029', 'n_is': 26, 'n_trade': 1, 'wins': 0, 'avg': np.float64(-8.54556653877933)}
+{'q': 16, 'm': 10, 'rule': 'LONG: pe >= 6.058 AND gap5 <= -0.01631 AND dist_20l <= 0', 'n_is': 24, 'n_trade': 0, 'wins': 0, 'avg': nan}
+{'q': 16, 'm': 20, 'rule': 'LONG: pe >= 6.058 AND gap5 <= -0.01631 AND dist_20l <= 0', 'n_is': 24, 'n_trade': 0, 'wins': 0, 'avg': nan}
+{'q': 17, 'm': 10, 'rule': 'LONG: vs_sector_1m <= 0.01297 AND gap5 <= -0.01948 AND nifty_3d <= -0.01437', 'n_is': 26, 'n_trade': 1, 'wins': 0, 'avg': np.float64(-0.39435548788264996)}
+{'q': 17, 'm': 20, 'rule': 'LONG: vs_sector_1m <= 0.01297 AND gap5 <= -0.01948 AND nifty_3d <= -0.01437', 'n_is': 26, 'n_trade': 1, 'wins': 0, 'avg': np.float64(-0.39435548788264996)}
+{'q': 18, 'm': 10, 'rule': 'LONG: sec_vs_nifty_1m >= 0.03855 AND gap5 <= -0.01192 AND vol5_60 >= 0.6795', 'n_is': 25, 'n_trade': 0, 'wins': 0, 'avg': nan}
+{'q': 18, 'm': 20, 'rule': 'LONG: sec_vs_nifty_1m >= 0.03855 AND gap5 <= -0.01192 AND vol5_60 >= 0.6795', 'n_is': 25, 'n_trade': 0, 'wins': 0, 'avg': nan}
+{'q': 19, 'm': 10, 'rule': 'LONG: r3y >= 0.912 AND sector_3m <= 0.01464 AND sec_reported_3d <= -0.03677', 'n_is': 24, 'n_trade': 1, 'wins': 0, 'avg': np.float64(-0.8585375799148399)}
+{'q': 19, 'm': 20, 'rule': 'LONG: r3y >= 0.912 AND sector_3m <= 0.01464 AND sec_reported_3d <= -0.03677', 'n_is': 24, 'n_trade': 1, 'wins': 0, 'avg': np.float64(-0.8585375799148399)}
+{'q': 20, 'm': 10, 'rule': 'LONG: iv_vs_realised >= 1.017 AND sec_vs_nifty_1m >= 0.0366 AND gap5 <= -0.01109', 'n_is': 25, 'n_trade': 4, 'wins': 2, 'avg': np.float64(-1.4605888080223302)}
+{'q': 20, 'm': 20, 'rule': 'LONG: iv_vs_realised >= 1.017 AND sec_vs_nifty_1m >= 0.0366 AND gap5 <= -0.01109', 'n_is': 25, 'n_trade': 4, 'wins': 2, 'avg': np.float64(-1.4605888080223302)}
+{'q': 21, 'm': 10, 'rule': 'LONG: nifty_1m >= 0.01723 AND sec_vs_nifty_1m <= -0.05878 AND sec_3d >= 0.005546', 'n_is': 24, 'n_trade': 3, 'wins': 2, 'avg': np.float64(1.9210546857338133)}
+{'q': 21, 'm': 20, 'rule': 'LONG: nifty_1m >= 0.01723 AND sec_vs_nifty_1m <= -0.05878 AND sec_3d >= 0.005546', 'n_is': 24, 'n_trade': 3, 'wins': 2, 'avg': np.float64(1.9210546857338133)}
+WF m=10: trades 28 win 46.4% avg +0.48 worst -8.5 quarters positive 5/11; last8 trades 11 win 45.5%
+WF m=20: trades 28 win 46.4% avg +0.48 worst -8.5 quarters positive 5/11; last8 trades 11 win 45.5%

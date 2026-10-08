@@ -1,0 +1,40 @@
+{
+ "search_runs": {
+  "full_all_real": 1,
+  "full_all_shuffle": 10,
+  "full_all_signflip": 10,
+  "full_fo_real": 1,
+  "full_fo_shuffle": 50,
+  "full_fo_signflip": 50,
+  "full_fo_weekflip": 25,
+  "split_all_real": 1,
+  "split_all_shuffle": 10,
+  "split_all_signflip": 10,
+  "split_fo_real": 1,
+  "split_fo_shuffle": 50,
+  "split_fo_signflip": 50,
+  "split_fo_weekflip": 25
+ },
+ "rule_variants_evaluated_per_real_search (1-3 conditions x long/short x 3day/TP)": {
+  "full_all": 41554556,
+  "full_fo": 40536680,
+  "split_all": 40723976,
+  "split_fo": 39347172
+ },
+ "walkforward_runs": {
+  "real_fo": 1,
+  "shuffle_fo": 15,
+  "signflip_fo": 15,
+  "weekflip_fo": 10
+ },
+ "criteria_per_search": 12,
+ "hindsight_criteria_tested": 24,
+ "split_criteria_x_selections": 72,
+ "walkforward_criteria_x_selections": 36,
+ "baseline_filters_x_direction_x_exit": 240,
+ "lagged_nifty_variants": 10,
+ "lagged_nifty_placebo_rows": 20,
+ "candidate_detail_rows": 8,
+ "candidate_A_neighbour_grid": 96,
+ "things_tried_total (criteria/selections/filters/variants, not counting individual rules)": 506
+}

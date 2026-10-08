@@ -1,0 +1,8 @@
+family,rule,is_trades,is_avg_pct,oos_trades,oos_pos_of_8,oos_avg_pct
+B sector_3m<= & pe<= & vol5_60>=,LONG: sector_3m <= 0.142 AND pe <= 63.57 AND vol5_60 >= 1.16,130,1.2252713432776965,182,6,0.5646137381328373
+B sector_3m<= & pe<= & vol5_60>=,LONG: sector_3m <= 0.142 AND pe <= 71.98 AND vol5_60 >= 1.16,133,1.1670830761101805,200,7,0.6738460575483196
+B sector_3m<= & pe<= & vol5_60>=,LONG: sector_3m <= 0.142 AND pe <= 87.56 AND vol5_60 >= 1.16,140,1.0107552156523971,222,7,0.5712281638898963
+B sector_3m<= & pe<= & vol5_60>=,LONG: sector_3m <= 0.166 AND pe <= 63.57 AND vol5_60 >= 1.16,144,1.2833743102279396,185,6,0.571136113220728
+B sector_3m<= & pe<= & vol5_60>=,LONG: sector_3m <= 0.166 AND pe <= 71.98 AND vol5_60 >= 1.16,148,1.2305327014363951,203,8,0.6781758232281881
+B sector_3m<= & pe<= & vol5_60>=,LONG: sector_3m <= 0.166 AND pe <= 87.56 AND vol5_60 >= 1.16,155,1.0864678766533427,225,7,0.5765028132854011
+B sector_3m<= & pe<= & vol5_60>=,LONG: sector_3m <= 0.166 AND pe <= 115.8 AND vol5_60 >= 1.16,170,0.7894893562967114,241,5,0.4923042332646603

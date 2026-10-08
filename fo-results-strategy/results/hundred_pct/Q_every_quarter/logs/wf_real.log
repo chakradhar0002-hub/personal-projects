@@ -1,0 +1,5 @@
+$LAB_ROOT/hundred_pct/Q_every_quarter/qengine.py:38: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df = df.assign(tp3s=ts)
+Namespace(null='none', nruns=0, seed=0, real=True, beam=400, universe='fo') conditions 2330
+real done 121.0
+done 121.0

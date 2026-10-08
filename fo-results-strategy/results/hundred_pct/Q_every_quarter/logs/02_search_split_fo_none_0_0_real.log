@@ -1,0 +1,17 @@
+$LAB_ROOT/hundred_pct/Q_every_quarter/qengine.py:38: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df = df.assign(tp3s=ts)
+Namespace(mode='split', universe='fo', null='none', nruns=0, seed=0, real=True, beam=1000) conditions 2355 pairs 2757988 req {'strict': 14, 'hi': 11, 'lo': 7}
+real done 94.6
+3day strict False 22452 20289 {'oos_mean_frac_quarters_pos': 0.5559673891830431, 'oos_frac_rules_all_pos': 0.0012027797576621526, 'oos_pooled_avg_pct': 0.2554705652544914}
+3day strict True 6768 5866 {'oos_mean_frac_quarters_pos': 0.529847592303253, 'oos_frac_rules_all_pos': 0.0004433934377771209, 'oos_pooled_avg_pct': 0.2682638797621867}
+3day hi False 163949 124311 {'oos_mean_frac_quarters_pos': 0.5384167765943586, 'oos_frac_rules_all_pos': 0.005887238616376783, 'oos_pooled_avg_pct': 0.11791839545370138}
+3day hi True 85171 61709 {'oos_mean_frac_quarters_pos': 0.49566351520036717, 'oos_frac_rules_all_pos': 0.004702010109321735, 'oos_pooled_avg_pct': 0.12026866678658235}
+3day lo False 939129 598344 {'oos_mean_frac_quarters_pos': 0.5284459240934125, 'oos_frac_rules_all_pos': 0.06599706918564603, 'oos_pooled_avg_pct': 0.058302071607160236}
+3day lo True 620165 388102 {'oos_mean_frac_quarters_pos': 0.49834372909163593, 'oos_frac_rules_all_pos': 0.06261936541232907, 'oos_pooled_avg_pct': 0.04989569241894893}
+tp strict False 20037 17716 {'oos_mean_frac_quarters_pos': 0.5960039531986916, 'oos_frac_rules_all_pos': 0.0014976038338658146, 'oos_pooled_avg_pct': 0.20430294104389174}
+tp strict True 7040 5865 {'oos_mean_frac_quarters_pos': 0.5526713371915931, 'oos_frac_rules_all_pos': 0.001990049751243781, 'oos_pooled_avg_pct': 0.22544452991400046}
+tp hi False 164762 125468 {'oos_mean_frac_quarters_pos': 0.5959694789482735, 'oos_frac_rules_all_pos': 0.02126016803861727, 'oos_pooled_avg_pct': 0.22566724312745984}
+tp hi True 91469 67067 {'oos_mean_frac_quarters_pos': 0.5712589020361369, 'oos_frac_rules_all_pos': 0.027547153278275536, 'oos_pooled_avg_pct': 0.28074848743765013}
+tp lo False 1159469 711271 {'oos_mean_frac_quarters_pos': 0.5897173449914203, 'oos_frac_rules_all_pos': 0.11811953843699594, 'oos_pooled_avg_pct': 0.31400381309503905}
+tp lo True 822189 494294 {'oos_mean_frac_quarters_pos': 0.55977980608809, 'oos_frac_rules_all_pos': 0.09854673359286009, 'oos_pooled_avg_pct': 0.3409557814868208}
+done 94.6

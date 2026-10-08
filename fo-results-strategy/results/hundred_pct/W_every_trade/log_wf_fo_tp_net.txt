@@ -1,0 +1,62 @@
+fo_tp_net quarter 6 done 4.4
+fo_tp_net quarter 7 done 8.8
+fo_tp_net quarter 8 done 13.0
+fo_tp_net quarter 9 done 16.5
+fo_tp_net quarter 10 done 20.3
+fo_tp_net quarter 11 done 24.3
+fo_tp_net quarter 12 done 28.1
+fo_tp_net quarter 13 done 32.0
+fo_tp_net quarter 14 done 36.0
+fo_tp_net quarter 15 done 41.4
+fo_tp_net quarter 16 done 46.5
+fo_tp_net quarter 17 done 52.0
+fo_tp_net quarter 18 done 57.4
+fo_tp_net quarter 19 done 62.8
+fo_tp_net quarter 20 done 67.9
+fo_tp_net quarter 21 done 73.8
+   criterion  min_trades    side  trades   win_rate       avg      worst  quarters  quarters_pos  quarters_all_trades_won
+0     shrunk          10    long      22  63.636364 -0.084884 -24.178308      11.0           6.0                      6.0
+1     shrunk          10   short      35  48.571429 -0.430353 -13.350724       5.0           2.0                      0.0
+2     shrunk          10  either      29  51.724138 -1.136418 -24.178308       6.0           1.0                      0.0
+3     wilson          10    long      22  63.636364 -0.084884 -24.178308      11.0           6.0                      6.0
+4     wilson          10   short      35  48.571429 -0.430353 -13.350724       5.0           2.0                      0.0
+5     wilson          10  either      29  51.724138 -1.136418 -24.178308       6.0           1.0                      0.0
+6    largest          10    long      22  63.636364 -0.084884 -24.178308      11.0           6.0                      6.0
+7    largest          10   short      35  48.571429 -0.430353 -13.350724       5.0           2.0                      0.0
+8    largest          10  either      29  51.724138 -1.136418 -24.178308       6.0           1.0                      0.0
+9     shrunk          15    long      22  63.636364 -0.084884 -24.178308      11.0           6.0                      6.0
+10    shrunk          15   short      35  48.571429 -0.430353 -13.350724       5.0           2.0                      0.0
+11    shrunk          15  either      29  51.724138 -1.136418 -24.178308       6.0           1.0                      0.0
+12    wilson          15    long      21  61.904762 -0.232426 -24.178308      10.0           5.0                      5.0
+13    wilson          15   short      35  48.571429 -0.430353 -13.350724       5.0           2.0                      0.0
+14    wilson          15  either      29  51.724138 -1.136418 -24.178308       6.0           1.0                      0.0
+15   largest          15    long      22  63.636364 -0.084884 -24.178308      11.0           6.0                      6.0
+16   largest          15   short      35  48.571429 -0.430353 -13.350724       5.0           2.0                      0.0
+17   largest          15  either      29  51.724138 -1.136418 -24.178308       6.0           1.0                      0.0
+18    shrunk          20    long      21  61.904762 -0.232426 -24.178308      10.0           5.0                      5.0
+19    shrunk          20   short      35  48.571429 -0.430353 -13.350724       5.0           2.0                      0.0
+20    shrunk          20  either      29  51.724138 -1.136418 -24.178308       6.0           1.0                      0.0
+21    wilson          20    long      22  63.636364 -0.084884 -24.178308      11.0           6.0                      6.0
+22    wilson          20   short      35  48.571429 -0.430353 -13.350724       5.0           2.0                      0.0
+23    wilson          20  either      29  51.724138 -1.136418 -24.178308       6.0           1.0                      0.0
+24   largest          20    long      22  63.636364 -0.084884 -24.178308      11.0           6.0                      6.0
+25   largest          20   short      35  48.571429 -0.430353 -13.350724       5.0           2.0                      0.0
+26   largest          20  either      29  51.724138 -1.136418 -24.178308       6.0           1.0                      0.0
+27    shrunk          30    long      23  43.478261 -1.169860 -12.141675      11.0           4.0                      3.0
+28    shrunk          30   short      44  54.545455  0.006077  -8.511756       7.0           4.0                      2.0
+29    shrunk          30  either      40  45.000000 -0.843804  -8.545567       9.0           2.0                      2.0
+30    wilson          30    long      27  37.037037 -1.138415 -12.141675      11.0           3.0                      2.0
+31    wilson          30   short      41  56.097561 -0.000066  -8.511756       6.0           4.0                      2.0
+32    wilson          30  either      37  45.945946 -0.919520  -8.545567       8.0           2.0                      2.0
+33   largest          30   short      13  61.538462  0.124642  -6.214796       1.0           0.0                      0.0
+34   largest          30  either      17  58.823529  0.129738  -8.545567       2.0           0.0                      0.0
+35   largest          30    long       4  50.000000  0.146300  -8.545567       1.0           0.0                      0.0
+36    all100          10    long  807424  54.628176       NaN        NaN       NaN           NaN                      NaN
+37    all100          10   short  626391  50.560273       NaN        NaN       NaN           NaN                      NaN
+38    all100          15    long   88574  48.851808       NaN        NaN       NaN           NaN                      NaN
+39    all100          15   short   55315  50.997017       NaN        NaN       NaN           NaN                      NaN
+40    all100          20    long    3135  51.674641       NaN        NaN       NaN           NaN                      NaN
+41    all100          20   short    4292  56.477167       NaN        NaN       NaN           NaN                      NaN
+42    all100          30    long       4  50.000000       NaN        NaN       NaN           NaN                      NaN
+43    all100          30   short     180  61.111111       NaN        NaN       NaN           NaN                      NaN
+done 74.0

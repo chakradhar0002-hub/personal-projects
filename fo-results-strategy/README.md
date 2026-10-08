@@ -22,6 +22,8 @@ checklist and concrete trades, and backtests them on your data.
 > - **No rule averages more than 5% in the 3-day window** on quarters it was not chosen on. Rules showing +6% over all 22
 >   quarters exist, but random data gives equally good ones; the best honest picks make about +1.5-2% a trade.
 >   See [docs/TARGET_5PCT.md](docs/TARGET_5PCT.md).
+> - **No rule is 100% positive**, per trade or per quarter, on quarters it was not chosen on: rules perfect in 2021-24
+>   were right about half the time afterwards. See [docs/TARGET_100PCT.md](docs/TARGET_100PCT.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.

@@ -1,0 +1,17 @@
+$LAB_ROOT/hundred_pct/Q_every_quarter/qengine.py:38: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df = df.assign(tp3s=ts)
+Namespace(mode='full', universe='fo', null='none', nruns=0, seed=0, real=True, beam=1000) conditions 2372 pairs 2797912 req {'strict': 22, 'hi': 16, 'lo': 10}
+real done 35.4
+3day strict False 130 104 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+3day strict True 2 2 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+3day hi False 4183 3510 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+3day hi True 1898 1526 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+3day lo False 128844 88816 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+3day lo True 78693 53735 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+tp strict False 11 11 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+tp strict True 0 None {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+tp hi False 19765 15913 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+tp hi True 8415 6958 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+tp lo False 226802 160725 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+tp lo True 136109 95043 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+done 35.4

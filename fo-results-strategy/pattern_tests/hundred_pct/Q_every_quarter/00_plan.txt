@@ -1,0 +1,60 @@
+PLAN (written before running anything) -- reading (Q): "every quarter's average of the picks is positive"
+===========================================================================================================
+
+Trade: buy at the cutoff close (2 sessions before the result session), sell at the Day+1 close.
+P&L per trade = three_day (sum of Day-1, Result-day, Day+1 returns); short = -three_day.
+Take-profit version: long = tp3 (exit at Day-1 close if Day-1 > 3%, else at Result-day close if
+Day-1 + Result-day > 3%, else Day+1 close); short = tp3s (same rule mirrored for a short), built from
+events.csv daily returns (checked: matches three_day / tp3 exactly).
+After costs: a quarter counts as positive only if its average P&L > 0.17% (= every trade pays 0.17%).
+Universe: in_fo True (3,278 results) main; all 4,460 secondary.
+
+A "quarter" = one results season (qn 0..21).  Quarter average = equal-weight average of that quarter's picks.
+
+STEP 1  01_engine.py (library) + 02_search.py  -- exhaustive 1- and 2-condition rules, 3-condition by beam
+  Conditions: rulelib.build_conditions (feature >= / <= percentile cut of the TRAINING rows, or category ==),
+  exactly the conditions of the earlier +5% search (copied rulelib.py into this folder).
+  Rule = AND of 1-3 conditions, long or short.
+  For every 1/2-condition rule (all compatible pairs, ~2.8 million x 2 directions) the per-quarter
+  trade count and P&L sum are computed quarter by quarter with matrix products; tracked per rule:
+  quarters with picks, number of failing quarters, worst quarter average, totals.
+  3-condition rules: beam -- per P&L variant (long 3-day, short 3-day, long TP, short TP) the 1000 pairs
+  with the fewest failing quarters (ties: more quarters with picks, then better worst quarter), among
+  pairs with picks in >= the lowest coverage level, are each extended by every compatible third
+  condition (de-duplicated exactly as rulelib does).
+  Coverage levels (fraction of the period's quarters that must have picks):
+    strict = all quarters (an empty quarter is a failure),  hi = 16/22 (>=16 of 22, >=11 of 14),
+    lo = 10/22 (>=10 of 22, >=7 of 14).   Qualifies = every quarter that has picks is positive.
+  Families: 3-day exit and TP exit, each long+short; gross and after costs.
+  Also counted: distinct pick-sets among qualifying rules (many rules are the same trades).
+
+  Runs:
+   (a) HINDSIGHT: search all 22 quarters (conditions cut on all rows) -> how many rules qualify.
+   (b) FIXED SPLIT: search qn 0..13 (cuts on those rows), qualifying = all positive in the first 14;
+       report for those rules the last 8 quarters (qn 14..21): quarters with picks, quarters positive,
+       positive out of 8 with empty = failure, pooled average, win rate.
+       Pre-registered "chosen" rule per setting: most quarters with picks, then best worst-quarter average
+       (top 1), the 10 best by that order (top 10), and all qualifying rules.
+   (c) NULLS for (a) and (b), identical pipeline, >= 50 runs each:
+       shuffle  = (three_day, tp3, tp3s) rows permuted within quarter;
+       signflip = each result's daily returns flipped around the quarter mean of that day (random sign per
+                  result), three_day/tp3/tp3s rebuilt -> keeps size of moves and quarter averages, kills direction.
+       Report: number of qualifying rules (real vs null median / 95th pct / share of runs >= real), and what the
+       null-chosen rules do in the null hold-out.
+   (d) WALK-FORWARD: for q = 8..21, rebuild cuts from quarters < q, search quarters < q, take the chosen rule
+       (top 1 / top 10 / all qualifying) for each family x cost x coverage and trade quarter q.  Count WF
+       quarters positive.  Same on ~20 null runs of each kind (cost permitting).
+
+STEP 2  03_baselines.py -- buy every F&O stock / short every F&O stock; broad filters (market-cap thirds,
+  each sector index, bank / NBFC / company, fiscal quarter): quarters with picks and quarters positive
+  (22, first 14, last 8), 3-day and TP, gross and after costs.
+
+STEP 3  04_lagged_nifty.py -- earlier candidate "vs_nifty_1m (21-session stock return minus Nifty) < -15%,
+  TP exit": thresholds -10/-12/-15/-18/-20%; 3-day and TP; quarters positive in first 14 vs last 8;
+  without the best 5 trades; random-pick baseline (same number of random F&O picks in each quarter,
+  2,000 draws: how often >= its quarters-positive count); placebo on non-results dates (random cutoff per
+  stock per season with no result session within 10 sessions of the window; same filter; 3-day return;
+  500 draws + all-eligible-days version).
+
+Everything tried is counted in 99_counts.json.  Returns in output tables are in PERCENT.
+Only cutoff-time information; the results timing (after_close / timing) is not used.

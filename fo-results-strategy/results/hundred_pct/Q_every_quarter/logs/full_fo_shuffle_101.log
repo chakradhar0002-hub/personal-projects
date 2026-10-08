@@ -1,0 +1,42 @@
+$LAB_ROOT/hundred_pct/Q_every_quarter/qengine.py:38: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df = df.assign(tp3s=ts)
+Namespace(mode='full', universe='fo', null='shuffle', nruns=25, seed=101, real=True, beam=1000) conditions 2372 pairs 2797912 req {'strict': 22, 'hi': 16, 'lo': 10}
+real done 62.7
+3day strict False 130 104 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+3day strict True 2 2 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+3day hi False 4183 3510 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+3day hi True 1898 1526 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+3day lo False 128844 88816 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+3day lo True 78693 53735 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+tp strict False 11 11 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+tp strict True 0 None {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+tp hi False 19765 15913 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+tp hi True 8415 6958 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+tp lo False 226802 160725 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+tp lo True 136109 95043 {'oos_mean_frac_quarters_pos': None, 'oos_frac_rules_all_pos': None, 'oos_pooled_avg_pct': None}
+run 0 85.3 [0, 0, 2670, 667, 153486, 91344, 14, 0, 5465, 2092, 213540, 143477]
+run 1 114.2 [15, 7, 1424, 389, 373478, 197363, 138, 4, 1498, 232, 384576, 215363]
+run 2 152.4 [13, 6, 1309, 473, 82991, 47145, 17, 8, 1660, 477, 138773, 81747]
+run 3 185.4 [20, 0, 1678, 738, 99069, 55484, 43, 3, 4171, 1336, 137231, 74454]
+run 4 215.5 [1, 0, 534, 72, 100567, 51287, 0, 0, 2113, 860, 169179, 76672]
+run 5 245.1 [80, 40, 3904, 1375, 119264, 71443, 26, 2, 3206, 1593, 157542, 97883]
+run 6 296.7 [0, 0, 4832, 1984, 178383, 97903, 0, 0, 21407, 4128, 220351, 110751]
+run 7 349.5 [1, 0, 1479, 324, 76921, 46668, 1, 0, 1954, 380, 120664, 68316]
+run 8 372.8 [6, 0, 2683, 794, 217323, 96898, 4, 1, 2131, 462, 267829, 127432]
+run 9 402.3 [2, 0, 1742, 467, 81881, 49433, 5, 0, 3964, 1766, 127333, 76707]
+run 10 434.7 [62, 2, 2150, 719, 146117, 84146, 171, 33, 1698, 604, 176527, 95974]
+run 11 465.2 [2, 0, 1404, 361, 87288, 47144, 3, 1, 2538, 476, 141609, 71512]
+run 12 485.8 [126, 21, 2711, 905, 125858, 65855, 65, 6, 4003, 678, 180287, 86109]
+run 13 499.0 [4, 0, 919, 312, 88348, 50640, 13, 2, 2443, 987, 100755, 61757]
+run 14 512.9 [5, 2, 828, 205, 110788, 54785, 12, 1, 1332, 349, 144740, 70071]
+run 15 526.7 [8, 0, 686, 313, 111150, 63939, 4, 1, 1442, 665, 150184, 86390]
+run 16 541.0 [0, 0, 1312, 564, 94959, 49452, 0, 0, 3275, 790, 153880, 80155]
+run 17 556.1 [27, 3, 1658, 486, 88919, 51860, 44, 11, 3469, 1466, 118753, 74808]
+run 18 569.6 [26, 1, 1865, 639, 124663, 71885, 13, 0, 2109, 875, 166098, 98401]
+run 19 583.2 [0, 0, 2180, 990, 99362, 56456, 166, 0, 2351, 673, 138630, 75660]
+run 20 597.1 [79, 11, 2647, 918, 96657, 53800, 81, 34, 2147, 807, 121426, 74620]
+run 21 611.8 [0, 0, 1267, 324, 73053, 34747, 0, 0, 2747, 1006, 107665, 62390]
+run 22 626.4 [6, 0, 1464, 792, 95854, 56877, 6, 1, 3095, 1469, 143049, 83627]
+run 23 640.1 [1, 0, 819, 273, 64356, 34927, 11, 0, 960, 253, 95651, 53990]
+run 24 654.9 [0, 0, 2209, 1061, 123541, 68826, 19, 1, 4924, 1586, 168468, 92573]
+done 655.0

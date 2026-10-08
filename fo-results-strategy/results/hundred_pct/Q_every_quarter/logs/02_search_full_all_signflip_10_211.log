@@ -1,0 +1,14 @@
+$LAB_ROOT/hundred_pct/Q_every_quarter/qengine.py:38: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  df = df.assign(tp3s=ts)
+Namespace(mode='full', universe='all', null='signflip', nruns=10, seed=211, real=False, beam=1000) conditions 2410 pairs 2888307 req {'strict': 22, 'hi': 16, 'lo': 10}
+run 0 18.4 [389, 23, 14477, 1218, 361921, 67021, 538, 3, 10592, 1826, 356311, 85412]
+run 1 36.0 [130, 7, 3140, 1319, 99157, 53889, 27, 0, 4191, 1886, 130173, 74888]
+run 2 57.3 [304, 15, 7901, 2365, 150720, 58716, 2015, 96, 20125, 7104, 198607, 86184]
+run 3 74.2 [218, 32, 3231, 1173, 107312, 63543, 735, 128, 8394, 2422, 163784, 96774]
+run 4 96.9 [626, 71, 21247, 7655, 336984, 200558, 918, 83, 25180, 7924, 300890, 167113]
+run 5 122.7 [8241, 1218, 35435, 9644, 253846, 129595, 3819, 381, 34257, 7474, 251497, 129909]
+run 6 139.9 [36, 2, 4249, 1060, 146598, 81345, 34, 3, 6467, 1739, 209085, 112677]
+run 7 159.0 [622, 65, 16783, 3314, 225051, 125663, 797, 111, 16500, 3869, 253492, 131343]
+run 8 175.0 [0, 0, 720, 226, 102758, 58785, 30, 5, 1930, 853, 212021, 144350]
+run 9 193.7 [769, 91, 8870, 2574, 154145, 71625, 1408, 167, 15917, 3653, 177280, 84880]
+done 193.7
