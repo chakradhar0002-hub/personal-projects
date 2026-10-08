@@ -28,6 +28,8 @@ checklist and concrete trades, and backtests them on your data.
 >   quarters with trades positive, no trade in 6 quarters. See [docs/LAGGED_NIFTY_1M.md](docs/LAGGED_NIFTY_1M.md).
 >   Inside the wider "lagged by more than 5%" group (+0.05% on average) only the deeply beaten-down names bounce; no
 >   short works. See [docs/LAG5_PATTERNS.md](docs/LAG5_PATTERNS.md).
+>   Lagged by more than 10% on above-average volume: 85 trades, +2.1%, 18 of 19 quarters with trades positive (cut
+>   points chosen after looking). See [docs/LAG10_VOLUME.md](docs/LAG10_VOLUME.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.

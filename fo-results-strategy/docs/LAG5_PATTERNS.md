@@ -44,6 +44,7 @@ Up to a 15% lag, the results window is no better (often worse) than an ordinary 
 - The "lag 10%+ and above-average volume" rule is the steadiest-looking: positive in 18 of 19 quarters with trades,
   all 7 of the last 8 that had trades, +1.36% without its best 5 trades, about 4 trades a quarter. But its 10% and 1x
   cut points were chosen after seeing the data, and it was not independently checked.
+  Quarter-by-quarter detail: [LAG10_VOLUME.md](LAG10_VOLUME.md).
 - Waiting for the bounce to start (cutoff day up, 2+ up days) did slightly worse (-0.2% to -0.4%) than buying stocks
   still falling (+0.2% to +0.4%).
 - Shorting the mild laggards nets only +0.05% after costs; every short combination failed in the last 8 quarters.
