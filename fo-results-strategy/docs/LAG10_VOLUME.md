@@ -37,6 +37,7 @@ it matches the earlier feature file exactly wherever no split or bonus falls ins
 | lag > 10%, volume ≥ 1.5x | 32 | 78% | +3.05% | +2.44% | 12 | 10 | +1.31% |
 | lag > 12%, volume ≥ 1.0x | 56 | 66% | +2.26% | +1.91% | 17 | 15 | +1.11% |
 | lag > 15%, volume ≥ 1.0x | 32 | 69% | +2.71% | +2.82% | 11 | 10 | +0.68% |
+| lag > 15%, volume ≥ 1.2x | 23 | 9 | 8 | 74% | +3.20% | +3.52% | +0.60% |
 | lag > 10%, volume < 1.0x (quiet) | 109 | 47% | -0.37% | -0.18% | 21 | 11 | -0.98% |
 
 ## All versions at a glance
@@ -410,8 +411,50 @@ An independent check rebuilt it exactly (split adjustment changes no trade here)
 | Jan-Mar 2026 | Q4 FY26 | 0 | 0 | - | - | -0.31% |  |
 | Apr-Jun 2026 | Q1 FY27 | 1 | 1 | +1.30% | +8.97% | +0.17% | KPITTECH +1.3 |
 
+## Lag over 15% and volume 1.2x or more
+
+| Exit | Trades | Up | Average | After 0.17% cost | Quarters with trades | Positive | Without best 5 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| 3-day | 23 | 74% | +3.20% | +3.03% | 9 of 22 | 8 | +0.60% |
+| Take-profit | 23 | 83% | +3.52% | +3.35% | 9 of 22 | 9 | +1.43% |
+
+- 23 trades in 9 of 22 quarters (13 without a trade). With take-profit every quarter that traded was positive; with
+  the 3-day exit all but Jan-Mar 2022 (-1.1%). First 14 quarters +3.12% (12 trades), last 8 +3.29% (11).
+- Without the best 5 trades: +0.60% (take-profit +1.43%). KALYANKJIL twice (+14.8%, +13.3%) and ADANIPORTS (+19.1%)
+  carry much of it.
+- The same filter on dates without results makes +0.87% (+1.19% per episode), so about +2.3% is linked to results.
+- The deeper 15% lag does not pick better trades: random picks of the same size from the same quarters' "lag over 15%"
+  results do as well 1 time in 7 (p 0.15), from "lag over 10% & 1.2x" 1 time in 3 (p 0.31), from "lag over 15% &
+  1.0x" about 1 time in 2 (p 0.47). The trades it drops (lag 10-15% with 1.2x volume, 31 trades) averaged +2.0%.
+- Realistic: the same +1-1.5% a trade as the wider rules, with fewer trades.
+
+| Results for | Quarter | Trades | Up | 3-day avg | Take-profit avg | All F&O stocks | Stocks (3-day %) |
+|---|---|---:|---:|---:|---:|---:|---|
+| Jan-Mar 2021 | Q4 FY21 | 0 | 0 | - | - | +0.82% |  |
+| Apr-Jun 2021 | Q1 FY22 | 0 | 0 | - | - | +0.06% |  |
+| Jul-Sep 2021 | Q2 FY22 | 0 | 0 | - | - | -0.84% |  |
+| Oct-Dec 2021 | Q3 FY22 | 5 | 4 | +3.21% | +2.89% | -0.64% | DIXON -3.2, NAUKRI +8.7, TECHM +5.1, PIIND +4.7, ZYDUSLIFE +0.7 |
+| Jan-Mar 2022 | Q4 FY22 | 2 | 1 | -1.06% | +0.10% | -0.83% | JSWSTEEL +2.1, JINDALSTEL -4.2 |
+| Apr-Jun 2022 | Q1 FY23 | 0 | 0 | - | - | +0.75% |  |
+| Jul-Sep 2022 | Q2 FY23 | 1 | 1 | +3.01% | +3.01% | +0.03% | AUROPHARMA +3.0 |
+| Oct-Dec 2022 | Q3 FY23 | 3 | 2 | +6.19% | +2.94% | -0.16% | ADANIPORTS +19.1, AMBUJACEM +2.9, ADANIENT -3.5 |
+| Jan-Mar 2023 | Q4 FY23 | 0 | 0 | - | - | +0.61% |  |
+| Apr-Jun 2023 | Q1 FY24 | 0 | 0 | - | - | -0.30% |  |
+| Jul-Sep 2023 | Q2 FY24 | 0 | 0 | - | - | +0.41% |  |
+| Oct-Dec 2023 | Q3 FY24 | 1 | 1 | +1.90% | +1.90% | +0.48% | POLYCAB +1.9 |
+| Jan-Mar 2024 | Q4 FY24 | 0 | 0 | - | - | +0.88% |  |
+| Apr-Jun 2024 | Q1 FY25 | 0 | 0 | - | - | +0.53% |  |
+| Jul-Sep 2024 | Q2 FY25 | 0 | 0 | - | - | -1.12% |  |
+| Oct-Dec 2024 | Q3 FY25 | 6 | 4 | +3.40% | +4.14% | -0.79% | LODHA +4.4, CAMS -4.1, KALYANKJIL +14.8, PRESTIGE +6.8, RECLTD +3.3, TRENT -4.9 |
+| Jan-Mar 2025 | Q4 FY25 | 1 | 1 | +1.77% | +1.77% | +0.96% | INFY +1.8 |
+| Apr-Jun 2025 | Q1 FY26 | 0 | 0 | - | - | -0.56% |  |
+| Jul-Sep 2025 | Q2 FY26 | 0 | 0 | - | - | +0.67% |  |
+| Oct-Dec 2025 | Q3 FY26 | 3 | 2 | +4.24% | +5.63% | +0.18% | SWIGGY -0.6, GODREJPROP +0.0, KALYANKJIL +13.3 |
+| Jan-Mar 2026 | Q4 FY26 | 0 | 0 | - | - | -0.31% |  |
+| Apr-Jun 2026 | Q1 FY27 | 1 | 1 | +1.30% | +8.97% | +0.17% | KPITTECH +1.3 |
+
 Files: [results/lag10_volume/](../results/lag10_volume/) (summary.csv with the nearby variants; per_quarter.csv and
 trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv and *_lag20_vol15.csv for lag over 15% / 20% & 1.5x; *_vol20.csv, *_lag15_vol20.csv and *_lag20_vol20.csv for lag over 10% / 15% / 20% & 2x; *_vol30.csv,
-*_lag15_vol30.csv and *_lag20_vol30.csv for lag over 10% / 15% / 20% & 3x; *_vol12.csv for lag over 10% &
-1.2x). Script:
+*_lag15_vol30.csv and *_lag20_vol30.csv for lag over 10% / 15% / 20% & 3x; *_vol12.csv and *_lag15_vol12.csv for lag
+over 10% / 15% & 1.2x). Script:
 `pattern_tests/lag10_volume.py PACK_DIR nse_prices.db features22.csv OUT_DIR` (PACK_DIR from `sector_lab_data.py`).
