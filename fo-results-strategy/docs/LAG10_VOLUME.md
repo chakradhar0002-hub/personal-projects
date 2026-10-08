@@ -509,6 +509,11 @@ An independent check rebuilt it exactly (split adjustment changes no trade here)
   quarters do as well about 1 time in 3 (p 0.32), from the 1.2x trades 1 time in 5 (p 0.20). The 1.0-1.3x trades it
   leaves out made +1.45% (41 trades). Like 1.2x, it was picked from many nearby cut points.
 - Realistic: about +1.2-1.5% a trade after costs, 2 trades a quarter on average.
+- **Overlap with 1.5x**: all 32 trades of the 1.5x rule are inside these 44. The other 12 (volume 1.3-1.5x) averaged
+  +2.02% (take-profit +4.50%), 9 of 12 up, and add the 6 quarters that 1.5x misses (Jan-Mar 2021, Apr-Jun 2022,
+  Apr-Jun 2024, Apr-Jun 2025, Jul-Sep 2025, Apr-Jun 2026). By volume band inside "lag over 10%": 1.0-1.2x +1.47% (31
+  trades), 1.2-1.3x +1.38% (10), 1.3-1.5x +2.02% (12), 1.5-2.0x +1.71% (16), 2.0x+ +4.38% (16). Only the 2x+ band
+  stands out, and that is where the big crash-rebound winners sit.
 
 | Results for | Quarter | Trades | Up | 3-day avg | Take-profit avg | All F&O stocks | Stocks (3-day %) |
 |---|---|---:|---:|---:|---:|---:|---|
