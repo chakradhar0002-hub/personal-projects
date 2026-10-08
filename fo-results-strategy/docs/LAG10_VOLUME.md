@@ -55,6 +55,7 @@ Stocks in F&O at the time; 3-day exit; "without best 5" removes each rule's five
 | lag > 15%, volume ≥ 1.5x | 16 | 8 | 6 | 75% | +3.77% | +3.13% | +0.52% |
 | lag > 15%, volume ≥ 2.0x | 9 | 6 | 6 | 89% | +5.99% | +4.56% | +0.35% |
 | lag > 15%, volume ≥ 3.0x | 4 | 2 | 2 | 75% | +5.12% | +2.68% | - |
+| lag > 20%, volume ≥ 1.2x | 14 | 7 | 7 | 79% | +4.69% | +4.93% | +0.74% |
 | lag > 20%, volume ≥ 1.5x | 9 | 4 | 4 | 89% | +6.26% | +4.66% | +1.46% |
 | lag > 20%, volume ≥ 2.0x | 6 | 3 | 3 | 83% | +7.01% | +4.87% | - |
 | lag > 20%, volume ≥ 3.0x | 4 | 2 | 2 | 75% | +5.12% | +2.68% | - |
@@ -453,8 +454,42 @@ An independent check rebuilt it exactly (split adjustment changes no trade here)
 | Jan-Mar 2026 | Q4 FY26 | 0 | 0 | - | - | -0.31% |  |
 | Apr-Jun 2026 | Q1 FY27 | 1 | 1 | +1.30% | +8.97% | +0.17% | KPITTECH +1.3 |
 
+## Lag over 20% and volume 1.2x or more
+
+| Exit | Trades | Up | Average | After 0.17% cost | Quarters with trades | Positive | Without best 5 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| 3-day | 14 | 79% | +4.69% | +4.52% | 7 of 22 | 7 | +0.74% |
+| Take-profit | 14 | 86% | +4.93% | +4.76% | 7 of 22 | 7 | +1.98% |
+
+| Results for | Stock | Lag vs Nifty | Volume vs 60-day | 3-day | Take-profit |
+|---|---|---:|---:|---:|---:|
+| Oct-Dec 2021 | DIXON | -20.1% | 1.2x | -3.2% | -3.2% |
+| Oct-Dec 2021 | TECHM | -20.4% | 1.7x | +5.1% | +4.8% |
+| Oct-Dec 2021 | PIIND | -20.9% | 1.7x | +4.7% | +3.4% |
+| Jan-Mar 2022 | JSWSTEEL | -20.7% | 1.5x | +2.1% | +4.4% |
+| Oct-Dec 2022 | ADANIPORTS | -37.4% | 6.1x | +19.1% | +9.3% |
+| Oct-Dec 2022 | AMBUJACEM | -26.9% | 5.6x | +2.9% | +2.9% |
+| Oct-Dec 2022 | ADANIENT | -49.0% | 3.3x | -3.5% | -3.5% |
+| Oct-Dec 2023 | POLYCAB | -26.1% | 5.9x | +1.9% | +1.9% |
+| Oct-Dec 2024 | LODHA | -20.7% | 1.6x | +4.4% | +4.4% |
+| Oct-Dec 2024 | CAMS | -20.3% | 1.4x | -4.1% | +3.7% |
+| Oct-Dec 2024 | KALYANKJIL | -38.2% | 2.8x | +14.8% | +14.8% |
+| Oct-Dec 2024 | PRESTIGE | -21.2% | 2.2x | +6.8% | +3.7% |
+| Oct-Dec 2025 | KALYANKJIL | -21.4% | 1.3x | +13.3% | +13.3% |
+| Apr-Jun 2026 | KPITTECH | -20.9% | 1.4x | +1.3% | +9.0% |
+
+- 14 trades in 7 of 22 quarters, every one of them positive with either exit; 15 quarters had no trade. Six of the
+  seven quarters are Oct-Dec results seasons (late January / early February cutoffs).
+- Without the best 5 trades: +0.74% (take-profit +1.98%). ADANIPORTS +19.1% and KALYANKJIL twice (+14.8%, +13.3%)
+  carry most of it.
+- The same filter on dates without results makes +0.67% (+1.35% per episode), so about +4% is linked to results, but
+  on 14 trades.
+- At a 20% lag the volume condition adds nothing: random picks from all lag-over-20% results in the same quarters do
+  as well 2 times in 5 (p 0.40). The deeper lag does pick better than "lag over 10% & 1.2x" (p 0.04), which is the
+  depth effect already seen in [LAG5_PATTERNS.md](LAG5_PATTERNS.md).
+
 Files: [results/lag10_volume/](../results/lag10_volume/) (summary.csv with the nearby variants; per_quarter.csv and
 trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv and *_lag20_vol15.csv for lag over 15% / 20% & 1.5x; *_vol20.csv, *_lag15_vol20.csv and *_lag20_vol20.csv for lag over 10% / 15% / 20% & 2x; *_vol30.csv,
-*_lag15_vol30.csv and *_lag20_vol30.csv for lag over 10% / 15% / 20% & 3x; *_vol12.csv and *_lag15_vol12.csv for lag
-over 10% / 15% & 1.2x). Script:
+*_lag15_vol30.csv and *_lag20_vol30.csv for lag over 10% / 15% / 20% & 3x; *_vol12.csv, *_lag15_vol12.csv and
+*_lag20_vol12.csv for lag over 10% / 15% / 20% & 1.2x). Script:
 `pattern_tests/lag10_volume.py PACK_DIR nse_prices.db features22.csv OUT_DIR` (PACK_DIR from `sector_lab_data.py`).
