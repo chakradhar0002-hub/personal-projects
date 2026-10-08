@@ -296,6 +296,31 @@ An independent check rebuilt it and got the same 16 trades (split adjustment cha
 - This is the end of the ladder: each tighter version keeps the same few crash-rebound winners and drops everything
   else, so it says nothing new about the edge.
 
+## Lag over 10% and volume 3x or more
+
+| Exit | Trades | Up | Average | After 0.17% cost | Quarters with trades | Positive | Without best 1 | Without best 2 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| 3-day | 6 | 67% | +3.52% | +3.35% | 4 of 22 | 3 | +0.41% | -0.58% |
+| Take-profit | 6 | 67% | +1.70% | +1.53% | 4 of 22 | 3 | | |
+
+| Results for | Stock | Lag vs Nifty | Volume vs 60-day | 3-day | Take-profit |
+|---|---|---:|---:|---:|---:|
+| Oct-Dec 2022 | ADANIPORTS | -37.4% | 6.1x | +19.1% | +9.3% |
+| Oct-Dec 2022 | AMBUJACEM | -26.9% | 5.6x | +2.9% | +2.9% |
+| Oct-Dec 2022 | ADANIENT | -49.0% | 3.3x | -3.5% | -3.5% |
+| Jan-Mar 2023 | MANAPPURAM | -13.7% | 4.9x | -3.7% | -3.7% |
+| Oct-Dec 2023 | POLYCAB | -26.1% | 5.9x | +1.9% | +1.9% |
+| Jan-Mar 2024 | KOTAKBANK | -13.2% | 4.1x | +4.4% | +3.2% |
+
+- 6 trades in 4 quarters, all between February 2023 and May 2024; nothing in the last 8 quarters. Volume 3x or more
+  over 5 days is rare: it usually means a crash or big news.
+- One trade is the result: without ADANIPORTS (+19.1%) the average is +0.41%, and two of the six lost (ADANIENT
+  -3.5%, MANAPPURAM -3.7%).
+- No better than the wider rules: picking 6 at random from the lag-over-10% & 1.0x trades in the same quarters does as
+  well 2 times in 5 (p 0.40), from the 2x trades 3 times in 4 (p 0.75). Higher volume is not a better signal past
+  about 2x.
+
 Files: [results/lag10_volume/](../results/lag10_volume/) (summary.csv with the nearby variants; per_quarter.csv and
-trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv and *_lag20_vol15.csv for lag over 15% / 20% & 1.5x; *_vol20.csv, *_lag15_vol20.csv and *_lag20_vol20.csv for lag over 10% / 15% / 20% & 2x). Script:
+trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv and *_lag20_vol15.csv for lag over 15% / 20% & 1.5x; *_vol20.csv, *_lag15_vol20.csv and *_lag20_vol20.csv for lag over 10% / 15% / 20% & 2x; *_vol30.csv for
+lag over 10% & 3x). Script:
 `pattern_tests/lag10_volume.py PACK_DIR nse_prices.db features22.csv OUT_DIR` (PACK_DIR from `sector_lab_data.py`).
