@@ -1,0 +1,287 @@
+qn,trades,avg,rule
+0,0,,COMBO-H long 2-way
+1,1,3.2123736302785,COMBO-H long 2-way
+2,0,,COMBO-H long 2-way
+3,5,0.5262589031755857,COMBO-H long 2-way
+4,7,2.1588957225260423,COMBO-H long 2-way
+5,1,5.20331118492634,COMBO-H long 2-way
+6,2,4.821318346700755,COMBO-H long 2-way
+7,3,6.1891427281007445,COMBO-H long 2-way
+8,0,,COMBO-H long 2-way
+9,0,,COMBO-H long 2-way
+10,0,,COMBO-H long 2-way
+11,1,1.89501382669562,COMBO-H long 2-way
+12,0,,COMBO-H long 2-way
+13,0,,COMBO-H long 2-way
+14,1,0.93344411308053,COMBO-H long 2-way
+15,8,1.931975532293504,COMBO-H long 2-way
+16,1,-1.37164626114547,COMBO-H long 2-way
+17,0,,COMBO-H long 2-way
+18,0,,COMBO-H long 2-way
+19,2,6.64437300242509,COMBO-H long 2-way
+20,0,,COMBO-H long 2-way
+21,2,0.8366676442408599,COMBO-H long 2-way
+0,0,,COMBO-H short 2-way
+1,16,-0.2715431112552912,COMBO-H short 2-way
+2,15,2.2739096176467726,COMBO-H short 2-way
+3,5,2.0674310080278473,COMBO-H short 2-way
+4,2,0.5133930178349799,COMBO-H short 2-way
+5,3,2.6291974569565966,COMBO-H short 2-way
+6,9,-2.836870042763358,COMBO-H short 2-way
+7,10,3.5428865866459938,COMBO-H short 2-way
+8,9,0.791353169444998,COMBO-H short 2-way
+9,16,0.24556287463788068,COMBO-H short 2-way
+10,6,-1.2236096559342249,COMBO-H short 2-way
+11,13,1.7480492277959767,COMBO-H short 2-way
+12,10,0.305117434046562,COMBO-H short 2-way
+13,2,0.22448479881428995,COMBO-H short 2-way
+14,10,3.929260492820988,COMBO-H short 2-way
+15,7,-0.08757867677623578,COMBO-H short 2-way
+16,5,0.08274805517050399,COMBO-H short 2-way
+17,5,2.56921187449056,COMBO-H short 2-way
+18,20,-0.21685021241056202,COMBO-H short 2-way
+19,15,-1.7458832387026904,COMBO-H short 2-way
+20,1,-5.58507597157283,COMBO-H short 2-way
+21,10,-0.9983618182206964,COMBO-H short 2-way
+0,0,,COMBO-T long 2-way (in-sample)
+1,0,,COMBO-T long 2-way (in-sample)
+2,0,,COMBO-T long 2-way (in-sample)
+3,3,6.190144363612499,COMBO-T long 2-way (in-sample)
+4,1,-4.1899703376071695,COMBO-T long 2-way (in-sample)
+5,0,,COMBO-T long 2-way (in-sample)
+6,1,3.01349002753016,COMBO-T long 2-way (in-sample)
+7,3,6.1891427281007445,COMBO-T long 2-way (in-sample)
+8,0,,COMBO-T long 2-way (in-sample)
+9,0,,COMBO-T long 2-way (in-sample)
+10,0,,COMBO-T long 2-way (in-sample)
+11,1,1.89501382669562,COMBO-T long 2-way (in-sample)
+12,0,,COMBO-T long 2-way (in-sample)
+13,0,,COMBO-T long 2-way (in-sample)
+14,0,,COMBO-T long 2-way (in-sample)
+15,4,5.300023874654303,COMBO-T long 2-way (in-sample)
+16,1,1.7673678590349602,COMBO-T long 2-way (in-sample)
+17,0,,COMBO-T long 2-way (in-sample)
+18,0,,COMBO-T long 2-way (in-sample)
+19,2,-0.270639690422325,COMBO-T long 2-way (in-sample)
+20,0,,COMBO-T long 2-way (in-sample)
+21,0,,COMBO-T long 2-way (in-sample)
+0,0,,COMBO-T long 3-way (in-sample)
+1,0,,COMBO-T long 3-way (in-sample)
+2,0,,COMBO-T long 3-way (in-sample)
+3,3,6.190144363612499,COMBO-T long 3-way (in-sample)
+4,1,-4.1899703376071695,COMBO-T long 3-way (in-sample)
+5,0,,COMBO-T long 3-way (in-sample)
+6,1,3.01349002753016,COMBO-T long 3-way (in-sample)
+7,3,6.1891427281007445,COMBO-T long 3-way (in-sample)
+8,0,,COMBO-T long 3-way (in-sample)
+9,0,,COMBO-T long 3-way (in-sample)
+10,0,,COMBO-T long 3-way (in-sample)
+11,1,1.89501382669562,COMBO-T long 3-way (in-sample)
+12,0,,COMBO-T long 3-way (in-sample)
+13,0,,COMBO-T long 3-way (in-sample)
+14,0,,COMBO-T long 3-way (in-sample)
+15,4,5.300023874654303,COMBO-T long 3-way (in-sample)
+16,1,1.7673678590349602,COMBO-T long 3-way (in-sample)
+17,0,,COMBO-T long 3-way (in-sample)
+18,0,,COMBO-T long 3-way (in-sample)
+19,2,-0.270639690422325,COMBO-T long 3-way (in-sample)
+20,0,,COMBO-T long 3-way (in-sample)
+21,0,,COMBO-T long 3-way (in-sample)
+0,0,,S02 lag > 15%
+1,2,0.829354292760615,S02 lag > 15%
+2,2,3.210419222576425,S02 lag > 15%
+3,8,1.6392321051590146,S02 lag > 15%
+4,8,2.228705210840336,S02 lag > 15%
+5,1,5.20331118492634,S02 lag > 15%
+6,2,4.821318346700755,S02 lag > 15%
+7,3,6.1891427281007445,S02 lag > 15%
+8,1,2.24025453463855,S02 lag > 15%
+9,1,-2.79397728667715,S02 lag > 15%
+10,0,,S02 lag > 15%
+11,1,1.89501382669562,S02 lag > 15%
+12,0,,S02 lag > 15%
+13,0,,S02 lag > 15%
+14,1,0.93344411308053,S02 lag > 15%
+15,8,1.931975532293504,S02 lag > 15%
+16,3,-0.22550014709952326,S02 lag > 15%
+17,2,2.8602807417038596,S02 lag > 15%
+18,0,,S02 lag > 15%
+19,6,1.6327154410022702,S02 lag > 15%
+20,0,,S02 lag > 15%
+21,2,0.8366676442408599,S02 lag > 15%
+0,0,,S20 capitulation volume >= 1.5x
+1,0,,S20 capitulation volume >= 1.5x
+2,2,0.632760741064835,S20 capitulation volume >= 1.5x
+3,5,7.81519498764799,S20 capitulation volume >= 1.5x
+4,2,-3.5545543574760448,S20 capitulation volume >= 1.5x
+5,1,1.6905991299325698,S20 capitulation volume >= 1.5x
+6,2,1.25423356099015,S20 capitulation volume >= 1.5x
+7,7,2.5852289254653678,S20 capitulation volume >= 1.5x
+8,2,0.19327093869580492,S20 capitulation volume >= 1.5x
+9,1,-2.27444828703993,S20 capitulation volume >= 1.5x
+10,0,,S20 capitulation volume >= 1.5x
+11,7,-0.13783966228131522,S20 capitulation volume >= 1.5x
+12,3,2.3463465280066935,S20 capitulation volume >= 1.5x
+13,0,,S20 capitulation volume >= 1.5x
+14,2,0.833774939176845,S20 capitulation volume >= 1.5x
+15,7,3.3838999135568844,S20 capitulation volume >= 1.5x
+16,3,3.8086258625409966,S20 capitulation volume >= 1.5x
+17,2,-1.616406261991205,S20 capitulation volume >= 1.5x
+18,0,,S20 capitulation volume >= 1.5x
+19,16,1.0277887780331487,S20 capitulation volume >= 1.5x
+20,0,,S20 capitulation volume >= 1.5x
+21,1,0.71198220428844,S20 capitulation volume >= 1.5x
+0,6,0.13287247930329196,S14 news-shock day <= -6%
+1,3,-2.7116740231420864,S14 news-shock day <= -6%
+2,5,0.510495470022518,S14 news-shock day <= -6%
+3,10,-1.8384224496023513,S14 news-shock day <= -6%
+4,11,1.562138717866624,S14 news-shock day <= -6%
+5,1,-2.58275327490642,S14 news-shock day <= -6%
+6,3,1.9768057653187665,S14 news-shock day <= -6%
+7,5,5.990837919699503,S14 news-shock day <= -6%
+8,3,1.3506359569171034,S14 news-shock day <= -6%
+9,1,-1.62160730446964,S14 news-shock day <= -6%
+10,1,3.49649271356893,S14 news-shock day <= -6%
+11,3,2.4028646709458337,S14 news-shock day <= -6%
+12,3,1.4087087213336869,S14 news-shock day <= -6%
+13,5,1.3943208598552739,S14 news-shock day <= -6%
+14,6,-3.2624257927588283,S14 news-shock day <= -6%
+15,20,-0.3485262634134234,S14 news-shock day <= -6%
+16,15,1.123246191874038,S14 news-shock day <= -6%
+17,5,-0.086905029175078,S14 news-shock day <= -6%
+18,1,14.09252356849153,S14 news-shock day <= -6%
+19,9,4.5438525595750034,S14 news-shock day <= -6%
+20,0,,S14 news-shock day <= -6%
+21,5,-1.129651859996414,S14 news-shock day <= -6%
+0,9,1.455141709747664,S40 India VIX >= 18
+1,0,,S40 India VIX >= 18
+2,7,-2.799074418722846,S40 India VIX >= 18
+3,22,1.9458886831334874,S40 India VIX >= 18
+4,38,0.8892674924139485,S40 India VIX >= 18
+5,13,0.28736679251996383,S40 India VIX >= 18
+6,6,-1.6148658380727665,S40 India VIX >= 18
+7,0,,S40 India VIX >= 18
+8,0,,S40 India VIX >= 18
+9,0,,S40 India VIX >= 18
+10,0,,S40 India VIX >= 18
+11,0,,S40 India VIX >= 18
+12,4,0.27921066043468235,S40 India VIX >= 18
+13,6,1.3248954021411548,S40 India VIX >= 18
+14,0,,S40 India VIX >= 18
+15,15,2.7403198430670184,S40 India VIX >= 18
+16,22,0.572722689366072,S40 India VIX >= 18
+17,0,,S40 India VIX >= 18
+18,0,,S40 India VIX >= 18
+19,0,,S40 India VIX >= 18
+20,12,0.668607722566804,S40 India VIX >= 18
+21,0,,S40 India VIX >= 18
+0,1,-0.79799142584965,S19-B 3M return < -15% (opposite of prereg direction)
+1,1,9.57425076916844,S19-B 3M return < -15% (opposite of prereg direction)
+2,2,-3.60820558873847,S19-B 3M return < -15% (opposite of prereg direction)
+3,10,3.147069958547157,S19-B 3M return < -15% (opposite of prereg direction)
+4,22,1.4529948214254111,S19-B 3M return < -15% (opposite of prereg direction)
+5,9,-0.20336649550641578,S19-B 3M return < -15% (opposite of prereg direction)
+6,2,4.821318346700755,S19-B 3M return < -15% (opposite of prereg direction)
+7,8,0.5266319691109435,S19-B 3M return < -15% (opposite of prereg direction)
+8,3,3.580750404633717,S19-B 3M return < -15% (opposite of prereg direction)
+9,1,-0.5575437907583,S19-B 3M return < -15% (opposite of prereg direction)
+10,0,,S19-B 3M return < -15% (opposite of prereg direction)
+11,1,1.89501382669562,S19-B 3M return < -15% (opposite of prereg direction)
+12,2,-7.411943757946579,S19-B 3M return < -15% (opposite of prereg direction)
+13,0,,S19-B 3M return < -15% (opposite of prereg direction)
+14,7,1.6691236069511244,S19-B 3M return < -15% (opposite of prereg direction)
+15,24,-0.8835844661562516,S19-B 3M return < -15% (opposite of prereg direction)
+16,10,4.062772579309951,S19-B 3M return < -15% (opposite of prereg direction)
+17,1,-0.50319899030564,S19-B 3M return < -15% (opposite of prereg direction)
+18,1,9.06331326929762,S19-B 3M return < -15% (opposite of prereg direction)
+19,20,1.691388879836196,S19-B 3M return < -15% (opposite of prereg direction)
+20,7,-0.31030452521031,S19-B 3M return < -15% (opposite of prereg direction)
+21,8,-0.7473605221531213,S19-B 3M return < -15% (opposite of prereg direction)
+0,0,,S03-B stock up on month but lagged >5% (short)
+1,0,,S03-B stock up on month but lagged >5% (short)
+2,0,,S03-B stock up on month but lagged >5% (short)
+3,4,6.288389511743238,S03-B stock up on month but lagged >5% (short)
+4,1,-0.18900395778297,S03-B stock up on month but lagged >5% (short)
+5,8,0.6891844586912363,S03-B stock up on month but lagged >5% (short)
+6,2,8.043383113117224,S03-B stock up on month but lagged >5% (short)
+7,0,,S03-B stock up on month but lagged >5% (short)
+8,0,,S03-B stock up on month but lagged >5% (short)
+9,4,-0.40925618999934466,S03-B stock up on month but lagged >5% (short)
+10,0,,S03-B stock up on month but lagged >5% (short)
+11,0,,S03-B stock up on month but lagged >5% (short)
+12,0,,S03-B stock up on month but lagged >5% (short)
+13,0,,S03-B stock up on month but lagged >5% (short)
+14,0,,S03-B stock up on month but lagged >5% (short)
+15,0,,S03-B stock up on month but lagged >5% (short)
+16,7,1.188981766861523,S03-B stock up on month but lagged >5% (short)
+17,0,,S03-B stock up on month but lagged >5% (short)
+18,0,,S03-B stock up on month but lagged >5% (short)
+19,0,,S03-B stock up on month but lagged >5% (short)
+20,2,1.22667028570489,S03-B stock up on month but lagged >5% (short)
+21,0,,S03-B stock up on month but lagged >5% (short)
+0,6,-4.625074829367327,S01-B lag 5-10% (short)
+1,26,-1.1824914291053112,S01-B lag 5-10% (short)
+2,22,1.3378844300810924,S01-B lag 5-10% (short)
+3,23,0.5255588636429431,S01-B lag 5-10% (short)
+4,23,-0.2114342648894665,S01-B lag 5-10% (short)
+5,16,1.0073203827620218,S01-B lag 5-10% (short)
+6,33,0.32906301251882053,S01-B lag 5-10% (short)
+7,18,0.4364883223448883,S01-B lag 5-10% (short)
+8,13,-0.44701218098599915,S01-B lag 5-10% (short)
+9,15,0.537705092540938,S01-B lag 5-10% (short)
+10,10,0.8128783166271447,S01-B lag 5-10% (short)
+11,19,1.1985561744824968,S01-B lag 5-10% (short)
+12,14,1.9305030028935317,S01-B lag 5-10% (short)
+13,23,-1.8216707209947136,S01-B lag 5-10% (short)
+14,28,1.2677054153390996,S01-B lag 5-10% (short)
+15,34,0.2068589740784476,S01-B lag 5-10% (short)
+16,27,-0.26288562722692727,S01-B lag 5-10% (short)
+17,23,1.9047367085148466,S01-B lag 5-10% (short)
+18,33,-0.10183652737200445,S01-B lag 5-10% (short)
+19,30,-0.5454372115486379,S01-B lag 5-10% (short)
+20,18,1.1008461810114274,S01-B lag 5-10% (short)
+21,31,-0.194355113912251,S01-B lag 5-10% (short)
+0,0,,S21-B vol60 < 25% (short)
+1,16,-0.2715431112552912,S21-B vol60 < 25% (short)
+2,15,2.2739096176467726,S21-B vol60 < 25% (short)
+3,5,2.0674310080278473,S21-B vol60 < 25% (short)
+4,2,0.5133930178349799,S21-B vol60 < 25% (short)
+5,3,2.6291974569565966,S21-B vol60 < 25% (short)
+6,9,-2.836870042763358,S21-B vol60 < 25% (short)
+7,10,3.5428865866459938,S21-B vol60 < 25% (short)
+8,9,0.791353169444998,S21-B vol60 < 25% (short)
+9,16,0.24556287463788068,S21-B vol60 < 25% (short)
+10,6,-1.2236096559342249,S21-B vol60 < 25% (short)
+11,13,1.7480492277959767,S21-B vol60 < 25% (short)
+12,10,0.305117434046562,S21-B vol60 < 25% (short)
+13,2,0.22448479881428995,S21-B vol60 < 25% (short)
+14,10,3.929260492820988,S21-B vol60 < 25% (short)
+15,7,-0.08757867677623578,S21-B vol60 < 25% (short)
+16,5,0.08274805517050399,S21-B vol60 < 25% (short)
+17,5,2.56921187449056,S21-B vol60 < 25% (short)
+18,20,-0.21685021241056202,S21-B vol60 < 25% (short)
+19,16,-1.705814800014622,S21-B vol60 < 25% (short)
+20,1,-5.58507597157283,S21-B vol60 < 25% (short)
+21,10,-0.9983618182206964,S21-B vol60 < 25% (short)
+0,11,2.7232960437555573,whole group (reference)
+1,33,0.5335368725690388,whole group (reference)
+2,36,-0.8891196210685369,whole group (reference)
+3,32,-0.0013295554420055533,whole group (reference)
+4,39,0.4796301294243214,whole group (reference)
+5,23,-0.06530738047221561,whole group (reference)
+6,42,-0.4751444567547895,whole group (reference)
+7,25,0.6720126921204296,whole group (reference)
+8,20,1.0133159126337372,whole group (reference)
+9,21,-0.6465805143800496,whole group (reference)
+10,11,-0.421117313882047,whole group (reference)
+11,23,-0.6841587020738359,whole group (reference)
+12,19,-1.2883517111796372,whole group (reference)
+13,41,1.3130716694190643,whole group (reference)
+14,35,-1.2397606687222298,whole group (reference)
+15,58,-0.7862285283317587,whole group (reference)
+16,42,1.3808621148404194,whole group (reference)
+17,29,-1.2761736157772037,whole group (reference)
+18,38,0.7690576464850402,whole group (reference)
+19,43,0.6447347405763063,whole group (reference)
+20,19,-0.916498869372456,whole group (reference)
+21,39,0.5085453148714365,whole group (reference)

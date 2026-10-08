@@ -1,0 +1,15 @@
+fo_shuffle_beam150 quarter 8 done 113.6 conds 2077
+fo_shuffle_beam150 quarter 9 done 233.5 conds 2090
+fo_shuffle_beam150 quarter 10 done 364.8 conds 2186
+fo_shuffle_beam150 quarter 11 done 501.4 conds 2245
+fo_shuffle_beam150 quarter 12 done 659.4 conds 2273
+fo_shuffle_beam150 quarter 13 done 848.1 conds 2299
+fo_shuffle_beam150 quarter 14 done 1044.7 conds 2309
+fo_shuffle_beam150 quarter 15 done 1240.1 conds 2322
+fo_shuffle_beam150 quarter 16 done 1460.1 conds 2329
+fo_shuffle_beam150 quarter 17 done 1684.0 conds 2337
+fo_shuffle_beam150 quarter 18 done 1911.0 conds 2337
+fo_shuffle_beam150 quarter 19 done 2136.7 conds 2344
+fo_shuffle_beam150 quarter 20 done 2381.5 conds 2346
+fo_shuffle_beam150 quarter 21 done 2638.5 conds 2347
+done 2638.6

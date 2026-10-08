@@ -1,0 +1,40 @@
+PLAN (written before running any search) -- lag5/B_search
+=========================================================
+Group: F&O-at-the-time results (in_fo True) with vs_nifty_1m < -5% at the cutoff close (679 rows; 376 in qn 0..13,
+303 in qn 14..21).  Same filter on all results = 936 rows (secondary).  Outcome y = three_day (fraction; reported in %).
+Long P&L = +y, short P&L = -y.  Cost 0.17% per round trip.  Take-profit exit (tp3) reported for long candidates.
+
+Features: rulelib.NUM_FEATS (~95 numeric) + CAT_FEATS (fin_type, sector_index, industry, fq), all known at the cutoff
+close.  after_close / results time never used.
+
+1. 02_fixed_split.py  (exhaustive search on qn 0..13, honest test on qn 14..21)
+   - Conditions: feature >= / <= cut, cuts = percentiles 5,10,15,20,30..80,85,90,95 of the GROUP's qn 0..13 rows only;
+     category == value (>= 20 training rows).  A condition must hold on >= 15 training rows.
+   - Rules: all 1-condition and all 2-condition rules (exhaustive), 3-condition rules by beam search (top 300 pairs per
+     objective x min-trades x side extended by every compatible third condition).  Applied ON TOP of lag > 5%.
+   - Long and short.
+   - Objectives (each a thing tried):
+       mean   pooled average P&L on qn 0..13
+       fpos   share of training quarters (with picks) whose average P&L > 0, ties broken by pooled average
+       worst  worst training-quarter average P&L
+     each with min trades m = 15 / 30 / 60 and picks in >= 6 training quarters.
+   - Report: top rules per (objective, m, side) with all-22 numbers, first-14 vs last-8, quarters positive, net.
+   - Nulls (identical search, identical cuts): 50 within-quarter shuffles of three_day, 50 sign-flips (keep each
+     result's distance from its quarter's group mean, random direction).  For each: best in-sample objective / average
+     (how good the winner looks by chance) and the chosen rule's last-8 result on the fake data.
+2. 03_walkforward.py  for q = 8..21: cuts and search from group rows with qn < q only (min picks in 6 quarters),
+   take the single best rule (either side; and long-only) per objective x m, trade it in q.  Same pipeline on
+   shuffles and sign-flips (count set by run time, target >= 50 each with a reduced beam if needed).
+3. 04_ml.py  walk-forward random forest + gradient boosting on earlier quarters' group rows only (q = 8..21),
+   targets P(three_day > 0) and P(three_day > +3%).  Buy stocks whose score exceeds a threshold set from the training
+   quarters (top 25% and top 10% of out-of-fold training scores; out-of-fold = RF out-of-bag / quarter-grouped CV
+   for GBM).  Also short the bottom 25%.  Null: same pipeline with three_day shuffled within quarter (>= 20 runs).
+   Feature importance (permutation on held-out quarters + impurity) and simple direction of effect.
+4. 05_patterns.py  what separates bouncers (three_day > +3%) from fallers (< -3%) inside the group: per-feature
+   rank correlation with three_day, top-vs-bottom tercile average (first 14 and last 8 separately, to see whether the
+   direction holds), feature medians bouncers vs fallers.
+5. 06_candidates.py  up to 4 candidates chosen from the qn 0..13 search ONLY (frozen before looking at their last-8
+   numbers in detail):  per-quarter table, take-profit exit, gross/net, without best 5 trades, random same-size
+   per-quarter subsets of the group (10,000 draws), and a placebo: the same filter (lag > 5% AND the rule) on the same
+   stocks at dates with no result session within 10 sessions, 3-session forward return.
+Every variant run is counted in things_tried.  All-results universe repeated for the final candidates only.

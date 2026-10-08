@@ -1,0 +1,56 @@
+fo signflip rows 679 train 376 conditions 2309 pairs 2651199 eligible pairs 2033502
+signflip run 1 10.2
+signflip run 2 17.1
+signflip run 3 23.8
+signflip run 4 29.7
+signflip run 5 35.6
+signflip run 6 41.8
+signflip run 7 48.1
+signflip run 8 55.2
+signflip run 9 62.0
+signflip run 10 68.1
+signflip run 11 75.1
+signflip run 12 81.4
+signflip run 13 87.2
+signflip run 14 94.4
+signflip run 15 100.2
+signflip run 16 107.0
+signflip run 17 112.3
+signflip run 18 119.7
+signflip run 19 127.5
+signflip run 20 134.7
+signflip run 21 139.2
+signflip run 22 144.8
+signflip run 23 151.0
+signflip run 24 158.2
+signflip run 25 165.2
+signflip run 26 171.7
+/usr/local/lib/python3.11/dist-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/usr/local/lib/python3.11/dist-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in scalar divide
+  ret = ret.dtype.type(ret / rcount)
+signflip run 27 178.8
+signflip run 28 186.5
+signflip run 29 193.9
+signflip run 30 200.9
+signflip run 31 206.4
+signflip run 32 213.1
+signflip run 33 219.0
+signflip run 34 226.1
+signflip run 35 233.2
+signflip run 36 241.0
+signflip run 37 248.4
+signflip run 38 255.7
+signflip run 39 262.3
+signflip run 40 268.4
+signflip run 41 275.4
+signflip run 42 282.4
+signflip run 43 290.3
+signflip run 44 298.1
+signflip run 45 304.9
+signflip run 46 311.5
+signflip run 47 319.1
+signflip run 48 324.8
+signflip run 49 333.6
+signflip run 50 338.5
+done 338.5

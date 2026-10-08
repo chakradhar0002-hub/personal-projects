@@ -101,6 +101,8 @@ file (4,446 results, largest difference 0.0001%).
 | Jan-Mar 2026 | Q4 FY26 | 1 | 1 | +2.40% | +2.40% | -0.31% | PGEL +2.4 |
 | Apr-Jun 2026 | Q1 FY27 | 8 | 6 | +1.73% | +4.16% | +0.17% | INDIANB +9.2, TATAELXSI -4.5, BANKBARODA -0.7, KPITTECH +1.3, DELHIVERY +2.1, IDEA +2.1, AMBER +3.9, PATANJALI +0.4 |
 
+Patterns inside the wider lag-over-5% group: [LAG5_PATTERNS.md](LAG5_PATTERNS.md).
+
 Files: [results/lagged_nifty/](../results/lagged_nifty/) (summary.csv with all thresholds and the all-results version;
 per_quarter_lag10/12/15/20.csv and trades_lag10/12/15/20.csv for each threshold). Script: `pattern_tests/lagged_nifty_1m.py PACK_DIR features22.csv OUT_DIR` (PACK_DIR
 from `sector_lab_data.py`).
