@@ -1,0 +1,93 @@
+in_fo events with three_day: 3278  (mean three_day 0.042%)
+in_fo placebo rows: 120238, with every used indicator: 120238
+S85: panel 85 trades, repo trades.csv 85, same (symbol, quarter): True, max |three_day - ref x100| 4.00e-05, max |take_profit diff| 4.00e-05
+S44: panel 44 trades, repo trades_vol13.csv 44, same (symbol, quarter): True, max |three_day - ref x100| 4.00e-05, max |take_profit diff| 4.00e-05
+placebo base rows: P100 3081, P130 1590
+
+=== 1. family-wise within-quarter permutation (max |z| over the 19 conditions) ===
+-- S85
+                cond  nT      D      z  p_familywise
+       C1_rsi14_lt30  31  1.048  1.086         0.999
+        C2_rsi2_lt10  23  0.025  0.022         1.000
+       C3_stoch_lt20  50  0.027  0.025         1.000
+   C4_below_lower_bb  19 -0.152 -0.140         1.000
+      C5_cci_lt_m100  52  0.438  0.397         1.000
+         C6_mfi_lt20   9  4.593  2.725         0.248
+     C7_oversold_ge3  40  0.815  0.766         1.000
+     C8_macd_bull_x3   8 -1.207 -0.774         1.000
+ C9_macd_hist_rising  50  0.270  0.248         1.000
+    C10_above_sma200  20 -1.165 -1.091         0.999
+    C11_golden_state  49 -1.311 -1.411         0.985
+    C12_near_52w_low  16 -0.814 -0.688         1.000
+  C13_don20_break_dn  20 -0.271 -0.221         1.000
+     C14_bull_candle   3  0.190  0.045         1.000
+             C15_nr7  10 -1.637 -1.150         0.999
+C16_strong_downtrend  66  1.415  1.098         0.999
+    C17_obv_bull_div   7 -2.054 -0.982         1.000
+        C18_gap_down   8  1.112  0.524         1.000
+            C19_doji   6  3.258  1.654         0.938
+-- S44
+                cond  nT      D      z  p_familywise
+       C1_rsi14_lt30  21  2.192  1.766         0.930
+        C2_rsi2_lt10  13  0.728  0.525         1.000
+       C3_stoch_lt20  28  1.182  0.836         1.000
+   C4_below_lower_bb  12  0.959  0.680         1.000
+      C5_cci_lt_m100  30  3.163  2.320         0.542
+         C6_mfi_lt20   5  3.651  1.667         0.957
+     C7_oversold_ge3  25  3.498  2.454         0.456
+     C8_macd_bull_x3   3  0.079  0.035         1.000
+ C9_macd_hist_rising  24  0.560  0.392         1.000
+    C10_above_sma200   9 -0.666 -0.512         1.000
+    C11_golden_state  28  0.271  0.221         1.000
+    C12_near_52w_low   7 -0.895 -0.473         1.000
+  C13_don20_break_dn  11 -2.192 -1.506         0.991
+     C14_bull_candle   3 -0.484 -0.133         1.000
+             C15_nr7   3  2.943  1.466         0.993
+C16_strong_downtrend  35  0.721  0.492         1.000
+    C17_obv_bull_div   3 -3.194 -1.028         1.000
+        C18_gap_down   6 -1.400 -0.614         1.000
+            C19_doji   6  2.771  1.719         0.944
+
+=== 2. POST-HOC rules (not pre-registered; promoted by nothing; shown because raw p < 0.05) ===
+
+-- S85 + C6_mfi_lt20
+           rule  n  mean   net    tp  tp_net    up%  q+  n14   f14  n8    l8   xb5  luck_p_vs_all_events  plac_n  plac_mean  plac_lo  plac_hi
+S85+C6_mfi_lt20  9 6.239 6.069 5.834   5.664 88.889 5/5    3 8.556   6 5.081 1.243                 0.001     635      0.358   -0.061    0.786
+   per quarter: q3:+4.7(1) q7:+19.1(1) q11:+1.9(1) q19:+4.3(5) q21:+9.2(1)
+               rule  n  mean   net    tp  tp_net    up%    q+  n14   f14  n8   l8   xb5  luck_p_vs_all_events  plac_n  plac_mean  plac_lo  plac_hi
+S85+NOT C6_mfi_lt20 76 1.646 1.476 1.707   1.537 60.526 18/19   48 1.218  28 2.38 0.897                 0.002    2446      0.745    0.148    1.283
+   per quarter: q0:+0.8(4) q2:+0.3(7) q3:+2.8(4) q4:+0.4(7) q5:+5.4(3) q6:+1.0(2) q7:+0.7(5) q8:+2.5(4) q9:-3.1(2) q11:+1.7(3) q12:+2.0(4) q13:+0.3(3) q14:+1.1(2) q15:+2.0(12) q16:+5.9(5) q17:+2.6(1) q18:+6.4(1) q19:+0.1(6) q21:+1.3(1)
+   same split on the vol 1.0-1.3 slice (41 trades): T n=4 mean=+6.535  F n=37 mean=+0.902  D=+5.633
+
+-- S44 + C5_cci_lt_m100
+              rule  n  mean   net    tp  tp_net    up%    q+  n14   f14  n8    l8   xb5  luck_p_vs_all_events  plac_n  plac_mean  plac_lo  plac_hi
+S44+C5_cci_lt_m100 30 3.773 3.603 3.546   3.376 83.333 12/14   19 3.438  11 4.353 2.211                   0.0    1031      0.741   -0.036    1.629
+   per quarter: q0:-1.3(1) q2:+1.5(1) q3:+6.2(3) q4:-1.1(2) q6:+3.0(1) q7:+5.2(5) q11:+2.4(3) q12:+2.8(2) q13:+6.8(1) q14:+3.6(1) q15:+5.0(5) q17:+2.6(1) q18:+6.4(1) q19:+3.3(3)
+                  rule  n  mean   net    tp  tp_net    up%  q+  n14    f14  n8    l8    xb5  luck_p_vs_all_events  plac_n  plac_mean  plac_lo  plac_hi
+S44+NOT C5_cci_lt_m100 14 0.611 0.441 1.841   1.671 64.286 5/8    5 -0.715   9 1.347 -2.066                 0.402     559      0.896    0.134    1.491
+   per quarter: q0:-7.0(1) q5:+6.6(1) q7:-3.5(1) q8:+0.1(2) q15:-1.8(2) q16:+6.4(2) q19:+0.4(4) q21:+1.3(1)
+   same split on the vol 1.0-1.3 slice (41 trades): T n=22 mean=+0.297  F n=19 mean=+2.788  D=-2.491
+
+-- S44 + C7_oversold_ge3
+               rule  n  mean   net    tp  tp_net  up%    q+  n14   f14  n8    l8   xb5  luck_p_vs_all_events  plac_n  plac_mean  plac_lo  plac_hi
+S44+C7_oversold_ge3 25 4.278 4.108 4.014   3.844 84.0 13/14   15 4.155  10 4.462 2.451                   0.0     760      0.467   -0.249    1.287
+   per quarter: q0:-1.3(1) q2:+1.5(1) q3:+6.2(3) q4:+2.1(1) q6:+3.0(1) q7:+5.8(4) q11:+3.0(1) q12:+2.8(2) q13:+6.8(1) q14:+3.6(1) q15:+5.5(4) q17:+2.6(1) q18:+6.4(1) q19:+3.3(3)
+                   rule  n  mean   net    tp  tp_net    up%   q+  n14    f14  n8    l8    xb5  luck_p_vs_all_events  plac_n  plac_mean  plac_lo  plac_hi
+S44+NOT C7_oversold_ge3 19 0.779 0.609 1.673   1.503 68.421 6/10    9 -0.064  10 1.538 -0.976                 0.304     830      1.097    0.307    1.781
+   per quarter: q0:-7.0(1) q4:-4.2(1) q5:+6.6(1) q7:-0.3(2) q8:+0.1(2) q11:+2.1(2) q15:-0.1(3) q16:+6.4(2) q19:+0.4(4) q21:+1.3(1)
+   same split on the vol 1.0-1.3 slice (41 trades): T n=15 mean=-0.292  F n=26 mean=+2.457  D=-2.749
+
+=== 3. reference levels (three_day %, gross) ===
+all in_fo placebo rows: n=120238 mean=0.206; all in_fo events: mean=0.042
+lag<-10 & vol>=1.0: events n=85 mean=2.132 | placebo n=3081 mean=0.665
+lag<-10 & vol>=1.3: events n=44 mean=2.767 | placebo n=1590 mean=0.796
+lag<-10 & vol<1.0 (quiet): events n=109 mean=-0.368
+C1_rsi14_lt30      within lag<-10 & vol<1.0     : n=  16 mean=-1.739
+C1_rsi14_lt30      within NOT lag<-10, vol>=1.0 : n=  22 mean=+0.014
+C1_rsi14_lt30      within NOT lag<-10, any vol  : n=  56 mean=-0.036
+C7_oversold_ge3    within lag<-10 & vol<1.0     : n=  35 mean=-1.192
+C7_oversold_ge3    within NOT lag<-10, vol>=1.0 : n=  71 mean=+0.260
+C7_oversold_ge3    within NOT lag<-10, any vol  : n= 280 mean=+0.314
+C5_cci_lt_m100     within lag<-10 & vol<1.0     : n=  55 mean=-0.921
+C5_cci_lt_m100     within NOT lag<-10, vol>=1.0 : n= 123 mean=+0.000
+C5_cci_lt_m100     within NOT lag<-10, any vol  : n= 537 mean=+0.185

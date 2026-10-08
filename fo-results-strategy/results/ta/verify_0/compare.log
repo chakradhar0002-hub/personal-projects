@@ -1,0 +1,13 @@
+3278
+rsi14    vs rsi14           max 0.000 p99 0.0001 median 0.00000
+rsi2     vs rsi2            max 0.000 p99 0.0001 median 0.00000
+stoch    vs stoch_k14       max 0.000 p99 0.0002 median 0.00000
+pctb     vs bb_pctb         max 0.000 p99 0.0000 median 0.00000
+cci      vs cci20           max 0.002 p99 0.0010 median 0.00000
+mfi      vs mfi14           max 9.679 p99 2.4244 median 0.00000
+lag_pct  vs lag_pct         max 0.000 p99 0.0000 median 0.00000
+vol      vs vol_ratio_5_60  max 0.218 p99 0.0000 median 0.00000
+oversold-count agreement on all 3278 events: 0.9996949359365467  >=3 flag agreement: 1.0
+Empty DataFrame
+Columns: [symbol, quarter]
+Index: []

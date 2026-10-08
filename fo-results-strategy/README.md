@@ -30,6 +30,8 @@ checklist and concrete trades, and backtests them on your data.
 >   short works. See [docs/LAG5_PATTERNS.md](docs/LAG5_PATTERNS.md).
 >   Lagged by more than 10% on above-average volume: 85 trades, +2.1%, 18 of 19 quarters with trades positive (cut
 >   points chosen after looking). See [docs/LAG10_VOLUME.md](docs/LAG10_VOLUME.md).
+> - **Technical analysis adds nothing:** 44 textbook signals (RSI, Stochastic, Bollinger, CCI, MFI, MACD, moving averages,
+>   candles, OBV) neither work alone nor improve the lag + volume rule. See [docs/TECHNICAL_ANALYSIS.md](docs/TECHNICAL_ANALYSIS.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.

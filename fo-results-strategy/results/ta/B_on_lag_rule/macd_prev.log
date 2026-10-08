@@ -1,0 +1,3 @@
+events: rows 4462 matched 4444 max |diff| vs panel macd_hist_pct 3.4304275446928045e-05 max rel diff 0.0001244166630937852 | in_fo rows unmatched: 0
+placebo: rows 164882 matched 164731 max |diff| 5.436429472593929e-06
+rising share events in_fo: 0.49328859060402686  placebo: 0.5027956702019803

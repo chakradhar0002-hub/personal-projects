@@ -1,0 +1,363 @@
+rule,qn,n,mean
+LAG10_VOL1.0 (S85),0,4,0.7509
+LAG10_VOL1.0 (S85),2,7,0.2721
+LAG10_VOL1.0 (S85),3,5,3.2119
+LAG10_VOL1.0 (S85),4,7,0.4174
+LAG10_VOL1.0 (S85),5,3,5.3621
+LAG10_VOL1.0 (S85),6,2,0.9999
+LAG10_VOL1.0 (S85),7,6,3.7528
+LAG10_VOL1.0 (S85),8,4,2.5166
+LAG10_VOL1.0 (S85),9,2,-3.1476
+LAG10_VOL1.0 (S85),11,4,1.7592
+LAG10_VOL1.0 (S85),12,4,1.9650
+LAG10_VOL1.0 (S85),13,3,0.3277
+LAG10_VOL1.0 (S85),14,2,1.0664
+LAG10_VOL1.0 (S85),15,12,1.9941
+LAG10_VOL1.0 (S85),16,5,5.9240
+LAG10_VOL1.0 (S85),17,1,2.6460
+LAG10_VOL1.0 (S85),18,1,6.4272
+LAG10_VOL1.0 (S85),19,11,1.9843
+LAG10_VOL1.0 (S85),21,2,5.2664
+LAG10_VOL1.3 (S44),0,2,-4.1402
+LAG10_VOL1.3 (S44),2,1,1.5250
+LAG10_VOL1.3 (S44),3,3,6.1901
+LAG10_VOL1.3 (S44),4,2,-1.0650
+LAG10_VOL1.3 (S44),5,1,6.6387
+LAG10_VOL1.3 (S44),6,1,3.0135
+LAG10_VOL1.3 (S44),7,6,3.7528
+LAG10_VOL1.3 (S44),8,2,0.1220
+LAG10_VOL1.3 (S44),11,3,2.4029
+LAG10_VOL1.3 (S44),12,2,2.8428
+LAG10_VOL1.3 (S44),13,1,6.7524
+LAG10_VOL1.3 (S44),14,1,3.6364
+LAG10_VOL1.3 (S44),15,7,3.1032
+LAG10_VOL1.3 (S44),16,2,6.3909
+LAG10_VOL1.3 (S44),17,1,2.6460
+LAG10_VOL1.3 (S44),18,1,6.4272
+LAG10_VOL1.3 (S44),19,7,1.6414
+LAG10_VOL1.3 (S44),21,1,1.3019
+C1_rsi14_lt30 + vol>=1.0,3,6,4.3439
+C1_rsi14_lt30 + vol>=1.0,4,5,1.6184
+C1_rsi14_lt30 + vol>=1.0,6,1,-0.5050
+C1_rsi14_lt30 + vol>=1.0,7,6,-1.4688
+C1_rsi14_lt30 + vol>=1.0,12,4,1.9650
+C1_rsi14_lt30 + vol>=1.0,14,5,0.1056
+C1_rsi14_lt30 + vol>=1.0,15,8,5.5983
+C1_rsi14_lt30 + vol>=1.0,16,1,-1.3559
+C1_rsi14_lt30 + vol>=1.0,17,1,2.6460
+C1_rsi14_lt30 + vol>=1.0,19,15,0.4694
+C1_rsi14_lt30 + vol>=1.0,21,1,0.7120
+C1_rsi14_lt30 (no volume filter),1,4,-1.9501
+C1_rsi14_lt30 (no volume filter),2,2,-1.5620
+C1_rsi14_lt30 (no volume filter),3,8,2.9038
+C1_rsi14_lt30 (no volume filter),4,15,0.0510
+C1_rsi14_lt30 (no volume filter),6,2,1.0028
+C1_rsi14_lt30 (no volume filter),7,12,-0.0479
+C1_rsi14_lt30 (no volume filter),10,3,0.9708
+C1_rsi14_lt30 (no volume filter),11,1,-1.7671
+C1_rsi14_lt30 (no volume filter),12,4,1.9650
+C1_rsi14_lt30 (no volume filter),13,1,-2.8181
+C1_rsi14_lt30 (no volume filter),14,15,-0.4306
+C1_rsi14_lt30 (no volume filter),15,12,2.2088
+C1_rsi14_lt30 (no volume filter),16,1,-1.3559
+C1_rsi14_lt30 (no volume filter),17,5,1.6585
+C1_rsi14_lt30 (no volume filter),19,17,0.5024
+C1_rsi14_lt30 (no volume filter),21,1,0.7120
+C2_rsi2_lt10 + vol>=1.0,0,1,-1.2782
+C2_rsi2_lt10 + vol>=1.0,2,7,0.0819
+C2_rsi2_lt10 + vol>=1.0,3,9,3.8285
+C2_rsi2_lt10 + vol>=1.0,4,4,-1.0761
+C2_rsi2_lt10 + vol>=1.0,5,4,3.3965
+C2_rsi2_lt10 + vol>=1.0,6,2,1.2542
+C2_rsi2_lt10 + vol>=1.0,7,3,-3.8188
+C2_rsi2_lt10 + vol>=1.0,8,2,5.7635
+C2_rsi2_lt10 + vol>=1.0,9,2,-4.0960
+C2_rsi2_lt10 + vol>=1.0,10,4,-1.2555
+C2_rsi2_lt10 + vol>=1.0,11,6,-2.4446
+C2_rsi2_lt10 + vol>=1.0,12,6,0.4212
+C2_rsi2_lt10 + vol>=1.0,13,6,3.0123
+C2_rsi2_lt10 + vol>=1.0,14,5,-3.2886
+C2_rsi2_lt10 + vol>=1.0,15,5,6.4597
+C2_rsi2_lt10 + vol>=1.0,16,4,0.0846
+C2_rsi2_lt10 + vol>=1.0,17,9,-2.0014
+C2_rsi2_lt10 + vol>=1.0,18,3,1.9557
+C2_rsi2_lt10 + vol>=1.0,19,18,0.3783
+C2_rsi2_lt10 + vol>=1.0,20,1,5.7827
+C2_rsi2_lt10 + vol>=1.0,21,4,1.2675
+C2_rsi2_lt10 (no volume filter),0,4,0.4031
+C2_rsi2_lt10 (no volume filter),1,17,1.3784
+C2_rsi2_lt10 (no volume filter),2,16,-0.7407
+C2_rsi2_lt10 (no volume filter),3,27,2.8451
+C2_rsi2_lt10 (no volume filter),4,28,-0.7916
+C2_rsi2_lt10 (no volume filter),5,10,2.2114
+C2_rsi2_lt10 (no volume filter),6,4,0.5664
+C2_rsi2_lt10 (no volume filter),7,19,0.1867
+C2_rsi2_lt10 (no volume filter),8,8,0.9718
+C2_rsi2_lt10 (no volume filter),9,9,-2.0989
+C2_rsi2_lt10 (no volume filter),10,26,0.7826
+C2_rsi2_lt10 (no volume filter),11,14,-1.4050
+C2_rsi2_lt10 (no volume filter),12,14,-0.8312
+C2_rsi2_lt10 (no volume filter),13,20,0.9915
+C2_rsi2_lt10 (no volume filter),14,36,-2.3779
+C2_rsi2_lt10 (no volume filter),15,25,1.1962
+C2_rsi2_lt10 (no volume filter),16,8,1.3674
+C2_rsi2_lt10 (no volume filter),17,44,-0.5559
+C2_rsi2_lt10 (no volume filter),18,16,-0.6149
+C2_rsi2_lt10 (no volume filter),19,27,1.0671
+C2_rsi2_lt10 (no volume filter),20,21,1.7958
+C2_rsi2_lt10 (no volume filter),21,16,0.9246
+C3_stoch_lt20 + vol>=1.0,0,3,-2.0415
+C3_stoch_lt20 + vol>=1.0,2,10,-0.6596
+C3_stoch_lt20 + vol>=1.0,3,11,4.8558
+C3_stoch_lt20 + vol>=1.0,4,11,0.2245
+C3_stoch_lt20 + vol>=1.0,5,1,-1.4316
+C3_stoch_lt20 + vol>=1.0,6,3,0.7594
+C3_stoch_lt20 + vol>=1.0,7,8,-2.7937
+C3_stoch_lt20 + vol>=1.0,8,6,3.0500
+C3_stoch_lt20 + vol>=1.0,9,7,-2.0262
+C3_stoch_lt20 + vol>=1.0,10,6,-0.6448
+C3_stoch_lt20 + vol>=1.0,11,12,1.1801
+C3_stoch_lt20 + vol>=1.0,12,7,1.0634
+C3_stoch_lt20 + vol>=1.0,13,7,2.3991
+C3_stoch_lt20 + vol>=1.0,14,15,-1.2295
+C3_stoch_lt20 + vol>=1.0,15,18,2.7254
+C3_stoch_lt20 + vol>=1.0,16,2,3.3123
+C3_stoch_lt20 + vol>=1.0,17,15,-0.9591
+C3_stoch_lt20 + vol>=1.0,18,5,1.3791
+C3_stoch_lt20 + vol>=1.0,19,33,-0.2986
+C3_stoch_lt20 + vol>=1.0,20,1,5.7827
+C3_stoch_lt20 + vol>=1.0,21,2,4.9714
+C3_stoch_lt20 (no volume filter),0,12,1.0810
+C3_stoch_lt20 (no volume filter),1,30,0.7891
+C3_stoch_lt20 (no volume filter),2,35,0.4907
+C3_stoch_lt20 (no volume filter),3,29,2.5312
+C3_stoch_lt20 (no volume filter),4,59,-0.8289
+C3_stoch_lt20 (no volume filter),5,6,-1.7419
+C3_stoch_lt20 (no volume filter),6,9,-1.0900
+C3_stoch_lt20 (no volume filter),7,25,-0.4724
+C3_stoch_lt20 (no volume filter),8,12,1.2891
+C3_stoch_lt20 (no volume filter),9,19,-1.0457
+C3_stoch_lt20 (no volume filter),10,32,0.3586
+C3_stoch_lt20 (no volume filter),11,29,-0.5406
+C3_stoch_lt20 (no volume filter),12,12,-0.0595
+C3_stoch_lt20 (no volume filter),13,26,1.6333
+C3_stoch_lt20 (no volume filter),14,60,-1.5760
+C3_stoch_lt20 (no volume filter),15,47,0.9535
+C3_stoch_lt20 (no volume filter),16,8,1.5489
+C3_stoch_lt20 (no volume filter),17,80,-0.8063
+C3_stoch_lt20 (no volume filter),18,28,0.3091
+C3_stoch_lt20 (no volume filter),19,53,0.3013
+C3_stoch_lt20 (no volume filter),20,21,1.4109
+C3_stoch_lt20 (no volume filter),21,24,0.5475
+C4_below_lower_bb + vol>=1.0,2,3,-1.7052
+C4_below_lower_bb + vol>=1.0,3,7,4.6027
+C4_below_lower_bb + vol>=1.0,4,3,0.7754
+C4_below_lower_bb + vol>=1.0,6,2,0.6336
+C4_below_lower_bb + vol>=1.0,7,7,-0.2036
+C4_below_lower_bb + vol>=1.0,10,2,-3.9282
+C4_below_lower_bb + vol>=1.0,11,4,4.7827
+C4_below_lower_bb + vol>=1.0,12,4,2.2647
+C4_below_lower_bb + vol>=1.0,13,5,1.6577
+C4_below_lower_bb + vol>=1.0,14,5,1.7092
+C4_below_lower_bb + vol>=1.0,15,2,4.8938
+C4_below_lower_bb + vol>=1.0,17,6,-0.5249
+C4_below_lower_bb + vol>=1.0,19,12,-0.3740
+C4_below_lower_bb + vol>=1.0,21,2,4.9714
+C4_below_lower_bb (no volume filter),0,1,-2.4772
+C4_below_lower_bb (no volume filter),1,9,0.9662
+C4_below_lower_bb (no volume filter),2,7,-1.6818
+C4_below_lower_bb (no volume filter),3,15,3.0547
+C4_below_lower_bb (no volume filter),4,14,0.2692
+C4_below_lower_bb (no volume filter),5,1,-2.8321
+C4_below_lower_bb (no volume filter),6,2,0.6336
+C4_below_lower_bb (no volume filter),7,12,-0.2469
+C4_below_lower_bb (no volume filter),8,1,1.3706
+C4_below_lower_bb (no volume filter),9,2,0.3490
+C4_below_lower_bb (no volume filter),10,13,0.7828
+C4_below_lower_bb (no volume filter),11,8,0.2453
+C4_below_lower_bb (no volume filter),12,7,1.2384
+C4_below_lower_bb (no volume filter),13,10,1.7255
+C4_below_lower_bb (no volume filter),14,20,0.0492
+C4_below_lower_bb (no volume filter),15,9,-0.2423
+C4_below_lower_bb (no volume filter),17,25,-0.8369
+C4_below_lower_bb (no volume filter),18,6,-0.7081
+C4_below_lower_bb (no volume filter),19,16,1.0546
+C4_below_lower_bb (no volume filter),20,9,1.6732
+C4_below_lower_bb (no volume filter),21,6,1.2608
+C5_cci_lt_m100 + vol>=1.0,0,3,0.4883
+C5_cci_lt_m100 + vol>=1.0,1,1,-0.1477
+C5_cci_lt_m100 + vol>=1.0,2,7,-0.2515
+C5_cci_lt_m100 + vol>=1.0,3,14,2.9793
+C5_cci_lt_m100 + vol>=1.0,4,9,-0.3546
+C5_cci_lt_m100 + vol>=1.0,6,4,-1.2856
+C5_cci_lt_m100 + vol>=1.0,7,13,-0.4772
+C5_cci_lt_m100 + vol>=1.0,8,3,5.6815
+C5_cci_lt_m100 + vol>=1.0,9,5,-1.0085
+C5_cci_lt_m100 + vol>=1.0,10,5,-1.3934
+C5_cci_lt_m100 + vol>=1.0,11,10,1.8241
+C5_cci_lt_m100 + vol>=1.0,12,10,1.2521
+C5_cci_lt_m100 + vol>=1.0,13,8,1.8496
+C5_cci_lt_m100 + vol>=1.0,14,15,0.1906
+C5_cci_lt_m100 + vol>=1.0,15,17,2.0979
+C5_cci_lt_m100 + vol>=1.0,16,2,-1.2140
+C5_cci_lt_m100 + vol>=1.0,17,12,-0.9402
+C5_cci_lt_m100 + vol>=1.0,18,6,0.7391
+C5_cci_lt_m100 + vol>=1.0,19,27,-0.2146
+C5_cci_lt_m100 + vol>=1.0,21,4,4.7443
+C5_cci_lt_m100 (no volume filter),0,9,3.8645
+C5_cci_lt_m100 (no volume filter),1,30,0.5660
+C5_cci_lt_m100 (no volume filter),2,29,0.4494
+C5_cci_lt_m100 (no volume filter),3,30,2.1209
+C5_cci_lt_m100 (no volume filter),4,58,-0.6057
+C5_cci_lt_m100 (no volume filter),5,5,-0.2476
+C5_cci_lt_m100 (no volume filter),6,8,-0.1390
+C5_cci_lt_m100 (no volume filter),7,33,-0.2192
+C5_cci_lt_m100 (no volume filter),8,8,2.5618
+C5_cci_lt_m100 (no volume filter),9,14,0.0171
+C5_cci_lt_m100 (no volume filter),10,40,0.0559
+C5_cci_lt_m100 (no volume filter),11,23,0.0390
+C5_cci_lt_m100 (no volume filter),12,18,0.8382
+C5_cci_lt_m100 (no volume filter),13,35,1.6607
+C5_cci_lt_m100 (no volume filter),14,60,-1.0448
+C5_cci_lt_m100 (no volume filter),15,49,0.8998
+C5_cci_lt_m100 (no volume filter),16,4,-1.0891
+C5_cci_lt_m100 (no volume filter),17,75,-0.7825
+C5_cci_lt_m100 (no volume filter),18,32,0.0428
+C5_cci_lt_m100 (no volume filter),19,45,0.4886
+C5_cci_lt_m100 (no volume filter),20,15,1.7003
+C5_cci_lt_m100 (no volume filter),21,24,0.8490
+C6_mfi_lt20 + vol>=1.0,3,2,4.1630
+C6_mfi_lt20 + vol>=1.0,4,1,-1.2158
+C6_mfi_lt20 + vol>=1.0,7,5,-1.9344
+C6_mfi_lt20 + vol>=1.0,10,1,-0.2637
+C6_mfi_lt20 + vol>=1.0,11,1,1.8950
+C6_mfi_lt20 + vol>=1.0,14,3,-3.8889
+C6_mfi_lt20 + vol>=1.0,15,2,-2.5958
+C6_mfi_lt20 + vol>=1.0,19,10,3.3079
+C6_mfi_lt20 + vol>=1.0,21,2,4.9714
+C6_mfi_lt20 (no volume filter),1,6,-0.0081
+C6_mfi_lt20 (no volume filter),2,3,1.5174
+C6_mfi_lt20 (no volume filter),3,3,3.9551
+C6_mfi_lt20 (no volume filter),4,14,-0.2953
+C6_mfi_lt20 (no volume filter),7,8,-0.6727
+C6_mfi_lt20 (no volume filter),9,2,-0.2486
+C6_mfi_lt20 (no volume filter),10,4,3.0722
+C6_mfi_lt20 (no volume filter),11,1,1.8950
+C6_mfi_lt20 (no volume filter),12,1,-5.3114
+C6_mfi_lt20 (no volume filter),14,11,-5.0419
+C6_mfi_lt20 (no volume filter),15,7,0.7645
+C6_mfi_lt20 (no volume filter),16,3,-0.8402
+C6_mfi_lt20 (no volume filter),17,7,0.6438
+C6_mfi_lt20 (no volume filter),18,3,-1.2520
+C6_mfi_lt20 (no volume filter),19,14,3.3855
+C6_mfi_lt20 (no volume filter),21,5,2.2188
+C7_oversold_ge3 + vol>=1.0,0,1,-1.2782
+C7_oversold_ge3 + vol>=1.0,2,5,-0.6747
+C7_oversold_ge3 + vol>=1.0,3,9,4.5050
+C7_oversold_ge3 + vol>=1.0,4,6,-0.1014
+C7_oversold_ge3 + vol>=1.0,6,3,0.2541
+C7_oversold_ge3 + vol>=1.0,7,9,-0.5773
+C7_oversold_ge3 + vol>=1.0,8,2,5.7635
+C7_oversold_ge3 + vol>=1.0,9,1,-2.7940
+C7_oversold_ge3 + vol>=1.0,10,3,-2.7067
+C7_oversold_ge3 + vol>=1.0,11,7,2.3035
+C7_oversold_ge3 + vol>=1.0,12,6,0.8321
+C7_oversold_ge3 + vol>=1.0,13,5,2.5043
+C7_oversold_ge3 + vol>=1.0,14,10,-0.1592
+C7_oversold_ge3 + vol>=1.0,15,9,4.0437
+C7_oversold_ge3 + vol>=1.0,17,9,-1.3246
+C7_oversold_ge3 + vol>=1.0,18,1,6.4272
+C7_oversold_ge3 + vol>=1.0,19,23,0.7238
+C7_oversold_ge3 + vol>=1.0,21,2,4.9714
+C7_oversold_ge3 (no volume filter),0,5,-0.1729
+C7_oversold_ge3 (no volume filter),1,16,0.6481
+C7_oversold_ge3 (no volume filter),2,13,-0.6039
+C7_oversold_ge3 (no volume filter),3,21,2.3409
+C7_oversold_ge3 (no volume filter),4,35,-1.2056
+C7_oversold_ge3 (no volume filter),5,1,-2.8321
+C7_oversold_ge3 (no volume filter),6,4,0.8182
+C7_oversold_ge3 (no volume filter),7,20,0.1050
+C7_oversold_ge3 (no volume filter),8,3,4.2992
+C7_oversold_ge3 (no volume filter),9,7,-0.4924
+C7_oversold_ge3 (no volume filter),10,21,0.4821
+C7_oversold_ge3 (no volume filter),11,12,-0.0974
+C7_oversold_ge3 (no volume filter),12,11,0.2686
+C7_oversold_ge3 (no volume filter),13,16,1.5975
+C7_oversold_ge3 (no volume filter),14,38,-1.1710
+C7_oversold_ge3 (no volume filter),15,26,1.6112
+C7_oversold_ge3 (no volume filter),17,39,-0.3221
+C7_oversold_ge3 (no volume filter),18,12,0.3297
+C7_oversold_ge3 (no volume filter),19,33,1.6249
+C7_oversold_ge3 (no volume filter),20,10,2.3173
+C7_oversold_ge3 (no volume filter),21,12,2.0931
+C12_near_52w_low + vol>=1.0,3,3,3.2271
+C12_near_52w_low + vol>=1.0,4,6,1.6517
+C12_near_52w_low + vol>=1.0,5,1,5.9927
+C12_near_52w_low + vol>=1.0,6,2,0.9999
+C12_near_52w_low + vol>=1.0,7,1,-7.9341
+C12_near_52w_low + vol>=1.0,8,4,1.1086
+C12_near_52w_low + vol>=1.0,12,2,1.9616
+C12_near_52w_low + vol>=1.0,14,1,-0.5586
+C12_near_52w_low + vol>=1.0,15,5,1.0361
+C12_near_52w_low + vol>=1.0,16,1,11.0144
+C12_near_52w_low + vol>=1.0,17,1,-4.5733
+C12_near_52w_low + vol>=1.0,18,1,-2.4611
+C12_near_52w_low + vol>=1.0,19,9,-1.4798
+C12_near_52w_low + vol>=1.0,20,1,5.7827
+C12_near_52w_low + vol>=1.0,21,3,1.6117
+C12_near_52w_low (no volume filter),1,3,0.5366
+C12_near_52w_low (no volume filter),2,2,-1.0955
+C12_near_52w_low (no volume filter),3,6,0.6747
+C12_near_52w_low (no volume filter),4,20,0.5023
+C12_near_52w_low (no volume filter),5,3,-1.0716
+C12_near_52w_low (no volume filter),6,6,0.3770
+C12_near_52w_low (no volume filter),7,3,-4.6834
+C12_near_52w_low (no volume filter),8,6,0.9597
+C12_near_52w_low (no volume filter),9,1,-0.1672
+C12_near_52w_low (no volume filter),10,1,-3.6644
+C12_near_52w_low (no volume filter),11,3,-4.6044
+C12_near_52w_low (no volume filter),12,4,4.4854
+C12_near_52w_low (no volume filter),13,1,1.0830
+C12_near_52w_low (no volume filter),14,5,-5.1294
+C12_near_52w_low (no volume filter),15,15,1.1666
+C12_near_52w_low (no volume filter),16,1,11.0144
+C12_near_52w_low (no volume filter),17,5,-0.3581
+C12_near_52w_low (no volume filter),18,6,-0.6406
+C12_near_52w_low (no volume filter),19,14,0.1665
+C12_near_52w_low (no volume filter),20,4,2.9366
+C12_near_52w_low (no volume filter),21,7,0.5965
+C13_don20_break_dn + vol>=1.0,0,1,-1.2782
+C13_don20_break_dn + vol>=1.0,2,3,0.9502
+C13_don20_break_dn + vol>=1.0,3,4,5.6192
+C13_don20_break_dn + vol>=1.0,4,4,3.5053
+C13_don20_break_dn + vol>=1.0,6,1,3.0135
+C13_don20_break_dn + vol>=1.0,7,3,-3.8188
+C13_don20_break_dn + vol>=1.0,8,1,7.3298
+C13_don20_break_dn + vol>=1.0,10,2,-3.9282
+C13_don20_break_dn + vol>=1.0,11,3,-3.2051
+C13_don20_break_dn + vol>=1.0,12,5,0.9430
+C13_don20_break_dn + vol>=1.0,14,5,-0.6161
+C13_don20_break_dn + vol>=1.0,15,3,4.7625
+C13_don20_break_dn + vol>=1.0,17,5,-0.5062
+C13_don20_break_dn + vol>=1.0,19,14,1.4560
+C13_don20_break_dn + vol>=1.0,21,2,4.9714
+C13_don20_break_dn (no volume filter),0,1,-1.2782
+C13_don20_break_dn (no volume filter),1,8,1.4789
+C13_don20_break_dn (no volume filter),2,10,0.4622
+C13_don20_break_dn (no volume filter),3,10,4.0841
+C13_don20_break_dn (no volume filter),4,22,0.9622
+C13_don20_break_dn (no volume filter),5,1,-2.8321
+C13_don20_break_dn (no volume filter),6,2,2.7621
+C13_don20_break_dn (no volume filter),7,10,-0.7430
+C13_don20_break_dn (no volume filter),8,1,7.3298
+C13_don20_break_dn (no volume filter),10,11,0.4063
+C13_don20_break_dn (no volume filter),11,7,-3.1425
+C13_don20_break_dn (no volume filter),12,6,2.3713
+C13_don20_break_dn (no volume filter),13,2,8.5756
+C13_don20_break_dn (no volume filter),14,21,-1.3631
+C13_don20_break_dn (no volume filter),15,12,1.4980
+C13_don20_break_dn (no volume filter),17,25,0.4262
+C13_don20_break_dn (no volume filter),18,3,-1.4775
+C13_don20_break_dn (no volume filter),19,19,2.4031
+C13_don20_break_dn (no volume filter),20,4,1.5793
+C13_don20_break_dn (no volume filter),21,6,2.1037

@@ -1,0 +1,62 @@
+PRE-REGISTRATION - TA filters on top of the lag-10% + volume rule
+Written 2026-10-08 BEFORE any outcome (d1/d2/d3/three_day/take_profit) was looked at in relation to any TA column.
+Nothing below is tuned; thresholds are textbook defaults. Every test listed here is counted, whatever it shows.
+
+DATA: ../build/events_ta.csv (in_fo True, three_day not NaN) and ../build/placebo_ta.csv.gz (in_fo True).
+Outcomes in percent, gross; net = gross - 0.17. Main outcome three_day; take_profit always reported alongside.
+
+BASE SETS
+  S85  : events, in_fo, lag_pct < -10 and vol_ratio_5_60 >= 1.0   (must equal results/lag10_volume/trades.csv, 85)
+  S44  : same with vol_ratio_5_60 >= 1.3                          (must equal trades_vol13.csv, 44)
+  P100 / P130 : placebo rows (in_fo True) with the same two filters (non-results days, 3-day forward return)
+
+CONDITIONS (split each base set into True / False). TA-expected better side in [ ].
+  C1  rsi14_lt30        rsi14 < 30                                          [True]
+  C2  rsi2_lt10         rsi2 < 10 (Connors)                                 [True]
+  C3  stoch_lt20        stoch_k14 < 20  (Williams %R < -80 is the identical condition: willr14 = stoch_k14 - 100;
+                        not counted separately)                             [True]
+  C4  below_lower_bb    bb_pctb < 0 (close below the lower Bollinger band)  [True]
+  C5  cci_lt_m100       cci20 < -100                                        [True]
+  C6  mfi_lt20          mfi14 < 20                                          [True]
+  C7  oversold_ge3      number of C1..C6 that are true >= 3                 [True]
+  C8  macd_bull_x3      MACD histogram turned positive on k-2..k            [True]
+  C9  macd_hist_rising  MACD histogram(k) > histogram(k-1) (k-1 = previous traded day; recomputed from
+                        adjusted_ohlcv with build_panel's exact EMA definition, verified against macd_hist_pct at k)
+                                                                            [True]
+  C10 above_sma200      close_vs_sma200_pct > 0 (dip inside an uptrend)     [True]
+  C11 golden_state      SMA50 > SMA200                                      [True]
+  C12 near_52w_low      dist_52w_low_pct <= 5 (close within 5% of the 52-week low)   [two-sided: TA says weak,
+                        mean reversion says bounce]
+  C13 don20_break_dn    close below the prior 20-session low (breakdown)    [two-sided, TA says bearish]
+  C14 bull_candle       cdl_hammer OR cdl_bull_engulf on the cutoff day     [True]
+  C15 nr7               cutoff-day range narrowest of 7                     [two-sided; NR7 predicts range expansion]
+  C16 strong_downtrend  adx14 > 25 AND minus_di14 > plus_di14               [False - avoid falling knives]
+  C17 obv_bull_div      obv_div20 == +1 (price slope < 0, OBV slope > 0)    [True]
+  C18 gap_down          gap_pct <= -1.0 on the cutoff day                   [two-sided]
+  C19 doji              cdl_doji on the cutoff day                          [True, indecision after a fall]
+  -> 19 conditions x 2 base sets (S85 main, S44 secondary) = 38 splits.
+
+STATISTICS PER SPLIT (both sides): n, mean three_day, net, take_profit, up% (three_day > 0), quarters with trades /
+  positive, mean in first 14 quarters (qn 0..13) and last 8 (qn 14..21), mean without the best 5 trades.
+  D = mean(True) - mean(False). p_perm: labels shuffled WITHIN quarter (qn) among the base set's trades, 20,000
+  shuffles, two-sided (|D_perm| >= |D|). Holm correction across the 19 conditions (S85, three_day) also reported.
+  Placebo: same split on P100/P130, D_plac with a calendar-month cluster bootstrap SE (2,000 reps);
+  D - D_plac with z = (D - D_plac) / sqrt(se_perm^2 + se_plac^2), se_perm = sd of the permutation distribution.
+
+PROMOTION RULE (fixed now). A condition is tested as a refined rule (lag + volume + the condition's better side) only if
+  (a) the better side beats the other side by >= 1.0 pp in BOTH halves (first 14, last 8), with >= 5 trades on each side
+      in each half, (b) raw permutation p < 0.05 on S85, and (c) the event difference exceeds the placebo difference
+      (D - D_plac > 0 in the better side's direction).
+  Holm-adjusted p is reported but not required (it would almost certainly fail with 85 trades); a promoted condition
+  that fails Holm is labelled "possible chance".
+  Refined rule report: as below for rules, at vol >= 1.0 and >= 1.3.
+
+REPLACEMENT RULES (can TA replace the lag filter?), on ALL in_fo events, no lag condition:
+  R(cond, vol>=1.0x) and R(cond, no volume filter) for cond in
+  {C1, C2, C3, C4, C5, C6, C7, C12, C13}  -> 18 rules.
+RULE REPORT: n, mean, net, take_profit (gross/net), up%, quarters with trades / positive, first 14 vs last 8, without
+  best 5, per-quarter table, placebo (same filter on in_fo placebo rows; month-cluster bootstrap 95% CI), luck =
+  share of 20,000 random same-size-per-quarter picks from all in_fo events of the same quarters whose mean >= the rule's
+  mean, overlap with the lag rule (S85) and the mean of the trades NOT in S85.
+
+Total pre-registered things: 38 splits + 18 replacement rules + (refined rules if any are promoted, x2 vol levels).
