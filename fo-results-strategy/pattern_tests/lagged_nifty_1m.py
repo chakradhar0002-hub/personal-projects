@@ -15,7 +15,6 @@ import pandas as pd
 PACK, FEAT, OUT = sys.argv[1], sys.argv[2], sys.argv[3]
 COST = 0.0017
 THRESHOLDS = (-0.10, -0.12, -0.15, -0.20)
-MAIN = -0.15
 
 ev = pd.read_csv(f"{PACK}/events.csv")
 R = pd.read_csv(f"{PACK}/returns.csv", index_col=0)
@@ -81,12 +80,15 @@ S = pd.DataFrame(S)
 S.to_csv(f"{OUT}/summary.csv", index=False)
 
 fo = d[d.in_fo == True]
-pick = fo[fo.vs_nifty_1m < MAIN].sort_values(["qn", "cutoff", "symbol"])
-pick.to_csv(f"{OUT}/trades.csv", index=False)
 base = per_quarter(fo, "three_day")[["avg"]].rename(columns={"avg": "all_fo_avg"})
-tq = per_quarter(pick, "three_day").join(per_quarter(pick, "take_profit")[["up", "avg"]], rsuffix="_tp").join(base)
-tq["stocks"] = pick.groupby("qn").apply(lambda g: ", ".join(f"{s} {100 * v:+.1f}" for s, v in zip(g.symbol, g.three_day)))
-tq.to_csv(f"{OUT}/per_quarter.csv")
 pd.set_option("display.width", 250, "display.max_columns", 30, "display.max_colwidth", 120)
 print(S.round(2).to_string())
-print(tq.round(4).to_string())
+for th in THRESHOLDS:                     # per-quarter detail and trade list for each threshold: *_lag10.csv etc.
+    tag = f"lag{-100 * th:.0f}"
+    pick = fo[fo.vs_nifty_1m < th].sort_values(["qn", "cutoff", "symbol"])
+    pick.to_csv(f"{OUT}/trades_{tag}.csv", index=False)
+    tq = per_quarter(pick, "three_day").join(per_quarter(pick, "take_profit")[["up", "avg"]], rsuffix="_tp").join(base)
+    tq["stocks"] = pick.groupby("qn").apply(lambda g: ", ".join(f"{s} {100 * v:+.1f}" for s, v in zip(g.symbol, g.three_day)))
+    tq.to_csv(f"{OUT}/per_quarter_{tag}.csv")
+    print(tag)
+    print(tq.round(4).to_string())
