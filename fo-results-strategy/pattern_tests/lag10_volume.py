@@ -87,18 +87,20 @@ for name, lag, vmin in VARIANTS:
 S = pd.DataFrame(S)
 S.to_csv(f"{OUT}/summary.csv", index=False)
 
-main = pick(0.10, 1.0).sort_values(["qn", "cutoff", "symbol"])
-main.to_csv(f"{OUT}/trades.csv", index=False)
-g3, gt = main.groupby("qn").three_day, main.groupby("qn").take_profit
-quiet = pick(0.10, None).groupby("qn").three_day
-tq = QUARTERS.join(pd.DataFrame({"trades": g3.size(), "up": g3.apply(lambda s: int((s > 0).sum())), "avg": g3.mean(),
-                                 "avg_tp": gt.mean(), "worst": g3.min(), "best": g3.max(),
-                                 "quiet_trades": quiet.size(), "quiet_avg": quiet.mean()})).join(all_fo)
-tq[["trades", "up", "quiet_trades"]] = tq[["trades", "up", "quiet_trades"]].fillna(0).astype(int)
-tq["stocks"] = main.groupby("qn").apply(lambda g: ", ".join(f"{s} {100 * v:+.1f}" for s, v in zip(g.symbol, g.three_day)))
-tq.to_csv(f"{OUT}/per_quarter.csv")
 pd.set_option("display.width", 250, "display.max_columns", 30, "display.max_colwidth", 140)
 print(S.round(2).to_string())
-print(tq.round(4).to_string())
-by_stock = main.groupby("symbol").three_day.agg(["size", "mean"]).sort_values("size", ascending=False)
-print("most frequent stocks:", by_stock.head(8).round(4).to_dict("index"))
+quiet = pick(0.10, None).groupby("qn").three_day
+for tag, lag, vmin in (("", 0.10, 1.0), ("_vol15", 0.10, 1.5)):     # per-quarter detail: volume >= 1.0x and >= 1.5x
+    main = pick(lag, vmin).sort_values(["qn", "cutoff", "symbol"])
+    main.to_csv(f"{OUT}/trades{tag}.csv", index=False)
+    g3, gt = main.groupby("qn").three_day, main.groupby("qn").take_profit
+    tq = QUARTERS.join(pd.DataFrame({"trades": g3.size(), "up": g3.apply(lambda s: int((s > 0).sum())), "avg": g3.mean(),
+                                     "avg_tp": gt.mean(), "worst": g3.min(), "best": g3.max(),
+                                     "quiet_trades": quiet.size(), "quiet_avg": quiet.mean()})).join(all_fo)
+    tq[["trades", "up", "quiet_trades"]] = tq[["trades", "up", "quiet_trades"]].fillna(0).astype(int)
+    tq["stocks"] = main.groupby("qn").apply(lambda g: ", ".join(f"{s} {100 * v:+.1f}" for s, v in zip(g.symbol, g.three_day)))
+    tq.to_csv(f"{OUT}/per_quarter{tag}.csv")
+    print(f"volume >= {vmin}x")
+    print(tq.round(4).to_string())
+    by_stock = main.groupby("symbol").three_day.agg(["size", "mean"]).sort_values("size", ascending=False)
+    print("most frequent stocks:", by_stock.head(8).round(4).to_dict("index"))
