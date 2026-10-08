@@ -320,7 +320,22 @@ An independent check rebuilt it and got the same 16 trades (split adjustment cha
   well 2 times in 5 (p 0.40), from the 2x trades 3 times in 4 (p 0.75). Higher volume is not a better signal past
   about 2x.
 
+## Lag over 15% and volume 3x or more
+
+4 trades in 2 of 22 quarters: 3-day average +5.12% (take-profit +2.68%), 3 of 4 up.
+
+| Results for | Stock | Lag vs Nifty | Volume vs 60-day | 3-day | Take-profit |
+|---|---|---:|---:|---:|---:|
+| Oct-Dec 2022 | ADANIPORTS | -37.4% | 6.1x | +19.1% | +9.3% |
+| Oct-Dec 2022 | AMBUJACEM | -26.9% | 5.6x | +2.9% | +2.9% |
+| Oct-Dec 2022 | ADANIENT | -49.0% | 3.3x | -3.5% | -3.5% |
+| Oct-Dec 2023 | POLYCAB | -26.1% | 5.9x | +1.9% | +1.9% |
+
+Three of the four are the same week of the February 2023 Adani fall, and without ADANIPORTS the other three average
++0.46%. Nothing since January 2024. Four trades from two events cannot support any conclusion; it is simply the lag
+over 10% & 3x list without its two milder laggards (MANAPPURAM -3.7%, KOTAKBANK +4.4%).
+
 Files: [results/lag10_volume/](../results/lag10_volume/) (summary.csv with the nearby variants; per_quarter.csv and
-trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv and *_lag20_vol15.csv for lag over 15% / 20% & 1.5x; *_vol20.csv, *_lag15_vol20.csv and *_lag20_vol20.csv for lag over 10% / 15% / 20% & 2x; *_vol30.csv for
-lag over 10% & 3x). Script:
+trades.csv for 1.0x; per_quarter_vol15.csv and trades_vol15.csv for 1.5x; *_lag15_vol15.csv and *_lag20_vol15.csv for lag over 15% / 20% & 1.5x; *_vol20.csv, *_lag15_vol20.csv and *_lag20_vol20.csv for lag over 10% / 15% / 20% & 2x; *_vol30.csv and
+*_lag15_vol30.csv for lag over 10% / 15% & 3x). Script:
 `pattern_tests/lag10_volume.py PACK_DIR nse_prices.db features22.csv OUT_DIR` (PACK_DIR from `sector_lab_data.py`).
