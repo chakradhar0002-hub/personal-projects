@@ -1,0 +1,58 @@
+=== dose-response: decile of within-quarter rank (avg gross three_day; excess vs quarter) ===
+pq_mean_td4 (all [first14 / last8]):
+   D1: -0.37 [-0.61 / -0.16] | D2: +0.44 [+0.67 / +0.24] | D3: -0.43 [-0.62 / -0.25] | D4: +0.00 [-0.18 / +0.17] | D5: +0.03 [+0.17 / -0.10] | D6: +0.05 [-0.24 / +0.30] | D7: -0.13 [+0.27 / -0.49] | D8: +0.22 [+0.84 / -0.36] | D9: -0.04 [+0.90 / -0.87] | D10: +1.07 [+1.23 / +0.92]
+pq_mean_xn4 (all [first14 / last8]):
+   D1: -0.09 [-0.19 / +0.00] | D2: -0.11 [+0.08 / -0.28] | D3: -0.14 [-0.02 / -0.26] | D4: -0.39 [-0.83 / -0.00] | D5: +0.21 [+0.45 / +0.00] | D6: +0.33 [+0.33 / +0.34] | D7: -0.18 [+0.10 / -0.43] | D8: +0.16 [+0.16 / +0.16] | D9: +0.33 [+0.82 / -0.10] | D10: +0.72 [+1.51 / -0.01]
+n_pos_td4 (count of positive windows in last 4):
+   0: n= 223 avg -0.48 excess -0.56 | first14 -0.41 (100) | last8 -0.54 (123)
+   1: n= 700 avg -0.01 excess -0.12 | first14 -0.07 (342) | last8 +0.06 (358)
+   2: n=1063 avg +0.04 excess -0.05 | first14 +0.08 (510) | last8 +0.01 (553)
+   3: n= 632 avg +0.25 excess +0.19 | first14 +1.02 (303) | last8 -0.47 (329)
+   4: n= 184 avg +0.87 excess +0.82 | first14 +0.66 (76) | last8 +1.03 (108)
+Spearman IC mean_td4: mean +0.047 t 2.11 (18 q) | first14 +0.079 | last8 +0.007 (positive 5/8)
+Spearman IC mean_xn4: mean +0.047 t 2.00 (18 q) | first14 +0.080 | last8 +0.006 (positive 4/8)
+Spearman IC n_pos_td4: mean +0.041 t 1.75 (18 q) | first14 +0.059 | last8 +0.018 (positive 6/8)
+
+=== last 8 without Results for Jul-Sep 2024 (qn 14, the Oct-Nov 2024 sell-off) ===
+TR05 qn 14-21: n=299 avg +0.04 net -0.13 excess +0.10 (all F&O -0.06)
+TR05 qn 15-21: n=272 avg +0.30 net +0.13 excess +0.26 (all F&O +0.05)
+TR12 qn 14-21: n=299 avg -0.05 net -0.22 excess +0.01 (all F&O -0.06)
+TR12 qn 15-21: n=272 avg +0.21 net +0.04 excess +0.16 (all F&O +0.05)
+TR03 qn 14-21: n=437 avg -0.10 net -0.27 excess +0.02 (all F&O -0.06)
+TR03 qn 15-21: n=383 avg +0.20 net +0.03 excess +0.18 (all F&O +0.05)
+
+=== overlap ===
+TR05 & TR12: 363 of 569; TR05 & TR03: 459; TR12 & TR03: 370
+corr(mean_td4, mean_xn4) = 0.76
+TR05 only (not TR12): n=206 avg -0.04 | first14 +0.55 | last8 -0.51
+TR12 only (not TR05): n=206 avg -0.04 | first14 +0.85 | last8 -0.75
+TR05 & TR12: n=363 avg +0.86 | first14 +1.35 | last8 +0.38
+
+=== stock concentration ===
+TR05: 147 stocks; top 3 by summed excess [('ADANIPORTS', 14, 47.0), ('CUMMINSIND', 13, 46.6), ('RECLTD', 7, 40.0)] = 53% of total excess; without them avg +0.31 (n=535); stock-equal-weight mean excess -0.80, share of stocks with positive mean excess 0.45
+TR12: 147 stocks; top 3 by summed excess [('CUMMINSIND', 7, 34.1), ('TRENT', 7, 34.0), ('PERSISTENT', 8, 31.9)] = 39% of total excess; without them avg +0.37 (n=547); stock-equal-weight mean excess -0.54, share of stocks with positive mean excess 0.48
+TR03: 171 stocks; top 3 by summed excess [('CUMMINSIND', 11, 46.2), ('BEL', 15, 43.9), ('TORNTPHARM', 11, 42.4)] = 49% of total excess; without them avg +0.23 (n=779); stock-equal-weight mean excess -0.43, share of stocks with positive mean excess 0.40
+TR05 top decile: 100 stocks; top 3 by summed excess [('RECLTD', 7, 40.0), ('POWERINDIA', 4, 34.8), ('TRENT', 7, 34.0)] = 38% of total excess; without them avg +0.73 (n=274); stock-equal-weight mean excess -0.55, share of stocks with positive mean excess 0.51
+TR03 4 of 4: 79 stocks; top 3 by summed excess [('ADANIPORTS', 9, 27.6), ('TORNTPHARM', 6, 25.3), ('MOTHERSON', 2, 17.8)] = 47% of total excess; without them avg +0.53 (n=167); stock-equal-weight mean excess -0.10, share of stocks with positive mean excess 0.53
+
+=== selection-adjusted view of post-hoc strict variants (my search) ===
+td4>0.9         n= 292 avg +1.07 z 3.49 raw p 0.0003 maxT-adjusted over the 30 track-record variants 0.0050
+shareall>=0.6   n= 926 avg +0.49 z 3.47 raw p 0.0002 maxT-adjusted over the 30 track-record variants 0.0054
+xn4>0.85        n= 430 avg +0.84 z 3.33 raw p 0.0005 maxT-adjusted over the 30 track-record variants 0.0088
+xn5>0.8         n= 542 avg +0.74 z 3.14 raw p 0.0009 maxT-adjusted over the 30 track-record variants 0.0161
+td4>0.85        n= 430 avg +0.73 z 2.83 raw p 0.0017 maxT-adjusted over the 30 track-record variants 0.0394
+td4>0.75        n= 708 avg +0.51 z 2.53 raw p 0.0055 maxT-adjusted over the 30 track-record variants 0.0863
+tdall>0.8       n= 645 avg +0.47 z 2.47 raw p 0.0061 maxT-adjusted over the 30 track-record variants 0.0987
+td5>0.8         n= 542 avg +0.59 z 2.39 raw p 0.0089 maxT-adjusted over the 30 track-record variants 0.1171
+td4>0.9 raw p 0.00030; Bonferroni x33 = 0.010 (hypothetical, it was NOT pre-registered)
+
+=== strict variants: halves, per quarter, without best 10, lag overlap ===
+TR05 top decile (td4>0.9): n=292 avg +1.07 net +0.90 | first14 +1.23 (140) last8 +0.92 (152) net last8 +0.75 | w/o best 5 net +0.59 w/o best 10 net +0.38 | q+ (net) 14/18 | q excess>0 15/18 | lag overlap 10 | without lag trades +1.04
+   per qn: 4:-1.3(14) 5:+1.8(14) 6:+0.8(14) 7:+0.2(14) 8:+1.5(14) 9:-0.3(14) 10:+1.9(14) 11:+2.8(14) 12:+2.1(14) 13:+2.9(14) 14:-0.7(14) 15:+0.7(18) 16:+1.2(18) 17:-1.3(20) 18:+2.5(20) 19:+1.8(20) 20:+1.4(21) 21:+1.3(21)
+   by year: 2022: +0.43 (42) | 2023: +0.81 (56) | 2024: +1.78 (56) | 2025: +0.76 (76) | 2026: +1.47 (62)
+TR03 4 of 4: n=184 avg +0.87 net +0.70 | first14 +0.66 (76) last8 +1.03 (108) net last8 +0.86 | w/o best 5 net +0.37 w/o best 10 net +0.09 | q+ (net) 12/18 | q excess>0 13/18 | lag overlap 5 | without lag trades +0.80
+   per qn: 4:-2.8(4) 5:+2.7(3) 6:+1.5(10) 7:-0.2(8) 8:+1.7(8) 9:-0.9(11) 10:+0.4(5) 11:+1.2(6) 12:-0.4(11) 13:+3.2(10) 14:-0.5(13) 15:+1.4(9) 16:+1.8(10) 17:+1.2(14) 18:+0.9(14) 19:-0.0(15) 20:+2.1(16) 21:+1.4(17)
+   by year: 2022: +0.69 (17) | 2023: +0.13 (32) | 2024: +0.70 (40) | 2025: +1.28 (47) | 2026: +1.19 (48)
+TR03 3 of 3: n=356 avg +0.67 net +0.50 | first14 +0.75 (174) last8 +0.59 (182) net last8 +0.42 | w/o best 5 net +0.29 w/o best 10 net +0.14 | q+ (net) 13/19 | q excess>0 17/19 | lag overlap 9 | without lag trades +0.59
+   per qn: 3:-1.8(13) 4:+0.1(11) 5:+2.6(12) 6:+0.1(20) 7:+0.9(15) 8:+1.2(19) 9:-1.0(14) 10:+1.3(10) 11:+1.7(15) 12:+1.4(21) 13:+1.4(24) 14:-0.8(18) 15:+0.6(18) 16:+1.4(19) 17:-0.1(25) 18:+1.4(23) 19:+0.5(28) 20:+0.9(27) 21:+0.8(24)
+   by year: 2022: +0.17 (56) | 2023: +0.59 (58) | 2024: +0.92 (78) | 2025: +0.78 (85) | 2026: +0.71 (79)

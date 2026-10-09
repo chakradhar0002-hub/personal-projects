@@ -1,0 +1,190 @@
+all F&O results n=3278 avg +0.042 first14 +0.123 last8 -0.058
+lag rule: mine n=85 avg +2.132; repo n=85 avg +2.132; same set True
+
+=== recomputation vs authors (signals_results + outcomes) ===
+TR03      mine n= 816 avg +0.3871 | authors n= 816 avg +0.3871 | only mine 0 [] | only authors 0 []
+TR05      mine n= 569 avg +0.5307 | authors n= 569 avg +0.5307 | only mine 0 [] | only authors 0 []
+TR12      mine n= 569 avg +0.5327 | authors n= 569 avg +0.5327 | only mine 0 [] | only authors 0 []
+TR11      mine n= 246 avg +0.5640 | authors n= 246 avg +0.5640 | only mine 0 [] | only authors 0 []
+TR15      mine n= 568 avg +0.3782 | authors n= 568 avg +0.3782 | only mine 0 [] | only authors 0 []
+RP1       mine n= 207 avg +0.6887 | authors n= 207 avg +0.6887 | only mine 0 [] | only authors 0 []
+LAGRULE   mine n=  85 avg +2.1325 | authors n=  85 avg +2.1325 | only mine 0 [] | only authors 0 []
+LAG_ALONE mine n= 194 avg +0.7278 | authors n= 194 avg +0.7278 | only mine 0 [] | only authors 0 []
+VOL_ALONE mine n=1040 avg +0.1716 | authors n=1040 avg +0.1716 | only mine 0 [] | only authors 0 []
+three_day authors outcomes.csv vs events.csv x100: max abs diff 0.00e+00
+feature mean_td4   vs mean_three_day_4_A    : max abs diff 0.00e+00, NaN-pattern differences 0
+feature mean_xn4   vs mean_xn_4_A           : max abs diff 0.00e+00, NaN-pattern differences 0
+feature n_pos_td4  vs n_pos_three_day_4_A   : max abs diff 0.00e+00, NaN-pattern differences 0
+feature mean_dr4   vs mean_drift_4_A        : max abs diff 0.00e+00, NaN-pattern differences 0
+feature n_win4     vs n_winner_4_A          : max abs diff 0.00e+00, NaN-pattern differences 0
+feature rk63       vs rank_vsN_63_A         : max abs diff 0.00e+00, NaN-pattern differences 0
+feature rk252      vs rank_vsN_252_A        : max abs diff 0.00e+00, NaN-pattern differences 0
+feature d52        vs dist_52wh_A           : max abs diff 0.00e+00, NaN-pattern differences 0
+feature prev1_td   vs prev1_three_day_A     : max abs diff 0.00e+00, NaN-pattern differences 0
+
+survivorship: results of symbols in the universe by qn 1: 2605 ; later joiners: 673
+
+=== TR05 ===
+TR05                                             n= 569 avg +0.53 net +0.36 exc +0.45 | h1 +1.08 (270) h2 +0.04 (299) | q+ 12/18 | w/o5 +0.20 w/o10 +0.07 | med +0.05 | luck p 0.009
+   LOQO TR05: avg range +0.42 (drop Results for Oct-Dec 2023 (Q3 FY24)) .. +0.69 (drop Results for Jul-Sep 2024 (Q2 FY25)); net min +0.25
+   by year TR05: 2021: - | 2022: +0.67 (81; all -0.17) | 2023: +0.61 (108; all +0.14) | 2024: +0.92 (108; all +0.19) | 2025: +0.30 (149; all +0.08) | 2026: +0.31 (123; all +0.01)
+   per qn (avg / all F&O) TR05: 4:-0.4/-0.8(27) 5:+1.7/+0.8(27) 6:+0.7/+0.0(27) 7:+0.6/-0.2(27) 8:+0.9/+0.6(27) 9:-0.0/-0.3(27) 10:+1.0/+0.4(27) 11:+2.7/+0.5(27) 12:+2.1/+0.9(27) 13:+1.5/+0.5(27) 14:-2.6/-1.1(27) 15:-0.7/-0.8(35) 16:+1.5/+1.0(36) 17:-0.9/-0.6(39) 18:+1.3/+0.7(39) 19:+0.6/+0.2(40) 20:-0.6/-0.3(41) 21:+0.9/+0.2(42)
+   best 5 trades: [['TRENT', 'Q3 FY24', 25.62], ['RECLTD', 'Q4 FY24', 20.07], ['TRENT', 'Q1 FY25', 16.03], ['ADANIPORTS', 'Q3 FY26', 15.85], ['IREDA', 'Q4 FY25', 15.62]]
+TR05 early symbols (in F&O by qn 1)              n= 435 avg +0.62 net +0.45 exc +0.52 | h1 +1.02 (241) h2 +0.13 (194) | q+ 13/18 | w/o5 +0.24 w/o10 +0.10 | med +0.14 | luck p 0.011
+TR05 later joiners                               n= 134 avg +0.23 net +0.06 exc +0.20 | h1 +1.53 (29) h2 -0.13 (105) | q+ 12/18 | w/o5 -0.51 w/o10 -0.96 | med -0.21 | luck p 0.320
+TR05 first 14 (qn<=13)                           n= 270 avg +1.08 net +0.91 exc +0.84 | h1 +1.08 (270) h2 +nan (0) | q+ 8/10 | w/o5 +0.60 w/o10 +0.39 | med +0.52 | luck p nan
+TR05 last 8 (qn>=14)                             n= 299 avg +0.04 net -0.13 exc +0.10 | h1 +nan (0) h2 +0.04 (299) | q+ 4/8 | w/o5 -0.39 w/o10 -0.62 | med -0.39 | luck p 0.358
+TR05 last 4 quarters (qn 18-21)                  n= 162 avg +0.54 net +0.37 exc +0.37 | h1 +nan (0) h2 +0.54 (162) | q+ 3/4 | w/o5 -0.08 w/o10 -0.43 | med +0.00 | luck p 0.149
+TR05 overlap with lag rule                       n=  15 avg +2.61 net +2.44 exc +2.69 | h1 +3.91 (8) h2 +1.12 (7) | q+ 7/9 | w/o5 -0.17 w/o10 -3.29 | med +3.04 | luck p nan
+TR05 without lag-rule trades                     n= 554 avg +0.47 net +0.30 exc +0.39 | h1 +0.99 (262) h2 +0.01 (292) | q+ 12/18 | w/o5 +0.14 w/o10 +0.01 | med -0.06 | luck p 0.023
+TR05 without any lag21 < -10                     n= 540 avg +0.51 net +0.34 exc +0.42 | h1 +1.10 (255) h2 -0.01 (285) | q+ 12/18 | w/o5 +0.17 w/o10 +0.04 | med +0.01 | luck p 0.016
+TR05 without 2023 results                        n= 461 avg +0.51 net +0.34 exc +0.44 | h1 +1.38 (162) h2 +0.04 (299) | q+ 9/14 | w/o5 +0.14 w/o10 -0.02 | med +0.15 | luck p 0.022
+   TR05 without qn [5, 11, 12]: n=488 avg +0.25
+   OLS TR05 + [] + quarter FE: coef +0.561, t(cluster quarter) 2.78, t(cluster stock) 1.97, n=3278
+   OLS TR05 + ['vsN21', 'vsN63', 'vsN252'] + quarter FE: coef +0.559, t(cluster quarter) 2.82, t(cluster stock) 1.98, n=3278
+
+=== TR12 ===
+TR12                                             n= 569 avg +0.53 net +0.36 exc +0.45 | h1 +1.18 (270) h2 -0.05 (299) | q+ 9/18 | w/o5 +0.22 w/o10 +0.11 | med +0.24 | luck p 0.009
+   LOQO TR12: avg range +0.43 (drop Results for Oct-Dec 2023 (Q3 FY24)) .. +0.69 (drop Results for Jul-Sep 2024 (Q2 FY25)); net min +0.26
+   by year TR12: 2021: - | 2022: +0.78 (81; all -0.17) | 2023: +1.09 (108; all +0.14) | 2024: +0.62 (108; all +0.19) | 2025: +0.61 (149; all +0.08) | 2026: -0.28 (123; all +0.01)
+   per qn (avg / all F&O) TR12: 4:-0.0/-0.8(27) 5:+2.3/+0.8(27) 6:+0.1/+0.0(27) 7:+1.3/-0.2(27) 8:+1.4/+0.6(27) 9:-0.1/-0.3(27) 10:+1.7/+0.4(27) 11:+2.5/+0.5(27) 12:+1.1/+0.9(27) 13:+1.4/+0.5(27) 14:-2.7/-1.1(27) 15:-0.2/-0.8(35) 16:+1.0/+1.0(36) 17:+0.1/-0.6(39) 18:+1.5/+0.7(39) 19:-0.5/+0.2(40) 20:-0.4/-0.3(41) 21:-0.0/+0.2(42)
+   best 5 trades: [['TRENT', 'Q3 FY24', 25.62], ['TRENT', 'Q1 FY25', 16.03], ['COFORGE', 'Q1 FY27', 14.97], ['ANGELONE', 'Q4 FY26', 14.64], ['SBILIFE', 'Q1 FY23', 13.28]]
+TR12 early symbols (in F&O by qn 1)              n= 415 avg +0.62 net +0.45 exc +0.53 | h1 +1.05 (238) h2 +0.05 (177) | q+ 11/18 | w/o5 +0.26 w/o10 +0.11 | med +0.28 | luck p 0.010
+TR12 later joiners                               n= 154 avg +0.29 net +0.12 exc +0.23 | h1 +2.17 (32) h2 -0.20 (122) | q+ 11/18 | w/o5 -0.27 w/o10 -0.61 | med +0.04 | luck p 0.289
+TR12 first 14 (qn<=13)                           n= 270 avg +1.18 net +1.01 exc +0.94 | h1 +1.18 (270) h2 +nan (0) | q+ 7/10 | w/o5 +0.73 w/o10 +0.52 | med +0.89 | luck p nan
+TR12 last 8 (qn>=14)                             n= 299 avg -0.05 net -0.22 exc +0.01 | h1 +nan (0) h2 -0.05 (299) | q+ 2/8 | w/o5 -0.44 w/o10 -0.63 | med -0.50 | luck p 0.492
+TR12 last 4 quarters (qn 18-21)                  n= 162 avg +0.14 net -0.03 exc -0.03 | h1 +nan (0) h2 +0.14 (162) | q+ 1/4 | w/o5 -0.43 w/o10 -0.77 | med -0.08 | luck p 0.537
+TR12 overlap with lag rule                       n=  17 avg +3.04 net +2.87 exc +3.09 | h1 +2.50 (10) h2 +3.80 (7) | q+ 9/11 | w/o5 +0.58 w/o10 -1.30 | med +3.04 | luck p nan
+TR12 without lag-rule trades                     n= 552 avg +0.46 net +0.29 exc +0.37 | h1 +1.13 (260) h2 -0.14 (292) | q+ 9/18 | w/o5 +0.14 w/o10 +0.02 | med +0.19 | luck p 0.031
+TR12 without any lag21 < -10                     n= 533 avg +0.56 net +0.39 exc +0.47 | h1 +1.24 (252) h2 -0.04 (281) | q+ 9/18 | w/o5 +0.24 w/o10 +0.12 | med +0.24 | luck p 0.008
+TR12 without 2023 results                        n= 461 avg +0.40 net +0.23 exc +0.33 | h1 +1.24 (162) h2 -0.05 (299) | q+ 6/14 | w/o5 +0.05 w/o10 -0.08 | med +0.22 | luck p 0.064
+   TR12 without qn [5, 11, 12]: n=488 avg +0.29
+   OLS TR12 + [] + quarter FE: coef +0.564, t(cluster quarter) 2.44, t(cluster stock) 2.19, n=3278
+   OLS TR12 + ['vsN21', 'vsN63', 'vsN252'] + quarter FE: coef +0.567, t(cluster quarter) 2.47, t(cluster stock) 2.21, n=3278
+
+=== TR03 ===
+TR03                                             n= 816 avg +0.39 net +0.22 exc +0.33 | h1 +0.95 (379) h2 -0.10 (437) | q+ 12/18 | w/o5 +0.10 w/o10 +0.01 | med +0.17 | luck p 0.012
+   LOQO TR03: avg range +0.25 (drop Results for Oct-Dec 2023 (Q3 FY24)) .. +0.57 (drop Results for Jul-Sep 2024 (Q2 FY25)); net min +0.08
+   by year TR03: 2021: - | 2022: +0.76 (108; all -0.17) | 2023: +0.31 (141; all +0.14) | 2024: +0.61 (184; all +0.19) | 2025: +0.11 (198; all +0.08) | 2026: +0.30 (185; all +0.01)
+   per qn (avg / all F&O) TR03: 4:+0.3/-0.8(37) 5:+1.8/+0.8(33) 6:+0.2/+0.0(38) 7:+0.2/-0.2(38) 8:+0.9/+0.6(33) 9:-0.5/-0.3(36) 10:+0.8/+0.4(34) 11:+3.4/+0.5(36) 12:+1.5/+0.9(46) 13:+0.8/+0.5(48) 14:-2.2/-1.1(54) 15:-1.2/-0.8(47) 16:+0.9/+1.0(45) 17:-1.1/-0.6(56) 18:+2.0/+0.7(50) 19:+0.4/+0.2(67) 20:-0.5/-0.3(64) 21:+1.2/+0.2(54)
+   best 5 trades: [['TRENT', 'Q3 FY24', 25.62], ['RECLTD', 'Q4 FY24', 20.07], ['TRENT', 'Q1 FY25', 16.03], ['ADANIPORTS', 'Q3 FY26', 15.85], ['IREDA', 'Q4 FY25', 15.62]]
+TR03 early symbols (in F&O by qn 1)              n= 626 avg +0.48 net +0.31 exc +0.42 | h1 +0.83 (339) h2 +0.07 (287) | q+ 11/18 | w/o5 +0.17 w/o10 +0.07 | med +0.18 | luck p 0.010
+TR03 later joiners                               n= 190 avg +0.07 net -0.10 exc +0.05 | h1 +1.90 (40) h2 -0.41 (150) | q+ 11/18 | w/o5 -0.50 w/o10 -0.83 | med -0.24 | luck p 0.445
+TR03 first 14 (qn<=13)                           n= 379 avg +0.95 net +0.78 exc +0.69 | h1 +0.95 (379) h2 +nan (0) | q+ 8/10 | w/o5 +0.55 w/o10 +0.41 | med +0.59 | luck p nan
+TR03 last 8 (qn>=14)                             n= 437 avg -0.10 net -0.27 exc +0.02 | h1 +nan (0) h2 -0.10 (437) | q+ 4/8 | w/o5 -0.45 w/o10 -0.61 | med -0.29 | luck p 0.465
+TR03 last 4 quarters (qn 18-21)                  n= 235 avg +0.67 net +0.50 exc +0.52 | h1 +nan (0) h2 +0.67 (235) | q+ 3/4 | w/o5 +0.19 w/o10 -0.06 | med +0.67 | luck p 0.030
+TR03 overlap with lag rule                       n=  19 avg +2.29 net +2.12 exc +2.28 | h1 +2.93 (9) h2 +1.71 (10) | q+ 7/10 | w/o5 -0.24 w/o10 -2.11 | med +2.65 | luck p nan
+TR03 without lag-rule trades                     n= 797 avg +0.34 net +0.17 exc +0.29 | h1 +0.90 (370) h2 -0.14 (427) | q+ 11/18 | w/o5 +0.06 w/o10 -0.04 | med +0.05 | luck p 0.032
+TR03 without any lag21 < -10                     n= 776 avg +0.37 net +0.20 exc +0.30 | h1 +0.98 (360) h2 -0.16 (416) | q+ 12/18 | w/o5 +0.08 w/o10 -0.02 | med +0.15 | luck p 0.026
+TR03 without 2023 results                        n= 675 avg +0.40 net +0.23 exc +0.36 | h1 +1.32 (238) h2 -0.10 (437) | q+ 10/14 | w/o5 +0.10 w/o10 -0.01 | med +0.32 | luck p 0.016
+   TR03 without qn [5, 11, 12]: n=701 avg +0.09
+   OLS TR03 + [] + quarter FE: coef +0.472, t(cluster quarter) 1.69, t(cluster stock) 1.99, n=3278
+   OLS TR03 + ['vsN21', 'vsN63', 'vsN252'] + quarter FE: coef +0.479, t(cluster quarter) 1.70, t(cluster stock) 2.05, n=3278
+
+=== nearby cut-offs: TR05 family (mean 3-day window, long) ===
+pq_mean_td4 > 0.9                                n= 292 avg +1.07 net +0.90 exc +0.99 | h1 +1.23 (140) h2 +0.92 (152) | q+ 14/18 | w/o5 +0.59 w/o10 +0.38 | med +1.19 | luck p 0.000
+pq_mean_td4 > 0.85                               n= 430 avg +0.73 net +0.56 exc +0.64 | h1 +0.92 (206) h2 +0.55 (224) | q+ 13/18 | w/o5 +0.35 w/o10 +0.18 | med +0.29 | luck p 0.002
+pq_mean_td4 > 0.75                               n= 708 avg +0.51 net +0.34 exc +0.42 | h1 +1.24 (338) h2 -0.16 (370) | q+ 12/18 | w/o5 +0.21 w/o10 +0.10 | med +0.19 | luck p 0.005
+pq_mean_td4 > 0.7                                n= 852 avg +0.43 net +0.26 exc +0.34 | h1 +1.00 (406) h2 -0.09 (446) | q+ 10/18 | w/o5 +0.15 w/o10 +0.06 | med +0.16 | luck p 0.011
+pq_mean_td4 > 0.6667                             n= 942 avg +0.31 net +0.14 exc +0.22 | h1 +0.85 (448) h2 -0.18 (494) | q+ 9/18 | w/o5 +0.04 w/o10 -0.04 | med +0.03 | luck p 0.051
+pq_mean_td4 > 0.5                                n=1405 avg +0.24 net +0.07 exc +0.16 | h1 +0.61 (668) h2 -0.10 (737) | q+ 10/18 | w/o5 +0.00 w/o10 -0.05 | med +0.01 | luck p 0.052
+pq_mean_td3 > 0.8                                n= 596 avg +0.46 net +0.29 exc +0.41 | h1 +0.82 (297) h2 +0.10 (299) | q+ 11/19 | w/o5 +0.14 w/o10 +0.02 | med +0.28 | luck p 0.015
+pq_mean_td5 > 0.8                                n= 542 avg +0.59 net +0.42 exc +0.46 | h1 +1.28 (243) h2 +0.04 (299) | q+ 12/17 | w/o5 +0.26 w/o10 +0.12 | med +0.52 | luck p 0.009
+pq_mean_td_all > 0.8                             n= 645 avg +0.47 net +0.30 exc +0.45 | h1 +0.53 (346) h2 +0.40 (299) | q+ 13/21 | w/o5 +0.16 w/o10 +0.05 | med +0.35 | luck p 0.005
+ex-ante: mean_td4 > previous quarter 80th pct    n= 543 avg +0.73 net +0.56 exc +0.61 | h1 +1.44 (249) h2 +0.14 (294) | q+ 12/17 | w/o5 +0.40 w/o10 +0.26 | med +0.53 | luck p 0.001
+mean_td4 > 0 (raw, no rank)                      n=1368 avg +0.25 net +0.08 exc +0.18 | h1 +0.66 (645) h2 -0.12 (723) | q+ 10/18 | w/o5 +0.01 w/o10 -0.04 | med +0.03 | luck p 0.037
+mean_td4 > 2 (raw)                               n= 584 avg +0.53 net +0.36 exc +0.47 | h1 +1.10 (277) h2 +0.02 (307) | q+ 12/18 | w/o5 +0.20 w/o10 +0.08 | med +0.05 | luck p 0.007
+
+=== nearby cut-offs: TR12 family (mean reaction vs Nifty, long) ===
+pq_mean_xn4 > 0.9                                n= 292 avg +0.72 net +0.55 exc +0.64 | h1 +1.51 (140) h2 -0.01 (152) | q+ 13/18 | w/o5 +0.29 w/o10 +0.10 | med +0.69 | luck p 0.011
+pq_mean_xn4 > 0.85                               n= 430 avg +0.84 net +0.67 exc +0.76 | h1 +1.53 (206) h2 +0.22 (224) | q+ 13/18 | w/o5 +0.49 w/o10 +0.35 | med +0.69 | luck p 0.001
+pq_mean_xn4 > 0.75                               n= 708 avg +0.46 net +0.29 exc +0.37 | h1 +1.02 (338) h2 -0.06 (370) | q+ 11/18 | w/o5 +0.17 w/o10 +0.08 | med +0.28 | luck p 0.011
+pq_mean_xn4 > 0.7                                n= 852 avg +0.41 net +0.24 exc +0.32 | h1 +0.84 (406) h2 +0.02 (446) | q+ 11/18 | w/o5 +0.14 w/o10 +0.06 | med +0.21 | luck p 0.013
+pq_mean_xn4 > 0.5                                n=1404 avg +0.28 net +0.11 exc +0.19 | h1 +0.59 (667) h2 -0.01 (737) | q+ 9/18 | w/o5 +0.04 w/o10 -0.01 | med +0.01 | luck p 0.024
+pq_mean_xn3 > 0.8                                n= 596 avg +0.24 net +0.07 exc +0.19 | h1 +0.54 (297) h2 -0.06 (299) | q+ 10/19 | w/o5 -0.07 w/o10 -0.18 | med +0.20 | luck p 0.161
+pq_mean_xn5 > 0.8                                n= 542 avg +0.74 net +0.57 exc +0.61 | h1 +1.45 (243) h2 +0.17 (299) | q+ 12/17 | w/o5 +0.40 w/o10 +0.29 | med +0.68 | luck p 0.001
+pq_mean_xn_all > 0.8                             n= 645 avg +0.34 net +0.17 exc +0.32 | h1 +0.72 (346) h2 -0.10 (299) | q+ 12/21 | w/o5 +0.04 w/o10 -0.07 | med +0.20 | luck p 0.036
+ex-ante: mean_xn4 > previous quarter 80th pct    n= 543 avg +0.58 net +0.41 exc +0.43 | h1 +1.36 (243) h2 -0.06 (300) | q+ 11/17 | w/o5 +0.25 w/o10 +0.14 | med +0.51 | luck p 0.012
+mean_xn4 > 0 (raw)                               n=1309 avg +0.28 net +0.11 exc +0.21 | h1 +0.65 (568) h2 -0.01 (741) | q+ 10/18 | w/o5 +0.04 w/o10 -0.02 | med +0.01 | luck p 0.026
+
+=== nearby cut-offs: TR03 family (count of positive windows, long) ===
+n_pos_td4 == 4                                   n= 184 avg +0.87 net +0.70 exc +0.82 | h1 +0.66 (76) h2 +1.03 (108) | q+ 12/18 | w/o5 +0.37 w/o10 +0.09 | med +0.69 | luck p 0.010
+n_pos_td4 >= 2                                   n=1879 avg +0.19 net +0.02 exc +0.12 | h1 +0.45 (889) h2 -0.04 (990) | q+ 11/18 | w/o5 -0.04 w/o10 -0.08 | med -0.08 | luck p 0.045
+n_pos_td3 >= 2                                   n=1419 avg +0.10 net -0.07 exc +0.06 | h1 +0.24 (712) h2 -0.04 (707) | q+ 9/19 | w/o5 -0.14 w/o10 -0.19 | med -0.14 | luck p 0.278
+n_pos_td3 == 3                                   n= 356 avg +0.67 net +0.50 exc +0.60 | h1 +0.75 (174) h2 +0.59 (182) | q+ 13/19 | w/o5 +0.29 w/o10 +0.14 | med +0.69 | luck p 0.010
+n_pos_td5 >= 4                                   n= 477 avg +0.56 net +0.39 exc +0.44 | h1 +0.87 (213) h2 +0.31 (264) | q+ 11/17 | w/o5 +0.22 w/o10 +0.08 | med +0.55 | luck p 0.018
+n_pos_td5 >= 3                                   n=1273 avg +0.32 net +0.15 exc +0.21 | h1 +0.78 (551) h2 -0.04 (722) | q+ 12/17 | w/o5 +0.07 w/o10 +0.02 | med +0.18 | luck p 0.022
+n_pos_td6 >= 4                                   n= 822 avg +0.36 net +0.19 exc +0.27 | h1 +0.55 (343) h2 +0.22 (479) | q+ 9/16 | w/o5 +0.08 w/o10 -0.01 | med +0.31 | luck p 0.036
+n_pos_td6 >= 5                                   n= 280 avg +0.65 net +0.48 exc +0.59 | h1 +0.81 (110) h2 +0.55 (170) | q+ 12/16 | w/o5 +0.20 w/o10 -0.03 | med +0.29 | luck p 0.019
+share_pos_td_all >= 0.75                         n= 287 avg +0.35 net +0.18 exc +0.46 | h1 +0.34 (237) h2 +0.40 (50) | q+ 13/21 | w/o5 -0.09 w/o10 -0.29 | med -0.22 | luck p 0.044
+share_pos_td_all >= 0.6                          n= 926 avg +0.49 net +0.32 exc +0.49 | h1 +0.35 (537) h2 +0.69 (389) | q+ 15/21 | w/o5 +0.23 w/o10 +0.15 | med +0.50 | luck p 0.001
+
+=== RP1 (volume >= 1.0 AND 3-month vs Nifty bottom quintile) ===
+RP1                                              n= 207 avg +0.69 net +0.52 exc +0.66 | h1 +0.58 (107) h2 +0.80 (100) | q+ 14/22 | w/o5 +0.17 w/o10 -0.11 | med +0.99 | luck p 0.032
+   LOQO RP1: avg range +0.44 (drop Results for Jan-Mar 2025 (Q4 FY25)) .. +0.82 (drop Results for Jan-Mar 2026 (Q4 FY26)); net min +0.27
+   by year RP1: 2021: -0.91 (13; all -0.05) | 2022: +2.09 (30; all -0.17) | 2023: +0.67 (31; all +0.14) | 2024: +0.02 (40; all +0.19) | 2025: +1.01 (49; all +0.08) | 2026: +0.47 (44; all +0.01)
+   per qn (avg / all F&O) RP1: 0:-2.6/+0.8(5) 1:-0.1/+0.1(1) 2:+0.2/-0.8(7) 3:+1.7/-0.6(13) 4:+3.4/-0.8(4) 5:+2.5/+0.8(6) 6:+1.7/+0.0(7) 7:+0.7/-0.2(11) 8:+0.8/+0.6(7) 9:+0.4/-0.3(9) 10:+0.8/+0.4(4) 11:-0.3/+0.5(14) 12:+0.7/+0.9(10) 13:-1.4/+0.5(9) 14:+1.4/-1.1(7) 15:-0.0/-0.8(19) 16:+4.1/+1.0(14) 17:-1.2/-0.6(9) 18:+0.6/+0.7(7) 19:+1.8/+0.2(25) 20:-2.3/-0.3(9) 21:-0.4/+0.2(10)
+RP1 overlap with lag rule                        n=  54 avg +2.65 net +2.48 exc +2.64 | h1 +1.58 (28) h2 +3.80 (26) | q+ 14/18 | w/o5 +1.31 w/o10 +0.45 | med +1.91 | luck p nan
+RP1 without lag-rule trades                      n= 153 avg -0.00 net -0.17 exc -0.04 | h1 +0.23 (79) h2 -0.25 (74) | q+ 12/22 | w/o5 -0.58 w/o10 -0.87 | med +0.41 | luck p 0.543
+RP1 with lag21 in [-10, -5)                      n=  52 avg +0.55 net +0.38 exc +0.51 | h1 -0.05 (26) h2 +1.16 (26) | q+ 13/20 | w/o5 -0.65 w/o10 -1.43 | med +1.26 | luck p 0.244
+RP1 with lag21 >= -5                             n= 101 avg -0.29 net -0.46 exc -0.33 | h1 +0.37 (53) h2 -1.02 (48) | q+ 10/21 | w/o5 -0.98 w/o10 -1.35 | med -0.11 | luck p 0.741
+RP1 early symbols                                n= 154 avg +0.70 net +0.53 exc +0.70 | h1 +0.78 (98) h2 +0.57 (56) | q+ 14/22 | w/o5 +0.08 w/o10 -0.26 | med +0.96 | luck p 0.043
+RP1 later joiners                                n=  53 avg +0.65 net +0.48 exc +0.52 | h1 -1.51 (9) h2 +1.09 (44) | q+ 5/12 | w/o5 -0.64 w/o10 -1.45 | med +1.07 | luck p 0.234
+lag rule NOT in RP1                              n=  31 avg +1.23 net +1.06 exc +1.44 | h1 +1.73 (23) h2 -0.21 (8) | q+ 10/14 | w/o5 -0.24 w/o10 -1.34 | med +2.06 | luck p nan
+vol>=1.0 & rk63 <= 10                            n= 105 avg +1.17 net +1.00 exc +1.13 | h1 +0.92 (50) h2 +1.40 (55) | q+ 14/22 | w/o5 +0.32 w/o10 -0.18 | med +1.16 | luck p 0.013
+   same, without lag-rule trades                 n=  61 avg -0.28 net -0.45 exc -0.34 | h1 -0.14 (28) h2 -0.40 (33) | q+ 11/20 | w/o5 -1.36 w/o10 -2.01 | med -0.26 | luck p 0.699
+vol>=1.0 & rk63 <= 15                            n= 159 avg +0.89 net +0.72 exc +0.84 | h1 +0.51 (79) h2 +1.26 (80) | q+ 15/22 | w/o5 +0.26 w/o10 -0.09 | med +1.10 | luck p 0.018
+   same, without lag-rule trades                 n= 109 avg -0.01 net -0.18 exc -0.09 | h1 -0.06 (55) h2 +0.03 (54) | q+ 10/22 | w/o5 -0.72 w/o10 -1.09 | med +0.41 | luck p 0.571
+vol>=1.0 & rk63 <= 25                            n= 258 avg +0.47 net +0.30 exc +0.42 | h1 +0.21 (139) h2 +0.77 (119) | q+ 11/22 | w/o5 +0.00 w/o10 -0.23 | med +0.32 | luck p 0.088
+   same, without lag-rule trades                 n= 196 avg -0.10 net -0.27 exc -0.16 | h1 -0.11 (106) h2 -0.09 (90) | q+ 9/22 | w/o5 -0.62 w/o10 -0.87 | med -0.14 | luck p 0.678
+vol>=1.0 & rk63 <= 30                            n= 307 avg +0.32 net +0.15 exc +0.25 | h1 +0.18 (172) h2 +0.48 (135) | q+ 9/22 | w/o5 -0.11 w/o10 -0.31 | med +0.04 | luck p 0.188
+   same, without lag-rule trades                 n= 240 avg -0.23 net -0.40 exc -0.33 | h1 -0.16 (134) h2 -0.33 (106) | q+ 8/22 | w/o5 -0.70 w/o10 -0.92 | med -0.34 | luck p 0.846
+vol>=0.9 & rk63 <= 20                            n= 284 avg +0.14 net -0.03 exc +0.12 | h1 +0.21 (150) h2 +0.06 (134) | q+ 10/22 | w/o5 -0.29 w/o10 -0.50 | med +0.43 | luck p 0.348
+vol>=1.1 & rk63 <= 20                            n= 168 avg +0.82 net +0.65 exc +0.83 | h1 +0.49 (83) h2 +1.14 (85) | q+ 12/22 | w/o5 +0.22 w/o10 -0.12 | med +1.00 | luck p 0.018
+vol>=1.2 & rk63 <= 20                            n= 121 avg +1.09 net +0.92 exc +1.11 | h1 +1.04 (62) h2 +1.14 (59) | q+ 13/22 | w/o5 +0.32 w/o10 -0.10 | med +1.30 | luck p 0.009
+vol>=1.0 & rk126 <= 20                           n= 199 avg +0.42 net +0.25 exc +0.37 | h1 -0.10 (109) h2 +1.05 (90) | q+ 10/22 | w/o5 -0.13 w/o10 -0.44 | med +0.14 | luck p 0.148
+vol>=1.0 & rk21 <= 20 (1-month instead of 3)     n= 191 avg +0.54 net +0.37 exc +0.44 | h1 +0.14 (105) h2 +1.02 (86) | q+ 12/22 | w/o5 -0.02 w/o10 -0.32 | med +0.98 | luck p 0.116
+vol>=1.0 & vsN63 < -10                           n= 181 avg +1.09 net +0.92 exc +1.08 | h1 +1.00 (87) h2 +1.17 (94) | q+ 13/22 | w/o5 +0.53 w/o10 +0.22 | med +1.23 | luck p 0.002
+vol>=1.0 & vsN63 < -10 & lag21 >= -10            n= 122 avg +0.42 net +0.25 exc +0.37 | h1 +0.71 (57) h2 +0.15 (65) | q+ 12/22 | w/o5 -0.25 w/o10 -0.63 | med +0.93 | luck p 0.204
+   OLS RP1 + [] + quarter FE: coef +0.710, t(cluster quarter) 1.91, t(cluster stock) 1.90, n=3278
+   OLS RP1 controlling lag + ['vsN21'] + quarter FE: coef +0.653, t(cluster quarter) 1.73, t(cluster stock) 1.76, n=3278
+lag-alone & rk63 <= 20                           n= 116 avg +0.99 net +0.82 exc +1.01 | h1 +0.42 (66) h2 +1.74 (50) | q+ 15/22 | w/o5 +0.18 w/o10 -0.30 | med +0.51 | luck p nan
+lag-alone & rk63 > 20                            n=  78 avg +0.34 net +0.17 exc +0.46 | h1 +1.00 (49) h2 -0.77 (29) | q+ 11/20 | w/o5 -0.55 w/o10 -1.05 | med +1.01 | luck p nan
+vol-alone & lag21 < -10 & rk63 > 20              n=  31 avg +1.23 net +1.06 exc +1.44 | h1 +1.73 (23) h2 -0.21 (8) | q+ 10/14 | w/o5 -0.24 w/o10 -1.34 | med +2.06 | luck p nan
+vol-alone & lag21 >= -10 & rk63 <= 20            n= 153 avg -0.00 net -0.17 exc -0.04 | h1 +0.23 (79) h2 -0.25 (74) | q+ 12/22 | w/o5 -0.58 w/o10 -0.87 | med +0.41 | luck p nan
+vol-alone & lag21 >= -10 & rk63 > 20             n= 802 avg -0.00 net -0.17 exc -0.11 | h1 -0.03 (453) h2 +0.04 (349) | q+ 11/22 | w/o5 -0.30 w/o10 -0.40 | med -0.36 | luck p nan
+   corr(rk63, lag21) among volume>=1 results: 0.58; share of RP1 with lag21 < -10: 0.26; share of lag rule in RP1: 0.64
+
+=== within the lag 10% + volume rule ===
+lag rule                                         n=  85 avg +2.13 net +1.96 exc +2.20 | h1 +1.65 (51) h2 +2.86 (34) | q+ 18/19 | w/o5 +1.19 w/o10 +0.63 | med +2.00 | luck p 0.000
+   LOQO lag rule: avg range +1.90 (drop Results for Jan-Mar 2025 (Q4 FY25)) .. +2.30 (drop Results for Jul-Sep 2021 (Q2 FY22)); net min +1.73
+   by year lag rule: 2021: +0.45 (11; all -0.05) | 2022: +2.18 (17; all -0.17) | 2023: +2.19 (12; all +0.14) | 2024: +1.39 (13; all +0.19) | 2025: +3.30 (19; all +0.08) | 2026: +2.49 (13; all +0.01)
+lag rule early symbols                           n=  57 avg +1.87 net +1.70 exc +1.91 | h1 +1.89 (43) h2 +1.80 (14) | q+ 15/18 | w/o5 +0.64 w/o10 -0.06 | med +1.77 | luck p 0.003
+lag rule later joiners                           n=  28 avg +2.67 net +2.50 exc +2.80 | h1 +0.35 (8) h2 +3.60 (20) | q+ 7/9 | w/o5 +0.66 w/o10 -0.60 | med +2.28 | luck p 0.004
+PP12: dist_52wh <= -30                     IN  41 +3.08 | OUT  44 +1.25 | diff +1.83 | h1 IN/OUT +2.64(20)/+1.01(31) | h2 IN/OUT +3.50(21)/+1.81(13) | perm p2 0.117 | IN w/o best 3 +2.08
+   nearby dist_52wh <= -20                 IN  67 +2.19 | OUT  18 +1.93 | diff +0.26 | h1 IN/OUT +1.67(35)/+1.60(16) | h2 IN/OUT +2.75(32)/+4.54(2) | perm p2 0.859 | IN w/o best 3 +1.55
+   nearby dist_52wh <= -25                 IN  54 +2.24 | OUT  31 +1.94 | diff +0.30 | h1 IN/OUT +1.44(25)/+1.85(26) | h2 IN/OUT +2.94(29)/+2.39(5) | perm p2 0.802 | IN w/o best 3 +1.45
+   nearby dist_52wh <= -35                 IN  26 +4.50 | OUT  59 +1.09 | diff +3.41 | h1 IN/OUT +3.22(16)/+0.93(35) | h2 IN/OUT +6.56(10)/+1.31(24) | perm p2 0.006 | IN w/o best 3 +3.04
+   nearby dist_52wh <= -40                 IN  12 +5.54 | OUT  73 +1.57 | diff +3.97 | h1 IN/OUT +4.46(7)/+1.20(44) | h2 IN/OUT +7.05(5)/+2.13(29) | perm p2 0.017 | IN w/o best 3 +2.26
+   vsN252 bottom quintile (rk252<=20)      IN  39 +2.44 | OUT  46 +1.87 | diff +0.58 | h1 IN/OUT +2.26(27)/+0.96(24) | h2 IN/OUT +2.85(12)/+2.86(22) | perm p2 0.631 | IN w/o best 3 +1.41
+   vsN63 < -15                             IN  46 +3.18 | OUT  39 +0.90 | diff +2.27 | h1 IN/OUT +2.50(21)/+1.06(30) | h2 IN/OUT +3.75(25)/+0.38(9) | perm p2 0.050 | IN w/o best 3 +2.30
+   lag21 < -15 (deeper 1-month lag)        IN  32 +2.71 | OUT  53 +1.79 | diff +0.92 | h1 IN/OUT +3.08(16)/+1.00(35) | h2 IN/OUT +2.33(16)/+3.32(18) | perm p2 0.444 | IN w/o best 3 +1.36
+TR15: mean_dr4 top quintile                IN  18 +4.23 | OUT  51 +1.65 | diff +2.59 | h1 IN/OUT +5.97(6)/+0.94(29) | h2 IN/OUT +3.37(12)/+2.58(22) | perm p2 0.082 | IN w/o best 3 +2.21
+   nearby pq_mean_dr4 > 0.7                IN  21 +3.93 | OUT  48 +1.62 | diff +2.31 | h1 IN/OUT +5.97(6)/+0.94(29) | h2 IN/OUT +3.12(15)/+2.65(19) | perm p2 0.102 | IN w/o best 3 +2.19
+   nearby pq_mean_dr4 > 0.75               IN  21 +3.93 | OUT  48 +1.62 | diff +2.31 | h1 IN/OUT +5.97(6)/+0.94(29) | h2 IN/OUT +3.12(15)/+2.65(19) | perm p2 0.108 | IN w/o best 3 +2.19
+   nearby pq_mean_dr4 > 0.85               IN  13 +5.13 | OUT  56 +1.67 | diff +3.45 | h1 IN/OUT +6.30(5)/+1.06(30) | h2 IN/OUT +4.39(8)/+2.38(26) | perm p2 0.038 | IN w/o best 3 +2.35
+   nearby pq_mean_dr4 > 0.9                IN   8 +4.37 | OUT  61 +2.05 | diff +2.32 | h1 IN/OUT +2.51(2)/+1.76(33) | h2 IN/OUT +5.00(6)/+2.40(28) | perm p2 0.257 | IN w/o best 3 +0.98
+   mean_dr4 > 0 (raw)                      IN  40 +3.02 | OUT  29 +1.36 | diff +1.66 | h1 IN/OUT +3.57(17)/+0.14(18) | h2 IN/OUT +2.62(23)/+3.36(11) | perm p2 0.223 | IN w/o best 3 +2.02
+   TR15-in-rule trades: [['ADANIENT', 'Q3 FY23', -3.45], ['ADANIPORTS', 'Q3 FY23', 19.09], ['BANKBARODA', 'Q3 FY23', 8.47], ['INDUSTOWER', 'Q4 FY23', 4.3], ['LTM', 'Q4 FY23', 5.52], ['POLYCAB', 'Q3 FY24', 1.9], ['BHEL', 'Q2 FY25', 3.64], ['CAMS', 'Q3 FY25', -4.08], ['CGPOWER', 'Q3 FY25', 1.35], ['KALYANKJIL', 'Q3 FY25', 14.81], ['LODHA', 'Q3 FY25', 4.45], ['POLICYBZR', 'Q3 FY25', 5.14], ['PRESTIGE', 'Q3 FY25', 6.82], ['TRENT', 'Q3 FY25', -4.87], ['WIPRO', 'Q4 FY25', -1.07], ['LODHA', 'Q3 FY26', 5.58], ['SWIGGY', 'Q3 FY26', -0.58], ['INDIANB', 'Q1 FY27', 9.23]]
+   PP12-in-rule per qn: {0: {'size': 1.0, 'mean': -1.28}, 3: {'size': 3.0, 'mean': 4.7}, 4: {'size': 6.0, 'mean': 1.16}, 5: {'size': 3.0, 'mean': 5.36}, 6: {'size': 2.0, 'mean': 1.0}, 7: {'size': 4.0, 'mean': 2.66}, 8: {'size': 1.0, 'mean': 4.3}, 14: {'size': 2.0, 'mean': 1.07}, 15: {'size': 8.0, 'mean': 4.1}, 16: {'size': 2.0, 'mean': 9.15}, 19: {'size': 8.0, 'mean': 2.37}, 21: {'size': 1.0, 'mean': 1.3}}
+lag rule & PP12 (d52 <= -30)                     n=  41 avg +3.08 net +2.91 exc +3.29 | h1 +2.64 (20) h2 +3.50 (21) | q+ 11/12 | w/o5 +1.38 w/o10 +0.38 | med +2.88 | luck p 0.000
+   LOQO lag rule & PP12: avg range +2.77 (drop Results for Jan-Mar 2025 (Q4 FY25)) .. +3.41 (drop Results for Jan-Mar 2022 (Q4 FY22)); net min +2.60
+   by year lag rule & PP12: 2021: -1.28 (1; all -0.05) | 2022: +2.79 (14; all -0.17) | 2023: +2.99 (5; all +0.14) | 2024: +1.07 (2; all +0.19) | 2025: +5.11 (10; all +0.08) | 2026: +2.26 (9; all +0.01)
+lag rule & PP12 early symbols                    n=  28 avg +2.20 net +2.03 exc +2.51 | h1 +2.64 (20) h2 +1.10 (8) | q+ 9/10 | w/o5 +0.06 w/o10 -1.12 | med +1.58 | luck p nan
+lag rule & PP12 later joiners                    n=  13 avg +4.98 net +4.81 exc +4.98 | h1 +nan (0) h2 +4.98 (13) | q+ 4/4 | w/o5 +1.28 w/o10 -2.14 | med +4.45 | luck p nan
+lag rule & TR15                                  n=  18 avg +4.23 net +4.06 exc +4.45 | h1 +5.97 (6) h2 +3.37 (12) | q+ 7/8 | w/o5 +1.20 w/o10 -1.07 | med +4.37 | luck p 0.000
+   LOQO lag rule & TR15: avg range +3.47 (drop Results for Oct-Dec 2022 (Q3 FY23)) .. +4.78 (drop Results for Oct-Dec 2024 (Q3 FY25)); net min +3.30
+   by year lag rule & TR15: 2021: - | 2022: - | 2023: +6.79 (5; all +0.14) | 2024: +2.77 (2; all +0.19) | 2025: +2.82 (8; all +0.08) | 2026: +4.74 (3; all +0.01)
+
+MISMATCHES:
+ none

@@ -1,0 +1,55 @@
+rows matched 3280
+  n_prev         NaN mine    0 theirs    0 NaN-pattern differ   0 max abs diff 0.00e+00
+  n_drift_4      NaN mine    0 theirs  476 NaN-pattern differ 476 max abs diff 0.00e+00
+  n_pos_drift_4  NaN mine  476 theirs  476 NaN-pattern differ   0 max abs diff 0.00e+00
+  mean_drift_4   NaN mine  476 theirs  476 NaN-pattern differ   0 max abs diff 0.00e+00
+  dist_52wh      NaN mine    0 theirs    0 NaN-pattern differ   0 max abs diff 0.00e+00
+  XN             NaN mine    0 theirs    0 NaN-pattern differ   0 max abs diff 0.00e+00
+  vsN_net max abs diff 0.0  tradable equal True
+
+LOOK-AHEAD CHECKS
+  rows with n_prev>=4: 2804  all 4 drifts known (exit < k): 2804  fewer: 0
+  rows where a "last 4" item has qn >= current (impossible by construction): 0 [guard in build.py]
+    first_k  last_k  max_exit  exit_before_first_k
+qn                                                
+0      1340    1394       NaN                False
+1      1400    1425    1412.0                False
+2      1463    1486    1445.0                 True
+3      1528    1553    1513.0                 True
+4      1588    1620    1573.0                 True
+5      1649    1673    1640.0                 True
+6      1711    1737    1693.0                 True
+7      1774    1799    1762.0                 True
+8      1836    1868    1819.0                 True
+9      1898    1921    1888.0                 True
+10     1960    1983    1941.0                 True
+11     2022    2050    2012.0                 True
+12     2085    2117    2070.0                 True
+13     2146    2169    2137.0                 True
+14     2208    2233    2189.0                 True
+15     2270    2298    2259.0                 True
+16     2332    2365    2318.0                 True
+17     2394    2419    2385.0                 True
+18     2456    2480    2439.0                 True
+19     2519    2547    2500.0                 True
+20     2578    2614    2567.0                 True
+21     2639    2665    2634.0                 True
+  rows using a drift whose exit >= own k: 0
+  rows whose last-4 drifts include one ending on/after the quarter's first decision: 0
+
+RECOMPUTED
+            test   n  parent_n   avg  gain  q_pos  q  q_dpos   t_q  n14  avg14  gain14  n8  avg8  gain8
+    S1_DRIFT4_Q5 569      2804 1.796 1.114     13 18      14 2.756  270  2.884   1.659 299 0.814  0.623
+S3_CONSIST_DRIFT 938      2804 1.174 0.406     12 18      12 1.955  501  1.903   0.534 437 0.339  0.258
+       W_NEAR52H 176       392 2.423 0.596     13 22      11 0.483  101  2.454   0.080  75 2.383  1.290
+
+COMPARE with claimed (n, parent, avg, gain, n14, avg14, gain14, n8, avg8, gain8)
+  S1_DRIFT4_Q5: claimed (569, 2804, 1.8, 1.11, 270, 2.88, 1.66, 299, 0.81, 0.62)
+      mine (569, 2804, 1.8, 1.11, 270, 2.88, 1.66, 299, 0.81, 0.62)  diffs: []
+  S3_CONSIST_DRIFT: claimed (938, 2804, 1.17, 0.41, 501, 1.9, 0.53, 437, 0.34, 0.26)
+      mine (938, 2804, 1.17, 0.41, 501, 1.9, 0.53, 437, 0.34, 0.26)  diffs: []
+  W_NEAR52H: claimed (176, 392, 2.42, 0.6, 101, 2.45, 0.08, 75, 2.38, 1.29)
+      mine (176, 392, 2.42, 0.6, 101, 2.45, 0.08, 75, 2.38, 1.29)  diffs: []
+  S1_DRIFT4_Q5: trades mine-only 0, theirs-only 0, max |vsN diff| 5.0e-05, max |d_par diff| 5.0e-05
+  S3_CONSIST_DRIFT: trades mine-only 0, theirs-only 0, max |vsN diff| 5.0e-05, max |d_par diff| 5.0e-05
+  W_NEAR52H: trades mine-only 0, theirs-only 0, max |vsN diff| 5.0e-05, max |d_par diff| 5.0e-05

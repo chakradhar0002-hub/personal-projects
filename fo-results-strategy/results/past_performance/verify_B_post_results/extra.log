@@ -1,0 +1,35 @@
+rank IC(mean_drift_4, 20-session vsN) per quarter: [-0.05, -0.051, -0.087, 0.04, 0.147, 0.028, 0.16, 0.133, 0.034, -0.085, 0.159, -0.145, -0.046, 0.091, 0.099, 0.105, 0.068, 0.016]
+  all: mean IC +0.034, t 1.54, positive 12/18
+  first14: mean IC +0.027, t 0.89, positive 6/10
+  last8: mean IC +0.043, t 1.25, positive 6/8
+
+S1 repeat picks (S1 also last quarter):   n  349 avg +2.45 gain +1.68 f14 +2.22 l8 +1.18 q+ 14/17 t_q 3.17
+S1 first-time picks:                      n  220 avg +0.75 gain +0.22 f14 +0.76 l8 -0.25 q+ 9/18 t_q 1.24
+top 20% of md4_ind (stock record relative to its industry peers): n  569 avg +1.09 gain +0.41 f14 +0.36 l8 +0.46 q+ 7/18 t_q 1.29
+top 20% of md4_sec (stock record relative to its sector index peers): n  569 avg +1.09 gain +0.40 f14 +0.55 l8 +0.27 q+ 13/18 t_q 1.27
+top 20% of the INDUSTRY average record (peer trait): n  639 avg +1.42 gain +0.71 f14 +1.15 l8 +0.32 q+ 13/18 t_q 1.83
+
+leave-one-stock-out gain: min [['HAL', 0.97], ['ABB', 1.05], ['IDEA', 1.05]] max [['LAURUSLABS', 1.18], ['PNB', 1.18]]
+w/o ['IDEA']: n  558 avg +1.70 gain +1.05 f14 +1.65 l8 +0.52 q+ 14/18 t_q 2.73
+w/o ['HAL']: n  556 avg +1.61 gain +0.97 f14 +1.36 l8 +0.62 q+ 14/18 t_q 2.38
+w/o PSU / defence list (40 names): n  460 avg +1.41 gain +0.84 f14 +1.42 l8 +0.37 q+ 13/18 t_q 2.04
+  PSU/defence names among S1 trades: 109
+
+S1 by year: gain (quarter) and gain (quarter x 12m-momentum quintile)
+        n   avg  gain  gain_mom
+year                           
+2022   81 -0.39 -0.37     -0.24
+2023  108  5.67  3.30      2.90
+2024  108  2.16  1.54      0.92
+2025  149 -0.36  0.08      0.24
+2026  123  2.13  1.05      0.43
+2023 excluded: n  461 avg +0.89 gain +0.60 f14 +0.56 l8 +0.62 q+ 10/14 t_q 1.41
+2024-2026 only (reaction day >= 2024-01-01): n  380 avg +1.16 gain +0.81 f14 +1.49 l8 +0.62 q+ 9/11 t_q 1.93
+2025-2026 only: n  272 avg +0.76 gain +0.52 f14 +nan l8 +0.52 q+ 6/7 t_q 1.23
+qn 15-21 (expanded F&O list): n  272 avg +0.76 gain +0.52 f14 +nan l8 +0.52 q+ 6/7 t_q 1.23
+luck p last8: 0.0422
+luck p qn 17-21: 0.0435
+luck p 2025-2026: 0.0859
+frequency ranks 1-14: {'HAL': 13, 'TRENT': 13, 'TVSMOTOR': 12, 'ADANIPORTS': 11, 'GMRAIRPORT': 11, 'IDEA': 11, 'ABB': 10, 'CUMMINSIND': 10, 'DIXON': 10, 'HEROMOTOCO': 10, 'PFC': 10, 'ADANIENT': 9, 'BEL': 9, 'CANBK': 9}
+reconcile: w/o 10 most frequent, trades only (parent unchanged): n 458 gain +0.36
+reconcile: w/o 10 biggest contributors, trades only (parent unchanged): n 473 gain +0.03

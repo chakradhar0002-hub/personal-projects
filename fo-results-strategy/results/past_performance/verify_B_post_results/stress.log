@@ -1,0 +1,174 @@
+=== 1. recomputed + own luck p (20,000 same-quarter random picks from the parent) ===
+S1_DRIFT4_Q5 {'n': 569, 'avg': np.float64(1.8), 'gain': np.float64(1.11), 'q_dpos': '14/18', 't_q': np.float64(2.76)} luck p 5e-05
+S3_CONSIST_DRIFT {'n': 938, 'avg': np.float64(1.17), 'gain': np.float64(0.41), 'q_dpos': '12/18', 't_q': np.float64(1.95)} luck p 0.01405
+W_NEAR52H {'n': 176, 'avg': np.float64(2.42), 'gain': np.float64(0.6), 'q_dpos': '11/22', 't_q': np.float64(0.48)} luck p 0.05235
+
+=== 2. leave-one-quarter-out (gain), without best 5 / 10 trades ===
+S1_DRIFT4_Q5: LOQO gain min +0.94 (drop qn 10), max +1.29; avg min +1.53
+   w/o best  5 by vsN_net: avg +1.52 gain +0.85   | w/o best 5 by gain: gain +0.85
+   w/o best 10 by vsN_net: avg +1.28 gain +0.63   | w/o best 10 by gain: gain +0.63
+   w/o best 20 by vsN_net: avg +0.88 gain +0.25   | w/o best 20 by gain: gain +0.25
+   w/o best 1 quarter(s) by gain contribution [10]: gain +0.94 avg +1.53 n 542
+   w/o best 2 quarter(s) by gain contribution [10, 12]: gain +0.77 avg +1.31 n 515
+   w/o best 3 quarter(s) by gain contribution [10, 12, 7]: gain +0.64 avg +1.14 n 488
+S3_CONSIST_DRIFT: LOQO gain min +0.29 (drop qn 10), max +0.50; avg min +0.95
+   w/o best  5 by vsN_net: avg +1.00 gain +0.23   | w/o best 5 by gain: gain +0.23
+   w/o best 10 by vsN_net: avg +0.85 gain +0.09   | w/o best 10 by gain: gain +0.09
+   w/o best 20 by vsN_net: avg +0.60 gain -0.14   | w/o best 20 by gain: gain -0.14
+   w/o best 1 quarter(s) by gain contribution [10]: gain +0.29 avg +0.95 n 882
+   w/o best 2 quarter(s) by gain contribution [10, 20]: gain +0.24 avg +0.87 n 822
+   w/o best 3 quarter(s) by gain contribution [10, 20, 9]: gain +0.18 avg +0.68 n 764
+W_NEAR52H: LOQO gain min +0.41 (drop qn 18), max +0.83; avg min +2.00
+   w/o best  5 by vsN_net: avg +1.71 gain +0.01   | w/o best 5 by gain: gain +0.01
+   w/o best 10 by vsN_net: avg +1.26 gain -0.35   | w/o best 10 by gain: gain -0.41
+   w/o best 20 by vsN_net: avg +0.51 gain -1.07   | w/o best 20 by gain: gain -1.17
+   w/o best 1 quarter(s) by gain contribution [18]: gain +0.41 avg +2.51 n 160
+   w/o best 2 quarter(s) by gain contribution [18, 19]: gain +0.24 avg +2.36 n 144
+   w/o best 3 quarter(s) by gain contribution [18, 19, 13]: gain +0.07 avg +2.31 n 132
+
+=== 3. by calendar year of the reaction day / by quarter ===
+S1_DRIFT4_Q5
+        n   avg  gain    gsum  share_of_total_gain
+y                                                 
+2022   81 -0.39 -0.37  -29.74                -0.05
+2023  108  5.67  3.30  356.93                 0.56
+2024  108  2.16  1.54  166.57                 0.26
+2025  149 -0.36  0.08   11.78                 0.02
+2026  123  2.13  1.05  128.58                 0.20
+                                        n   avg  gain
+qn rf                                                
+4  Results for Jan-Mar 2022 (Q4 FY22)  27 -3.11 -1.85
+5  Results for Apr-Jun 2022 (Q1 FY23)  27  3.49  1.82
+6  Results for Jul-Sep 2022 (Q2 FY23)  27 -1.55 -1.08
+7  Results for Oct-Dec 2022 (Q3 FY23)  27  4.38  3.25
+8  Results for Jan-Mar 2023 (Q4 FY23)  27  6.32  2.82
+9  Results for Apr-Jun 2023 (Q1 FY24)  27  4.89  2.58
+10 Results for Jul-Sep 2023 (Q2 FY24)  27  7.09  4.57
+11 Results for Oct-Dec 2023 (Q3 FY24)  27  2.81  1.15
+12 Results for Jan-Mar 2024 (Q4 FY24)  27  5.73  4.18
+13 Results for Apr-Jun 2024 (Q1 FY25)  27 -1.21 -0.86
+14 Results for Jul-Sep 2024 (Q2 FY25)  27  1.31  1.70
+15 Results for Oct-Dec 2024 (Q3 FY25)  35 -3.78 -1.64
+16 Results for Jan-Mar 2025 (Q4 FY25)  36  3.78  1.33
+17 Results for Apr-Jun 2025 (Q1 FY26)  39  0.40  0.34
+18 Results for Jul-Sep 2025 (Q2 FY26)  39 -1.89  0.21
+19 Results for Oct-Dec 2025 (Q3 FY26)  40  2.54  1.18
+20 Results for Jan-Mar 2026 (Q4 FY26)  41  2.30  1.27
+21 Results for Apr-Jun 2026 (Q1 FY27)  42  1.58  0.69
+S3_CONSIST_DRIFT
+        n   avg  gain    gsum  share_of_total_gain
+y                                                 
+2022  106 -0.14 -0.12  -13.03                -0.03
+2023  204  3.64  1.23  251.16                 0.66
+2024  247  0.75  0.04   10.64                 0.03
+2025  216 -0.51  0.03    7.08                 0.02
+2026  165  1.82  0.75  124.55                 0.33
+W_NEAR52H
+       n   avg  gain   gsum  share_of_total_gain
+y                                               
+2021  23 -0.97 -0.38  -8.82                -0.08
+2022  12 -3.27 -0.95 -11.44                -0.11
+2023  25  6.64 -1.25 -31.35                -0.30
+2024  49  3.23  1.46  71.31                 0.68
+2025  30  2.79  2.29  68.67                 0.65
+2026  37  2.17  0.45  16.49                 0.16
+
+=== 4. S1 nearby cut-offs and definitions (gain vs eligible parent, first14 | last8) ===
+  top   50% mean_drift_4:  n 1405 avg +0.83 gain +0.14 | f14 +0.09 l8 +0.19 | l8 avg +0.38 | q+ 12/18
+  top   40% mean_drift_4:  n 1128 avg +1.09 gain +0.40 | f14 +0.46 l8 +0.35 | l8 avg +0.54 | q+ 13/18
+  top   33% mean_drift_4:  n  924 avg +1.15 gain +0.47 | f14 +0.78 l8 +0.18 | l8 avg +0.38 | q+ 13/18
+  top   30% mean_drift_4:  n  844 avg +1.36 gain +0.68 | f14 +1.05 l8 +0.34 | l8 avg +0.53 | q+ 14/18
+  top   25% mean_drift_4:  n  708 avg +1.57 gain +0.88 | f14 +1.27 l8 +0.52 | l8 avg +0.71 | q+ 14/18
+  top   20% mean_drift_4:  n  569 avg +1.80 gain +1.11 | f14 +1.66 l8 +0.62 | l8 avg +0.81 | q+ 14/18
+  top   15% mean_drift_4:  n  423 avg +1.94 gain +1.26 | f14 +2.11 l8 +0.49 | l8 avg +0.69 | q+ 14/18
+  top   10% mean_drift_4:  n  292 avg +2.25 gain +1.57 | f14 +2.58 l8 +0.65 | l8 avg +0.82 | q+ 14/18
+  top    5% mean_drift_4:  n  147 avg +3.36 gain +2.68 | f14 +4.05 l8 +1.42 | l8 avg +1.61 | q+ 15/18
+  quintile 0.0-0.2:             n  563 avg +0.54 gain -0.15 | f14 +0.18 l8 -0.44 | l8 avg -0.25 | q+ 7/18
+  quintile 0.2-0.4:             n  559 avg +0.43 gain -0.26 | f14 -0.49 l8 -0.05 | l8 avg +0.14 | q+ 9/18
+  quintile 0.4-0.6:             n  554 avg +0.28 gain -0.41 | f14 -0.64 l8 -0.20 | l8 avg +0.00 | q+ 7/18
+  quintile 0.6-0.8:             n  559 avg +0.37 gain -0.32 | f14 -0.75 l8 +0.06 | l8 avg +0.26 | q+ 8/18
+  quintile 0.8-1.0:             n  569 avg +1.80 gain +1.11 | f14 +1.66 l8 +0.62 | l8 avg +0.81 | q+ 14/18
+  fixed mean_drift_4 > 0:            n 1535 avg +0.88 gain +0.19 | f14 +0.07 l8 +0.31 | l8 avg +0.39 | q+ 10/18
+  fixed mean_drift_4 > 2:            n  880 avg +1.31 gain +0.61 | f14 +0.75 l8 +0.48 | l8 avg +0.59 | q+ 13/18
+  fixed mean_drift_4 > 3:            n  623 avg +1.57 gain +0.87 | f14 +1.34 l8 +0.39 | l8 avg +0.53 | q+ 14/18
+  fixed mean_drift_4 > 4:            n  454 avg +1.97 gain +1.27 | f14 +1.94 l8 +0.63 | l8 avg +0.75 | q+ 14/18
+  fixed mean_drift_4 > 5:            n  341 avg +2.11 gain +1.40 | f14 +2.13 l8 +0.66 | l8 avg +0.76 | q+ 15/18
+  fixed mean_drift_4 > 6:            n  242 avg +2.96 gain +2.15 | f14 +2.94 l8 +1.14 | l8 avg +1.25 | q+ 14/18
+  fixed mean_drift_4 > 8:            n  122 avg +3.43 gain +2.57 | f14 +3.07 l8 +1.63 | l8 avg +1.60 | q+ 14/18
+  top 20% mean_drift_3   :       n  596 avg +1.53 gain +0.95 | f14 +1.66 l8 +0.24 | l8 avg +0.43 | q+ 13/19  (parent: mean_drift_3 known)
+  top 20% mean_drift_6   :       n  513 avg +1.78 gain +1.04 | f14 +2.09 l8 +0.27 | l8 avg +0.48 | q+ 12/16  (parent: mean_drift_6 known)
+  top 20% mean_drift_8   :       n  454 avg +2.13 gain +1.34 | f14 +2.25 l8 +0.83 | l8 avg +1.03 | q+ 11/14  (parent: mean_drift_8 known)
+  top 20% mean_drift_all :       n  645 avg +1.40 gain +0.98 | f14 +1.73 l8 +0.10 | l8 avg +0.29 | q+ 15/21  (parent: mean_drift_all known)
+  top 20% median_drift_4 :       n  569 avg +1.63 gain +0.94 | f14 +1.51 l8 +0.44 | l8 avg +0.63 | q+ 13/18  (parent: median_drift_4 known)
+  prev-quarter 80th pct threshold:   n  543 avg +2.10 gain +1.21 | f14 +1.87 l8 +0.56 | l8 avg +0.81 | q+ 14/17
+  expanding within-quarter 80th pct (>=20 reported): n  606 avg +1.76 gain +1.07 | f14 +1.39 l8 +0.76 | l8 avg +0.94 | q+ 14/18
+
+=== 5. survivorship: in F&O by qn 1 vs later joiners (parent restricted to the same group) ===
+S1_DRIFT4_Q5
+   early (first in F&O by qn<=1):  {'n': 392, 'avg': np.float64(1.86), 'gain': np.float64(1.17), 'q_dpos': '14/18', 't_q': np.float64(2.29)}  | vs full parent {'n': 392, 'avg': np.float64(1.86), 'gain': np.float64(1.06), 'q_dpos': '13/18', 't_q': np.float64(2.26)}
+   later joiners:                  {'n': 177, 'avg': np.float64(1.66), 'gain': np.float64(0.86), 'q_dpos': '14/18', 't_q': np.float64(2.98)}  | vs full parent {'n': 177, 'avg': np.float64(1.66), 'gain': np.float64(1.24), 'q_dpos': '13/18', 't_q': np.float64(3.33)}
+   qn 17-21 only (universe ~ full 2025-26 list): {'n': 201, 'avg': np.float64(1.02), 'gain': np.float64(0.74), 'q_dpos': '5/5', 't_q': np.float64(3.42)}
+S3_CONSIST_DRIFT
+   early (first in F&O by qn<=1):  {'n': 737, 'avg': np.float64(0.98), 'gain': np.float64(0.23), 'q_dpos': '11/18', 't_q': np.float64(0.71)}  | vs full parent {'n': 737, 'avg': np.float64(0.98), 'gain': np.float64(0.11), 'q_dpos': '8/18', 't_q': np.float64(0.3)}
+   later joiners:                  {'n': 201, 'avg': np.float64(1.87), 'gain': np.float64(1.08), 'q_dpos': '13/18', 't_q': np.float64(3.14)}  | vs full parent {'n': 201, 'avg': np.float64(1.87), 'gain': np.float64(1.48), 'q_dpos': '14/18', 't_q': np.float64(3.39)}
+   qn 17-21 only (universe ~ full 2025-26 list): {'n': 276, 'avg': np.float64(0.94), 'gain': np.float64(0.7), 'q_dpos': '5/5', 't_q': np.float64(4.56)}
+W_NEAR52H
+   early (first in F&O by qn<=1):  {'n': 143, 'avg': np.float64(1.71), 'gain': np.float64(0.22), 'q_dpos': '11/22', 't_q': np.float64(-0.75)}  | vs full parent {'n': 143, 'avg': np.float64(1.71), 'gain': np.float64(-0.02), 'q_dpos': '9/22', 't_q': np.float64(-1.12)}
+   later joiners:                  {'n': 33, 'avg': np.float64(5.53), 'gain': np.float64(2.06), 'q_dpos': '7/11', 't_q': np.float64(1.52)}  | vs full parent {'n': 33, 'avg': np.float64(5.53), 'gain': np.float64(3.25), 'q_dpos': '7/11', 't_q': np.float64(2.38)}
+   qn 17-21 only (universe ~ full 2025-26 list): {'n': 61, 'avg': np.float64(1.95), 'gain': np.float64(0.71), 'q_dpos': '3/5', 't_q': np.float64(0.22)}
+S1 trades by group: {False: 177, True: 392}  (True = early)
+
+=== 6. concentration ===
+S1_DRIFT4_Q5 trades 569 stocks 144 top 10: {'HAL': 13, 'TRENT': 13, 'TVSMOTOR': 12, 'ADANIPORTS': 11, 'GMRAIRPORT': 11, 'IDEA': 11, 'ABB': 10, 'CUMMINSIND': 10, 'DIXON': 10, 'HEROMOTOCO': 10}
+   top 10 stocks by gain contribution: {'HAL': {'size': 13, 'sum': 118.9, 'mean': 9.1}, 'IDEA': {'size': 11, 'sum': 68.0, 'mean': 6.2}, 'ABB': {'size': 10, 'sum': 63.3, 'mean': 6.3}, 'BHEL': {'size': 8, 'sum': 62.2, 'mean': 7.8}, 'GMRAIRPORT': {'size': 11, 'sum': 56.4, 'mean': 5.1}, 'GLENMARK': {'size': 8, 'sum': 56.0, 'mean': 7.0}, 'ADANIENT': {'size': 9, 'sum': 54.2, 'mean': 6.0}, 'DIXON': {'size': 10, 'sum': 48.9, 'mean': 4.9}, 'PFC': {'size': 10, 'sum': 47.4, 'mean': 4.7}, 'RECLTD': {'size': 6, 'sum': 46.1, 'mean': 7.7}}
+   share of total gain from top 5 / 10 contributors: 0.58 / 0.98
+   w/o 5 most frequent stocks (dropped from trades AND parent):  {'n': 509, 'avg': np.float64(1.4), 'gain': np.float64(0.85), 'q_dpos': '14/18', 't_q': np.float64(2.04)}
+   w/o 10 most frequent stocks (dropped from trades AND parent):  {'n': 458, 'avg': np.float64(1.0), 'gain': np.float64(0.61), 'q_dpos': '13/18', 't_q': np.float64(1.44)}
+   w/o 20 most frequent stocks (dropped from trades AND parent):  {'n': 371, 'avg': np.float64(0.29), 'gain': np.float64(0.09), 'q_dpos': '13/18', 't_q': np.float64(0.13)}
+   w/o 10 biggest gain contributors (trades and parent): {'n': 473, 'avg': np.float64(0.66), 'gain': np.float64(0.28), 'q_dpos': '13/18', 't_q': np.float64(0.83)}
+   stock-cluster bootstrap of gain: 5th pct +0.46, 2.5th +0.34, P(gain<=0) 0.004
+   quarter-cluster bootstrap of gain: 5th pct +0.49, P(gain<=0) 0.001
+   gain within quarter x industry: +0.41 (n 569); f14 +0.33 l8 +0.48
+   gain within quarter x sector_index: +0.58 (n 569); f14 +0.60 l8 +0.55
+   trades by sector_index: {'Nifty 500': 74, 'Nifty India Manufacturing': 63, 'Nifty Financial Services': 58, 'Nifty Auto': 56, 'Nifty Services Sector': 46, 'Nifty Bank': 44, 'Nifty Pharma': 39, 'Nifty Metal': 38}
+S3_CONSIST_DRIFT trades 938 stocks 169 top 10: {'CUMMINSIND': 15, 'HAL': 14, 'TVSMOTOR': 14, 'DIXON': 13, 'SHRIRAMFIN': 13, 'TECHM': 13, 'VOLTAS': 13, 'ABB': 12, 'BEL': 12, 'DRREDDY': 12}
+   top 10 stocks by gain contribution: {'HAL': {'size': 14, 'sum': 109.0, 'mean': 7.8}, 'DIXON': {'size': 13, 'sum': 81.4, 'mean': 6.3}, 'BHEL': {'size': 9, 'sum': 63.8, 'mean': 7.1}, 'ABB': {'size': 12, 'sum': 59.0, 'mean': 4.9}, 'GLENMARK': {'size': 8, 'sum': 56.0, 'mean': 7.0}, 'TRENT': {'size': 12, 'sum': 51.1, 'mean': 4.3}, 'CGPOWER': {'size': 6, 'sum': 46.8, 'mean': 7.8}, 'RECLTD': {'size': 7, 'sum': 46.1, 'mean': 6.6}, 'GMRAIRPORT': {'size': 12, 'sum': 43.6, 'mean': 3.6}, 'VOLTAS': {'size': 13, 'sum': 42.7, 'mean': 3.3}}
+   share of total gain from top 5 / 10 contributors: 0.97 / 1.58
+   w/o 5 most frequent stocks (dropped from trades AND parent):  {'n': 869, 'avg': np.float64(0.91), 'gain': np.float64(0.27), 'q_dpos': '12/18', 't_q': np.float64(0.99)}
+   w/o 10 most frequent stocks (dropped from trades AND parent):  {'n': 807, 'avg': np.float64(0.77), 'gain': np.float64(0.19), 'q_dpos': '11/18', 't_q': np.float64(0.56)}
+   w/o 20 most frequent stocks (dropped from trades AND parent):  {'n': 697, 'avg': np.float64(0.51), 'gain': np.float64(0.07), 'q_dpos': '11/18', 't_q': np.float64(0.0)}
+   w/o 10 biggest gain contributors (trades and parent): {'n': 832, 'avg': np.float64(0.5), 'gain': np.float64(0.01), 'q_dpos': '8/18', 't_q': np.float64(-0.27)}
+   stock-cluster bootstrap of gain: 5th pct -0.05, 2.5th -0.13, P(gain<=0) 0.069
+   quarter-cluster bootstrap of gain: 5th pct +0.09, P(gain<=0) 0.017
+   gain within quarter x industry: +0.14 (n 938); f14 +0.08 l8 +0.21
+   gain within quarter x sector_index: +0.12 (n 938); f14 +0.12 l8 +0.12
+   trades by sector_index: {'Nifty Financial Services': 104, 'Nifty India Manufacturing': 96, 'Nifty IT': 84, 'Nifty 500': 78, 'Nifty Auto': 77, 'Nifty Bank': 72, 'Nifty Metal': 68, 'Nifty Services Sector': 61}
+
+=== 7. S1 controls ===
+   gain within quarter x vsN_252 quintile: +0.85 n 569; f14 +1.39 l8 +0.36
+   S1 share in top vsN_252 quintile: 0.46
+   gain within quarter x vsN_63 quintile: +0.91 n 569; f14 +1.35 l8 +0.52
+   S1 share in top vsN_63 quintile: 0.30
+   S1 & XN<=0   : vs same-reaction parent {'n': 297, 'avg': np.float64(1.11), 'gain': np.float64(0.93), 'q_dpos': '13/18', 't_q': np.float64(2.96)} | l8: {'n': 158, 'avg': np.float64(0.67), 'gain': np.float64(0.75), 'q_dpos': '5/8', 't_q': np.float64(2.11)}
+   S1 & 0<XN<=4 : vs same-reaction parent {'n': 183, 'avg': np.float64(2.66), 'gain': np.float64(1.7), 'q_dpos': '12/18', 't_q': np.float64(1.91)} | l8: {'n': 91, 'avg': np.float64(1.15), 'gain': np.float64(0.95), 'q_dpos': '5/8', 't_q': np.float64(1.26)}
+   S1 & XN>4    : vs same-reaction parent {'n': 89, 'avg': np.float64(2.3), 'gain': np.float64(0.25), 'q_dpos': '10/18', 't_q': np.float64(0.8)} | l8: {'n': 50, 'avg': np.float64(0.64), 'gain': np.float64(-0.38), 'q_dpos': '3/8', 't_q': np.float64(0.14)}
+   S1 & W vs all W (eligible): {'n': 89, 'avg': np.float64(2.3), 'gain': np.float64(0.25), 'q_dpos': '10/18', 't_q': np.float64(0.8)}
+
+=== 8. same S1 flag, entry shifted away from the results (is it a results effect or a stock trait?) ===
+  pre: cutoff-20 -> cutoff (before results)     n 566 avg -0.42 gain -0.87 | f14 -0.70 l8 -1.03
+  results: k -> k+20 (the trade)                n 569 avg +1.80 gain +1.11 | f14 +1.66 l8 +0.62
+  k+20 -> k+40                                  n 555 avg +0.25 gain -0.07 | f14 -0.45 l8 +0.30
+  k+40 -> k+60                                  n 527 avg +1.21 gain +0.36 | f14 +0.51 l8 +0.21
+
+=== 9. placebo: quiet stock-days (tafa quiet_days list: symbol, session i) with OWN track record and outcome ===
+  quiet days with mean_drift_4: 84336; top-quintile n 17144, avg +0.66, gain vs month +0.07, month-clustered t 0.58, months+ 28/56
+    2021-2023: n 6394 gain +0.22
+    2024-2026: n 10750 gain -0.01
+    Jul 2024 on: n 9124 gain +0.07
+  quiet-day gain when the stock was an S1 pick at its latest result (entry on quiet days after that drift window):
+    n 10651 stock-days, gain vs month +0.05
+
+=== 10. overlap ===
+  S1 trades that are also among the 85 trade-A lag10+volume trades (same symbol-quarter): 18; their S1 avg +3.16
+  S1 & W: 89; S1 & XN<=4: 480
+  max concurrent S1 positions 38, median over sessions with any 14

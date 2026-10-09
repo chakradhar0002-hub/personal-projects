@@ -1,0 +1,17 @@
+ordinary F&O stock-days: 123962, symbols 206, mean fwd3 +0.236%, qn_next 0..21
+qn_next       0         1         2         3         4         5        6        7         8        9         10        11        12        13        14        15        16        17       18        19        20      21
+size     1007.00  3483.000  4796.000  5338.000  5741.000  4518.000  5077.00  5421.00  5605.000  4586.00  5662.000  5388.000  5826.000  4522.000  5391.000  6843.000  7412.000  6861.000  7416.00  7651.000  8459.000  6959.0
+mean        0.46     0.355     0.921     0.006     0.093     0.106    -0.05    -0.02     0.215     0.75     0.271     1.017     0.476     0.745     0.076    -0.256     0.245     0.398     0.26    -0.097    -0.134     0.2
+TR05 (top quintile mean 3-day window)      results n= 569 excess +0.45 | placebo days  21938 excess +0.060 (unweighted +0.056, day-t 3.5; h1 +0.111 h2 +0.006) | DiD +0.39 | placebo p 0.0001
+TR05 top decile (post-hoc)                 results n= 292 excess +0.99 | placebo days  11220 excess +0.062 (unweighted +0.058, day-t 2.5; h1 +0.144 h2 -0.020) | DiD +0.93 | placebo p 0.0001
+TR12 (top quintile mean reaction)          results n= 569 excess +0.45 | placebo days  22083 excess +0.069 (unweighted +0.063, day-t 2.4; h1 +0.117 h2 +0.014) | DiD +0.38 | placebo p 0.0005
+TR12 top decile (post-hoc)                 results n= 292 excess +0.64 | placebo days  11361 excess +0.085 (unweighted +0.082, day-t 3.0; h1 +0.148 h2 +0.019) | DiD +0.56 | placebo p 0.0005
+TR03 (>=3 of last 4 positive)              results n= 816 excess +0.33 | placebo days  31672 excess +0.053 (unweighted +0.051, day-t 2.1; h1 +0.084 h2 +0.023) | DiD +0.28 | placebo p 0.0015
+TR03 4 of 4 (post-hoc)                     results n= 184 excess +0.82 | placebo days   7077 excess +0.023 (unweighted +0.015, day-t 2.5; h1 +0.025 h2 +0.008) | DiD +0.80 | placebo p 0.0001
+RP1 (vol>=1 & 3m bottom quintile)          results n= 207 excess +0.66 | placebo days   8572 excess +0.058 (unweighted +0.064, day-t 0.1; h1 +0.023 h2 +0.113) | DiD +0.60 | placebo p 0.0061
+RP1 without lag21<-10                      results n= 153 excess -0.04 | placebo days   6456 excess +0.033 (unweighted +0.031, day-t -0.2; h1 -0.014 h2 +0.089) | DiD -0.08 | placebo p 0.6330
+LAGRULE (lag<-10 & vol>=1)                 results n=  85 excess +2.20 | placebo days   3272 excess +0.169 (unweighted +0.253, day-t 2.4; h1 +0.358 h2 +0.155) | DiD +2.03 | placebo p 0.0001
+LAGRULE & d52<=-30 (PP12 split)            results n=  41 excess +3.29 | placebo days   1456 excess +0.217 (unweighted +0.392, day-t 2.0; h1 +0.565 h2 +0.278) | DiD +3.08 | placebo p 0.0008
+LAGRULE & d52>-30                          results n=  44 excess +1.18 | placebo days   1816 excess +0.005 (unweighted +0.141, day-t 1.0; h1 +0.238 h2 +0.024) | DiD +1.18 | placebo p 0.0049
+LAGRULE & drift top quintile (TR15 split)  results n=  18 excess +4.45 | placebo days    566 excess +0.189 (unweighted -0.005, day-t 0.0; h1 +0.239 h2 -0.202) | DiD +4.26 | placebo p 0.0007
+LAGRULE & drift not top quintile           results n=  51 excess +1.57 | placebo days   2400 excess +0.216 (unweighted +0.307, day-t 2.6; h1 +0.404 h2 +0.236) | DiD +1.36 | placebo p 0.0058

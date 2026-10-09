@@ -1,0 +1,10 @@
+universe (tafa features = fa_panel in_fo): 3280; events in_fo True 3278 ; in universe with events in_fo NaN: [['RELIANCE', 'Q1 FY24'], ['VEDL', 'Q4 FY26']]
+history items: td non-NaN 4460 xn non-NaN 4462 drift non-NaN 4462 of 4462
+look-ahead assert passed: every history item used ended strictly before the decision session (A: i_cut, B: i_react)
+lag21 (events_ta) vs ev.pkl lag x100: n=3280 max abs diff 4.98e-05; NaN events_ta 0, NaN ev.pkl 0
+vol_ratio_5_60 (events_ta) vs ev.pkl vr: n=3280 max abs diff 5.00e-06
+vsN_21_A (this build) vs lag21: n=3280 max abs diff 4.98e-05; vsN_21_A NaN 0
+dist_52wh_A vs events_ta dist_52w_high_pct: n=3280 max abs diff 5.09e-05
+XN (tafa) vs recomputed: max abs diff 4.97e-05
+trade-B outcome vs tafa trades.csv: max abs diff raw_H20 5.0e-05, nifty_H20 5.0e-05, NaN pattern equal True
+panel.csv (3280, 78), outcomes.csv (3280, 21)

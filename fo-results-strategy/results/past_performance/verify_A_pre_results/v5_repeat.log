@@ -1,0 +1,9 @@
+TR05 top quintile repeat (also in signal last quarter): n=316 avg +0.90 exc +0.75 | last8 n=160 avg +0.58
+TR05 top quintile new entrant: n=253 avg +0.07 exc +0.06 | last8 n=139 avg -0.59
+   stocks 147; per-stock trades: median 3.0, max 14; stock-EW mean excess -0.80; trade-weighted +0.45; stocks with n>=5: 52 EW +1.07; n<5 EW -1.83, trades in n<5 stocks 203 avg exc -1.12
+TR05 top decile repeat (also in signal last quarter): n=160 avg +1.34 exc +1.24 | last8 n=91 avg +1.12
+TR05 top decile new entrant: n=132 avg +0.74 exc +0.69 | last8 n=61 avg +0.61
+   stocks 100; per-stock trades: median 2.0, max 9; stock-EW mean excess -0.55; trade-weighted +0.99; stocks with n>=5: 25 EW +2.37; n<5 EW -1.52, trades in n<5 stocks 149 avg exc -0.49
+TR12 top quintile repeat (also in signal last quarter): n=328 avg +0.81 exc +0.69 | last8 n=176 avg +0.33
+TR12 top quintile new entrant: n=241 avg +0.15 exc +0.13 | last8 n=123 avg -0.60
+   stocks 147; per-stock trades: median 3.0, max 11; stock-EW mean excess -0.54; trade-weighted +0.45; stocks with n>=5: 48 EW +1.62; n<5 EW -1.58, trades in n<5 stocks 237 avg exc -1.19

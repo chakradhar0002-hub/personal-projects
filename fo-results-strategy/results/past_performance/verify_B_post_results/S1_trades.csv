@@ -1,0 +1,570 @@
+symbol,qn,results_for,reaction_day_s,industry,XN,mean_drift_4,vsN_net,d_par,first_fo_qn
+ADANIENT,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-04,Trading,-1.370,11.986,-3.827,-2.567,0
+ADANIPORTS,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-25,Shipping,-5.267,3.224,-1.962,-0.702,0
+ALKEM,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-13,Pharmaceuticals,-1.516,2.767,5.042,6.302,4
+APOLLOHOSP,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-26,Miscellaneous,3.029,11.324,8.729,9.988,0
+ASIANPAINT,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-10,Paints,3.078,2.862,-12.345,-11.085,0
+BAJAJFINSV,4,Results for Jan-Mar 2022 (Q4 FY22),2022-04-28,Finance,0.038,3.805,-10.025,-8.765,0
+BEL,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-24,Electronics - Industrial,0.660,5.315,2.222,3.482,1
+BHARTIARTL,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-18,Telecommunication - Services,-1.425,3.604,1.167,2.427,0
+CIPLA,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-11,Pharmaceuticals,1.685,3.744,1.344,2.604,0
+CUMMINSIND,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-27,Diesel Engines,-2.392,5.935,1.963,3.222,0
+GMRAIRPORT,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-18,Travel And Transport,-1.257,3.235,3.046,4.306,1
+HAL,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-13,Aerospace & Defence,-0.301,7.878,22.520,23.780,2
+HINDALCO,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-27,Aluminium,-0.809,3.834,-17.422,-16.163,1
+IDEA,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-11,Telecommunication - Services,-0.126,22.424,4.420,5.680,0
+INDHOTEL,4,Results for Jan-Mar 2022 (Q4 FY22),2022-04-28,Hotels,3.559,3.865,-3.901,-2.641,1
+LAURUSLABS,4,Results for Jan-Mar 2022 (Q4 FY22),2022-04-28,Pharmaceuticals,-2.490,5.949,3.876,5.135,3
+MPHASIS,4,Results for Jan-Mar 2022 (Q4 FY22),2022-04-29,Computers - Software,2.440,5.533,-6.632,-5.372,0
+NATIONALUM,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-26,Aluminium,-1.647,8.781,-23.371,-22.111,0
+PERSISTENT,4,Results for Jan-Mar 2022 (Q4 FY22),2022-04-28,Computers - Software,4.470,3.708,-12.710,-11.450,2
+PIIND,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-18,Pesticides And Agrochemicals,4.429,3.098,1.937,3.196,0
+TATACONSUM,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-05,Food And Food Processing,-3.385,4.328,-2.194,-0.934,0
+TATAPOWER,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-09,Power,-5.532,3.781,-0.854,0.406,0
+TECHM,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-16,Computers - Software,-1.528,4.161,-11.292,-10.032,0
+TITAN,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-04,Gems Jewellery And Watches,-1.754,3.722,-3.294,-2.034,0
+TRENT,4,Results for Jan-Mar 2022 (Q4 FY22),2022-04-28,Miscellaneous,-1.152,4.153,-7.847,-6.587,1
+UNITDSPR,4,Results for Jan-Mar 2022 (Q4 FY22),2022-05-30,Brew/Distilleries,3.877,6.481,-1.582,-0.322,0
+VEDL,4,Results for Jan-Mar 2022 (Q4 FY22),2022-04-29,Metals,0.025,6.603,-20.912,-19.652,0
+ABB,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-10,Electrical Equipment,1.757,6.485,17.752,16.084,5
+ADANIENT,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-05,Trading,-1.014,6.686,27.239,25.572,0
+ALKEM,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-05,Pharmaceuticals,-1.323,2.896,-1.835,-3.503,4
+APOLLOHOSP,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-12,Miscellaneous,-2.861,8.072,1.821,0.153,0
+BEL,5,Results for Apr-Jun 2022 (Q1 FY23),2022-07-18,Electronics - Industrial,2.217,3.763,4.079,2.411,1
+BHARTIARTL,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-10,Telecommunication - Services,1.492,4.917,5.168,3.500,0
+BRITANNIA,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-04,Food And Food Processing,0.169,3.514,-6.168,-7.836,0
+CHOLAFIN,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-01,Finance,3.671,2.985,6.197,4.529,0
+CIPLA,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-01,Pharmaceuticals,1.718,2.923,0.477,-1.190,0
+CUMMINSIND,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-10,Diesel Engines,-1.992,5.263,2.618,0.950,0
+GMRAIRPORT,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-01,Travel And Transport,-4.926,4.579,5.159,3.492,1
+HAL,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-12,Aerospace & Defence,0.032,12.068,12.126,10.458,2
+HINDUNILVR,5,Results for Apr-Jun 2022 (Q1 FY23),2022-07-20,Diversified,0.320,3.262,-6.527,-8.195,0
+IDEA,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-04,Telecommunication - Services,-3.811,25.919,2.807,1.140,0
+JSWSTEEL,5,Results for Apr-Jun 2022 (Q1 FY23),2022-07-25,Steel And Steel Products,1.053,2.560,5.226,3.558,0
+LAURUSLABS,5,Results for Apr-Jun 2022 (Q1 FY23),2022-07-27,Pharmaceuticals,5.177,4.394,4.702,3.034,3
+MPHASIS,5,Results for Apr-Jun 2022 (Q1 FY23),2022-07-22,Computers - Software,0.056,2.745,-5.827,-7.495,0
+NAUKRI,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-12,Computers - Software,0.497,1.943,-3.796,-5.464,1
+PIIND,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-04,Pesticides And Agrochemicals,3.732,1.708,2.207,0.539,0
+POWERGRID,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-10,Power,0.666,2.115,-2.161,-3.829,1
+SIEMENS,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-03,Electrical Equipment,-4.709,2.695,10.481,8.813,0
+SRF,5,Results for Apr-Jun 2022 (Q1 FY23),2022-07-22,Textiles - Synthetic,-2.947,6.167,0.140,-1.528,0
+TATACONSUM,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-11,Food And Food Processing,-2.872,2.573,4.969,3.301,0
+TITAN,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-08,Gems Jewellery And Watches,-0.152,2.819,5.594,3.927,0
+TRENT,5,Results for Apr-Jun 2022 (Q1 FY23),2022-08-11,Miscellaneous,1.495,2.021,2.728,1.060,1
+UNITDSPR,5,Results for Apr-Jun 2022 (Q1 FY23),2022-07-27,Brew/Distilleries,-7.714,2.764,-3.462,-5.130,0
+VEDL,5,Results for Apr-Jun 2022 (Q1 FY23),2022-07-29,Metals,2.234,2.980,2.579,0.911,0
+ABB,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-14,Electrical Equipment,-4.028,10.014,-2.224,-1.756,5
+ADANIENT,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-04,Trading,6.407,12.577,-0.879,-0.411,0
+ADANIPORTS,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-02,Shipping,-0.653,3.930,2.632,3.100,0
+APOLLOHOSP,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-11,Miscellaneous,1.389,7.447,4.974,5.441,0
+ASTRAL,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-14,Plastic And Plastic Products,-3.751,4.907,2.014,2.481,2
+BEL,6,Results for Jul-Sep 2022 (Q2 FY23),2022-10-27,Electronics - Industrial,2.209,3.146,-5.213,-4.745,1
+BHARTIARTL,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-01,Telecommunication - Services,-0.313,3.747,-1.988,-1.520,0
+BIOCON,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-15,Pharmaceuticals,-1.157,2.839,-7.555,-7.087,0
+CHOLAFIN,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-02,Finance,5.306,5.234,-6.347,-5.879,0
+CIPLA,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-04,Pharmaceuticals,-1.819,3.777,-6.096,-5.628,0
+COALINDIA,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-09,Mining,2.756,3.151,-12.596,-12.128,1
+CUMMINSIND,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-04,Diesel Engines,-0.282,4.970,5.079,5.547,0
+DIXON,6,Results for Jul-Sep 2022 (Q2 FY23),2022-10-21,Consumer Durables,-0.555,4.789,-2.284,-1.816,2
+DRREDDY,6,Results for Jul-Sep 2022 (Q2 FY23),2022-10-31,Pharmaceuticals,-1.856,4.520,-3.110,-2.643,0
+GMRAIRPORT,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-18,Travel And Transport,0.198,4.370,10.998,11.466,1
+HAL,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-11,Aerospace & Defence,0.191,9.064,8.741,9.209,2
+IDEA,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-04,Telecommunication - Services,-2.111,15.506,-6.389,-5.921,0
+INDHOTEL,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-11,Hotels,-8.677,3.607,3.687,4.155,1
+JSWSTEEL,6,Results for Jul-Sep 2022 (Q2 FY23),2022-10-24,Steel And Steel Products,0.335,5.635,11.230,11.698,0
+LAURUSLABS,6,Results for Jul-Sep 2022 (Q2 FY23),2022-10-21,Pharmaceuticals,-7.662,4.888,-9.892,-9.424,3
+PIIND,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-09,Pesticides And Agrochemicals,10.156,3.686,-6.719,-6.251,0
+POWERGRID,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-07,Power,0.345,3.696,-4.581,-4.113,1
+SRF,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-09,Textiles - Synthetic,-1.181,3.406,-3.163,-2.695,0
+TITAN,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-07,Gems Jewellery And Watches,-1.489,2.787,-7.150,-6.682,0
+TORNTPHARM,6,Results for Jul-Sep 2022 (Q2 FY23),2022-10-24,Pharmaceuticals,-1.279,5.075,0.201,0.669,0
+TVSMOTOR,6,Results for Jul-Sep 2022 (Q2 FY23),2022-11-07,Automobiles - 2 And 3 Wheelers,-0.598,7.099,-9.059,-8.592,0
+VEDL,6,Results for Jul-Sep 2022 (Q2 FY23),2022-10-31,Metals,-2.689,3.622,3.943,4.411,0
+ABB,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-13,Electrical Equipment,-2.257,6.346,11.421,10.293,5
+ABCAPITAL,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-03,Finance,0.963,3.782,10.295,9.166,3
+ADANIENT,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-14,Trading,0.971,6.516,10.255,9.127,0
+ADANIPORTS,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-07,Shipping,1.654,2.984,28.351,27.222,0
+APOLLOHOSP,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-15,Miscellaneous,4.652,7.010,1.766,0.638,0
+ASTRAL,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-08,Plastic And Plastic Products,-2.800,5.114,-4.110,-5.239,2
+BAJAJ-AUTO,7,Results for Oct-Dec 2022 (Q3 FY23),2023-01-25,Automobiles - 2 And 3 Wheelers,2.087,2.936,5.018,3.889,0
+BANKBARODA,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-03,Banks,4.816,3.768,6.949,5.821,0
+CHOLAFIN,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-01,Finance,6.321,3.878,3.010,1.881,0
+CONCOR,7,Results for Oct-Dec 2022 (Q3 FY23),2023-01-24,Travel And Transport,-2.931,3.407,-10.813,-11.941,0
+CUMMINSIND,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-09,Diesel Engines,6.936,5.745,8.996,7.868,0
+DIXON,7,Results for Oct-Dec 2022 (Q3 FY23),2023-01-27,Consumer Durables,-17.478,2.755,3.358,2.230,2
+DRREDDY,7,Results for Oct-Dec 2022 (Q3 FY23),2023-01-27,Pharmaceuticals,4.298,2.727,4.702,3.574,0
+GAIL,7,Results for Oct-Dec 2022 (Q3 FY23),2023-01-30,Gas,-4.489,2.430,10.951,9.823,1
+GMRAIRPORT,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-15,Travel And Transport,0.176,4.448,14.252,13.124,1
+HAL,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-09,Aerospace & Defence,-1.182,12.146,20.820,19.691,2
+HDFCBANK,7,Results for Oct-Dec 2022 (Q3 FY23),2023-01-16,Banks,-0.615,3.363,5.191,4.062,0
+HEROMOTOCO,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-08,Automobiles - 2 And 3 Wheelers,-2.278,2.251,-5.146,-6.274,0
+INDHOTEL,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-01,Hotels,8.798,3.415,-2.832,-3.961,1
+JINDALSTEL,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-01,Steel And Steel Products,4.492,6.229,-5.137,-6.265,0
+JSWSTEEL,7,Results for Oct-Dec 2022 (Q3 FY23),2023-01-23,Steel And Steel Products,-1.516,7.066,-0.466,-1.595,0
+LAURUSLABS,7,Results for Oct-Dec 2022 (Q3 FY23),2023-01-30,Pharmaceuticals,-0.268,3.018,-6.535,-7.664,3
+NMDC,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-15,Mining,1.504,3.139,1.216,0.087,1
+PNB,7,Results for Oct-Dec 2022 (Q3 FY23),2023-01-30,Banks,-0.450,7.014,-3.866,-4.995,0
+RELIANCE,7,Results for Oct-Dec 2022 (Q3 FY23),2023-01-23,Refineries,-1.010,2.884,1.577,0.449,0
+SIEMENS,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-15,Electrical Equipment,2.863,3.832,6.594,5.465,0
+TRENT,7,Results for Oct-Dec 2022 (Q3 FY23),2023-02-09,Miscellaneous,8.442,2.260,2.429,1.300,1
+ABB,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-04,Electrical Equipment,4.635,9.183,6.750,3.245,5
+ABCAPITAL,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-11,Finance,-3.968,9.108,2.845,-0.661,3
+ADANIENT,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-04,Trading,3.011,8.387,28.933,25.428,0
+ADANIPORTS,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-31,Shipping,1.188,9.608,-0.163,-3.668,0
+AMBUJACEM,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-03,Cement And Cement Products,-2.407,4.428,7.766,4.260,0
+APOLLOHOSP,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-30,Miscellaneous,-1.079,4.512,10.646,7.140,0
+ASTRAL,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-16,Plastic And Plastic Products,6.304,5.681,16.461,12.956,2
+BANKBARODA,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-16,Banks,2.052,7.241,-2.137,-5.643,0
+BHEL,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-29,Electrical Equipment,4.593,7.711,0.276,-3.229,1
+CUMMINSIND,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-24,Diesel Engines,-4.965,4.854,13.139,9.634,0
+DRREDDY,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-11,Pharmaceuticals,-6.790,3.550,0.556,-2.950,0
+GMRAIRPORT,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-29,Travel And Transport,-10.426,8.554,3.751,0.246,1
+GODREJCP,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-11,Personal Care,2.192,3.705,5.634,2.128,0
+GRASIM,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-26,Cement And Cement Products,-1.740,3.302,0.558,-2.947,0
+HAL,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-12,Aerospace & Defence,-1.568,16.242,23.973,20.467,2
+HDFCBANK,8,Results for Jan-Mar 2023 (Q4 FY23),2023-04-17,Banks,-0.845,3.464,-4.625,-8.130,0
+HEROMOTOCO,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-05,Automobiles - 2 And 3 Wheelers,2.326,3.752,10.796,7.290,0
+INDHOTEL,8,Results for Jan-Mar 2023 (Q4 FY23),2023-04-28,Hotels,-1.102,3.079,8.917,5.412,1
+INDUSTOWER,8,Results for Jan-Mar 2023 (Q4 FY23),2023-04-27,Telecommunication - Services,0.724,2.787,4.695,1.190,0
+JSWSTEEL,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-22,Steel And Steel Products,0.940,6.906,6.918,3.413,0
+LTM,8,Results for Jan-Mar 2023 (Q4 FY23),2023-04-28,Computers - Software,1.462,3.565,9.741,6.236,1
+PFC,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-29,Financial Institution,1.722,7.388,13.971,10.466,1
+PNB,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-19,Banks,1.246,9.057,1.060,-2.445,0
+RBLBANK,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-02,Banks,-4.907,2.949,2.564,-0.941,0
+RELIANCE,8,Results for Jan-Mar 2023 (Q4 FY23),2023-04-24,Refineries,-0.294,3.126,0.497,-3.008,0
+SIEMENS,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-12,Electrical Equipment,2.378,5.503,-7.523,-11.028,0
+TVSMOTOR,8,Results for Jan-Mar 2023 (Q4 FY23),2023-05-05,Automobiles - 2 And 3 Wheelers,4.949,5.247,4.693,1.188,0
+ABB,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-14,Electrical Equipment,-3.831,8.615,-1.981,-4.292,5
+ABCAPITAL,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-02,Finance,-2.112,10.382,-3.426,-5.738,3
+ADANIENT,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-03,Trading,3.129,16.577,-3.726,-6.038,0
+ADANIPORTS,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-08,Shipping,-0.775,10.058,2.518,0.207,0
+AMBUJACEM,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-02,Cement And Cement Products,0.908,5.816,-5.845,-8.156,0
+APOLLOHOSP,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-11,Miscellaneous,0.255,4.992,0.755,-1.557,0
+ASTRAL,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-14,Plastic And Plastic Products,0.735,8.635,-7.292,-9.603,2
+AUBANK,9,Results for Apr-Jun 2023 (Q1 FY24),2023-07-24,Banks,-3.301,4.831,-0.228,-2.540,0
+BANKBARODA,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-07,Banks,-1.431,6.622,3.303,0.992,0
+BEL,9,Results for Apr-Jun 2023 (Q1 FY24),2023-07-28,Electronics - Industrial,2.349,4.645,5.190,2.879,1
+BHEL,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-07,Electrical Equipment,-2.786,10.898,43.196,40.884,1
+CUMMINSIND,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-04,Diesel Engines,-5.214,7.648,-4.156,-6.468,0
+DIXON,9,Results for Apr-Jun 2023 (Q1 FY24),2023-07-26,Consumer Durables,-1.121,9.463,22.829,20.517,2
+GMRAIRPORT,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-16,Travel And Transport,-0.251,8.730,11.271,8.960,1
+GODREJCP,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-08,Personal Care,-1.927,4.757,-0.153,-2.464,0
+HAL,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-11,Aerospace & Defence,0.570,16.605,4.581,2.269,2
+HINDPETRO,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-03,Refineries,-1.411,5.141,-7.902,-10.213,0
+INDHOTEL,9,Results for Apr-Jun 2023 (Q1 FY24),2023-07-28,Hotels,1.811,6.284,2.090,-0.222,1
+INDUSTOWER,9,Results for Apr-Jun 2023 (Q1 FY24),2023-07-28,Telecommunication - Services,-1.066,3.938,0.736,-1.576,0
+JSWSTEEL,9,Results for Apr-Jun 2023 (Q1 FY24),2023-07-21,Steel And Steel Products,-0.405,5.917,2.645,0.333,0
+LTM,9,Results for Apr-Jun 2023 (Q1 FY24),2023-07-18,Computers - Software,-2.796,9.810,5.183,2.872,1
+NMDC,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-14,Mining,4.319,4.733,11.931,9.620,1
+PFC,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-14,Financial Institution,-0.032,11.400,4.074,1.763,1
+PNB,9,Results for Apr-Jun 2023 (Q1 FY24),2023-07-26,Banks,3.540,8.244,1.315,-0.997,0
+RECLTD,9,Results for Apr-Jun 2023 (Q1 FY24),2023-07-27,Financial Institution,9.040,4.968,28.967,26.655,0
+SHREECEM,9,Results for Apr-Jun 2023 (Q1 FY24),2023-07-26,Cement And Cement Products,2.006,4.882,0.081,-2.231,1
+TRENT,9,Results for Apr-Jun 2023 (Q1 FY24),2023-08-09,Miscellaneous,4.015,4.242,16.100,13.788,1
+ABCAPITAL,10,Results for Jul-Sep 2023 (Q2 FY24),2023-11-03,Finance,-0.277,7.793,-8.080,-10.600,3
+ADANIENT,10,Results for Jul-Sep 2023 (Q2 FY24),2023-11-02,Trading,-0.849,8.836,0.533,-1.987,0
+ADANIPORTS,10,Results for Jul-Sep 2023 (Q2 FY24),2023-11-09,Shipping,-1.279,8.525,18.579,16.059,0
+APOLLOHOSP,10,Results for Jul-Sep 2023 (Q2 FY24),2023-11-09,Miscellaneous,3.900,4.725,-3.440,-5.961,0
+BANKBARODA,10,Results for Jul-Sep 2023 (Q2 FY24),2023-11-06,Banks,-4.966,4.101,0.171,-2.349,0
+BEL,10,Results for Jul-Sep 2023 (Q2 FY24),2023-10-30,Electronics - Industrial,-0.681,4.922,2.984,0.464,1
+BHEL,10,Results for Jul-Sep 2023 (Q2 FY24),2023-11-09,Electrical Equipment,0.647,18.268,32.155,29.635,1
+CUMMINSIND,10,Results for Jul-Sep 2023 (Q2 FY24),2023-11-08,Diesel Engines,3.818,5.955,3.048,0.527,0
+DIXON,10,Results for Jul-Sep 2023 (Q2 FY24),2023-10-27,Consumer Durables,-0.375,12.969,-5.917,-8.437,2
+GMRAIRPORT,10,Results for Jul-Sep 2023 (Q2 FY24),2023-10-31,Travel And Transport,0.229,10.258,4.919,2.399,1
+GODREJCP,10,Results for Jul-Sep 2023 (Q2 FY24),2023-11-02,Personal Care,0.934,4.247,-2.665,-5.185,0
+HAL,10,Results for Jul-Sep 2023 (Q2 FY24),2023-11-10,Aerospace & Defence,1.229,14.718,27.313,24.793,2
+IDEA,10,Results for Jul-Sep 2023 (Q2 FY24),2023-10-27,Telecommunication - Services,0.388,6.360,18.363,15.843,0
+INDUSTOWER,10,Results for Jul-Sep 2023 (Q2 FY24),2023-10-26,Telecommunication - Services,-0.939,5.399,3.995,1.475,0
+JSWSTEEL,10,Results for Jul-Sep 2023 (Q2 FY24),2023-10-20,Steel And Steel Products,-0.998,5.272,-1.946,-4.466,0
+LTM,10,Results for Jul-Sep 2023 (Q2 FY24),2023-10-19,Computers - Software,6.106,7.215,0.376,-2.144,1
+NATIONALUM,10,Results for Jul-Sep 2023 (Q2 FY24),2023-11-09,Aluminium,-3.582,4.032,-0.507,-3.027,0
+NMDC,10,Results for Jul-Sep 2023 (Q2 FY24),2023-11-15,Mining,-4.303,6.109,5.135,2.615,1
+OBEROIRLTY,10,Results for Jul-Sep 2023 (Q2 FY24),2023-10-30,Construction,1.192,4.143,22.108,19.588,3
+PERSISTENT,10,Results for Jul-Sep 2023 (Q2 FY24),2023-10-19,Computers - Software,2.566,6.746,8.461,5.941,2
+PFC,10,Results for Jul-Sep 2023 (Q2 FY24),2023-11-09,Financial Institution,5.465,14.079,30.389,27.868,1
+PNB,10,Results for Jul-Sep 2023 (Q2 FY24),2023-10-26,Banks,1.889,5.908,4.392,1.872,0
+POLYCAB,10,Results for Jul-Sep 2023 (Q2 FY24),2023-10-18,Electrical Equipment,-1.652,4.603,-1.976,-4.496,2
+RECLTD,10,Results for Jul-Sep 2023 (Q2 FY24),2023-11-01,Financial Institution,-1.178,10.654,17.066,14.546,0
+TECHM,10,Results for Jul-Sep 2023 (Q2 FY24),2023-10-26,Computers - Software,-0.952,6.054,3.357,0.837,0
+TRENT,10,Results for Jul-Sep 2023 (Q2 FY24),2023-11-07,Miscellaneous,8.570,7.585,10.232,7.711,1
+ULTRACEMCO,10,Results for Jul-Sep 2023 (Q2 FY24),2023-10-19,Cement And Cement Products,3.138,4.261,2.462,-0.058,0
+ABB,11,Results for Oct-Dec 2023 (Q3 FY24),2024-02-21,Electrical Equipment,10.811,4.692,15.815,14.157,5
+ADANIENT,11,Results for Oct-Dec 2023 (Q3 FY24),2024-02-01,Trading,0.496,9.189,2.678,1.019,0
+ADANIPORTS,11,Results for Oct-Dec 2023 (Q3 FY24),2024-02-01,Shipping,1.057,12.511,6.835,5.177,0
+AUBANK,11,Results for Oct-Dec 2023 (Q3 FY24),2024-01-29,Banks,-13.317,5.603,-8.369,-10.027,0
+BEL,11,Results for Oct-Dec 2023 (Q3 FY24),2024-01-29,Electronics - Industrial,-1.170,6.972,5.035,3.376,1
+BHEL,11,Results for Oct-Dec 2023 (Q3 FY24),2024-02-13,Electrical Equipment,-2.134,21.208,11.498,9.840,1
+COFORGE,11,Results for Oct-Dec 2023 (Q3 FY24),2024-01-23,Computers - Software,0.242,7.376,1.520,-0.138,1
+CUMMINSIND,11,Results for Oct-Dec 2023 (Q3 FY24),2024-02-08,Diesel Engines,8.679,5.447,4.028,2.370,0
+DIXON,11,Results for Oct-Dec 2023 (Q3 FY24),2024-02-01,Consumer Durables,2.355,12.060,7.630,5.972,2
+GMRAIRPORT,11,Results for Oct-Dec 2023 (Q3 FY24),2024-02-01,Travel And Transport,1.087,8.739,4.690,3.031,1
+HAL,11,Results for Oct-Dec 2023 (Q3 FY24),2024-02-13,Aerospace & Defence,2.101,19.361,8.888,7.230,2
+HEROMOTOCO,11,Results for Oct-Dec 2023 (Q3 FY24),2024-02-12,Automobiles - 2 And 3 Wheelers,-3.745,5.561,-3.842,-5.500,0
+HINDPETRO,11,Results for Oct-Dec 2023 (Q3 FY24),2024-01-25,Refineries,-4.378,7.127,18.309,16.650,0
+IDEA,11,Results for Oct-Dec 2023 (Q3 FY24),2024-01-30,Telecommunication - Services,-0.369,12.548,5.978,4.320,0
+INDUSTOWER,11,Results for Oct-Dec 2023 (Q3 FY24),2024-01-24,Telecommunication - Services,4.906,5.422,-5.836,-7.494,0
+LTM,11,Results for Oct-Dec 2023 (Q3 FY24),2024-01-18,Computers - Software,-10.209,7.289,-3.289,-4.947,1
+MPHASIS,11,Results for Oct-Dec 2023 (Q3 FY24),2024-02-02,Computers - Software,-2.257,6.498,-0.181,-1.839,0
+OBEROIRLTY,11,Results for Oct-Dec 2023 (Q3 FY24),2024-01-23,Construction,-7.395,10.232,-7.567,-9.225,3
+PERSISTENT,11,Results for Oct-Dec 2023 (Q3 FY24),2024-01-23,Computers - Software,5.746,10.075,-0.817,-2.475,2
+PFC,11,Results for Oct-Dec 2023 (Q3 FY24),2024-02-08,Financial Institution,0.873,16.590,-13.137,-14.795,1
+POLYCAB,11,Results for Oct-Dec 2023 (Q3 FY24),2024-01-18,Electrical Equipment,0.435,7.009,2.389,0.731,2
+RECLTD,11,Results for Oct-Dec 2023 (Q3 FY24),2024-01-23,Financial Institution,-3.976,14.068,0.395,-1.263,0
+SAIL,11,Results for Oct-Dec 2023 (Q3 FY24),2024-02-13,Steel And Steel Products,-4.580,5.698,7.183,5.525,1
+TATAPOWER,11,Results for Oct-Dec 2023 (Q3 FY24),2024-02-12,Power,-6.989,10.152,10.719,9.061,0
+TECHM,11,Results for Oct-Dec 2023 (Q3 FY24),2024-01-25,Computers - Software,-5.629,7.499,-4.203,-5.861,0
+TRENT,11,Results for Oct-Dec 2023 (Q3 FY24),2024-02-07,Miscellaneous,18.858,9.704,4.654,2.996,1
+TVSMOTOR,11,Results for Oct-Dec 2023 (Q3 FY24),2024-01-25,Automobiles - 2 And 3 Wheelers,-2.519,7.860,4.790,3.132,0
+ADANIENT,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-02,Trading,-0.686,7.294,5.602,4.054,0
+ADANIPORTS,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-02,Shipping,0.857,7.132,3.853,2.305,0
+ASTRAL,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-18,Plastic And Plastic Products,-4.904,5.940,-1.990,-3.538,2
+BEL,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-21,Electronics - Industrial,5.811,6.102,8.251,6.703,1
+BHEL,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-22,Electrical Equipment,-5.709,21.971,-7.310,-8.859,1
+BPCL,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-10,Refineries,4.030,8.932,-8.836,-10.384,0
+CANBK,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-08,Banks,-3.303,6.061,1.666,0.118,0
+COFORGE,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-03,Computers - Software,-9.331,6.127,10.463,8.915,1
+CONCOR,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-17,Travel And Transport,4.609,7.612,0.218,-1.330,0
+DIXON,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-16,Consumer Durables,1.022,13.128,26.796,25.248,2
+DLF,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-14,Construction,-0.479,6.177,-2.882,-4.430,1
+GMRAIRPORT,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-30,Travel And Transport,-5.888,6.348,12.191,10.643,1
+HAL,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-16,Aerospace & Defence,9.159,16.379,6.142,4.594,2
+HEROMOTOCO,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-08,Automobiles - 2 And 3 Wheelers,3.064,5.887,21.025,19.477,0
+HINDPETRO,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-09,Refineries,-2.696,11.257,-1.220,-2.768,0
+IDEA,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-17,Telecommunication - Services,0.483,16.854,21.625,20.077,0
+INDHOTEL,12,Results for Jan-Mar 2024 (Q4 FY24),2024-04-25,Hotels,-5.807,8.840,-3.185,-4.734,1
+IOC,12,Results for Jan-Mar 2024 (Q4 FY24),2024-04-30,Refineries,-4.299,9.723,-2.882,-4.430,0
+M&M,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-16,Automobiles - 4 Wheelers,2.101,6.315,16.026,14.478,0
+OBEROIRLTY,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-15,Construction,3.692,6.706,16.626,15.078,3
+OFSS,12,Results for Jan-Mar 2024 (Q4 FY24),2024-04-25,Computers - Software,-3.682,7.007,3.687,2.139,2
+PFC,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-21,Financial Institution,0.556,9.014,1.856,0.308,1
+PNB,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-09,Banks,-0.576,6.437,-2.692,-4.240,0
+RECLTD,12,Results for Jan-Mar 2024 (Q4 FY24),2024-04-30,Financial Institution,9.706,15.236,11.515,9.967,0
+TATAPOWER,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-09,Power,-3.407,12.594,0.241,-1.307,0
+TRENT,12,Results for Jan-Mar 2024 (Q4 FY24),2024-04-29,Miscellaneous,-0.782,10.260,5.725,4.177,1
+TVSMOTOR,12,Results for Jan-Mar 2024 (Q4 FY24),2024-05-09,Automobiles - 2 And 3 Wheelers,4.900,6.660,12.090,10.542,0
+ADANIPORTS,13,Results for Apr-Jun 2024 (Q1 FY25),2024-08-01,Shipping,1.050,8.136,-7.897,-7.542,0
+BEL,13,Results for Apr-Jun 2024 (Q1 FY25),2024-07-29,Electronics - Industrial,3.690,5.555,-7.285,-6.930,1
+BHEL,13,Results for Apr-Jun 2024 (Q1 FY25),2024-07-31,Electrical Equipment,-1.055,20.075,-8.687,-8.332,1
+BPCL,13,Results for Apr-Jun 2024 (Q1 FY25),2024-07-19,Refineries,-3.422,7.010,12.806,13.162,0
+CANBK,13,Results for Apr-Jun 2024 (Q1 FY25),2024-07-25,Banks,-0.477,7.072,-1.711,-1.356,0
+COFORGE,13,Results for Apr-Jun 2024 (Q1 FY25),2024-07-23,Computers - Software,1.821,7.084,-2.820,-2.465,1
+CONCOR,13,Results for Apr-Jun 2024 (Q1 FY25),2024-08-09,Travel And Transport,-2.747,6.895,-5.976,-5.621,0
+DIXON,13,Results for Apr-Jun 2024 (Q1 FY25),2024-07-31,Consumer Durables,0.700,13.024,8.054,8.409,2
+GMRAIRPORT,13,Results for Apr-Jun 2024 (Q1 FY25),2024-08-14,Travel And Transport,-2.214,8.458,-4.096,-3.741,1
+HAL,13,Results for Apr-Jun 2024 (Q1 FY25),2024-08-14,Aerospace & Defence,-0.863,11.921,-5.776,-5.421,2
+HEROMOTOCO,13,Results for Apr-Jun 2024 (Q1 FY25),2024-08-14,Automobiles - 2 And 3 Wheelers,-3.319,8.444,9.058,9.413,0
+HINDPETRO,13,Results for Apr-Jun 2024 (Q1 FY25),2024-07-30,Refineries,3.772,9.941,1.767,2.122,0
+IDEA,13,Results for Apr-Jun 2024 (Q1 FY25),2024-08-13,Telecommunication - Services,-2.519,21.113,-18.480,-18.125,0
+IEX,13,Results for Apr-Jun 2024 (Q1 FY25),2024-07-25,Capital Markets,0.988,7.615,5.410,5.765,2
+INDHOTEL,13,Results for Apr-Jun 2024 (Q1 FY25),2024-07-22,Hotels,7.434,5.815,-1.641,-1.286,1
+IOC,13,Results for Apr-Jun 2024 (Q1 FY25),2024-07-30,Refineries,1.334,8.229,-6.003,-5.648,0
+M&M,13,Results for Apr-Jun 2024 (Q1 FY25),2024-07-31,Automobiles - 4 Wheelers,-0.867,8.811,-6.160,-5.805,0
+MOTHERSON,13,Results for Apr-Jun 2024 (Q1 FY25),2024-08-13,Auto Ancillaries,-3.136,6.703,-1.681,-1.326,0
+OBEROIRLTY,13,Results for Apr-Jun 2024 (Q1 FY25),2024-07-22,Construction,4.438,8.853,-0.313,0.042,3
+OFSS,13,Results for Apr-Jun 2024 (Q1 FY25),2024-07-25,Computers - Software,-0.188,8.103,-3.276,-2.920,2
+PFC,13,Results for Apr-Jun 2024 (Q1 FY25),2024-08-06,Financial Institution,-4.557,5.986,11.922,12.278,1
+PNB,13,Results for Apr-Jun 2024 (Q1 FY25),2024-07-29,Banks,5.872,5.499,-9.614,-9.259,0
+POLYCAB,13,Results for Apr-Jun 2024 (Q1 FY25),2024-07-18,Electrical Equipment,-1.924,6.358,2.721,3.076,2
+RECLTD,13,Results for Apr-Jun 2024 (Q1 FY25),2024-07-29,Financial Institution,2.983,14.675,-5.149,-4.794,0
+TATAPOWER,13,Results for Apr-Jun 2024 (Q1 FY25),2024-08-07,Power,-2.737,11.410,-5.863,-5.508,0
+TRENT,13,Results for Apr-Jun 2024 (Q1 FY25),2024-08-09,Miscellaneous,10.146,9.368,11.200,11.556,1
+TVSMOTOR,13,Results for Apr-Jun 2024 (Q1 FY25),2024-08-06,Automobiles - 2 And 3 Wheelers,-0.321,8.509,6.728,7.083,0
+ADANIPORTS,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-29,Shipping,0.991,5.533,-12.872,-12.483,0
+BHEL,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-28,Electrical Equipment,5.294,7.104,7.869,8.259,1
+BPCL,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-25,Refineries,-3.817,12.085,-4.311,-3.922,0
+CANBK,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-29,Banks,2.524,7.338,1.240,1.630,0
+COFORGE,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-23,Computers - Software,11.290,5.067,12.156,12.545,1
+DIXON,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-25,Consumer Durables,-6.531,9.331,10.974,11.364,2
+DLF,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-28,Construction,5.252,5.309,0.171,0.561,1
+GLENMARK,14,Results for Jul-Sep 2024 (Q2 FY25),2024-11-18,Pharmaceuticals,-2.791,6.426,-2.043,-1.654,0
+HAL,14,Results for Jul-Sep 2024 (Q2 FY25),2024-11-14,Aerospace & Defence,0.607,9.332,9.403,9.793,2
+HEROMOTOCO,14,Results for Jul-Sep 2024 (Q2 FY25),2024-11-18,Automobiles - 2 And 3 Wheelers,3.137,11.019,-10.668,-10.279,0
+HINDPETRO,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-25,Refineries,-7.097,12.358,1.687,2.076,0
+ICICIGI,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-21,Insurance,0.462,5.072,-4.157,-3.768,1
+IDEA,14,Results for Jul-Sep 2024 (Q2 FY25),2024-11-14,Telecommunication - Services,-0.160,7.061,3.840,4.230,0
+IEX,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-25,Capital Markets,-1.089,7.638,-8.340,-7.951,2
+INDHOTEL,14,Results for Jul-Sep 2024 (Q2 FY25),2024-11-08,Hotels,7.392,4.882,12.313,12.702,1
+IOC,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-28,Refineries,-0.170,7.222,-5.381,-4.992,0
+M&M,14,Results for Jul-Sep 2024 (Q2 FY25),2024-11-07,Automobiles - 4 Wheelers,-0.309,5.426,3.606,3.996,0
+MOTHERSON,14,Results for Jul-Sep 2024 (Q2 FY25),2024-11-12,Auto Ancillaries,-3.954,5.705,-3.728,-3.339,0
+OBEROIRLTY,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-21,Construction,3.610,7.904,1.758,2.147,3
+OFSS,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-25,Computers - Software,2.821,5.678,7.600,7.989,2
+PFC,14,Results for Jul-Sep 2024 (Q2 FY25),2024-11-08,Financial Institution,-2.516,7.948,12.973,13.362,1
+RECLTD,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-28,Financial Institution,2.426,6.147,0.590,0.979,0
+TATAPOWER,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-31,Power,3.613,7.004,-5.834,-5.444,0
+TRENT,14,Results for Jul-Sep 2024 (Q2 FY25),2024-11-07,Miscellaneous,-5.306,8.143,4.904,5.293,1
+TVSMOTOR,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-23,Automobiles - 2 And 3 Wheelers,-3.589,9.000,-3.830,-3.441,0
+VEDL,14,Results for Jul-Sep 2024 (Q2 FY25),2024-11-08,Metals,0.211,4.751,7.146,7.536,0
+VOLTAS,14,Results for Jul-Sep 2024 (Q2 FY25),2024-10-30,Engineering,-3.591,5.767,-1.664,-1.274,0
+ASHOKLEY,15,Results for Oct-Dec 2024 (Q3 FY25),2025-02-12,Automobiles - 4 Wheelers,7.793,4.139,-7.736,-5.593,0
+BEL,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-30,Electronics - Industrial,3.950,3.974,-6.595,-4.452,1
+BIOCON,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-31,Pharmaceuticals,0.441,8.261,-10.881,-8.738,0
+BOSCHLTD,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-29,Auto Ancillaries,-6.405,4.549,-1.053,1.090,0
+BPCL,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-23,Refineries,-2.503,6.440,-4.785,-2.643,0
+CAMS,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-29,Capital Markets,5.138,4.733,-12.736,-10.593,15
+CANBK,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-27,Banks,-3.843,6.590,-5.048,-2.906,0
+CDSL,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-27,Capital Markets,-9.272,6.706,-6.622,-4.479,15
+CGPOWER,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-28,Electrical Equipment,-4.004,3.911,6.361,8.504,15
+COFORGE,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-23,Computers - Software,11.552,5.520,-14.476,-12.334,1
+DIXON,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-21,Consumer Durables,-12.383,13.553,-6.146,-4.003,2
+GLENMARK,15,Results for Oct-Dec 2024 (Q3 FY25),2025-02-17,Pharmaceuticals,3.704,6.600,8.254,10.397,0
+GMRAIRPORT,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-29,Travel And Transport,-0.615,3.759,0.377,2.519,1
+HAL,15,Results for Oct-Dec 2024 (Q3 FY25),2025-02-12,Aerospace & Defence,-1.400,4.854,-2.887,-0.744,2
+HAVELLS,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-17,Electrical Equipment,1.489,3.690,-2.731,-0.588,0
+HEROMOTOCO,15,Results for Oct-Dec 2024 (Q3 FY25),2025-02-07,Automobiles - 2 And 3 Wheelers,1.238,4.083,-11.706,-9.564,0
+HINDPETRO,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-24,Refineries,-2.067,5.326,-5.409,-3.266,0
+IEX,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-24,Capital Markets,1.610,4.094,0.822,2.964,2
+INDHOTEL,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-20,Hotels,-3.112,5.922,-8.852,-6.709,1
+INDIANB,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-29,Banks,5.055,5.171,-1.709,0.434,15
+KALYANKJIL,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-31,Gems Jewellery And Watches,13.059,5.611,-2.424,-0.281,15
+LAURUSLABS,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-24,Pharmaceuticals,3.478,4.574,-10.350,-8.207,3
+LODHA,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-27,Construction,1.498,6.361,10.110,12.252,15
+M&M,15,Results for Oct-Dec 2024 (Q3 FY25),2025-02-07,Automobiles - 4 Wheelers,2.047,6.297,-11.025,-8.883,0
+MOTHERSON,15,Results for Oct-Dec 2024 (Q3 FY25),2025-02-14,Auto Ancillaries,-2.330,5.461,-0.434,1.709,0
+OFSS,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-16,Computers - Software,-3.842,6.712,-10.289,-8.146,2
+PFC,15,Results for Oct-Dec 2024 (Q3 FY25),2025-02-12,Financial Institution,-0.324,3.594,6.501,8.643,1
+POLICYBZR,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-31,Internet & E-commerce,3.155,13.911,-9.546,-7.404,15
+PRESTIGE,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-31,Construction,0.164,5.542,-11.435,-9.293,15
+SOLARINDS,15,Results for Oct-Dec 2024 (Q3 FY25),2025-02-05,Chemicals - Speciality,-0.804,7.210,1.905,4.048,15
+SUPREMEIND,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-20,Plastic And Plastic Products,-4.947,5.906,-4.791,-2.649,15
+TRENT,15,Results for Oct-Dec 2024 (Q3 FY25),2025-02-06,Miscellaneous,-7.831,6.811,-0.992,1.151,1
+TVSMOTOR,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-28,Automobiles - 2 And 3 Wheelers,4.118,5.134,2.710,4.853,0
+VEDL,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-31,Metals,0.956,7.446,-4.873,-2.730,0
+VOLTAS,15,Results for Oct-Dec 2024 (Q3 FY25),2025-01-30,Engineering,-14.266,5.294,6.255,8.398,0
+ASHOKLEY,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-23,Automobiles - 4 Wheelers,-0.650,3.893,-3.094,-5.543,0
+BIOCON,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-09,Pharmaceuticals,-0.310,5.627,-4.289,-6.738,0
+CDSL,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-05,Capital Markets,-1.577,4.399,26.889,24.440,15
+CGPOWER,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-07,Electrical Equipment,1.687,7.708,12.185,9.736,15
+CIPLA,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-14,Pharmaceuticals,-2.025,3.917,-0.314,-2.763,0
+CROMPTON,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-16,Consumer Durables,7.453,3.426,-1.079,-3.528,2
+DIXON,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-21,Consumer Durables,-6.284,10.110,-8.159,-10.608,2
+GLENMARK,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-26,Pharmaceuticals,-2.715,5.054,21.127,18.678,0
+HINDALCO,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-20,Aluminium,1.717,3.905,-4.053,-6.502,1
+HINDZINC,16,Results for Jan-Mar 2025 (Q4 FY25),2025-04-28,Metals,0.483,7.166,-2.457,-4.906,16
+IEX,16,Results for Jan-Mar 2025 (Q4 FY25),2025-04-25,Capital Markets,0.677,3.615,-2.091,-4.540,2
+INDIGO,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-22,Travel And Transport,1.581,4.943,-5.152,-7.601,0
+JINDALSTEL,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-02,Steel And Steel Products,0.183,3.356,3.848,1.399,0
+KALYANKJIL,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-09,Gems Jewellery And Watches,2.412,3.292,4.131,1.682,15
+LAURUSLABS,16,Results for Jan-Mar 2025 (Q4 FY25),2025-04-25,Pharmaceuticals,-2.220,2.980,-9.082,-11.531,3
+LODHA,16,Results for Jan-Mar 2025 (Q4 FY25),2025-04-25,Construction,-0.289,7.417,6.076,3.628,15
+MANAPPURAM,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-12,Finance,-2.895,6.711,13.851,11.403,0
+MOTHERSON,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-29,Auto Ancillaries,1.952,5.813,-1.559,-4.007,0
+MUTHOOTFIN,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-15,Finance,-8.496,3.059,21.933,19.485,0
+PATANJALI,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-16,Food And Food Processing,-1.272,4.345,-5.261,-7.710,16
+PAYTM,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-07,Internet & E-commerce,7.055,10.515,6.529,4.080,15
+PETRONET,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-20,Gas,-0.198,3.157,-7.095,-9.544,1
+PFC,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-21,Financial Institution,1.063,8.503,-3.976,-6.425,1
+PHOENIXLTD,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-02,Construction,-7.693,9.049,-1.862,-4.311,16
+POLICYBZR,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-16,Internet & E-commerce,-1.041,7.859,8.655,6.207,15
+SBICARD,16,Results for Jan-Mar 2025 (Q4 FY25),2025-04-25,Finance,-5.513,4.729,0.299,-2.150,3
+SOLARINDS,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-20,Chemicals - Speciality,-0.520,5.137,26.301,23.852,15
+SUPREMEIND,16,Results for Jan-Mar 2025 (Q4 FY25),2025-04-24,Plastic And Plastic Products,-0.067,5.741,8.771,6.322,15
+TECHM,16,Results for Jan-Mar 2025 (Q4 FY25),2025-04-25,Computers - Software,2.018,3.318,5.344,2.895,0
+TRENT,16,Results for Jan-Mar 2025 (Q4 FY25),2025-04-30,Miscellaneous,-4.055,5.399,7.125,4.676,1
+TVSMOTOR,16,Results for Jan-Mar 2025 (Q4 FY25),2025-04-29,Automobiles - 2 And 3 Wheelers,-3.271,4.615,1.758,-0.691,0
+UNIONBANK,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-09,Banks,7.428,3.012,20.385,17.936,15
+UPL,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-12,Pesticides And Agrochemicals,-3.507,5.770,-6.483,-8.932,0
+VEDL,16,Results for Jan-Mar 2025 (Q4 FY25),2025-04-30,Metals,0.704,6.956,5.499,3.050,0
+VOLTAS,16,Results for Jan-Mar 2025 (Q4 FY25),2025-05-08,Engineering,-1.104,6.756,-0.161,-2.609,0
+WIPRO,16,Results for Jan-Mar 2025 (Q4 FY25),2025-04-17,Computers - Software,-6.109,3.162,1.493,-0.956,0
+BAJFINANCE,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-24,Finance,-0.340,3.971,-6.145,-6.214,0
+BIOCON,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-08,Pharmaceuticals,-4.778,3.348,3.896,3.827,0
+BLUESTARCO,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-06,Airconditioners,1.431,6.341,8.909,8.840,17
+BSE,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-08,Capital Markets,-1.072,6.425,-3.923,-3.992,15
+CAMS,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-31,Capital Markets,-3.594,3.898,3.145,3.076,15
+CANBK,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-24,Banks,5.923,3.779,-2.578,-2.647,0
+CDSL,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-28,Capital Markets,-5.063,11.973,-2.332,-2.401,15
+CGPOWER,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-24,Electrical Equipment,0.245,5.313,0.503,0.433,15
+CHOLAFIN,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-01,Finance,-0.615,3.060,0.378,0.309,0
+FORTIS,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-07,Miscellaneous,2.923,10.207,5.753,5.684,17
+GLENMARK,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-18,Pharmaceuticals,-4.455,9.146,3.577,3.508,0
+HDFCLIFE,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-16,Insurance,-0.183,3.420,4.893,4.823,0
+HINDALCO,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-12,Aluminium,-0.465,3.126,9.028,8.959,1
+INDIGO,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-31,Travel And Transport,3.319,3.988,-3.680,-3.750,0
+INFY,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-24,Computers - Software,-0.772,3.339,-3.611,-3.680,0
+JINDALSTEL,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-13,Steel And Steel Products,-0.754,4.766,1.775,1.706,0
+KALYANKJIL,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-08,Gems Jewellery And Watches,-9.689,5.107,-7.538,-7.607,15
+KFINTECH,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-25,Capital Markets,-4.619,5.997,-5.439,-5.508,17
+LODHA,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-28,Construction,-5.327,6.888,2.476,2.407,15
+MANAPPURAM,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-11,Finance,-1.665,9.016,10.490,10.421,0
+MUTHOOTFIN,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-14,Finance,9.812,8.817,4.546,4.476,0
+PAYTM,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-23,Internet & E-commerce,1.278,10.376,16.636,16.567,15
+PERSISTENT,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-24,Computers - Software,-7.072,4.978,4.345,4.276,2
+PFC,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-06,Financial Institution,0.850,7.045,-6.004,-6.073,1
+PGEL,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-08,Consumer Durables,-19.146,12.088,-6.094,-6.163,17
+PHOENIXLTD,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-25,Construction,6.271,4.373,3.347,3.278,16
+POLICYBZR,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-01,Internet & E-commerce,-0.902,9.425,2.301,2.232,15
+SBICARD,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-28,Finance,-5.157,5.765,-2.873,-2.942,3
+SHRIRAMFIN,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-25,Finance,-1.896,3.890,0.095,0.026,0
+SOLARINDS,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-07,Chemicals - Speciality,-0.875,8.534,-7.361,-7.430,15
+SRF,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-23,Textiles - Synthetic,1.167,3.536,-8.426,-8.495,0
+SUZLON,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-13,Electrical Equipment,-4.895,6.659,-7.615,-7.684,17
+TECHM,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-17,Computers - Software,-2.350,4.277,-3.202,-3.271,0
+TRENT,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-07,Miscellaneous,-1.079,5.749,-0.683,-0.752,1
+UNIONBANK,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-21,Banks,-3.098,7.479,-3.334,-3.403,15
+UPL,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-01,Pesticides And Agrochemicals,-4.672,4.688,6.593,6.523,0
+VEDL,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-31,Metals,-1.711,3.574,1.645,1.576,0
+VOLTAS,17,Results for Apr-Jun 2025 (Q1 FY26),2025-08-11,Engineering,-5.485,4.448,10.254,10.185,0
+WIPRO,17,Results for Apr-Jun 2025 (Q1 FY26),2025-07-18,Computers - Software,3.006,3.857,-7.968,-8.037,0
+ABB,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-07,Electrical Equipment,-3.977,5.127,0.217,2.310,5
+ASTRAL,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-06,Plastic And Plastic Products,7.084,2.979,-10.252,-8.158,2
+BANKINDIA,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-20,Banks,4.891,3.440,13.502,15.595,15
+BDL,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-14,Aerospace & Defence,6.199,3.106,-13.353,-11.260,17
+BHARATFORG,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-11,Castings/Forgings,5.076,2.817,-2.094,-0.001,0
+BLUESTARCO,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-06,Airconditioners,-6.545,8.140,-4.098,-2.005,17
+BSE,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-12,Capital Markets,4.258,4.096,-6.714,-4.620,15
+CAMS,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-29,Capital Markets,-3.708,5.015,0.199,2.292,15
+CANBK,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-30,Banks,3.875,3.562,12.618,14.711,0
+CDSL,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-03,Capital Markets,0.230,6.954,-1.315,0.778,15
+CGPOWER,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-29,Electrical Equipment,3.159,4.331,-10.074,-7.981,15
+CHOLAFIN,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-07,Finance,1.286,3.661,-1.358,0.736,0
+CIPLA,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-30,Pharmaceuticals,-1.917,3.208,-2.018,0.076,0
+COFORGE,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-27,Computers - Software,3.349,3.140,0.183,2.276,1
+FORTIS,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-12,Miscellaneous,-2.477,8.714,-11.747,-9.654,17
+GLENMARK,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-17,Pharmaceuticals,-1.808,7.919,6.001,8.095,0
+HAL,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-12,Aerospace & Defence,-3.050,2.811,-9.304,-7.211,2
+HINDALCO,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-07,Aluminium,0.322,5.180,1.243,3.337,1
+INDIANB,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-16,Banks,-1.582,3.700,13.583,15.676,15
+JINDALSTEL,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-29,Steel And Steel Products,-0.724,5.096,-3.566,-1.472,0
+LODHA,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-31,Construction,2.864,8.794,-7.772,-5.679,15
+MANAPPURAM,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-31,Finance,-1.362,12.457,2.833,4.926,0
+MARUTI,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-31,Automobiles - 4 Wheelers,0.478,7.260,-2.504,-0.410,0
+MUTHOOTFIN,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-14,Finance,9.680,8.951,2.288,4.381,0
+PAYTM,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-06,Internet & E-commerce,4.492,8.410,-1.639,0.455,15
+PERSISTENT,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-15,Computers - Software,6.536,4.567,4.069,6.163,2
+PGEL,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-14,Consumer Durables,3.214,5.000,-2.621,-0.528,17
+PHOENIXLTD,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-03,Construction,3.637,4.356,-2.110,-0.016,16
+POLICYBZR,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-30,Internet & E-commerce,7.703,7.497,-2.834,-0.741,15
+SBICARD,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-27,Finance,-3.693,4.259,-2.919,-0.825,3
+SOLARINDS,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-10,Chemicals - Speciality,-1.545,5.898,-8.943,-6.849,15
+SUPREMEIND,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-27,Plastic And Plastic Products,-0.732,5.122,-14.214,-12.120,15
+TRENT,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-10,Miscellaneous,-7.747,2.778,-6.210,-4.117,1
+TVSMOTOR,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-28,Automobiles - 2 And 3 Wheelers,-2.025,5.484,-1.885,0.209,0
+UNIONBANK,18,Results for Jul-Sep 2025 (Q2 FY26),2025-10-30,Banks,-1.925,8.834,6.248,8.341,15
+UNOMINDA,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-11,Auto Ancillaries,-1.093,4.419,-6.809,-4.716,17
+UPL,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-06,Pesticides And Agrochemicals,0.617,4.073,0.906,2.999,0
+VOLTAS,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-14,Engineering,0.928,3.861,1.228,3.322,0
+ZYDUSLIFE,18,Results for Jul-Sep 2025 (Q2 FY26),2025-11-06,Pharmaceuticals,-3.258,3.146,-2.346,-0.252,0
+ABB,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-20,Electrical Equipment,4.218,4.493,12.681,11.328,5
+ABCAPITAL,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-04,Finance,0.145,3.084,-1.753,-3.107,3
+ADANIPORTS,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-03,Shipping,6.554,3.563,-1.640,-2.994,0
+ANGELONE,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-16,Capital Markets,8.869,5.912,-1.280,-2.633,15
+BAJAJFINSV,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-04,Finance,0.155,4.045,-1.609,-2.963,0
+BAJFINANCE,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-04,Finance,-0.302,3.093,3.635,2.282,0
+BANKINDIA,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-22,Banks,5.151,6.566,0.806,-0.547,15
+BHARATFORG,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-12,Castings/Forgings,3.566,2.882,7.114,5.760,0
+BLUESTARCO,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-30,Airconditioners,5.258,2.989,7.261,5.907,17
+CANBK,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-29,Banks,-5.004,6.407,5.288,3.934,0
+CDSL,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-01,Capital Markets,-4.854,4.345,1.793,0.439,15
+CHOLAFIN,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-01,Finance,-1.237,5.328,7.966,6.613,0
+CUMMINSIND,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-05,Diesel Engines,5.017,2.555,13.780,12.427,0
+EICHERMOT,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-11,Automobiles - 4 Wheelers,6.438,5.506,-1.508,-2.862,0
+FEDERALBNK,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-16,Banks,9.367,2.748,7.358,6.004,0
+FORTIS,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-16,Miscellaneous,-0.940,2.747,-2.441,-3.795,17
+GLENMARK,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-01,Pharmaceuticals,-1.809,9.930,8.526,7.173,0
+HEROMOTOCO,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-06,Automobiles - 2 And 3 Wheelers,-0.415,4.536,1.539,0.185,0
+HINDALCO,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-12,Aluminium,0.405,5.580,4.466,3.113,1
+IDEA,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-28,Telecommunication - Services,0.556,3.469,9.135,7.781,0
+INDIANB,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-22,Banks,4.905,6.713,2.572,1.218,15
+INDUSINDBK,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-27,Banks,-0.248,3.149,0.469,-0.885,0
+JINDALSTEL,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-01,Steel And Steel Products,-0.694,4.169,11.291,9.937,0
+LODHA,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-29,Construction,2.100,2.913,7.033,5.679,15
+MANAPPURAM,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-30,Finance,-3.739,11.679,2.066,0.713,0
+MARUTI,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-28,Automobiles - 4 Wheelers,-3.079,6.335,-0.184,-1.537,0
+MOTHERSON,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-10,Auto Ancillaries,3.773,4.545,1.573,0.219,0
+MUTHOOTFIN,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-13,Finance,-10.520,7.604,1.630,0.276,0
+NATIONALUM,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-30,Aluminium,-9.734,4.430,-7.150,-8.504,0
+PERSISTENT,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-21,Computers - Software,-1.287,4.753,-14.372,-15.725,2
+SBILIFE,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-28,Insurance,0.071,2.941,0.933,-0.420,0
+SHRIRAMFIN,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-23,Finance,0.760,6.874,3.279,1.925,0
+SOLARINDS,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-03,Chemicals - Speciality,1.953,3.166,9.950,8.596,15
+SWIGGY,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-30,Internet & E-commerce,-5.077,2.993,-1.756,-3.110,19
+TATAELXSI,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-14,Computers - Software,-4.712,2.658,-10.351,-11.705,15
+TVSMOTOR,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-28,Automobiles - 2 And 3 Wheelers,3.831,5.970,1.842,0.488,0
+UNIONBANK,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-14,Banks,8.130,7.929,0.223,-1.130,15
+UPL,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-02,Pesticides And Agrochemicals,3.994,3.077,-10.139,-11.493,0
+VOLTAS,19,Results for Oct-Dec 2025 (Q3 FY26),2026-01-30,Engineering,-1.185,4.584,15.427,14.073,0
+ZYDUSLIFE,19,Results for Oct-Dec 2025 (Q3 FY26),2026-02-09,Pharmaceuticals,3.299,2.600,5.980,4.626,0
+ABB,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-11,Electrical Equipment,-7.422,6.429,10.728,9.704,5
+ANGELONE,20,Results for Jan-Mar 2026 (Q4 FY26),2026-04-17,Capital Markets,9.557,6.154,-3.044,-4.068,15
+APLAPOLLO,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-04,Steel And Steel Products,-2.187,4.521,-3.096,-4.120,15
+ASTRAL,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-19,Plastic And Plastic Products,-6.127,5.367,5.857,4.833,2
+AUROPHARMA,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-22,Pharmaceuticals,-5.652,4.173,0.133,-0.891,0
+BANKBARODA,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-11,Banks,2.286,6.219,5.133,4.109,0
+BANKINDIA,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-11,Banks,4.417,7.445,4.902,3.878,15
+CAMS,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-05,Capital Markets,9.464,5.144,-3.224,-4.247,15
+CANBK,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-11,Banks,-2.165,8.991,8.462,7.438,0
+CDSL,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-04,Capital Markets,-3.157,6.449,1.517,0.493,15
+CGPOWER,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-06,Electrical Equipment,-0.999,9.206,16.718,15.694,15
+COALINDIA,20,Results for Jan-Mar 2026 (Q4 FY26),2026-04-28,Mining,3.607,5.367,-0.667,-1.691,1
+CUMMINSIND,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-27,Diesel Engines,11.267,5.491,-7.208,-8.232,0
+EICHERMOT,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-25,Automobiles - 4 Wheelers,4.878,4.298,2.886,1.862,0
+FEDERALBNK,20,Results for Jan-Mar 2026 (Q4 FY26),2026-04-29,Banks,-2.771,4.583,3.890,2.866,0
+FORCEMOT,20,Results for Jan-Mar 2026 (Q4 FY26),2026-04-30,Automobiles - 4 Wheelers,-4.406,6.415,-2.652,-3.675,20
+GLENMARK,20,Results for Jan-Mar 2026 (Q4 FY26),2026-06-01,Pharmaceuticals,-2.538,9.998,-2.115,-3.139,0
+HEROMOTOCO,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-06,Automobiles - 2 And 3 Wheelers,-0.047,7.847,-1.997,-3.020,0
+HYUNDAI,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-08,Automobiles - 4 Wheelers,1.545,4.272,6.428,5.404,20
+IDEA,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-18,Telecommunication - Services,-0.722,9.388,12.062,11.038,0
+INDIANB,20,Results for Jan-Mar 2026 (Q4 FY26),2026-04-29,Banks,-3.052,7.783,-2.445,-3.468,15
+KEI,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-05,Miscellaneous,-0.434,6.313,6.481,5.457,15
+LUPIN,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-08,Pharmaceuticals,-2.658,4.637,-1.087,-2.111,0
+MANAPPURAM,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-05,Finance,1.047,7.500,3.949,2.926,0
+MARUTI,20,Results for Jan-Mar 2026 (Q4 FY26),2026-04-28,Automobiles - 4 Wheelers,-2.093,4.632,3.840,2.816,0
+MOTHERSON,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-20,Auto Ancillaries,0.344,5.047,7.124,6.100,0
+MUTHOOTFIN,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-15,Finance,-6.027,7.789,-5.649,-6.673,0
+NAM-INDIA,20,Results for Jan-Mar 2026 (Q4 FY26),2026-04-27,Capital Markets,0.242,5.827,11.263,10.239,0
+PAYTM,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-07,Internet & E-commerce,7.833,5.027,-7.284,-8.308,15
+POWERINDIA,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-26,Electrical Equipment,1.501,7.938,-6.323,-7.347,18
+SBILIFE,20,Results for Jan-Mar 2026 (Q4 FY26),2026-04-23,Insurance,-2.167,4.173,4.017,2.994,0
+SHRIRAMFIN,20,Results for Jan-Mar 2026 (Q4 FY26),2026-04-24,Finance,1.336,5.017,-5.630,-6.653,0
+SOLARINDS,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-15,Chemicals - Speciality,4.089,5.177,-1.294,-2.317,15
+SONACOMS,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-04,Auto Ancillaries,-5.744,5.916,8.684,7.661,15
+SUPREMEIND,20,Results for Jan-Mar 2026 (Q4 FY26),2026-04-27,Plastic And Plastic Products,-0.040,4.972,-2.738,-3.761,15
+TVSMOTOR,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-13,Automobiles - 2 And 3 Wheelers,-1.091,5.753,-5.917,-6.940,0
+UNIONBANK,20,Results for Jan-Mar 2026 (Q4 FY26),2026-04-23,Banks,-6.549,6.070,-8.880,-9.904,15
+UNOMINDA,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-18,Auto Ancillaries,-4.841,4.671,0.408,-0.616,17
+VEDL,20,Results for Jan-Mar 2026 (Q4 FY26),2026-04-29,Metals,3.881,5.330,32.263,31.239,0
+VOLTAS,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-15,Engineering,-4.660,6.877,6.696,5.672,0
+ZYDUSLIFE,20,Results for Jan-Mar 2026 (Q4 FY26),2026-05-19,Pharmaceuticals,2.940,4.708,2.001,0.977,0
+ABB,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-03,Electrical Equipment,2.743,6.528,3.104,2.217,5
+ADANIGREEN,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-22,Power,-3.722,5.380,-12.710,-13.597,15
+ASHOKLEY,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-14,Automobiles - 4 Wheelers,-2.482,3.578,-0.814,-1.701,0
+ASTRAL,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-13,Plastic And Plastic Products,8.907,5.728,-4.781,-5.668,2
+AUROPHARMA,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-06,Pharmaceuticals,-1.565,6.299,5.951,5.065,0
+BAJAJ-AUTO,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-21,Automobiles - 2 And 3 Wheelers,-0.921,4.202,11.514,10.627,0
+BANKBARODA,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-27,Banks,-1.956,4.407,-2.144,-3.031,0
+BANKINDIA,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-27,Banks,-4.292,4.533,1.876,0.989,15
+BHEL,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-16,Electrical Equipment,4.199,3.838,-5.069,-5.956,1
+BIOCON,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-06,Pharmaceuticals,2.635,4.437,-5.020,-5.906,0
+CANBK,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-27,Banks,0.320,6.137,-1.088,-1.975,0
+CGPOWER,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-24,Electrical Equipment,-1.394,10.339,-2.309,-3.196,15
+COALINDIA,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-28,Mining,-4.014,5.126,-3.145,-4.032,1
+EICHERMOT,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-30,Automobiles - 4 Wheelers,1.440,5.582,3.110,2.223,0
+FEDERALBNK,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-17,Banks,5.772,4.386,0.339,-0.548,0
+GLENMARK,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-03,Pharmaceuticals,-1.777,4.187,13.822,12.935,0
+GVT&D,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-06,Electrical Equipment,-1.028,8.430,2.798,1.911,21
+HEROMOTOCO,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-07,Automobiles - 2 And 3 Wheelers,3.409,5.767,-4.875,-5.762,0
+HYUNDAI,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-30,Automobiles - 4 Wheelers,0.993,5.335,12.375,11.488,20
+IDEA,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-11,Telecommunication - Services,0.224,11.838,22.856,21.969,0
+INDIANB,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-10,Banks,8.759,4.456,0.467,-0.420,15
+INDUSTOWER,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-28,Telecommunication - Services,-1.453,3.426,-0.165,-1.052,0
+IOC,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-03,Refineries,0.916,3.364,-0.569,-1.456,0
+JSWENERGY,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-22,Power,-0.003,3.552,-3.692,-4.579,15
+KEI,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-04,Miscellaneous,10.133,5.663,-0.682,-1.569,15
+LAURUSLABS,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-24,Pharmaceuticals,2.526,8.638,10.312,9.425,3
+LUPIN,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-07,Pharmaceuticals,-0.636,4.839,-8.177,-9.064,0
+MANAPPURAM,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-12,Finance,-1.909,5.025,-5.325,-6.212,0
+MARICO,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-05,Personal Care,-2.668,3.075,0.036,-0.851,0
+MARUTI,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-03,Automobiles - 4 Wheelers,-2.192,5.094,-1.651,-2.537,0
+MOTHERSON,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-06,Auto Ancillaries,0.375,7.217,7.421,6.535,0
+NAM-INDIA,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-23,Capital Markets,-3.140,4.616,9.750,8.863,0
+NATIONALUM,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-03,Aluminium,3.811,4.336,5.998,5.112,0
+POLYCAB,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-16,Electrical Equipment,-1.150,7.993,-0.642,-1.529,2
+POWERINDIA,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-10,Electrical Equipment,10.529,3.880,-8.775,-9.662,18
+SBILIFE,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-24,Insurance,0.703,4.654,-5.764,-6.650,0
+SONACOMS,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-24,Auto Ancillaries,0.178,6.185,11.651,10.764,15
+TVSMOTOR,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-21,Automobiles - 2 And 3 Wheelers,5.830,3.834,14.840,13.953,0
+UNOMINDA,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-04,Auto Ancillaries,2.048,3.190,5.944,5.058,17
+VEDL,21,Results for Apr-Jun 2026 (Q1 FY27),2026-07-30,Metals,0.858,12.021,5.787,4.901,0
+VOLTAS,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-17,Engineering,-3.730,8.591,-5.637,-6.524,0
+ZYDUSLIFE,21,Results for Apr-Jun 2026 (Q1 FY27),2026-08-11,Pharmaceuticals,6.890,3.323,-0.592,-1.479,0

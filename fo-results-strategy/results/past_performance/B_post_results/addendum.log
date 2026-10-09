@@ -1,0 +1,74 @@
+X1  S1 (top quintile of mean_drift_4, any reaction) by the size of the current reaction; parent = eligible results of the same quarter AND same reaction bucket
+  S1 & XN<=0                                     n= 297 mean +1.11  gain +0.93  (first14 n=139 +1.61 / +1.13; last8 n=158 +0.67 / +0.75)
+  S1 & 0<XN<=4                                   n= 183 mean +2.66  gain +1.70  (first14 n=92 +4.15 / +2.43; last8 n=91 +1.15 / +0.95)
+  S1 & XN>4 (winner)                             n=  89 mean +2.30  gain +0.25  (first14 n=39 +4.43 / +1.05; last8 n=50 +0.64 / -0.38)
+
+X2  S1 gain after controlling (parent cell = quarter x control bucket)
+  plain (quarter)                                n= 569 mean +1.80  gain +1.11  (first14 n=270 +2.88 / +1.66; last8 n=299 +0.81 / +0.62)
+  quarter x rank_vsN_252_B tercile               n= 569 mean +1.80  gain +0.94  (first14 n=270 +2.88 / +1.48; last8 n=299 +0.81 / +0.45)
+  quarter x rank_vsN_126_B tercile               n= 569 mean +1.80  gain +0.92  (first14 n=270 +2.88 / +1.35; last8 n=299 +0.81 / +0.54)
+  quarter x rank_vsN_63_B tercile                n= 569 mean +1.80  gain +0.93  (first14 n=270 +2.88 / +1.37; last8 n=299 +0.81 / +0.54)
+  quarter x mean_xn_4 tercile (past reactions)   n= 569 mean +1.80  gain +1.11  (first14 n=270 +2.88 / +1.60; last8 n=299 +0.81 / +0.67)
+  quarter x current XN tercile                   n= 569 mean +1.80  gain +1.12  (first14 n=270 +2.88 / +1.64; last8 n=299 +0.81 / +0.65)
+  quarter x sector_index                         n= 569 mean +1.80  gain +0.58  (first14 n=270 +2.88 / +0.60; last8 n=299 +0.81 / +0.55)
+  quarter x fin_type                             n= 569 mean +1.80  gain +1.13  (first14 n=270 +2.88 / +1.61; last8 n=299 +0.81 / +0.69)
+
+X3  S1 robustness
+  without its best quarter (qn 10)               n= 542 mean +1.53  gain +0.94  (first14 n=243 +2.42 / +1.33; last8 n=299 +0.81 / +0.62)
+  unique stocks 144; trades per stock max 13; top-10 stocks hold 111 of 569 trades
+  without its 10 most frequent stocks            n= 458 mean +1.00  gain +0.36  (first14 n=195 +1.35 / +0.13; last8 n=263 +0.75 / +0.53)
+  without the 10 stocks contributing most        n= 473 mean +0.66  gain +0.03  (first14 n=204 +1.02 / -0.16; last8 n=269 +0.39 / +0.17)
+  fin_type Bank                                  n=  44 mean +1.72  gain +1.04  (first14 n=17 -0.39 / +0.15; last8 n=27 +3.04 / +1.60)
+  fin_type Company                               n= 465 mean +1.66  gain +0.93  (first14 n=228 +3.00 / +1.53; last8 n=237 +0.36 / +0.35)
+  fin_type NBFC / financial                      n=  49 mean +3.50  gain +3.09  (first14 n=19 +5.07 / +3.87; last8 n=30 +2.50 / +2.59)
+  last 8 alone: obs +0.814, random +0.189 (sd 0.361), luck p 0.0434
+  first 14 alone: obs +2.884, random +1.234 (sd 0.383), luck p 0.0002
+  horizons (same trades, exit k+5 / k+10 / k+20; net -0.19):
+     S1 x5                                       n= 569 mean +0.48  gain +0.55  (first14 n=270 +0.92 / +0.81; last8 n=299 +0.08 / +0.31)
+     S1 x10                                      n= 569 mean +0.72  gain +0.65  (first14 n=270 +1.09 / +0.81; last8 n=299 +0.38 / +0.51)
+     S1 x                                        n= 569 mean +1.80  gain +1.11  (first14 n=270 +2.88 / +1.66; last8 n=299 +0.81 / +0.62)
+  max positions open at once (20-session holds): 38
+  per quarter (S1 trades, mean vsN_net, all eligible results mean, gain):
+    qn  4 Results for Jan-Mar 2022 (Q4 FY22)     n= 27 S1  -3.11  all  -1.26  gain  -1.85
+    qn  5 Results for Apr-Jun 2022 (Q1 FY23)     n= 27 S1  +3.49  all  +1.67  gain  +1.82
+    qn  6 Results for Jul-Sep 2022 (Q2 FY23)     n= 27 S1  -1.55  all  -0.47  gain  -1.08
+    qn  7 Results for Oct-Dec 2022 (Q3 FY23)     n= 27 S1  +4.38  all  +1.13  gain  +3.25
+    qn  8 Results for Jan-Mar 2023 (Q4 FY23)     n= 27 S1  +6.32  all  +3.51  gain  +2.82
+    qn  9 Results for Apr-Jun 2023 (Q1 FY24)     n= 27 S1  +4.89  all  +2.31  gain  +2.58
+    qn 10 Results for Jul-Sep 2023 (Q2 FY24)     n= 27 S1  +7.09  all  +2.52  gain  +4.57
+    qn 11 Results for Oct-Dec 2023 (Q3 FY24)     n= 27 S1  +2.81  all  +1.66  gain  +1.15
+    qn 12 Results for Jan-Mar 2024 (Q4 FY24)     n= 27 S1  +5.73  all  +1.55  gain  +4.18
+    qn 13 Results for Apr-Jun 2024 (Q1 FY25)     n= 27 S1  -1.21  all  -0.36  gain  -0.86
+    qn 14 Results for Jul-Sep 2024 (Q2 FY25)     n= 27 S1  +1.31  all  -0.39  gain  +1.70
+    qn 15 Results for Oct-Dec 2024 (Q3 FY25)     n= 35 S1  -3.78  all  -2.14  gain  -1.64
+    qn 16 Results for Jan-Mar 2025 (Q4 FY25)     n= 36 S1  +3.78  all  +2.45  gain  +1.33
+    qn 17 Results for Apr-Jun 2025 (Q1 FY26)     n= 39 S1  +0.40  all  +0.07  gain  +0.34
+    qn 18 Results for Jul-Sep 2025 (Q2 FY26)     n= 39 S1  -1.89  all  -2.09  gain  +0.21
+    qn 19 Results for Oct-Dec 2025 (Q3 FY26)     n= 40 S1  +2.54  all  +1.35  gain  +1.18
+    qn 20 Results for Jan-Mar 2026 (Q4 FY26)     n= 41 S1  +2.30  all  +1.02  gain  +1.27
+    qn 21 Results for Apr-Jun 2026 (Q1 FY27)     n= 42 S1  +1.58  all  +0.89  gain  +0.69
+
+X4  mean_drift_4 quintile (within quarter, all F&O results) -> 20-session vsN_net (mean / gain vs quarter)
+  Q1                                             n= 569 mean +0.50  gain -0.18  (first14 n=270 +1.39 / +0.17; last8 n=299 -0.30 / -0.49)
+  Q2                                             n= 559 mean +0.48  gain -0.21  (first14 n=266 +0.76 / -0.48; last8 n=293 +0.24 / +0.04)
+  Q3                                             n= 554 mean +0.20  gain -0.48  (first14 n=262 +0.55 / -0.67; last8 n=292 -0.10 / -0.30)
+  Q4                                             n= 559 mean +0.44  gain -0.25  (first14 n=266 +0.53 / -0.70; last8 n=293 +0.35 / +0.15)
+  Q5                                             n= 563 mean +1.79  gain +1.11  (first14 n=268 +2.89 / +1.66; last8 n=295 +0.80 / +0.61)
+
+X5  composites with the existing winner rule (descriptive; parent = all winners / RSI winners of the quarter)
+  W (all plain winners)                          n= 392 mean +1.45  gain -0.00  (first14 n=192 +1.70 / +0.00; last8 n=200 +1.20 / -0.00)
+  W & S1 (winner + top-quintile drift record)    n=  89 mean +2.30  gain +0.25  (first14 n=39 +4.43 / +1.05; last8 n=50 +0.64 / -0.38)
+  W & not S1 (record known)                      n= 256 mean +1.69  gain -0.09  (first14 n=106 +2.11 / -0.39; last8 n=150 +1.39 / +0.13)
+  WR (winners RSI>50)                            n= 232 mean +2.42  gain -0.00  (first14 n=122 +2.65 / -0.00; last8 n=110 +2.16 / -0.00)
+  WR & S1                                        n=  48 mean +3.41  gain +0.31  (first14 n=24 +6.76 / +2.11; last8 n=24 +0.05 / -1.48)
+  WR & not S1 (record known)                     n= 155 mean +2.68  gain -0.10  (first14 n=69 +2.60 / -0.73; last8 n=86 +2.75 / +0.41)
+  S1 & XN>0 (any positive reaction)              n= 272 mean +2.54  gain +1.83  (first14 n=131 +4.24 / +2.88; last8 n=141 +0.97 / +0.86)
+  S1 & XN<=0                                     n= 297 mean +1.11  gain +0.46  (first14 n=139 +1.61 / +0.51; last8 n=158 +0.67 / +0.42)
+  placebo quiet winners & top-quintile record      n=  389 mean +0.81
+  placebo quiet winners, record known              n= 1386 mean +0.60
+  placebo gain of top-quintile record among quiet winners (same month): +0.00
+
+X6  stock concentration calibrated: same cuts applied to 1,000 random same-size per-quarter picks of eligible results
+  without the 10 stocks contributing most: S1 +0.03; random picks mean -0.60, 95th pct -0.20; share of random >= S1: 0.004
+  without the 10 most frequent stocks:     S1 +0.36; random picks mean -0.01, 95th pct +0.45; share of random >= S1: 0.095
+  S1 top-10 contributing stocks: HAL (13 trades, gain sum +118.9), IDEA (11 trades, gain sum +68.0), ABB (10 trades, gain sum +63.3), BHEL (8 trades, gain sum +62.2), GMRAIRPORT (11 trades, gain sum +56.4), GLENMARK (8 trades, gain sum +56.0), ADANIENT (9 trades, gain sum +54.2), DIXON (10 trades, gain sum +48.9), PFC (10 trades, gain sum +47.4), RECLTD (6 trades, gain sum +46.1)

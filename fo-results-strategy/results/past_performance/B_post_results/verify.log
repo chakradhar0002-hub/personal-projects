@@ -1,0 +1,13 @@
+S1_DRIFT4_Q5       n=+569.000 mean=+1.796 d=+1.114 d14=+1.659 d8=+0.623 wo5=+1.516 dwo5=+0.847  match=True
+S2_DRIFT4_Q1       n=+569.000 mean=-0.882 d=+0.180 d14=-0.168 d8=+0.494 wo5=-1.049 dwo5=+0.027  match=True
+S3_CONSIST_DRIFT   n=+938.000 mean=+1.174 d=+0.406 d14=+0.534 d8=+0.258 wo5=+0.997 dwo5=+0.234  match=True
+W_NEAR52H          n=+176.000 mean=+2.423 d=+0.596 d14=+0.080 d8=+1.290 wo5=+1.710 dwo5=+0.008  match=True
+WR_MOM126_BOT      n=+55.000 mean=+3.628 d=+1.138 d14=+2.238 d8=-0.089 wo5=+1.718 dwo5=-0.491  match=True
+W_DRIFT4_TOP       n=+189.000 mean=+2.015 d=+0.133 d14=+0.353 d8=-0.051 wo5=+1.321 dwo5=-0.382  match=True
+W_REPEAT1          n=+60.000 mean=+1.134 d=-0.256 d14=-0.203 d8=-0.289 wo5=-0.336 dwo5=-1.535  match=True
+WR_SEC252_DN       n=+68.000 mean=+2.568 d=+0.566 d14=+1.536 d8=-0.296 wo5=+1.276 dwo5=-0.692  match=True
+S1 luck re-check: obs +1.796, random mean +0.682, sd 0.265, z 4.21, p = 0.00025  (run_tests 0.00000)
+quiet mean_drift_4 merge re-check on 3,000 random quiet stock-days: mismatches 0
+quiet outcomes recomputed for 300 rows: mean +0.104 (no stored outcome to compare; used below)
+quiet outcome loop vs vectorised: max abs diff 1.11e-13
+S1 quiet placebo from scratch: n=17144 mean=+0.656 gain vs month=+0.075  (run_tests n=17144 gain=+0.075)

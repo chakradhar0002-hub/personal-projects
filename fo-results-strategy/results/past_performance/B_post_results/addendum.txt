@@ -1,0 +1,16 @@
+ADDED AFTER the main run (run_tests.py, run.log) had been looked at. Kept in a separate file so that prereg.txt keeps
+the sha256 logged in prereg.sha256. Nothing below enters Holm / maxT or changes any verdict in results_tests.csv.
+
+verify.py  independent plain-pandas recomputation: n / mean / gain / halves / w/o best 5 for S1, S2, S3, W_NEAR52H,
+           WR_MOM126_BOT, W_DRIFT4_TOP, W_REPEAT1, WR_SEC252_DN (all match to 1e-3); S1 luck p re-drawn with a different
+           sampler (z 4.2, p 0.00025 with 4,000 draws); quiet-day mean_drift_4 merge re-check on 3,000 random quiet days
+           (0 mismatches); S1 quiet placebo rebuilt from scratch (same n 17,144 and gain +0.075).
+addendum.py diagnostics of the only WORKS (S1_DRIFT4_Q5) and WATCH (S3_CONSIST_DRIFT):
+  X1 S1 by current reaction bucket (XN<=0, 0<XN<=4, XN>4)
+  X2 S1 gain with the parent cell = quarter x (12/6/3-month momentum rank tercile, past-reaction tercile, current XN
+     tercile, sector index, fin_type)
+  X3 without its best quarter; without the 10 most frequent / most contributing stocks; by fin_type; luck p of each
+     half alone; the same trades at exits k+5 / k+10; max concurrent positions; per-quarter table
+  X4 mean_drift_4 quintiles Q1..Q5 (monotonicity)
+  X5 composites with the existing winner rule (W & S1, WR & S1) and the quiet-winner analogue - descriptive only
+  X6 (added after X3 was seen) the stock-concentration cuts calibrated against 1,000 random same-size picks

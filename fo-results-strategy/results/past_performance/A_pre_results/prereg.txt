@@ -1,0 +1,118 @@
+PRE-REGISTRATION - TRADE A (pre-results 3-day window) x PAST PERFORMANCE
+Written 2026-10-09 BEFORE any outcome of trade A (outcomes.csv three_day, placebo three_day) was loaded or computed.
+Only feature distributions of panel.csv (no outcome columns) were looked at, to check counts.
+
+------------------------------------------------------------------------------------------------------------------------
+1. TRADE, UNIVERSE, OUTCOME
+------------------------------------------------------------------------------------------------------------------------
+Universe: the 3,280 F&O results in perf/features/panel.csv (in_fo True), qn 0 (Results for Jan-Mar 2021, Q4 FY21) to
+  qn 21 (Results for Apr-Jun 2026, Q1 FY27). Rows with missing three_day are dropped from everything.
+Trade: buy the cutoff close (i_cut = 2 sessions before the result session), sell the Day+1 close (i_p1).
+  y = three_day (outcomes.csv, %). LONG rule P&L = y; SHORT rule P&L = -y. Net = P&L - 0.17.
+Decision time: the cutoff close. Only *_A columns, lag21, vol_ratio_5_60 and point-in-time ranks computed at i_cut are
+  used. XN, W and every *_B column are NOT used (they contain the current reaction day).
+Halves: first 14 quarters = qn 0-13 (Results for Jan-Mar 2021 .. Apr-Jun 2024); last 8 = qn 14-21 (Results for Jul-Sep
+  2024 .. Apr-Jun 2026).
+
+Quintile definitions (all point in time):
+  Track-record quintiles: percentile rank (pandas rank pct) of the feature among the same quarter's F&O results that have
+    the feature. Top quintile = pct > 0.80, bottom = pct <= 0.20. Track-record features use only earlier results whose
+    windows ended before the cutoff (asserted in the panel build); every earlier result of the quarter's stocks is
+    complete before that quarter's season starts, so these within-quarter ranks use no future information.
+  Price-performance quintiles: percentile rank (0-100, 100 = best) among the same quarter's F&O stocks, ALL measured on
+    this row's cutoff session (panel rank_vsN_63/126/252_A; rank_vsN_21, rank_vsSec_63 and rank_vsSec_252 are computed
+    the same way in build_signals.py and the method is validated by reproducing rank_vsN_63/126/252_A exactly).
+    Top = rank > 80, bottom = rank <= 20.
+
+------------------------------------------------------------------------------------------------------------------------
+2. MAIN FAMILY - 33 tests (direction fixed in advance; L = long, S = short)
+------------------------------------------------------------------------------------------------------------------------
+Track record (how the stock did around its own earlier results):
+ TR01 L  prev1_three_day_A > 0                     rose in its last results window -> rises again (persistence)
+ TR02 S  prev1_three_day_A < 0                     fell in its last results window -> falls again
+ TR03 L  n_pos_three_day_4_A >= 3                  positive window in >= 3 of the last 4
+ TR04 S  n_pos_three_day_4_A <= 1                  positive window in <= 1 of the last 4
+ TR05 L  mean_three_day_4_A top quintile           best average of the last 4 windows
+ TR06 S  mean_three_day_4_A bottom quintile        worst average of the last 4 windows
+ TR07 L  prev1_xn_A > 4                            last results winner -> repeat
+ TR08 S  prev1_xn_A > 4                            last results winner -> reversal (high expectations)
+ TR09 L  prev1_xn_A < -4                           last results loser -> reversal (low expectations)
+ TR10 S  prev1_xn_A < -4                           last results loser -> repeat
+ TR11 L  n_winner_4_A >= 2                         serial results winner (>= 2 of last 4 reaction days > +4% vs Nifty)
+ TR12 L  mean_xn_4_A top quintile                  habitually good reactions (surprise persistence)
+ TR13 S  mean_xn_4_A bottom quintile               habitually bad reactions
+ TR14 L  mean_abs_xn_4_A top quintile              big typical results mover (announcement-risk premium)
+ TR15 L  mean_drift_4_A top quintile               habitually drifts up after results
+ TR16 S  mean_drift_4_A bottom quintile            habitually drifts down after results
+Price performance at the cutoff close:
+ PP01 L  1-month (21-session) vs Nifty bottom quintile (rank_vsN_21 <= 20)   short-term reversal
+ PP02 S  1-month vs Nifty top quintile (rank_vsN_21 > 80)                    short-term reversal
+ PP03 L  3-month (63) vs Nifty top quintile (rank_vsN_63_A > 80)             momentum
+ PP04 S  3-month vs Nifty bottom quintile (rank_vsN_63_A <= 20)              momentum
+ PP05 L  6-month (126) top quintile (rank_vsN_126_A > 80)                    momentum
+ PP06 S  6-month bottom quintile (rank_vsN_126_A <= 20)                      momentum
+ PP07 L  12-month (252) top quintile (rank_vsN_252_A > 80)                   momentum
+ PP08 S  12-month bottom quintile (rank_vsN_252_A <= 20)                     momentum
+ PP09 L  12-month top quintile AND vsN_21_A < 0                              pullback in an uptrend
+ PP10 L  12-month top half (rank_vsN_252_A > 50) AND 1-month bottom quintile deep pullback in an uptrend
+ PP11 L  dist_52wh_A >= -5 (within 5% of the 52-week high)                  52-week-high momentum
+ PP12 S  dist_52wh_A <= -30 (30% or more below the 52-week high)            52-week-high momentum
+ PP13 L  3-month vs sector index top quintile (rank_vsSec_63 > 80)           industry-relative momentum
+ PP14 S  3-month vs sector index bottom quintile (rank_vsSec_63 <= 20)
+ PP15 L  12-month vs sector index top quintile (rank_vsSec_252 > 80)
+ PP16 S  12-month vs sector index bottom quintile (rank_vsSec_252 <= 20)
+ PP17 S  12-month bottom quintile AND 1-month bottom quintile                falling knife (long-term losers do not bounce)
+
+------------------------------------------------------------------------------------------------------------------------
+3. STATISTICS PER TEST
+------------------------------------------------------------------------------------------------------------------------
+ n; avg = mean P&L (gross, signed by direction); net = avg - 0.17; excess = avg minus the quarter-matched average of all
+ F&O results (sum over quarters of n_q x quarter mean, signed, / n); quarters with net avg > 0 / quarters with trades;
+ avg, net and excess in the first 14 and last 8 quarters (with n); net avg without the 5 best (signed) trades.
+ LUCK p (one-sided in the stated direction): within-quarter permutation of three_day among all F&O results of that quarter
+   (= random same-size per-quarter picks from all F&O results), B = 20,000, seed 20261009. p = (1 + #{perm >= obs})/(1+B).
+ HOLM: Holm step-down on the 33 luck p values.
+ FAMILY-WISE maxT: same 20,000 permutations applied jointly to all 33 tests (keeps their overlap); z = (stat - perm mean)
+   / perm sd, signed; single-step maxT adjusted p = (1 + #{max_k z*_k >= z_j}) / (1 + B).
+ PLACEBO (every test that can be evaluated off results; all 33): the same signal on ordinary stock-days =
+   ta/build/placebo_ta.csv.gz rows with in_fo True and a next result (qn_next 0-21, symbol+qn_next in the panel): days
+   with no result session within [k-9, k+13]; outcome = 3-day forward return k -> k+3 (three_day there).
+   Price-performance features are recomputed at day k with the same definitions; ranks are among the F&O stocks of
+   quarter qn_next measured on day k; dist_52wh = placebo_ta dist_52w_high_pct. Track-record flags are those of the
+   stock's next result (symbol, qn_next), whose history ended before k; for TR15/TR16 (drift) only days k after the
+   previous result's drift exit (i_react + 20) count.
+   Placebo excess = signal-day mean minus the quarter-matched mean of all placebo days (same quarter weights as the
+   results trades). DiD = results excess - placebo excess. Placebo p = P(placebo excess of a random draw of placebo
+   signal days with the trades' per-quarter counts >= results excess), 10,000 draws, seed 7. Trades in quarters with no
+   placebo signal day are left out of this comparison (qn 0 has no placebo days).
+
+A test WORKS only if ALL of:
+ (a) better in both halves: excess > 0 in the first 14 AND in the last 8 quarters, and net avg > 0 in both halves;
+ (b) Holm p < 0.10 (33-test family);
+ (c) beats its placebo: DiD > 0 and placebo p < 0.10;
+ (d) holds without its best 5 trades: net avg without the 5 best trades > 0.
+ maxT p < 0.10 is reported as a secondary family-wise check.
+
+------------------------------------------------------------------------------------------------------------------------
+4. SPLIT OF THE EXISTING RULE (lag 10% + volume: in_fo_events True, lag21 < -10, vol_ratio_5_60 >= 1.0; 85 trades)
+------------------------------------------------------------------------------------------------------------------------
+ For each main-family condition (de-duplicated: TR07/TR08 and TR09/TR10 are one split each), split the 85 trades into
+ IN (condition true) and OUT (condition false; rows where the feature is missing are in neither). Report n, avg (long,
+ gross) and net for IN and OUT, IN in the first 14 / last 8, and the difference IN - OUT.
+ Permutation p (two-sided, |diff|) from 20,000 shuffles of the IN/OUT labels among the trades with the feature,
+ seed 11. Holm across the splits that have >= 5 trades on each side (splits with < 5 on a side are reported, not tested).
+
+------------------------------------------------------------------------------------------------------------------------
+5. REPLACEMENT TESTS (separate family of 3, long, in_fo_events True)
+------------------------------------------------------------------------------------------------------------------------
+ RP1 replace LAG by 3-month weakness:  vol_ratio_5_60 >= 1.0 AND rank_vsN_63_A <= 20
+ RP2 replace VOLUME by track record:   lag21 < -10 AND mean_three_day_4_A > 0
+ RP3 replace VOLUME by 12-month trend: lag21 < -10 AND rank_vsN_252_A > 50
+ Same statistics as section 3 (luck p, Holm within the 3, placebo using placebo_ta lag_pct / vol_ratio_5_60), plus
+ overlap with the 85 original trades, and comparison with the filter left alone (RP1 vs volume >= 1.0 alone; RP2 and
+ RP3 vs lag < -10 alone): difference and a permutation p (one-sided, 20,000 label shuffles within the 'filter alone'
+ set, seed 13) that the performance condition picks better trades inside that set.
+ A replacement CAN REPLACE only if it meets the same four criteria (a)-(d) (Holm within the 3) AND its average is at
+ least as high as the original rule's (+2.13%).
+
+All outputs go to perf/A_pre_results/. Percent units.

@@ -1,0 +1,11 @@
+events 4462 in_fo True 3278 NaN 2
+three_day = sum of daily returns i_cut+1..i_p1: max abs diff 6.54e-05; i_p1 - i_cut values [np.int64(3)]
+universe (in_fo True or blank): 3280
+look-ahead assert (own cutoff): every history item ended before i_cut: OK
+my lag21 (vsN21) vs ev.pkl lag: max abs diff 2.68e-13, NaN mine 0
+my 5/60 volume ratio vs ev.pkl vr: n=3280 median abs diff 0.000, share within 0.01: 1.000; (ev.pkl vr is used for the rule; mine only as a cross-check)
+rows whose own feature uses an item ending on/after the quarter's first cutoff: 0 (these leak into earlier stocks' within-quarter ranks)
+top quintile mean_td4: within-quarter rank 569 vs strict point-in-time rank 569; differ on 0 rows
+top quintile mean_xn4: within-quarter rank 569 vs strict point-in-time rank 569; differ on 0 rows
+top quintile mean_dr4: within-quarter rank 569 vs strict point-in-time rank 569; differ on 0 rows
+wrote my_features.csv.gz (3280, 71)

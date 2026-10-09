@@ -1,0 +1,57 @@
+placebo_ta rows 164882; in_fo True with next result in the panel: 115909 stock-days, 204 symbols, qn_next 1..21; min since_prev 10, min to_next 14.0
+check vsN_21: max abs diff 4.98e-05, NaN mine 0 panel 0
+check vsN_63: max abs diff 8.01e-05, NaN mine 0 panel 0
+check vsN_126: max abs diff 4.98e-04, NaN mine 0 panel 0
+check vsN_252: max abs diff 4.87e-04, NaN mine 0 panel 0
+check rank_vsN_63: max abs diff 4.97e-05 (method validation)
+check rank_vsN_126: max abs diff 4.97e-05 (method validation)
+check rank_vsN_252: max abs diff 4.97e-05 (method validation)
+check vsSec_63: max abs diff 1.61e-04, NaN mine 8 panel 8
+check vsSec_252: max abs diff 4.76e-04, NaN mine 36 panel 36
+check placebo vsN_21 vs placebo_ta lag_pct: max abs diff 5.00e-05, n 115909, NaN mine 0 ta 0
+rank_vsN_21 results: NaN 0 ; rank_vsSec_63 NaN 8 ; rank_vsSec_252 NaN 36
+placebo days after the previous drift exit: 82368 of 115909
+LAGRULE results rows: 85 (expect 85)
+LAGRULE same set as repo results/lag10_volume/trades.csv: True
+
+signal counts (results rows / placebo days):
+  TR01        1549 /   56178
+  TR02        1630 /   59731
+  TR03         816 /   30125
+  TR04         925 /   34119
+  TR05         569 /   20640
+  TR06         551 /   20342
+  TR07         383 /   13816
+  TR08         383 /   13816
+  TR09         409 /   14788
+  TR10         409 /   14788
+  TR11         246 /    8937
+  TR12         569 /   20990
+  TR13         551 /   20255
+  TR14         569 /   20878
+  TR15         569 /   14549
+  TR16         551 /   14614
+  PP01         571 /   22777
+  PP02         606 /   23241
+  PP03         663 /   23034
+  PP04         634 /   22826
+  PP05         654 /   23376
+  PP06         620 /   22729
+  PP07         659 /   22742
+  PP08         625 /   23280
+  PP09         230 /    7509
+  PP10         219 /    7933
+  PP11         695 /   25709
+  PP12         394 /   15735
+  PP13         655 /   23046
+  PP14         631 /   22624
+  PP15         648 /   22411
+  PP16         648 /   22719
+  PP17         187 /    7489
+  RP1          207 /    8077
+  RP2           66 /    2342
+  RP3           75 /    2292
+  LAGRULE       85 /    3024
+  VOL_ALONE   1040 /   39857
+  LAG_ALONE    194 /    6916
+wrote signals_results.csv.gz (3280, 39) signals_placebo.csv.gz (115909, 39)

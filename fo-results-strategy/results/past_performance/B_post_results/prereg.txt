@@ -1,0 +1,110 @@
+PRE-REGISTRATION - TRADE B (post-results winner drift) split by PAST PERFORMANCE ("can just try with performances?")
+Written 2026-10-09 BEFORE any forward return of any kind was read or computed for any rule below in this folder.
+Only feature-only counts were looked at (probe_counts.py / probe_counts.log: subset sizes, no outcome column read;
+from outcomes.csv only the tradability flag tradable_B). sha256 of this file is logged in prereg.sha256 before
+run_tests.py runs; run_tests.py refuses to run if the hash differs.
+
+Already known before writing (earlier documented work, not from this folder): plain winners (XN > 4) 392 trades
+vsN_net +1.45%; winners with cutoff RSI(14) > 50: 232 trades +2.42% (realistic ~+1% after selection). Nothing about
+any past-performance split of these trades is known. Thresholds below are fixed now: 0, the median, the quintile,
+the 50th percentile rank, and -5% from the 52-week high (textbook "near the high"), none tuned.
+
+DATA (read-only): perf/features/panel.csv (features, point in time), perf/features/outcomes.csv (raw_H20, nifty_H20,
+  vsN_net_H20, tradable_B), perf/features/history.csv (per-result track-record items with the session each became
+  known), sector_lab/data/{sessions,returns,index_close,events}.csv, ta/build/adjusted_ohlcv.csv.gz (52-week high),
+  tafa/C_post_results/quiet_days.csv.gz (placebo stock-days; XN at k, RSI14 at k-2).
+
+TRADE (fixed, as documented): buy the close of the reaction day k (events.i_react), hold 20 sessions, short Nifty 50.
+  vsN_net = (stock return k -> k+20) - (Nifty return k -> k+20) - 0.19   [percent]. Tradable = outcomes tradable_B.
+  Short (only test S2): -(stock - Nifty) - 0.19.
+
+POOLS (tradable F&O results; 3,280 rows)
+  W   plain winners: XN > 4 (reaction-day stock return minus Nifty, known at close k)                   392
+  WR  winners with cut_rsi14 > 50 (RSI(14) at the cutoff close)                                         232
+  ALL every tradable F&O result, any reaction (standalone question only)
+  For each test the PARENT = the pool rows of the same quarter that are eligible for the feature (feature not NaN).
+
+FEATURES (all with suffix _B = known at the reaction close k; panel.csv definitions; _A and _B track records are
+  identical on every row, so the track record is also known at the cutoff)
+  Track record
+    REPEAT1      prev1_winner_B == 1  (previous quarter's result was also a winner, XN > 4)       elig: prev1 known
+    REPEAT4      n_winner_4_B >= 2    (2+ wins in the last 4 results)                             elig: n_prev >= 4
+    FIRSTTIME4   n_winner_4_B == 0    (first-time winner: no win in the last 4 results)           elig: n_prev >= 4
+    PREVWIN_RAN  prev1_winner_B == 1 AND prev1_drift20_B > 0  ("its last results win kept running")
+                 elig: prev1 known and (prev1 not a winner, or its drift known)
+    DRIFT4_TOP   mean_drift_4_B >= median of mean_drift_4_B over ALL F&O results of the same quarter  elig: n_prev >= 4
+    DRIFT4_BOT   mean_drift_4_B <  that median
+                 (point in time: probe_counts.log shows that for every quarter with mean_drift_4 (qn 4-21) every drift
+                 used by any F&O row of the quarter ended before the quarter's first cutoff / reaction day, so the
+                 within-quarter median uses only known values)
+  Price performance (at close k)
+    MOM63_TOP / MOM63_BOT     rank_vsN_63_B  > 50 / <= 50  (3-month return rank among the same quarter's F&O results,
+                              all measured on this row's day k)
+    MOM126_TOP / MOM126_BOT   rank_vsN_126_B > 50 / <= 50  (6 months)
+    MOM252_TOP / MOM252_BOT   rank_vsN_252_B > 50 / <= 50  (12 months)
+    NEAR52H / FAR52H          dist_52wh_B >= -5 / < -5     (within 5% of the 52-week high at close k)
+    SEC252_UP / SEC252_DN     vsSec_252_B > 0 / <= 0       (12-month return vs its sector index)
+
+TESTS (35, every one counted)
+  W tests  (16): W_<feature> for the 16 features above, long, parent = eligible plain winners of the same quarter
+  WR tests (16): WR_<feature>, long, parent = eligible RSI>50 winners of the same quarter
+  Standalone (3), parent = all eligible tradable F&O results of the same quarter, any reaction:
+    S1 DRIFT4_Q5     long : mean_drift_4_B >= the quarter's 80th percentile over all F&O results (top quintile)
+    S2 DRIFT4_Q1     short: mean_drift_4_B <= the quarter's 20th percentile (bottom quintile), hedged short
+    S3 CONSIST_DRIFT long : n_pos_drift_4_B >= 3 (3 or 4 of the last 4 post-results drifts positive)
+
+STATISTICS PER TEST
+  n; mean vsN_net (direction-adjusted); share up; quarters with trades / quarters with mean vsN_net > 0;
+  d_par = per-trade gain over the parent = trade vsN_net minus the mean vsN_net of the parent pool of the same quarter;
+  mean d_par overall, quarters with d_par > 0, t across quarters of the per-quarter mean d_par;
+  first 14 (qn 0-13: Results for Jan-Mar 2021 .. Apr-Jun 2024) vs last 8 (qn 14-21: Jul-Sep 2024 .. Apr-Jun 2026):
+  n, mean vsN_net, mean d_par;  without the best 5 trades (5 highest vsN_net removed): mean vsN_net and mean d_par;
+  d_W = gain vs ALL plain winners of the quarter (secondary, for W/WR tests).
+  LUCK p (one-sided, better than random): 20,000 draws; per quarter draw the subset's count from that quarter's
+  parent pool without replacement; statistic = pooled per-trade mean vsN_net; p = (1 + #draws >= actual)/(1 + 20,000).
+  Seed 20261009.
+MULTIPLE TESTING (over all 35 tests)
+  Holm on the 35 luck p-values (PRIMARY).
+  maxT (Westfall-Young, one-sided): 10,000 joint permutations of vsN_net over all tradable F&O results within
+  quarter x stratum (stratum = W & RSI>50, W & not RSI>50, not W); each test's mean recomputed on the same permutation,
+  z = (obs - perm mean) / perm sd; p_maxT = (1 + #perms with max z over the 35 tests >= z_obs) / (1 + 10,000).
+  (Null = "nothing beyond quarter and winner / RSI status"; for S1-S3 this differs from the luck pool, stated.)
+PLACEBO (quiet days; every test gets one)
+  Quiet stock-days = tafa quiet_days.csv.gz (F&O stock-days with no result session of that stock in [k-10, k+20]),
+  kept if session k+21 exists and <= 2 blank returns in k+1..k+21 (same tradability as results). Outcome: the same
+  20-session Nifty-hedged return from close k, net of 0.19.
+  Quiet "winners" = XN_k > 4; quiet "RSI winners" = XN_k > 4 and RSI14 at k-2 > 50 (m2_rsi14, the cutoff analogue).
+  Features recomputed at quiet day k with the same definitions:
+    track record from history.csv: results of the stock whose 3-day window and reaction day ended before k, drift
+    only if its exit session (i_react + 20) < k; last 4 = the 4 most recent such results;
+    DRIFT4 median / quintiles: within the calendar month over all quiet stock-days (the quiet analogue of "all F&O
+    results of the quarter");
+    rank_vsN_L at k among the symbols of the F&O results of quarter qn_prev (the stock's latest result), all measured
+    at k; vsN / vsSec from returns.csv and index_close.csv (sector index = the stock's events.sector_index of qn_prev);
+    dist_52wh at k from the adjusted OHLCV (same definition as the panel).
+  Quiet parent = quiet winners (W tests), quiet RSI winners (WR tests), all quiet days (S tests), eligible for the
+  feature. Quiet d = quiet subset day minus the mean of the quiet parent of the same calendar month; SE clustered by
+  month. PLACEBO EXCESS = results d_par - quiet d. "Beats its placebo" = placebo excess > 0 (and quiet subset n >= 30;
+  if fewer, the placebo is n/a and the test can be at most WATCH). Interpretation fixed now: a split that adds the
+  same on quiet-day jumps is generic momentum / stock trait, not a results effect.
+
+VERDICT RULE (fixed now). A test WORKS only if ALL:
+  (a) n >= 30;
+  (b) better in both halves: mean d_par > 0 in the first 14 AND in the last 8, and mean vsN_net > 0 in both halves;
+  (c) Holm-adjusted luck p < 0.10;
+  (d) beats its placebo (placebo excess > 0, quiet subset n >= 30);
+  (e) holds without its best 5 trades: mean d_par without them > 0 and mean vsN_net without them > 0.
+  WATCH = (a), (b), (d), (e) hold and raw luck p < 0.05 but Holm >= 0.10.  Else NO.
+  p_maxT is reported next to Holm; a verdict uses Holm.
+
+PRE-REGISTERED DIAGNOSTICS (descriptive; no p-values; cannot change a verdict)
+  D1 the price-performance splits measured at the cutoff (_A: before the results move) for W and WR: n, mean vsN_net,
+     d_par - shows how much of a _B momentum split is just the reaction-day jump (vsN_*_B includes day k).
+  D2 for every WORKS / WATCH test (if any): d_par recomputed within quarter x XN tercile of the parent pool (controls
+     for the size of the results move), and per-quarter table.
+  D3 trades.csv with every trade of every test (symbol, qn, Results for <period> (<quarter>), reaction day, vsN_net).
+
+OUTPUTS (this folder): prereg.txt, prereg.sha256, probe_counts.py/.log, run_tests.py, run.log, results_tests.csv,
+  per_quarter.csv, placebo.csv, diagnostics.csv, trades.csv, quiet_features.csv.gz, verify.py, verify.log.
+Anything added after the first run is marked ADDED AFTER below and counted; it cannot rescue a verdict.
+----------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,7 @@
+columns,kind,unit,meaning
+"three_day, three_day_net",trade A outcome,%,"events three_day x100 (sum of the 3 daily returns, close i_cut -> close i_p1); net = -0.17"
+"d1, d2, d3, take_profit",trade A outcome,%,events_ta
+"next20, next20_vs_nifty",outcome,%,events.csv x100
+"raw_H{5,10,20}, nifty_H{5,10,20}",trade B outcome,%,stock / Nifty return close k -> close k+H (tafa run_tests definition)
+tradable_B,trade B,bool,"k+21 <= last session, <= 2 no-trade sessions in k+1..k+21, XN known"
+"vsN_H20, vsN_net_H20",trade B outcome,%,raw_H20 - nifty_H20; net = -0.19

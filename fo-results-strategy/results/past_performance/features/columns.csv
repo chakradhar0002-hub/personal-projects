@@ -1,0 +1,26 @@
+columns,known_at,unit,meaning
+"symbol, qn, quarter, period",key,,qn 0 = Results for Jan-Mar 2021 (Q4 FY21) .. 21 = Apr-Jun 2026 (Q1 FY27)
+"timing, industry, sector_index, fin_type",static,,from events.csv
+"cutoff, reaction_day, i_cut, i_rd, i_p1, i_react",static,date / session,events.csv sessions
+in_fo,static,bool,"True for all 3,280 rows (universe = tafa features / fa_panel in_fo)"
+in_fo_events,static,bool,"events.csv in_fo (blank for RELIANCE Q1 FY24, VEDL Q4 FY26; the repo lag rule uses == True)"
+lag21,A: close i_cut,%,21-session stock return minus Nifty 50 (events_ta lag_pct = repo vs_nifty_1m x100)
+vol_ratio_5_60,A: close i_cut,ratio,5 / 60-session mean split-adjusted volume (events_ta = repo volume_ratio)
+"cut_rsi14, RSI_HI",A: close i_cut,0-100 / bool,tafa features: Wilder RSI(14) at the cutoff; RSI_HI = > 50
+"XN, W",B: close i_react,% / bool,reaction-day stock return minus Nifty (tafa); W = XN > 4. Part of the current results move: NOT usable for trade A
+*_A,A: close i_cut,,track record / price performance known at the cutoff close
+*_B,B: close i_react,,track record / price performance known at the reaction close k
+n_prev_X,X,count,earlier results of the same stock (any in_fo status) whose 3-day window (i_p1) and reaction day ended before the decision session
+prev1_qn_X,X,,qn of the most recent such result
+prev1_three_day_X,X,%,"its 3-day window return (Day-1 + Result day + Day+1, gross)"
+prev1_xn_X,X,%,its reaction-day return minus Nifty
+prev1_drift20_X,X,%,its 20-session return minus Nifty from its reaction close (gross); NaN unless its exit session (i_react+20) < decision session
+prev1_winner_X,X,0/1,prev1_xn > 4
+"n_pos_three_day_4_X, mean_three_day_4_X",X,count / %,over the last 4 earlier results (NaN if n_prev < 4)
+"n_winner_4_X, mean_xn_4_X, mean_abs_xn_4_X",X,count / %,"last 4: reaction-day vs Nifty > 4 count, mean, mean absolute (typical size of the results move)"
+"n_drift_4_X, n_pos_drift_4_X, mean_drift_4_X",X,count / %,"last 4: drifts already ended before the decision (count), positive count, mean over those known"
+"mean_three_day_all_X, mean_xn_all_X, n_drift_all_X, mean_drift_all_X",X,% / count,over all earlier results (drift: only those ended)
+"vsN_{21,63,126,252}_X",X,%,stock return over the last L sessions minus Nifty 50 (NaN if window starts on/before the listing-day return or > ~5% no-trade sessions)
+"vsSec_{63,252}_X",X,%,stock return minus its events.sector_index (Nifty 500 for unmapped industries) over L sessions; NaN if the index has no data at the window start
+"rank_vsN_{63,126,252}_X",X,percentile 0-100,"rank of the L-session return among the same quarter's F&O results, ALL measured at this row's decision session (100 = best)"
+dist_52wh_X,X,%,adjusted close / max adjusted high of the last 250 traded sessions - 1 (TA builder definition); NaN if < 250 traded sessions

@@ -1,0 +1,69 @@
+rows 3280 tradable_B 3280
+winners 392 winners RSI>50 232 (documented 392 / 232)
+  qn 1: latest history item ends 1412 >= first decision 1397  NOT point in time
+  qn 2: latest last-4 history item of any F&O row ends at session 1445 < first decision 1460 (margin 15)
+  qn 3: latest last-4 history item of any F&O row ends at session 1513 < first decision 1525 (margin 12)
+  qn 4: latest last-4 history item of any F&O row ends at session 1573 < first decision 1585 (margin 12)
+  qn 5: latest last-4 history item of any F&O row ends at session 1640 < first decision 1646 (margin 6)
+  qn 6: latest last-4 history item of any F&O row ends at session 1693 < first decision 1708 (margin 15)
+  qn 7: latest last-4 history item of any F&O row ends at session 1762 < first decision 1771 (margin 9)
+  qn 8: latest last-4 history item of any F&O row ends at session 1819 < first decision 1833 (margin 14)
+  qn 9: latest last-4 history item of any F&O row ends at session 1888 < first decision 1895 (margin 7)
+  qn 10: latest last-4 history item of any F&O row ends at session 1941 < first decision 1957 (margin 16)
+  qn 11: latest last-4 history item of any F&O row ends at session 2012 < first decision 2020 (margin 8)
+  qn 12: latest last-4 history item of any F&O row ends at session 2070 < first decision 2082 (margin 12)
+  qn 13: latest last-4 history item of any F&O row ends at session 2137 < first decision 2143 (margin 6)
+  qn 14: latest last-4 history item of any F&O row ends at session 2189 < first decision 2205 (margin 16)
+  qn 15: latest last-4 history item of any F&O row ends at session 2259 < first decision 2267 (margin 8)
+  qn 16: latest last-4 history item of any F&O row ends at session 2318 < first decision 2330 (margin 12)
+  qn 17: latest last-4 history item of any F&O row ends at session 2385 < first decision 2391 (margin 6)
+  qn 18: latest last-4 history item of any F&O row ends at session 2439 < first decision 2453 (margin 14)
+  qn 19: latest last-4 history item of any F&O row ends at session 2500 < first decision 2516 (margin 16)
+  qn 20: latest last-4 history item of any F&O row ends at session 2567 < first decision 2575 (margin 8)
+  qn 21: latest last-4 history item of any F&O row ends at session 2634 < first decision 2636 (margin 2)
+quarters failing the point-in-time threshold check: 1
+
+W: subset n / eligible n / quarters with trades / first14 n / last8 n
+  REPEAT1        60 /  381  q=20  first14= 23 last8= 37
+  REPEAT4        43 /  345  q=17  first14= 16 last8= 27
+  FIRSTTIME4    187 /  345  q=18  first14= 85 last8=102
+  PREVWIN_RAN    33 /  381  q=17  first14= 13 last8= 20
+  DRIFT4_TOP    189 /  345  q=18  first14= 86 last8=103
+  DRIFT4_BOT    156 /  345  q=18  first14= 59 last8= 97
+  MOM63_TOP     280 /  392  q=22  first14=140 last8=140
+  MOM63_BOT     112 /  392  q=20  first14= 52 last8= 60
+  MOM126_TOP    270 /  392  q=22  first14=132 last8=138
+  MOM126_BOT    122 /  392  q=21  first14= 60 last8= 62
+  MOM252_TOP    239 /  392  q=22  first14=120 last8=119
+  MOM252_BOT    153 /  392  q=21  first14= 72 last8= 81
+  NEAR52H       176 /  392  q=22  first14=101 last8= 75
+  FAR52H        216 /  392  q=22  first14= 91 last8=125
+  SEC252_UP     255 /  389  q=22  first14=130 last8=125
+  SEC252_DN     134 /  389  q=21  first14= 59 last8= 75
+
+WR: subset n / eligible n / quarters with trades / first14 n / last8 n
+  REPEAT1        32 /  224  q=16  first14= 13 last8= 19
+  REPEAT4        28 /  203  q=14  first14= 10 last8= 18
+  FIRSTTIME4    104 /  203  q=18  first14= 53 last8= 51
+  PREVWIN_RAN    19 /  224  q=13  first14=  8 last8= 11
+  DRIFT4_TOP    113 /  203  q=18  first14= 57 last8= 56
+  DRIFT4_BOT     90 /  203  q=17  first14= 36 last8= 54
+  MOM63_TOP     196 /  232  q=22  first14=107 last8= 89
+  MOM63_BOT      36 /  232  q=15  first14= 15 last8= 21
+  MOM126_TOP    177 /  232  q=21  first14= 93 last8= 84
+  MOM126_BOT     55 /  232  q=18  first14= 29 last8= 26
+  MOM252_TOP    156 /  232  q=22  first14= 82 last8= 74
+  MOM252_BOT     76 /  232  q=19  first14= 40 last8= 36
+  NEAR52H       137 /  232  q=21  first14= 81 last8= 56
+  FAR52H         95 /  232  q=20  first14= 41 last8= 54
+  SEC252_UP     163 /  231  q=22  first14= 89 last8= 74
+  SEC252_DN      68 /  231  q=18  first14= 32 last8= 36
+
+dist_52wh_B among winners: quantiles [-27.3, -17.1, -6.4, -1.8, -0.7]
+rank_vsN_63/126/252_B among winners: share > 50 [np.float64(0.714), np.float64(0.689), np.float64(0.61)]
+vsSec_252_B among winners: share > 0 0.651
+
+ALL tradable with mean_drift_4 known: 2804
+  DRIFT4_Q5 (>= quarter 80th pct of all F&O results): 569; DRIFT4_Q1 (<= 20th pct): 569
+  CONSIST_DRIFT (n_pos_drift_4 >= 3 of 4 known): 938 of eligible 2804
+  n_drift_4_B distribution: {4.0: 2804, nan: 476}
