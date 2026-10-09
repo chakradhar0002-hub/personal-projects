@@ -1,0 +1,27 @@
+adjusted_ohlcv rows 506,835, symbols 213
+own Wilder RSI(14) computed for all symbols with >= 16 traded sessions
+universe (fa_panel in_fo == True): 3,280 results; quarters 22
+i_cut == i_rd - 2 for 100.0% of results; i_react - i_rd in [0, 1]
+results: 3,280 rows built
+sector-index benchmark available for 3280 of 3280 results
+
+CHECKS
+XN own vs features: max abs diff 4.97e-05
+all 3,280 tradable at H20: True (H5 True, H10 True)
+own Wilder RSI vs events_ta rsi14: max abs diff 5.78e-05; >0.01 in 0 rows; own NaN 0, eta NaN 0; not traded at cutoff 0
+events_ta rsi14 == features cut_rsi14: max abs diff 0.00e+00
+RSI>50 classification disagreements (own vs build): 0
+stock H5 own vs tafa trades.csv: max abs diff 5.00e-05
+stock H10 own vs tafa trades.csv: max abs diff 5.00e-05
+stock H20 own vs tafa trades.csv: max abs diff 5.00e-05
+Nifty H20 own vs tafa: max abs diff 4.99e-05
+adjusted_ohlcv close ratio k->k+20 vs compounded returns.csv: median abs diff 0.000, >0.5 pts in 0 rows (dividend / data differences)
+winners 392, main rule 232, winners RSI<=50 160; matches tafa W_RSI_HI: True
+build trades.csv: 232 rows; matched 232; vsN_net max abs diff 9.48e-05
+main-rule mean vsN_net own +2.4182; plain winners +1.4466; winners RSI<=50 +0.0377; all +0.4204
+non-winners: RSI>50 n 1603 +0.815; RSI<=50 n 1285 -0.385
+quiet days: 93,988 rows built
+
+quiet days: 93,988 rows; XN own vs file max abs diff 4.84e-05; tradable H20 100.0%
+quiet RSI at k-2 own vs file: max abs diff 5.00e-05; >0.01 in 0; file NaN 0, own NaN 0
+wrote panel.csv.gz, quiet_panel.csv.gz

@@ -1,0 +1,43 @@
+observed W_RSI_HI: mean H5/H10/H20 [0.447 0.688 2.418], d_W [0.219 0.197 0.634]
+
+(a) within-quarter permutation of outcome rows among the 392 winners (20,000 perms)
+W_RSI_HI H20: z 2.287, single-test p 0.0105
+top 10 of the 108 part-2 tests by permutation z:
+         test  H   n   mean     dW  se_dW_q  z_perm  p_single
+     W_RSI_HI 20 232 2.4182 0.6338   0.3333  2.2870    0.0105
+W_GOOD&RSI_HI  5 121 0.9407 0.6372   0.3028  2.1910    0.0146
+   W_ALL_BULL  5 105 1.0255 0.6415   0.3740  2.0382    0.0209
+W_GOOD&RSI_HI 20 121 2.9244 0.7510   0.4537  1.8385    0.0323
+   W_ALL_BULL 20 105 3.0507 0.7558   0.5572  1.6249    0.0521
+ W_GOOD&UP200  5 140 0.6390 0.4042   0.2949  1.5895    0.0566
+W_Q_HI&RSI_HI 20  68 3.9890 1.1658   1.0491  1.5355    0.0636
+W_GOOD&RSI_HI 10 121 1.1128 0.5600   0.3700  1.4845    0.0707
+ W_Q_HI&UP200  5  71 0.9533 0.5868   0.4147  1.4556    0.0729
+     W_RSI_HI  5 232 0.4473 0.2186   0.1642  1.3562    0.0857
+
+family-wise maxT p for W_RSI_HI H20 (z_obs 2.29), and the d_W the BEST test shows under the global null:
+                                 family   k  z_obs  max_z_null_mean  max_z_null_p95  p_familywise  null_best_dW_mean  null_best_dW_p50  null_best_dW_p90  null_best_sel_H20_share
+                    TA singles, H20 (4)   4  2.287           1.1177          2.2276        0.0423             0.3710            0.3265            0.6871                   1.0000
+              TA singles, H5/10/20 (12)  12  2.287           1.4886          2.5230        0.0929             0.3911            0.3473            0.6788                   0.3644
+     all TA-involving subsets, H20 (30)  30  2.287           1.9627          2.9185        0.2565             1.7710            1.7315            2.8951                   1.0000
+               all 36 subsets, H20 (36)  36  2.287           1.9856          2.9523        0.2715             1.7243            1.6665            2.8564                   1.0000
+all TA-involving subsets x 3 holds (90)  90  2.287           2.2947          3.1989        0.4684             1.6266            1.5318            2.7535                   0.3724
+                 all part-2 tests (108) 108  2.287           2.3193          3.2310        0.4894             1.5807            1.4773            2.7199                   0.3734
+
+(c) bootstrap bias correction (resample the 22 quarters with replacement, 5,000 resamples; select the max-z test in each resample; bias = resample d_W - full-sample d_W of that test)
+                                 family   k       picked  dW_picked  mean_bias  dW_corrected  z_obs  mean_bias_z  rsi_hi_corrected_zscale  rsi_hi_selected_share
+                    TA singles, H20 (4)   4 W_RSI_HI H20      0.634      0.107         0.527   2.28        0.353                    0.536                  0.901
+              TA singles, H5/10/20 (12)  12 W_RSI_HI H20      0.634      0.176         0.457   2.28        0.719                    0.434                  0.715
+     all TA-involving subsets, H20 (30)  30 W_RSI_HI H20      0.634      1.308        -0.675   2.28        1.599                    0.189                  0.305
+               all 36 subsets, H20 (36)  36 W_RSI_HI H20      0.634      1.304        -0.670   2.28        1.635                    0.179                  0.297
+all TA-involving subsets x 3 holds (90)  90 W_RSI_HI H20      0.634      1.174        -0.540   2.28        1.866                    0.115                  0.229
+                 all part-2 tests (108) 108 W_RSI_HI H20      0.634      1.175        -0.541   2.28        1.893                    0.108                  0.225
+quarter bootstrap W_RSI_HI H20: d_W 90% [+0.10, +1.19] (P(d_W<=0) 0.024); mean 90% [+1.33, +3.66]
+
+(d) empirical-Bayes shrinkage of d_W (H20) across subsets (normal-normal, method of moments)
+  36 subsets H20: sd(d_W) across tests 0.797, mean se^2 0.836 -> tau 0.000; grand mean +0.020; W_RSI_HI d_W +0.634 (se 0.333) -> shrunk +0.020 (weight on own estimate 0.00)
+  10 singles H20: sd(d_W) across tests 0.578, mean se^2 0.334 -> tau 0.012; grand mean +0.028; W_RSI_HI d_W +0.634 (se 0.333) -> shrunk +0.029 (weight on own estimate 0.00)
+  skeptical prior d_W ~ N(0, 0.25^2): posterior mean +0.228 (sd 0.200)
+  skeptical prior d_W ~ N(0, 0.5^2): posterior mean +0.439 (sd 0.277)
+  skeptical prior d_W ~ N(0, 1.0^2): posterior mean +0.570 (sd 0.316)
+note: d_W of W_RSI_HI H20 +0.634 is the same-quarter gap to ALL winners; the pooled gap main - all winners is +0.972 (between-quarter composition adds +0.338)

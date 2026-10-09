@@ -1,0 +1,13 @@
+slice,group,n,mean,median,wins10,q_pos,nq,dW_same_quarter
+all,MAIN,232,2.0418,1.8851,1.3518,14,22,0.6310
+all,all winners,392,1.0312,0.5564,0.6423,15,22,
+all,RSI<=50 winners,160,-0.4343,-1.0344,-0.3865,11,22,
+old cohort (in F&O by qn 1),MAIN,172,1.4053,1.4149,0.9606,13,22,0.4723
+old cohort (in F&O by qn 1),all winners,290,0.7163,0.5227,0.4988,13,22,
+old cohort (in F&O by qn 1),RSI<=50 winners,118,-0.2879,-0.5917,-0.1743,11,21,
+ex-2023,MAIN,196,1.1461,1.3187,0.8596,10,18,0.6788
+ex-2023,all winners,343,0.2979,-0.0168,0.1675,11,18,
+ex-2023,RSI<=50 winners,147,-0.8331,-1.2163,-0.7553,7,18,
+old cohort ex-2023,MAIN,143,0.6242,0.9215,0.5567,10,18,0.5679
+old cohort ex-2023,all winners,248,0.0093,-0.0498,0.0397,9,18,
+old cohort ex-2023,RSI<=50 winners,105,-0.8281,-1.0640,-0.6644,7,17,

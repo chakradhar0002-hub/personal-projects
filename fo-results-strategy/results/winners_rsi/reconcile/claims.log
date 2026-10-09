@@ -1,0 +1,86 @@
+[skeptic] Pooled gaps overstate the edge: pre-registered same-quarter d_W is +0.63 not pooled +0.97; within-quarter RSI gap +1.95 (t 2.08) not pooled +2.38; RSI>50 share 36% weak vs 79% strong Nifty tercile; beat all winners 15/22 (sign p 0.067); median quarter gap +0.58
+    theirs: +0.63 / +0.97; +1.95 (t 2.08) / +2.38; 36% / 79%; 15/22 p 0.067; +0.58
+    mine:   +0.63 / +0.97; +1.95 (t 2.08) / +2.38; 35% / 80% (mid 62%); 15/22 p 0.067; +0.58
+    verdict: REAL (presentation, not arithmetic). Numbers reproduce. The build headline and robustness text lead with pooled gaps (+0.97 vs all winners, +2.38 vs RSI<=50 winners) that include between-quarter composition; the pre-registered statistic is d_W +0.63 and the within-quarter RSI split is +1.95. The build did print +0.63 (variants table) and +1.95 (momentum table) but not as the headline comparison.
+[skeptic] Build compares a pooled momentum split (+0.90) with a pooled fixed-threshold RSI split (+2.38); like for like within quarter it is +0.97 vs +1.95
+    theirs: +0.90 vs +2.38 -> +0.97 vs +1.95
+    mine:   pooled momentum split +0.90; within-quarter momentum dummy +0.97 (t 1.60; build M6 +0.97); within-quarter RSI +1.95 (t 2.08)
+    verdict: REAL but minor. RSI still beats a plain momentum split within quarter (about 2x rather than 2.6x), and with both in the model neither is cleanly identified (build M3: RSI t 1.43).
+[skeptic] Build's placebo line '(b) the split appears only around results, it is not generic momentum' implies a winner-specific effect; within quarter RSI>50 also lifts non-winners (+0.68) and losers XN<-4 (+1.39); HI x W only +1.06 (t 1.10)
+    theirs: non-winners +0.68 (t 1.70); losers +1.39 (t 1.70); HI x W +1.06 (t 1.10)
+    mine:   non-winners +0.68 (t 1.70); losers XN<-4 n 424 +1.39 (t 1.70); HI x W +1.06 (t 1.10), HI +0.71 (t 1.77)
+    verdict: PARTLY REAL. Numbers reproduce. But the build did not claim winner specificity: its own placebo text and caveat say RSI>50 also helps non-winners on results days (+0.82 vs -0.39) and that the effect is "a results-period effect and not specific to winners". The quiet-day line is the pre-registered interpretation rule and is correct as stated. The fair correction is emphasis: the rule = plain winner drift + a general pre-results-strength effect around results; the winner-specific increment is not significant.
+[skeptic] Missing sector adjustment: vs own sector index d_W falls to +0.35 and the within-quarter RSI gap to +1.06 (t 1.32); RSI>50 winners sector index +3.74% vs -1.96% in the 20 sessions to the cutoff
+    theirs: +0.35; +1.06 (t 1.32); +3.74 vs -1.96; main vs own sector +1.90
+    mine:   d_W vs sector +0.35; within-quarter gap vs sector +1.06 (t 1.32); sector pre-cutoff +3.74 vs -1.96; main vs own sector +1.90; missing sector values 0
+    verdict: REAL omission (diagnostic, not an arithmetic error). About half of the RSI increment is sector momentum.
+[skeptic] Missing cross-correlation check: calendar-time (daily equal-weight, gross, NW lag 20) main +2.85 per 20 sessions (t 3.32); main minus RSI<=50 winners +1.70 (t 1.39); main minus all winners +1.07 (t 2.70)
+    theirs: +2.85 (3.32); +1.70 (1.39); +1.07 (2.70); long-short negative 2021, 2024, 2026
+    mine:   +2.85 (t 3.32, 838 days); +1.70 (t 1.39, 685 overlap days); +1.07 (t 2.70); long-short by year 2021 -3.34, 2022 +6.58, 2023 +3.06, 2024 -0.39, 2025 +4.50, 2026 -0.97
+    verdict: REAL omission. Once overlapping, co-moving trades are treated as one daily portfolio, the RSI>50 minus RSI<=50 long-short is not significant; main minus all winners still is.
+[skeptic] Level depends on the hedge: +2.05 vs Nifty 500, +1.81 vs Nifty100 EW, +1.22 vs Midcap 150; quiet F&O stock-days beat Nifty by +0.56 per 20 sessions after costs
+    theirs: +2.05 / +1.81 / +1.22; +0.56
+    mine:   Nifty 500 +2.05 / Nifty100 Equal Weight +1.81 / Nifty Midcap 150 +1.22; quiet days n 93,988 mean +0.56
+    verdict: REAL (context, not a build error). About 0.5 of the Nifty-hedged level is F&O-universe drift in this period.
+[tradability + skeptic] Same-bar entry not tested: next-open entry (open k+1 -> close k+21, Nifty open k+1) gives main +2.25, all winners +1.24, RSI<=50 -0.22; next close +2.15 / +1.19 / -0.19; skeptic variant (open k+1 -> close k+20, Nifty close k) +2.07; d_W unchanged
+    theirs: E1a +2.25 / +1.24 / -0.22; E1b +2.15 / +1.19 / -0.19; skeptic +2.07; dW +0.64
+    mine:   E1a +2.25 / +1.24 / -0.22; E1b +2.15 / +1.19 / -0.19; skeptic variant +2.07; d_W at E1a +0.63; E1a quarters positive 18/22 (at 0.40 cost 14/22); E1a first14 +2.51 last8 +1.96; main trades without an open on k+1: 0
+    verdict: REAL omission (the build listed it only as a caveat). Cost is modest: about -0.17 at the next open.
+[tradability] Cost assumption too low: 0.17 stock round trip; cash-delivery STT alone is 0.1% + 0.1%; realistic all-in about 0.35-0.40; main at next open and 0.40 nets +2.04, all winners +1.03
+    theirs: E1a/0.40 main +2.04, all winners +1.03
+    mine:   E0/0.40 main +2.21; E1a/0.40 main +2.04, all winners +1.03, RSI<=50 -0.43
+    verdict: REAL as an assumption issue (not an arithmetic error): 0.17 is a futures-like cost, the pre-registered value. STT on delivery equity is 0.1% on each side, so a cash-delivery round trip is >= 0.2% before stamp duty, fees and spread. Level falls about 0.2; the RSI increment is unaffected (same cost on both sides).
+[tradability] Results filed 15:00-15:29 are tagged During market with k = results day; reaction is really on k+1 (median |move vs Nifty| 2.50 on k+1 vs 1.30 on k); 135 F&O results, 0 main-rule trades, 1 RSI<=50 winner
+    theirs: 135; 0 main; 1 W_LO; 2.50 vs 1.30
+    mine:   135 results; k == results session for all: True; main 0; W_LO 1; median |move| k 1.30 vs k+1 2.50
+    verdict: REAL, but upstream (events.csv reaction-day definition), not a build error; it does not touch the 232 trades.
+[tradability] in_fo flag gaps: qn 0 flags only 98 of 189 results; 21 long-standing F&O names False at qn 0 and True from qn 1
+    theirs: 98 of 189; 21 names
+    mine:   fa_panel qn 0: in_fo True 98 of 189; events.csv qn 0 True 98; names False at qn0 then True at qn1-2: 21 (BEL, BHEL, COALINDIA, COFORGE, DLF, GAIL, GMRAIRPORT, HINDALCO, ICICIGI, INDHOTEL, JUBLFOOD, LICHSGFIN...)
+    verdict: REAL upstream universe noise (not look-ahead, not a build error). It thins the first quarter.
+[tradability / rebuild] events.csv in_fo blank for RELIANCE qn 9 and VEDL qn 20 (demergers); fa_panel True; neither is a main-rule trade
+    theirs: both blank, neither main
+    mine:   both in the 3,280: True; main? False; XN RELIANCE -1.65, VEDL +3.88; VEDL return blank on k+1: True
+    verdict: REAL, harmless (baseline only).
+[tradability] Survivorship: universe is today's list (212 symbols); >= 47 F&O names of 2021 absent (HDFC, MINDTREE, ...); no price history ends early; main +1.79 (n 172) on names in F&O by qn 1 vs +4.22 (n 60) on later joiners; old names ex-2023 at E1a/0.40 +0.62 vs all winners +0.01. Build "mentions but does not quantify"
+    theirs: +1.79 (172) vs +4.22 (60)
+    mine:   symbols in returns.csv 213; absent from the sample list: ['HDFC', 'MINDTREE', 'ZEEL', 'PVR', 'IBULHSGFIN', 'ACC', 'BATAINDIA']; symbols whose prices end before 2026-09-30: 0; main old +1.79 (n 172) vs later +4.22 (n 60); all winners old +1.09 vs later +2.45; old ex-2023 E1a/0.40 main +0.62 (n 143) vs all winners +0.01
+    verdict: REAL and the most important level issue. Correction to the tradability note: the build does NOT mention survivorship at all (no mention in study.py, run.log or its caveats).
+[skeptic] Task brief says non-winners with RSI>50 earn +0.79; should be +0.815 (build's +0.82 is right)
+    theirs: +0.815
+    mine:   +0.815 (n 1603); RSI<=50 -0.385
+    verdict: REAL (brief typo, not a build error).
+[reconcile] Build headline cites luck p 0.0094 (its own redraw); the pre-registered run gave 0.0105
+    theirs: 0.0094
+    mine:   pre-registered p_W_ELIG 0.0105, p_W_ALL 0.0101; Holm117 1.00; WY 0.5383; z_perm 2.27
+    verdict: Both are valid Monte Carlo draws (se ~0.0007); quote the pre-registered 0.0105 as the official number.
+[skeptic] Testing family understated even at 117: ta/A_standalone (44 signals incl. RSI thresholds), ta/B, tafa A/B also looked at RSI-type splits
+    theirs: 44 signals
+    mine:   ta/A_standalone signals 44; RSI-type: RSI14 < 30, RSI14 > 70, RSI2 < 10, RSI2 > 90
+    verdict: REAL (qualitative). The 117-test Holm / Westfall-Young numbers are a lower bound on the search; it does not change any number, it makes the WATCH weaker.
+
+per-quarter MAIN at next-open entry (diagnostic):
+     n     E0  E1a_019  E1a_040
+qn                             
+0    8   1.08     0.12    -0.09
+1    6   0.17     1.05     0.84
+2   11  -2.47    -2.42    -2.63
+3    4  -0.08    -0.76    -0.97
+4    3  -0.13     0.14    -0.07
+5    9   0.31     0.54     0.33
+6    9  -2.47    -1.94    -2.15
+7    9   2.13     2.06     1.85
+8   13   5.89     5.32     5.11
+9    9   9.15     9.41     9.20
+10   5  16.34    16.86    16.65
+11  13   0.06     0.10    -0.11
+12  14   5.81     4.79     4.58
+13   9   2.16     1.81     1.60
+14   3   3.05     4.30     4.09
+15   6   3.47     2.58     2.37
+16  19   3.53     3.46     3.25
+17   5   5.03     4.51     4.30
+18  22   0.41     0.11    -0.10
+19  15   2.97     2.78     2.57
+20  23  -0.15    -0.15    -0.36
+21  17   3.82     3.44     3.23

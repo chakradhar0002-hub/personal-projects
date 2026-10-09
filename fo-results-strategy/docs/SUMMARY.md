@@ -88,6 +88,7 @@ sit.
 | Trade | Result | Caveat |
 |---|---|---|
 | **Results-winner drift**: a stock beats Nifty by more than 4% on its reaction day; buy at that close, hold 20 sessions, short Nifty against it | +1.45% a trade over Nifty after costs, 392 trades, 15 of 22 quarters positive | Lost in 2021-22 (-1.2% a trade); +1.2% in the last 8 quarters but only +0.4% unhedged. Expect about +1% |
+| **Winners with RSI above 50**: the same trade, only for winners whose RSI(14) was above 50 two sessions before the results | +2.42% a trade over Nifty after costs, 232 trades, traded in all 22 quarters, 17 positive (winners with RSI 50 or below: +0.04%) | Picked from 117 tests; lost in 2021-22; 2023 gives 46% of the profit. Expect about +1%, entering at the next open ([WINNERS_RSI50.md](WINNERS_RSI50.md)) |
 | **Pre-results IV run-up straddle**: buy the ATM straddle 5 sessions before the last close before the numbers, sell at that close | +0.065R a trade after costs, 280 trades, all 9 seasons positive (2023-25) | Out of sample +2.2% a trade; depends on fills near mid. Marginal |
 
 ## What did not work
@@ -125,6 +126,7 @@ quarters (+1.45%) than over the first 15 tested (+2.3%).
 - [LAG10_VOLUME.md](LAG10_VOLUME.md): the lag + volume rule, every version, quarter-by-quarter tables, independent checks
 - [LAG5_PATTERNS.md](LAG5_PATTERNS.md), [LAGGED_NIFTY_1M.md](LAGGED_NIFTY_1M.md): how the lag pattern was found
 - [TARGET_2PCT.md](TARGET_2PCT.md), [TARGET_5PCT.md](TARGET_5PCT.md), [TARGET_100PCT.md](TARGET_100PCT.md): the target searches
+- [WINNERS_RSI50.md](WINNERS_RSI50.md): results winners with RSI above 50, quarter by quarter, with independent checks
 - [TECHNICAL_ANALYSIS.md](TECHNICAL_ANALYSIS.md), [FUNDAMENTAL_ANALYSIS.md](FUNDAMENTAL_ANALYSIS.md), [TA_FA_COMBINED.md](TA_FA_COMBINED.md): TA, FA and both together
 - [SECTOR_STRATEGIES.md](SECTOR_STRATEGIES.md), [PATTERNS.md](PATTERNS.md), [REAL_DATA_RESULTS.md](REAL_DATA_RESULTS.md): sector ideas, winner drift, option trades
 - [reports/results_report_last_22_quarters.html](../reports/results_report_last_22_quarters.html): the full results report

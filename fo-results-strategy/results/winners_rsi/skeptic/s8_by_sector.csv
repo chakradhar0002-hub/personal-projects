@@ -1,0 +1,12 @@
+sector_index,n_hi,hi,n_lo,lo,gap,gap_vs_sector
+Nifty Pharma,15,0.1824,10,2.0707,-1.8882,-0.8105
+Nifty FMCG,15,-1.0580,10,-0.2758,-0.7822,-1.5883
+Nifty Bank,29,1.0728,24,1.4587,-0.3859,0.2255
+Nifty Consumer Durables,8,1.6037,8,1.7030,-0.0994,-1.1265
+Nifty Commodities,8,0.9909,6,0.2287,0.7622,-0.8402
+Nifty India Manufacturing,22,4.7965,14,3.2484,1.5481,-0.1579
+Nifty Services Sector,11,1.5218,7,-1.1299,2.6517,2.6988
+Nifty Financial Services,34,1.9028,23,-1.1085,3.0113,3.4754
+Nifty Auto,25,3.6039,15,0.2180,3.3859,2.3263
+Nifty 500,17,5.9970,14,1.0679,4.9291,4.9880
+Nifty IT,20,5.9229,15,-3.9105,9.8335,5.9957

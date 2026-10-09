@@ -131,12 +131,15 @@ Buy at the reaction-day close, hold 5, 10 or 20 sessions, short Nifty against it
 
 - +2.42% against +0.04% for winners with a weaker RSI, in both halves (+2.65% / +2.16%); luck p 0.01 on its own, but
   family-wise 0.54 after 117 tests.
-- It is momentum, not a results effect: on ordinary days the same split goes the other way (-0.29 points).
+- It is not special to winners: around results, strength before the numbers helps every stock, while on ordinary days
+  the same split goes the other way (-0.29 points).
 - Adding good numbers does not help: inside winners with RSI > 50, those with good numbers made 0.46 points less than
   the rest.
 - An independent re-check of "winners & good numbers & RSI > 50" (+2.92%) rejected it: all of its profit comes from 2023
   on, and against plain winners the gap has p 0.07. Realistic value: about +1.5% a trade over Nifty, like the plain
   winner drift.
+- Followed up quarter by quarter in [WINNERS_RSI50.md](WINNERS_RSI50.md): traded in all 22 quarters, 17 positive;
+  realistic about +1% a trade over Nifty; skipping winners with RSI 50 or below looks sensible.
 
 ## Conclusion
 

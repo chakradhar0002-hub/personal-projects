@@ -1,0 +1,299 @@
+CHECK adjusted_ohlcv close/open vs intraday.csv: 506,835 cells, max abs diff 5.23e-07, share within 1e-6: 1.0000
+CHECK E1a stock return via compounded returns vs adjusted close(k+21)/open(k+1): n 3280, median abs diff 0.0000 pts, max 0.000 pts
+trades without a k+1 open (not traded on k+1): 1 of 3,280; among MAIN 0
+CHECK: E0 stock/Nifty returns and XN recomputed from returns.csv / index_close.csv equal tafa trades.csv (3,280); all have k+21 and <= 2 blanks
+CHECK: winners_rsi/build/trades.csv (232) vsN_net equals my E0 recomputation (abs diff < 1e-3)
+
+==============================================================================================================
+1. ENTRY TIMING (signal XN > 4 is only known at the close of k)
+  E0     close k -> close k+20 (study, pre-registered)
+  E0p    stock at close k (post-close session), Nifty short at open k+1 -> close k+20
+  E1a    open k+1 -> close k+21 (next-session open)
+  E1a20  open k+1 -> close k+20
+  E1b    close k+1 -> close k+21 (next-session close)
+entry                  group    n  mean  median  up_pct  q_pos  q_with  first14  last8  wo_best5  t_quarters
+   E0          MAIN W&RSI>50  232 +2.42   +2.21  +61.64     17      22    +2.65  +2.16     +1.83       +3.09
+   E0 W&RSI<=50 (complement)  160 +0.04   -0.58  +43.12     10      22    +0.04  +0.04     -0.54       +0.96
+   E0       all winners XN>4  392 +1.45   +0.65  +54.08     15      22    +1.70  +1.20     +1.09       +2.15
+   E0        all F&O results 3280 +0.42   -0.12  +49.27     14      22    +0.60  +0.19     +0.36       +1.05
+  E0p          MAIN W&RSI>50  232 +2.50   +2.44  +60.78     17      22    +2.75  +2.23     +1.92       +3.19
+  E0p W&RSI<=50 (complement)  160 +0.13   -0.41  +43.12     10      22    +0.24  +0.05     -0.45       +1.17
+  E0p       all winners XN>4  392 +1.54   +0.67  +53.57     16      22    +1.84  +1.25     +1.18       +2.32
+  E0p        all F&O results 3280 +0.51   -0.07  +49.60     14      22    +0.76  +0.22     +0.45       +1.32
+  E1a          MAIN W&RSI>50  232 +2.25   +2.10  +60.78     18      22    +2.51  +1.96     +1.68       +2.96
+  E1a W&RSI<=50 (complement)  160 -0.22   -0.82  +45.62     11      22    -0.14  -0.29     -0.75       +0.81
+  E1a       all winners XN>4  392 +1.24   +0.77  +54.59     15      22    +1.55  +0.95     +0.89       +1.94
+  E1a        all F&O results 3280 +0.31   -0.28  +48.32     14      22    +0.52  +0.06     +0.25       +0.79
+E1a20          MAIN W&RSI>50  232 +2.16   +2.13  +59.48     15      22    +2.34  +1.96     +1.59       +2.93
+E1a20 W&RSI<=50 (complement)  160 -0.12   -0.73  +43.75     10      22    -0.21  -0.06     -0.67       +0.79
+E1a20       all winners XN>4  392 +1.23   +0.76  +53.06     15      22    +1.41  +1.05     +0.88       +1.91
+E1a20        all F&O results 3280 +0.24   -0.22  +48.51     13      22    +0.41  +0.03     +0.18       +0.58
+  E1b          MAIN W&RSI>50  232 +2.15   +1.73  +56.90     18      22    +2.18  +2.11     +1.65       +2.84
+  E1b W&RSI<=50 (complement)  160 -0.19   -0.64  +45.00     12      22    -0.47  +0.04     -0.74       +0.72
+  E1b       all winners XN>4  392 +1.19   +0.54  +52.04     14      22    +1.22  +1.17     +0.89       +1.80
+  E1b        all F&O results 3280 +0.43   -0.24  +48.66     16      22    +0.57  +0.26     +0.37       +1.16
+
+MAIN minus all winners, and MAIN minus complement, per entry (vsN, costs cancel):
+  E0     MAIN +2.61  all W +1.64  COMP +0.23   MAIN-W +0.97   MAIN-COMP +2.38
+  E0p    MAIN +2.69  all W +1.73  COMP +0.32   MAIN-W +0.97   MAIN-COMP +2.37
+  E1a    MAIN +2.44  all W +1.43  COMP -0.03   MAIN-W +1.01   MAIN-COMP +2.48
+  E1a20  MAIN +2.35  all W +1.42  COMP +0.07   MAIN-W +0.93   MAIN-COMP +2.29
+  E1b    MAIN +2.34  all W +1.38  COMP +0.00   MAIN-W +0.95   MAIN-COMP +2.33
+
+What the first day costs (MAIN / all winners / complement), means in percent:
+  MAIN W&RSI>50            overnight gap close k->open k+1 vs Nifty +0.25 (median +0.17), day k+1 close-close vs Nifty +0.33 (median +0.12); E0 gross +2.61 -> E1a gross +2.44 -> E1b gross +2.34
+  W&RSI<=50 (complement)   overnight gap close k->open k+1 vs Nifty +0.16 (median +0.13), day k+1 close-close vs Nifty +0.14 (median -0.05); E0 gross +0.23 -> E1a gross -0.03 -> E1b gross +0.00
+  all winners XN>4         overnight gap close k->open k+1 vs Nifty +0.21 (median +0.15), day k+1 close-close vs Nifty +0.25 (median +0.04); E0 gross +1.64 -> E1a gross +1.43 -> E1b gross +1.38
+
+Luck p (one-sided) per entry: 20,000 draws, per quarter the same number of trades drawn from that quarter's winners (all 392 have RSI). Single-test p (the 117-test family is not redone here).
+  E0     actual +2.608  random-winner mean +1.975  95th +2.430  p 0.0094
+  E0p    actual +2.695  random-winner mean +2.073  95th +2.527  p 0.0119
+  E1a    actual +2.442  random-winner mean +1.812  95th +2.261  p 0.0103
+  E1a20  actual +2.351  random-winner mean +1.727  95th +2.172  p 0.0104
+  E1b    actual +2.337  random-winner mean +1.779  95th +2.200  p 0.0158
+
+Per quarter, vsN net 0.19 (MAIN E0 / E1a / E1b; complement E1a; all winners E1a) and MAIN E1a at 0.30:
+ Results for Quarter  MAIN_n  MAIN_E0_net  MAIN_E1a_net  MAIN_E1b_net  MAIN_E1a_net030  COMP_n  COMP_E1a_net  W_n  W_E1a_net
+Jan-Mar 2021 Q4 FY21       8        +1.08         +0.12         +0.59            +0.01       3         -3.09   11      -0.75
+Apr-Jun 2021 Q1 FY22       6        +0.17         +1.05         -1.29            +0.94       3         -1.37    9      +0.25
+Jul-Sep 2021 Q2 FY22      11        -2.47         -2.42         -1.17            -2.53       6         -0.57   17      -1.77
+Oct-Dec 2021 Q3 FY22       4        -0.08         -0.76         -3.88            -0.87       6         -5.84   10      -3.80
+Jan-Mar 2022 Q4 FY22       3        -0.13         +0.14         +1.06            +0.03      14         -1.85   17      -1.50
+Apr-Jun 2022 Q1 FY23       9        +0.31         +0.54         +0.76            +0.43       2         +2.88   11      +0.97
+Jul-Sep 2022 Q2 FY23       9        -2.47         -1.94         -2.31            -2.05       3         -2.31   12      -2.04
+Oct-Dec 2022 Q3 FY23       9        +2.13         +2.06         +2.06            +1.95       8         +2.69   17      +2.36
+Jan-Mar 2023 Q4 FY23      13        +5.89         +5.32         +4.46            +5.21       1         +7.37   14      +5.46
+Apr-Jun 2023 Q1 FY24       9        +9.15         +9.41         +9.81            +9.30       2        +11.57   11      +9.81
+Jul-Sep 2023 Q2 FY24       5       +16.34        +16.86        +13.09           +16.75       2         +1.82    7     +12.56
+Oct-Dec 2023 Q3 FY24      13        +0.06         +0.10         +0.80            -0.01       5         +4.83   18      +1.42
+Jan-Mar 2024 Q4 FY24      14        +5.81         +4.79         +3.80            +4.68       7         -0.21   21      +3.12
+Apr-Jun 2024 Q1 FY25       9        +2.16         +1.81         +1.61            +1.70       8         -1.18   17      +0.40
+Jul-Sep 2024 Q2 FY25       3        +3.05         +4.30         +2.76            +4.19      17         +0.26   20      +0.86
+Oct-Dec 2024 Q3 FY25       6        +3.47         +2.58         +2.12            +2.47      16         -3.93   22      -2.15
+Jan-Mar 2025 Q4 FY25      19        +3.53         +3.46         +3.16            +3.35       4         +2.93   23      +3.37
+Apr-Jun 2025 Q1 FY26       5        +5.03         +4.51         +4.19            +4.40      14         +2.04   19      +2.69
+Jul-Sep 2025 Q2 FY26      22        +0.41         +0.11         +0.20            -0.00       9         -3.83   31      -1.04
+Oct-Dec 2025 Q3 FY26      15        +2.97         +2.78         +3.52            +2.67      17         +0.86   32      +1.76
+Jan-Mar 2026 Q4 FY26      23        -0.15         -0.15         +0.32            -0.26       6         +4.77   29      +0.87
+Apr-Jun 2026 Q1 FY27      17        +3.82         +3.44         +3.83            +3.33       7         -2.36   24      +1.75
+  MAIN E0: quarters positive 17/22; quarter-weighted mean +2.73; MAIN beats all-winners same quarter (same entry) in 15/22
+  MAIN E1a: quarters positive 18/22; quarter-weighted mean +2.64; MAIN beats all-winners same quarter (same entry) in 15/22
+  MAIN E1b: quarters positive 18/22; quarter-weighted mean +2.25; MAIN beats all-winners same quarter (same entry) in 14/22
+
+==============================================================================================================
+2. TIMING
+i_react rule check over all 4,462 events.csv rows: Before open / During market -> k = results_date session; After close -> next session; Non-trading day -> first session after results_date.
+  mismatches: 0;  i_rd - i_cut == 2 for all: True;  i_cut < i_react for all: True
+  timing class boundaries in the data: Before open 00:00-09:13, During market 09:21-15:29, After close 15:30-23:50; Non-trading day = weekend/holiday dates (no session on results_date)
+  examples (MAIN trades, plus late-session winners):
+    symbol quarter results_date results_weekday results_time          timing cutoff_day reaction_day reaction_weekday      XN
+     AMBER Q3 FY26   2026-02-10             Tue        00:22     Before open 2026-02-06   2026-02-10              Tue  6.2999
+   COFORGE Q1 FY27   2026-07-28             Tue        01:35     Before open 2026-07-24   2026-07-28              Tue 10.3556
+BHARATFORG Q4 FY21   2021-06-04             Fri        11:53   During market 2021-06-02   2021-06-04              Fri  8.0315
+  BOSCHLTD Q4 FY21   2021-05-20             Thu        13:18   During market 2021-05-18   2021-05-20              Thu  8.0328
+ MOTHERSON Q4 FY21   2021-06-02             Wed        12:49   During market 2021-05-31   2021-06-02              Wed 13.3921
+    CONCOR Q4 FY21   2021-05-21             Fri        17:52     After close 2021-05-19   2021-05-24              Mon  7.9755
+ICICIPRULI Q4 FY21   2021-04-19             Mon        18:38     After close 2021-04-15   2021-04-20              Tue  6.1685
+       UPL Q4 FY21   2021-05-12             Wed        15:49     After close 2021-05-10   2021-05-14              Fri  7.5949
+ ICICIBANK Q2 FY22   2021-10-23             Sat        16:00 Non-trading day 2021-10-21   2021-10-25              Mon 10.7941
+BANKBARODA Q3 FY22   2022-02-05             Sat        14:49 Non-trading day 2022-02-03   2022-02-07              Mon  7.7347
+IDFCFIRSTB Q1 FY23   2022-07-30             Sat        15:47 Non-trading day 2022-07-28   2022-08-01              Mon 10.6582
+  UNITDSPR Q2 FY22   2021-10-27             Wed        15:23   During market 2021-10-25   2021-10-27              Wed  6.1207
+    raw DB check AMBER 2026-02-10: close/prevclose - Nifty = +6.30 vs XN +6.30
+    raw DB check COFORGE 2026-07-28: close/prevclose - Nifty = +10.36 vs XN +10.36
+    raw DB check BHARATFORG 2021-06-04: close/prevclose - Nifty = +8.03 vs XN +8.03
+    raw DB check BOSCHLTD 2021-05-20: close/prevclose - Nifty = +8.03 vs XN +8.03
+    raw DB check MOTHERSON 2021-06-02: close/prevclose - Nifty = +13.39 vs XN +13.39
+    raw DB check CONCOR 2021-05-24: close/prevclose - Nifty = +7.98 vs XN +7.98
+    raw DB check ICICIPRULI 2021-04-20: close/prevclose - Nifty = +6.17 vs XN +6.17
+    raw DB check UPL 2021-05-14: close/prevclose - Nifty = +7.59 vs XN +7.59
+    raw DB check ICICIBANK 2021-10-25: close/prevclose - Nifty = +10.79 vs XN +10.79
+    raw DB check BANKBARODA 2022-02-07: close/prevclose - Nifty = +7.73 vs XN +7.73
+    raw DB check IDFCFIRSTB 2022-08-01: close/prevclose - Nifty = +10.66 vs XN +10.66
+    raw DB check UNITDSPR 2021-10-27: close/prevclose - Nifty = +6.12 vs XN +6.12
+
+  Where the reaction happens, by filing time (median |stock - Nifty| %, all in_fo results):
+                    n  med_abs_k_minus1  med_abs_k  med_abs_k_plus1  winners  main
+hbucket                                                                           
+09:15-11:30        26              1.16       2.02             1.55        2     2
+11:30-13:00       182              0.88       2.15             1.78       21    13
+13:00-14:00       302              1.05       1.89             1.81       38    21
+14:00-14:30       213              0.87       1.89             1.63       23    17
+14:30-15:00       168              0.99       1.82             1.99        7     3
+15:00-15:30       135              1.06       1.30             2.50        1     0
+<09:15             22              1.35       2.86             1.21        5     2
+>=15:30          1955              1.01       2.39             1.22      265   152
+non-trading day   277              1.08       2.30             1.05       30    22
+  Results filed 15:00-15:29 (135): the reaction is on k+1, not k. Winners on k: 1. DIAGNOSTIC (not the rule): if k were moved to k+1 for them, 24 would be winners, 16 with RSI > 50, earning close k+1 -> close k+21 vs Nifty net 0.19: +2.06 (these are missed by the rule, not mis-traded)
+
+  by timing class (vsN net 0.19):
+                     timing                  group   n  E0_net  E1a_net  E1b_net  E0_up_pct  gap_vsN  day1_vsN  XN_mean  first14_E0  last8_E0
+              1 Before open          MAIN W&RSI>50   2   +7.85    +5.50    +4.19    +100.00    +0.03     +1.50    +8.33         NaN     +7.85
+              1 Before open W&RSI<=50 (complement)   3   -1.66    -1.94    -2.56     +33.33    -0.31     +0.42    +9.69      +12.60     -8.78
+              1 Before open       all winners XN>4   5   +2.15    +1.03    +0.14     +60.00    -0.17     +0.85    +9.15      +12.60     -0.47
+     2 During market <15:00          MAIN W&RSI>50  56   +1.86    +1.44    +2.04     +58.93    +0.49     -0.12    +6.44       +2.45     +1.23
+     2 During market <15:00 W&RSI<=50 (complement)  35   -0.24    -0.57    -0.23     +42.86    +0.29     +0.00    +6.46       +1.33     -1.29
+     2 During market <15:00       all winners XN>4  91   +1.05    +0.67    +1.17     +52.75    +0.41     -0.07    +6.45       +2.09     +0.13
+3 During market 15:00-15:29 W&RSI<=50 (complement)   1   +6.63    +2.79    +4.03    +100.00    +4.33     +3.04    +6.12       +6.63       NaN
+3 During market 15:00-15:29       all winners XN>4   1   +6.63    +2.79    +4.03    +100.00    +4.33     +3.04    +6.12       +6.63       NaN
+              4 After close          MAIN W&RSI>50 152   +2.57    +2.58    +2.24     +62.50    +0.16     +0.47    +6.85       +2.93     +2.14
+              4 After close W&RSI<=50 (complement) 113   +0.07    -0.04    -0.05     +42.48    +0.11     +0.13    +6.92       -0.85     +0.78
+              4 After close       all winners XN>4 265   +1.51    +1.46    +1.26     +53.96    +0.14     +0.32    +6.88       +1.54     +1.48
+          5 Non-trading day          MAIN W&RSI>50  22   +2.26    +1.76    +1.60     +59.09    +0.28     +0.45    +6.90       +0.74     +3.31
+          5 Non-trading day W&RSI<=50 (complement)   8   +0.55    -0.98    -1.56     +50.00    -0.08     +0.38    +6.24       +1.27     -0.65
+          5 Non-trading day       all winners XN>4  30   +1.80    +1.03    +0.76     +56.67    +0.19     +0.43    +6.72       +0.93     +2.57
+
+==============================================================================================================
+3. COSTS AND HEDGE
+  E0   MAIN W&RSI>50            hedged gross +2.61 -> net 0.19 +2.42, 0.30 +2.31, 0.50 +2.11 (break-even round trip 2.61);  unhedged gross +2.99 -> net 0.17 +2.82, 0.48 +2.51;  hedged sd 8.16 vs unhedged sd 9.06
+  E0   W&RSI<=50 (complement)   hedged gross +0.23 -> net 0.19 +0.04, 0.30 -0.07, 0.50 -0.27 (break-even round trip 0.23);  unhedged gross -0.12 -> net 0.17 -0.29, 0.48 -0.60;  hedged sd 6.83 vs unhedged sd 7.90
+  E0   all winners XN>4         hedged gross +1.64 -> net 0.19 +1.45, 0.30 +1.34, 0.50 +1.14 (break-even round trip 1.64);  unhedged gross +1.72 -> net 0.17 +1.55, 0.48 +1.24;  hedged sd 7.73 vs unhedged sd 8.73
+  E1a  MAIN W&RSI>50            hedged gross +2.44 -> net 0.19 +2.25, 0.30 +2.14, 0.50 +1.94 (break-even round trip 2.44);  unhedged gross +2.84 -> net 0.17 +2.67, 0.48 +2.36;  hedged sd 8.02 vs unhedged sd 9.04
+  E1a  W&RSI<=50 (complement)   hedged gross -0.03 -> net 0.19 -0.22, 0.30 -0.33, 0.50 -0.53 (break-even round trip -0.03);  unhedged gross -0.59 -> net 0.17 -0.76, 0.48 -1.07;  hedged sd 6.95 vs unhedged sd 7.87
+  E1a  all winners XN>4         hedged gross +1.43 -> net 0.19 +1.24, 0.30 +1.13, 0.50 +0.93 (break-even round trip 1.43);  unhedged gross +1.44 -> net 0.17 +1.27, 0.48 +0.96;  hedged sd 7.69 vs unhedged sd 8.73
+
+  MAIN by half at higher costs (vsN):
+    E0   cost 0.30: mean +2.31, first14 +2.54, last8 +2.05, w/o best 5 +1.72, quarters + 16/22, median +2.10
+    E0   cost 0.50: mean +2.11, first14 +2.34, last8 +1.85, w/o best 5 +1.52, quarters + 15/22, median +1.90
+    E1a  cost 0.30: mean +2.14, first14 +2.40, last8 +1.85, w/o best 5 +1.57, quarters + 16/22, median +1.99
+    E1a  cost 0.50: mean +1.94, first14 +2.20, last8 +1.65, w/o best 5 +1.37, quarters + 14/22, median +1.79
+    E1b  cost 0.30: mean +2.04, first14 +2.07, last8 +2.00, w/o best 5 +1.54, quarters + 18/22, median +1.62
+    E1b  cost 0.50: mean +1.84, first14 +1.87, last8 +1.80, w/o best 5 +1.34, quarters + 17/22, median +1.42
+
+  Nifty 50 Futures Index vs Nifty 50 spot since 2021: daily log-return corr 0.9848; over every 20-session window, spot minus futures return: mean +0.432, median +0.437, 5-95% [-0.032, +0.864] (this is what a SHORT futures hedge earns over a short spot hedge: the basis converging)
+  MAIN W&RSI>50            E0 hedged gross with spot +2.61 vs with Nifty futures index +3.07 (n 232); carry earned by the short +0.46
+  W&RSI<=50 (complement)   E0 hedged gross with spot +0.23 vs with Nifty futures index +0.71 (n 160); carry earned by the short +0.49
+  all winners XN>4         E0 hedged gross with spot +1.64 vs with Nifty futures index +2.11 (n 392); carry earned by the short +0.47
+  NOTE: the futures carry is roughly the interest rate minus the Nifty dividend yield. It is not a free gain: the long stock leg ties up cash (the vsN return ignores that funding), so the futures carry roughly pays for the cash; the study's spot hedge without funding is a fair excess-return approximation.
+
+==============================================================================================================
+4. CAPITAL, CONCURRENCY AND THE BOOK (each trade 1 unit of notional, hedged, daily mark to market)
+                                                                                      0                                                1                                                2                                                3
+entry                                                                                E0                                               E0                                              E1a                                              E1a
+cost                                                                               0.19                                             0.19                                              0.3                                              0.3
+group                                                                              MAIN                                                W                                             MAIN                                                W
+trades                                                                              232                                              392                                              232                                              392
+total_pct_units                                                               561.02108                                       567.059568                                        496.90411                                        443.41439
+span_sessions                                                                      1343                                             1343                                             1343                                             1343
+years                                                                          5.415323                                         5.415323                                         5.415323                                         5.415323
+max_open                                                                             21                                               29                                               21                                               29
+max_open_day                                                                 2025-11-14                                       2026-02-11                                       2025-11-17                                       2026-02-12
+mean_open                                                                      3.454952                                         5.837677                                         3.454952                                         5.837677
+mean_open_when_any                                                             5.536993                                         8.605928                                         5.536993                                         8.605928
+pct_sessions_none                                                             37.602383                                        32.166791                                        37.602383                                        32.166791
+p95_open                                                                           12.9                                             18.0                                             12.9                                             18.0
+max_new_one_day                                                                       5                                                5                                                5                                                5
+maxDD_units_pct                                                              -78.835292                                      -154.074622                                       -87.512058                                      -179.134527
+dd_peak_day                                                                  2021-08-17                                       2021-05-06                                       2021-11-17                                       2021-05-06
+dd_trough_day                                                                2022-11-18                                       2022-11-18                                       2022-11-18                                       2022-11-18
+worst_month_exits                                                            -38.706154                                       -56.293443                                       -31.089765                                       -48.031127
+worst_month_exits_label                                                         2026-06                                          2025-12                                          2026-06                                          2025-12
+months_negative_exits                                                                12                                               15                                               13                                               20
+months_with_exits                                                                    43                                               44                                               44                                               45
+worst_month_mtm                                                              -35.862313                                       -45.802669                                       -41.924851                                       -47.074054
+worst_month_mtm_label                                                           2026-06                                          2022-11                                          2026-06                                          2022-11
+best_month_mtm                                                                64.663947                                        78.595901                                        62.065849                                        76.328522
+worst_trade                                                                  -19.547809                                       -19.547809                                        -20.33402                                       -22.041639
+worst_trade_name                                                     INDUSINDBK Q2 FY22                               INDUSINDBK Q2 FY22                                     NMDC Q3 FY24                                  RBLBANK Q4 FY22
+trades_per_year                         2021:25 2022:25 2023:36 2024:39 2025:52 2026:55  2021:37 2022:50 2023:49 2024:76 2025:95 2026:85  2021:25 2022:25 2023:36 2024:39 2025:52 2026:55  2021:37 2022:50 2023:49 2024:76 2025:95 2026:85
+annual_pct_on_peak_capital                                                     4.933278                                         3.610824                                         4.369472                                         2.823498
+annual_pct_on_peak_capital_incl_margin                                         4.289807                                         3.139847                                         3.799541                                         2.455215
+maxDD_pct_of_peak_capital                                                     -3.754062                                        -5.312918                                        -4.167241                                        -6.177053
+
+  E0 MAIN: 5 worst calendar months by sum of trades exiting (units = % of one position):
+   2026-06 -38.7, 2025-12 -30.6, 2024-03 -25.4, 2022-11 -17.3, 2021-11 -16.7
+  E0 MAIN: 5 worst calendar months mark-to-market: 2026-06 -35.9, 2022-11 -29.3, 2024-03 -21.8, 2021-11 -16.9, 2024-01 -13.3
+
+  E1a MAIN: 5 worst calendar months by sum of trades exiting (units = % of one position):
+   2026-06 -31.1, 2024-03 -28.8, 2025-12 -21.7, 2022-11 -19.7, 2021-12 -14.9
+  E1a MAIN: 5 worst calendar months mark-to-market: 2026-06 -41.9, 2022-11 -31.2, 2021-11 -21.7, 2024-03 -21.2, 2024-01 -16.4
+
+==============================================================================================================
+5. SURVIVORSHIP
+  symbols in events.csv / returns.csv: 212 / 213; results rows 4462; in_fo True (fa_panel) 3280; events.csv in_fo True 3278
+  in_fo True results per quarter: 0:98 1:117 2:125 3:132 4:131 5:134 6:133 7:133 8:134 9:134 10:132 11:135 12:135 13:135 14:134 15:172 16:178 17:191 18:191 19:196 20:204 21:206
+  fa_panel vs events.csv in_fo disagreements:
+  symbol  qn  in_fo_fa in_fo_ev
+RELIANCE   9      True      NaN
+    VEDL  20      True      NaN
+  in_fo pattern over each symbol's quarters: always 1 91, never 1 6, symbols with a 0->1 switch (joined F&O in-sample) 115, with a 1->0 switch (left F&O, still in the data) 14
+  symbols with a 1->0 switch: ASTRAL:0011011111111111111111, BOSCHLTD:1011111111111111111111, CROMPTON:0010111111111111111111, IDEA:1011111111111111110111, MANAPPURAM:1111111111011111111111, MFSL:0101011111111111111111, NAM-INDIA:1111110000000000000011, NBCC:0001000000000001111111, OFSS:0011111111011111111111, PAGEIND:1000111011111111111111, PIIND:1011111111111111111111, SHREECEM:0101111111111111111111, SIEMENS:1101110111011101111111, TORNTPHARM:1111001111111111111111
+  2021-era F&O symbols (from memory, not from the data) with NO rows in the data: 47: ACC AARTIIND ABFRL AMARAJABAT APOLLOTYRE BALKRISIND BATAINDIA BERGEPAINT CANFINHOME CUB DEEPAKNTR ESCORTS EXIDEIND GUJGASLTD HDFC IBULHSGFIN IGL IRCTC LALPATHLAB LTTS M&MFIN MGL MINDTREE MRF NAVINFLUOR PEL PFIZER PVR RAMCOCEM SUNTV TATACHEM TATACOMM TORNTPOWER UBL ZEEL GRANULES IPCALAB METROPOLIS SYNGENE COROMANDEL DALBHARAT INDIACEM DELTACORP BALRAMCHIN GNFC CHAMBLFERT HINDCOPPER
+  renamed and present under the new symbol: CADILAHC->ZYDUSLIFE (present), GMRINFRA->GMRAIRPORT (present), L&TFH->LTF (present), LTI->LTM (present), MCDOWELL-N->UNITDSPR (present), MOTHERSUMI->MOTHERSON (present), SRTRANSFIN->SHRIRAMFIN (present), TATAMOTORS->TMPV (present)
+  in_fo results whose reaction-day return or k+21 window is missing: 0 []
+  symbols whose last price is before 2026-09-30: {}
+  NOTE in_fo comes from option-chain prices on the pre-results day (fa build: in_fo = bool(opt_expiry)). qn 0 is incomplete: in_fo True for 98 of 189 qn-0 results; long-standing F&O names flagged False at qn 0 and True from qn 1: BEL BHEL COALINDIA COFORGE DLF GAIL GMRAIRPORT HINDALCO ICICIGI INDHOTEL JUBLFOOD LICHSGFIN LTM NAUKRI NMDC NTPC PETRONET PFC POWERGRID SAIL TRENT
+  isolated one-quarter in_fo gaps (True before and after): 16: ASTRAL:4 BOSCHLTD:1 CROMPTON:3 IDEA:1 IDEA:18 MANAPPURAM:10 MFSL:2 MFSL:4 OFSS:10 PAGEIND:7 PIIND:1 SHREECEM:2 SIEMENS:2 SIEMENS:6 SIEMENS:10 SIEMENS:14
+  by F&O cohort (vsN net 0.19):
+                 group                cohort    n  E0_net  E1a_net  first14_E0  last8_E0
+         MAIN W&RSI>50 in F&O by qn 1 (2021)  172   +1.79    +1.62       +1.81     +1.76
+         MAIN W&RSI>50      joined F&O later   60   +4.22    +4.08       +9.71     +2.70
+W&RSI<=50 (complement) in F&O by qn 1 (2021)  118   +0.07    -0.08       -0.12     +0.30
+W&RSI<=50 (complement)      joined F&O later   42   -0.06    -0.64       +1.47     -0.37
+      all winners XN>4 in F&O by qn 1 (2021)  290   +1.09    +0.93       +1.10     +1.08
+      all winners XN>4      joined F&O later  102   +2.45    +2.14       +6.83     +1.39
+       all F&O results in F&O by qn 1 (2021) 2607   +0.34    +0.23       +0.41     +0.23
+       all F&O results      joined F&O later  673   +0.73    +0.62       +2.65     +0.12
+  survivor drift of the universe itself: all in_fo results E0 vsN net +0.42 per 20 sessions (first 14 +0.60, last 8 +0.19)
+
+==============================================================================================================
+6. OVERLAP WITH THE PLAIN WINNER DRIFT
+entry  cost  MAIN_n  MAIN_mean  MAIN_first14  MAIN_last8  MAIN_total  COMP_n  COMP_mean  COMP_first14  COMP_last8  COMP_total  W_n  W_mean  W_first14  W_last8  W_total
+   E0 +0.19     232      +2.42         +2.65       +2.16     +561.02     160      +0.04         +0.04       +0.04       +6.04  392   +1.45      +1.70    +1.20  +567.06
+   E0 +0.30     232      +2.31         +2.54       +2.05     +535.50     160      -0.07         -0.07       -0.07      -11.56  392   +1.34      +1.59    +1.09  +523.94
+   E0 +0.50     232      +2.11         +2.34       +1.85     +489.10     160      -0.27         -0.27       -0.27      -43.56  392   +1.14      +1.39    +0.89  +445.54
+  E1a +0.19     232      +2.25         +2.51       +1.96     +522.42     160      -0.22         -0.14       -0.29      -35.89  392   +1.24      +1.55    +0.95  +486.53
+  E1a +0.30     232      +2.14         +2.40       +1.85     +496.90     160      -0.33         -0.25       -0.40      -53.49  392   +1.13      +1.44    +0.84  +443.41
+  E1a +0.50     232      +1.94         +2.20       +1.65     +450.50     160      -0.53         -0.45       -0.60      -85.49  392   +0.93      +1.24    +0.64  +365.01
+  E1b +0.19     232      +2.15         +2.18       +2.11     +498.06     160      -0.19         -0.47       +0.04      -29.85  392   +1.19      +1.22    +1.17  +468.21
+  E1b +0.30     232      +2.04         +2.07       +2.00     +472.54     160      -0.30         -0.58       -0.07      -47.45  392   +1.08      +1.11    +1.06  +425.09
+  E1b +0.50     232      +1.84         +1.87       +1.80     +426.14     160      -0.50         -0.78       -0.27      -79.45  392   +0.88      +0.91    +0.86  +346.69
+  complement per quarter E1a net 0.30: Q4 FY21:-3.2(3) Q1 FY22:-1.5(3) Q2 FY22:-0.7(6) Q3 FY22:-5.9(6) Q4 FY22:-2.0(14) Q1 FY23:+2.8(2) Q2 FY23:-2.4(3) Q3 FY23:+2.6(8) Q4 FY23:+7.3(1) Q1 FY24:+11.5(2) Q2 FY24:+1.7(2) Q3 FY24:+4.7(5) Q4 FY24:-0.3(7) Q1 FY25:-1.3(8) Q2 FY25:+0.1(17) Q3 FY25:-4.0(16) Q4 FY25:+2.8(4) Q1 FY26:+1.9(14) Q2 FY26:-3.9(9) Q3 FY26:+0.7(17) Q4 FY26:+4.7(6) Q1 FY27:-2.5(7)
+  complement quarters positive (E1a, 0.30): 11/22
+  E0 cost 0.19: book MAIN total +561 units-% with peak 21 open, maxDD -78.8; all winners total +567 with peak 29 open, maxDD -154.1; return on peak capital per year MAIN 4.93% vs all winners 3.61%
+  E1a cost 0.3: book MAIN total +497 units-% with peak 21 open, maxDD -87.5; all winners total +443 with peak 29 open, maxDD -179.1; return on peak capital per year MAIN 4.37% vs all winners 2.82%
+
+==============================================================================================================
+7. BUILD CHECKS (look-ahead, windows, data)
+  (a) RSI(14) recomputed with my own Wilder code from adjusted closes up to the cutoff close for the 392 winners: max abs diff 5.78e-05; RSI>50 flag flips 0
+      last close used is on/before the cutoff day for all: True; cutoff is 2 sessions before the result session and [np.int64(2), np.int64(3)] sessions before k
+  (b) for 369 winners with no split/bonus/demerger in the 250 sessions before the cutoff, adjusted/raw close ratio is constant (max relative spread 9.4e-08) -> RSI on adjusted closes = RSI a trader saw on raw closes (no look-ahead from the backward adjustment); 23 winners have a split/bonus/demerger in the 250 sessions before the cutoff, where the adjusted RSI is the correct (continuous) one
+  (c) corporate actions from cutoff-30 to k+21 for MAIN trades: 3
+  symbol quarter  kind    ex_date  ex_vs_k  adj_ret_ex_pct  E0_net
+     PFC Q2 FY24 bonus 2023-09-21      -33           +0.08  +30.39
+     BSE Q4 FY25 bonus 2025-05-23       12           +4.97  +25.10
+ANGELONE Q4 FY26 split 2026-02-26      -31           -1.00   -3.04
+  (d) MAIN trades with a daily move > 12% inside k+1..k+21: 6: [('APOLLOHOSP', 'Q1 FY22', '2021-08-17', np.float64(13.24)), ('APOLLOHOSP', 'Q2 FY22', '2021-11-17', np.float64(12.5)), ('ABB', 'Q4 FY24', '2024-06-04', np.float64(-12.16)), ('BEL', 'Q4 FY24', '2024-06-04', np.float64(-19.8)), ('CONCOR', 'Q4 FY24', '2024-06-04', np.float64(-19.2)), ('HAL', 'Q4 FY24', '2024-06-04', np.float64(-17.83))]
+      raw APOLLOHOSP 2021-08-17: close/prevclose +13.24% (adjusted +13.24%)
+      raw APOLLOHOSP 2021-11-17: close/prevclose +12.50% (adjusted +12.50%)
+      raw ABB 2024-06-04: close/prevclose -12.16% (adjusted -12.16%)
+      raw BEL 2024-06-04: close/prevclose -19.80% (adjusted -19.80%)
+      raw CONCOR 2024-06-04: close/prevclose -19.20% (adjusted -19.20%)
+      raw HAL 2024-06-04: close/prevclose -17.83% (adjusted -17.83%)
+  (e) duplicate (symbol, qn): 0; MAIN trades of the same stock overlapping in time: 0
+      another result of the same stock within k+1..k+20 of a MAIN trade: 0
+  (f) winners with 4 < XN <= 5 (most exposed to a pre-close signal estimate): 106 of 392; MAIN 68 of 232; their E0 net +0.35, MAIN with XN > 5 +3.27
+  (g) XN of the 232 MAIN trades vs raw DB close/prevclose: 0 differ by > 0.05 pts
+  (h) MAIN trades from results filed 15:00-15:29 ("During market"; the NSE close is the 15:00-15:30 VWAP, so the close only partly reflects them): 0
+
+==============================================================================================================
+8. EXTRAS: underwater time, liquidity, realistic number
+  E0 MAIN: longest time below a previous equity peak 443 sessions (2021-08-18 -> 2023-06-02); equity at end +561 units-%
+  E1a MAIN: longest time below a previous equity peak 386 sessions (2021-11-18 -> 2023-06-09); equity at end +497 units-%
+  E1a W: longest time below a previous equity peak 564 sessions (2021-05-07 -> 2023-08-14); equity at end +443 units-%
+  MAIN: traded value on k+1 (Rs crore): median 434, 10th pct 171, min 41.6 -> a Rs 10 lakh position is 0.06% of a 10th-percentile day
+                                  slice entry   n  gross  net_0.19  net_0.40  net_0.50  all_winners_E1a_net_0.40  all_winners_n
+                            full sample    E0 232  +2.61     +2.42     +2.21     +2.11                       NaN            NaN
+                            full sample   E1a 232  +2.44     +2.25     +2.04     +1.94                     +1.03        +392.00
+                            full sample   E1b 232  +2.34     +2.15     +1.94     +1.84                       NaN            NaN
+                       ex calendar 2023    E0 196  +1.73     +1.54     +1.33     +1.23                       NaN            NaN
+                       ex calendar 2023   E1a 196  +1.55     +1.36     +1.15     +1.05                     +0.30        +343.00
+                       ex calendar 2023   E1b 196  +1.56     +1.37     +1.16     +1.06                       NaN            NaN
+in F&O by qn 1 (less survivor-selected)    E0 172  +1.98     +1.79     +1.58     +1.48                       NaN            NaN
+in F&O by qn 1 (less survivor-selected)   E1a 172  +1.81     +1.62     +1.41     +1.31                     +0.72        +290.00
+in F&O by qn 1 (less survivor-selected)   E1b 172  +1.74     +1.55     +1.34     +1.24                       NaN            NaN
+                in F&O by qn 1, ex 2023    E0 143  +1.21     +1.02     +0.81     +0.71                       NaN            NaN
+                in F&O by qn 1, ex 2023   E1a 143  +1.02     +0.83     +0.62     +0.52                     +0.01        +248.00
+                in F&O by qn 1, ex 2023   E1b 143  +1.01     +0.82     +0.61     +0.51                       NaN            NaN
+
+wrote: tradability.log, entries_costs.csv, luck_by_entry.csv, per_quarter_entries.csv, timing.csv, book_summary.csv, book_monthly_*.csv, book_daily_*.csv, survivorship_cohorts.csv, overlap.csv, trades_all_entries.csv

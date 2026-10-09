@@ -1,0 +1,28 @@
+winners: sector index 20-session return to the cutoff: RSI>50 +3.74%, RSI<=50 -1.96%  (sector minus Nifty: +1.66 vs -0.90)
+winners, vsN_net, quarter FE, quarter clusters:
+   HIf +1.95 (t 2.08)
+   HIf +1.67 (t 1.64) + sec10 +0.79 (t 0.91)
+   HIf +1.75 (t 1.89) + secrel10 +0.74 (t 0.70)
+   secrel10 +1.60 (t 1.44)
+   HIf +1.92 (t 1.64) + stock_vs_sec10 +0.03 (t 0.05)
+winners, outcome vs OWN SECTOR INDEX (vsSEC_net), quarter FE:
+   HIf +1.06 (t 1.32)
+   HIf +1.03 (t 1.01) + stock_vs_sec10 +0.04 (t 0.07)
+all results, vs sector: vsSEC ~ HI + W + HI x W, quarter FE
+   HI +0.67 (t 2.75), W +0.76 (t 1.47), HIxW +0.58 (t 0.72)
+   main rule vs own sector +1.90, all winners +1.21, RSI<=50 winners +0.20
+
+winners by sector index (>=5 in each group):
+             sector_index  n_hi    hi  n_lo    lo   gap  gap_vs_sector
+             Nifty Pharma    15  0.18    10  2.07 -1.89          -0.81
+               Nifty FMCG    15 -1.06    10 -0.28 -0.78          -1.59
+               Nifty Bank    29  1.07    24  1.46 -0.39           0.23
+  Nifty Consumer Durables     8  1.60     8  1.70 -0.10          -1.13
+        Nifty Commodities     8  0.99     6  0.23  0.76          -0.84
+Nifty India Manufacturing    22  4.80    14  3.25  1.55          -0.16
+    Nifty Services Sector    11  1.52     7 -1.13  2.65           2.70
+ Nifty Financial Services    34  1.90    23 -1.11  3.01           3.48
+               Nifty Auto    25  3.60    15  0.22  3.39           2.33
+                Nifty 500    17  6.00    14  1.07  4.93           4.99
+                 Nifty IT    20  5.92    15 -3.91  9.83           6.00
+sectors with gap > 0: 7/11

@@ -1,0 +1,11 @@
+in_fo results: 3280  (events.csv in_fo True 3278 + 2 blank filled from fa_panel)
+reaction-day return blank: 0; no session k+21: 0; >2 blanks k+1..k+21: 0; tradable: 3280
+RSI at cutoff missing: 0; RSI taken from an earlier traded close (no trade on cutoff): 0
+MAIN  winners & RSI>50: n=232  vsN_net=+2.418  raw_net=+2.821  vsN_gross=+2.608  up%=61.6  quarters +/with trades=17/22  t_q=3.09  first14=+2.653 (n=122, q+ 10/14)  last8=+2.158 (n=110, q+ 7/8)  without best 5=+1.834  median=+2.212
+ref   plain winners XN>4: n=392  vsN_net=+1.447  raw_net=+1.551  vsN_gross=+1.637  up%=54.1  quarters +/with trades=15/22  t_q=2.15  first14=+1.699 (n=192, q+ 9/14)  last8=+1.204 (n=200, q+ 6/8)  without best 5=+1.091  median=+0.645
+ref   winners & RSI<=50: n=160  vsN_net=+0.038  raw_net=-0.290  vsN_gross=+0.228  up%=43.1  quarters +/with trades=10/22  t_q=0.96  first14=+0.036 (n=70, q+ 6/14)  last8=+0.039 (n=90, q+ 4/8)  without best 5=-0.537  median=-0.579
+ref   winners, RSI missing: n=0
+diag  non-winners & RSI>50: n=1603  vsN_net=+0.815  raw_net=+1.563  vsN_gross=+1.005  up%=51.1  quarters +/with trades=15/22  t_q=1.98  first14=+1.025 (n=965, q+ 10/14)  last8=+0.498 (n=638, q+ 5/8)  without best 5=+0.693  median=+0.180
+diag  non-winners & RSI<=50: n=1285  vsN_net=-0.385  raw_net=-0.156  vsN_gross=-0.195  up%=45.5  quarters +/with trades=10/22  t_q=-0.14  first14=-0.340 (n=651, q+ 7/14)  last8=-0.431 (n=634, q+ 3/8)  without best 5=-0.489  median=-0.672
+diag  all tradable results: n=3280  vsN_net=+0.420  raw_net=+0.888  vsN_gross=+0.610  up%=49.3  quarters +/with trades=14/22  t_q=1.05  first14=+0.605 (n=1808, q+ 9/14)  last8=+0.194 (n=1472, q+ 5/8)  without best 5=+0.360  median=-0.115
+quarters positive (main): 17/22 (quarters with no trade: 0)

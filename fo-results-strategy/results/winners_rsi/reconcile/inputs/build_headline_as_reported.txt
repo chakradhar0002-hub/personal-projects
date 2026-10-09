@@ -1,0 +1,20 @@
+MAIN RULE (pre-registered, not changed): results winners (XN > 4) whose cutoff RSI(14) is above 50. Buy at the close of k, hold 20 sessions, short Nifty 50 for the same value.
+- 232 trades in 123 distinct stocks.
+- Average vsN_net +2.42% (median +2.21%); 61.6% of trades up.
+- Trades in 22 of 22 quarters: 17 positive, 5 negative. Longest losing streak is 3 quarters (Q2 FY22 to Q4 FY22).
+- First 14 quarters (qn 0-13): +2.65% (n 122, 10 of 14 quarters positive). Last 8 (qn 14-21): +2.16% (n 110, 7 of 8 positive).
+- Without the best 5 trades +1.83%; without the best 10 +1.42%.
+- Best trade PFC Q2 FY24 +30.39%; worst INDUSINDBK Q2 FY22 -19.55%.
+- Unhedged raw_net +2.82% (16 of 22 quarters positive; first 14 +4.13%, last 8 +1.37%).
+- Take-profit version (exit at +3% hedged, else day 20): net +1.08%, 69.4% up.
+- Comparison: all winners 392 trades +1.45%; winners with RSI <= 50 160 trades +0.04%; all 3,280 F&O results +0.42%.
+- By calendar year: 2021 -0.70 (n 25), 2022 -0.81 (25), 2023 +7.22 (36), 2024 +2.84 (39), 2025 +2.35 (52), 2026 +1.93 (55).
+- It is still only the pre-registered WATCH result: Holm(117) 1.00, Westfall-Young 0.54. The single-test luck p is 0.0094.
+- My recomputation of every trade from returns.csv and index_close.csv matches tafa trades.csv exactly. The 10 most extreme trades also match the raw nse_prices.db (BSE after its 2:1 bonus).
+
+Per-quarter bullets:
+- Quarters: 17 of 22 positive, 5 negative: Q2 FY22 -2.47, Q3 FY22 -0.08, Q4 FY22 -0.13, Q2 FY23 -2.47, Q4 FY26 -0.15. Two of the five are within 0.15 of zero.
+- Streaks: the longest losing streak is 3 quarters (Q2 FY22 to Q4 FY22); the longest winning streak is 13 quarters.
+- The main rule beat all winners of the same quarter in 15 of 22 quarters, and beat the RSI <= 50 winners in 15 of 22.
+- Quarter-weighted means (average of the 22 quarter averages): main rule +2.73, all winners +1.73, RSI <= 50 winners +0.86.
+- Trades per quarter range from 3 to 23 (median 9).

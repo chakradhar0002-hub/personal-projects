@@ -1,0 +1,44 @@
+A/B. RSI(14)>50 vs <=50 (measured 2 sessions before the result session / before day k); 20-session hedged net
+                        sample  n_hi  n_lo  mean_hi  mean_lo  pooled_gap  within_gap    se      t  G    fe
+           RESULTS winner XN>4   232   160    2.418    0.038       2.380       1.946 0.935  2.082 22    qn
+          RESULTS middle -4..4  1362  1102    0.875   -0.245       1.120       0.557 0.392  1.419 22    qn
+           RESULTS loser XN<-4   241   183    0.479   -1.230       1.708       1.390 0.820  1.695 22    qn
+     RESULTS non-winners XN<=4  1603  1285    0.815   -0.385       1.200       0.682 0.401  1.700 22    qn
+                   RESULTS all  1835  1445    1.018   -0.338       1.356       0.853 0.368  2.320 22    qn
+             QUIET winner XN>4   849   739    0.358    0.940      -0.582      -0.851 0.639 -1.333 64 month
+            QUIET middle -4..4 49986 41559    0.337    0.807      -0.471      -0.546 0.213 -2.569 65 month
+             QUIET loser XN<-4   460   395    1.160    2.729      -1.569      -1.979 0.868 -2.279 63 month
+                     QUIET all 51292 42691    0.344    0.827      -0.483      -0.566 0.214 -2.640 65 month
+QUIET winners, non-overlapping   554   563    0.247    1.145      -0.898      -1.184 0.632 -1.872 64 month
+RESULTS winner XN>4 (month FE)   232   160    2.418    0.038       2.380       1.906 1.035  1.841 45 month
+RESULTS non-winners (month FE)  1603  1285    0.815   -0.385       1.200       0.597 0.409  1.458 47 month
+
+A2. results days, all 3,280: vsN ~ HI + W + HI x W, quarter FE, SE clustered by quarter
+   HI       +0.709 (se 0.400, t 1.77)
+   W        +0.542 (se 0.530, t 1.02)
+   HI x W   +1.061 (se 0.968, t 1.10)
+   -> RSI>50 effect for non-winners +0.71; for winners +1.77; the winner-specific extra +1.06 (t 1.10)
+   month FE / month clusters: HI +0.637 (t 1.56), HI x W +1.008 (t 1.13)
+
+C. difference-in-differences results vs quiet days (month FE, SE clustered by month)
+   winners XN>4      : HI (quiet) -0.923 (se 0.614); HI x RES (results-specific) +2.705 (se 1.175, t 2.30); G=65
+   non-winners XN<=4 : HI (quiet) -0.554 (se 0.211); HI x RES (results-specific) +1.213 (se 0.408, t 2.97); G=65
+   all               : HI (quiet) -0.563 (se 0.214); HI x RES (results-specific) +1.355 (se 0.401, t 3.38); G=65
+   triple difference (all stocks, month FE, month clusters):
+      HI        -0.561 (se 0.211, t -2.65)
+      W         +0.009 (se 0.366, t 0.03)
+      RES       -0.690 (se 0.378, t -1.83)
+      HIxW      -0.154 (se 0.505, t -0.30)
+      HIxRES    +1.229 (se 0.409, t 3.00)
+      WxRES     +0.709 (se 0.634, t 1.12)
+      HIxWxRES  +1.047 (se 1.040, t 1.01)
+
+D. horse race on results days (quarter FE, quarter clusters): vsN ~ HI + stock 21-session return (per 10 pts)
+   winners     (n 392, corr RSI vs 21d ret 0.87): HI +1.95 (t 2.08) | mom10 +0.81 (t 2.30) | HI +1.62 (t 1.30) + mom10 +0.27 (t 0.54) | rsi10 +0.86 (t 2.74) | rsi10 +1.11 (t 1.42) + mom10 -0.39 (t -0.40)
+   non-winners (n 2888, corr RSI vs 21d ret 0.87): HI +0.68 (t 1.70) | mom10 +0.59 (t 2.10) | HI +0.10 (t 0.32) + mom10 +0.56 (t 2.04) | rsi10 +0.38 (t 1.77) | rsi10 +0.07 (t 0.20) + mom10 +0.52 (t 1.18)
+   all         (n 3280, corr RSI vs 21d ret 0.87): HI +0.85 (t 2.32) | mom10 +0.63 (t 2.55) | HI +0.29 (t 0.83) + mom10 +0.53 (t 2.04) | rsi10 +0.45 (t 2.38) | rsi10 +0.22 (t 0.68) + mom10 +0.39 (t 0.97)
+   QUIET winners (n 1588): HI -0.85 (t -1.33) | mom10 -0.38 (t -1.02) | HI -0.52 (t -0.76) + mom10 -0.26 (t -0.61)
+   QUIET all     (n 93983): HI -0.57 (t -2.64) | mom10 -0.31 (t -1.74) | HI -0.38 (t -2.06) + mom10 -0.17 (t -0.88)
+
+E. RSI>50 share by group (is "RSI>50" just a bull-market label?)
+   results winners 59.2%, results non-winners 55.5%, quiet winners 53.5%, quiet all 54.6%

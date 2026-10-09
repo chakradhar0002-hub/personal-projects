@@ -1,0 +1,9 @@
+group,cohort,n,E0_net,E1a_net,first14_E0,last8_E0
+MAIN W&RSI>50,in F&O by qn 1 (2021),172,1.791,1.615,1.811,1.757
+MAIN W&RSI>50,joined F&O later,60,4.216,4.077,9.713,2.696
+W&RSI<=50 (complement),in F&O by qn 1 (2021),118,0.073,-0.078,-0.123,0.298
+W&RSI<=50 (complement),joined F&O later,42,-0.062,-0.636,1.471,-0.368
+all winners XN>4,in F&O by qn 1 (2021),290,1.092,0.926,1.103,1.077
+all winners XN>4,joined F&O later,102,2.455,2.136,6.828,1.388
+all F&O results,in F&O by qn 1 (2021),2607,0.342,0.230,0.405,0.232
+all F&O results,joined F&O later,673,0.726,0.618,2.646,0.122

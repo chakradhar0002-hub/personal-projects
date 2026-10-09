@@ -1,0 +1,116 @@
+events.csv rows 4462; in_fo True 3278; blank 2: RELIANCE qn9 (fa_panel in_fo True), VEDL qn20 (fa_panel in_fo True)
+own Wilder RSI(14) vs events_ta.rsi14 for the 392 winners: max abs diff 5.78e-05, flag flips 0; cutoff close traded for all: True
+
+====================================================================================================
+2. TRADE BY TRADE: build/trades.csv vs rebuild/trades.csv (keys symbol + qn)
+====================================================================================================
+rows: build 232, rebuild 232, truth 232; duplicate keys build 0, rebuild 0
+keys only in build []; only in rebuild []; build vs truth []
+numeric fields: max abs differences (percent / RSI points); text fields: count of rows that differ
+                  field   n  max_build_vs_rebuild  n_gt_1e4  n_gt_1e3  max_build_vs_truth  max_rebuild_vs_truth
+                company 232              0.00e+00         0         0            0.00e+00                   NaN
+                quarter 232              0.00e+00         0         0            0.00e+00                   NaN
+   period / results_for 232              0.00e+00         0         0            0.00e+00                   NaN
+           reaction_day 232              0.00e+00         0         0            0.00e+00                   NaN
+                 timing 232              0.00e+00         0         0            0.00e+00                   NaN
+                i_react 232              0.00e+00         0         0            0.00e+00              0.00e+00
+                     XN 232              5.50e-05         0         0            5.46e-05              4.99e-07
+        RSI14 at cutoff 232              5.80e-05         0         0            0.00e+00              5.80e-05
+RSI14 at reaction close 232              5.00e-05         0         0                 NaN                   NaN
+     stock 20-session % 232              5.00e-05         0         0            4.99e-05              4.99e-07
+     Nifty 20-session % 232              5.00e-05         0         0            4.98e-05              4.98e-07
+                vsN_net 232              9.50e-05         0         0            9.48e-05              4.99e-07
+                raw_net 232              5.00e-05         0         0            4.99e-05              4.99e-07
+
+per-trade vsN_net at 1 decimal (the precision of the stock lists): rows where build, rebuild and truth disagree:
+symbol  qn quarter_b  vsN_net_b  vsN_net_r  vsN_net_t disp_b disp_r disp_t
+ WIPRO  11   Q3 FY24   4.850000   4.850029   4.850029   +4.8   +4.9   +4.9
+
+====================================================================================================
+3. PER QUARTER: build/per_quarter.csv vs rebuild/per_quarter.csv vs truth
+====================================================================================================
+             column  max_build_vs_truth  max_rebuild_vs_truth  max_build_vs_rebuild  quarters_build_ne_rebuild_4dp
+             trades            0.00e+00              0.00e+00              0.00e+00                       0.00e+00
+                 up            0.00e+00              0.00e+00              0.00e+00                       0.00e+00
+        avg vsN_net            8.96e-05              4.84e-05              1.00e-04                       2.00e+00
+       unhedged avg            4.91e-05              4.91e-05              0.00e+00                       0.00e+00
+      all winners n            0.00e+00              0.00e+00              0.00e+00                       0.00e+00
+    all winners avg            5.37e-05              4.85e-05              1.00e-04                       2.00e+00
+  RSI<=50 winners n            0.00e+00                   NaN                   NaN                            NaN
+RSI<=50 winners avg            6.40e-05                   NaN                   NaN                            NaN
+          all F&O n            0.00e+00                   NaN                   NaN                            NaN
+        all F&O avg            5.10e-05                   NaN                   NaN                            NaN
+             median            8.43e-05                   NaN                   NaN                            NaN
+    take-profit avg            4.93e-05                   NaN                   NaN                            NaN
+  qn 1 Q1 FY22 avg vsN_net: build 0.1667 rebuild 0.1668 truth 0.166752 -> 2-dp display +0.17 (both sides show +0.17 / +0.17)
+  qn 10 Q2 FY24 avg vsN_net: build 16.3365 rebuild 16.3364 truth 16.336410 -> 2-dp display +16.34 (both sides show +16.34 / +16.34)
+  qn 10 Q2 FY24 all winners avg: build 12.3581 rebuild 12.3580 truth 12.358046 -> 2-dp display +12.36 (both sides show +12.36 / +12.36)
+  qn 14 Q2 FY25 all winners avg: build 0.3785 rebuild 0.3784 truth 0.378449 -> 2-dp display +0.38 (both sides show +0.38 / +0.38)
+  qn 11 Q3 FY24 stock list differs: build/rebuild/truth [('WIPRO +4.8', 'WIPRO +4.9', 'WIPRO +4.9')]; same order True
+
+3b. MARKDOWN CELLS (display precision) vs truth
+build markdown as reported == build run.log markdown: True
+build markdown: 438 cells checked, mismatches 1; rebuild markdown mismatches 0
+  build md qn 11 stock WIPRO: shown 'WIPRO +4.8' recomputed 'WIPRO +4.9' (truth vsN_net 4.850029)
+
+====================================================================================================
+4. HEADLINE AND PER-QUARTER BULLETS recomputed
+====================================================================================================
+                                                 item                                                                                              claimed                                                                                           recomputed                                                                              detail    ok
+                                               trades                                                                                                  232                                                                                                  232                                                                                      True
+                                      distinct stocks                                                                                                  123                                                                                                  123                                                                                      True
+                                      average vsN_net                                                                                                +2.42                                                                                                +2.42                                                                              2.4182  True
+                                               median                                                                                                +2.21                                                                                                +2.21                                                                              2.2123  True
+                                          % trades up                                                                                                 61.6                                                                                                 61.6                                                                                      True
+                                 quarters with trades                                                                                                   22                                                                                                   22                                                                                      True
+                         quarters positive / negative                                                                                               17 / 5                                                                                               17 / 5                                                                                      True
+                                longest losing streak                                                                               3 (Q2 FY22 to Q4 FY22)                                                                               3 (Q2 FY22 to Q4 FY22)                                                                                      True
+                       first 14: avg / n / quarters +                                                                               +2.65 / 122 / 10 of 14                                                                               +2.65 / 122 / 10 of 14                                                                                      True
+                         last 8: avg / n / quarters +                                                                                 +2.16 / 110 / 7 of 8                                                                                 +2.16 / 110 / 7 of 8                                                                                      True
+                             without best 5 / best 10                                                                                        +1.83 / +1.42                                                                                        +1.83 / +1.42                                                                                      True
+                                           best trade                                                                                   PFC Q2 FY24 +30.39                                                                                   PFC Q2 FY24 +30.39                                                                        Jul-Sep 2023  True
+                                          worst trade                                                                            INDUSINDBK Q2 FY22 -19.55                                                                            INDUSINDBK Q2 FY22 -19.55                                                                        Jul-Sep 2021  True
+  unhedged raw_net avg / quarters + / first14 / last8                                                                     +2.82 / 16 of 22 / +4.13 / +1.37                                                                     +2.82 / 16 of 22 / +4.13 / +1.37                                                                                      True
+                               take-profit net / % up                                                                                         +1.08 / 69.4                                                                                         +1.08 / 69.4                                                                                      True
+                                  all winners n / avg                                                                                          392 / +1.45                                                                                          392 / +1.45                                                                                      True
+                              RSI<=50 winners n / avg                                                                                          160 / +0.04                                                                                          160 / +0.04                                                                                      True
+                              all F&O results n / avg                                                                                        3,280 / +0.42                                                                                        3,280 / +0.42                                                                                      True
+                                              by year 2021 -0.70 (25), 2022 -0.81 (25), 2023 +7.22 (36), 2024 +2.84 (39), 2025 +2.35 (52), 2026 +1.93 (55) 2021 -0.70 (25), 2022 -0.81 (25), 2023 +7.22 (36), 2024 +2.84 (39), 2025 +2.35 (52), 2026 +1.93 (55)                                                                                      True
+                           Holm(117) / Westfall-Young                                                                                          1.00 / 0.54                                                                                          1.00 / 0.54                                                 tafa results_tests.csv W_RSI_HI H20  True
+                                   single-test luck p                                                                                               0.0094                                                    0.0105 (pre-registered run); build re-draw 0.0094                                 two Monte Carlo runs of 20,000 draws; MC se ~0.0007 False
+                                    negative quarters                            Q2 FY22 -2.47, Q3 FY22 -0.08, Q4 FY22 -0.13, Q2 FY23 -2.47, Q4 FY26 -0.15                            Q2 FY22 -2.47, Q3 FY22 -0.08, Q4 FY22 -0.13, Q2 FY23 -2.47, Q4 FY26 -0.15 Q2 FY22 -2.4750, Q3 FY22 -0.0831, Q4 FY22 -0.1342, Q2 FY23 -2.4684, Q4 FY26 -0.1488  True
+                negative quarters within 0.15 of zero                                                                                      Two of the five                                         3 of the five at |avg| <= 0.15 (display); 3 round to <= 0.15                                                                                     False
+                               longest winning streak                                                                                                   13                                                                                                   13                                                                                      True
+                        beat all winners same quarter                                                                                             15 of 22                                                                                             15 of 22                                                                                      True
+                    beat RSI<=50 winners same quarter                                                                                             15 of 22                                                                                             15 of 22                                                                                      True
+               quarter-weighted means main / W / W_LO                                                                                +2.73 / +1.73 / +0.86                                                                                +2.73 / +1.73 / +0.86                                                                                      True
+                trades per quarter min / max / median                                                                                           3 / 23 / 9                                                                                           3 / 23 / 9                                                                                      True
+                  total vsN_net (pct of one position)                                                                                               +561.0                                                                                               +561.0                                                                                      True
+pre-registered d_W (same-quarter diff vs all winners)                                                                               +0.63 (variants table)                                                                                                +0.63                                                                      tafa dW 0.6338  True
+
+recomputed per-quarter markdown -> per_quarter_recomputed.md (final table with next-open column: final_table.py)
+| # | Results for | Quarter | Trades | Up | Avg vs Nifty (net) | Median | Unhedged avg | Winners RSI<=50 avg (n) | All winners avg (n) | Main minus all winners | All F&O results avg (n) | Stocks (% vs Nifty, net) |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
+| 0 | Jan-Mar 2021 | Q4 FY21 | 8 | 6 | +1.08 | +3.79 | +4.39 | -1.41 (3) | +0.40 (11) | +0.68 | +0.22 (98) | WIPRO +4.7, ICICIPRULI +8.9, UPL +4.5, BOSCHLTD -8.3, CONCOR +4.0, MOTHERSON -11.2, MUTHOOTFIN +3.6, BHARATFORG +2.3 |
+| 1 | Apr-Jun 2021 | Q1 FY22 | 6 | 3 | +0.17 | -0.38 | +6.40 | -1.30 (3) | -0.32 (9) | +0.49 | -3.90 (117) | ASIANPAINT -11.2, MPHASIS +9.1, SUNPHARMA -5.9, TECHM +9.7, SIEMENS -5.1, APOLLOHOSP +4.3 |
+| 2 | Jul-Sep 2021 | Q2 FY22 | 11 | 4 | -2.47 | -5.91 | -5.88 | -0.60 (6) | -1.81 (17) | -0.66 | +0.96 (125) | WIPRO -5.9, LTM +10.5, FEDERALBNK -7.5, TVSMOTOR +18.2, ICICIBANK -6.0, INDUSINDBK -19.5, BEL +2.2, INDIGO -8.7, PIDILITIND -4.2, APOLLOHOSP +6.7, ASHOKLEY -13.1 |
+| 3 | Oct-Dec 2021 | Q3 FY22 | 4 | 3 | -0.08 | +1.12 | -2.51 | -6.76 (6) | -4.09 (10) | +4.01 | -1.67 (132) | BANDHANBNK +0.1, AXISBANK +4.4, MARUTI +2.2, BANKBARODA -6.9 |
+| 4 | Jan-Mar 2022 | Q4 FY22 | 3 | 1 | -0.13 | -0.12 | -2.23 | -0.59 (14) | -0.51 (17) | +0.37 | -1.26 (131) | SHRIRAMFIN -0.1, INDUSINDBK -5.9, BRITANNIA +5.6 |
+| 5 | Apr-Jun 2022 | Q1 FY23 | 9 | 3 | +0.31 | -2.89 | +3.17 | +1.95 (2) | +0.61 (11) | -0.30 | +1.67 (134) | INDUSINDBK +6.0, ULTRACEMCO -4.8, BAJAJFINSV +7.4, SBILIFE -1.0, SUNPHARMA -9.0, IDFCFIRSTB +15.8, LUPIN -2.9, MANAPPURAM -3.6, HINDALCO -5.1 |
+| 6 | Jul-Sep 2022 | Q2 FY23 | 9 | 2 | -2.47 | -2.37 | +0.14 | -3.43 (3) | -2.71 (12) | +0.24 | -0.47 (133) | AXISBANK -7.4, MARUTI -9.9, ADANIENT -0.9, BANKBARODA +7.5, BOSCHLTD -3.2, PIIND -6.7, LUPIN +1.5, GLENMARK -2.4, MANAPPURAM -0.8 |
+| 7 | Oct-Dec 2022 | Q3 FY23 | 9 | 5 | +2.13 | +1.77 | +0.33 | +2.55 (8) | +2.33 (17) | -0.20 | +1.13 (133) | PERSISTENT +16.0, DRREDDY +4.7, TMPV -3.4, RECLTD -4.3, CHOLAFIN +3.0, JINDALSTEL -5.1, BRITANNIA -2.5, CUMMINSIND +9.0, APOLLOHOSP +1.8 |
+| 8 | Jan-Mar 2023 | Q4 FY23 | 13 | 12 | +5.89 | +3.50 | +7.63 | +7.20 (1) | +5.98 (14) | -0.09 | +3.51 (134) | ABB +6.7, CHOLAFIN +8.4, TVSMOTOR +4.7, MARICO +1.1, EICHERMOT -2.8, POLYCAB +3.1, DLF +3.5, ASTRAL +16.5, MUTHOOTFIN +2.4, DIXON +27.2, NAUKRI +1.5, BHEL +0.3, TORNTPHARM +3.9 |
+| 9 | Apr-Jun 2023 | Q1 FY24 | 9 | 8 | +9.15 | +4.71 | +8.35 | +11.95 (2) | +9.66 (11) | -0.51 | +2.31 (134) | POLYCAB +18.8, ASHOKLEY +4.3, MPHASIS +1.0, UNITDSPR -1.9, COLPAL +0.3, RECLTD +29.0, LICHSGFIN +4.7, BHARATFORG +14.2, NMDC +11.9 |
+| 10 | Jul-Sep 2023 | Q2 FY24 | 5 | 5 | +16.34 | +10.23 | +22.82 | +2.41 (2) | +12.36 (7) | +3.98 | +2.47 (132) | BAJAJ-AUTO +2.0, ALKEM +9.3, HINDPETRO +29.8, TRENT +10.2, PFC +30.4 |
+| 11 | Oct-Dec 2023 | Q3 FY24 | 13 | 7 | +0.06 | +0.41 | +2.05 | +6.24 (5) | +1.78 (18) | -1.71 | +1.64 (135) | INFY +5.3, WIPRO +4.9, OFSS +18.1, CIPLA -1.3, PERSISTENT -0.8, INDUSTOWER -5.8, BAJAJ-AUTO +6.8, VOLTAS +0.4, GODREJCP -1.3, TMPV +3.7, CUMMINSIND +4.0, NATIONALUM -13.6, NMDC -19.5 |
+| 12 | Jan-Mar 2024 | Q4 FY24 | 14 | 12 | +5.81 | +5.00 | +9.17 | -1.68 (7) | +3.31 (21) | +2.50 | +1.50 (135) | RECLTD +11.5, COALINDIA +3.1, GODREJCP +3.7, BHARATFORG +5.2, TVSMOTOR +12.1, POLYCAB +5.4, ABB -4.4, HAL +6.1, CONCOR +0.2, CROMPTON +4.2, ZYDUSLIFE -7.1, BEL +8.3, GLENMARK +4.8, MOTHERSON +28.3 |
+| 13 | Apr-Jun 2024 | Q1 FY25 | 9 | 6 | +2.16 | +3.17 | +3.96 | -0.78 (8) | +0.78 (17) | +1.39 | -0.35 (135) | TCS +0.7, ICICIPRULI +3.8, PETRONET +6.9, UNITDSPR +3.2, MPHASIS -1.2, COLPAL +5.8, MARICO -10.1, TRENT +11.2, JUBLFOOD -0.8 |
+| 14 | Jul-Sep 2024 | Q2 FY25 | 3 | 2 | +3.05 | +3.33 | +0.91 | -0.09 (17) | +0.38 (20) | +2.68 | -0.39 (134) | COFORGE +12.2, MFSL -6.3, PERSISTENT +3.3 |
+| 15 | Oct-Dec 2024 | Q3 FY25 | 6 | 5 | +3.47 | +3.00 | -0.12 | -2.64 (16) | -0.97 (22) | +4.44 | -2.14 (172) | KOTAKBANK +3.3, SRF +3.6, TATACONSUM -0.3, UPL +10.5, SAIL +2.8, MUTHOOTFIN +0.9 |
+| 16 | Jan-Mar 2025 | Q4 FY25 | 19 | 13 | +3.53 | +2.09 | +5.38 | +2.93 (4) | +3.42 (23) | +0.10 | +2.45 (178) | HDFCAMC +4.3, AUBANK +2.2, SBILIFE +2.1, RBLBANK -0.4, RELIANCE +1.7, PNBHOUSING -0.4, ADANIPORTS +11.2, BSE +25.1, PAYTM +6.5, LT +1.8, TITAN -2.9, ABCAPITAL +10.7, TIINDIA -2.5, DELHIVERY +3.8, DIVISLAB +1.4, ASTRAL +4.4, LICI -1.2, CUMMINSIND +3.1, NBCC -3.9 |
+| 17 | Apr-Jun 2025 | Q1 FY26 | 5 | 4 | +5.03 | +3.39 | +5.33 | +2.58 (14) | +3.23 (19) | +1.80 | +0.07 (191) | ETERNAL +8.8, AMBER -6.0, DELHIVERY +3.4, HEROMOTOCO +15.9, CUMMINSIND +3.1 |
+| 18 | Jul-Sep 2025 | Q2 FY26 | 22 | 12 | +0.41 | +1.51 | +1.35 | -3.95 (9) | -0.85 (31) | +1.27 | -2.09 (191) | PERSISTENT +4.1, AUBANK +6.0, BANKINDIA +13.5, FEDERALBNK +7.3, IDFCFIRSTB +2.5, RBLBANK -6.2, INDUSTOWER +3.9, VBL -6.5, ABCAPITAL +8.1, BHEL +9.9, POLICYBZR -2.8, BANKBARODA +0.7, POWERINDIA +5.1, ASTRAL -10.3, PAYTM -1.6, NATIONALUM +2.6, BHARATFORG -2.1, BIOCON -6.3, BSE -6.7, MFSL -0.9, BDL -13.4, MUTHOOTFIN +2.3 |
+| 19 | Oct-Dec 2025 | Q3 FY26 | 15 | 9 | +2.97 | +0.81 | -0.82 | +0.98 (17) | +1.91 (32) | +1.06 | +1.35 (196) | UNIONBANK +0.2, APLAPOLLO +10.6, BANKINDIA +0.8, INDIANB +2.6, AXISBANK +3.1, BEL -4.5, DELHIVERY -2.4, LICI -4.4, POWERINDIA +21.3, CROMPTON -0.7, SBIN +3.1, AMBER +5.1, BSE -2.8, MFSL -0.1, ABB +12.7 |
+| 20 | Jan-Mar 2026 | Q4 FY26 | 23 | 10 | -0.15 | -1.29 | -2.08 | +5.60 (6) | +1.04 (29) | -1.19 | +1.02 (204) | ANGELONE -3.0, HDFCAMC -3.3, NESTLEIND +6.5, PNBHOUSING +11.9, OFSS +10.0, ADANIENSOL -1.3, INDUSINDBK +4.1, VBL +3.0, BANDHANBNK +7.5, BHEL +11.4, CAMS -3.2, SRF +3.8, BHARATFORG +0.6, PAYTM -7.3, DABUR -9.8, TITAN -2.9, TATACONSUM -10.7, UPL -3.8, HINDPETRO -5.4, SOLARINDS -1.3, CUMMINSIND -7.2, GMRAIRPORT +7.1, NMDC -10.1 |
+| 21 | Apr-Jun 2026 | Q1 FY27 | 17 | 11 | +3.82 | +0.34 | +2.94 | -2.19 (7) | +2.07 (24) | +1.75 | +0.89 (206) | ICICIPRULI -5.2, BHEL -5.1, FEDERALBNK +0.3, TVSMOTOR +14.8, CONCOR +0.0, IDFCFIRSTB +0.1, KFINTECH +1.1, COFORGE +10.6, BAJAJFINSV -0.7, GAIL -5.0, TORNTPHARM -0.8, APLAPOLLO +17.1, DIVISLAB +12.9, NAUKRI +4.7, BOSCHLTD +11.2, ASTRAL -4.8, SOLARINDS +13.6 |
+| | **All 22** | | **232** | **143** | **+2.42** | **+2.21** | **+2.82** | +0.04 (160) | +1.45 (392) | +0.63 (d_W) | +0.42 (3280) | 17/22 quarters positive; quarter-weighted +2.73 |

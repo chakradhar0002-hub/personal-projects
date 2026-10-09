@@ -1,0 +1,7 @@
+family,k,picked,dW_picked,mean_bias,dW_corrected,z_obs,mean_bias_z,rsi_hi_corrected_zscale,rsi_hi_selected_share
+"TA singles, H20 (4)",4,W_RSI_HI H20,0.63376,0.10652,0.52724,2.28013,0.35290,0.53567,0.90120
+"TA singles, H5/10/20 (12)",12,W_RSI_HI H20,0.63376,0.17631,0.45745,2.28013,0.71863,0.43402,0.71480
+"all TA-involving subsets, H20 (30)",30,W_RSI_HI H20,0.63376,1.30837,-0.67461,2.28013,1.59872,0.18940,0.30480
+"all 36 subsets, H20 (36)",36,W_RSI_HI H20,0.63376,1.30367,-0.66991,2.28013,1.63541,0.17920,0.29720
+all TA-involving subsets x 3 holds (90),90,W_RSI_HI H20,0.63376,1.17375,-0.53999,2.28013,1.86562,0.11521,0.22940
+all part-2 tests (108),108,W_RSI_HI H20,0.63376,1.17523,-0.54147,2.28013,1.89312,0.10757,0.22520

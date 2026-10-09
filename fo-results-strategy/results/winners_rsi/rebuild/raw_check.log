@@ -1,0 +1,65 @@
+PART A - 5 random trades (numpy default_rng(20261009), rows [np.int64(68), np.int64(95), np.int64(108), np.int64(147), np.int64(211)] of trades.csv)
+
+--- DIXON | Jan-Mar 2023 (Q4 FY23) | reaction 2023-05-24 -> exit 2023-06-21 ---
+raw close k-1 2023-05-23: 3275.65; close k: 3514.30; close k+20: 4587.10; split/bonus inside window: none
+daily raw-adjusted vs returns.csv, k+1..k+20: max |diff| = 4.91e-08 (pct points x100: 4.91e-06)
+XN       rebuild +7.6268  raw +7.6268   (stock k +7.2856, Nifty k -0.3412)
+stock20  rebuild +30.5267  raw +30.5267   diff +8.18e-06
+nifty20  rebuild +3.1252  raw +3.1252   diff -9.86e-08
+vsN_net  rebuild +27.2115  raw +27.2115
+
+--- TMPV | Oct-Dec 2023 (Q3 FY24) | reaction 2024-02-05 -> exit 2024-03-02 ---
+raw close k-1 2024-02-02: 878.75; close k: 926.80; close k+20: 988.35; split/bonus inside window: none
+daily raw-adjusted vs returns.csv, k+1..k+20: max |diff| = 4.75e-08 (pct points x100: 4.75e-06)
+XN       rebuild +5.8437  raw +5.8437   (stock k +5.4680, Nifty k -0.3757)
+stock20  rebuild +6.6411  raw +6.6411   diff +6.77e-06
+nifty20  rebuild +2.7866  raw +2.7866   diff +4.84e-08
+vsN_net  rebuild +3.6645  raw +3.6645
+
+--- CROMPTON | Jan-Mar 2024 (Q4 FY24) | reaction 2024-05-17 -> exit 2024-06-14 ---
+raw close k-1 2024-05-16: 339.10; close k: 391.90; close k+20: 426.55; split/bonus inside window: none
+daily raw-adjusted vs returns.csv, k+1..k+20: max |diff| = 4.94e-08 (pct points x100: 4.94e-06)
+XN       rebuild +15.2927  raw +15.2928   (stock k +15.5706, Nifty k +0.2779)
+stock20  rebuild +8.8415  raw +8.8415   diff -7.79e-06
+nifty20  rebuild +4.4489  raw +4.4489   diff +2.70e-07
+vsN_net  rebuild +4.2026  raw +4.2026
+
+--- LICI | Jan-Mar 2025 (Q4 FY25) | reaction 2025-05-28 -> exit 2025-06-25 ---
+raw close k-1 2025-05-27: 871.25; close k: 942.00; close k+20: 951.10; split/bonus inside window: none
+daily raw-adjusted vs returns.csv, k+1..k+20: max |diff| = 2.70e-08 (pct points x100: 2.70e-06)
+XN       rebuild +8.4176  raw +8.4176   (stock k +8.1205, Nifty k -0.2971)
+stock20  rebuild +0.9660  raw +0.9660   diff -6.28e-06
+nifty20  rebuild +1.9889  raw +1.9889   diff +2.87e-08
+vsN_net  rebuild -1.2129  raw -1.2129
+
+--- SOLARINDS | Jan-Mar 2026 (Q4 FY26) | reaction 2026-05-15 -> exit 2026-06-15 ---
+raw close k-1 2026-05-14: 16665.00; close k: 17314.00; close k+20: 17277.00; split/bonus inside window: none
+daily raw-adjusted vs returns.csv, k+1..k+20: max |diff| = 4.56e-08 (pct points x100: 4.56e-06)
+XN       rebuild +4.0890  raw +4.0890   (stock k +3.8944, Nifty k -0.1946)
+stock20  rebuild -0.2137  raw -0.2137   diff +1.10e-06
+nifty20  rebuild +0.8899  raw +0.8899   diff +1.69e-07
+vsN_net  rebuild -1.2936  raw -1.2936
+
+PART B (extra) - all 232 trades vs raw closes
+  d_stock: max |diff| 6.57e-05 pts; > 0.01 pts: 0
+  d_XN: max |diff| 4.51e-05 pts; > 0.01 pts: 0
+  d_nifty: max |diff| 4.98e-07 pts; > 0.01 pts: 0
+  trades with a corporate action inside (day_k, day_k+20]:
+ qn symbol reaction_day   exit_day          ca_in_window  stock20_rebuild  stock20_raw   d_stock  blanks
+ 16    BSE   2025-05-07 2025-06-04 2025-05-23 bonus x3.0        26.137554    26.137542 -0.000012       0
+  detail for each trade with a split/bonus inside the holding window:
+
+--- BSE | Jan-Mar 2025 (Q4 FY25) | reaction 2025-05-07 -> exit 2025-06-04 ---
+raw close k-1 2025-05-06: 6245.00; close k: 6652.50; close k+20: 2797.10; split/bonus inside window: [['2025-05-23', 'bonus', 3.0]]
+daily raw-adjusted vs returns.csv, k+1..k+20: max |diff| = 4.84e-08 (pct points x100: 4.84e-06)
+XN       rebuild +6.3825  raw +6.3825   (stock k +6.5252, Nifty k +0.1427)
+stock20  rebuild +26.1376  raw +26.1375   diff -1.17e-05
+nifty20  rebuild +0.8429  raw +0.8429   diff +1.47e-07
+vsN_net  rebuild +25.1046  raw +25.1046
+  trades with any blank daily return in k+1..k+21: Empty DataFrame
+Columns: [qn, symbol, blanks, d_stock]
+Index: []
+  trades with missing raw px rows in k-1..k+20: 0
+
+PART C (extra) - RSI14 at the cutoff from raw px closes (own back-adjustment) for all winners
+  winners 392: max |RSI raw - RSI rebuild| = 2.22e-05; > 0.01: 0; RSI>50 flag disagreements: 0

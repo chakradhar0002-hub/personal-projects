@@ -36,6 +36,8 @@ checklist and concrete trades, and backtests them on your data.
 >   results, do not improve the lag + volume rule, and reported numbers give no post-results drift. See [docs/FUNDAMENTAL_ANALYSIS.md](docs/FUNDAMENTAL_ANALYSIS.md).
 > - **TA and FA together add nothing:** 40 combined screens, 12 filters on the lag + volume rule, a walk-forward model on
 >   both (AUC 0.52) and 117 post-results tests; nothing survives. See [docs/TA_FA_COMBINED.md](docs/TA_FA_COMBINED.md).
+>   Watch item: results winners with RSI above 50 before results made +2.42% a trade over Nifty (232 trades, 17 of 22
+>   quarters positive), realistic about +1%. See [docs/WINNERS_RSI50.md](docs/WINNERS_RSI50.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.

@@ -1,0 +1,17 @@
+(a) NEXT-OPEN ENTRY (buy at the open of k+1; Nifty leg still close k -> close k+20, no Nifty open in the data)
+   MAIN W&RSI>50  n 232: overnight gap close k -> open k+1 mean +0.33% (median +0.21); close-entry +2.42 -> next-open entry +2.07 (median +1.80)
+   all winners    n 392: overnight gap close k -> open k+1 mean +0.30% (median +0.14); close-entry +1.45 -> next-open entry +1.14 (median +0.74)
+   W&RSI<=50      n 160: overnight gap close k -> open k+1 mean +0.26% (median +0.05); close-entry +0.04 -> next-open entry -0.22 (median -0.73)
+   next-open dW (same-quarter gap to all winners) +0.64
+   all results: gap +0.27%, next-open +0.15
+
+(b) CALENDAR-TIME PORTFOLIOS (daily, percent per day, gross of costs; NW lag 20)
+   main W&RSI>50   : days with positions 838, mean +0.1424%/day (x20 = +2.85% per 20 sessions), NW t 3.32
+   all winners     : days with positions 911, mean +0.0880%/day (x20 = +1.76% per 20 sessions), NW t 2.14
+   W&RSI<=50       : days with positions 758, mean +0.0349%/day (x20 = +0.70% per 20 sessions), NW t 0.66
+   all F&O results : days with positions 1046, mean +0.0110%/day (x20 = +0.22% per 20 sessions), NW t 0.57
+   main minus RSI<=50 winners  : overlapping days 685, mean +0.0851%/day (x20 = +1.70), NW t 1.39
+   main minus all winners      : overlapping days 838, mean +0.0535%/day (x20 = +1.07), NW t 2.70
+   main minus all F&O results  : overlapping days 838, mean +0.1096%/day (x20 = +2.19), NW t 2.80
+   main minus RSI<=50 winners by year (x20, % per 20 sessions): 2021 -3.34 (97d), 2022 +6.58 (102d), 2023 +3.06 (103d), 2024 -0.39 (123d), 2025 +4.50 (147d), 2026 -0.97 (113d)
+   main minus all winners by year (x20): 2021 -0.49, 2022 +2.56, 2023 +0.93, 2024 +1.06, 2025 +2.11, 2026 +0.22

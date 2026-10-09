@@ -1,0 +1,31 @@
+item,claimed,recomputed,detail,ok
+trades,232,232,,True
+distinct stocks,123,123,,True
+average vsN_net,+2.42,+2.42,2.4182,True
+median,+2.21,+2.21,2.2123,True
+% trades up,61.6,61.6,,True
+quarters with trades,22,22,,True
+quarters positive / negative,17 / 5,17 / 5,,True
+longest losing streak,3 (Q2 FY22 to Q4 FY22),3 (Q2 FY22 to Q4 FY22),,True
+first 14: avg / n / quarters +,+2.65 / 122 / 10 of 14,+2.65 / 122 / 10 of 14,,True
+last 8: avg / n / quarters +,+2.16 / 110 / 7 of 8,+2.16 / 110 / 7 of 8,,True
+without best 5 / best 10,+1.83 / +1.42,+1.83 / +1.42,,True
+best trade,PFC Q2 FY24 +30.39,PFC Q2 FY24 +30.39,Jul-Sep 2023,True
+worst trade,INDUSINDBK Q2 FY22 -19.55,INDUSINDBK Q2 FY22 -19.55,Jul-Sep 2021,True
+unhedged raw_net avg / quarters + / first14 / last8,+2.82 / 16 of 22 / +4.13 / +1.37,+2.82 / 16 of 22 / +4.13 / +1.37,,True
+take-profit net / % up,+1.08 / 69.4,+1.08 / 69.4,,True
+all winners n / avg,392 / +1.45,392 / +1.45,,True
+RSI<=50 winners n / avg,160 / +0.04,160 / +0.04,,True
+all F&O results n / avg,"3,280 / +0.42","3,280 / +0.42",,True
+by year,"2021 -0.70 (25), 2022 -0.81 (25), 2023 +7.22 (36), 2024 +2.84 (39), 2025 +2.35 (52), 2026 +1.93 (55)","2021 -0.70 (25), 2022 -0.81 (25), 2023 +7.22 (36), 2024 +2.84 (39), 2025 +2.35 (52), 2026 +1.93 (55)",,True
+Holm(117) / Westfall-Young,1.00 / 0.54,1.00 / 0.54,tafa results_tests.csv W_RSI_HI H20,True
+single-test luck p,0.0094,0.0105 (pre-registered run); build re-draw 0.0094,"two Monte Carlo runs of 20,000 draws; MC se ~0.0007",False
+negative quarters,"Q2 FY22 -2.47, Q3 FY22 -0.08, Q4 FY22 -0.13, Q2 FY23 -2.47, Q4 FY26 -0.15","Q2 FY22 -2.47, Q3 FY22 -0.08, Q4 FY22 -0.13, Q2 FY23 -2.47, Q4 FY26 -0.15","Q2 FY22 -2.4750, Q3 FY22 -0.0831, Q4 FY22 -0.1342, Q2 FY23 -2.4684, Q4 FY26 -0.1488",True
+negative quarters within 0.15 of zero,Two of the five,3 of the five at |avg| <= 0.15 (display); 3 round to <= 0.15,,False
+longest winning streak,13,13,,True
+beat all winners same quarter,15 of 22,15 of 22,,True
+beat RSI<=50 winners same quarter,15 of 22,15 of 22,,True
+quarter-weighted means main / W / W_LO,+2.73 / +1.73 / +0.86,+2.73 / +1.73 / +0.86,,True
+trades per quarter min / max / median,3 / 23 / 9,3 / 23 / 9,,True
+total vsN_net (pct of one position),+561.0,+561.0,,True
+pre-registered d_W (same-quarter diff vs all winners),+0.63 (variants table),+0.63,tafa dW 0.6338,True

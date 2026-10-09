@@ -1,0 +1,82 @@
+rows: rebuild 3280 | features 3280 | trades 3280 | join {'both': 3280, 'left_only': 0, 'right_only': 0}
+session indices equal (i_cut, i_react): 0 0 mismatches
+XN vs features: max abs diff 4.97e-05; >1e-6: 1970; vs trades (4 dp): max 5.49e-05
+XN > 0.01 vs features: 0 mismatches
+winner flag W vs features: 0 mismatches
+winner flag W vs trades: 0 mismatches
+closest XN to the 4.0 threshold (rebuild):
+  symbol  qn       XN    XN_f     W   W_f
+     UPL  19 3.993815 3.99381 False False
+  MARICO  14 4.011763 4.01176  True  True
+   TRENT   9 4.014545 4.01455  True  True
+UNITDSPR  20 3.982420 3.98242 False False
+HINDZINC  19 3.975184 3.97518 False False
+KPITTECH  17 3.975171 3.97517 False False
+RSI14 at cutoff vs features.cut_rsi14: both present 3280, rebuild-only 0, features-only 0; max abs diff 5.78e-05; median 2.50e-05; >1e-3: 0; >0.01: 0; >0.1: 0
+RSI14 at cutoff vs events_ta.rsi14: max abs diff 5.78e-05; >1e-3: 0; features.cut_rsi14 vs events_ta.rsi14 max diff 0.00e+00
+largest RSI diffs:
+    symbol  qn  rsi14_cut  cut_rsi14  rsi14_eta  rsi_rows  n_hist        d
+  TVSMOTOR   8  61.679458    61.6794    61.6794      1848    1848 0.000058
+      GAIL   2  42.764956    42.7649    42.7649      1475    1475 0.000056
+      VEDL   7  63.338456    63.3384    63.3384      1785    1785 0.000056
+  TVSMOTOR  17  46.695647    46.6957    46.6957      2407    2407 0.000053
+      VEDL   0  79.060252    79.0602    79.0602      1359    1359 0.000052
+HINDUNILVR  12  41.256749    41.2568    41.2568      2090    2090 0.000051
+      SBIN  17  49.165250    49.1653    49.1653      2413    2413 0.000050
+  ADANIENT  15  40.124150    40.1241    40.1241      2283    2283 0.000050
+RSI_HI flag vs features: 0 mismatches
+RSI_HI flag vs trades: 0 mismatches
+results with RSI14 within 50 +/- 1: 217 (winners among them: 18); all flags agree: True
+winners with RSI14 within 50 +/- 2 (rebuild vs features):
+    symbol  qn        XN  rsi14_cut  cut_rsi14  RSI_HI  RSI_HI_f    vsN_net
+APOLLOHOSP  14  7.717668  48.400904    48.4009   False     False  -5.035319
+ ZYDUSLIFE  21  6.890311  48.485388    48.4854   False     False  -0.591677
+GMRAIRPORT  19  6.071108  48.493311    48.4933   False     False  -2.174213
+ EICHERMOT  14  6.540687  48.731921    48.7319   False     False  -5.940942
+ADANIGREEN  18 10.340894  48.793277    48.7933   False     False  -8.135627
+       BEL  18  4.554046  49.157863    49.1579   False     False  -4.030625
+     NYKAA  18  5.758588  49.328543    49.3285   False     False  -4.851704
+ EICHERMOT  19  6.438317  49.476356    49.4764   False     False  -1.508250
+POWERINDIA  21 10.529281  49.491820    49.4918   False     False  -8.775434
+TORNTPHARM  18  6.312218  49.648948    49.6489   False     False  -3.206323
+      BPCL  12  4.030270  49.937817    49.9378   False     False  -8.836310
+  KFINTECH  21  9.706001  50.006859    50.0069    True      True   1.055674
+ DELHIVERY  17  6.745560  50.079714    50.0797    True      True   3.394010
+     PAYTM  16  7.054898  50.079836    50.0798    True      True   6.528583
+    ASTRAL  21  8.907272  50.205224    50.2052    True      True  -4.781123
+PIDILITIND   2  5.341796  50.431341    50.4313    True      True  -4.155296
+  GLENMARK  12  8.162394  50.625193    50.6252    True      True   4.758161
+     TITAN  20  5.296553  50.644334    50.6443    True      True  -2.855376
+   SBILIFE   5  7.290137  50.702105    50.7021    True      True  -1.012198
+ HINDPETRO  20  5.319577  50.767333    50.7673    True      True  -5.372702
+     AMBER  17  4.053209  50.782665    50.7827    True      True  -6.025007
+       SRF  20  6.560264  50.783240    50.7832    True      True   3.825565
+  CHOLAFIN   7  6.320845  50.890174    50.8902    True      True   3.009506
+POWERINDIA  18 14.806862  51.007862    51.0079    True      True   5.102258
+      BHEL  18  7.155195  51.022956    51.0230    True      True   9.866815
+ ABCAPITAL  16  6.199344  51.145064    51.1451    True      True  10.674353
+IDFCFIRSTB  18  6.507122  51.196348    51.1963    True      True   2.483026
+       VBL  18  8.640104  51.225409    51.2254    True      True  -6.492133
+   DRREDDY   7  4.298487  51.260498    51.2605    True      True   4.702262
+    CONCOR  21  5.938401  51.414696    51.4147    True      True   0.035982
+     PAYTM  20  7.833273  51.510040    51.5100    True      True  -7.284493
+ASIANPAINT   1  6.702763  51.583670    51.5837    True      True -11.168152
+   COFORGE  21 10.355574  51.633756    51.6338    True      True  10.619826
+JINDALSTEL   7  4.492305  51.696278    51.6963    True      True  -5.136825
+PERSISTENT   7  7.856437  51.713849    51.7138    True      True  16.030267
+  TVSMOTOR  12  4.900032  51.778504    51.7785    True      True  12.089953
+     TRENT  13 10.145514  51.798542    51.7985    True      True  11.200455
+   ETERNAL  17 10.461069  51.830631    51.8306    True      True   8.773921
+GMRAIRPORT  20  4.089166  51.840143    51.8401    True      True   7.134328
+    INDIGO   2  9.910944  51.884253    51.8843    True      True  -8.713761
+ICICIPRULI   0  6.168534  51.892516    51.8925    True      True   8.925683
+TATACONSUM  15  4.881048  51.985163    51.9852    True      True  -0.252383
+RSI14 at reaction close vs features.rx_rsi14 (diagnostic): max abs diff 5.00e-05; >1e-3: 0
+signal W & RSI>50 vs trades.W_RSI_HI: 0 mismatches
+raw_H20 (stock 20-session return): max abs diff 5.00e-05; >0.01 pts: 0 (trades.csv is rounded to 4 dp)
+nifty_H20: max abs diff 4.99e-05; >0.01 pts: 0
+vsN_net: max abs diff 9.87e-05; >0.01 pts: 0
+outcome raw_H20 > 0.01 pts: 0 mismatches
+outcome nifty_H20 > 0.01 pts: 0 mismatches
+per-quarter vs tafa per_quarter.csv (W_RSI_HI H20): n mismatches 0 | max |vsN_net diff| 0.00e+00 | max |raw_net diff| 0.00e+00 | max |plain winners diff| 0.00e+00
+tafa trades.csv W_RSI_HI==1: n=232, mean vsN_net = +2.4182 ; rebuild n=232, mean +2.4182
