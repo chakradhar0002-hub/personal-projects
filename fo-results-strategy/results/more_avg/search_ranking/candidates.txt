@@ -1,0 +1,89 @@
+FAMILY "ranking model" - candidate list, written BEFORE any outcome was computed (2026-10-09)
+=====================================================================================================
+
+Population ("winners"): in_fo results (tafa/C_post_results/features.csv, 3,280 rows) with XN > 4, any RSI.
+  k = i_react (reaction session). Entry = close of k. Exit = close of k+20. Hedge = short Nifty 50, same value.
+  Outcome (per trade) vsN_net = raw_H20 - nifty_H20 - 0.19  (tafa/C_post_results/trades.csv, percent;
+  = (stock compounded k+1..k+20 - Nifty close(k+20)/close(k) + 1 - 1)*100 - 0.19). Same as the baseline.
+  Outcomes are read ONLY for qn <= 13 (rows with qn >= 14 are dropped right after loading trades.csv).
+
+WALK-FORWARD SCHEME (all model candidates)
+  For each scored quarter q = 4..13: training set = winners with qn < q (expanding window, qn 0..q-1).
+  Assertion: every training trade's exit session (i_react + 20) is < the first reaction session of quarter q,
+  so all training outcomes were known before the first scored entry. Model is re-fit for every q.
+  Discovery outcome = trades selected in quarters 4..13 only.
+
+FEATURES (14, all known at the close of k; none uses anything after close k)
+  F1  cut_rsi14            Wilder RSI(14) at the cutoff close (i_cut, 2 sessions before the result session)
+  F2  rx_rsi14             Wilder RSI(14) at the reaction close k
+  F3  XN                   stock return day k minus Nifty 50 return day k, percent
+  F4  lvol                 ln(rx_vol_ratio_50) = ln(volume k / mean volume k-50..k-1)
+  F5  rx_gap_pct           open k / close k-1 - 1, percent
+  F6  rx_don20_break_up    1 if close k > prior-20-session high
+  F7  BREAKOUT_VOL         features.csv flag: (don20 break up OR gap>2% held above prev close) AND vol ratio >= 1.5
+  F8  pre21_rel            stock return close(k-22)->close(k-1) minus Nifty 50 same window, percent
+                           (returns.csv compounded with blank days = 0; index_close.csv Nifty 50)
+  F9  rx_close_vs_sma50_pct   close k / SMA50 - 1, percent
+  F10 rx_close_vs_sma200_pct  close k / SMA200 - 1, percent
+  F11 sec21_rel            events.sector_index close(k)/close(k-21) - 1 minus Nifty 50 same, percent
+  F12 rq_pat_yoy_pct       reported quarter PAT YoY growth, percent (fa_panel, public by close k)
+  F13 rq_sales_yoy_pct     reported quarter sales YoY growth, percent
+  F14 log_mcap             fa_panel log_mcap (cutoff price x shares)
+
+PREPROCESSING (fit on the training set of each q only)
+  Each feature clipped to the training 1st..99th percentile. Linear models: NaN -> training median, then
+  z-score with training mean / sd. GBM: clipped raw features, NaN left as NaN (handled natively).
+  Regression target: vsN_net clipped to the training 5th..95th percentile.
+
+MODELS
+  RIDGE : sklearn Ridge(alpha=50, fit_intercept=True) on z-scored F1..F14, target = clipped vsN_net.
+  LOGIT : sklearn LogisticRegression(penalty='l2', C=0.05, solver='lbfgs', max_iter=2000) on z-scored
+          F1..F14, target = 1 if vsN_net > 0 else 0. Score = predicted probability.
+  GBM   : sklearn HistGradientBoostingRegressor(loss='squared_error', learning_rate=0.03, max_iter=150,
+          max_depth=2, min_samples_leaf=15, l2_regularization=1.0, early_stopping=False, random_state=0)
+          on clipped F1..F14, target = clipped vsN_net.
+  HAND  : no fitting. score = ECDF_train(cut_rsi14) + ECDF_train(XN), where ECDF_train(x) = share of the
+          training winners (qn < q) with value <= x (rank-sum of RSI and XN against the trailing pool).
+
+SELECTION (implementable: threshold fixed from the training set before quarter q starts)
+  Score every training winner with the model just fitted (in-sample) -> training score distribution.
+  T25 : trade a quarter-q winner if score >= training-score quantile 0.75             ("top 25%")
+  T5  : f = min(1, 5 * (#training quarters) / (#training winners)); trade if score >= quantile(1 - f)
+                                                                                         ("~top 5 per quarter")
+  T3  : same with 3 instead of 5                                                         ("~top 3 per quarter")
+  (Note: a literal "top N of the quarter's winners" needs the whole season's winners, i.e. features of later
+   results in the same season, which are not known at entry. Those literal versions are diagnostics only.)
+
+CANDIDATES (eligible for finalist)
+  C01 RIDGE_T25    C02 RIDGE_T5    C03 RIDGE_T3
+  C04 LOGIT_T25    C05 LOGIT_T5    C06 LOGIT_T3
+  C07 GBM_T25      C08 GBM_T5      C09 GBM_T3
+  C10 HAND_T25     C11 HAND_T5     C12 HAND_T3
+
+DIAGNOSTICS (counted as tried, NOT eligible: literal within-season ranking uses same-season future features)
+  D13 RIDGE_RANKQ25 : in each quarter q, trade the top ceil(0.25 * n_q) quarter-q winners by RIDGE score
+  D14 HAND_RANKQ25  : same with the HAND score (ECDF vs training pool)
+
+REFERENCES (not candidates)
+  R_BASE_0_13 : baseline (XN > 4 and cut_rsi14 > 50) qn 0..13  (known: 122 trades, +2.65%)
+  R_BASE_4_13 : baseline qn 4..13
+  R_WIN_4_13  : all winners qn 4..13
+
+FINALIST RULE (stated before looking)
+  Eligible = C01..C12 with discovery (qn 4..13) trades >= 35 and >= 7 discovery quarters with trades.
+  Rank by discovery average WITHOUT its best 5 trades (wo5 = mean after dropping the 5 highest vsN_net).
+  Bar = max(baseline wo5 on qn 0..13, baseline wo5 on qn 4..13) + 0.5 points (stricter of the two baselines).
+  Finalists = at most 2 highest-ranked eligible candidates with wo5 >= bar. None qualifying is a valid answer.
+
+Total counted: 14 (12 candidates + 2 diagnostics).
+
+ADDED AFTER the discovery run (robustness diagnostics of the one qualifier C11 HAND_T5; discovery qn 4..13 only;
+NOT eligible as finalists, but counted as tried):
+  A15..A21 HAND_F{20,30,35,40,45,50,60}: HAND score, fixed fraction f in {0.20,0.30,0.35,0.40,0.45,0.50,0.60}
+           (trade if score >= training-score quantile 1-f) - checks whether the C11 result is a smooth function
+           of the cut or a lucky threshold. (C10 = f 0.25; C11 f ran 0.37..0.43.)
+  A22 RANDOM: 20,000 random draws of the same number of winners per quarter as C11 (qn 4..13) -> share of
+           draws with avg / wo5 >= C11's (luck check, not a strategy).
+  A23 C11 split: trades also in the baseline (cut_rsi14 > 50) vs not; baseline trades that C11 drops;
+           per-year shares; leave-one-quarter-out range; unhedged raw_net avg.
+Total counted after this addendum: 14 + 9 = 23.

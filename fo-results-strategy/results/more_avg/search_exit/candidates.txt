@@ -1,0 +1,112 @@
+FAMILY: entry and exit design for "winners with cutoff RSI > 50"
+Written 2026-10-09 BEFORE any outcome (forward return) was computed in this folder.
+Only feature/index checks were run before this file (sample counts per quarter, OHLCV vs returns.csv consistency).
+
+=====================================================================================================
+COMMON DEFINITIONS
+=====================================================================================================
+Universe / signal set S: rows of tafa/C_post_results/features.csv (one per in_fo result, 3,280) with
+  XN > 4 AND cut_rsi14 > 50 (Wilder RSI14 at the cutoff close i_cut). 232 rows in all; 122 in discovery.
+  k = i_react (reaction session index in sector_lab/data/sessions.csv).
+DISCOVERY = qn 0..13 only. HOLDOUT qn 14..21 sealed: no forward return is computed for qn >= 14 in this
+  folder (the code filters qn <= 13 before any price path is touched).
+
+Price series (identical to the baseline study):
+  PX_t  = cumprod(1 + returns.csv daily return), blank return = 0  (adjusted close path)
+  N_t   = Nifty 50 close (index_close.csv)
+  L_t   = PX_t * (adj low_t / adj close_t)   from ta/build/adjusted_ohlcv.csv.gz (same-day ratio)
+  I_t   = intraday.csv value on day t = adj close_t / adj open_t - 1  ->  open_t = PX_t / (1 + I_t)
+
+ENTRY variants
+  E_close : buy at close of k. entry price PX_k, hedge reference N_k, e = k.
+  E_open  : buy at open of k+1. entry price PX_{k+1}/(1+I_{k+1}). Hedge: Nifty 50 short referenced to
+            close k (no Nifty open exists in the data; stated approximation - hedge includes Nifty's
+            k -> k+1 overnight gap). e = k for counting/holding (exit close k+H; open k+1 .. close k+H
+            = H sessions).
+  E_pull  : pullback entry: e = first session t in k+1..k+5 whose stock daily return (returns.csv) < 0
+            (blank = not down). Buy at close of e (entry PX_e), hedge reference N_e. If no such day:
+            no trade (skipped). Known at entry: yes (down close of the entry day itself).
+
+EXIT rules - evaluated at closes t = e+1 .. e+Hcap; exit at the close of the FIRST t meeting the condition,
+  otherwise at close e+Hcap. (Exit at the signal close is the same close-execution idealisation the baseline
+  uses for entry; a pre-declared robustness check moves condition exits to close t+1.)
+  FIX(H)    : no condition, exit close e+H (Hcap = H).
+  DON10     : PX_t < min(L_{t-10} .. L_{t-1})            (close below the prior 10-session low)
+  SMA20     : PX_t < mean(PX_{t-19} .. PX_t)              (close below its 20-session average)
+  PEAK10    : PX_t <= 0.90 * max(PX_e .. PX_t)            (10% off the highest close since entry)
+  SLx       : PX_t / entry_price - 1 <= -x               (close-based stop, stock only)
+  TPy       : PX_t / entry_price - 1 >= +y               (close-based target, stock only)
+  "M20+rule": the rule is only checked for t >= e+20 (minimum 20-session hold), cap 60.
+
+RETURNS (percent)
+  stock = PX_exit / entry_price - 1 ; nifty = N_exit / N_ref - 1
+  vsN_net = (stock - nifty) * 100 - 0.19      (0.17 stock round trip + 0.02 hedge, same as baseline)
+  raw_net = stock * 100 - 0.17                (unhedged)
+  sessions held = exit index - e   (E_open: exit index - k)
+  per-session efficiency = sum(vsN_net) / sum(sessions held)  (also shown x20 = "per 20 sessions")
+
+TRADABILITY (same logic as baseline fwd()): W = max(21, Hcap + 1). Keep trade iff e + W <= 2696
+  (2026-09-30, last session) and at most 2 blank daily returns in e+1 .. e+W. For E_open, e = k.
+  Trades failing the data-end test are dropped; their count in the holdout is stated from indices only
+  (E_pull: reported as a range using e = k+1 .. k+5, since computing e needs post-k returns).
+
+=====================================================================================================
+REFERENCE (not a candidate): R0 = E_close FIX(20)  == baseline (should reproduce 122 trades +2.65%).
+=====================================================================================================
+
+CANDIDATES (27)
+  Fixed holds (E_close)
+   C01  E_close FIX(30)
+   C02  E_close FIX(40)
+   C03  E_close FIX(60)
+  Trailing exits from day 1 (E_close, cap 60)
+   C04  E_close DON10 cap60
+   C05  E_close SMA20 cap60
+   C06  E_close PEAK10 cap60
+  Trailing exits after a minimum 20-session hold (E_close, cap 60)
+   C07  E_close M20+DON10 cap60
+   C08  E_close M20+SMA20 cap60
+   C09  E_close M20+PEAK10 cap60   (peak measured since entry)
+  Stop-loss (E_close)
+   C10  E_close SL8  cap20
+   C11  E_close SL10 cap20
+   C12  E_close SL8  cap60
+   C13  E_close SL10 cap60
+   C14  E_close SL10 cap40
+  Take-profit (E_close)
+   C15  E_close TP10 cap20
+   C16  E_close TP15 cap20
+   C17  E_close TP10 cap60
+   C18  E_close TP15 cap60
+  Bracket (E_close)
+   C19  E_close SL8 + TP15 cap60 (first to trigger)
+  Entry variants
+   C20  E_open FIX(20)
+   C21  E_open FIX(40)
+   C22  E_open FIX(60)
+   C23  E_pull FIX(20)
+   C24  E_pull FIX(40)
+   C25  E_pull FIX(60)
+   C26  E_pull SMA20 cap60
+   C27  E_pull M20+SMA20 cap60
+
+=====================================================================================================
+FINALIST RULE (stated before looking)
+=====================================================================================================
+  Eligible: discovery trades >= 35 AND >= 7 discovery quarters with trades.
+  Rank by discovery average vsN_net WITHOUT its best 5 trades (drop the 5 highest vsN_net).
+  A finalist must beat R0's discovery average without best 5 by >= 0.50 points.
+  At most 2 finalists (top 2 by that rank). If none qualifies -> no finalist.
+  Pre-declared robustness checks for finalists (discovery only, not used for selection):
+   (a) condition exits executed at close t+1 instead of close t; (b) per-quarter table and quarters +;
+   (c) discovery without calendar 2023 reaction days; (d) median and win rate; (e) per-session efficiency
+   vs R0.
+
+=====================================================================================================
+ADDED AFTER the first discovery run (finalists C03, C25 already fixed by the rule above). They count as
+candidates (total now 29) but are DIAGNOSTICS ONLY - not eligible to become finalists. Purpose: check whether
+the hold-60 result is a smooth plateau or a spike at exactly 60 sessions.
+   C28  E_close FIX(50)     (ADDED AFTER)
+   C29  E_close FIX(55)     (ADDED AFTER)
+Also added after (no new candidate, discovery only): paired per-quarter difference C03 - R0 and C25 - R0
+(mean of 14 quarter means, t-stat across quarters) and a quarter-block bootstrap of the w/o-best-5 gap.

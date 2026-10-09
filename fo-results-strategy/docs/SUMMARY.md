@@ -107,6 +107,7 @@ sit.
 | Technical analysis (RSI, Stochastic, Bollinger, CCI, MFI, MACD, moving averages, ADX, candles, OBV; 44 signals) | No signal holds up; none improves or replaces the lag rule ([TECHNICAL_ANALYSIS.md](TECHNICAL_ANALYSIS.md)) |
 | Fundamental analysis (value, quality, growth, GARP, Piotroski, margins, turnarounds; before or after results) | No screen works; none improves or replaces the lag rule; reported numbers give no drift ([FUNDAMENTAL_ANALYSIS.md](FUNDAMENTAL_ANALYSIS.md)) |
 | Technical and fundamental analysis together (40 combined screens, 12 filters on the lag rule, a model on both, 117 post-results tests) | Nothing survives; the model ranks results like a coin flip; none improves the lag rule or the winner drift ([TA_FA_COMBINED.md](TA_FA_COMBINED.md)) |
+| A higher average for the winners trade (136 versions: stricter entry, exits, market backdrop, ranking models, options) | Only holding 60 sessions instead of 20 kept a higher average on unseen quarters (+5.10% vs +1.85% a trade), but it earns the same per day; options lost money ([HIGHER_AVERAGE.md](HIGHER_AVERAGE.md)) |
 | Shorting (mild laggards, results losers, model "fall" picks) | Nothing worked |
 | Selling the straddle across the numbers | Lost about 3.3% of the premium a trade after costs |
 
@@ -127,6 +128,7 @@ quarters (+1.45%) than over the first 15 tested (+2.3%).
 - [LAG5_PATTERNS.md](LAG5_PATTERNS.md), [LAGGED_NIFTY_1M.md](LAGGED_NIFTY_1M.md): how the lag pattern was found
 - [TARGET_2PCT.md](TARGET_2PCT.md), [TARGET_5PCT.md](TARGET_5PCT.md), [TARGET_100PCT.md](TARGET_100PCT.md): the target searches
 - [WINNERS_RSI50.md](WINNERS_RSI50.md): results winners with RSI above 50, quarter by quarter, with independent checks
+- [HIGHER_AVERAGE.md](HIGHER_AVERAGE.md): attempts to raise that trade's average, tested on unseen quarters
 - [TECHNICAL_ANALYSIS.md](TECHNICAL_ANALYSIS.md), [FUNDAMENTAL_ANALYSIS.md](FUNDAMENTAL_ANALYSIS.md), [TA_FA_COMBINED.md](TA_FA_COMBINED.md): TA, FA and both together
 - [SECTOR_STRATEGIES.md](SECTOR_STRATEGIES.md), [PATTERNS.md](PATTERNS.md), [REAL_DATA_RESULTS.md](REAL_DATA_RESULTS.md): sector ideas, winner drift, option trades
 - [reports/results_report_last_22_quarters.html](../reports/results_report_last_22_quarters.html): the full results report

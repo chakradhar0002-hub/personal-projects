@@ -1,0 +1,25 @@
+spot check: 30 random option trades re-read from bhav rows, mismatches > 0.05 pts: 0
+ATM  DISC: option  n 118 avg  +49.54 med  -10.62 sd 188.03 mean/sd +0.263 worst  -103.1 lose>10%  51% lose>50%  38% lose>=90%  25% up 45%
+          stock unhedged same signals n 118 avg   +4.31 med   +3.21 sd  10.35 mean/sd +0.417 worst   -24.0 lose>10%   7% lose>50%   0% lose>=90%   0% up 69%
+          stock vs Nifty same signals n 118 avg   +2.89 med   +3.10 sd   9.16 mean/sd +0.315 worst   -19.5 lose>10%   6% lose>50%   0% lose>=90%   0% up 65%
+          sd ratio option/stock 18.2x -> stock levered to the same sd: avg +78.41 (option +49.54); option beta to stock move 15.7
+ATM  HOLD: option  n 110 avg  -10.34 med  -47.42 sd 103.66 mean/sd -0.100 worst  -102.9 lose>10%  65% lose>50%  49% lose>=90%  28% up 34%
+          stock unhedged same signals n 110 avg   +1.37 med   +1.28 sd   7.32 mean/sd +0.187 worst   -14.1 lose>10%   6% lose>50%   0% lose>=90%   0% up 60%
+          stock vs Nifty same signals n 110 avg   +2.16 med   +1.75 sd   7.00 mean/sd +0.308 worst   -13.4 lose>10%   4% lose>50%   0% lose>=90%   0% up 60%
+          sd ratio option/stock 14.2x -> stock levered to the same sd: avg +19.39 (option -10.34); option beta to stock move 11.1
+ATM  FULL: option  n 228 avg  +20.65 med  -29.71 sd 155.82 mean/sd +0.133 worst  -103.1 lose>10%  57% lose>50%  43% lose>=90%  26% up 39%
+          stock unhedged same signals n 228 avg   +2.89 med   +2.42 sd   9.11 mean/sd +0.317 worst   -24.0 lose>10%   7% lose>50%   0% lose>=90%   0% up 65%
+          stock vs Nifty same signals n 228 avg   +2.54 med   +2.28 sd   8.18 mean/sd +0.310 worst   -19.5 lose>10%   5% lose>50%   0% lose>=90%   0% up 63%
+          sd ratio option/stock 17.1x -> stock levered to the same sd: avg +49.46 (option +20.65); option beta to stock move 14.4
+OTM5 DISC: option  n 115 avg  +70.45 med  -56.78 sd 317.88 mean/sd +0.222 worst  -110.0 lose>10%  63% lose>50%  53% lose>=90%  39% up 37%
+          stock unhedged same signals n 115 avg   +4.37 med   +3.15 sd  10.35 mean/sd +0.423 worst   -24.0 lose>10%   6% lose>50%   0% lose>=90%   0% up 69%
+          stock vs Nifty same signals n 115 avg   +2.89 med   +3.01 sd   9.14 mean/sd +0.316 worst   -19.5 lose>10%   5% lose>50%   0% lose>=90%   0% up 64%
+          sd ratio option/stock 30.7x -> stock levered to the same sd: avg +134.37 (option +70.45); option beta to stock move 23.9
+OTM5 HOLD: option  n 108 avg  -26.83 med  -84.08 sd 128.53 mean/sd -0.209 worst  -112.8 lose>10%  75% lose>50%  69% lose>=90%  44% up 24%
+          stock unhedged same signals n 108 avg   +1.48 med   +1.38 sd   7.34 mean/sd +0.201 worst   -14.1 lose>10%   6% lose>50%   0% lose>=90%   0% up 61%
+          stock vs Nifty same signals n 108 avg   +2.28 med   +1.96 sd   7.01 mean/sd +0.325 worst   -13.4 lose>10%   4% lose>50%   0% lose>=90%   0% up 61%
+          sd ratio option/stock 17.5x -> stock levered to the same sd: avg +25.89 (option -26.83); option beta to stock move 11.8
+OTM5 FULL: option  n 223 avg  +23.33 med  -75.75 sd 249.45 mean/sd +0.094 worst  -112.8 lose>10%  69% lose>50%  61% lose>=90%  42% up 30%
+          stock unhedged same signals n 223 avg   +2.97 med   +2.43 sd   9.11 mean/sd +0.326 worst   -24.0 lose>10%   6% lose>50%   0% lose>=90%   0% up 65%
+          stock vs Nifty same signals n 223 avg   +2.60 med   +2.28 sd   8.16 mean/sd +0.318 worst   -19.5 lose>10%   4% lose>50%   0% lose>=90%   0% up 63%
+          sd ratio option/stock 27.4x -> stock levered to the same sd: avg +81.34 (option +23.33); option beta to stock move 20.4

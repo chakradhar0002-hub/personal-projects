@@ -1,0 +1,48 @@
+INDEPENDENT HOLDOUT EVALUATION PLAN (written 2026-10-09, before any holdout outcome was computed by this evaluator)
+=====================================================================================================================
+Folder: scratchpad/more_avg/holdout. All code here is my own; no search-agent script is imported or run.
+
+FINALISTS (8), re-implemented from their stated definitions:
+  F1 SIG_C05_XN5        XN > 5 & cut_rsi14 > 50, buy close k, hold 20, Nifty hedge (signal family)
+  F2 SIG_C27_BRK20_VOL  XN > 4 & cut_rsi14 > 50 & close(k) > max high of prior 20 traded sessions & vol(k)/mean vol prior 50 >= 1.5
+  F3 EXIT_C03_H60       baseline signal, buy close k, exit close k+60 (tradable: k+61 <= last session, <= 2 blanks k+1..k+61)
+  F4 EXIT_C25_PB_H60    baseline signal, entry close e = first session in k+1..k+5 with stock return < 0, exit close e+60
+  F5 CTX_C10_VIXLOW     baseline signal & India VIX close(k) <= 13.346667, H20
+  F6 RANK_C11_HAND_T5   walk-forward rank-sum (ECDF of cut_rsi14 + ECDF of XN vs pool of all winners with qn < q),
+                        f = min(1, 5q/|POOL|), threshold = np.quantile(pool scores, 1-f), trade score >= threshold, q >= 4, H20
+  F7 OPT_C10_ATM        baseline signal, buy ATM stock call (expiry: nearest with expiry session >= k+15; liquidity fallback
+                        within 2.5%), exit min(k+20, expiry session); net % on premium = (X/P-1)*100 - 1.0 - 0.05*S/P
+  F8 OPT_C11_OTM5       same as F7 with strike nearest 1.05*S
+  Total candidates tried across families: 38 + 29 + 35 + 23 + 11 = 136 (plus the baseline itself was best of 117).
+
+BASELINE: XN > 4 & cut_rsi14 > 50, buy close k, exit close k+20, short Nifty; vsN_net = (stock - nifty)*100 - 0.19.
+PLAIN WINNERS: XN > 4, same trade.
+Samples: discovery qn 0-13, holdout qn 14-21, full = all 22 (in-sample, labelled as such).
+
+FOR EACH FINALIST
+  1. Discovery n / avg from my code; flag mismatch > 0.05 points or > 1 trade vs the search agent's figure.
+  2. Holdout: n, avg, median, avg without best 5, quarters positive / quarters with trades, unhedged raw_net avg.
+  3. Comparators in the holdout:
+       (a) baseline restricted to the holdout quarters in which the finalist has trades (PRIMARY comparator for the
+           ">= 0.5 points" rule); for exit finalists (F3, F4) the baseline on the SAME signals (paired);
+           for option finalists (F7, F8) the baseline on the same signals (units differ: % on premium vs % of notional).
+       (b) baseline over all holdout quarters 14-21, and plain winners over 14-21 (reported, secondary).
+     One-sided p that the finalist beats the baseline:
+       - F1, F2, F5, F6: random picks, same number of trades per holdout quarter, drawn without replacement from that
+         quarter's tradable baseline trades; 20,000 draws; p = share of draws with mean >= finalist holdout mean
+         (if a quarter has more finalist trades than baseline trades, all baseline trades of that quarter are taken).
+         F6 also shown with the plain-winners pool (secondary, not in Holm).
+       - F3, F4, F7, F8: paired per-trade differences d = finalist - baseline H20 vsN_net on the same signal; one-sided
+         sign-flip permutation p (20,000 flips) for mean d > 0. Quarter-clustered sign flip shown as secondary.
+     Holm step-down adjustment across all 8 finalists' primary p values.
+  4. Realistic version in the holdout: entry at the open of the next session (k+1; for F4 the session after e), exit at
+     the same close as the finalist; stock round trip 0.40, hedge 0.02 (vsN_real = (stock - nifty)*100 - 0.42).
+     Stock open from ta/build/adjusted_ohlcv (open->close ratio of k+1 chained to returns.csv); Nifty 50 open of that
+     session from NSE ind_close_all files (fetched). For options (F7, F8): entry at the k+1 OPEN of the same contract,
+     costs doubled (2.0% of premium + 0.10% of notional); no trade if that contract has no open/volume on k+1.
+  5. Full-sample (22 quarters) n and avg, labelled in-sample.
+SURVIVOR: holdout avg beats comparator (a) by >= 0.5 points per trade AND Holm-adjusted p < 0.10 AND holdout n >= 20 AND
+  holdout avg without best 5 > comparator (a) avg without best 5. (Comparator (b) is reported; if (a) and (b) disagree
+  this is stated.) For option finalists the comparison is across units and is flagged as not like-for-like.
+22-QUARTER TABLE: survivors, or if none survive the 2 finalists with the lowest Holm-adjusted p (ties: larger holdout
+  margin over comparator (a)), next to the baseline; all finalists also written to per_quarter_all.csv.

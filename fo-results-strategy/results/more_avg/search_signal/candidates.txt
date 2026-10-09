@@ -1,0 +1,81 @@
+FAMILY: "signal strength" - stricter or extra ENTRY filters on the post-results winners.
+Written BEFORE any outcome (forward return) was computed. Code: candidates.py (CANDS list), features: build_features.py.
+
+COMMON TRADE (identical for every candidate and the baseline)
+  Universe: in_fo results (tafa/C_post_results/features.csv rows, 3,280). Reaction day k = i_react.
+  Entry: buy at the close of k. Exit: close of k+20. Hedge: short Nifty 50 for the same value at close k, cover close k+20.
+  vsN_net = raw_H20 - nifty_H20 - 0.19   (raw_H20 = compounded stock adjusted return k+1..k+20 in %,
+            nifty_H20 = (Nifty close(k+20)/close(k) - 1)*100; costs 0.17 stock + 0.02 hedge).
+  raw_net = raw_H20 - 0.17 (unhedged, reported as a side figure only).
+  Outcomes taken from tafa/C_post_results/trades.csv, rows with qn <= 13 ONLY (the evaluation script drops qn >= 14
+  immediately after reading the file, before any arithmetic).
+
+FEATURES (all known at the close of k or earlier). Missing value -> filter fails.
+  XN            stock adjusted return on day k minus Nifty 50 return on day k, %        (features.csv)
+  cut RSI14     Wilder RSI(14) at the cutoff close i_cut (2 sessions before result)     (features.csv cut_rsi14)
+  vol           rx_vol_ratio_50 = volume(k) / mean volume of the prior 50 traded sessions (features.csv)
+  CLV           (close(k) - low(k)) / (high(k) - low(k)), adjusted OHLC (ta/build/adjusted_ohlcv.csv.gz);
+                NaN when high == low.  CLV75 = CLV >= 0.75 ("close in top 25% of the day's range")
+  GAPHOLD       rx_gap_pct > 2 (open(k)/close(k-1)-1 > 2%) AND rx_low_vs_prevclose_pct > 0 (low(k) > close(k-1))
+  BRK20         rx_don20_break_up == 1: close(k) > highest high of the prior 20 traded sessions
+  BRK52         close(k) > highest high of the prior 250 traded sessions (k-250..k-1); needs 250 prior sessions
+  LAGx          lag_pct (events_ta, at the cutoff) = 21-session stock return minus 21-session Nifty 50 return, % > x
+  SECREL0       stock 21-session return to the cutoff (i_cut-21 -> i_cut, from returns.csv) minus the same-window
+                return of its events.csv sector_index (index_close.csv), % > 0
+  GOOD          features.csv GOOD: (rq PAT YoY > 25% AND rq sales YoY > 15%) OR (margin change YoY > +2pp;
+                EBITDA margin for companies, net margin for financials) - reported quarter, public by day k
+  STRONG        rq_pat_yoy_pct > 25 AND rq_sales_yoy_pct > 15
+  PAT50         rq_pat_yoy_pct > 50
+  LARGE / SMALL events.csv mcap (crore, at the cutoff) >= 100,000 / < 50,000
+
+REFERENCE (not a candidate): BASE = XN > 4 & cut RSI14 > 50  (the baseline trade; expect 122 discovery trades).
+
+CANDIDATES (38). "base" = XN>4 & cut RSI14>50.
+ Singles - stricter baseline thresholds
+  C01_RSI55          XN>4 & cut RSI14>55
+  C02_RSI60          XN>4 & cut RSI14>60
+  C03_RSI65          XN>4 & cut RSI14>65
+  C04_RSI70          XN>4 & cut RSI14>70
+  C05_XN5            XN>5 & cut RSI14>50
+  C06_XN6            XN>6 & cut RSI14>50
+  C07_XN8            XN>8 & cut RSI14>50
+ Singles - one extra filter on base
+  C08_VOL1.5         base & vol >= 1.5
+  C09_VOL2           base & vol >= 2
+  C10_VOL3           base & vol >= 3
+  C11_CLV75          base & CLV >= 0.75
+  C12_GAPHOLD        base & GAPHOLD
+  C13_BRK20          base & BRK20
+  C14_BRK52          base & BRK52
+  C15_LAG0           base & lag_pct > 0
+  C16_LAG10          base & lag_pct > 10
+  C17_SECREL0        base & SECREL0
+  C18_GOOD           base & GOOD
+  C19_STRONG         base & STRONG
+  C20_PAT50          base & PAT50
+  C21_LARGE          base & mcap >= 100,000 cr
+  C22_SMALL          base & mcap < 50,000 cr
+ 2-way combinations
+  C23_RSI60_XN6      XN>6 & cut RSI14>60
+  C24_RSI60_VOL2     XN>4 & cut RSI14>60 & vol >= 2
+  C25_XN6_VOL2       XN>6 & cut RSI14>50 & vol >= 2
+  C26_VOL2_CLV75     base & vol >= 2 & CLV >= 0.75
+  C27_BRK20_VOL1.5   base & BRK20 & vol >= 1.5
+  C28_BRK52_VOL1.5   base & BRK52 & vol >= 1.5
+  C29_GOOD_VOL1.5    base & GOOD & vol >= 1.5
+  C30_GOOD_XN6       XN>6 & cut RSI14>50 & GOOD
+  C31_RSI60_GOOD     XN>4 & cut RSI14>60 & GOOD
+  C32_XN6_CLV75      XN>6 & cut RSI14>50 & CLV >= 0.75
+  C33_LAG0_VOL2      base & lag_pct > 0 & vol >= 2
+  C34_RSI60_CLV75    XN>4 & cut RSI14>60 & CLV >= 0.75
+  C35_RSI60_BRK52    XN>4 & cut RSI14>60 & BRK52
+  C36_GOOD_CLV75     base & GOOD & CLV >= 0.75
+  C37_SECREL0_VOL2   base & SECREL0 & vol >= 2
+  C38_LARGE_VOL2     base & mcap >= 100,000 cr & vol >= 2
+
+FINALIST RULE (stated before looking at any outcome)
+  Eligible: discovery (qn 0..13) trades >= 35 AND >= 7 discovery quarters with at least one trade.
+  Rank eligible candidates by discovery average vsN_net WITHOUT its best 5 trades (drop the 5 highest vsN_net values,
+  average the rest).  A finalist must beat BASE's discovery average-without-best-5 by >= 0.5 points.
+  Pick at most 2 (top 2 by that rank among those clearing the bar). If none qualifies -> no finalist.
+  Holdout qn 14..21 stays sealed: no outcome for any qn >= 14 is computed here.

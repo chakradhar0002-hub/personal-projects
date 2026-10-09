@@ -1,0 +1,89 @@
+=== 0. Rebuild check (own code from returns.csv / index_close.csv; features.csv XN & cut_rsi14) ===
+disc: BASE H20 n 122 avg +2.65 med +2.71 wo5 +1.53 wo10 +0.82 wins5-95 +2.43 wins1-99 +2.67 up 63% | F3 H60 n 122 avg +4.64 med +1.47 wo5 +2.70 wo10 +1.39 wins5-95 +4.07 wins1-99 +4.58 up 54% | F4 PB60 n 119 avg +4.25
+hold: BASE H20 n 110 avg +2.16 med +1.75 wo5 +1.36 wo10 +0.78 wins5-95 +2.08 wins1-99 +2.14 up 60% | F3 H60 n  93 avg +5.10 med +4.75 wo5 +3.11 wo10 +1.92 wins5-95 +4.56 wins1-99 +4.98 up 62% | F4 PB60 n 92 avg +4.43
+full: BASE H20 n 232 avg +2.42 med +2.21 wo5 +1.83 wo10 +1.42 wins5-95 +2.20 wins1-99 +2.46 up 62% | F3 H60 n 215 avg +4.84 med +3.34 wo5 +3.69 wo10 +2.83 wins5-95 +4.31 wins1-99 +4.80 up 58% | F4 PB60 n 211 avg +4.33
+(holdout evaluator: BASE hold 110 +2.16; F3 hold 93 +5.10 wo5 +3.11; F4 hold 92 +4.43; disc F3 122 +4.64)
+
+=== 1. Concentration in the HOLDOUT ===
+F3 H60: n  93 avg +5.10 med +4.75 wo5 +3.11 wo10 +1.92 wins5-95 +4.56 wins1-99 +4.98 up 62%
+   baseline H20 same signals: n  93 avg +1.85 med +2.09 wo5 +0.95 wo10 +0.32 wins5-95 +1.70 wins1-99 +1.84 up 59%
+   paired diff (finalist - base): n  93 avg +3.25 med +1.69 wo5 +1.53 wo10 +0.38 wins5-95 +2.88 wins1-99 +3.22 up 58%
+   top 10: POWERINDIA q19 +58.1, NATIONALUM q18 +44.7, DELHIVERY q16 +34.5, OFSS q20 +32.1, BSE q19 +32.0, ABCAPITAL q16 +27.1, CUMMINSIND q16 +23.2, BANKINDIA q18 +21.6, ADANIENSOL q20 +21.5, PAYTM q16 +20.3
+   share of total from best 5: 42%, best 10: 66%
+   leave-one-quarter-out (avg | paired diff):
+     drop qn 14: n  90 avg +5.07 | diff +3.25  (quarter n 3)
+     drop qn 15: n  87 avg +5.22 | diff +3.48  (quarter n 6)
+     drop qn 16: n  74 avg +4.77 | diff +3.34  (quarter n 19)
+     drop qn 17: n  88 avg +5.05 | diff +3.38  (quarter n 5)
+     drop qn 18: n  71 avg +5.21 | diff +2.91  (quarter n 22)
+     drop qn 19: n  78 avg +3.95 | diff +2.31  (quarter n 15)
+     drop qn 20: n  70 avg +6.60 | diff +4.09  (quarter n 23)
+   quarter means: 14:+6.18, 15:+3.38, 16:+6.42, 17:+6.05, 18:+4.75, 19:+11.10, 20:+0.55
+   equal-weight quarters avg +5.49; quarter-mean of paired diff +2.87, t 2.72, quarters with diff>0 6/7
+   drop finalist best 5 signals: finalist +3.11 vs base same +1.56  diff +1.54
+   drop finalist best 10 signals: finalist +1.92 vs base same +1.27  diff +0.66
+   paired diff without its own best 5 / 10: +1.53 / +0.38; median +1.69
+F4 PB60: n  92 avg +4.43 med +2.03 wo5 +2.50 wo10 +1.17 wins5-95 +4.06 wins1-99 +4.33 up 60%
+   baseline H20 same signals: n  92 avg +1.77 med +1.96 wo5 +0.85 wo10 +0.20 wins5-95 +1.61 wins1-99 +1.75 up 59%
+   paired diff (finalist - base): n  92 avg +2.67 med +0.80 wo5 +1.00 wo10 -0.22 wins5-95 +2.49 wins1-99 +2.72 up 53%
+   top 10: POWERINDIA q19 +50.9, NATIONALUM q18 +40.1, BSE q19 +35.5, DELHIVERY q16 +33.2, ABCAPITAL q16 +30.8, PAYTM q16 +28.2, COFORGE q14 +23.8, FEDERALBNK q18 +23.7, RBLBANK q16 +23.6, ABB q19 +21.8
+   share of total from best 5: 47%, best 10: 76%
+   leave-one-quarter-out (avg | paired diff):
+     drop qn 14: n  89 avg +4.38 | diff +2.65  (quarter n 3)
+     drop qn 15: n  86 avg +4.60 | diff +2.96  (quarter n 6)
+     drop qn 16: n  73 avg +3.87 | diff +2.56  (quarter n 19)
+     drop qn 17: n  87 avg +4.46 | diff +2.89  (quarter n 5)
+     drop qn 18: n  70 avg +4.20 | diff +2.01  (quarter n 22)
+     drop qn 19: n  77 avg +3.40 | diff +1.87  (quarter n 15)
+     drop qn 20: n  70 avg +6.21 | diff +3.69  (quarter n 22)
+   quarter means: 14:+6.14, 15:+1.98, 16:+6.61, 17:+3.89, 18:+5.16, 19:+9.71, 20:-1.21
+   equal-weight quarters avg +4.61; quarter-mean of paired diff +2.06, t 1.71, quarters with diff>0 4/7
+   drop finalist best 5 signals: finalist +2.50 vs base same +1.46  diff +1.04
+   drop finalist best 10 signals: finalist +1.17 vs base same +1.08  diff +0.09
+   paired diff without its own best 5 / 10: +1.00 / -0.22; median +0.80
+
+=== 1b. Same checks in DISCOVERY (for comparison) ===
+F3 disc: n 122 avg +4.64 med +1.47 wo5 +2.70 wo10 +1.39 wins5-95 +4.07 wins1-99 +4.58 up 54%; base same: n 122 avg +2.65 med +2.71 wo5 +1.53 wo10 +0.82 wins5-95 +2.43 wins1-99 +2.67 up 63%; diff n 122 avg +1.99 med -0.24 wo5 +0.48 wo10 -0.71 wins5-95 +1.77 wins1-99 +1.85 up 50%
+F3 disc ex-2023 reaction days: n 86 avg +1.36 base +0.74
+
+=== 2. Survivorship: early F&O members vs later joiners ===
+in F&O by qn 1                 HOLDOUT early n  50 F3 +3.07 base +1.46 diff +1.62 | joiners n  43 F3 +7.46 base +2.32 diff +5.15
+in F&O by qn 1                 DISC    early n 109 F3 +4.26 base +1.81 diff +2.45 | joiners n  13 F3 +7.80 base +9.71 diff -1.91
+in F&O by qn 1                 FULL    early n 159 F3 +3.89 base +1.70 diff +2.19 | joiners n  56 F3 +7.54 base +4.03 diff +3.51
+in F&O by qn 13 (pre-holdout)  HOLDOUT early n  61 F3 +4.05 base +1.93 diff +2.12 | joiners n  32 F3 +7.11 base +1.71 diff +5.40
+in F&O by qn 13 (pre-holdout)  DISC    early n 122 F3 +4.64 base +2.65 diff +1.99 | joiners n   0 F3 +nan base +nan diff +nan
+in F&O by qn 13 (pre-holdout)  FULL    early n 183 F3 +4.44 base +2.41 diff +2.03 | joiners n  32 F3 +7.11 base +1.71 diff +5.40
+all F&O results holdout, by qn 1: early n 839 H20 +0.20 H60 +1.33 | joiners n 427 H20 -0.15 H60 +1.77
+all F&O results holdout, by qn 13: early n 950 H20 +0.20 H60 +1.47 | joiners n 316 H20 -0.29 H60 +1.48
+
+=== 3. Is the 21-60 extension specific to winners? (holdout, same-quarter means) ===
+DISC BASE (W & RSI>50)      n  122 H20 +2.65 H60 +4.64 ext(H60-H20) +1.99
+DISC winners RSI<=50        n   70 H20 +0.04 H60 +2.43 ext(H60-H20) +2.39
+DISC non-winners RSI>50     n  965 H20 +1.02 H60 +2.19 ext(H60-H20) +1.17
+DISC non-winners RSI<=50    n  651 H20 -0.34 H60 +1.28 ext(H60-H20) +1.62
+DISC all F&O results        n 1808 H20 +0.60 H60 +2.04 ext(H60-H20) +1.43
+HOLD BASE (W & RSI>50)      n   93 H20 +1.85 H60 +5.10 ext(H60-H20) +3.25
+HOLD winners RSI<=50        n   83 H20 +0.23 H60 +2.70 ext(H60-H20) +2.47
+HOLD non-winners RSI>50     n  535 H20 +0.51 H60 +1.96 ext(H60-H20) +1.45
+HOLD non-winners RSI<=50    n  555 H20 -0.65 H60 +0.21 ext(H60-H20) +0.87
+HOLD all F&O results        n 1266 H20 +0.08 H60 +1.48 ext(H60-H20) +1.39
+
+=== 4. Does the 60-session window include the NEXT results reaction? ===
+HOLD: 40/93 windows contain the next reaction day; F3 avg with +2.90, without +6.76; base H20 with +0.75, without +2.68
+DISC: 40/122 windows contain the next reaction day; F3 avg with +4.21, without +4.85; base H20 with +3.81, without +2.09
+
+=== 5. Calendar-time portfolios (equal weight across open positions, daily stock - Nifty, cash = 0) ===
+HOLDOUT F3 (days 1-60)                   days 455 mean/day +0.0867  per 20d +1.73  NW t(lag20) +3.02 t(lag60) +3.40
+HOLDOUT BASE same signals (days 1-20)    days 455 mean/day +0.0756  per 20d +1.51  NW t(lag20) +2.76 t(lag60) +2.86
+HOLDOUT F3 - BASE                        days 455 mean/day +0.0111  per 20d +0.22  NW t(lag20) +0.38 t(lag60) +0.41
+HOLDOUT extension days 21-60 only        days 455 mean/day +0.0845  per 20d +1.69  NW t(lag20) +2.29 t(lag60) +2.22
+HOLDOUT extension minus EW F&O-universe excess, active days only (407): per 20d +0.92 NW t20 +1.20 t60 +1.23; universe excess itself per 20d +0.97
+HOLDOUT base days 1-20 minus universe, active days (275): per 20d +2.66 NW t20 +2.98
+HOLDOUT mean open positions: F3 12.3, base 6.8; days with F3 open 455, base open 275
+DISC F3 (days 1-60)                   days 884 mean/day +0.0869  per 20d +1.74  NW t(lag20) +2.73 t(lag60) +2.40
+DISC BASE same signals (days 1-20)    days 884 mean/day +0.0917  per 20d +1.83  NW t(lag20) +2.33 t(lag60) +2.09
+DISC F3 - BASE                        days 884 mean/day -0.0049  per 20d -0.10  NW t(lag20) -0.13 t(lag60) -0.12
+DISC extension days 21-60 only        days 884 mean/day +0.0495  per 20d +0.99  NW t(lag20) +1.46 t(lag60) +1.57
+DISC extension minus EW F&O-universe excess, active days only (778): per 20d +0.36 NW t20 +0.56 t60 +0.59; universe excess itself per 20d +0.76
+DISC base days 1-20 minus universe, active days (522): per 20d +2.40 NW t20 +2.12
+DISC mean open positions: F3 8.3, base 4.7; days with F3 open 884, base open 522

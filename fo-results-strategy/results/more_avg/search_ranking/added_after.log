@@ -1,0 +1,29 @@
+A15..A21 HAND fixed-fraction curve (qn 4..13):
+       f   n  avg  wo5  median    q
+     0.2  29 5.24 1.89    4.03  7/8
+    0.25  35 4.47 1.66    3.76  7/8
+     0.3  39 4.97 2.48    3.87  7/8
+    0.35  44 5.22 3.08    3.95  7/8
+     0.4  53 5.15 3.16    4.03  7/9
+    0.45  63 5.19 3.54    4.28  8/9
+     0.5  69 5.42 3.76    4.28  8/9
+     0.6  81 5.23 3.67    4.28 8/10
+     1.0 140 2.88 1.91    2.12 9/10
+T5 (C11)  53 5.56 3.61    4.03  8/9
+
+C11 trades 53, avg +5.56, raw_net (unhedged) avg +7.39
+C11 by year:
+      size  mean     sum  share_of_total
+year                                    
+2022     8  1.41   11.31            0.04
+2023    24  7.35  176.45            0.60
+2024    21  5.09  106.86            0.36
+leave-one-quarter-out avg range +4.92 .. +6.31
+C11 without best 5 +3.61, without best 10 +2.21; best 5 = [18.1 18.8 27.2 28.3 29. ]
+
+C11 trades with cut_rsi14 > 50 (also baseline): n 49 avg +5.39; with cut_rsi14 <= 50: n 4 avg +7.67
+baseline qn4-13 trades NOT in C11: n 44 avg +1.77
+C11 XN median 7.86 vs all winners 6.10; cut_rsi14 median 66.9 vs 54.9
+
+A22 random same-count draws: avg mean +4.12, P(avg >= C11) = 0.0331; wo5 mean +2.10, P(wo5 >= C11) = 0.0199
+(single-test p-values; C11 was the best of 12 eligible candidates - adjust roughly x12 for selection)

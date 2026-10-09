@@ -1,0 +1,24 @@
+DISCOVERY hold-length plateau check (qn 0..13):
+ id                                       desc   n  avg  wo_best5  median   win  q_pos  q_with  held  per20
+ R0                 baseline: close k, hold 20 122 2.65      1.53    2.71 63.11     10      14 20.00   2.65
+C02                           close k, hold 40 122 3.13      1.77    1.70 54.10     11      14 40.00   1.56
+C28 close k, hold 50 (ADDED AFTER, diagnostic) 122 4.17      2.52    2.25 56.56      9      14 50.00   1.67
+C29 close k, hold 55 (ADDED AFTER, diagnostic) 122 4.18      2.44    2.04 56.56     10      14 55.00   1.52
+C03                           close k, hold 60 122 4.64      2.70    1.47 54.10     11      14 60.00   1.55
+C25                    pullback entry, hold 60 119 4.25      2.32    1.28 57.98      9      14 60.00   1.42
+C17                   close k, TP +10%, cap 60 122 2.71      2.13    6.22 64.75     13      14 39.39   1.38
+
+C03 - R0 paired (n=122): trade mean diff +1.99; quarter means: -6.8 +1.1 -1.4 +0.3 +13.0 +3.3 -2.5 +2.9 +2.4 +6.1 +15.5 +8.3 -1.9 -1.6
+   mean of 14 quarter diffs +2.78, sd 6.17, t 1.68; quarters where C03 beats R0: 9/14
+   quarter-block bootstrap of (wo_best5 C03 - wo_best5 R0): median +1.17, 5-95% [-0.76, +3.29], P(gap >= 0.5) 0.71, P(gap > 0) 0.83
+
+C25 - R0 paired (n=119): trade mean diff +1.64; quarter means: -6.7 -0.7 -1.0 -2.1 +14.4 +3.8 -5.6 +2.8 +2.8 +5.5 +12.8 +10.6 -2.6 -2.0
+   mean of 14 quarter diffs +2.28, sd 6.59, t 1.30; quarters where C25 beats R0: 7/14
+   quarter-block bootstrap of (wo_best5 C25 - wo_best5 R0): median +0.79, 5-95% [-1.44, +3.21], P(gap >= 0.5) 0.58, P(gap > 0) 0.71
+
+C17 - R0 paired (n=122): trade mean diff +0.06; quarter means: -0.8 +0.6 +3.0 +0.3 +12.0 +1.0 -1.7 +2.5 -1.2 -1.7 -7.2 +1.0 -1.1 -0.7
+   mean of 14 quarter diffs +0.43, sd 4.12, t 0.39; quarters where C17 beats R0: 7/14
+   quarter-block bootstrap of (wo_best5 C17 - wo_best5 R0): median +0.53, 5-95% [-0.32, +1.47], P(gap >= 0.5) 0.52, P(gap > 0) 0.86
+
+C03 path risk (discovery): worst hedged close-to-close mark during the 60 sessions, per trade
+   median worst mark -5.1%, 10th pct -16.2%, share of trades marked below -10% at some close: 29%

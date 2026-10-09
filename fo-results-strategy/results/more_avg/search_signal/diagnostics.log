@@ -1,0 +1,21 @@
+BASE discovery n 122 avg +2.653 w/o best5 +1.529
+
+C05_XN5: n 89 avg +4.125 w/o best5 +2.761 median +3.761
+  removed from baseline: n 33 avg -1.317 median -2.373
+  qn 0-6   : n  38 avg +0.981 median +1.116 | baseline same slice n 50 avg -0.755
+  qn 7-13  : n  51 avg +6.468 median +4.203 | baseline same slice n 72 avg +5.020
+  ex-2023  : n  64 avg +2.079 median +3.661 | baseline same slice n 86 avg +0.743
+  2023 only: n  25 avg +9.364 median +4.707 | baseline same slice n 36 avg +7.217
+  random subset of the 122 baseline trades, size 89: P(w/o best5 >= +2.761) = 0.0007
+  look-elsewhere (max over 31 eligible candidate sizes, independent random subsets): P = 0.1088
+  distinct stocks 70, max trades in one stock 3
+
+C27_BRK20_VOL1.5: n 100 avg +3.860 w/o best5 +2.540 median +3.626
+  removed from baseline: n 22 avg -2.833 median -2.629
+  qn 0-6   : n  40 avg -0.126 median -0.945 | baseline same slice n 50 avg -0.755
+  qn 7-13  : n  60 avg +6.517 median +4.115 | baseline same slice n 72 avg +5.020
+  ex-2023  : n  69 avg +1.937 median +3.166 | baseline same slice n 86 avg +0.743
+  2023 only: n  31 avg +8.139 median +4.339 | baseline same slice n 36 avg +7.217
+  random subset of the 122 baseline trades, size 100: P(w/o best5 >= +2.540) = 0.0003
+  look-elsewhere (max over 31 eligible candidate sizes, independent random subsets): P = 0.2137
+  distinct stocks 67, max trades in one stock 3

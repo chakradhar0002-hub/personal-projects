@@ -1,0 +1,4 @@
+baseline wo_best5 = 1.529; bar = 2.029
+                          candidate   n       avg  wo_best5
+ C10 OPT_ATM_WR50_LIQ (added after) 118 49.539864 21.603515
+C11 OPT_OTM5_WR50_LIQ (added after) 115 70.446857 15.942492

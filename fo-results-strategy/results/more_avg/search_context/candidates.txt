@@ -1,0 +1,98 @@
+FAMILY: market and sector context, applied on top of the baseline "winners with cutoff RSI > 50"
+Written BEFORE any outcome (forward return) was computed in this folder.
+
+BASELINE (B00, reference, not a candidate)
+  Universe: in_fo results (events.csv in_fo; 2 blanks filled from fa_panel in_fo), as in
+  fo-results-strategy/pattern_tests/winners_rsi/rebuild/rebuild.py.
+  k = events.i_react. XN = (stock adj return on k - Nifty 50 return on k)*100. Winner: XN > 4.
+  RSI14 = Wilder RSI(14) on the stock's own adjusted traded closes (adjusted_ohlcv), as-of last traded close <= i_cut.
+  Signal: XN > 4 and RSI14(cut) > 50. Tradable: return on k exists, session k+21 exists, <= 2 blank daily returns k+1..k+21.
+  Trade: buy close k, sell close k+20, short Nifty 50 same value.
+  vsN_net = (prod(1+r_{k+1..k+20}) - 1 - (N_{k+20}/N_k - 1))*100 - 0.19 (blank r = 0). raw_net = stock*100 - 0.17.
+  Every candidate below = baseline signal AND one extra filter. Entry / exit / hedge / costs unchanged.
+
+FEATURES (all computed from data up to and including the close of k; nothing later)
+  N = Nifty 50 close (index_close.csv 'Nifty 50'), sessions indexed by sessions.csv i.
+  nifty_sma50_up   : N[k] > mean(N[k-49..k])
+  nifty_sma200_up  : N[k] > mean(N[k-199..k])
+  nifty_r20        : (N[k]/N[k-20] - 1)*100
+  vix              : index_close 'India VIX' close at session k
+  S = the stock's sector index (events.sector_index) close. If S has a NaN at k, or fewer than 50 valid closes in
+      k-49..k, or a NaN at k-20, the feature uses 'Nifty 500' instead (fallback; flagged sec_fallback).
+  sec_sma50_up     : S[k] > mean(S[k-49..k])
+  sec_r20          : (S[k]/S[k-20] - 1)*100
+  sec_rel20        : sec_r20 - nifty_r20
+  breadth_w        : among in_fo results of the same qn with i_react < k (strictly earlier reaction days) and a
+                     non-missing XN: share with XN > 4. NaN if fewer than 10 such earlier results (NaN fails every
+                     breadth filter).
+  season_pos       : (number of in_fo results of the same qn with i_react < k) / (number of in_fo results in that qn).
+                     The denominator is the F&O list size for the season (every F&O company reports each quarter), known
+                     at the start of the season.
+  fin              : fa_panel.fin_type (fallback events.fin_type) in {'Bank', 'NBFC / financial'}.
+  TERCILES: cut points t1 (33.33rd pct) and t2 (66.67th pct) of the feature over the DISCOVERY baseline signals
+  (tradable baseline signals with qn 0..13; NaN values ignored). Low = x <= t1, Mid = t1 < x <= t2, High = x > t2.
+  Cut points are computed from features only (no outcomes) and appended below before any outcome is computed.
+
+CANDIDATES (each = baseline AND filter)
+  C01 nifty_sma50_up
+  C02 not nifty_sma50_up
+  C03 nifty_sma200_up
+  C04 not nifty_sma200_up
+  C05 nifty_sma50_up and nifty_sma200_up
+  C06 nifty_r20 Low tercile
+  C07 nifty_r20 Mid tercile
+  C08 nifty_r20 High tercile
+  C09 nifty_r20 not High (Low or Mid)
+  C10 vix Low tercile
+  C11 vix Mid tercile
+  C12 vix High tercile
+  C13 sec_sma50_up
+  C14 not sec_sma50_up
+  C15 sec_r20 > 0
+  C16 sec_r20 <= 0
+  C17 sec_r20 High tercile
+  C18 sec_r20 Low tercile
+  C19 sec_rel20 > 0 (sector beat Nifty over the last 20 sessions)
+  C20 breadth_w High tercile
+  C21 breadth_w Low tercile
+  C22 breadth_w Mid or High (not Low; NaN excluded)
+  C23 season_pos Low tercile (early in season)
+  C24 season_pos Mid tercile
+  C25 season_pos High tercile (late in season)
+  C26 fin (bank / NBFC / financial)
+  C27 not fin (company)
+  C28 nifty_sma200_up and sec_sma50_up (market + sector tailwind)
+  Total: 28 candidates.
+
+FINALIST RULE (fixed before looking)
+  Discovery = qn 0..13 only. Eligible: discovery trades >= 35 and >= 7 discovery quarters with trades.
+  Rank eligible candidates by discovery average vsN_net WITHOUT its best 5 trades (drop the 5 highest vsN_net).
+  A finalist must beat the baseline's discovery average without best 5 by >= 0.5 points. Take at most 2 (top 2 by
+  that rank). If none qualifies, return none.
+  Holdout qn 14..21 outcomes are never computed.
+
+CUT POINTS (appended after features.py, still BEFORE any outcome was computed; from cutpoints.csv)
+  Terciles over the 122 tradable discovery baseline signals (qn 0..13):
+    nifty_r20  : t1 = 0.259382, t2 = 3.241664  (%)
+    vix        : t1 = 13.346667, t2 = 17.010000
+    sec_r20    : t1 = 2.359330, t2 = 5.330997  (%)
+    breadth_w  : t1 = 0.081081, t2 = 0.120000  (share; 112 non-NaN, 10 signals have < 10 earlier results)
+    season_pos : t1 = 0.334132, t2 = 0.669173
+  Feature-only counts among the 122 discovery signals (no outcomes): nifty_sma200_up 116, nifty_sma50_up 95,
+  sec_sma50_up 112, fin 23, sec_r20>0 99, sec_rel20>0 86, sector fallback to Nifty 500: 0.
+  => C04 (6), C14 (10), C26 (23) cannot reach 35 discovery trades; they stay in the count.
+
+ADDED AFTER (written after seeing the 28-candidate discovery table; robustness DIAGNOSTICS for the only qualifier
+C10 "VIX Low". They count as tried, but they are NOT eligible to become finalists - the finalist list is fixed by the
+pre-stated rule applied to C01..C28):
+  A29 baseline & VIX(k) <= 12
+  A30 baseline & VIX(k) <= 13
+  A31 baseline & VIX(k) <= 14
+  A32 baseline & VIX(k) <= 15
+  A33 baseline & VIX(k) <= 16
+  A34 plain winners (XN > 4, no RSI filter) & VIX Low tercile (VIX <= 13.346667) - is the effect specific to RSI>50?
+  Also (not new rules, just cuts of C10's own discovery trades): per quarter, per calendar year, C10 without 2023
+  reaction days, and baseline-minus-C10 (VIX > t1) without 2023.
+Total tried: 34.
+  A35 (ADDED AFTER, implementability check, not eligible) baseline & India VIX close at k-1 <= 13.346667
+      (decision fully known before the entry day; same cut point as C10). Total tried: 35.

@@ -38,6 +38,8 @@ checklist and concrete trades, and backtests them on your data.
 >   both (AUC 0.52) and 117 post-results tests; nothing survives. See [docs/TA_FA_COMBINED.md](docs/TA_FA_COMBINED.md).
 >   Watch item: results winners with RSI above 50 before results made +2.42% a trade over Nifty (232 trades, 17 of 22
 >   quarters positive), realistic about +1%. See [docs/WINNERS_RSI50.md](docs/WINNERS_RSI50.md).
+>   Raising its average: of 136 versions, only holding 60 sessions instead of 20 kept a higher average on unseen
+>   quarters, and it earns the same per day. See [docs/HIGHER_AVERAGE.md](docs/HIGHER_AVERAGE.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.

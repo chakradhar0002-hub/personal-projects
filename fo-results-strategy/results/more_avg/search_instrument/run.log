@@ -1,0 +1,53 @@
+cross-check raw vs trades.csv: max abs diff 0.0 missing 0
+
+BASELINE cash WR50 vsN_net discovery: {'n': 122, 'avg': np.float64(2.65), 'median': np.float64(2.71), 'wo_best5': np.float64(1.53), 'hit': np.float64(63.11), 'sd': np.float64(9.11), 't': np.float64(3.22), 'worst': np.float64(-19.55), 'best': np.float64(30.39), 'loss50': np.float64(0.0), 'q_with': 14, 'q_pos': 10}
+plain winners cash vsN_net discovery: {'n': 192, 'avg': np.float64(1.7), 'median': np.float64(1.64), 'wo_best5': np.float64(0.97), 'hit': np.float64(57.81), 'sd': np.float64(8.42), 't': np.float64(2.8), 'worst': np.float64(-19.55), 'best': np.float64(30.39), 'loss50': np.float64(0.0), 'q_with': 14, 'q_pos': 9}
+bar for finalists (baseline wo_best5 + 0.5): 2.029
+                          candidate  signals   n  coverage   avg  median  wo_best5   hit     sd    t   worst    best  loss50  q_with  q_pos  prem_pct  matched_cash_raw  matched_cash_vsN  matched_cash_vsN_wo5  eligible  passes
+                    C1 OPT_ATM_WR50      122  93     76.23 54.47   -2.87     22.27 47.31 190.72 2.75 -103.13  866.78   39.78      14      8      3.98              4.69              3.32                  1.99      True   False
+                   C2 OPT_OTM5_WR50      122  84     68.85 82.02  -77.85      7.87 34.52 347.92 2.16 -109.97 1637.43   58.33      14      6      2.11              4.33              3.15                  1.51      True   False
+                     C3 OPT_ATM_WIN      192 147     76.56 29.91  -28.64      9.09 42.18 168.56 2.15 -103.13  866.78   44.90      14      8      4.06              3.14              2.23                  1.37      True   False
+                    C4 OPT_OTM5_WIN      192 129     67.19 41.22  -92.21     -7.67 28.68 297.38 1.57 -109.97 1637.43   63.57      14      6      2.24              2.73              1.93                  0.84      True   False
+                     C5 SPREAD_WR50      122  75     61.48 47.81   19.46     13.27 53.33 234.66 1.76 -116.65 1774.71   42.67      14     10      1.86              4.60              3.49                  1.83      True   False
+            C6 FUTH_WR50 (illustr.)      122 122    100.00 10.61   10.84      6.12 63.11  36.44 3.22  -78.19  121.55    3.28      14     10       NaN              4.13              2.65                  1.53     False   False
+             C7 FUTH_WIN (illustr.)      192 192    100.00  6.80    6.58      3.88 57.81  33.68 2.80  -78.19  121.55    4.17      14      9       NaN              2.72              1.70                  0.97     False   False
+            C8 FUTU_WR50 (illustr.)      122 122    100.00 20.65   14.94     14.36 68.03  51.16 4.46 -120.13  192.62    6.56      14     11       NaN              4.13              2.65                  1.53     False   False
+                   C9 OPT_ITM5_WR50      122  85     69.67 47.83   19.01     26.83 56.47 127.62 3.46 -101.85  501.95   21.18      14      8      6.81              4.89              3.50                  2.04      True   False
+ C10 OPT_ATM_WR50_LIQ (added after)      122 118     96.72 49.54  -10.62     21.60 44.92 188.03 2.86 -103.13  866.78   38.14      14      9      4.18              4.31              2.89                  1.74      True    True
+C11 OPT_OTM5_WR50_LIQ (added after)      122 115     94.26 70.45  -56.78     15.94 36.52 317.88 2.38 -109.97 1637.43   53.04      14      7      2.18              4.37              2.89                  1.71      True    True
+
+C1 OPT_ATM_WR50 | missing: {'entry_zero_volume': 29} | exits: {'close': 47, 'expiry_intrinsic': 36, 'settle_fallback': 10}
+C2 OPT_OTM5_WR50 | missing: {'entry_zero_volume': 38} | exits: {'close': 45, 'expiry_intrinsic': 37, 'settle_fallback': 2}
+C3 OPT_ATM_WIN | missing: {'entry_zero_volume': 45} | exits: {'close': 74, 'expiry_intrinsic': 59, 'settle_fallback': 14}
+C4 OPT_OTM5_WIN | missing: {'entry_zero_volume': 63} | exits: {'close': 68, 'expiry_intrinsic': 59, 'settle_fallback': 2}
+C5 SPREAD_WR50 | missing: {'entry_zero_volume': 47} | exits: {'expiry_intrinsic': 36, 'close': 34, 'settle_fallback': 5}
+C6 FUTH_WR50 (illustr.) | missing: {} | exits: {}
+C7 FUTH_WIN (illustr.) | missing: {} | exits: {}
+C8 FUTU_WR50 (illustr.) | missing: {} | exits: {}
+C9 OPT_ITM5_WR50 | missing: {'entry_zero_volume': 37} | exits: {'expiry_intrinsic': 38, 'close': 33, 'settle_fallback': 14}
+C10 OPT_ATM_WR50_LIQ (added after) | missing: {'entry_zero_volume': 4} | exits: {'close': 66, 'expiry_intrinsic': 38, 'settle_fallback': 14}
+C11 OPT_OTM5_WR50_LIQ (added after) | missing: {'entry_zero_volume': 7} | exits: {'close': 74, 'expiry_intrinsic': 38, 'settle_fallback': 3}
+
+PASSING (ranked by wo_best5):
+                          candidate   n  coverage   avg  wo_best5  q_with  q_pos
+ C10 OPT_ATM_WR50_LIQ (added after) 118     96.72 49.54     21.60      14      9
+C11 OPT_OTM5_WR50_LIQ (added after) 115     94.26 70.45     15.94      14      7
+| candidate | signals | n | cov% | avg | median | w/o best 5 | hit% | t | worst | q+/q | prem %S | matched cash raw | matched cash vsN | eligible | passes |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| BASELINE cash WR50 vsN_net (ref) | 122 | 122 | 100 | 2.65 | 2.71 | 1.53 | 63 | 3.2 | -19.5 | 10/14 | - | - | - | ref | ref |
+| plain winners cash vsN_net (ref) | 192 | 192 | 100 | 1.70 | 1.64 | 0.97 | 58 | 2.8 | -19.5 | 9/14 | - | - | - | ref | ref |
+| C1 OPT_ATM_WR50 | 122 | 93 | 76 | 54.47 | -2.87 | 22.27 | 47 | 2.8 | -103.1 | 8/14 | 3.98 | 4.69 | 3.32 | yes | no |
+| C2 OPT_OTM5_WR50 | 122 | 84 | 69 | 82.02 | -77.85 | 7.87 | 35 | 2.2 | -110.0 | 6/14 | 2.11 | 4.33 | 3.15 | yes | no |
+| C3 OPT_ATM_WIN | 192 | 147 | 77 | 29.91 | -28.64 | 9.09 | 42 | 2.2 | -103.1 | 8/14 | 4.06 | 3.14 | 2.23 | yes | no |
+| C4 OPT_OTM5_WIN | 192 | 129 | 67 | 41.22 | -92.21 | -7.67 | 29 | 1.6 | -110.0 | 6/14 | 2.24 | 2.73 | 1.93 | yes | no |
+| C5 SPREAD_WR50 | 122 | 75 | 61 | 47.81 | 19.46 | 13.27 | 53 | 1.8 | -116.6 | 10/14 | 1.86 | 4.60 | 3.49 | yes | no |
+| C6 FUTH_WR50 (illustr.) | 122 | 122 | 100 | 10.61 | 10.84 | 6.12 | 63 | 3.2 | -78.2 | 10/14 |  | 4.13 | 2.65 | no (illustration) | no |
+| C7 FUTH_WIN (illustr.) | 192 | 192 | 100 | 6.80 | 6.58 | 3.88 | 58 | 2.8 | -78.2 | 9/14 |  | 2.72 | 1.70 | no (illustration) | no |
+| C8 FUTU_WR50 (illustr.) | 122 | 122 | 100 | 20.65 | 14.94 | 14.36 | 68 | 4.5 | -120.1 | 11/14 |  | 4.13 | 2.65 | no (illustration) | no |
+| C9 OPT_ITM5_WR50 | 122 | 85 | 70 | 47.83 | 19.01 | 26.83 | 56 | 3.5 | -101.8 | 8/14 | 6.81 | 4.89 | 3.50 | yes | no |
+| C10 OPT_ATM_WR50_LIQ (added after) | 122 | 118 | 97 | 49.54 | -10.62 | 21.60 | 45 | 2.9 | -103.1 | 9/14 | 4.18 | 4.31 | 2.89 | yes | YES |
+| C11 OPT_OTM5_WR50_LIQ (added after) | 122 | 115 | 94 | 70.45 | -56.78 | 15.94 | 37 | 2.4 | -110.0 | 7/14 | 2.18 | 4.37 | 2.89 | yes | YES |
+
+expiry-day check |option settle / future settle - 1|: n 378 max 0.0
+D4 WR50: n=122 (missing 0, CA-flagged dropped 0) real futures hedged on notional avg=2.59 (cash vsN same trades 2.65; note exit = min(k+20, expiry) for futures vs k+20 for cash); on 25% margin = 10.37; wo_best5 on margin 6.09
+D4 WIN: n=192 (missing 0, CA-flagged dropped 0) real futures hedged on notional avg=1.67 (cash vsN same trades 1.70; note exit = min(k+20, expiry) for futures vs k+20 for cash); on 25% margin = 6.68; wo_best5 on margin 3.90

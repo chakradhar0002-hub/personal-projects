@@ -1,0 +1,54 @@
+baseline                                         n=122 avg= +2.65 wo5= +1.53 med= +2.71 q+=10/14
+C10 VIX<=13.35                                   n= 41 avg= +6.91 wo5= +4.11 med= +4.69 q+=7/8
+A VIX<=12                                        n= 22 avg= +9.43 wo5= +5.02 med= +6.83 q+=5/5
+A VIX<=13                                        n= 35 avg= +6.66 wo5= +3.69 med= +4.34 q+=7/7
+A VIX<=14                                        n= 46 avg= +6.87 wo5= +4.41 med= +4.70 q+=8/8
+A VIX<=15                                        n= 54 avg= +6.01 wo5= +3.87 med= +4.10 q+=8/9
+A VIX<=16                                        n= 71 avg= +4.02 wo5= +2.28 med= +3.17 q+=9/11
+A34 plain winners & VIX Low                      n= 57 avg= +5.35 wo5= +3.26 med= +3.87 q+=7/8
+    plain winners & VIX not Low                  n=135 avg= +0.16 wo5= -0.58 med= -0.14 q+=7/11
+C10 excluding 2023 reaction days                 n= 12 avg= +2.65 wo5= -1.60 med= +4.51 q+=3/4
+baseline VIX>t1 excluding 2023                   n= 74 avg= +0.43 wo5= -0.88 med= +0.31 q+=5/10
+baseline VIX>t1 in 2023                          n=  7 avg= +1.21 wo5= -4.71 med= -2.46 q+=1/1
+C10 in 2023                                      n= 29 avg= +8.67 wo5= +4.84 med= +4.69 q+=4/4
+
+C10 per quarter:
+  qn  1 Q1 FY22   n= 5 avg= -0.66 vix 11.8-13.2 | baseline same qn n=6 avg= +0.17
+  qn  7 Q3 FY23   n= 2 avg= +5.38 vix 12.9-13.0 | baseline same qn n=9 avg= +2.13
+  qn  8 Q4 FY23   n=13 avg= +5.89 vix 11.7-13.3 | baseline same qn n=13 avg= +5.89
+  qn  9 Q1 FY24   n= 9 avg= +9.15 vix 10.5-12.0 | baseline same qn n=9 avg= +9.15
+  qn 10 Q2 FY24   n= 5 avg=+16.34 vix 10.9-11.2 | baseline same qn n=5 avg=+16.34
+  qn 11 Q3 FY24   n= 1 avg= +5.26 vix 13.1-13.1 | baseline same qn n=13 avg= +0.06
+  qn 12 Q4 FY24   n= 1 avg=+11.51 vix 12.9-12.9 | baseline same qn n=14 avg= +5.81
+  qn 13 Q1 FY25   n= 5 avg= +3.68 vix 11.8-12.9 | baseline same qn n=9 avg= +2.16
+
+C10 by year:
+  2021 n= 5 avg= -0.66 sum=   -3.3
+  2023 n=29 avg= +8.67 sum= +251.4
+  2024 n= 7 avg= +5.03 sum=  +35.2
+
+baseline by year (VIX low / not low):
+  2021 low n= 5 avg= -0.66 | not-low n=20 avg= -0.71
+  2022 low n= 0 avg=  +nan | not-low n=25 avg= -0.81
+  2023 low n=29 avg= +8.67 | not-low n= 7 avg= +1.21
+  2024 low n= 7 avg= +5.03 | not-low n=29 avg= +2.29
+
+C10 top 5 trades:
+  PFC 2023-11-09 vix=11.0 vsN_net=+30.39
+  HINDPETRO 2023-11-07 vix=11.2 vsN_net=+29.82
+  RECLTD 2023-07-27 vix=10.5 vsN_net=+28.97
+  DIXON 2023-05-24 vix=13.1 vsN_net=+27.21
+  POLYCAB 2023-07-18 vix=11.7 vsN_net=+18.83
+
+Holdout baseline signals by qn (counts only, no outcomes): VIX<=t1 / all
+  qn 14: 0 / 3  (vix range 14.6-14.6)
+  qn 15: 0 / 6  (vix range 14.9-17.4)
+  qn 16: 0 / 19  (vix range 15.5-21.6)
+  qn 17: 5 / 5  (vix range 10.8-12.0)
+  qn 18: 22 / 22  (vix range 10.5-12.7)
+  qn 19: 8 / 15  (vix range 11.3-15.1)
+  qn 20: 0 / 23  (vix range 15.0-19.7)
+  qn 21: 17 / 17  (vix range 11.4-13.3)
+C10 VIX(k)<=t1       n=41 avg=+6.91 wo5=+4.11 q+=7/8
+A35 VIX(k-1)<=t1     n=41 avg=+6.87 wo5=+4.07 q+=7/7
+disagreements: 4

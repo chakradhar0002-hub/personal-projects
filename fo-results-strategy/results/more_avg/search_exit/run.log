@@ -1,0 +1,141 @@
+DISCOVERY qn 0..13 only. vsN_net percent per trade.
+ id                                            desc   n  skipped  avg  wo_best5  median   win  raw_avg  q_pos  q_with  held  per20  rule_exits  avg_ex2023  n_ex2023  share2023
+ R0                      baseline: close k, hold 20 122        0 2.65      1.53    2.71 63.11     4.13     10      14 20.00   2.65           0        0.74        86      80.27
+C01                                close k, hold 30 122        0 2.85      1.73    1.81 55.74     5.13     10      14 30.00   1.90           0        0.77        86      81.03
+C02                                close k, hold 40 122        0 3.13      1.77    1.70 54.10     6.20     11      14 40.00   1.56           0        1.18        86      73.41
+C03                                close k, hold 60 122        0 4.64      2.70    1.47 54.10     8.62     11      14 60.00   1.55           0        1.36        86      79.31
+C04               close k, trail 10-day low, cap 60 122        0 2.88      1.06    0.45 50.82     4.51      7      14 29.97   1.92         111       -0.09        86     102.28
+C05                    close k, trail SMA20, cap 60 122        0 2.20      0.93    0.38 50.82     3.96      9      14 21.27   2.07         120        0.23        86      92.72
+C06             close k, trail 10% off peak, cap 60 122        0 3.16      1.21   -1.12 45.90     5.49     10      14 44.27   1.43          69       -0.01        86     100.24
+C07   close k, min 20 then 10-day-low trail, cap 60 122        0 3.30      1.45    0.99 55.74     5.59      9      14 38.32   1.72         107        0.47        86      89.88
+C08        close k, min 20 then SMA20 trail, cap 60 122        0 2.44      1.18    1.26 59.84     4.67      8      14 28.80   1.69         120        0.35        86      89.78
+C09 close k, min 20 then 10%-off-peak trail, cap 60 122        0 3.31      1.37   -0.43 49.18     6.07     10      14 47.48   1.40          68        0.20        86      95.67
+C10                         close k, SL -8%, cap 20 122        0 2.47      1.34    2.71 62.30     3.90      9      14 18.25   2.70          21        0.56        86      84.03
+C11                        close k, SL -10%, cap 20 122        0 2.54      1.41    2.71 62.30     3.90     11      14 19.10   2.66          14        0.58        86      83.99
+C12                         close k, SL -8%, cap 60 122        0 2.93      0.97   -1.60 45.90     6.26      9      14 48.69   1.20          38       -0.66        86     115.77
+C13                        close k, SL -10%, cap 60 122        0 3.50      1.52   -1.04 48.36     6.85      9      14 51.66   1.36          30       -0.18        86     103.66
+C14                        close k, SL -10%, cap 40 122        0 2.52      1.14    0.28 50.82     5.16     10      14 35.98   1.40          24        0.30        86      91.52
+C15                        close k, TP +10%, cap 20 122        0 2.02      1.51    2.71 63.11     3.09      9      14 17.05   2.37          37        0.87        86      69.62
+C16                        close k, TP +15%, cap 20 122        0 2.27      1.66    2.71 63.11     3.56      9      14 18.75   2.42          22        0.81        86      74.71
+C17                        close k, TP +10%, cap 60 122        0 2.71      2.13    6.22 64.75     4.99     13      14 39.39   1.38          68        1.34        86      65.14
+C18                        close k, TP +15%, cap 60 122        0 2.67      2.03    3.68 58.20     5.77     11      14 46.27   1.15          48        0.78        86      79.40
+C19               close k, SL -8% + TP +15%, cap 60 122        0 1.45      0.80    0.13 50.00     4.00      9      14 35.80   0.81          81       -0.53        86     125.93
+C20                      next open, exit close k+20 122        0 2.24      1.14    2.09 60.66     3.72      8      14 20.00   2.24           0        0.31        86      90.27
+C21                      next open, exit close k+40 122        0 2.71      1.35    0.52 50.82     5.78     10      14 40.00   1.35           0        0.74        86      80.84
+C22                      next open, exit close k+60 122        0 4.22      2.31    1.24 53.28     8.20     11      14 60.00   1.41           0        0.93        86      84.50
+C23                         pullback entry, hold 20 119        3 2.42      1.56    2.02 60.50     3.84      9      14 20.00   2.42           0        0.91        85      73.09
+C24                         pullback entry, hold 40 119        3 2.96      1.74    3.24 59.66     5.72     10      14 40.00   1.48           0        1.56        85      62.29
+C25                         pullback entry, hold 60 119        3 4.25      2.32    1.28 57.98     7.77      9      14 60.00   1.42           0        1.23        85      79.40
+C26             pullback entry, SMA20 trail, cap 60 119        3 1.74      0.66   -0.25 48.74     3.10      9      14 18.92   1.84         117        0.30        85      87.50
+C27 pullback entry, min 20 then SMA20 trail, cap 60 119        3 1.67      0.59    1.04 52.94     3.53      8      14 28.01   1.19         117        0.11        85      95.25
+
+R0 check: n=122 avg=2.65 (expected 122, +2.65); R0 w/o best 5 = 1.529; finalist bar = 2.029
+
+RANKED by discovery avg w/o best 5 (eligible: n>=35, >=7 quarters with trades):
+ id                                            desc   n  avg  wo_best5  q_pos  q_with  held  per20
+C03                                close k, hold 60 122 4.64      2.70     11      14 60.00   1.55
+C25                         pullback entry, hold 60 119 4.25      2.32      9      14 60.00   1.42
+C22                      next open, exit close k+60 122 4.22      2.31     11      14 60.00   1.41
+C17                        close k, TP +10%, cap 60 122 2.71      2.13     13      14 39.39   1.38
+C18                        close k, TP +15%, cap 60 122 2.67      2.03     11      14 46.27   1.15
+C02                                close k, hold 40 122 3.13      1.77     11      14 40.00   1.56
+C24                         pullback entry, hold 40 119 2.96      1.74     10      14 40.00   1.48
+C01                                close k, hold 30 122 2.85      1.73     10      14 30.00   1.90
+C16                        close k, TP +15%, cap 20 122 2.27      1.66      9      14 18.75   2.42
+C23                         pullback entry, hold 20 119 2.42      1.56      9      14 20.00   2.42
+C13                        close k, SL -10%, cap 60 122 3.50      1.52      9      14 51.66   1.36
+C15                        close k, TP +10%, cap 20 122 2.02      1.51      9      14 17.05   2.37
+C07   close k, min 20 then 10-day-low trail, cap 60 122 3.30      1.45      9      14 38.32   1.72
+C11                        close k, SL -10%, cap 20 122 2.54      1.41     11      14 19.10   2.66
+C09 close k, min 20 then 10%-off-peak trail, cap 60 122 3.31      1.37     10      14 47.48   1.40
+C21                      next open, exit close k+40 122 2.71      1.35     10      14 40.00   1.35
+C10                         close k, SL -8%, cap 20 122 2.47      1.34      9      14 18.25   2.70
+C06             close k, trail 10% off peak, cap 60 122 3.16      1.21     10      14 44.27   1.43
+C08        close k, min 20 then SMA20 trail, cap 60 122 2.44      1.18      8      14 28.80   1.69
+C20                      next open, exit close k+20 122 2.24      1.14      8      14 20.00   2.24
+C14                        close k, SL -10%, cap 40 122 2.52      1.14     10      14 35.98   1.40
+C04               close k, trail 10-day low, cap 60 122 2.88      1.06      7      14 29.97   1.92
+C12                         close k, SL -8%, cap 60 122 2.93      0.97      9      14 48.69   1.20
+C05                    close k, trail SMA20, cap 60 122 2.20      0.93      9      14 21.27   2.07
+C19               close k, SL -8% + TP +15%, cap 60 122 1.45      0.80      9      14 35.80   0.81
+C26             pullback entry, SMA20 trail, cap 60 119 1.74      0.66      9      14 18.92   1.84
+C27 pullback entry, min 20 then SMA20 trail, cap 60 119 1.67      0.59      8      14 28.01   1.19
+
+FINALISTS: ['C03', 'C25']
+
+HOLDOUT (indices only, no outcomes): trades dropped because the window runs past 2026-09-30
+ id  holdout_signals  dropped_data_end_min  dropped_data_end_max
+ R0              110                     0                     0
+C01              110                     0                     0
+C02              110                     4                     4
+C03              110                    17                    17
+C04              110                    17                    17
+C05              110                    17                    17
+C06              110                    17                    17
+C07              110                    17                    17
+C08              110                    17                    17
+C09              110                    17                    17
+C10              110                     0                     0
+C11              110                     0                     0
+C12              110                    17                    17
+C13              110                    17                    17
+C14              110                     4                     4
+C15              110                     0                     0
+C16              110                     0                     0
+C17              110                    17                    17
+C18              110                    17                    17
+C19              110                    17                    17
+C20              110                     0                     0
+C21              110                     4                     4
+C22              110                    17                    17
+C23              110                     0                     0
+C24              110                     6                    10
+C25              110                    17                    17
+C26              110                    17                    17
+C27              110                    17                    17
+
+ROBUSTNESS C03 (a) exits at close t+1: n=122 avg=4.64 wo5=2.70 q+=11/14
+  (c) ex-2023 avg 1.36 (n=86) vs R0 ex-2023 0.74; 2023 share of profit 79% (R0 80%)
+  (d) median 1.47 win 54%  (R0 median 2.71 win 63%)
+  (e) per 20 sessions 1.55 vs R0 2.65; held 60.0
+  (b) per quarter (size, mean):
+     size       mean       
+cand  C03  R0    C03     R0
+qn                         
+0       8   8  -5.72   1.08
+1       6   6   1.27   0.17
+2      11  11  -3.84  -2.47
+3       4   4   0.25  -0.08
+4       3   3  12.88  -0.13
+5       9   9   3.57   0.31
+6       9   9  -4.94  -2.47
+7       9   9   4.99   2.13
+8      13  13   8.25   5.89
+9       9   9  15.29   9.15
+10      5   5  31.83  16.34
+11     13  13   8.41   0.06
+12     14  14   3.96   5.81
+13      9   9   0.61   2.16
+
+ROBUSTNESS C25 (a) exits at close t+1: n=119 avg=4.25 wo5=2.32 q+=9/14
+  (c) ex-2023 avg 1.23 (n=85) vs R0 ex-2023 0.74; 2023 share of profit 79% (R0 80%)
+  (d) median 1.28 win 58%  (R0 median 2.71 win 63%)
+  (e) per 20 sessions 1.42 vs R0 2.65; held 60.0
+  (b) per quarter (size, mean):
+     size       mean       
+cand  C25  R0    C25     R0
+qn                         
+0       8   8  -5.64   1.08
+1       6   6  -0.51   0.17
+2      11  11  -3.49  -2.47
+3       4   4  -2.18  -0.08
+4       3   3  14.30  -0.13
+5       9   9   4.10   0.31
+6       9   9  -8.09  -2.47
+7       9   9   4.95   2.13
+8      12  13   8.59   5.89
+9       9   9  14.64   9.15
+10      4   5  30.63  16.34
+11     13  13  10.67   0.06
+12     13  14   4.04   5.81
+13      9   9   0.15   2.16

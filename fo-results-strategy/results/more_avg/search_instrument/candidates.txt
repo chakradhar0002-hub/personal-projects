@@ -1,0 +1,81 @@
+FAMILY: instrument / leverage  (written BEFORE any outcome was computed)
+==========================================================================
+"Average" in this family = net return ON CAPITAL per trade (percent), NOT return over Nifty.
+For options capital = premium paid; for futures capital = margin. Cash baseline capital = notional.
+
+Signal sets (features known at the close of reaction day k):
+  WR50  = in_fo result, XN > 4 (stock adj return on k minus Nifty 50 return on k, %), cut_rsi14 > 50
+          (Wilder RSI14 at the cutoff close i_cut), from tafa/C_post_results/features.csv.
+  WIN   = plain winners: in_fo result, XN > 4 (any RSI).
+Search sample: qn 0..13 ONLY. qn >= 14 is sealed (no outcome computed, no option/futures price fetched
+for any exit of a qn >= 14 trade). All bhavcopy days fetched are <= 2024-10-31 and only for qn<=13 trades.
+
+Option contract rules (common to C1-C5, C9):
+  - Entry: close of k. Spot S = underlying close on k (options.db spot table; if missing, put-call parity
+    median on the nearest expiry from the day-k bhavcopy, same method used to build options.db).
+  - Expiry: the nearest stock-option expiry whose expiry SESSION (last trading session <= listed expiry
+    date, handles holiday-shifted expiries) is >= 15 sessions after k (i_exp - i_k >= 15).
+  - Strike: ATM = listed strike nearest S; OTM5 = listed strike nearest 1.05*S; ITM5 = listed strike
+    nearest 0.95*S (ties -> lower strike). Chain = full day-k NSE F&O bhavcopy for that expiry
+    (options.db keeps only strikes within +-5% of spot and only some days, so the identical NSE bhavcopy
+    files are re-read for the needed days; options.db is used where it has the leg).
+  - Entry price = 'close' on k; the contract must have volume > 0 and close > 0 on k, otherwise the
+    trade LACKS DATA (counted and reported, not replaced by another strike).
+  - Exit: close of session min(k+20, expiry session).
+      * if exit is the expiry session: exit price = 'settle' of that contract that day (fallback: close;
+        cross-checked against intrinsic max(F_settle - K, 0) with the stock-future final settlement).
+      * else: exit price = 'close' if volume > 0 and close > 0; else 'settle' (fallback, counted);
+        contract absent / both zero -> LACKS DATA (counted).
+  - Corporate action (strike/lot changed, contract not found at exit) -> LACKS DATA (counted).
+  - Net return on premium (%) = (P_exit / P_entry - 1)*100 - 1.0 - 0.05 * S / P_entry
+    (1% of premium round trip + 0.05% of underlying notional, expressed in % of premium).
+
+CANDIDATES (all evaluated on qn 0..13):
+  C1  OPT_ATM_WR50    : WR50, buy ATM call, rules above.
+  C2  OPT_OTM5_WR50   : WR50, buy OTM5 call.
+  C3  OPT_ATM_WIN     : WIN (plain winners), buy ATM call.
+  C4  OPT_OTM5_WIN    : WIN, buy OTM5 call.
+  C5  SPREAD_WR50     : WR50, bull call spread: buy ATM call, sell OTM5 call (same expiry; if OTM5 strike ==
+                        ATM strike the trade lacks data). Capital = net debit D = Pa - Po (entry closes).
+                        Both legs need volume>0 at entry. Exit values per leg as above.
+                        Net return on debit (%) = ((Va - Vo) - D)/D*100 - [1%*(Pa+Po) + 0.05%*S*2]/D*100.
+  C6  FUTH_WR50 (illustration only): hedged futures = baseline vsN_net / 0.25 (margin ~20% stock leg +
+                        Nifty hedge, ~25% of one-leg notional in total). Pure arithmetic rescaling.
+  C7  FUTH_WIN  (illustration only): plain winners vsN_net / 0.25.
+  C8  FUTU_WR50 (illustration only): unhedged futures = raw_net / 0.20, raw_net = stock 20-session
+                        compounded return*100 - 0.17.
+  C9  OPT_ITM5_WR50   : WR50, buy ITM5 call (strike nearest 0.95*S), rules above.
+  -> 9 candidates counted (C1-C9).
+
+BASELINE (reference, not a candidate): cash, WR50, buy stock at close k, hold 20 sessions, short Nifty 50 same
+  value: vsN_net = (prod(1+r_stock, k+1..k+20) - NiftyClose(k+20)/NiftyClose(k)) *100 - 0.19.
+  Its discovery average WITHOUT its best 5 trades (all its qn<=13 trades) is the bar.
+
+FINALIST RULE (stated before looking):
+  Eligible: C1, C2, C3, C4, C5, C9 (priced from option market data).
+  NOT eligible: C6, C7, C8 - they are deterministic rescalings of the cash trade (same trades, smaller
+     denominator); they would pass any "+0.5 point" bar purely by arithmetic, so they are reported only.
+  Conditions: discovery trades with data >= 35; >= 7 discovery quarters with trades;
+     data coverage >= 80% of the candidate's discovery signals (so missing quotes cannot bias the result);
+     rank by discovery average (net return on capital) WITHOUT its best 5 trades;
+     must exceed the baseline's discovery average without best 5 by >= 0.5 points.
+  At most 2 finalists (top 2 by that rank). If none qualifies -> none.
+  Caveat stated up front: return on premium and return on notional are not the same unit; passing the
+  bar says the option version keeps a positive edge after the leverage, not that it is "better".
+
+DIAGNOSTICS (no selection made from them):
+  D1 cash raw_net and vsN_net on exactly the trades that have option data (matched subset).
+  D2 coverage: signals, trades with data, reasons for missing (entry zero volume, exit missing, CA).
+  D3 exit-type mix (k+20 close / settle fallback / expiry settle), entry premium as % of spot.
+  D4 real futures check for C6: actual FUTSTK and NIFTY FUTIDX prices (same expiry rule) from the same
+     bhavcopies, hedged P&L on notional, to compare against the vsN_net illustration.
+
+ADDED AFTER (written after seeing ENTRY-side liquidity only - no outcome had been computed):
+  plan.py showed that the strike chosen by the fixed rule has ZERO volume on k for 29/122 WR50 signals (ATM)
+  and 38/122 (OTM5), mostly when the expiry is the far month (>25 sessions away). With the pre-stated
+  80% coverage condition, C1-C4, C9 can hardly qualify. Two liquidity-fallback versions are added; they count.
+  C10 OPT_ATM_WR50_LIQ  : as C1, but if the ATM strike has zero volume/close on k, use the listed strike
+                          (same expiry) nearest to S among strikes with volume > 0 and close > 0 on k and
+                          |K/S - 1| <= 0.025; none -> lacks data.
+  C11 OPT_OTM5_WR50_LIQ : as C2, same fallback around the target 1.05*S (|K/(1.05*S) - 1| <= 0.025).
+  -> total candidates now 11 (C1-C11). C10, C11 are eligible under the same finalist rule (unchanged).

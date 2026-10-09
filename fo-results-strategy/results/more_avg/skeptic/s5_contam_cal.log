@@ -1,0 +1,17 @@
+=== (a) Contamination: earlier full-sample files vs this round's holdout numbers ===
+holds.csv H60 MAIN: n 215 avg 4.8405, first14 4.6397, last8 5.1040 (holdout evaluator F3: 93 trades +5.104)
+  derivable from the published doc alone: (4.84*215 - 4.64*122)/93 = 5.10
+  H30: first14 +2.85 last8 +2.82
+  H40: first14 +3.13 last8 +3.61
+  H60: first14 +4.64 last8 +5.10
+variants.csv XN>5 & cut RSI>50: n 164 avg +3.27 first14 +4.12 last8 +2.26
+variants.csv XN>6 & cut RSI>50: n 127 avg +3.10 first14 +3.59 last8 +2.44
+variants.csv XN>4 & cut RSI>60: n 115 avg +3.66 first14 +3.87 last8 +3.38
+variants.csv XN>4 & cut RSI>70: n 29 avg +5.82 first14 +6.40 last8 +4.70
+  (holdout evaluator F1 XN>5: 75 trades +2.26)
+
+=== (b) Calendar-time, FULL sample (215 signals with a 60-session window) ===
+F3         per 20 sessions +1.77  NW t lag20 +3.84 lag60 +3.54
+BASE       per 20 sessions +1.74  NW t lag20 +3.12 lag60 +2.84
+F3 - BASE  per 20 sessions +0.03  NW t lag20 +0.06 lag60 +0.06
+per position-day: F3 +1.62 per 20d, BASE +2.43 per 20d
