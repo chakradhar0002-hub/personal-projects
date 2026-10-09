@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SP = os.path.abspath(os.path.join(HERE, '..', '..'))
+SP = os.environ.get('LAB_ROOT', os.path.abspath(os.path.join(HERE, '..', '..')))  # scratch data folder
 D = f'{SP}/sector_lab/data'
 ses = pd.read_csv(f'{D}/sessions.csv').day.tolist()
 ret = pd.read_csv(f'{D}/returns.csv', index_col=0)

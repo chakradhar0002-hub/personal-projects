@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SP = os.path.abspath(os.path.join(HERE, '..', '..'))
+SP = os.environ.get('LAB_ROOT', os.path.abspath(os.path.join(HERE, '..', '..')))  # scratch data folder
 DATA = f'{SP}/sector_lab/data'
 NDRAW = 20000
 NPERM = 10000
