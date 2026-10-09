@@ -1,0 +1,122 @@
+in_fo results with three_day: 3278; max |three_day - TA panel| 9.0e-05, max |tp3 - take_profit| 9.0e-05
+S85: rebuilt 85 trades, repo trades.csv 85, same (symbol, quarter): True, max |three_day - ref x100| 5.04e-05, max |tp3 - ref take_profit x100| 5.04e-05, max |lag - ref x100| 4.97e-05, max |vol - ref| 4.90e-06; mean three_day 2.132 (ref 2.132), tp 2.144
+S44: rebuilt 44 trades, repo trades_vol13.csv 44, same (symbol, quarter): True, max |three_day - ref x100| 4.31e-05, max |tp3 - ref take_profit x100| 4.31e-05, max |lag - ref x100| 4.97e-05, max |vol - ref| 4.90e-06; mean three_day 2.767 (ref 2.767), tp 3.003
+placebo lag+vol>=1.0 days (in_fo, TA complete): 3081; with a next-result FA row 3024; price ratio missing where a row exists 0
+placebo base rows: P100 3081, P130 1590
+
+========== PAIRS on S85 (three_day %, gross; T = FA part AND TA part true; known = FA part known) ==========
+                     pair prior  n_known  n_unknown  unknown_mean  T_n  T_mean  T_net  T_tp  T_up%   T_q  T_n14  T_f14  T_n8  T_l8  T_xb5  F_n  F_mean  F_tp  F_up%   F_q  F_n14  F_f14  F_n8  F_l8  F_xb5
+         X1_quality&rsi30     T       50         35          1.46   10   -0.23  -0.40  0.31  60.00   2/4      4  -1.12     6  0.37  -3.67   40    3.31  3.17  72.50 12/12     12   3.13    28  3.39   1.82
+     X2_prof4q&bullcandle     T       78          7          1.60    2    2.01   1.84  7.12  50.00   1/2      1  -7.00     1 11.01    NaN   76    2.18  2.11  64.47 18/18     43   1.86    33  2.61   1.32
+      X3_cheapown&belowBB     T       40         45          1.76    6    2.88   2.71  2.81  83.33   4/5      4   0.61     2  7.41  -7.93   34    2.49  2.43  70.59 10/11     11   1.72    23  2.86   1.14
+        X4_growing&macdup     T       79          6          1.25   29    1.72   1.55  1.31  58.62  8/12     14   2.26    15  1.21  -0.45   50    2.48  2.67  68.00 15/18     34   1.56    16  4.42   1.48
+     X5_piohigh&oversold3     T       59         26          0.83   16    3.10   2.93  4.27  68.75   8/8     11   2.10     5  5.30   0.70   43    2.56  1.88  69.77 13/14     18   2.87    25  2.34   1.16
+           X6_large&rsi30     T       85          0           NaN   12    3.28   3.11  2.52  83.33   6/6     10   3.70     2  1.17   0.61   73    1.94  2.08  60.27 17/18     41   1.15    32  2.96   1.14
+   X7_goodfund&strongdown    2s       78          7          2.89   34    3.18   3.01  2.72  73.53 11/14     15   4.15    19  2.41   1.49   44    1.21  1.69  54.55 10/17     30   0.23    14  3.30  -0.05
+    X8_goodfund&oversold3     T       78          7          2.89   21    3.83   3.66  3.93  80.95 11/12     12   3.96     9  3.66   1.89   57    1.41  1.47  56.14 13/17     33   0.65    24  2.46   0.32
+       X9_prof4q&above200     T       78          7          1.60   18    0.69   0.52  1.84  55.56   7/9     15   1.06     3 -1.17  -1.60   60    2.63  2.36  66.67 14/16     29   1.97    31  3.25   1.59
+X10_cheappeers&near52wlow     T       62         23          3.67    7    2.56   2.39  1.54  71.43   3/3      4   4.09     3  0.52  -3.75   55    1.44  1.90  61.82 11/16     30   0.84    25  2.15   0.53
+      X11_goodfund&obvdiv     T       78          7          2.89    4    0.25   0.08  2.27  50.00   2/3      2   0.42     2  0.08    NaN   74    2.16  2.13  63.51 17/19     43   1.59    31  2.96   1.27
+    X12_loss4q&strongdown     F       78          7          1.60    5    0.58   0.41  1.16  40.00   2/5      3  -0.05     2  1.53    NaN   73    2.29  2.31  65.75 17/18     41   1.78    32  2.94   1.40
+                     pair      D  p_perm  p_holm  p_bh  p_fw_maxT  D_f14   D_l8   D_tp  p_perm_tp  FApart_true_n  FApart_true_mean  TApart_true_n  TApart_true_mean  rest_nT  rest_meanT  rest_meanF  D_rest  plac_nT  plac_nF  plac_meanT  plac_meanF  D_plac  se_plac  z_vs_plac
+         X1_quality&rsi30 -3.539   0.105   1.000 0.419      0.575 -4.249 -3.023 -2.854      0.144             29             2.458             31             2.798       19      -0.927       0.102  -1.029      421     1460      -0.156       0.678  -0.835    0.642     -1.184
+     X2_prof4q&bullcandle -0.179   1.000   1.000 1.000      1.000 -8.861  8.405  5.007      0.048             73             2.290              3             2.316       66      -0.295      -0.026  -0.269      105     2593       1.253       0.600   0.653    0.597     -0.184
+      X3_cheapown&belowBB  0.382   0.923   1.000 1.000      1.000 -1.108  4.541  0.386      0.853             24             2.184             19             2.014       52      -0.103       0.105  -0.207      226     1416       0.773       0.510   0.262    0.331      0.089
+        X4_growing&macdup -0.759   0.548   1.000 0.823      1.000  0.698 -3.208 -1.358      0.241             49             2.526             50             2.244      801       0.368      -0.186   0.555     1012     1651       0.488       0.664  -0.176    0.245     -0.460
+     X5_piohigh&oversold3  0.539   0.769   1.000 0.922      1.000 -0.777  2.969  2.386      0.037             34             2.654             40             2.564      134       0.274      -0.107   0.381      570     1560       0.516       0.485   0.031    0.364      0.376
+           X6_large&rsi30  1.337   0.409   1.000 0.823      0.998  2.555 -1.796  0.438      0.740             27             2.956             31             2.798       22      -0.837      -0.011  -0.825      429     2491       0.627       0.709  -0.082    0.350      0.928
+   X7_goodfund&strongdown  1.971   0.098   1.000 0.419      0.783  3.926 -0.899  1.029      0.293             45             2.475             66             2.449      212      -0.542       0.037  -0.579     1173     1495       0.694       0.614   0.080    0.291      1.585
+    X8_goodfund&oversold3  2.416   0.067   0.807 0.419      0.658  3.303  1.201  2.457      0.027             45             2.475             40             2.564      144       0.311      -0.034   0.345      694     1974       0.565       0.679  -0.114    0.252      1.899
+       X9_prof4q&above200 -1.938   0.280   1.000 0.823      0.694 -0.904 -4.418 -0.515      0.533             73             2.290             20             1.242     1376      -0.026      -0.043   0.017      430     2268       0.920       0.570   0.350    0.361     -2.148
+X10_cheappeers&near52wlow  1.127   0.490   1.000 0.823      1.000  3.257 -1.632 -0.359      0.853             42             1.581             16             1.472       38      -0.226      -0.003  -0.223      339     1628       0.649       0.355   0.293    0.309      0.537
+      X11_goodfund&obvdiv -1.911   0.453   1.000 0.823      1.000 -1.161 -2.885  0.137      0.947             45             2.475              7             0.248      143      -0.178      -0.003  -0.175      148     2520       1.012       0.628   0.383    0.477     -0.918
+    X12_loss4q&strongdown -1.711   0.680   1.000 0.907      1.000 -1.837 -1.410 -1.156      0.712              5             0.579             66             2.449       40      -0.444      -0.026  -0.418      137     2561       1.820       0.562   1.258    0.660     -0.976
+                     pair  minside_f14  minside_l8  a_both_halves  b_adjusted  c_prior  d_beats_placebo  promoted  possible_chance  adds_to_parts
+         X1_quality&rsi30            4           6          False       False    False             True     False            False           True
+     X2_prof4q&bullcandle            1           1          False       False    False             True     False            False           True
+      X3_cheapown&belowBB            4           2          False       False     True             True     False            False           True
+        X4_growing&macdup           14          15          False       False    False             True     False            False           True
+     X5_piohigh&oversold3           11           5          False       False     True             True     False            False           True
+           X6_large&rsi30           10           2          False       False     True             True     False            False           True
+   X7_goodfund&strongdown           15          14          False       False     True             True     False            False           True
+    X8_goodfund&oversold3           12           9           True       False     True             True     False            False           True
+       X9_prof4q&above200           15           3          False       False    False             True     False            False           True
+X10_cheappeers&near52wlow            4           3          False       False     True             True     False            False           True
+      X11_goodfund&obvdiv            2           2          False       False    False             True     False            False          False
+    X12_loss4q&strongdown            3           2          False       False     True             True     False            False          False
+
+========== PAIRS on S44 (three_day %, gross; T = FA part AND TA part true; known = FA part known) ==========
+                     pair prior  n_known  n_unknown  unknown_mean  T_n  T_mean  T_net  T_tp  T_up%   T_q  T_n14  T_f14  T_n8  T_l8  T_xb5  F_n  F_mean  F_tp  F_up%   F_q  F_n14  F_f14  F_n8  F_l8  F_xb5
+         X1_quality&rsi30     T       29         15          2.31    5   -0.30  -0.47  0.78  60.00   2/4      2  -3.32     3  1.71    NaN   24    3.69  3.48  83.33 11/12      7   4.82    17  3.23   1.59
+     X2_prof4q&bullcandle     T       40          4          4.69    2    2.01   1.84  7.12  50.00   1/2      1  -7.00     1 11.01    NaN   38    2.60  2.70  76.32 15/18     19   2.63    19  2.58   1.30
+      X3_cheapown&belowBB     T       24         20          3.93    4    1.25   1.08  0.34  75.00   3/4      3  -0.20     1  5.58    NaN   20    1.91  2.38  80.00  9/10      6   1.94    14  1.89   0.28
+        X4_growing&macdup     T       42          2          1.53   15    2.25   2.08  2.30  73.33   7/8      8   2.23     7  2.27  -0.34   27    3.15  3.35  81.48 14/16     16   2.75    11  3.73   1.60
+     X5_piohigh&oversold3     T       33         11          1.14   11    4.86   4.69  5.76  90.91   8/8      6   4.49     5  5.30   1.93   22    2.54  2.20  77.27 11/12      8   3.19    14  2.16   0.39
+           X6_large&rsi30     T       44          0           NaN    8    4.36   4.19  3.22  87.50   4/4      8   4.36     0   NaN  -0.03   36    2.41  2.96  75.00 15/17     16   1.68    20  3.00   1.19
+   X7_goodfund&strongdown    2s       41          3          5.28   21    3.41   3.24  3.34  85.71 10/12     11   4.68    10  2.01   1.59   20    1.72  2.49  65.00  8/11     10  -0.56    10  3.99  -0.70
+    X8_goodfund&oversold3     T       41          3          5.28   15    5.02   4.85  4.70  93.33 11/11      9   6.15     6  3.32   2.87   26    1.18  1.90  65.38  9/13     12  -0.79    14  2.86  -0.58
+       X9_prof4q&above200     T       40          4          4.69    7    1.10   0.93  2.89  71.43   5/7      6   0.84     1  2.65  -5.35   33    2.89  2.93  75.76 12/14     14   2.71    19  3.02   1.24
+X10_cheappeers&near52wlow     T       32         12          4.65    3    3.55   3.38  3.53 100.00   3/3      2   2.54     1  5.58    NaN   29    1.91  2.63  75.86 11/14     13   1.44    16  2.28   0.65
+      X11_goodfund&obvdiv     T       41          3          5.28    1    1.53   1.36  1.53 100.00   1/1      1   1.53     0   NaN    NaN   40    2.61  2.96  75.00 14/17     20   2.22    20  3.00   1.25
+    X12_loss4q&strongdown     F       40          4          4.69    3   -0.13  -0.30  1.26  33.33   1/3      1  -3.45     2  1.53    NaN   37    2.79  3.06  78.38 14/17     19   2.44    18  3.16   1.34
+                     pair      D  p_perm  p_holm  p_bh  p_fw_maxT  D_f14   D_l8   D_tp  p_perm_tp  FApart_true_n  FApart_true_mean  TApart_true_n  TApart_true_mean  rest_nT  rest_meanT  rest_meanF  D_rest  plac_nT  plac_nF  plac_meanT  plac_meanF  D_plac  se_plac  z_vs_plac
+         X1_quality&rsi30 -3.996   0.354   1.000 0.709      1.000 -8.136 -1.524 -2.707      0.390             16             1.664             21             3.913       24      -0.765       0.139  -0.904      282      714      -0.159       0.880  -1.040    0.841     -0.770
+     X2_prof4q&bullcandle -0.598   1.000   1.000 1.000      1.000 -9.633  8.436  4.415      0.248             37             2.794              3             2.316       65      -0.337       0.017  -0.354       58     1323       1.652       0.735   0.917    0.865     -0.507
+      X3_cheapown&belowBB -0.660   1.000   1.000 1.000      1.000 -2.134  3.687 -2.039      0.901             13             0.943             12             3.465       54       0.128       0.161  -0.032      165      723       0.995       0.517   0.477    0.523     -0.899
+        X4_growing&macdup -0.897   0.631   1.000 0.891      1.000 -0.519 -1.455 -1.041      0.553             29             2.858             24             3.022      774       0.444      -0.160   0.604      495      879       0.576       0.820  -0.245    0.319     -0.407
+     X5_piohigh&oversold3  2.326   0.110   1.000 0.660      1.000  1.297  3.146  3.552      0.001             18             3.191             25             4.278      137       0.252      -0.049   0.301      334      818       0.394       0.700  -0.306    0.500      1.763
+           X6_large&rsi30  1.945   0.349   1.000 0.709      1.000  2.678    NaN  0.261      0.906             14             3.674             21             3.913       26      -0.534       0.023  -0.557      282     1204       0.629       0.885  -0.255    0.408      1.215
+   X7_goodfund&strongdown  1.690   0.343   1.000 0.709      1.000  5.240 -1.989  0.852      0.500             25             2.820             35             2.915      223      -0.375       0.074  -0.449      598      777       0.879       0.750   0.129    0.385      1.015
+    X8_goodfund&oversold3  3.840   0.070   0.836 0.660      0.937  6.934  0.461  2.798      0.037             25             2.820             25             4.278      148       0.349       0.010   0.339      389      986       0.530       0.915  -0.385    0.357      2.751
+       X9_prof4q&above200 -1.785   0.223   1.000 0.709      1.000 -1.863 -0.373 -0.040      1.000             37             2.794              9             2.238     1320      -0.035       0.059  -0.093      174     1207       1.207       0.711   0.496    0.619     -2.670
+X10_cheappeers&near52wlow  1.644   0.416   1.000 0.713      1.000  1.093  3.296  0.904      0.833             19             2.668              7             2.015       42      -0.031       0.021  -0.052      196      823       0.837       0.382   0.455    0.411      0.695
+      X11_goodfund&obvdiv -1.085   1.000   1.000 1.000      0.769 -0.694    NaN -1.433      1.000             25             2.820              3            -0.209      145      -0.159       0.044  -0.203       71     1304       1.141       0.788   0.353    0.734     -1.960
+    X12_loss4q&strongdown -2.926   0.669   1.000 0.891      1.000 -5.898 -1.634 -1.796      0.812              3            -0.132             35             2.915       41      -0.249       0.011  -0.260       80     1301       2.362       0.676   1.686    0.737     -1.032
+                     pair  minside_f14  minside_l8  a_both_halves  b_adjusted  c_prior  d_beats_placebo  promoted  possible_chance  adds_to_parts
+         X1_quality&rsi30            2           3          False       False    False             True     False            False           True
+     X2_prof4q&bullcandle            1           1          False       False    False             True     False            False           True
+      X3_cheapown&belowBB            3           1          False       False    False             True     False            False          False
+        X4_growing&macdup            8           7          False       False    False             True     False            False           True
+     X5_piohigh&oversold3            6           5           True       False     True             True     False            False           True
+           X6_large&rsi30            8           0          False       False     True             True     False            False           True
+   X7_goodfund&strongdown           10          10          False       False     True             True     False            False           True
+    X8_goodfund&oversold3            9           6          False       False     True             True     False            False           True
+       X9_prof4q&above200            6           1          False       False    False             True     False            False           True
+X10_cheappeers&near52wlow            2           1          False       False     True             True     False            False           True
+      X11_goodfund&obvdiv            1           0          False       False    False             True     False            False          False
+    X12_loss4q&strongdown            1           2          False       False     True             True     False            False          False
+
+========== 2x2 cells on S85 (n / mean three_day) ==========
+cell                        FA_F&TA_F  FA_F&TA_T  FA_T&TA_F   FA_T&TA_T
+pair                                                                   
+X1_quality&rsi30           11 / -0.22  10 / 6.14  19 / 3.87  10 / -0.23
+X2_prof4q&bullcandle         5 / 0.58        NaN   71 / 2.3    2 / 2.01
+X3_cheapown&belowBB          13 / 3.5   3 / 1.39  18 / 1.95    6 / 2.88
+X4_growing&macdup           14 / -0.6  16 / 3.66  20 / 3.69   29 / 1.72
+X5_piohigh&oversold3        13 / 2.47  12 / 3.12  18 / 2.26    16 / 3.1
+X6_large&rsi30              39 / 1.39  19 / 2.49   15 / 2.7   12 / 3.28
+X7_goodfund&strongdown       6 / 0.64   27 / 1.7  11 / 0.31   34 / 3.18
+X8_goodfund&oversold3       16 / 2.46   17 / 0.6  24 / 1.29   21 / 3.83
+X9_prof4q&above200           5 / 0.58        NaN  55 / 2.81   18 / 0.69
+X10_cheappeers&near52wlow   17 / 1.12   3 / 3.79  35 / 1.38    7 / 2.56
+X11_goodfund&obvdiv         30 / 1.63   3 / 0.24  41 / 2.69    4 / 0.25
+X12_loss4q&strongdown       17 / 0.42  56 / 2.86        NaN    5 / 0.58
+
+==================== PROMOTION (S85, three_day) ====================
+                     pair prior      D  p_perm  p_holm  p_fw_maxT  D_f14   D_l8  minside_f14  minside_l8  a_both_halves  b_adjusted  c_prior  d_beats_placebo  promoted  possible_chance  adds_to_parts
+         X1_quality&rsi30     T -3.539   0.105   1.000      0.575 -4.249 -3.023            4           6          False       False    False             True     False            False           True
+     X2_prof4q&bullcandle     T -0.179   1.000   1.000      1.000 -8.861  8.405            1           1          False       False    False             True     False            False           True
+      X3_cheapown&belowBB     T  0.382   0.923   1.000      1.000 -1.108  4.541            4           2          False       False     True             True     False            False           True
+        X4_growing&macdup     T -0.759   0.548   1.000      1.000  0.698 -3.208           14          15          False       False    False             True     False            False           True
+     X5_piohigh&oversold3     T  0.539   0.769   1.000      1.000 -0.777  2.969           11           5          False       False     True             True     False            False           True
+           X6_large&rsi30     T  1.337   0.409   1.000      0.998  2.555 -1.796           10           2          False       False     True             True     False            False           True
+   X7_goodfund&strongdown    2s  1.971   0.098   1.000      0.783  3.926 -0.899           15          14          False       False     True             True     False            False           True
+    X8_goodfund&oversold3     T  2.416   0.067   0.807      0.658  3.303  1.201           12           9           True       False     True             True     False            False           True
+       X9_prof4q&above200     T -1.938   0.280   1.000      0.694 -0.904 -4.418           15           3          False       False    False             True     False            False           True
+X10_cheappeers&near52wlow     T  1.127   0.490   1.000      1.000  3.257 -1.632            4           3          False       False     True             True     False            False           True
+      X11_goodfund&obvdiv     T -1.911   0.453   1.000      1.000 -1.161 -2.885            2           2          False       False    False             True     False            False          False
+    X12_loss4q&strongdown     F -1.711   0.680   1.000      1.000 -1.837 -1.410            3           2          False       False     True             True     False            False          False
+No pair met the promotion rule -> no refined rule.
+Passed both halves and raw p < 0.05 but failed the adjustment (possible chance, NOT promoted): none
+
+Things tested (pre-registered): 24 splits (12 on S85 = main family, 12 on S44) + 0 refined rules

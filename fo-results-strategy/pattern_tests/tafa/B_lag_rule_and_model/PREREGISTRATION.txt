@@ -1,0 +1,139 @@
+PRE-REGISTRATION - TA + FA together: (1) 2-condition TA+FA splits on the lag-10% + volume rule, (2) walk-forward
+models on all in_fo results using TA, FA and TA+FA features (and the same restricted to the lag < -10% group).
+Written 2026-10-09 BEFORE any outcome (three_day / tp3 / d1..d3) was looked at against any TA+FA combination or any
+model score. Looked at beforehand (probe_counts.py, no outcome columns read): row counts per quarter, coverage of
+the FA fields inside the 85 trades, that results seasons never overlap (last Day+1 of season q-1 is 22-38 sessions
+before the first cutoff of season q), model fit timings on random data.
+Known beforehand (from the task text / earlier docs, not re-derived here): single TA conditions and single FA screens
+on the 85 trades gave nothing after adjustment. The 2-condition pairs below are the task's own examples plus five
+textbook trader pairs; they were not picked from any outcome table. Every test listed is counted, whatever it shows.
+Thresholds are textbook defaults, nothing tuned.
+
+DATA (read-only)
+  TA      : scratchpad/ta/build/events_ta.csv, placebo_ta.csv.gz, adjusted_ohlcv.csv.gz (placebo price moves);
+            scratchpad/ta/B_on_lag_rule/macd_prev.csv.gz (macd_hist_rising at k, verified earlier vs the panel)
+  FA      : scratchpad/fa/build/fa_panel.csv (pre-results fields only; rq_* never used here)
+  Nifty   : scratchpad/sector_lab/data/index_close.csv ("Nifty 50")
+  Trades  : repo results/lag10_volume/trades.csv (85) and trades_vol13.csv (44) - rebuilt and matched first
+  Universe: in_fo True, three_day not NaN. Returns in percent, gross; net = gross - 0.17 (no hedge in a 3-day trade).
+  Main outcome three_day; take-profit tp3 reported alongside everywhere.
+
+==================================================================================================== PART 1
+BASE SETS  S85: lag_pct < -10 and vol_ratio_5_60 >= 1.0 (must equal trades.csv); S44: vol >= 1.3 (trades_vol13.csv).
+           Rebuilt trades must match the repo files on (symbol, quarter), three_day, take-profit, lag and volume.
+
+FA PARTS (definitions identical to pattern_tests/fa/B_on_lag_rule unless noted; unknown = field missing)
+  quality      roe_pct > 15 AND (fin_type Company only) debt_equity < 0.5; known if roe (and D/E for Company)
+  prof4q       loss_any_4q == 0
+  cheap_own    pe_vs_own3y_pct < 0 (loss-makers unknown)
+  cheap_peers  pe_vs_peers_pct < 0
+  growing      l1_sales_yoy_pct > 0 AND l1_pat_yoy_pct > 0; False if any known one <= 0; unknown otherwise (NEW)
+  pio_high     piotroski_frac >= 5/7, known only if piotroski_n >= 5
+  large        log_mcap > median log_mcap of all in_fo results of the PREVIOUS season (qn-1; qn 0 uses its own)
+               (point-in-time version; the earlier FA test used the same-season median)
+  good_fund    loss_any_4q == 0 AND l1_pat_yoy_pct > 0 AND l1_sales_yoy_pct > 0 ("unjustified fall");
+               False if any known one fails; unknown otherwise
+  loss4q       loss_any_4q == 1
+TA PARTS (definitions identical to pattern_tests/ta/B_on_lag_rule; all known for in_fo events)
+  rsi30 rsi14 < 30 | bullc cdl_hammer OR cdl_bull_engulf | belowbb bb_pctb < 0 | macdup macd_hist(k) > macd_hist(k-1)
+  os3 >= 3 of {rsi14<30, rsi2<10, stoch_k14<20, bb_pctb<0, cci20<-100, mfi14<20} | sdown adx14 > 25 AND -DI > +DI
+  above200 close_vs_sma200_pct > 0 | near52 dist_52w_low_pct <= 5 | obvdiv obv_div20 == +1
+
+THE 12 PAIRS (True = FA part true AND TA part true; known = FA part known; False = known and not True).
+Expected better side [prior]:
+  X1  quality AND rsi30                 [T]  quality on an oversold dip
+  X2  prof4q AND bullc                  [T]  profitable company + reversal candle
+  X3  cheap_own AND belowbb             [T]  cheap vs own P/E history + below lower Bollinger band
+  X4  growing AND macdup                [T]  sales & profit growing + MACD histogram rising
+  X5  pio_high AND os3                  [T]  Piotroski high + oversold count >= 3
+  X6  large AND rsi30                   [T]  large cap + RSI < 30
+  X7  good_fund AND sdown               [2s] "unjustified fall" in a strong downtrend (overreaction says T,
+                                             falling-knife TA says F)
+  X8  good_fund AND os3                 [T]  good fundamentals + oversold
+  X9  prof4q AND above200               [T]  profitable + dip inside a long-term uptrend
+  X10 cheap_peers AND near52            [T]  cheap vs peers at the 52-week low
+  X11 good_fund AND obvdiv              [T]  good fundamentals + OBV accumulation divergence
+  X12 loss4q AND sdown                  [F]  loss-maker in a strong downtrend ("falling knife", avoid)
+  -> 12 pairs x 2 base sets = 24 splits. MAIN FAMILY = the 12 on S85, three_day.
+
+STATISTICS PER SPLIT (both sides): n, mean, net, tp3, up% (three_day > 0), quarters with trades / positive,
+  first 14 (qn 0..13) and last 8 (qn 14..21) n and mean, mean without the best 5. Unknown n and mean.
+  2x2 cells (FA T/F x TA T/F) n and mean among known rows (descriptive).
+  D = mean(True) - mean(False). p_perm: labels shuffled WITHIN quarter among known trades, 20,000, two-sided.
+  Same for tp3. Holm and Benjamini-Hochberg over the 12 (S85). Family-wise permutation (Westfall-Young single-step
+  maxT): 20,000 joint within-quarter permutations of three_day among the 85 trades; each split's D standardised by
+  its own null sd; p_fw = share of permutations whose max |z| over the 12 >= the split's |z|.
+  D_rest: the same pair on all OTHER in_fo results of the same quarters (does it matter more on the dip?).
+  Placebo (the TA part on non-results days): non-results in_fo stock-days with lag < -10 and vol >= 1.0 (and >= 1.3
+  for S44), all used TA indicators present; FA labels from the stock's NEXT result row with price-based fields moved
+  to the placebo day (P/E and mcap x adj close(k)/adj close(cutoff); peer median P/E x Nifty(k)/Nifty(cutoff); own-3y
+  median kept; size median = previous season of that next row). D_plac with a calendar-month cluster bootstrap SE
+  (2,000); z = (D - D_plac) / sqrt(sd_null^2 + se_plac^2).
+  "Adds to its parts" (reported): mean of the AND side vs the mean of FA-part-true and of TA-part-true trades in S85.
+
+PROMOTION (decided on S85, three_day; all must hold):
+  (a) better side beats the other by >= 1.0 pp in BOTH halves (first 14, last 8), >= 5 known trades each side each half
+  (b) significant after adjustment: Holm p < 0.05 AND family-wise maxT p < 0.05 (over the 12)
+  (c) better side = prior side (2s: either)
+  (d) the TA part beats its placebo: sign(D) x (D - D_plac) > 0
+  Reported for promoted pairs, not required: adds to its parts. Pairs passing (a) and raw p < 0.05 but failing (b):
+  "not promoted - possible chance".
+  Refined rule report (if any): S85/S44 + better side: n, mean, net, tp3, up%, quarters, halves, without best 5,
+  luck vs 20,000 random same-size-per-quarter picks from all in_fo results, luck within the parent, placebo mean.
+
+==================================================================================================== PART 2
+WALK-FORWARD MODELS. For each season q = 6..21: train on seasons < q, score season q. Seasons 6-7 are a threshold
+warm-up only (scored, never traded or evaluated). Trades / evaluation: seasons 8..21 (14 out-of-sample quarters;
+"first 6" = 8..13, "last 8" = 14..21).
+  Label (training): y = 1 if three_day > the median three_day of its season within the training universe.
+  FEATURES (all at or before the cutoff close; no outcome, no rq_*):
+   TA (48): rsi14 rsi2 stoch_k14 stoch_d3 cci20 mfi14 bb_pctb bb_width_pct macd_pct macd_signal_pct macd_hist_pct
+     macd_above_signal macd_bull_x3 macd_bear_x3 macd_hist_rising close_vs_sma20/50/200_pct sma50_vs_sma200_pct
+     golden_state golden_x10 death_x10 adx14 plus_di14 minus_di14 atr14_pct nr7 cdl_hammer cdl_bull_engulf
+     cdl_bear_engulf cdl_doji cdl_shooting_star gap_pct full_gap_up full_gap_down dist_52w_high_pct dist_52w_low_pct
+     dist_20d_high_pct dist_20d_low_pct don20_pos don20_break_up don20_break_dn obv_slope20 price_slope20_pct
+     obv_div20 ret_5d_pct lag_pct vol_ratio_5_60      (willr14 left out: = stoch_k14 - 100)
+   FA (32): log_mcap earnings_yield_pct pe_vs_own3y_pct pe_vs_peers_pct book_yield (=1/pb, pb > 0) sales_yield
+     (=1/ps) peg roe_pct debt_equity l1_sales_yoy_pct l1_pat_yoy_pct l1_sales_qoq_pct l1_pat_qoq_pct
+     sales_yoy_accel_pp pat_yoy_accel_pp ttm_pat_yoy_pct ttm_sales_yoy_pct pat_up_yoy_4q sales_up_yoy_4q
+     l1_ebitda_margin_pct l1_ebitda_margin_chg_yoy_pp l1_net_margin_pct l1_net_margin_chg_yoy_pp loss_any_4q
+     piotroski_frac pat_yoy_std8_pct days_since_dividend (none on record -> 1000) is_bank is_nbfc
+     + missing flags: miss_bs (roe_pct NaN), miss_pio (piotroski_frac NaN), miss_pe_own (pe_vs_own3y_pct NaN)
+   TA+FA (80): the union.
+  PREPROCESSING fitted on the training rows only: clip each feature to its training 1st-99th percentile, fill
+   missing with the training median; logistic regression also standardises (training mean / sd).
+  MODELS (fixed, not tuned): LR = LogisticRegression(L2, C=1.0, lbfgs); RF = RandomForest(300 trees, max_depth 4,
+   min_samples_leaf 20, max_features sqrt, seed 1); GB = GradientBoosting(150 trees, learning_rate 0.05, max_depth 2,
+   subsample 0.8, min_samples_leaf 20, seed 1). Score = predicted P(y = 1).
+  THRESHOLD from earlier quarters only: buy season-q rows with score > the (1-k) quantile of all out-of-sample scores
+   of seasons 6..q-1 (same model, same feature set, same run, same universe).
+  UNIVERSES / STRATEGIES:
+   A  all in_fo results: 3 feature sets x 3 models x k in {10%, 20%} = 18 strategies
+   L1 restricted to the lag group (lag_pct < -10): trained ONLY on lag-group rows of seasons < q (label = above the
+      lag group's season median), thresholds from past lag-group OOS scores; 3 x 3 x k in {10%, 20%, 50%} = 27
+   L2 (secondary) universe-A models scored on the lag-group rows, threshold = median of past lag-group OOS scores
+      (k = 50%): 3 x 3 = 9
+   -> 54 strategies. Lag-group references (not counted): all lag rows of seasons 8..21; the volume filter (S85 rows
+      of seasons 8..21) - the question is whether TA+FA ranks the bouncers better than volume does.
+  REPORT per strategy: n, mean, net, tp3 (gross / net), up%, quarters with trades / positive, first 6 and last 8 n /
+   mean, without best 5; luck = share of 20,000 random same-size-per-quarter picks from the universe's rows of that
+   season with mean >= the strategy's (one-sided), Holm within each family (A 18, L1 27, L2 9); OOS AUC (label =
+   three_day > the test season's universe median; pooled and mean per-season) and mean per-season Spearman IC.
+  SHUFFLED-LABEL NULL: 30 runs; each run permutes the training outcomes within season once (whole history) and
+   repeats the entire walk-forward (fits, warm-up, thresholds). p = (#null >= real + 1) / 31 for the top-k mean and
+   for the pooled AUC. Family-wise: maxT over the family's strategies across null runs
+   (z = (value - null mean) / null sd), p_fw = (#runs with max z >= z_obs + 1) / 31.
+  "WORKS" only if all: net mean > 0; Holm luck p < 0.05; null p < 0.05 for both the mean and the AUC; mean > 0 in
+   both the first 6 and the last 8; mean without best 5 > 0.
+  "COMBINATION ADDS" (per model): per-season AUC of TA+FA minus TA-only and minus FA-only over the 14 seasons, paired
+   t-test and sign count; adds only if both differences are > 0 with p < 0.05 AND the TA+FA top-10% and top-20%
+   means beat both single sets in both halves.
+  "RANKS THE BOUNCERS" (lag group): an L1/L2 top-50% strategy beats the volume filter's mean in both halves, and its
+   lag-group AUC beats its shuffled null (p < 0.05).
+  PLACEBO (TA part, real runs only): universe-A TA-only models score non-results in_fo stock-days lying between the
+   end of season q-1 (last Day+1 session) and the start of season q (first cutoff), with the season-q threshold;
+   report picked mean vs all those days' mean (3-day forward return), month-cluster bootstrap 95% CI of the
+   difference; compare with the event excess (picked mean - season mean of all events).
+
+TOTAL pre-registered things: Part 1 24 splits (+2 refined rules per promoted pair); Part 2 54 strategies
+(+ 3 x 2 TA placebo checks, descriptive). Counted in the report whatever they show.

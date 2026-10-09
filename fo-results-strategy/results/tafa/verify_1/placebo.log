@@ -1,0 +1,31 @@
+quiet-day winners: 1598  (2021-05..2026-08), symbols 196
+
+-- v20 (hedged, net 0.19)
+   all quiet winners      n  1598 mean +0.61 (se 0.51)
+   RSI>50                 n   857 mean +0.32 (se 0.67)
+   RSI<=50                n   741 mean +0.95 (se 0.55)
+   last GOOD              n   707 mean +1.62 (se 0.75)
+   last GOOD & RSI>50     n   420 mean +1.08 (se 0.94)
+   RSI>60                 n   426 mean +0.39 (se 0.67)
+   RSI>70                 n   140 mean -0.11 (se 1.07)
+   RSI>50 minus RSI<=50: -0.63 (se 0.69, t -0.91)
+   GOOD&RSI>50 minus other quiet winners (FA known): +0.61 (se 0.81, t 0.75)
+
+-- v5 (hedged, net 0.19)
+   all quiet winners      n  1598 mean +0.11 (se 0.21)
+   RSI>50                 n   857 mean -0.11 (se 0.27)
+   RSI<=50                n   741 mean +0.36 (se 0.26)
+   last GOOD              n   707 mean +0.45 (se 0.30)
+   last GOOD & RSI>50     n   420 mean +0.14 (se 0.38)
+   RSI>60                 n   426 mean -0.00 (se 0.34)
+   RSI>70                 n   140 mean -0.31 (se 0.43)
+   RSI>50 minus RSI<=50: -0.48 (se 0.31, t -1.53)
+   GOOD&RSI>50 minus other quiet winners (FA known): +0.03 (se 0.36, t 0.09)
+
+results days (H20 hedged net):
+   all results RSI>50     n  1833 mean +1.00
+   all results RSI<=50    n  1445 mean -0.34
+   non-winners RSI>50     n  1601 mean +0.79
+   non-winners RSI<=50    n  1285 mean -0.39
+   winners RSI>50         n   232 mean +2.42
+   winners RSI<=50        n   160 mean +0.04

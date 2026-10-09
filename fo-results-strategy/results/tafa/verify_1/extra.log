@@ -1,0 +1,37 @@
+within-quarter RSI>50 minus <=50, H20: all results 0.87 t 2.28 15/22
+                                  non-winners 0.73 t 1.74 13/22
+                                  winners     1.87 t 1.93 15/22
+                                  winners&GOOD 1.56 t 1.03 13/20
+GOOD minus notGOOD within winners&RSI>50: -0.46 t -0.34 10/19
+n 121
+
+candidate by RSI band (H20 net):
+           size  mean  median
+rsi_cut                      
+(50, 60]     59  1.29    1.98
+(60, 70]     43  2.96    2.22
+(70, 100]    19  7.91    5.80
+winners (any FA) by RSI band:
+           size  mean  median
+rsi_cut                      
+(50, 60]    117  1.20    1.77
+(60, 70]     86  2.93    1.88
+(70, 100]    29  5.82    4.71
+candidate median 3.07, trimmed 5% each side 2.49
+without best 10 1.18, without best quarter(qn10) and best 5 1.44
+candidate by year
+yr     2021   2022   2023   2024   2025   2026
+size  15.00  16.00  21.00  23.00  20.00  26.00
+mean  -0.72  -0.58   7.69   3.35   2.62   3.18
+plain winners by year
+yr     2021   2022   2023   2024   2025   2026
+size  37.00  50.00  49.00  76.00  95.00  85.00
+mean  -0.79  -1.51   6.45   1.61   0.97   1.66
+unhedged raw net candidate 3.71; nifty over hold 0.76
+best 5 trades:
+          symbol  qn  rsi_cut     XN    v20
+1368         PFC  10    62.86   5.47  30.39
+1326   HINDPETRO  10    52.27   6.34  29.82
+1623   MOTHERSON  12    76.47   4.82  28.34
+2144         BSE  16    61.52   6.38  25.10
+2824  POWERINDIA  19    61.89  13.72  21.33

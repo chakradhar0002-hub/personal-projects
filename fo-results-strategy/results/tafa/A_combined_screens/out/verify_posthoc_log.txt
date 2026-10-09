@@ -1,0 +1,21 @@
+PART 1 - independent recomputation vs out/summary.csv
+  1D: n 62 vs 62; avg +1.6728 vs +1.6728
+  1F: n 272 vs 272; avg +0.5467 vs +0.5467
+  3B: n 122 vs 122; avg +0.3871 vs +0.3871
+  7P: n 80 vs 80; avg -1.0489 vs -1.0489
+  9C: n 430 vs 430; avg +0.4683 vs +0.4683
+  1D direct random-draw luck: avg +1.673, random expectation -0.414, p_two 0.0023 (permutation run: 0.0026)
+
+PART 2 - POST-HOC diagnostics (not pre-registered; not counted; descriptive only)
+(a) inside RSI14<30 results (n 103): QB 62 trades +1.673 vs not-QB 41 -1.141; diff +2.814, within-quarter label permutation p_two 0.0389
+     first 14: QB +1.535 (n 27) vs not-QB -0.830 (n 25)
+     last 8: QB +1.779 (n 35) vs not-QB -1.627 (n 16)
+(b) 1D in the lag-10%+volume rule: 20 trades avg +3.187; not in it: 42 avg +0.952
+    1D with lag < -10% (any volume): 30 avg +2.020; lag >= -10%: 32 avg +1.347
+(c) 1D per quarter (qn: trades, avg): 1: 2, +4.26; 2: 1, -2.95; 3: 7, +2.25; 4: 7, -1.28; 7: 7, +3.90; 11: 1, -1.77; 12: 2, +1.76; 14: 10, +2.05; 15: 8, +2.78; 16: 1, -1.36; 17: 3, +1.69; 19: 13, +1.22
+(d) 1D without lag-rule trades: n 42, avg +0.952, random (non-lag results, same quarters) -0.588, p_two 0.0616; without best 5: -0.395
+(e) RSI14<30 & no loss 4q: n 87, avg +0.857
+(e) RSI14<30 & PAT up YoY: n 68, avg +1.486
+(e) RSI14<30 & QA (ROE>15,D/E<0.5): n 24, avg -1.450
+(e) RSI14<30 alone: n 103, avg +0.553
+(f) lag rule (85) with QB: 51 trades avg +2.370; without QB: 34 avg +1.776

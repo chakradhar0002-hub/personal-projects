@@ -1,0 +1,128 @@
+PRE-REGISTRATION - post-results TECHNICAL + FUNDAMENTAL combinations (trades entered at the reaction-day close)
+Written 2026-10-09 06:35 UTC BEFORE any outcome (forward return of any kind) was computed for any rule below.
+Already known before writing (from earlier, documented work - not from this folder): the plain results-winner drift
+(XN > 4, E0, H20) = +1.45% vsN net, 392 trades, 15/22 quarters; at H5 / H10 it is +0.07% / +0.22%; good reported
+numbers alone add nothing; every "bad numbers" short lost money hedged (FA C_post_results). Thresholds below are
+textbook values fixed now and NOT tuned to any of that. Everything listed is counted. Anything added later is marked
+ADDED AFTER and counted; it cannot rescue a verdict.
+
+DATA (read-only)
+  fundamentals : scratchpad/fa/build/fa_panel.csv  (rq_* = reported quarter, public at the announcement; pre-results
+                 fields (roe_pct, debt_equity, pe, ...) point-in-time at the cutoff)
+  TA panel     : scratchpad/ta/build/events_ta.csv (indicators at the CUTOFF close) and adjusted_ohlcv.csv.gz (split-
+                 adjusted OHLCV) + build_panel.py's indicators() (imported, unchanged) for indicators at other days
+  prices       : scratchpad/sector_lab/data/{sessions,returns,index_close,events}.csv
+  Join fa_panel <-> events.csv <-> events_ta.csv on (symbol, qn); reaction-day session k = events.i_react.
+
+UNIVERSE  fa_panel in_fo == True (3,280 results, qn 0..21), TRADABLE as in fa C_post_results: reaction-day return
+  exists, session k+21 exists, <= 2 blank daily returns in k+1..k+21. Plain winners W = XN > 4, where
+  XN = stock return on the reaction day - Nifty 50 return that day (percent).
+
+TRADE / OUTCOMES (entry E0 only = the reaction-day close k; horizons H = 5, 10, 20 sessions -> exit close k+H)
+  stock return = compounded adjusted daily returns k+1..k+H (blank = 0); Nifty = close(k+H)/close(k) - 1.
+  raw_gross = stock; vsN_gross = stock - Nifty.
+  LONG : raw_net = raw_gross - 0.17 ; vsN_net = vsN_gross - 0.19 (0.17 stock + 0.02 Nifty hedge)
+  SHORT: raw_net = -raw_gross - 0.17 ; vsN_net = -vsN_gross - 0.19
+  PRIMARY measure = vsN_net (Nifty-hedged, after costs), percent units (1.2 = +1.2%).
+  Secondary "take-profit": exit at the first close j in k+1..k+H where the direction-adjusted hedged cumulative return
+  (stock cum - Nifty cum) > +3%, else at k+H; reported gross and net (-0.19). Never used for a verdict.
+
+TECHNICAL STATE AT THE REACTION CLOSE (day k; data up to the close of k only; adjusted OHLCV on the stock's own traded
+  days; the TA builder's exact definitions)
+  BRK20     close_k > highest HIGH of the prior 20 traded sessions (= don20_break_up at k)
+  GAPHOLD   gap up > 2% that holds: open_k / close_{k-1} - 1 > 2% AND low_k > close_{k-1} (gap not filled in the day)
+  VOL15     volume_k >= 1.5 x mean volume of the prior 50 traded sessions (k-50..k-1)  ("above-average volume",
+            O'Neil-style 50% above the 50-day average; results days usually have high volume, so 1.0x would be ~always)
+  BREAKOUT_VOL = (BRK20 or GAPHOLD) and VOL15
+  BELOW50   close_k < SMA50_k (simple mean of the last 50 traded closes incl. k) - "still below its 50-day average
+            after the reaction"
+  BRKDN_VOL close_k < lowest LOW of the prior 20 traded sessions (= don20_break_dn at k) and VOL15
+  TA-eligible at k: stock traded on k and has >= 51 traded sessions up to k.
+  Check: the same code evaluated at the cutoff must reproduce events_ta.csv (rsi14, close_vs_sma50/200_pct,
+  don20_break_up/dn, gap_pct) - asserted before anything else.
+
+TECHNICAL STATE BEFORE RESULTS (cutoff close = 2 sessions before the result session; events_ta.csv as built)
+  UP200 close_vs_sma200_pct > 0      DN200 close_vs_sma200_pct < 0      (NaN -> not eligible)
+  RSI_HI rsi14 > 50                  RSI_LO rsi14 < 50                   (textbook 50 midline split)
+
+FUNDAMENTALS
+  MCHG = rq_ebitda_margin_chg_yoy_pp for fin_type Company; rq_net_margin_chg_yoy_pp for Bank / NBFC (as fa C).
+  GOOD  (rq_pat_yoy_pct > 25 AND rq_sales_yoy_pct > 15) OR MCHG > +2 pp      eligible: (pat & sales known) or MCHG known
+  BAD   rq_pat_yoy_pct < -25 (positive base; includes profit-to-loss) OR MCHG < -2 pp
+                                                                             eligible: pat known or MCHG known
+        (a result can be both GOOD and BAD, e.g. profit +40% but margin -3 pp; it then counts in both)
+  Q_HI  quality: roe_pct > 15 AND debt_equity < 0.5                          eligible: both known (balance sheets from
+        qn ~6-7; banks have no D/E -> not eligible)
+  Q_LO  low quality: fin_type Company AND (roe_pct < 10 OR debt_equity > 1)  eligible: Company with both known
+  CHEAP pe < 15 (pe only when TTM PAT > 0)                                    eligible: ttm_pat & mcap known
+  EXP   pe > 50                                                               eligible: same
+  (pre-results quality / value fields are point-in-time at the cutoff; rq_* only used for trades entered at the
+  reaction close, when the numbers are public)
+
+TESTS (117 primary = 39 signals x 3 horizons; every one counted)
+  PART 1 - FA + TA combinations on ALL results (9 tests)
+    P1 GOOD & BREAKOUT_VOL   long
+    P2 GOOD & BELOW50        long   (good numbers but still lagging its 50-day average)
+    P3 BAD  & BRKDN_VOL      short
+    Pools (same quarter): TA bucket = the TA signal among FA-eligible, TA-eligible results;
+                          FA bucket = the FA signal among FA-eligible, TA-eligible results.
+    PRIMARY p = max(p vs TA bucket, p vs FA bucket)  (intersection-union: the combination must beat random same-size
+    picks of BOTH of its single components). Secondary: p vs all eligible results; difference vs the plain winners.
+  PART 2 - the plain results-winner drift split by FA and TA (36 subsets x 3 horizons = 108 tests), long only
+    singles (10): GOOD, BAD, Q_HI, Q_LO, CHEAP, EXP, UP200, DN200, RSI_HI, RSI_LO
+    cells (24):   {GOOD, BAD, Q_HI, Q_LO, CHEAP, EXP} x {UP200, DN200, RSI_HI, RSI_LO}
+    composites (2): ALL_BULL = GOOD & UP200 & RSI_HI ; ALL_BEAR = BAD & DN200 & RSI_LO
+    Pool = plain winners (XN > 4) of the same quarter that are eligible for every feature the subset uses
+    (= random same-size subsets of the plain winners). Secondary: pool = all plain winners of the quarter.
+
+STATISTICS PER TEST
+  n; mean raw_gross / raw_net / vsN_gross / vsN_net; TP gross / net; up % (vsN_net > 0); quarters with trades /
+  positive (vsN_net); t across quarters; first 14 (qn 0..13) vs last 8 (qn 14..21) per-trade mean vsN_net (and raw_net)
+  and quarters positive in each; mean vsN_net without the 5 best trades;
+  d_W = per-trade difference vs ALL plain winners of the same quarter (subset trade minus that quarter's plain-winner
+  mean), overall and per half; t across quarters of the per-quarter difference;
+  LUCK p (one-sided, "better than random"): 20,000 draws; per quarter draw k_q from the pool without replacement;
+  statistic = pooled per-trade mean vsN_net (direction-adjusted); p = (1 + #draws >= actual)/(1 + 20,000).
+MULTIPLE TESTING
+  (i)  PRIMARY: Holm over the 117 primary p-values. (Holm within part 1 (9) and within part 2 (108): secondary.)
+  (ii) Family-wise permutation (Westfall-Young max-z, one-sided): 10,000 joint permutations of the outcome rows (all
+       three horizons carried together) within quarter x winner-stratum (XN > 4 or not) over all tradable in_fo
+       results; each test's direction-adjusted mean recomputed on the same permutation; z = (obs - perm mean) /
+       perm sd; p_fw = (1 + #perms with max_z over all 117 >= z_obs) / (1 + 10,000). (For part 1 this null is
+       "nothing beyond quarter and winner status", which differs from its primary pools; stated as such.)
+PLACEBO (non-results days)
+  Quiet days: F&O stock-days k (traded at k; in_fo of the previous AND next result, as the TA placebo; k between two
+  consecutive results of the stock in events.csv, or after its last one) with no result session (i_rd or i_react)
+  of that stock in [k-10, k+20], session k+21 exists and <= 2 blank returns in k+1..k+21. FA on a quiet day = the
+  GOOD / BAD flags of that stock's most recent result with i_react < k (numbers already public). Quality / P/E not
+  rebuilt for quiet days (no placebo for those subsets).
+  Part 1 placebo: same TA signal at k (and same TA signal + last-reported GOOD / BAD), same horizons and outcome.
+  Part 2 placebo: quiet-day "winners" (XN_k > 4); TA state at k-2 (SMA200, RSI14 from the builder); subsets GOOD,
+  BAD, UP200, DN200, RSI_HI, RSI_LO, the {GOOD,BAD} x TA cells and ALL_BULL / ALL_BEAR; reported as the subset mean
+  and its difference vs all quiet-day winners of the same calendar month; SE clustered by calendar month.
+VERDICT RULE (fixed now)
+  PART 1 "SURVIVES" only if ALL: (a) n >= 30; (b) vsN_net > 0 in BOTH halves; (c) t across quarters >= 2.0;
+    (d) Holm-adjusted primary p < 0.05; (e) vsN_net without the best 5 > 0; (f) results-day mean vsN_net > the
+    quiet-day placebo mean of the same combination.  "WATCH" = all except (d) with raw primary p < 0.05. Else "NO".
+  PART 2 "BEATS THE PLAIN DRIFT" only if ALL: (a) n >= 30; (b) d_W > 0 in BOTH halves; (c) subset vsN_net > 0 in
+    both halves; (d) t across quarters of the per-quarter difference vs the plain winners >= 2.0; (e) Holm-adjusted
+    luck p < 0.05; (f) vsN_net without the best 5 > 0. "WATCH" = all except (e) with raw luck p < 0.05. Else "NO".
+  The Westfall-Young p is reported next to Holm; a verdict needs Holm (the pre-registered primary).
+  A short is only tradable if it works hedged (vsN_net); raw short numbers are reported only.
+  Interpretation fixed now: if a part-2 TA split shows the same edge on quiet-day winners, it is generic momentum,
+  not a results effect (reported, not a verdict condition).
+
+OUTPUTS (this folder): features.csv (per result, no outcomes), probe_counts.log (feature-only prevalence),
+  results_tests.csv, per_quarter.csv, trades.csv, references.csv, placebo.csv, run.log
+
+----------------------------------------------------------------------------------------------------------------
+CHANGES / ADDED AFTER the main run (run_tests.py) had been looked at - disclosed and counted, cannot rescue anything
+  (fix) d_W for the SHORT test P3 was first computed against the plain winners scored as shorts; the definition
+        above says "difference vs the plain winners", i.e. the plain-winner LONG trade. Fixed (P3 descriptive columns
+        dW / dW_first14 / dW_last8 / t_dW_q only; no p-value or verdict input changed; checked by diff).
+  X1 (addendum.py) diagnostics of the only WATCH (W_RSI_HI, H20): per-quarter table, RSI(14) bands among winners,
+     overlap with UP200, trimmed comparison, recent quarters. No new p-value, no verdict change.
+  X2 (addendum.py) post-hoc lead seen in references.csv / placebo.csv: BREAKOUT_VOL alone (any numbers), long,
+     H5/10/20 = 3 extra tests, luck vs all results of the quarter; Holm over 117 + 3 = 120. A lead at most.
+  verify.py: independent recomputation (plain pandas, no shared code) of n / vsN_net / dW for 21 key rows and the
+     W_RSI_HI luck p.

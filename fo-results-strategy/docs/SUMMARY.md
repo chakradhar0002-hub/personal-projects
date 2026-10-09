@@ -105,6 +105,7 @@ sit.
 | 100% winning trades or quarters | Perfect records appear in hindsight and in random data; afterwards about half were right |
 | Technical analysis (RSI, Stochastic, Bollinger, CCI, MFI, MACD, moving averages, ADX, candles, OBV; 44 signals) | No signal holds up; none improves or replaces the lag rule ([TECHNICAL_ANALYSIS.md](TECHNICAL_ANALYSIS.md)) |
 | Fundamental analysis (value, quality, growth, GARP, Piotroski, margins, turnarounds; before or after results) | No screen works; none improves or replaces the lag rule; reported numbers give no drift ([FUNDAMENTAL_ANALYSIS.md](FUNDAMENTAL_ANALYSIS.md)) |
+| Technical and fundamental analysis together (40 combined screens, 12 filters on the lag rule, a model on both, 117 post-results tests) | Nothing survives; the model ranks results like a coin flip; none improves the lag rule or the winner drift ([TA_FA_COMBINED.md](TA_FA_COMBINED.md)) |
 | Shorting (mild laggards, results losers, model "fall" picks) | Nothing worked |
 | Selling the straddle across the numbers | Lost about 3.3% of the premium a trade after costs |
 
@@ -124,5 +125,6 @@ quarters (+1.45%) than over the first 15 tested (+2.3%).
 - [LAG10_VOLUME.md](LAG10_VOLUME.md): the lag + volume rule, every version, quarter-by-quarter tables, independent checks
 - [LAG5_PATTERNS.md](LAG5_PATTERNS.md), [LAGGED_NIFTY_1M.md](LAGGED_NIFTY_1M.md): how the lag pattern was found
 - [TARGET_2PCT.md](TARGET_2PCT.md), [TARGET_5PCT.md](TARGET_5PCT.md), [TARGET_100PCT.md](TARGET_100PCT.md): the target searches
+- [TECHNICAL_ANALYSIS.md](TECHNICAL_ANALYSIS.md), [FUNDAMENTAL_ANALYSIS.md](FUNDAMENTAL_ANALYSIS.md), [TA_FA_COMBINED.md](TA_FA_COMBINED.md): TA, FA and both together
 - [SECTOR_STRATEGIES.md](SECTOR_STRATEGIES.md), [PATTERNS.md](PATTERNS.md), [REAL_DATA_RESULTS.md](REAL_DATA_RESULTS.md): sector ideas, winner drift, option trades
 - [reports/results_report_last_22_quarters.html](../reports/results_report_last_22_quarters.html): the full results report

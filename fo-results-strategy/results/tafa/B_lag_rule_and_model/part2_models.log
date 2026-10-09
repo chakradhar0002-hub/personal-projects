@@ -1,0 +1,162 @@
+rows: events 3278, lag group 194, placebo window days 60135 (per season {8: 4005, 9: 3072, 10: 4048, 11: 4240, 12: 3952, 13: 2982, 14: 4280, 15: 4034, 16: 4950, 17: 4044, 18: 5659, 19: 5968, 20: 5011, 21: 3890})
+share missing per feature (before median fill):
+                               TA     FA
+adx14                        0.0    NaN
+atr14_pct                    0.0    NaN
+bb_pctb                      0.0    NaN
+bb_width_pct                 0.0    NaN
+book_yield                   NaN  0.311
+cci20                        0.0    NaN
+cdl_bear_engulf              0.0    NaN
+cdl_bull_engulf              0.0    NaN
+cdl_doji                     0.0    NaN
+cdl_hammer                   0.0    NaN
+cdl_shooting_star            0.0    NaN
+close_vs_sma200_pct          0.0    NaN
+close_vs_sma20_pct           0.0    NaN
+close_vs_sma50_pct           0.0    NaN
+days_since_dividend          NaN  0.000
+death_x10                    0.0    NaN
+debt_equity                  NaN  0.376
+dist_20d_high_pct            0.0    NaN
+dist_20d_low_pct             0.0    NaN
+dist_52w_high_pct            0.0    NaN
+dist_52w_low_pct             0.0    NaN
+don20_break_dn               0.0    NaN
+don20_break_up               0.0    NaN
+don20_pos                    0.0    NaN
+earnings_yield_pct           NaN  0.116
+full_gap_down                0.0    NaN
+full_gap_up                  0.0    NaN
+gap_pct                      0.0    NaN
+golden_state                 0.0    NaN
+golden_x10                   0.0    NaN
+is_bank                      NaN  0.000
+is_nbfc                      NaN  0.000
+l1_ebitda_margin_chg_yoy_pp  NaN  0.261
+l1_ebitda_margin_pct         NaN  0.238
+l1_net_margin_chg_yoy_pp     NaN  0.081
+l1_net_margin_pct            NaN  0.049
+l1_pat_qoq_pct               NaN  0.113
+l1_pat_yoy_pct               NaN  0.135
+l1_sales_qoq_pct             NaN  0.074
+l1_sales_yoy_pct             NaN  0.081
+lag_pct                      0.0    NaN
+log_mcap                     NaN  0.029
+loss_any_4q                  NaN  0.104
+macd_above_signal            0.0    NaN
+macd_bear_x3                 0.0    NaN
+macd_bull_x3                 0.0    NaN
+macd_hist_pct                0.0    NaN
+macd_hist_rising             0.0    NaN
+macd_pct                     0.0    NaN
+macd_signal_pct              0.0    NaN
+mfi14                        0.0    NaN
+minus_di14                   0.0    NaN
+miss_bs                      NaN  0.000
+miss_pe_own                  NaN  0.000
+miss_pio                     NaN  0.000
+nr7                          0.0    NaN
+obv_div20                    0.0    NaN
+obv_slope20                  0.0    NaN
+pat_up_yoy_4q                NaN  0.297
+pat_yoy_accel_pp             NaN  0.223
+pat_yoy_std8_pct             NaN  0.337
+pe_vs_own3y_pct              NaN  0.433
+pe_vs_peers_pct              NaN  0.375
+peg                          NaN  0.491
+piotroski_frac               NaN  0.229
+plus_di14                    0.0    NaN
+price_slope20_pct            0.0    NaN
+ret_5d_pct                   0.0    NaN
+roe_pct                      NaN  0.356
+rsi14                        0.0    NaN
+rsi2                         0.0    NaN
+sales_up_yoy_4q              NaN  0.295
+sales_yield                  NaN  0.116
+sales_yoy_accel_pp           NaN  0.150
+sma50_vs_sma200_pct          0.0    NaN
+stoch_d3                     0.0    NaN
+stoch_k14                    0.0    NaN
+ttm_pat_yoy_pct              NaN  0.332
+ttm_sales_yoy_pct            NaN  0.295
+vol_ratio_5_60               0.0    NaN
+1/558 ('A', 'FA', 'GB', 0) 12.5s  elapsed 13s
+2/558 ('A', 'TA', 'GB', 0) 19.7s  elapsed 20s
+3/558 ('A', 'TA', 'RF', 0) 16.6s  elapsed 29s
+4/558 ('A', 'TAFA', 'GB', 0) 29.2s  elapsed 29s
+5/558 ('A', 'TA', 'LR', 0) 0.6s  elapsed 30s
+6/558 ('A', 'FA', 'LR', 0) 0.2s  elapsed 30s
+7/558 ('A', 'TAFA', 'LR', 0) 0.7s  elapsed 31s
+8/558 ('A', 'FA', 'RF', 0) 12.4s  elapsed 32s
+9/558 ('L1', 'TA', 'GB', 0) 2.3s  elapsed 33s
+10/558 ('L1', 'FA', 'GB', 0) 2.0s  elapsed 34s
+11/558 ('L1', 'TAFA', 'GB', 0) 2.9s  elapsed 36s
+12/558 ('L1', 'TA', 'RF', 0) 6.7s  elapsed 41s
+13/558 ('L1', 'FA', 'RF', 0) 6.3s  elapsed 42s
+14/558 ('L1', 'TA', 'LR', 0) 0.2s  elapsed 42s
+15/558 ('L1', 'FA', 'LR', 0) 0.1s  elapsed 43s
+16/558 ('L1', 'TAFA', 'LR', 0) 0.3s  elapsed 43s
+17/558 ('A', 'TAFA', 'RF', 0) 17.2s  elapsed 46s
+18/558 ('L1', 'TAFA', 'RF', 0) 7.2s  elapsed 48s
+27/558 ('L1', 'FA', 'GB', 1) 2.2s  elapsed 79s
+36/558 ('L1', 'TAFA', 'RF', 1) 6.4s  elapsed 93s
+45/558 ('L1', 'TA', 'GB', 2) 2.3s  elapsed 124s
+54/558 ('L1', 'TAFA', 'RF', 2) 6.7s  elapsed 137s
+63/558 ('L1', 'TA', 'GB', 3) 2.2s  elapsed 168s
+72/558 ('L1', 'TAFA', 'RF', 3) 6.5s  elapsed 182s
+81/558 ('L1', 'TA', 'GB', 4) 2.3s  elapsed 213s
+90/558 ('L1', 'TAFA', 'RF', 4) 6.8s  elapsed 226s
+99/558 ('L1', 'TA', 'GB', 5) 2.3s  elapsed 257s
+108/558 ('L1', 'TAFA', 'RF', 5) 6.3s  elapsed 270s
+117/558 ('L1', 'TA', 'GB', 6) 2.4s  elapsed 300s
+126/558 ('L1', 'TAFA', 'RF', 6) 6.6s  elapsed 314s
+135/558 ('L1', 'FA', 'GB', 7) 2.4s  elapsed 344s
+144/558 ('L1', 'TAFA', 'RF', 7) 6.6s  elapsed 358s
+153/558 ('L1', 'TA', 'GB', 8) 2.4s  elapsed 389s
+162/558 ('L1', 'TAFA', 'RF', 8) 6.0s  elapsed 401s
+171/558 ('L1', 'TA', 'GB', 9) 2.5s  elapsed 433s
+180/558 ('L1', 'TAFA', 'RF', 9) 6.8s  elapsed 447s
+189/558 ('L1', 'TA', 'GB', 10) 2.7s  elapsed 477s
+198/558 ('L1', 'TAFA', 'RF', 10) 6.8s  elapsed 491s
+207/558 ('L1', 'FA', 'GB', 11) 2.1s  elapsed 522s
+216/558 ('L1', 'TAFA', 'RF', 11) 6.4s  elapsed 535s
+225/558 ('L1', 'TA', 'GB', 12) 2.3s  elapsed 566s
+234/558 ('L1', 'TAFA', 'RF', 12) 6.8s  elapsed 579s
+243/558 ('L1', 'TA', 'GB', 13) 2.5s  elapsed 611s
+252/558 ('L1', 'TAFA', 'RF', 13) 6.6s  elapsed 625s
+261/558 ('L1', 'TA', 'GB', 14) 2.4s  elapsed 655s
+270/558 ('L1', 'TAFA', 'RF', 14) 7.1s  elapsed 669s
+279/558 ('L1', 'TA', 'GB', 15) 2.4s  elapsed 702s
+288/558 ('L1', 'TAFA', 'RF', 15) 6.7s  elapsed 715s
+297/558 ('L1', 'TA', 'GB', 16) 2.4s  elapsed 748s
+306/558 ('L1', 'TAFA', 'RF', 16) 6.9s  elapsed 762s
+315/558 ('L1', 'TA', 'GB', 17) 2.4s  elapsed 793s
+324/558 ('L1', 'TAFA', 'RF', 17) 6.6s  elapsed 806s
+333/558 ('L1', 'TA', 'GB', 18) 2.4s  elapsed 837s
+342/558 ('L1', 'TAFA', 'RF', 18) 6.3s  elapsed 850s
+351/558 ('L1', 'FA', 'GB', 19) 2.0s  elapsed 881s
+360/558 ('L1', 'TAFA', 'RF', 19) 7.1s  elapsed 895s
+369/558 ('L1', 'TA', 'GB', 20) 2.4s  elapsed 928s
+378/558 ('L1', 'TAFA', 'RF', 20) 6.6s  elapsed 942s
+387/558 ('L1', 'TA', 'GB', 21) 2.7s  elapsed 975s
+396/558 ('L1', 'TAFA', 'RF', 21) 6.7s  elapsed 988s
+405/558 ('L1', 'TA', 'GB', 22) 2.4s  elapsed 1020s
+414/558 ('L1', 'TAFA', 'RF', 22) 7.1s  elapsed 1034s
+423/558 ('L1', 'TA', 'GB', 23) 2.5s  elapsed 1067s
+432/558 ('L1', 'TAFA', 'RF', 23) 6.8s  elapsed 1080s
+441/558 ('L1', 'TA', 'GB', 24) 2.3s  elapsed 1112s
+450/558 ('L1', 'TAFA', 'RF', 24) 6.9s  elapsed 1126s
+459/558 ('L1', 'FA', 'GB', 25) 2.1s  elapsed 1158s
+468/558 ('L1', 'TAFA', 'RF', 25) 6.1s  elapsed 1171s
+477/558 ('L1', 'FA', 'GB', 26) 2.1s  elapsed 1203s
+486/558 ('L1', 'TAFA', 'RF', 26) 7.0s  elapsed 1217s
+495/558 ('L1', 'FA', 'GB', 27) 2.1s  elapsed 1250s
+504/558 ('L1', 'TAFA', 'RF', 27) 6.4s  elapsed 1263s
+513/558 ('L1', 'TA', 'GB', 28) 2.4s  elapsed 1296s
+522/558 ('L1', 'TAFA', 'RF', 28) 6.6s  elapsed 1310s
+531/558 ('L1', 'TA', 'GB', 29) 2.4s  elapsed 1341s
+540/558 ('L1', 'TAFA', 'RF', 29) 6.3s  elapsed 1355s
+549/558 ('L1', 'TA', 'GB', 30) 2.5s  elapsed 1388s
+558/558 ('L1', 'TAFA', 'RF', 30) 6.5s  elapsed 1402s
+all 558 tasks done in 1402s

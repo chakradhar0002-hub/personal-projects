@@ -1,0 +1,30 @@
+vol 1.0-1.3x  X8 true   n   6 mean   0.86 tp   2.02
+vol 1.0-1.3x  X8 false  n  31 mean   1.61 tp   1.12
+vol 1.0-1.3x  unknown   n   4 mean   1.11 tp   0.84
+vol >= 1.3x   X8 true   n  15 mean   5.02 tp   4.70
+vol >= 1.3x   X8 false  n  26 mean   1.18 tp   1.90
+vol >= 1.3x   unknown   n   3 mean   5.28 tp   4.10
+X8 true within the 85: mean 3.83, random same-size-per-quarter picks from the 85 2.30, p 0.0502
+X8 true vs all in_fo results: mean 3.83, random picks -0.27, p 0.0002
+    symbol quarter  qn  lag_pct  vol_ratio_5_60  three_day   tp3
+ AMBUJACEM Q2 FY22   2   -13.58            1.67       1.52  1.52
+  CROMPTON Q2 FY22   2   -11.10            1.25      -0.68  3.04
+     DIXON Q3 FY22   3   -20.08            1.24      -3.17 -3.17
+    NAUKRI Q3 FY22   3   -17.68            2.50       8.74  8.74
+     PIIND Q3 FY22   3   -20.94            1.71       4.68  3.37
+     TECHM Q3 FY22   3   -20.40            1.67       5.14  4.84
+  JSWSTEEL Q4 FY22   4   -20.69            1.46       2.06  4.40
+OBEROIRLTY Q4 FY22   4   -12.36            1.02      -4.01 -4.01
+ADANIPORTS Q3 FY23   7   -37.37            6.06      19.09  9.34
+       IEX Q3 FY24  11   -10.04            2.27       2.95  2.95
+ KOTAKBANK Q4 FY24  12   -13.19            4.08       4.39  3.18
+CUMMINSIND Q1 FY25  13   -13.07            1.32       6.75  6.75
+      CAMS Q3 FY25  15   -20.32            1.36      -4.08  3.72
+    JIOFIN Q3 FY25  15   -14.07            1.27       1.23  1.23
+     LODHA Q3 FY25  15   -20.66            1.56       4.44  4.44
+   COFORGE Q1 FY26  17   -10.13            1.42       2.65  2.65
+  GODREJCP Q2 FY26  18   -10.58            1.32       6.43  6.43
+     DIXON Q3 FY26  19   -15.66            1.20       2.55  2.55
+     LODHA Q3 FY26  19   -12.54            1.56       5.58  3.18
+  PRESTIGE Q3 FY26  19   -10.27            2.25       4.92  4.92
+   INDIANB Q1 FY27  21   -11.66            1.18       9.23 12.46

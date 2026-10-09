@@ -1,0 +1,36 @@
+                     picks_median  all_median  picks_missing  all_missing
+lag_pct                     -0.12        0.39           0.00         0.00
+ret_5d_pct                   0.01        0.19           0.00         0.00
+close_vs_sma200_pct          8.33        4.66           0.00         0.00
+dist_52w_high_pct          -12.91      -11.80           0.00         0.00
+rsi14                       50.43       51.99           0.00         0.00
+atr14_pct                    2.81        2.54           0.00         0.00
+vol_ratio_5_60               0.90        0.85           0.00         0.00
+log_mcap                    11.45       11.47           0.02         0.03
+roe_pct                     14.98       15.77           0.07         0.10
+earnings_yield_pct           2.69        2.76           0.07         0.09
+l1_pat_yoy_pct              30.51       15.08           0.12         0.10
+l1_sales_yoy_pct            12.39       11.65           0.05         0.07
+piotroski_frac               0.86        0.80           0.19         0.22
+loss_any_4q                  0.00        0.00           0.07         0.08
+debt_equity                  0.14        0.17           0.09         0.15
+pe_vs_peers_pct            -10.13       -0.37           0.33         0.33
+fin_type share picks: {'Company': 0.84, 'NBFC / financial': 0.1, 'Bank': 0.06}  all: {'Company': 0.81, 'Bank': 0.1, 'NBFC / financial': 0.1}
+
+last model (trained on seasons 0..20) top 15 importances:
+ l1_pat_qoq_pct                 0.076
+adx14                          0.059
+gap_pct                        0.049
+l1_sales_yoy_pct               0.048
+close_vs_sma200_pct            0.043
+log_mcap                       0.040
+l1_ebitda_margin_chg_yoy_pp    0.032
+dist_52w_high_pct              0.029
+lag_pct                        0.028
+atr14_pct                      0.028
+minus_di14                     0.025
+plus_di14                      0.025
+macd_hist_pct                  0.025
+l1_sales_qoq_pct               0.024
+ttm_pat_yoy_pct                0.023
+TA share of importance: 0.542  FA share: 0.458
