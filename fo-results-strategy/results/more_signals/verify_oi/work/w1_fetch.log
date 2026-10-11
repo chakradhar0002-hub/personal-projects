@@ -1,0 +1,19 @@
+todo 879
+2021-03-30 MISSING
+50/879 2023-05-30 old fut 558 opt 187 und 187 atm 2238 35s
+100/879 2023-08-09 old fut 552 opt 184 und 184 atm 2208 92s
+150/879 2023-10-23 old fut 552 opt 184 und 184 atm 2208 134s
+200/879 2024-01-04 old fut 548 opt 183 und 183 atm 2196 176s
+250/879 2024-03-15 old fut 546 opt 182 und 182 atm 2172 248s
+300/879 2024-05-31 old fut 544 opt 182 und 182 atm 2178 280s
+350/879 2024-08-13 udiff fut 541 opt 181 und 181 atm 2157 317s
+400/879 2024-10-24 udiff fut 535 opt 179 und 179 atm 2122 361s
+450/879 2025-01-07 udiff fut 653 opt 223 und 223 atm 2671 410s
+500/879 2025-03-19 udiff fut 643 opt 216 und 216 atm 2579 460s
+550/879 2025-06-04 udiff fut 650 opt 220 und 220 atm 2639 515s
+Traceback (most recent call last):
+  File "$LAB_ROOT/more_signals/verify_oi/scripts/w1_fetch.py", line 184, in <module>
+    main()
+  File "$LAB_ROOT/more_signals/verify_oi/scripts/w1_fetch.py", line 174, in main
+    db.commit()
+sqlite3.OperationalError: database is locked

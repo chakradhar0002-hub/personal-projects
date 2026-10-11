@@ -1,0 +1,147 @@
+fetched sessions ok 1434, missing 1: ['2021-03-30']
+rows fut 274911 opt 274911 atm 2192768
+mapped to panel symbols: fut 217944 rows / 213 symbols; opt 217944; atm 1743396
+corporate-action steps applied to OI: 55
+    ('ANGELONE', '2026-02-26', 0.1)
+    ('ASHOKLEY', '2025-07-16', 0.5)
+    ('ASTRAL', '2023-03-14', 0.75)
+    ('AUBANK', '2022-06-09', 0.5)
+    ('BAJAJFINSV', '2022-09-13', 0.1)
+    ('BAJFINANCE', '2025-06-16', 0.1)
+    ('BEL', '2022-09-15', 0.3333)
+    ('BPCL', '2024-06-21', 0.5)
+    ('BSE', '2025-05-23', 0.3333)
+    ('CAMS', '2025-12-05', 0.2)
+    ('CANBK', '2024-05-15', 0.2)
+    ('COFORGE', '2025-06-04', 0.2)
+    ('CONCOR', '2025-07-04', 0.8)
+    ('DRREDDY', '2024-10-28', 0.2)
+    ('GAIL', '2022-09-06', 0.6667)
+    ('GMRAIRPORT', '2022-01-11', 0.9257)
+    ('HAL', '2023-09-28', 0.5)
+    ('HDFCAMC', '2025-11-26', 0.5)
+    ('HDFCBANK', '2025-08-26', 0.5)
+    ('HINDPETRO', '2024-06-21', 0.6667)
+    ('HINDUNILVR', '2025-12-05', 0.9498)
+    ('IEX', '2021-12-03', 0.3333)
+    ('IOC', '2022-06-30', 0.6667)
+    ('ITC', '2025-01-06', 0.9191)
+    ('JUBLFOOD', '2022-04-19', 0.2)
+    ('KOTAKBANK', '2026-01-14', 0.2)
+    ('LICI', '2026-05-29', 0.5)
+    ('MCX', '2026-01-02', 0.2)
+    ('MOTHERSON', '2022-01-14', 0.7902)
+    ('MOTHERSON', '2022-10-03', 0.6667)
+    ('MOTHERSON', '2025-07-18', 0.6667)
+    ('NAUKRI', '2025-05-07', 0.2)
+    ('NBCC', '2025-01-31', 0.6667)
+    ('NESTLEIND', '2024-01-05', 0.1)
+    ('NESTLEIND', '2025-08-08', 0.5)
+    ('NMDC', '2022-10-27', 0.7977)
+    ('NMDC', '2024-12-27', 0.3332)
+    ('PATANJALI', '2025-09-11', 0.3333)
+    ('PERSISTENT', '2024-03-28', 0.5)
+    ('PFC', '2023-09-21', 0.8)
+    ('PIDILITIND', '2025-09-23', 0.5)
+    ('POWERGRID', '2021-07-29', 0.75)
+    ('POWERGRID', '2023-09-12', 0.75)
+    ('RECLTD', '2022-08-17', 0.75)
+    ('RELIANCE', '2023-07-20', 0.9219)
+    ('RELIANCE', '2024-10-28', 0.5)
+    ('SHRIRAMFIN', '2025-01-10', 0.2)
+    ('SIEMENS', '2025-04-07', 0.5707)
+    ('SRF', '2021-10-13', 0.2)
+    ('TATASTEEL', '2022-07-28', 0.1)
+    ('TMPV', '2025-10-14', 0.5985)
+    ('TORNTPHARM', '2022-07-08', 0.5)
+    ('TRENT', '2026-06-04', 0.6667)
+    ('VEDL', '2026-04-30', 0.351)
+    ('WIPRO', '2024-12-03', 0.5)
+ATM rows (front expiry, nearest strike): 217934; call IV 95.0%, put IV 93.2%, IV 96.8%; median IV 30.4%, median call-put spread +0.01
+
+coverage by quarter (results rows with the feature):
+ qn                        results_for   n  oi_at_cut  basis_at_cut  pcr_at_cut  ivrel_at_cut  ivspread_at_cut  oi_at_k  ivrel_at_k
+  0 Results for Jan-Mar 2021 (Q4 FY21)  98         98            96          98            82               73       98          87
+  1 Results for Apr-Jun 2021 (Q1 FY22) 117        117           116         117           109              108      117         110
+  2 Results for Jul-Sep 2021 (Q2 FY22) 125        125           120         125           104               91      125         110
+  3 Results for Oct-Dec 2021 (Q3 FY22) 132        132           130         132           112              107      132         119
+  4 Results for Jan-Mar 2022 (Q4 FY22) 131        131           131         131           119              105      131         125
+  5 Results for Apr-Jun 2022 (Q1 FY23) 134        134           134         134           131              119      134         131
+  6 Results for Jul-Sep 2022 (Q2 FY23) 133        133           133         133           131              124      133         129
+  7 Results for Oct-Dec 2022 (Q3 FY23) 133        133           133         133           130              124      133         127
+  8 Results for Jan-Mar 2023 (Q4 FY23) 134        134           134         134           129              120      134         129
+  9 Results for Apr-Jun 2023 (Q1 FY24) 134        134           134         134           129              120      134         128
+ 10 Results for Jul-Sep 2023 (Q2 FY24) 132        132           132         132           128              123      132         130
+ 11 Results for Oct-Dec 2023 (Q3 FY24) 135        135           135         135           118               99      135         126
+ 12 Results for Jan-Mar 2024 (Q4 FY24) 135        135           135         135           132              124      135         128
+ 13 Results for Apr-Jun 2024 (Q1 FY25) 135        135           135         135           132              124      135         135
+ 14 Results for Jul-Sep 2024 (Q2 FY25) 134        134           134         134           131              126      134         131
+ 15 Results for Oct-Dec 2024 (Q3 FY25) 172        171           150         172           142              153      172         147
+ 16 Results for Jan-Mar 2025 (Q4 FY25) 178        178           174         178           173              171      178         175
+ 17 Results for Apr-Jun 2025 (Q1 FY26) 191        191           185         191           184              184      191         185
+ 18 Results for Jul-Sep 2025 (Q2 FY26) 191        191           190         191           190              190      191         190
+ 19 Results for Oct-Dec 2025 (Q3 FY26) 196        196           192         196           190              185      196         191
+ 20 Results for Jan-Mar 2026 (Q4 FY26) 204        204           196         204           193              190      204         193
+ 21 Results for Apr-Jun 2026 (Q1 FY27) 206        206           206         206           202              195      206         205
+
+trade-A placebo days: 115909 (expected 115909)
+trade-B placebo (quiet) days: 93988, quiet winners 1588
+
+signal counts - results rows (all 3,280) / placebo-A days | B: winners W / RSI winners WR / quiet winners
+  A01:   285 (eligible 3279) /   6696
+  A02:   317 (eligible 3279) /   8155
+  A03:   180 (eligible 3279) /   8095
+  A04:   132 (eligible 3279) /   4091
+  A05:   353 (eligible 3275) /  10701
+  A06:   462 (eligible 3275) /  13295
+  A07:   371 (eligible 3275) /  14464
+  A08:   195 (eligible 3275) /   6968
+  A09:   659 (eligible 3270) /  23188
+  A10:   662 (eligible 3270) /  23191
+  A11:   647 (eligible 3225) /  23136
+  A12:   652 (eligible 3225) /  23139
+  A13:   660 (eligible 3280) /  23188
+  A14:   665 (eligible 3280) /  23191
+  A15:   659 (eligible 3279) /  23188
+  A16:   665 (eligible 3279) /  23191
+  A17:   624 (eligible 3091) /  22480
+  A18:   627 (eligible 3091) /  22486
+  A19:   594 (eligible 2955) /  21564
+  A20:   597 (eligible 2955) /  21570
+  A21:   599 (eligible 2973) /  21518
+  A22:   578 (eligible 2874) /  20900
+  B01: W  230 (eligible 392) / WR  145 / quiet winners  883 (eligible 1588)
+  B02: W   88 (eligible 392) / WR   57 / quiet winners  198 (eligible 1588)
+  B03: W  128 (eligible 392) / WR   83 / quiet winners  308 (eligible 1588)
+  B04: W  137 (eligible 392) / WR   89 / quiet winners  370 (eligible 1588)
+  B05: W   44 (eligible 392) / WR   10 / quiet winners  140 (eligible 1588)
+  B06: W   93 (eligible 392) / WR   47 / quiet winners  484 (eligible 1588)
+  B07: W  109 (eligible 387) / WR   59 / quiet winners  260 (eligible 1581)
+  B08: W   92 (eligible 392) / WR   57 / quiet winners  237 (eligible 1588)
+  B09: W  213 (eligible 392) / WR  142 / quiet winners  640 (eligible 1588)
+  B10: W  257 (eligible 392) / WR  159 / quiet winners  992 (eligible 1588)
+  B11: W   65 (eligible 374) / WR   30 / quiet winners  151 (eligible 1544)
+  B12: W   90 (eligible 366) / WR   51 / quiet winners  230 (eligible 1476)
+  B13: W   92 (eligible 372) / WR   57 / quiet winners  484 (eligible 1502)
+  B14: W   81 (eligible 343) / WR   48 / quiet winners  212 (eligible 1406)
+
+feature medians at i_cut (results) vs placebo-A days:
+  dOI1         +0.399    +0.088
+  dOI5         +1.488    +0.185
+  dOI10        +1.202    -0.197
+  dP1          +0.000    +0.048
+  dP5          +0.136    +0.306
+  dP10         +0.426    +0.600
+  OI20         +1.009    +0.996
+  BASIS        +5.702    +6.207
+  BASISDEV     -0.609    +0.198
+  dBASIS1      +0.017    -0.031
+  PCR          +0.630    +0.598
+  dPCR5        +0.004    -0.006
+  dPCR1        +0.000    -0.002
+  IV          +35.220   +29.058
+  IVREL        +1.143    +0.965
+  IVSPREAD     -0.139    +0.115
+  dCIV20       +4.353    -1.024
+  dPIV20       +5.116    -1.142
+done

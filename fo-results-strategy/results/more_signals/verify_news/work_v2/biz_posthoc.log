@@ -1,0 +1,18 @@
+BIZ45>0 by industry (top):
+                                size  mean
+industry                                  
+Automobiles - 4 Wheelers          68  1.57
+Banks                             48  1.18
+Automobiles - 2 And 3 Wheelers    43  1.22
+Personal Care                     42  0.41
+Gems Jewellery And Watches        22 -0.38
+Mining                            21  0.90
+Shipping                          14  3.52
+Construction                      14 -0.72
+Finance                           12 -0.70
+Steel And Steel Products           9 -0.23
+symbols 40
+top 5 symbols {'ADANIPORTS': {'size': 14, 'sum': 49.2}, 'ASHOKLEY': {'size': 22, 'sum': 49.1}, 'FEDERALBNK': {'size': 13, 'sum': 46.0}, 'TVSMOTOR': {'size': 22, 'sum': 42.3}, 'EICHERMOT': {'size': 22, 'sum': 35.1}}
+without top-5 symbols: excess +0.257
+issuer stocks: quarters with BIZ 323 excess +0.870; without 350 excess +0.257
+luck p (post hoc, not pre-registered) 0.0005

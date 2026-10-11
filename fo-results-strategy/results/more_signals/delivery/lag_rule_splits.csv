@@ -1,0 +1,8 @@
+split,label,pred,n_avail,n_in,n_out,avg_in,avg_out,net_in,net_out,n_in_h1,avg_in_h1,n_out_h1,avg_out_h1,n_in_h2,avg_in_h2,n_out_h2,avg_out_h2,diff,perm_p_2s,tested,net_in_wo_best5,holm_p,separates
+LS1,ACC > 0 (5-day delivery % above 60-day avg),IN better,85,47,38,1.7480,2.6079,1.5780,2.4379,35,2.0660,16,0.7396,12,0.8206,22,3.9667,-0.8599,0.4691,True,0.5617,1.0000,False
+LS2,delivery qty 5/60 >= 1.0,IN better,85,75,10,2.1358,2.1072,1.9658,1.9372,46,1.6095,5,2.0212,29,2.9707,5,2.1931,0.0286,0.9884,True,1.0880,1.0000,False
+LS3,delivery qty 5/60 >= 1.5,IN better,85,31,54,2.3812,1.9896,2.2112,1.8196,22,2.2023,29,1.2308,9,2.8187,25,2.8699,0.3916,0.7488,True,0.5010,1.0000,False
+LS4,last published day delivery % above its 60-day avg (DPL > 0),IN better,85,47,38,2.4921,1.6877,2.3221,1.5177,31,1.5505,20,1.8039,16,4.3163,18,1.5586,0.8044,0.4954,True,1.3372,1.0000,False
+LS5,ACC top quintile of the quarter,IN better,85,27,58,2.2518,2.0769,2.0818,1.9069,19,2.0077,32,1.4374,8,2.8314,26,2.8640,0.1749,0.8909,True,0.5028,1.0000,False
+LS6,"price down + delivery up (PR5 < 0, ACC > 0)",IN better,85,40,45,1.7290,2.4911,1.5590,2.3211,31,1.8808,20,1.2919,9,1.2063,25,3.4503,-0.7620,0.5164,True,0.3368,1.0000,False
+LS7,60-day delivery % level above the quarter median (rank_DP60 > 50),IN better,85,31,54,2.4730,1.9370,2.3030,1.7670,18,1.2168,33,1.8861,13,4.2122,21,2.0170,0.5360,0.6641,True,1.1245,1.0000,False

@@ -1,0 +1,39 @@
+
+========== B09: n 213 of 392 winners
+  mean without own best  0: signal +2.336  random same-size subsets (same trimming) +1.502  diff +0.834  luck p 0.0058
+  mean without own best  5: signal +1.712  random same-size subsets (same trimming) +0.904  diff +0.808  luck p 0.0061
+  mean without own best 10: signal +1.282  random same-size subsets (same trimming) +0.505  diff +0.777  luck p 0.0068
+  mean without own best 20: signal +0.606  random same-size subsets (same trimming) -0.161  diff +0.767  luck p 0.0081
+  share of signal trades above their quarter winner median: 0.526 (null 0.5ish), luck p 0.0362
+  winsorised 1/99: signal mean +2.324 OUT +0.455 excess +0.798
+  winsorised 5/95: signal mean +2.031 OUT +0.534 excess +0.649
+  median net: signal +1.658  OUT +0.171  all winners +0.645
+                          piece  signal_mean  OUT_mean  signal_excess_vs_winners
+  gap close k->open k+1 (stock)        0.192     0.435                    -0.114
+    day k+1 open->close (stock)        0.471    -0.489                     0.438
+    close k -> close k+1 hedged        0.595    -0.152                     0.327
+ close k+1 -> close k+20 hedged        1.900     0.731                     0.499
+close k+20 -> close k+21 hedged        0.040     0.015                    -0.058
+
+========== B13: n 92 of 392 winners
+  mean without own best  0: signal +2.933  random same-size subsets (same trimming) +1.828  diff +1.106  luck p 0.0436
+  mean without own best  5: signal +1.898  random same-size subsets (same trimming) +0.710  diff +1.189  luck p 0.0290
+  mean without own best 10: signal +1.112  random same-size subsets (same trimming) -0.046  diff +1.158  luck p 0.0301
+  mean without own best 20: signal -0.231  random same-size subsets (same trimming) -1.243  diff +1.012  luck p 0.0490
+  share of signal trades above their quarter winner median: 0.511 (null 0.5ish), luck p 0.2921
+  winsorised 1/99: signal mean +2.922 OUT +0.881 excess +1.072
+  winsorised 5/95: signal mean +2.670 OUT +0.828 excess +0.998
+  median net: signal +2.463  OUT +0.250  all winners +0.645
+                          piece  signal_mean  OUT_mean  signal_excess_vs_winners
+  gap close k->open k+1 (stock)        0.544     0.197                     0.236
+    day k+1 open->close (stock)        0.004     0.078                    -0.118
+    close k -> close k+1 hedged        0.450     0.198                     0.104
+ close k+1 -> close k+20 hedged        2.655     0.822                     0.998
+close k+20 -> close k+21 hedged       -0.266     0.106                    -0.262
+
+B09 decomposition among winners: PCR at cutoff above winners-median (pre level) x PCR change on k above median
+  pre-level high=True  change high=True : n  91 net +1.866  (B09 share 0.95)
+  pre-level high=True  change high=False: n  98 net +1.537  (B09 share 0.45)
+  pre-level high=False change high=True : n  98 net +1.461  (B09 share 0.68)
+  pre-level high=False change high=False: n 105 net +0.985  (B09 share 0.15)
+done

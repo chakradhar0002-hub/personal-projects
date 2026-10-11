@@ -1,0 +1,7 @@
+announcements 155600 after exact-dup drop 153905
+items on own results day / day after 27668
+$LAB_ROOT/more_signals/verify_news/scripts_v2/v2_features.py:61: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  an['BIZ'] = (an.descr == 'Monthly Business Updates') | (upd & an.txt.str.contains(biz_re))
+PR items 10810  BIZ items 938  (Monthly Business Updates 460 )
+results rows 3280
+placebo days 130946 mean fwd3 0.236 PR30>=1 share 0.3

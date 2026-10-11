@@ -1,0 +1,51 @@
+cand     symbol  qn       period          timing        events_ts    cut_day      k_day           nse_first  n_result_rows  min_diff  k_match  after_cut_close  before_k_close
+ B09 MUTHOOTFIN   8 Jan-Mar 2023     After close 2023-05-19 17:07 2023-05-17 2023-05-22 2023-05-19 17:21:40              1 14.666667     True             True            True
+ B09   CROMPTON  12 Jan-Mar 2024     After close 2024-05-16 15:38 2024-05-14 2024-05-17 2024-05-16 15:38:22              1  0.366667     True             True            True
+ B09      PAYTM  16 Jan-Mar 2025     After close 2025-05-06 16:50 2025-05-02 2025-05-07 2025-05-06 16:50:45              1  0.750000     True             True            True
+ B09  EICHERMOT  14 Jul-Sep 2024     After close 2024-11-13 16:06 2024-11-11 2024-11-14 2024-11-13 16:06:03              1  0.050000     True             True            True
+ B09        VBL  18 Jul-Sep 2025   During market 2025-10-29 14:28 2025-10-27 2025-10-29                 NaN              0       NaN    False            False           False
+ B09        ABB  12 Jan-Mar 2024     After close 2024-05-10 17:09 2024-05-08 2024-05-13 2024-05-10 17:09:24              1  0.400000     True             True            True
+ B09    HDFCAMC  16 Jan-Mar 2025     After close 2025-04-17 18:06 2025-04-15 2025-04-21                 NaN              0       NaN    False            False           False
+ B09    RBLBANK  16 Jan-Mar 2025     After close 2025-04-25 17:00 2025-04-23 2025-04-28                 NaN              0       NaN    False            False           False
+ B09        PFC  10 Jul-Sep 2023     After close 2023-11-08 19:44 2023-11-06 2023-11-09 2023-11-08 19:44:03              1  0.050000     True             True            True
+ B09   GODREJCP  11 Oct-Dec 2023     After close 2024-01-31 16:29 2024-01-29 2024-02-01 2024-01-31 16:29:03              1  0.050000     True             True            True
+ B09   GLENMARK  12 Jan-Mar 2024     After close 2024-05-24 20:24 2024-05-22 2024-05-27 2024-05-24 20:24:07              1  0.116667     True             True            True
+ B09  SOLARINDS  21 Apr-Jun 2026   During market 2026-08-13 14:26 2026-08-11 2026-08-13 2026-08-13 14:26:26              1  0.433333     True             True            True
+ B09   ANGELONE  19 Oct-Dec 2025 Non-trading day 2026-01-15 18:34 2026-01-13 2026-01-16 2026-01-15 18:34:43              1  0.716667     True             True            True
+ B09   TVSMOTOR  15 Oct-Dec 2024   During market 2025-01-28 13:13 2025-01-24 2025-01-28 2025-01-28 13:13:23              1  0.383333     True             True            True
+ B09 PERSISTENT  14 Jul-Sep 2024     After close 2024-10-22 15:35 2024-10-18 2024-10-23 2024-10-22 15:35:08              1  0.133333     True             True            True
+ B09   TVSMOTOR   7 Oct-Dec 2022     After close 2023-01-24 17:19 2023-01-20 2023-01-25 2023-01-24 17:19:20              1  0.333333     True             True            True
+ B09      CANBK   3 Oct-Dec 2021   During market 2022-01-27 12:19 2022-01-24 2022-01-27 2022-01-27 12:19:16              1  0.266667     True             True            True
+ B09        UPL   0 Jan-Mar 2021     After close 2021-05-12 15:49 2021-05-10 2021-05-14 2021-05-12 15:49:55              1  0.916667     True             True            True
+ B09      DABUR  20 Jan-Mar 2026     After close 2026-05-07 16:34 2026-05-05 2026-05-08 2026-05-07 16:34:29              1  0.483333     True             True            True
+ B09 BHARATFORG   9 Apr-Jun 2023   During market 2023-08-09 12:51 2023-08-07 2023-08-09 2023-08-09 12:51:06              1  0.100000     True             True            True
+ B09      WIPRO   2 Jul-Sep 2021     After close 2021-10-13 15:34 2021-10-11 2021-10-14 2021-10-13 15:34:40              1  0.666667     True             True            True
+ B09     VOLTAS  11 Oct-Dec 2023     After close 2024-01-30 19:14 2024-01-25 2024-01-31 2024-01-30 19:14:54              1  0.900000     True             True            True
+ B09        BDL  17 Apr-Jun 2025     After close 2025-08-12 15:54 2025-08-08 2025-08-13 2025-08-12 15:54:15              2  0.250000     True             True            True
+ B09 CUMMINSIND  17 Apr-Jun 2025     After close 2025-08-07 17:43 2025-08-05 2025-08-08 2025-08-07 17:43:38              2  0.633333     True             True            True
+ B09  SUNPHARMA   1 Apr-Jun 2021   During market 2021-07-30 13:55 2021-07-28 2021-07-30 2021-07-30 13:55:15              1  0.250000     True             True            True
+ B13  LICHSGFIN   3 Oct-Dec 2021     After close 2022-01-27 18:30 2022-01-24 2022-01-28 2022-01-27 18:30:36              1  0.600000     True             True            True
+ B13      WIPRO  11 Oct-Dec 2023     After close 2024-01-12 15:36 2024-01-10 2024-01-15 2024-01-12 15:36:37              1  0.616667     True             True            True
+ B13     FORTIS  21 Apr-Jun 2026     After close 2026-08-06 19:04 2026-08-04 2026-08-07 2026-08-06 19:04:59              1  0.983333     True             True            True
+ B13    ICICIGI  11 Oct-Dec 2023     After close 2024-01-16 19:26 2024-01-12 2024-01-17 2024-01-16 19:26:39              1  0.650000     True             True            True
+ B13   CHOLAFIN   8 Jan-Mar 2023     After close 2023-05-03 17:37 2023-04-28 2023-05-04 2023-05-03 17:37:25              1  0.416667     True             True            True
+ B13 ADANIPORTS  16 Jan-Mar 2025 Non-trading day 2025-05-01 12:56 2025-04-29 2025-05-02                 NaN              0       NaN    False            False           False
+ B13 HEROMOTOCO  17 Apr-Jun 2025     After close 2025-08-06 18:01 2025-08-04 2025-08-07 2025-08-06 18:01:24              1  0.400000     True             True            True
+ B13  ZYDUSLIFE  21 Apr-Jun 2026   During market 2026-08-11 13:24 2026-08-07 2026-08-11 2026-08-11 13:24:05              1  0.083333     True             True            True
+ B13  APLAPOLLO  19 Oct-Dec 2025   During market 2026-01-22 13:45 2026-01-20 2026-01-22 2026-01-22 13:45:32              1  0.533333     True             True            True
+ B13 ADANIENSOL  20 Jan-Mar 2026     After close 2026-04-23 16:56 2026-04-21 2026-04-24 2026-04-23 16:56:26              1  0.433333     True             True            True
+ A12    COFORGE  20 Jan-Mar 2026     After close 2026-05-05 16:58 2026-04-30 2026-05-06 2026-05-05 16:58:57              1  0.950000     True             True            True
+ A12       CAMS  18 Jul-Sep 2025     After close 2025-10-28 20:54 2025-10-24 2025-10-29 2025-10-28 20:54:54              1  0.900000     True             True            True
+ A12       BPCL   3 Oct-Dec 2021     After close 2022-01-31 17:20 2022-01-27 2022-02-01 2022-01-31 17:20:39              1  0.650000     True             True            True
+ A12        PFC  13 Apr-Jun 2024   During market 2024-08-06 14:32 2024-08-02 2024-08-06 2024-08-06 14:32:21              1  0.350000     True             True            True
+ A12     INDIGO  14 Jul-Sep 2024     After close 2024-10-25 15:57 2024-10-23 2024-10-28 2024-10-25 15:57:29              1  0.483333     True             True            True
+ A12   ASHOKLEY  12 Jan-Mar 2024   During market 2024-05-24 13:57 2024-05-22 2024-05-24 2024-05-24 13:57:57              1  0.950000     True             True            True
+ A12       RVNL  17 Apr-Jun 2025   During market 2025-08-12 15:12 2025-08-08 2025-08-12 2025-08-12 15:12:08              1  0.133333     True             True            True
+ A12    DRREDDY  14 Jul-Sep 2024     After close 2024-11-05 16:05 2024-11-01 2024-11-06 2024-11-05 16:05:19              1  0.316667     True             True            True
+ A12    MPHASIS  19 Oct-Dec 2025     After close 2026-01-22 15:50 2026-01-20 2026-01-23 2026-01-22 15:50:45              1  0.750000     True             True            True
+ A12 BHARATFORG  16 Jan-Mar 2025   During market 2025-05-08 14:38 2025-05-06 2025-05-08                 NaN              0       NaN    False            False           False
+ A12  POWERGRID  10 Jul-Sep 2023     After close 2023-11-07 18:07 2023-11-03 2023-11-08 2023-11-07 18:07:05              1  0.083333     True             True            True
+ A12 CUMMINSIND  18 Jul-Sep 2025     After close 2025-11-06 19:29 2025-11-03 2025-11-07 2025-11-06 19:29:50              2  0.833333     True             True            True
+
+sample 47; NSE results announcement found 42; |diff| <= 5 min 41; k implied by NSE time == panel k 42; announced after cutoff close 42; known by close k 42
+fetch status: {'ok': 47}

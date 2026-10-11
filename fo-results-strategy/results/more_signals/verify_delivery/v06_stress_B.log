@@ -1,0 +1,83 @@
+====================================================================================================
+W_DQK_HI: reaction-day delivery qty >= 3x 60-day avg, buy close k+1
+====================================================================================================
+base: n 195 net +1.979 parent +1.194 gain +0.398 g_h1 +0.663 g_h2 +0.114 net_wo5 +1.467 g_wo5 -0.022 net_wo10 +1.051 g_wo10 -0.382
+LOQO gain min +0.170 (drop qn 20) max +0.609 (drop qn 16)
+by year (n, gain): 2021: 22 -0.22, 2022: 20 +2.00, 2023: 29 -0.15, 2024: 36 +1.18, 2025: 49 -1.06, 2026: 39 +1.44
+symbol-cluster bootstrap: 109 symbols, P(gain <= 0) 0.192
+   DQK >= 1.5  n 344 net +1.435 parent +1.194 gain +0.122 g_h1 +0.334 g_h2 -0.076 net_wo5 +1.090 g_wo5 -0.165 net_wo10 +0.821 g_wo10 -0.370
+   DQK >= 2    n 297 net +1.573 parent +1.194 gain +0.184 g_h1 +0.399 g_h2 -0.027 net_wo5 +1.226 g_wo5 -0.097 net_wo10 +0.941 g_wo10 -0.337
+   DQK >= 2.5  n 246 net +1.981 parent +1.194 gain +0.483 g_h1 +0.488 g_h2 +0.479 net_wo5 +1.569 g_wo5 +0.149 net_wo10 +1.229 g_wo10 -0.138
+   DQK >= 3    n 195 net +1.979 parent +1.194 gain +0.398 g_h1 +0.663 g_h2 +0.114 net_wo5 +1.467 g_wo5 -0.022 net_wo10 +1.051 g_wo10 -0.382
+   DQK >= 3.5  n 145 net +2.005 parent +1.194 gain +0.589 g_h1 +0.612 g_h2 +0.563 net_wo5 +1.330 g_wo5 +0.067 net_wo10 +0.857 g_wo10 -0.397
+   DQK >= 4    n 110 net +2.191 parent +1.194 gain +0.920 g_h1 +1.225 g_h2 +0.616 net_wo5 +1.301 g_wo5 +0.241 net_wo10 +0.661 g_wo10 -0.376
+   DQK >= 5    n 60 net +2.587 parent +1.194 gain +1.321 g_h1 +0.832 g_h2 +1.811 net_wo5 +1.249 g_wo5 +0.113 net_wo10 +0.154 g_wo10 -0.823
+   DQK >= 6    n 25 net +2.088 parent +1.194 gain +0.383 g_h1 -0.407 g_h2 +1.238 net_wo5 -0.691 g_wo5 -2.432 net_wo10 -3.338 g_wo10 -4.689
+same signal bought at close k (NOT tradable: day-k delivery file comes after the close): n 195 net +2.448 parent +1.447 gain +0.665 g_h1 +1.035 g_h2 +0.268 net_wo5 +1.849 g_wo5 +0.227 net_wo10 +1.434 g_wo10 -0.136
+parent bought at k: n 392 net +1.447  -> W_DQK_HI at k+1 minus parent at k: +0.532
+   total volume on k >= 2x: bought k    n 376 net +1.477 parent +1.447 gain +0.020 g_h1 -0.004 g_h2 +0.042 net_wo5 +1.115 g_wo5 -0.243 net_wo10 +0.866 g_wo10 -0.470
+   total volume on k >= 2x: bought k+1  n 376 net +1.205 parent +1.194 gain +0.013 g_h1 +0.029 g_h2 -0.002 net_wo5 +0.887 g_wo5 -0.250 net_wo10 +0.637 g_wo10 -0.462
+   total volume on k >= 3x: bought k    n 319 net +1.542 parent +1.447 gain +0.052 g_h1 -0.044 g_h2 +0.146 net_wo5 +1.160 g_wo5 -0.248 net_wo10 +0.892 g_wo10 -0.482
+   total volume on k >= 3x: bought k+1  n 319 net +1.248 parent +1.194 gain +0.018 g_h1 -0.006 g_h2 +0.041 net_wo5 +0.920 g_wo5 -0.246 net_wo10 +0.650 g_wo10 -0.472
+   total volume on k >= 4x: bought k    n 258 net +1.849 parent +1.447 gain +0.091 g_h1 +0.168 g_h2 +0.013 net_wo5 +1.381 g_wo5 -0.280 net_wo10 +1.051 g_wo10 -0.572
+   total volume on k >= 4x: bought k+1  n 258 net +1.631 parent +1.194 gain +0.085 g_h1 +0.234 g_h2 -0.066 net_wo5 +1.231 g_wo5 -0.241 net_wo10 +0.902 g_wo10 -0.527
+   corr(DQK, VK) among W: +0.844
+   VK>=3 & DQK>=3 (k+1): n 194 net +1.996 gain +0.395
+   VK>=3 & DQK<3 (k+1): n 125 net +0.087 gain -0.568
+   VK<3 & DQK>=3 (k+1): n 1 net -1.240 gain +1.056
+   VK<3 & DQK<3 (k+1): n 72 net +0.991 gain -0.093
+XN control: gain within quarter x XN tercile +0.101 (n 195)
+OLS vsN_net(k+1) ~ DQK_HI + XN + quarter FE: coef +0.824, symbol-clustered t 1.13
+   comparator: W with XN > 6 bought at k: n 211 net +1.882 parent +1.447 gain +0.465 g_h1 +0.799 g_h2 +0.100 net_wo5 +1.285 g_wo5 -0.005 net_wo10 +0.874 g_wo10 -0.390
+   comparator: W with XN > 7 bought at k: n 142 net +1.629 parent +1.447 gain +0.603 g_h1 +1.224 g_h2 -0.111 net_wo5 +0.841 g_wo5 -0.082 net_wo10 +0.255 g_wo10 -0.645
+   comparator: W with XN > 8 bought at k: n 96 net +1.428 parent +1.447 gain +0.409 g_h1 +0.737 g_h2 +0.022 net_wo5 +0.407 g_wo5 -0.494 net_wo10 -0.333 g_wo10 -1.241
+overlap: with RSI>50 winners 136/195; with habitual drifters 37
+   DQK_HI among winners with RSI <= 50 (k+1): n 59 net +0.320 parent -0.187 gain -0.003 g_h1 +0.711 g_h2 -0.606 net_wo5 -0.855 g_wo5 -0.877 net_wo10 -1.855 g_wo10 -1.607
+   DQK_HI among winners that are not habitual drifters (k+1): n 158 net +1.663 parent +0.950 gain +0.404 g_h1 +0.557 g_h2 +0.235 net_wo5 +1.074 g_wo5 -0.121 net_wo10 +0.604 g_wo10 -0.527
+survivorship: in F&O by qn 1: n 131 net +1.782 parent +0.779 gain +0.567 g_h1 +0.375 g_h2 +0.945 net_wo5 +1.049 g_wo5 +0.015 net_wo10 +0.563 g_wo10 -0.490
+              later joiners  : n 64 net +2.382 parent +2.375 gain -0.321 g_h1 +1.163 g_h2 -0.736 net_wo5 +1.055 g_wo5 -1.239 net_wo10 +0.013 g_wo10 -1.870
+====================================================================================================
+WR_DQK_HI: reaction-day delivery qty >= 3x 60-day avg, buy close k+1
+====================================================================================================
+base: n 136 net +2.699 parent +2.147 gain +0.528 g_h1 +0.626 g_h2 +0.411 net_wo5 +1.983 g_wo5 -0.041 net_wo10 +1.405 g_wo10 -0.472
+LOQO gain min +0.240 (drop qn 20) max +0.731 (drop qn 16)
+by year (n, gain): 2021: 16 -0.20, 2022: 15 +1.72, 2023: 24 +0.12, 2024: 21 +1.53, 2025: 33 -0.94, 2026: 27 +1.67
+symbol-cluster bootstrap: 88 symbols, P(gain <= 0) 0.162
+   DQK >= 1.5  n 214 net +2.321 parent +2.147 gain +0.111 g_h1 +0.123 g_h2 +0.098 net_wo5 +1.784 g_wo5 -0.339 net_wo10 +1.373 g_wo10 -0.643
+   DQK >= 2    n 186 net +2.439 parent +2.147 gain +0.223 g_h1 +0.234 g_h2 +0.210 net_wo5 +1.914 g_wo5 -0.198 net_wo10 +1.486 g_wo10 -0.553
+   DQK >= 2.5  n 163 net +2.778 parent +2.147 gain +0.493 g_h1 +0.567 g_h2 +0.403 net_wo5 +2.187 g_wo5 +0.019 net_wo10 +1.706 g_wo10 -0.381
+   DQK >= 3    n 136 net +2.699 parent +2.147 gain +0.528 g_h1 +0.626 g_h2 +0.411 net_wo5 +1.983 g_wo5 -0.041 net_wo10 +1.405 g_wo10 -0.472
+   DQK >= 3.5  n 102 net +2.439 parent +2.147 gain +0.573 g_h1 +0.463 g_h2 +0.707 net_wo5 +1.488 g_wo5 -0.116 net_wo10 +0.878 g_wo10 -0.731
+   DQK >= 4    n 77 net +2.693 parent +2.147 gain +0.924 g_h1 +1.312 g_h2 +0.526 net_wo5 +1.429 g_wo5 +0.020 net_wo10 +0.586 g_wo10 -0.814
+   DQK >= 5    n 37 net +3.720 parent +2.147 gain +1.956 g_h1 +1.296 g_h2 +2.582 net_wo5 +1.628 g_wo5 +0.079 net_wo10 -0.029 g_wo10 -1.497
+   DQK >= 6    n 14 net +2.446 parent +2.147 gain +0.633 g_h1 -1.584 g_h2 +2.850 net_wo5 -2.785 g_wo5 -4.746 net_wo10 -6.751 g_wo10 -6.267
+same signal bought at close k (NOT tradable: day-k delivery file comes after the close): n 136 net +3.365 parent +2.418 gain +0.944 g_h1 +1.145 g_h2 +0.704 net_wo5 +2.531 g_wo5 +0.349 net_wo10 +1.949 g_wo10 -0.243
+parent bought at k: n 232 net +2.418  -> WR_DQK_HI at k+1 minus parent at k: +0.281
+   total volume on k >= 2x: bought k    n 224 net +2.560 parent +2.418 gain +0.122 g_h1 +0.110 g_h2 +0.135 net_wo5 +1.973 g_wo5 -0.288 net_wo10 +1.581 g_wo10 -0.668
+   total volume on k >= 2x: bought k+1  n 224 net +2.241 parent +2.147 gain +0.076 g_h1 +0.088 g_h2 +0.062 net_wo5 +1.726 g_wo5 -0.355 net_wo10 +1.333 g_wo10 -0.645
+   total volume on k >= 3x: bought k    n 196 net +2.517 parent +2.418 gain +0.043 g_h1 +0.174 g_h2 -0.113 net_wo5 +1.922 g_wo5 -0.389 net_wo10 +1.512 g_wo10 -0.810
+   total volume on k >= 3x: bought k+1  n 196 net +2.161 parent +2.147 gain -0.021 g_h1 +0.128 g_h2 -0.197 net_wo5 +1.656 g_wo5 -0.426 net_wo10 +1.243 g_wo10 -0.769
+   total volume on k >= 4x: bought k    n 168 net +2.914 parent +2.418 gain +0.364 g_h1 +0.606 g_h2 +0.056 net_wo5 +2.230 g_wo5 -0.132 net_wo10 +1.757 g_wo10 -0.620
+   total volume on k >= 4x: bought k+1  n 168 net +2.568 parent +2.147 gain +0.274 g_h1 +0.458 g_h2 +0.040 net_wo5 +1.989 g_wo5 -0.191 net_wo10 +1.519 g_wo10 -0.587
+   corr(DQK, VK) among WR: +0.866
+   VK>=3 & DQK>=3 (k+1): n 136 net +2.699 gain +0.528
+   VK>=3 & DQK<3 (k+1): n 60 net +0.941 gain -1.266
+   VK<3 & DQK>=3 (k+1): n 0 net +nan gain +nan
+   VK<3 & DQK<3 (k+1): n 36 net +2.072 gain +0.116
+XN control: gain within quarter x XN tercile +0.168 (n 136)
+OLS vsN_net(k+1) ~ DQK_HI + XN + quarter FE: coef +0.856, symbol-clustered t 0.92
+   comparator: WR with XN > 6 bought at k: n 127 net +3.103 parent +2.418 gain +0.737 g_h1 +0.899 g_h2 +0.517 net_wo5 +2.145 g_wo5 -0.008 net_wo10 +1.514 g_wo10 -0.680
+   comparator: WR with XN > 7 bought at k: n 82 net +2.798 parent +2.418 gain +0.887 g_h1 +1.585 g_h2 -0.050 net_wo5 +1.503 g_wo5 -0.330 net_wo10 +0.642 g_wo10 -1.191
+   comparator: WR with XN > 8 bought at k: n 58 net +2.629 parent +2.418 gain +0.631 g_h1 +1.067 g_h2 +0.130 net_wo5 +1.031 g_wo5 -0.847 net_wo10 -0.029 g_wo10 -1.845
+overlap: with RSI>50 winners 136/136; with habitual drifters 25
+survivorship: in F&O by qn 1: n 93 net +2.024 parent +1.555 gain +0.447 g_h1 +0.405 g_h2 +0.539 net_wo5 +1.014 g_wo5 -0.296 net_wo10 +0.441 g_wo10 -0.870
+              later joiners  : n 43 net +4.157 parent +3.844 gain +0.416 g_h1 +1.176 g_h2 +0.186 net_wo5 +2.331 g_wo5 -0.762 net_wo10 +0.819 g_wo10 -1.737
+
+====================================================================================================
+OWN PLACEBO B: quiet stock-days of F&O stocks, XN_k = stock - Nifty > 4%, no result session of the stock in [k-10, k+22];
+               DQK on day k, buy close k+1, 20 sessions, short Nifty, net 0.19; gain vs quiet winners of the same month
+====================================================================================================
+quiet winners 1699 (k from session 1320), DQK >= 3: 360; quiet net all +0.674, DQK_HI +0.121, quiet gain -0.766
+results W_DQK_HI gain +0.398 -> DiD +1.164; placebo p (draws of 195 quiet gains >= results gain): 0.0179
+   quiet DQK >= 2: n 794 gain -0.589
+   quiet DQK >= 4: n 186 gain -0.553

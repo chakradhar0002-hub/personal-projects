@@ -1,0 +1,19 @@
+PNB 21 events results_date 2026-07-18 | raw results-type announcement days ['2026-07-18'] match
+PNB 17 events results_date 2025-07-30 | raw results-type announcement days ['2025-07-30'] match
+PERSISTENT 18 events results_date 2025-10-14 | raw results-type announcement days ['2025-10-14'] match
+PERSISTENT 14 events results_date 2024-10-22 | raw results-type announcement days ['2024-10-22'] match
+PAYTM 16 events results_date 2025-05-06 | raw results-type announcement days ['2025-05-06'] match
+PAYTM 12 events results_date 2024-05-22 | raw results-type announcement days ['2024-05-21', '2024-05-22'] match
+FEDERALBNK 21 events results_date 2026-07-17 | raw results-type announcement days ['2026-07-17'] match
+FEDERALBNK 17 events results_date 2025-08-02 | raw results-type announcement days ['2025-08-02'] match
+CONCOR 21 events results_date 2026-07-24 | raw results-type announcement days ['2026-07-24'] match
+CONCOR 17 events results_date 2025-08-05 | raw results-type announcement days ['2025-08-05'] match
+BANDHANBNK 19 events results_date 2026-01-22 | raw results-type announcement days ['2026-01-22'] match
+BANDHANBNK 15 events results_date 2025-01-31 | raw results-type announcement days ['2025-01-29', '2025-01-31'] match
+ASHOKLEY 9 events results_date 2023-07-21 | raw results-type announcement days ['2023-07-21'] match
+ASHOKLEY 5 events results_date 2022-07-29 | raw results-type announcement days ['2022-07-29'] match
+OBEROIRLTY 18 events results_date 2025-10-15 | raw results-type announcement days ['2025-10-15'] match
+OBEROIRLTY 14 events results_date 2024-10-18 | raw results-type announcement days ['2024-10-10', '2024-10-16', '2024-10-18'] match
+BIOCON 18 events results_date 2025-11-11 | raw results-type announcement days ['2025-11-11'] match
+BIOCON 14 events results_date 2024-10-30 | raw results-type announcement days ['2024-10-30'] match
+matched 18 of 18

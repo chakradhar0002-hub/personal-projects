@@ -1,0 +1,266 @@
+habitual drifters (tradable, top fifth of last-4 drift): 569 mean net +1.796 (documented 569 +1.80)
+early F&O members (F&O result at qn<=1): 121 symbols; later joiners 85
+
+================ B09 (PCR top quintile at k, long plain winners)
+ qn                              label  n    net    exc
+  0 Results for Jan-Mar 2021 (Q4 FY21)  6 -1.023 -1.420
+  1 Results for Apr-Jun 2021 (Q1 FY22)  6 -1.511 -1.189
+  2 Results for Jul-Sep 2021 (Q2 FY22)  9 -1.596  0.219
+  3 Results for Oct-Dec 2021 (Q3 FY22)  8 -3.722  0.368
+  4 Results for Jan-Mar 2022 (Q4 FY22)  3 -1.360 -0.853
+  5 Results for Apr-Jun 2022 (Q1 FY23)  6  0.187 -0.424
+  6 Results for Jul-Sep 2022 (Q2 FY23)  8 -2.223  0.487
+  7 Results for Oct-Dec 2022 (Q3 FY23) 10  2.765  0.434
+  8 Results for Jan-Mar 2023 (Q4 FY23)  8  6.774  0.794
+  9 Results for Apr-Jun 2023 (Q1 FY24)  8 11.059  1.398
+ 10 Results for Jul-Sep 2023 (Q2 FY24)  5 14.559  2.201
+ 11 Results for Oct-Dec 2023 (Q3 FY24) 11  5.755  3.976
+ 12 Results for Jan-Mar 2024 (Q4 FY24)  9  3.706  0.394
+ 13 Results for Apr-Jun 2024 (Q1 FY25) 10  1.864  1.088
+ 14 Results for Jul-Sep 2024 (Q2 FY25) 12  2.198  1.820
+ 15 Results for Oct-Dec 2024 (Q3 FY25)  9 -1.455 -0.483
+ 16 Results for Jan-Mar 2025 (Q4 FY25) 11  6.149  2.724
+ 17 Results for Apr-Jun 2025 (Q1 FY26)  9  2.521 -0.705
+ 18 Results for Jul-Sep 2025 (Q2 FY26) 19  0.798  1.650
+ 19 Results for Oct-Dec 2025 (Q3 FY26) 16  3.024  1.109
+ 20 Results for Jan-Mar 2026 (Q4 FY26) 18 -0.197 -1.237
+ 21 Results for Apr-Jun 2026 (Q1 FY27) 12  4.633  2.567
+
+--- B09 variants (excess = vs same-quarter plain-winner parent of the pool)
+                                            variant   n   net  excess  luck_p  OUT_n  OUT_net
+                    as pre-registered (my features) 213 2.336   0.835  0.0059    NaN      NaN
+                         OUT (eligible, not signal) 179 0.388  -0.993  0.9938    NaN      NaN
+                             top 10% within quarter 142 2.795   1.287  0.0041    NaN      NaN
+                             top 15% within quarter 177 2.556   1.090  0.0044    NaN      NaN
+                             top 25% within quarter 246 2.002   0.571  0.0221    NaN      NaN
+                             top 30% within quarter 262 1.941   0.501  0.0242    NaN      NaN
+                             top 33% within quarter 277 1.826   0.420  0.0349    NaN      NaN
+                             top 50% within quarter 331 1.626   0.175  0.1253    NaN      NaN
+                      PIT: previous-quarter cut-off 213 2.239   0.849  0.0046    NaN      NaN
+          PIT: trailing 250-session results cut-off 215 2.439   0.864  0.0042    NaN      NaN
+      PIT: same-day rank among all F&O stocks > 80% 211 2.007   0.641  0.0278    NaN      NaN
+                           PIT: same-day rank > 60% 291 1.626   0.231  0.1420    NaN      NaN
+     own-history: PCR / own 60d median top quintile 209 2.010   0.632  0.0313    NaN      NaN
+PCR at k-1 (before the reaction close) top quintile  94 2.536   1.071  0.0474    NaN      NaN
+                         PCR at cutoff top quintile  74 3.456   1.483  0.0298    NaN      NaN
+                       PCR at cutoff-1 top quintile  78 2.642   0.717  0.1717    NaN      NaN
+            dPCR1 (change on k) top quintile [=B10] 257 1.739   0.369  0.0865    NaN      NaN
+                     entry close k+1 (hold to k+21) 213 1.738   0.441  0.0765    NaN      NaN
+                     entry open k+1 (to close k+20) 213 2.137   0.948  0.0023    NaN      NaN
+                              without best 5 trades 208 1.712   0.385     NaN    NaN      NaN
+                             without best 10 trades 203 1.282   0.016     NaN    NaN      NaN
+                             without best 20 trades 193 0.606  -0.543     NaN    NaN      NaN
+                          within RSI>50 winners: IN 142 3.037   0.670  0.0393   90.0    1.442
+                         within RSI<=50 winners: IN  71 0.934   0.818  0.0636   89.0   -0.677
+                       within habitual drifters: IN  49 3.128  -0.044  0.5308   40.0    1.291
+                      outside habitual drifters: IN 164 2.099   1.023  0.0039  139.0    0.129
+                      early F&O members (qn<=1): IN 165 1.679   0.567  0.0539  125.0    0.317
+                              later F&O joiners: IN  48 4.593   1.393  0.0352   54.0    0.554
+                             first 14 (qn 0-13): IN 107 2.601   0.739  0.0625   85.0    0.563
+                              last 8 (qn 14-21): IN 106 2.068   0.931  0.0181   94.0    0.230
+               financials (fin_type != Company): IN  63 2.959   1.074  0.0084   44.0   -0.744
+                                 non-financials: IN 150 2.074   0.496  0.1121  135.0    0.758
+                                        XN 4-6%: IN  65 2.424   1.293  0.0298  116.0    0.106
+                                        XN > 6%: IN 148 2.297   0.328  0.1502   63.0    0.908
+overlap: B09 & RSI>50 142 of 213; & habitual drifters 49; & early members 165
+
+--- B09 by calendar year of k
+year  n    net  excess  parent_n  parent_net
+2021 21 -1.408  -0.652        37      -0.794
+2022 25 -2.021   0.069        50      -1.506
+2023 31  7.842   1.061        49       6.452
+2024 42  3.373   1.905        76       1.610
+2025 48  1.925   1.055        95       0.971
+2026 46  2.183   0.571        85       1.659
+
+--- B09 leave-one-quarter-out: excess min +0.664 (drop qn 11) max +1.026; luck p max 0.0247 (drop qn 11); luck p < 0.05 in 22/22
+ drop_qn   n    exc  luck_p
+       0 207 0.9002  0.0057
+       1 207 0.8935  0.0027
+       2 204 0.8620  0.0057
+       3 205 0.8531  0.0073
+       4 210 0.8590  0.0050
+       5 207 0.8714  0.0057
+       6 205 0.8484  0.0093
+       7 203 0.8546  0.0063
+       8 205 0.8365  0.0073
+       9 205 0.8129  0.0100
+      10 208 0.8020  0.0077
+      11 202 0.6638  0.0247
+      12 204 0.8543  0.0040
+      13 203 0.8224  0.0057
+      14 201 0.7761  0.0113
+      15 204 0.8930  0.0043
+      16 202 0.7320  0.0143
+      17 204 0.9028  0.0033
+      18 194 0.7550  0.0200
+      19 197 0.8126  0.0113
+      20 195 1.0261  0.0030
+      21 201 0.7314  0.0130
+
+--- B09 concentration: {'distinct_symbols': 114, 'top5_by_count': {'TRENT': 5, 'APOLLOHOSP': 5, 'CUMMINSIND': 5, 'FEDERALBNK': 5, 'EICHERMOT': 6}, 'top5_excess_sum': {'BHEL': 21.1, 'PERSISTENT': 21.6, 'DIXON': 23.3, 'OFSS': 25.3, 'RECLTD': 27.5}, 'total_excess_sum': np.float64(177.8), 'loso_min_exc': ('RECLTD', np.float64(0.7124042045055698)), 'exc_wo_top5_symbols': np.float64(0.293), 'cluster_boot_exc_5_95': (np.float64(0.021), np.float64(1.63)), 'cluster_boot_p_le0': 0.0455}
+--- B09 OLS among winners (quarter FE): flag +1.469 (se quarter-cl 0.796, t +1.84; se symbol-cl 0.792, t +1.85); XN +0.187 (t +1.03); RSI_HI +1.793 (t +2.00); log futures OI notional -0.287 (t -0.47); n 392
+    size: median futures OI notional (Rs cr) IN 1391 OUT 1224; median mcap IN 75853 OUT 63812; mean XN IN 7.51 OUT 5.94
+
+================ B13 (dCIV20 top quintile at k, long plain winners)
+ qn                              label  n    net    exc
+  0 Results for Jan-Mar 2021 (Q4 FY21)  1 -5.797 -6.195
+  1 Results for Apr-Jun 2021 (Q1 FY22)  4 -1.121 -0.798
+  2 Results for Jul-Sep 2021 (Q2 FY22)  4 -0.306  1.508
+  3 Results for Oct-Dec 2021 (Q3 FY22)  2 -7.597 -3.507
+  4 Results for Jan-Mar 2022 (Q4 FY22)  6  1.807  2.314
+  5 Results for Apr-Jun 2022 (Q1 FY23)  1 -2.885 -3.497
+  6 Results for Jul-Sep 2022 (Q2 FY23)  3 -0.305  2.404
+  7 Results for Oct-Dec 2022 (Q3 FY23)  1 -2.463 -4.794
+  8 Results for Jan-Mar 2023 (Q4 FY23)  6  5.686 -0.295
+  9 Results for Apr-Jun 2023 (Q1 FY24)  5  9.474 -0.187
+ 10 Results for Jul-Sep 2023 (Q2 FY24)  1 10.232 -2.126
+ 11 Results for Oct-Dec 2023 (Q3 FY24)  4  9.808  8.030
+ 12 Results for Jan-Mar 2024 (Q4 FY24)  8  4.840  1.527
+ 13 Results for Apr-Jun 2024 (Q1 FY25)  2 11.901 11.125
+ 14 Results for Jul-Sep 2024 (Q2 FY25)  1  7.869  7.491
+ 15 Results for Oct-Dec 2024 (Q3 FY25)  5 -1.698 -0.726
+ 16 Results for Jan-Mar 2025 (Q4 FY25)  3  5.491  2.067
+ 17 Results for Apr-Jun 2025 (Q1 FY26) 10  4.903  1.678
+ 18 Results for Jul-Sep 2025 (Q2 FY26)  8 -0.204  0.648
+ 19 Results for Oct-Dec 2025 (Q3 FY26)  8  2.281  0.367
+ 20 Results for Jan-Mar 2026 (Q4 FY26)  4  3.940  2.899
+ 21 Results for Apr-Jun 2026 (Q1 FY27)  5  0.247 -1.819
+
+--- B13 variants (excess = vs same-quarter plain-winner parent of the pool)
+                                  variant   n    net  excess  luck_p  OUT_n  OUT_net
+          as pre-registered (my features)  92  2.933   1.105  0.0470    NaN      NaN
+               OUT (eligible, not signal) 280  0.844  -0.415  0.9657    NaN      NaN
+                   top 10% within quarter  46  2.352   0.987  0.1644    NaN      NaN
+                   top 15% within quarter  65  2.835   1.183  0.0742    NaN      NaN
+                   top 25% within quarter 112  2.340   0.745  0.0990    NaN      NaN
+                   top 30% within quarter 129  2.231   0.796  0.0609    NaN      NaN
+                   top 33% within quarter 140  2.097   0.754  0.0586    NaN      NaN
+                   top 50% within quarter 198  1.630   0.277  0.2313    NaN      NaN
+            PIT: previous-quarter cut-off 134  1.801   0.245  0.2863    NaN      NaN
+PIT: trailing 250-session results cut-off  98  2.354   0.693  0.1113    NaN      NaN
+               dCIV20 at k-1 top quintile  90  2.166   0.927  0.0855    NaN      NaN
+            dCIV20 at cutoff top quintile  93  1.559   0.063  0.4589    NaN      NaN
+           entry close k+1 (hold to k+21)  92  2.195   0.750  0.1090    NaN      NaN
+           entry open k+1 (to close k+20)  92  2.383   0.870  0.0940    NaN      NaN
+                    without best 5 trades  87  1.898   0.151     NaN    NaN      NaN
+                   without best 10 trades  82  1.112  -0.477     NaN    NaN      NaN
+                   without best 20 trades  72 -0.231  -1.584     NaN    NaN      NaN
+                within RSI>50 winners: IN  57  4.753   1.569  0.0344  164.0    1.390
+               within RSI<=50 winners: IN  35 -0.031   0.589  0.2590  116.0    0.072
+             within habitual drifters: IN  22  3.423   1.193  0.1836   64.0    1.981
+            outside habitual drifters: IN  70  2.779   1.226  0.0451  216.0    0.507
+            early F&O members (qn<=1): IN  68  2.841   1.231  0.0442  213.0    0.622
+                    later F&O joiners: IN  24  3.194  -0.321  0.6022   67.0    1.551
+                   first 14 (qn 0-13): IN  48  3.570   1.337  0.0802  131.0    0.743
+                    last 8 (qn 14-21): IN  44  2.239   0.851  0.1692  149.0    0.932
+     financials (fin_type != Company): IN  19  0.942   0.521  0.2970   83.0    1.615
+                       non-financials: IN  73  3.451   1.511  0.0221  197.0    0.519
+                              XN 4-6%: IN  42  2.539   0.513  0.3046  131.0    0.523
+                              XN > 6%: IN  50  3.264   1.326  0.0657  149.0    1.127
+overlap: B13 & RSI>50 57 of 92; & habitual drifters 22; & early members 68
+
+--- B13 by calendar year of k
+year  n    net  excess  parent_n  parent_net
+2021  9 -1.278  -0.373        37      -0.794
+2022 12 -0.679   0.882        50      -1.506
+2023 13  6.866  -0.740        49       6.452
+2024 15  7.308   4.939        76       1.610
+2025 26  2.130   0.943        95       0.971
+2026 17  2.073   0.320        85       1.659
+
+--- B13 leave-one-quarter-out: excess min +0.790 (drop qn 11) max +1.273; luck p max 0.1083 (drop qn 11); luck p < 0.05 in 13/22
+ drop_qn  n    exc  luck_p
+       0 91 1.1852  0.0353
+       1 88 1.1914  0.0313
+       2 88 1.0866  0.0467
+       3 90 1.2074  0.0260
+       4 86 1.0206  0.0720
+       5 91 1.1555  0.0340
+       6 89 1.0611  0.0550
+       7 91 1.1698  0.0430
+       8 86 1.2026  0.0387
+       9 87 1.1792  0.0373
+      10 91 1.1405  0.0470
+      11 88 0.7902  0.1083
+      12 84 1.0647  0.0583
+      13 90 0.8823  0.0916
+      14 91 1.0348  0.0533
+      15 87 1.2102  0.0363
+      16 89 1.0725  0.0546
+      17 82 1.0351  0.0690
+      18 84 1.1485  0.0450
+      19 84 1.1753  0.0467
+      20 88 1.0234  0.0626
+      21 87 1.2730  0.0320
+
+--- B13 concentration: {'distinct_symbols': 66, 'top5_by_count': {'FEDERALBNK': 3, 'DELHIVERY': 3, 'ICICIGI': 3, 'TRENT': 3, 'BHARATFORG': 5}, 'top5_excess_sum': {'HEROMOTOCO': 12.6, 'OFSS': 16.3, 'IDEA': 18.0, 'MOTHERSON': 25.0, 'TVSMOTOR': 32.8}, 'total_excess_sum': np.float64(101.7), 'loso_min_exc': ('TVSMOTOR', np.float64(0.7653655309205595)), 'exc_wo_top5_symbols': np.float64(-0.036), 'cluster_boot_exc_5_95': (np.float64(-0.086), np.float64(2.355)), 'cluster_boot_p_le0': 0.0675}
+--- B13 OLS among winners (quarter FE): flag +1.418 (se quarter-cl 0.658, t +2.15; se symbol-cl 0.846, t +1.68); XN +0.203 (t +1.10); RSI_HI +2.004 (t +2.13); log futures OI notional -0.094 (t -0.16); n 372
+    size: median futures OI notional (Rs cr) IN 1223 OUT 1431; median mcap IN 64822 OUT 76022; mean XN IN 7.28 OUT 6.60
+
+================ A12 (BASISDEV, short the 3-day window)
+
+--- A12 variants
+                         variant    n    net  excess  luck_p
+ as pre-registered (my features)  650  0.167   0.387  0.0152
+                      bottom 10%  333  0.442   0.663  0.0059
+                      bottom 15%  490  0.285   0.505  0.0070
+                      bottom 25%  812  0.102   0.322  0.0187
+                      bottom 30%  969  0.072   0.292  0.0178
+                      bottom 33% 1074 -0.006   0.213  0.0473
+    PIT previous-quarter cut-off  744  0.033   0.246  0.0612
+PIT trailing 250-session cut-off  662  0.183   0.337  0.0287
+            features at cutoff-1  650  0.014   0.234  0.1005
+                  without best 5  645  0.028   0.250     NaN
+                 without best 10  640 -0.071   0.154     NaN
+                 without best 20  630 -0.246  -0.021     NaN
+      within lag-rule trades: IN   12 -3.003   0.079  0.4794
+           early F&O members: IN  520  0.011   0.275  0.0812
+               later joiners: IN  130  0.791   0.728  0.0624
+                    first 14: IN  363 -0.229   0.067  0.3911
+                      last 8: IN  287  0.668   0.792  0.0024
+
+--- A12 by calendar year of the cutoff
+year   n    net  excess
+2021  68 -0.618  -0.483
+2022 107 -0.084  -0.081
+2023 107 -0.179   0.134
+2024 108  0.320   0.681
+2025 140  0.257   0.530
+2026 120  0.902   1.092
+--- A12 LOQO: excess min +0.293 max +0.444; luck p max 0.0590; luck p < 0.05 in 21/22
+--- A12 concentration: {'distinct_symbols': 174, 'top5_by_count': {'POWERGRID': 13, 'NATIONALUM': 13, 'NTPC': 15, 'PFC': 16, 'HCLTECH': 20}, 'top5_excess_sum': {'HINDUNILVR': 22.9, 'BDL': 23.3, 'POWERGRID': 23.9, 'LICHSGFIN': 29.6, 'KAYNES': 29.7}, 'total_excess_sum': np.float64(251.7), 'loso_min_exc': ('KAYNES', np.float64(0.3425970648076329)), 'exc_wo_top5_symbols': np.float64(0.196), 'cluster_boot_exc_5_95': (np.float64(0.088), np.float64(0.69)), 'cluster_boot_p_le0': 0.0175}
+
+================ A22 (dPIV20, short the 3-day window)
+
+--- A22 variants
+                         variant   n    net  excess  luck_p
+ as pre-registered (my features) 578  0.118   0.334  0.0430
+                         top 10% 295  0.265   0.481  0.0454
+                         top 15% 438  0.234   0.453  0.0242
+                         top 25% 718 -0.037   0.181  0.1417
+                         top 30% 866 -0.020   0.199  0.0932
+                         top 33% 958  0.039   0.257  0.0332
+    PIT previous-quarter cut-off 802  0.156   0.267  0.0271
+PIT trailing 250-session cut-off 580  0.205   0.276  0.0711
+            features at cutoff-1 573 -0.146   0.070  0.3567
+                  without best 5 573 -0.081   0.139     NaN
+                 without best 10 568 -0.217   0.003     NaN
+                 without best 20 558 -0.426  -0.202     NaN
+      within lag-rule trades: IN  35 -2.995  -0.505  0.8127
+           early F&O members: IN 449 -0.073   0.182  0.1881
+               later joiners: IN 129  0.784   0.823  0.0366
+                    first 14: IN 302  0.049   0.353  0.0927
+                      last 8: IN 276  0.194   0.313  0.1344
+
+--- A22 by calendar year of the cutoff
+year   n    net  excess
+2021  52  1.016   1.139
+2022  87  0.078   0.108
+2023  97 -0.198   0.109
+2024  91 -0.120   0.203
+2025 137  0.036   0.291
+2026 114  0.299   0.489
+--- A22 LOQO: excess min +0.202 max +0.452; luck p max 0.1673; luck p < 0.05 in 12/22
+--- A22 concentration: {'distinct_symbols': 168, 'top5_by_count': {'SBIN': 9, 'HAVELLS': 10, 'WIPRO': 15, 'INFY': 15, 'HCLTECH': 17}, 'top5_excess_sum': {'AMBER': 23.3, 'HAVELLS': 24.9, 'ASIANPAINT': 26.0, 'PGEL': 33.1, 'IEX': 38.7}, 'total_excess_sum': np.float64(193.2), 'loso_min_exc': ('IEX', np.float64(0.26962602251192663)), 'exc_wo_top5_symbols': np.float64(0.085), 'cluster_boot_exc_5_95': (np.float64(-0.077), np.float64(0.722)), 'cluster_boot_p_le0': 0.0897}
+done

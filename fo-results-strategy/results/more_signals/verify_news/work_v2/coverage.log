@@ -1,0 +1,46 @@
+rows 155600 dupes 2077 range 2021-03-01 06:55:36 2026-09-30 23:52:08
+unparsed 0
+panel symbols 206 in an 206
+monthly totals around seam: {Period('2022-09', 'M'): 2065, Period('2022-10', 'M'): 1739, Period('2022-11', 'M'): 2464, Period('2022-12', 'M'): 1675, Period('2023-01', 'M'): 2021, Period('2023-02', 'M'): 2383}
+min/median monthly total 1572 2164.0
+symbols with zero-announcement months after their first: 32 total months 42
+   ('LTF', '2021-11 2022-08 2023-02', 3)
+   ('BAJAJHLDNG', '2021-12 2022-02', 2)
+   ('BRITANNIA', '2022-02 2022-03', 2)
+   ('DMART', '2021-11 2023-02', 2)
+   ('GAIL', '2021-05 2021-07', 2)
+   ('GODFRYPHLP', '2021-05 2023-02', 2)
+   ('INDUSTOWER', '2021-12 2022-03', 2)
+   ('SAIL', '2022-10 2023-01', 2)
+   ('SRF', '2026-02 2026-08', 2)
+   ('ABB', '2023-01', 1)
+   ('AMBER', '2023-11', 1)
+   ('BAJAJFINSV', '2021-12', 1)
+   ('BAJFINANCE', '2022-12', 1)
+   ('BDL', '2021-05', 1)
+   ('BHEL', '2021-05', 1)
+   ('CONCOR', '2021-12', 1)
+   ('DLF', '2021-05', 1)
+   ('FORTIS', '2021-10', 1)
+   ('GLENMARK', '2023-12', 1)
+   ('HAVELLS', '2022-02', 1)
+   ('IDEA', '2021-05', 1)
+   ('IREDA', '2024-11', 1)
+   ('JIOFIN', '2024-11', 1)
+   ('JUBLFOOD', '2021-05', 1)
+   ('MAZDOCK', '2021-05', 1)
+symbols whose first announcement month is after (cutoff-1 month) of first panel result:
+renamed tickers: monthly mean announcements before / after the rename; first panel cutoff
+   360ONE      rename 2023-01-23: before   8.1/m (0 zero months of 22), after  12.5/m; first panel cutoff 2025-07-16
+   ADANIENSOL  rename 2023-08-24: before   7.5/m (0 zero months of 29), after   9.5/m; first panel cutoff 2025-01-21
+   ANGELONE    rename 2021-11-11: before  16.1/m (0 zero months of 8), after  13.4/m; first panel cutoff 2025-01-09
+   ETERNAL     rename 2025-04-09: before   6.7/m (4 zero months of 49), after   6.1/m; first panel cutoff 2025-01-16
+   GMRAIRPORT  rename 2024-12-11: before   8.2/m (0 zero months of 45), after   9.6/m; first panel cutoff 2021-08-11
+   LTF         rename 2024-04-23: before   6.3/m (3 zero months of 37), after   9.6/m; first panel cutoff 2021-04-27
+   LTM         rename 2026-02-27: before  10.6/m (0 zero months of 59), after  13.7/m; first panel cutoff 2021-07-13
+   MOTHERSON   rename 2022-06-09: before   9.0/m (0 zero months of 15), after  16.1/m; first panel cutoff 2021-05-31
+   SHRIRAMFIN  rename 2022-12-20: before  30.3/m (0 zero months of 21), after  34.4/m; first panel cutoff 2021-04-27
+   TMPV        rename 2025-10-24: before  24.1/m (0 zero months of 55), after  10.4/m; first panel cutoff 2021-05-14
+   UNOMINDA    rename 2022-08-05: before  13.2/m (0 zero months of 17), after  15.2/m; first panel cutoff 2025-08-04
+   UNITDSPR    rename 2024-06-07: before  15.1/m (0 zero months of 39), after  11.5/m; first panel cutoff 2021-05-19
+   ZYDUSLIFE   rename 2022-03-07: before  14.0/m (0 zero months of 12), after  16.9/m; first panel cutoff 2021-05-25

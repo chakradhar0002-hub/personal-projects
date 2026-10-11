@@ -1,0 +1,12 @@
+1. delivery values present in the A windows (60 sessions to cutoff-1): rows with < traded days: 0 of 3280 ; min present 60 ; 5-day window < 5: 0
+   B window k-60..k+1: rows with fewer delivery values than traded days: 0
+Empty DataFrame
+Columns: [symbol, qn, n60, traded]
+Index: []
+   A10 trades affected: 0
+2. A10 with rank universe = previous quarter list: n 667, net +0.172, excess +0.306, first14 +0.140, last8 +0.514; same trades as A10: 663
+2. A10 with rank universe = all stocks with data: n 630, net +0.079, excess +0.238, first14 +0.011, last8 +0.456; same trades as A10: 617
+
+3. symbol list: returns.csv has 213 symbols. F&O results per quarter: {0: 98, 1: 117, 2: 125, 3: 132, 4: 131, 5: 134, 6: 133, 7: 133, 8: 134, 9: 134, 10: 132, 11: 135, 12: 135, 13: 135, 14: 134, 15: 172, 16: 178, 17: 191, 18: 191, 19: 196, 20: 204, 21: 206}
+   present in returns.csv: ['IDEA', 'OFSS', 'RBLBANK', 'MFSL', 'MUTHOOTFIN', 'BHARATFORG']
+   absent from returns.csv: ['ZEEL', 'PVRINOX', 'BATAINDIA', 'GUJGASLTD', 'ABFRL', 'INDIACEM', 'DELTACORP', 'BALRAMCHIN', 'CANFINHOME', 'LALPATHLAB', 'MGL', 'IGL', 'ATUL', 'GNFC', 'HINDCOPPER', 'IPCALAB', 'METROPOLIS', 'MRF', 'NAVINFLUOR', 'RAMCOCEM', 'SUNTV', 'TATACOMM', 'WHIRLPOOL', 'AARTIIND', 'ESCORTS', 'GRANULES', 'L&TFH', 'COROMANDEL', 'CHAMBLFERT', 'DEEPAKNTR', 'ABBOTINDIA', 'BERGEPAINT', 'JKCEMENT', 'LTTS', 'IBULHSGFIN', 'SAMMAANCAP', 'PEL', 'PIRAMALENT', 'HDFC', 'MINDTREE', 'SRTRANSFIN', 'CADILAHC', 'TORNTPOWER', 'SYNGENE', 'APOLLOTYRE', 'EXIDEIND']

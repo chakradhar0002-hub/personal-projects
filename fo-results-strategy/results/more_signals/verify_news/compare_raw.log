@@ -1,0 +1,78 @@
+sample points 62; fetch ok 62; raw rows 751
+raw rows with returned symbol != queried: 0
+dissemination lag (exchdisstime - an_dt) seconds: {'count': 751.0, 'mean': 6.1, 'std': 28.2, 'min': 0.0, '25%': 1.0, '50%': 3.0, '75%': 7.0, 'max': 628.0}
+rows with lag > 60 s: 4; > 1 h: 0
+     q_symbol                 an_dt          exchdisstime difference                                        desc
+6    JSWSTEEL  07-Jul-2023 16:06:08  07-Jul-2023 16:07:15   00:01:07  Disclosure under SEBI Takeover Regulations
+491  INDHOTEL  25-Mar-2022 18:25:06  25-Mar-2022 18:26:56   00:01:50                Outcome of committee meeting
+695      TMPV  23-Oct-2023 17:50:11  23-Oct-2023 17:57:13   00:07:02                  Loss of Share Certificates
+696      TMPV  23-Oct-2023 17:45:53  23-Oct-2023 17:56:21   00:10:28                  Loss of Share Certificates
+
+per sample point (window cutoff-32d .. cutoff+1d):
+        tag     symbol  qn  raw  db  common  raw_only  db_only  PR30_raw_andt  PR30_raw_diss  PR30_stored
+     A08_in   JSWSTEEL   9   14  14      14         0        0              1              1            1
+     A08_in PERSISTENT  13   25  25      25         0        0              2              2            2
+     A08_in    COFORGE  18   15  15      14         0        0              1              1            1
+     A08_in        UPL   5   17  17      17         0        0              1              1            1
+     A08_in    MPHASIS   7    6   6       6         0        0              1              1            1
+     A08_in     CONCOR  20    8   8       8         0        0              1              1            1
+     A08_in BAJFINANCE  15    7   7       7         0        0              1              1            1
+     A08_in       TMPV  15    7   7       7         0        0              2              2            2
+     A08_in   PETRONET  11    5   5       5         0        0              1              1            1
+     A08_in    COFORGE  20   21  21      20         0        0              6              6            6
+     A08_in PERSISTENT  14   19  19      19         0        0              4              4            4
+     A08_in    COFORGE  17   19  19      19         0        0              2              2            2
+     A08_in ULTRACEMCO   2   13  13      13         0        0              1              1            1
+     A08_in      TECHM   0    8   8       8         0        0              1              1            1
+     A08_in   ADANIENT  21   17  17      17         0        0              5              5            5
+     A08_in ADANIPORTS  11   19  19      19         0        0              2              2            2
+     A08_in   GLENMARK   3    9   9       9         0        0              6              6            6
+     A08_in BAJAJ-AUTO   8    6   6       6         0        0              2              2            2
+     A08_in      CIPLA   0   10  10      10         0        0              3              3            3
+     A08_in        LTM   2    5   5       5         0        0              2              2            2
+     A08_in    CGPOWER  21   11  11      11         0        0              1              1            1
+     A08_in TORNTPHARM  14   12  12      12         0        0              1              1            1
+     A08_in      LUPIN   3   12  12      12         0        0              4              4            4
+     A08_in   HINDALCO  16    5   5       5         0        0              2              2            2
+     A08_in      LUPIN  16   13  13      13         0        0              5              5            5
+     A08_in TATACONSUM   3   12  12      12         0        0              1              1            1
+     A08_in       GAIL   6   13  13      13         0        0              3              3            3
+     A08_in     CONCOR  18   12  12      12         0        0              2              2            2
+     A08_in     GRASIM  14   25  25      25         0        0              1              1            1
+     A08_in        LTM   4    8   8       8         0        0              1              1            1
+    A08_out HINDUNILVR  16    6   6       6         0        0              0              0            0
+    A08_out   RELIANCE  19    9   9       9         0        0              0              0            0
+    A08_out  EICHERMOT   3   11  11      11         0        0              0              0            0
+    A08_out   AXISBANK   1   11  11      11         0        0              0              0            0
+    A08_out  EICHERMOT  17   12  12      12         0        0              0              0            0
+    A08_out BAJAJFINSV   8    5   5       5         0        0              0              0            0
+    A08_out       SAIL  17    7   7       6         0        0              0              0            0
+    A08_out  PATANJALI  18    6   6       6         0        0              0              0            0
+    A08_out        SRF  12    3   3       3         0        0              0              0            0
+    A08_out   BOSCHLTD  14    9   9       9         0        0              0              0            0
+    A08_out     INDIGO  11    7   7       7         0        0              0              0            0
+    A08_out GMRAIRPORT  12    4   4       4         0        0              0              0            0
+     A12_in JINDALSTEL   7    3   3       3         0        0              0              0            0
+     A12_in     MARICO   7    6   6       6         0        0              0              0            0
+     A12_in      DABUR  21    6   6       6         0        0              0              0            0
+     A12_in ADANIENSOL  15    9   9       9         0        0              0              0            0
+     A12_in   INDHOTEL   4    5   5       5         0        0              0              0            0
+     A12_in BANDHANBNK   6    6   6       6         0        0              1              1            1
+     A12_in  UNIONBANK  20   11  11      11         0        0              0              0            0
+     A12_in   ADANIENT   3   10  10      10         0        0              1              1            1
+    W_EARLY INDUSINDBK   2   22  22      22         0        0              4              4            4
+    W_EARLY   INDHOTEL  13   15  15      15         0        0              0              0            0
+    W_EARLY        PNB  21   20  20      20         0        0              0              0            0
+    W_EARLY   AXISBANK  14   21  21      21         0        0              0              0            0
+    W_EARLY     ASTRAL   8    5   5       5         0        0              0              0            0
+    W_EARLY    ETERNAL  17    5   5       5         0        0              0              0            0
+renamed_old       TMPV  11   20  20      20         0        0              3              3            3
+renamed_old  ZYDUSLIFE   9   17  17      17         0        0              2              2            2
+renamed_old       TMPV   1   27  27      27         0        0              5              5            5
+renamed_old  ZYDUSLIFE   5   16  16      16         0        0              7              7            7
+renamed_old       TMPV  10   34  34      34         0        0              5              5            5
+renamed_old       TMPV   5   30  30      30         0        0              5              5            5
+
+totals: raw 751, db 751, common 748, raw-only 0, db-only 0
+points where PR30 from raw (an_dt) == stored: 62/62; (dissemination time) == stored: 62/62; IN/OUT flag agrees: 62/62
+press-release rows in raw windows 106; an_dt before T but dissemination after T: 0

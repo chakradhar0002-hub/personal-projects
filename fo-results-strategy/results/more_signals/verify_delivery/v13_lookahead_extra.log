@@ -1,0 +1,18 @@
+panel rows matched to events.csv: 3280 of 3280
+   i_cut equal to events.csv: 3280
+   i_rd equal to events.csv: 3280
+   i_react equal to events.csv: 3280
+   i_p1 equal to events.csv: 3280
+results announced on/before the cutoff date (would be look-ahead for A): 0
+results announced on the session after the cutoff (cutoff-day close still before it): 0
+i_rd - i_cut: {2: 3280}; i_react - i_rd by timing: {'After close': {1: 1955}, 'Before open': {0: 22}, 'During market': {0: 1026}, 'Non-trading day': {0: 277}}
+announcement date vs result session: rd_day == results_date 3003, rd_day > results_date (non-trading-day announcement) 277, rd_day < results_date 0
+after-close results: reaction day = next session after the announcement date: 1955 of 1955
+delivery data used: A features end at e = i_cut-1 (published evening of i_cut-1 < close i_cut); B DQK uses day k (published evening of k), entry close k+1
+Nifty-hedged 3-day (stock - Nifty, sum convention): A10 n 681 hedged gross +0.190 net +0.020; all results hedged gross -0.053; A10 hedged excess quarter-matched +0.250
+beta-hedged (120-session beta at the cutoff): A10 median beta 0.81 vs others 1.09; A10 beta-hedged gross +0.211 net +0.041; excess quarter-matched +0.273
+A10 excess clustered by cutoff session: 392 distinct cutoff sessions for 681 trades; mean of session means +0.145, t 0.74
+A10 by symbol: 95 symbols; mean of symbol means +0.176; share of symbols with positive mean excess 0.53; top-5 symbol contributions {'CIPLA': 4.68, 'PERSISTENT': 5.11, 'SBIN': 6.45, 'CUMMINSIND': 6.53, 'FEDERALBNK': 6.9}
+A10 with rank universe = previous quarter F&O list (known in advance): n 667 net +0.172 excess +0.306 h1 +0.140 h2 +0.514; same trades as A10 663
+A10 with rank universe = all 213 symbols with delivery data: n 630 net +0.079 excess +0.238 h1 +0.011 h2 +0.456; same trades as A10 617
+A10 out-of-sample with a fixed DP60 threshold from qn 0-13 (53.7%): last 8 n 501 net -0.028 excess +0.163

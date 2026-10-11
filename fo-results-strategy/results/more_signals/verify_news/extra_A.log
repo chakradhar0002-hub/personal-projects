@@ -1,0 +1,37 @@
+symbol-cluster bootstrap: A08 excess +0.360, 90% CI +0.075 .. +0.654, P(<=0) 0.0168; PR-noPR +0.524, 90% CI +0.190 .. +0.865, P(<=0) 0.0037
+entry-date cluster bootstrap: 90% CI +0.079 .. +0.632, P(<=0) 0.0187
+same-entry-day excess (vs other results with the same cutoff): PR +0.265 (n 987), no-PR -0.118
+
+automobile results: PR vs no PR
+         n    exc
+pr30             
+False   36  2.084
+True   144  1.090
+non-auto results: PR vs no PR
+          n    exc
+pr30              
+False  2219 -0.200
+True    879  0.241
+non-auto within-stock: PR +0.390 (n 811), no-PR -0.221, stocks 128
+
+A08 excess sum +368.4; top 10 symbols contribute +365.7; bottom 10 -266.0
+            size    sum  mean
+symbol                       
+ADANIPORTS    14  64.84  4.63
+TVSMOTOR      21  46.32  2.21
+M&M           17  44.79  2.63
+TRENT          5  35.49  7.10
+ZYDUSLIFE     22  34.13  1.55
+PERSISTENT    15  33.33  2.22
+BEL            8  28.45  3.56
+HINDALCO      17  27.56  1.62
+CIPLA          8  25.98  3.25
+TECHM          9  24.78  2.75
+symbols with positive excess sum: 79 of 142
+
+EARLY / LATE share by quarter (all F&O results with RDCHG):
+qn        2      3      5      6      7      8      9      10     11     12     13     14     15     16     17     18     19     20     21
+n      121.0  128.0  134.0  133.0  133.0  134.0  134.0  131.0  134.0  134.0  134.0  134.0  172.0  178.0  191.0  191.0  196.0  204.0  206.0
+early   33.9   13.3   13.4   10.5   11.3   20.1    6.7   12.2    8.2   11.2    8.2   15.7   12.8   13.5    7.9   11.5   11.2   13.2   12.1
+late     3.3    5.5    3.0   15.0    9.0    5.2    9.7    9.2    6.7    6.0    6.0    9.7    4.1    6.7    8.9   14.1   12.8    8.3    6.8
+med     -2.0   -1.0   -1.0   -1.0   -1.0   -1.0   -1.0   -1.0   -1.0   -1.0   -1.0   -1.0   -1.0   -1.0    0.0    0.0    0.0   -1.0   -1.0

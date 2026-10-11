@@ -1,0 +1,72 @@
+A features at e = i_cut-1 (all 3,280 F&O results)
+  ACC   n=3280 p10 -6.87 p20 -4.21 median 0.01 p80 4.62 p90 7.04
+  DQR   n=3280 p10 0.52 p20 0.63 median 0.85 p80 1.16 p90 1.39
+  DPL   n=3280 p10 -11.63 p20 -7.42 median 0.10 p80 7.41 p90 11.45
+  DQL   n=3280 p10 0.38 p20 0.49 median 0.76 p80 1.24 p90 1.60
+  DP60  n=3280 p10 31.11 p20 36.75 median 46.77 p80 55.51 p90 59.17
+  PR5   n=3280 p10 -4.62 p20 -2.83 median 0.20 p80 3.40 p90 5.36
+  A01 ACC>0          n= 1643  first14  970 last8  673 quarters 22
+  A02 rank_ACC>80    n=  685  first14  380 last8  305 quarters 22
+  A03 rank_ACC<=20   n=  534  first14  295 last8  239 quarters 22
+  DQR>=1.5           n=  225  first14  142 last8   83 quarters 22
+  DQR>=1.25          n=  492  first14  291 last8  201 quarters 22
+  DQR>=1.0           n= 1089  first14  645 last8  444 quarters 22
+  rank_DQR>80        n=  458  first14  266 last8  192 quarters 22
+  rank_DPL>80        n=  641  first14  369 last8  272 quarters 22
+  DPL>0              n= 1652  first14  955 last8  697 quarters 22
+  PR5<0 & ACC>0      n=  850  first14  478 last8  372 quarters 22
+  PR5>0 & ACC>0      n=  793  first14  492 last8  301 quarters 22
+  PR5>0 & ACC<0      n=  932  first14  505 last8  427 quarters 22
+  rank_DP60>80       n=  681  first14  370 last8  311 quarters 22
+  rank_DP60<=20      n=  637  first14  354 last8  283 quarters 22
+
+LAG RULE trades 85 (features: ACC 85, DQR 85)
+  ACC>0            IN  47  OUT (ACC known)  38
+  DQR>=1.0         IN  75  OUT (ACC known)  10
+  DQR>=1.5         IN  31  OUT (ACC known)  54
+  DPL>0            IN  47  OUT (ACC known)  38
+  rank_ACC>80      IN  27  OUT (ACC known)  58
+  PR5<0&ACC>0      IN  40  OUT (ACC known)  45
+  rank_DP60>50     IN  31  OUT (ACC known)  54
+  DQR>=median85    IN  43  OUT (ACC known)  42
+  median DQR within the 85: 1.333; vol_ratio median 1.316
+  lag<-10 alone 194; lag & DQR>=1.0 89 (overlap with 85: 75); lag & ACC>0 106 (overlap 47)
+
+B pools (tradable_B)
+  W 392  WR 232
+  ACC_pre W   n= 392 p20 -5.15 median -0.67 p80 3.49  >0: 177  >=2: 120  >=3: 94
+  ACC_pre WR  n= 232 p20 -5.19 median -0.88 p80 3.33  >0: 101  >=2: 68  >=3: 52
+  ACC_pre all n=3280 p20 -5.29 median -0.72 p80 3.50  >0: 1450  >=2: 968  >=3: 763
+  DQR_pre W   n= 392 p20 0.68 median 0.94 p80 1.25  >0: 392  >=2: 10  >=3: 2
+  DQR_pre WR  n= 232 p20 0.70 median 0.96 p80 1.25  >0: 232  >=2: 4  >=3: 1
+  DQR_pre all n=3280 p20 0.66 median 0.89 p80 1.21  >0: 3280  >=2: 59  >=3: 13
+  DPK     W   n= 392 p20 -26.51 median -17.74 p80 -9.68  >0: 8  >=2: 4  >=3: 3
+  DPK     WR  n= 232 p20 -25.02 median -17.53 p80 -9.68  >0: 3  >=2: 1  >=3: 1
+  DPK     all n=3280 p20 -20.39 median -11.98 p80 -3.14  >0: 396  >=2: 267  >=3: 222
+  DQK     W   n= 392 p20 1.78 median 3.00 p80 4.67  >0: 392  >=2: 297  >=3: 195
+  DQK     WR  n= 232 p20 2.01 median 3.31 p80 4.84  >0: 232  >=2: 186  >=3: 136
+  DQK     all n=3280 p20 1.01 median 1.70 p80 3.01  >0: 3280  >=2: 1330  >=3: 662
+  DPK1    W   n= 392 p20 -18.07 median -9.91 p80 -1.37  >0: 64  >=2: 47  >=3: 40
+  DPK1    WR  n= 232 p20 -17.27 median -9.31 p80 -0.74  >0: 41  >=2: 29  >=3: 25
+  DPK1    all n=3280 p20 -13.94 median -5.19 p80 3.21  >0: 1000  >=2: 769  >=3: 676
+  W   ACC_pre>0      IN  177 (first14 87, last8 90)
+  W   DPK>0          IN    8 (first14 6, last8 2)
+  W   DPK1>0         IN   64 (first14 37, last8 27)
+  W   DQK>=2         IN  297 (first14 147, last8 150)
+  W   DQK>=3         IN  195 (first14 101, last8 94)
+  W   DPK>0&DPK1>0   IN    3 (first14 1, last8 2)
+  WR  ACC_pre>0      IN  101 (first14 51, last8 50)
+  WR  DPK>0          IN    3 (first14 2, last8 1)
+  WR  DPK1>0         IN   41 (first14 25, last8 16)
+  WR  DQK>=2         IN  186 (first14 100, last8 86)
+  WR  DQK>=3         IN  136 (first14 74, last8 62)
+  WR  DPK>0&DPK1>0   IN    1 (first14 0, last8 1)
+
+quiet winners (no result in [k-10,k+22]) 1481; RSI 787
+  quiet W ACC_pre>0    IN   798 of 1481
+  quiet W DPK>0        IN   295 of 1481
+  quiet W DPK1>0       IN   402 of 1481
+  quiet W DQK>=2       IN   704 of 1481
+  quiet W DQK>=3       IN   325 of 1481
+
+placebo A days 115909; ACC>0 65645; rank_ACC>80 25015; DQR>=1.5 11751; PR5<0&ACC>0 32258

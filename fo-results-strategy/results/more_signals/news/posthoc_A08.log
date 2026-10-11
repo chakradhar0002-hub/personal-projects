@@ -1,0 +1,49 @@
+symbols with the most A08 trades: {'BAJAJ-AUTO': 22, 'BHARTIARTL': 22, 'HEROMOTOCO': 22, 'MARUTI': 22, 'TMPV': 22, 'ZYDUSLIFE': 22, 'JSWSTEEL': 21, 'LT': 21, 'LUPIN': 21, 'TVSMOTOR': 21}
+leave-one-symbol-out excess: min +0.301, max +0.419 (all +0.360)
+within-stock (stocks with and without PR quarters: 132 stocks, 2328 results): PR minus no-PR, quarter-adjusted +0.603 pp, one-sided within-stock permutation p 0.0006; stock-demeaned (leave-one-out) difference +0.671
+PR re-count matches PR30 on 100.00% of results
+                                                                  check     n    avg    net  excess  excess_h1  excess_h2                                                                              note
+                                                          A08 as tested  1023  0.423  0.253   0.360      0.336      0.397                                                                                  
+                                complement: no press release in 30 days  2255 -0.131 -0.301  -0.163     -0.172     -0.154                                                                                  
+                                                              PR30 == 1   524  0.484  0.314   0.406      0.585      0.194                                                                                  
+                                                               PR30 2-3   322  0.411  0.241   0.331      0.135      0.639                                                                                  
+                                                              PR30 >= 4   177  0.266  0.096   0.279      0.098      0.795                                                                                  
+                               A08 without its 10 most frequent symbols   807  0.383  0.213   0.314      0.313      0.317 BAJAJ-AUTO,BHARTIARTL,HEROMOTOCO,MARUTI,TMPV,ZYDUSLIFE,JSWSTEEL,LT,LUPIN,TVSMOTOR
+                         within-stock PR minus no-PR (quarter-adjusted)  2328    NaN    NaN   0.603        NaN        NaN                                     within-stock permutation p 0.0006, 132 stocks
+                                   within-stock PR minus no-PR, first14  1332    NaN    NaN   0.592        NaN        NaN                                                                               NaN
+                                     within-stock PR minus no-PR, last8   996    NaN    NaN   0.628        NaN        NaN                                                                               NaN
+A08: only "other" press releases (no business-update / results wording)   769  0.434  0.264   0.363      0.214      0.584                                                                                  
+  A08: some business-update wording (sales / volumes / provisional ...)   171  0.415  0.245   0.359      0.612     -0.006                                                                                  
+                 A08: some results / earnings wording (previews, dates)    89  0.485  0.315   0.459      1.099     -0.680                                                                                  
+              A08: a press release in the last 7 days before the cutoff   387  0.426  0.256   0.423      0.215      0.786                                                                                  
+                              A08: press releases only 8-30 days before   636  0.421  0.251   0.322      0.416      0.193                                                                                  
+                   A08 in habitual issuers (PR norm >= median 0.16/30d)   912  0.459  0.289   0.421      0.491      0.323                                                                                  
+                                 A08 in rare issuers (PR norm < median)    77  0.093 -0.077   0.069     -0.670      1.437                                                                                  
+                                                no PR, habitual issuers   845 -0.271 -0.441  -0.300     -0.324     -0.279                                                                                  
+                                                    no PR, rare issuers  1346 -0.104 -0.274  -0.100     -0.131     -0.064                                                                                  
+             stock-quarter placebo: ordinary days of A08 stock-quarters 36339    NaN    NaN   0.006        NaN        NaN                   ordinary 3-day returns before the same result, quarter-adjusted
+       placebo: ordinary days with a press release in their own 30 days 35276    NaN    NaN  -0.014        NaN        NaN                                                                               NaN
+                           results_for   n   net  excess
+qn                                                      
+0   Results for Jan-Mar 2021 (Q4 FY21)  34  0.05   -0.60
+1   Results for Apr-Jun 2021 (Q1 FY22)  37  0.22    0.33
+2   Results for Jul-Sep 2021 (Q2 FY22)  37 -0.02    0.99
+3   Results for Oct-Dec 2021 (Q3 FY22)  45 -0.31    0.50
+4   Results for Jan-Mar 2022 (Q4 FY22)  48 -0.58    0.42
+5   Results for Apr-Jun 2022 (Q1 FY23)  46  0.72    0.14
+6   Results for Jul-Sep 2022 (Q2 FY23)  46 -0.05    0.09
+7   Results for Oct-Dec 2022 (Q3 FY23)  44  1.23    1.56
+8   Results for Jan-Mar 2023 (Q4 FY23)  39  0.03   -0.41
+9   Results for Apr-Jun 2023 (Q1 FY24)  47 -0.11    0.36
+10  Results for Jul-Sep 2023 (Q2 FY24)  50  0.11   -0.13
+11  Results for Oct-Dec 2023 (Q3 FY24)  49  1.15    0.85
+12  Results for Jan-Mar 2024 (Q4 FY24)  43  0.90    0.19
+13  Results for Apr-Jun 2024 (Q1 FY25)  47  0.60    0.24
+14  Results for Jul-Sep 2024 (Q2 FY25)  45 -1.29   -0.00
+15  Results for Oct-Dec 2024 (Q3 FY25)  39  0.09    1.04
+16  Results for Jan-Mar 2025 (Q4 FY25)  56  1.35    0.56
+17  Results for Apr-Jun 2025 (Q1 FY26)  52 -1.75   -1.01
+18  Results for Jul-Sep 2025 (Q2 FY26)  63  0.17   -0.32
+19  Results for Oct-Dec 2025 (Q3 FY26)  52  1.33    1.32
+20  Results for Jan-Mar 2026 (Q4 FY26)  50  0.09    0.57
+21  Results for Apr-Jun 2026 (Q1 FY27)  54  1.25    1.24

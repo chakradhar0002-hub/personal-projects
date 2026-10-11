@@ -1,0 +1,30 @@
+raw sample: 30 days, 6854 universe rows (all series), EQ rows 6069
+days whose DATE1 differs from the requested day: 0
+
+1. raw EQ rows vs stored delivery_eq.csv on the sample days: {'both': 6069, 'left_only': 0, 'right_only': 0}
+   ttl_trd_qnty: equal on 6069 / 6069
+   deliv_qty: equal on 6069 / 6069
+   deliv_per: equal on 6069 / 6069
+   close: equal on 6069 / 6069
+   prev_close: equal on 6069 / 6069
+
+2. universe rows in non-EQ series on sample days: 738; series counts {'N6': 46, 'BE': 45, 'N2': 43, 'N5': 35, 'N9': 34, 'N7': 28, 'N4': 27, 'N3': 25, 'N8': 24, 'NE': 23, 'ND': 19, 'NI': 19, 'N1': 17, 'NB': 15, 'NC': 15, 'T0': 15, 'NO': 13, 'NJ': 13, 'YL': 12, 'YI': 12, 'YV': 12, 'NF': 10, 'NK': 10, 'Z8': 10, 'YK': 9, 'YH': 8, 'NN': 7, 'NH': 7, 'YY': 7, 'Z4': 7, 'YN': 6, 'Z3': 6, 'ZJ': 6, 'Z2': 6, 'YZ': 6, 'Z5': 6, 'YP': 5, 'YQ': 5, 'YX': 5, 'Z7': 5, 'YO': 5, 'YW': 5, 'ZF': 5, 'ZH': 5, 'YR': 4, 'YT': 4, 'Z6': 4, 'ZK': 4, 'ZD': 4, 'YS': 4, 'Y9': 3, 'YJ': 3, 'Z1': 3, 'Z9': 3, 'ZC': 3, 'NL': 3, 'ZI': 3, 'ZB': 3, 'N0': 3, 'YB': 2, 'YM': 2, 'ZE': 2, 'NG': 2, 'YU': 2, 'YG': 1, 'NM': 1, 'ZG': 1, 'W3': 1}
+   current symbols present ONLY in a non-EQ series that day (would be a gap):
+   none
+
+3. ticker changes (raw file symbol -> mapped panel row of the current symbol)
+   2020-12-17: raw [INFRATEL 3550539/1152244/32.45]  panel [INDUSTOWER 3550540/1152240/32.45]
+   2020-12-18: raw [INDUSTOWER 4581029/1848985/40.36]  panel [INDUSTOWER 4581030/1848980/40.36]
+   2022-12-02: raw [LTI 783131/288176/36.80]  panel [LTM 783131/288176/36.80]
+   2022-12-05: raw [LTIM 286244/176737/61.74]  panel [LTM 286244/176737/61.74]
+   2025-04-08: raw [ZOMATO 62002510/24830259/40.05]  panel [ETERNAL 62002500/24830300/40.05]
+   2025-04-09: raw [ETERNAL 25359931/13270151/52.33]  panel [ETERNAL 25359900/13270200/52.33]
+   2025-10-23: raw [TATAMOTORS 14126009/6043191/42.78]  panel [TMPV 14126000/6043190/42.78]
+   2025-10-24: raw [TMPV 6311744/2941675/46.61]  panel [TMPV 6311740/2941680/46.61]
+   2026-02-26: raw [LTIM 270646/73466/27.14]  panel [LTM 270646/73466/27.14]
+   2026-02-27: raw [LTM 464787/253112/54.46]  panel [LTM 464787/253112/54.46]
+
+4. MTO day 2022-08-08: raw MTO EQ rows 198, stored 198, matched 198; deliv_per equal 198, deliv_qty equal 198, ttl equal 198
+
+5. candidate (symbol, decision day) points on the sample days: 81; by candidate {'A10': 29, 'A06': 28, 'RA1': 14, 'W_DQK_HI': 10}
+   raw = mapped panel on deliv_per, deliv_qty and traded qty: 81 / 81

@@ -109,6 +109,7 @@ sit.
 | Technical and fundamental analysis together (40 combined screens, 12 filters on the lag rule, a model on both, 117 post-results tests) | Nothing survives; the model ranks results like a coin flip; none improves the lag rule or the winner drift ([TA_FA_COMBINED.md](TA_FA_COMBINED.md)) |
 | A higher average for the winners trade (136 versions: stricter entry, exits, market backdrop, ranking models, options) | Only holding 60 sessions instead of 20 kept a higher average on unseen quarters (+5.10% vs +1.85% a trade), but it earns the same per day; options lost money ([HIGHER_AVERAGE.md](HIGHER_AVERAGE.md)) |
 | Past performance (results track record; 1-12 month return vs Nifty and sector; 52-week high; 71 tests on both trades) | Improves neither the lag rule nor the winners trade. One watch item: stocks that habitually drift up after results, bought after any result, about +0.5% a trade realistic ([PAST_PERFORMANCE.md](PAST_PERFORMANCE.md)) |
+| F&O positioning (OI build-up, futures premium, put-call ratio, implied vol), delivery %, company news flow (98 tests on both trades) | Nothing improves either trade. Watch items: winners with a high put-call ratio on the results day (about +0.3% over plain winners), a recent press release before results (about +0.1%) ([MORE_SIGNALS.md](MORE_SIGNALS.md)) |
 | Shorting (mild laggards, results losers, model "fall" picks) | Nothing worked |
 | Selling the straddle across the numbers | Lost about 3.3% of the premium a trade after costs |
 
@@ -131,6 +132,7 @@ quarters (+1.45%) than over the first 15 tested (+2.3%).
 - [WINNERS_RSI50.md](WINNERS_RSI50.md): results winners with RSI above 50, quarter by quarter, with independent checks
 - [HIGHER_AVERAGE.md](HIGHER_AVERAGE.md): attempts to raise that trade's average, tested on unseen quarters
 - [PAST_PERFORMANCE.md](PAST_PERFORMANCE.md): the stock's results track record and price performance on both trades
+- [MORE_SIGNALS.md](MORE_SIGNALS.md): F&O open-interest positioning, delivery % and company news flow on both trades
 - [TECHNICAL_ANALYSIS.md](TECHNICAL_ANALYSIS.md), [FUNDAMENTAL_ANALYSIS.md](FUNDAMENTAL_ANALYSIS.md), [TA_FA_COMBINED.md](TA_FA_COMBINED.md): TA, FA and both together
 - [SECTOR_STRATEGIES.md](SECTOR_STRATEGIES.md), [PATTERNS.md](PATTERNS.md), [REAL_DATA_RESULTS.md](REAL_DATA_RESULTS.md): sector ideas, winner drift, option trades
 - [reports/results_report_last_22_quarters.html](../reports/results_report_last_22_quarters.html): the full results report

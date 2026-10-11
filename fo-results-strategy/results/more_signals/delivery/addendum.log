@@ -1,0 +1,28 @@
+ADDED AFTER the first run - descriptive only, cannot change a verdict
+  SHRIRAMFIN   qn 18: ACC -1.241 vs -1.242; DQR 1.1052 vs 1.1052; DPK -6.029 vs -6.029; DQK 2.8107 vs 2.8107; DPK1 -16.499 vs -16.499
+  RECLTD       qn  0: ACC -1.289 vs -1.289; DQR 0.5580 vs 0.5580; DPK -7.820 vs -7.820; DQK 1.0088 vs 1.0088; DPK1 -7.340 vs -7.340
+  NAM-INDIA    qn  1: ACC -9.870 vs -9.870; DQR 1.0079 vs 1.0079; DPK -25.678 vs -25.678; DQK 1.3875 vs 1.3875; DPK1 -14.948 vs -14.948
+  BAJAJFINSV   qn 13: ACC +8.857 vs +8.857; DQR 1.2292 vs 1.2292; DPK -0.860 vs -0.860; DQK 2.1927 vs 2.1927; DPK1 +2.410 vs +2.410
+  FEDERALBNK   qn  7: ACC -0.627 vs -0.627; DQR 0.7911 vs 0.7911; DPK -16.644 vs -16.644; DQK 2.6157 vs 2.6157; DPK1 -8.134 vs -8.134
+  TCS          qn  9: ACC -4.947 vs -4.947; DQR 0.7880 vs 0.7880; DPK -16.353 vs -16.354; DQK 1.8292 vs 1.8292; DPK1 -6.944 vs -6.944
+  INDUSINDBK   qn  7: ACC -4.270 vs -4.269; DQR 0.7511 vs 0.7511; DPK -18.554 vs -18.554; DQK 1.9853 vs 1.9853; DPK1 -15.264 vs -15.264
+  NESTLEIND    qn 21: ACC +2.427 vs +2.427; DQR 0.7744 vs 0.7744; DPK -29.062 vs -29.062; DQK 1.6603 vs 1.6603; DPK1 -24.612 vs -24.612
+  INDIANB      qn 16: ACC +7.860 vs +7.860; DQR 1.6096 vs 1.6096; DPK -13.720 vs -13.720; DQK 2.5507 vs 2.5507; DPK1 +6.820 vs +6.820
+  POWERINDIA   qn 18: ACC +7.184 vs +7.184; DQR 0.7697 vs 0.7697; DPK -25.575 vs -25.575; DQK 3.3324 vs 3.3324; DPK1 -21.335 vs -21.335
+  VEDL         qn 11: ACC +1.529 vs +1.528; DQR 0.7998 vs 0.7998; DPK -2.648 vs -2.648; DQK 1.0637 vs 1.0637; DPK1 -4.678 vs -4.678
+  ONGC         qn 15: ACC -1.415 vs -1.415; DQR 0.5137 vs 0.5137; DPK -10.986 vs -10.986; DQK 0.6400 vs 0.6400; DPK1 +18.434 vs +18.434
+1. spot check of 12 random results rows from the raw parsed file: max abs/rel difference 3.33e-05
+2. A10: n 681 mean three_day (outcomes.csv) +0.345 (net +0.175)
+2. A06: n 639 mean three_day (outcomes.csv) +0.284 (net +0.114)
+2. RA1: n 89 mean three_day (outcomes.csv) +1.872 (net +1.702)
+2. LAGRULE: n 85 mean three_day (outcomes.csv) +2.132 (net +1.962)
+2. W_DQK_HI: n 195 mean vsN_net +1.979, mean gain +0.398
+2. WR_DQK_HI: n 136 mean vsN_net +2.699, mean gain +0.528
+3. winners: Spearman corr(DQK, XN) +0.402; median XN DQK>=3 7.04 vs DQK<3 5.31; corr(DQK, vol_ratio_5_60 at cutoff) +0.182
+3. W_DQK_HI: gain within quarter x XN tercile +0.110 (n 195); first14 +0.133, last8 +0.086; by XN tercile (pooled, HI minus LO): T0 +1.95 (n 40/91), T1 +0.85 (n 64/66), T2 +2.05 (n 91/40)
+   best 5 trades: RECLTD Apr-Jun 2023 (Q1 FY24) +26.8; DIXON Jan-Mar 2023 (Q4 FY23) +21.0; TVSMOTOR Jul-Sep 2021 (Q2 FY22) +20.9; HINDPETRO Jul-Sep 2023 (Q2 FY24) +20.2; APLAPOLLO Apr-Jun 2026 (Q1 FY27) +18.4
+3. WR_DQK_HI: gain within quarter x XN tercile +0.153 (n 136); first14 +0.049, last8 +0.277; by XN tercile (pooled, HI minus LO): T0 +3.34 (n 28/50), T1 -1.42 (n 46/31), T2 +1.65 (n 62/15)
+   best 5 trades: RECLTD Apr-Jun 2023 (Q1 FY24) +26.8; DIXON Jan-Mar 2023 (Q4 FY23) +21.0; TVSMOTOR Jul-Sep 2021 (Q2 FY22) +20.9; HINDPETRO Jul-Sep 2023 (Q2 FY24) +20.2; APLAPOLLO Apr-Jun 2026 (Q1 FY27) +18.4
+4. RA1 (lag & delivery qty ratio >= 1) vs lag rule (lag & volume ratio >= 1): shared 75 avg +2.14; only RA1 14 avg +0.46; only lag rule 10 avg +2.11
+   union 99 avg +1.90
+NOTE (code fix after prereg hashing, no test definition changed): run_tests.py check that the own entry-k hedged return reproduces outcomes.csv vsN_H20 relaxed from 1e-6 to 1e-3 pp (outcomes.csv is stored rounded; max diff 5.0e-05 pp).

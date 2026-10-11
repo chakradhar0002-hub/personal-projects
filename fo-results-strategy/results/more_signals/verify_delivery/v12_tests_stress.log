@@ -1,0 +1,144 @@
+====================================================================================================
+TRADE A - own membership vs study trades_A.csv, own luck p, stress
+====================================================================================================
+A10: mine 681 study 681 both 681 only mine [] only study []
+A06: mine 639 study 639 both 639 only mine [] only study []
+RA1: mine 89 study 89 both 89 only mine [] only study []
+LAGRULE: mine 85 study 85 both 85 only mine [] only study []
+lag rule vs repo trades.csv: repo 85, same set True, repo three_day x100 mean +2.132
+all F&O results: n 3278 gross +0.042 net -0.128
+----------------------------------------------------------------------------------------------------
+A10
+   base                               n  681 gross +0.345 net +0.175 ex +0.316 q+ 13/22 | h1 n 370 net +0.084 ex +0.141 | h2 n 311 net +0.282 ex +0.523 | wo5 net +0.061 ex +0.206 | wo10 net -0.018 ex +0.129
+   own luck p (within-quarter random picks, 20,000): 0.0362; x26 Holm-equivalent if smallest: 0.941
+   LOQO excess: min +0.254 (drop Results for Jan-Mar 2026 (Q4 FY26)), max +0.392 (drop Results for Jan-Mar 2023 (Q4 FY23))
+   LOQO net:    min +0.107 (drop Results for Jan-Mar 2024 (Q4 FY24)), max +0.248 (drop Results for Jul-Sep 2024 (Q2 FY25))
+   by year: 2021: n 72 net -0.07 ex +0.13, 2022: n 110 net -0.03 ex +0.33, 2023: n 110 net -0.45 ex -0.42, 2024: n 107 net +0.43 ex +0.44, 2025: n 154 net +0.48 ex +0.60, 2026: n 128 net +0.45 ex +0.59
+   survivorship: in F&O by qn 1       n  630 gross +0.413 net +0.243 ex +0.378 q+ 14/22 | h1 n 346 net +0.095 ex +0.147 | h2 n 284 net +0.424 ex +0.660 | wo5 net +0.131 ex +0.269 | wo10 net +0.048 ex +0.188
+   later joiners                      n   51 gross -0.504 net -0.674 ex -0.458 q+ 6/20 | h1 n 24 net -0.077 ex +0.058 | h2 n 27 net -1.206 ex -0.917 | wo5 net -1.839 ex -1.637 | wo10 net -2.600 ex -2.395
+   without lag-rule trades            n  669 gross +0.324 net +0.154 ex +0.302 q+ 13/22 | h1 n 362 net +0.095 ex +0.155 | h2 n 307 net +0.223 ex +0.474 | wo5 net +0.038 ex +0.190 | wo10 net -0.042 ex +0.111
+   overlap with lag rule: 12
+   best 5: GODREJCP Results for Jan-Mar 2021 (Q4 FY21) +23.9; CROMPTON Results for Jan-Mar 2024 (Q4 FY24) +17.4; SBILIFE Results for Apr-Jun 2022 (Q1 FY23) +13.3; MARICO Results for Jan-Mar 2024 (Q4 FY24) +12.4; CIPLA Results for Apr-Jun 2023 (Q1 FY24) +11.5
+----------------------------------------------------------------------------------------------------
+A06
+   base                               n  639 gross +0.284 net +0.114 ex +0.234 q+ 12/22 | h1 n 368 net +0.129 ex +0.152 | h2 n 271 net +0.094 ex +0.345 | wo5 net -0.019 ex +0.101 | wo10 net -0.121 ex +0.002
+   own luck p (within-quarter random picks, 20,000): 0.0979; x26 Holm-equivalent if smallest: 1.000
+   LOQO excess: min +0.174 (drop Results for Jan-Mar 2025 (Q4 FY25)), max +0.285 (drop Results for Jul-Sep 2024 (Q2 FY25))
+   LOQO net:    min +0.007 (drop Results for Jan-Mar 2025 (Q4 FY25)), max +0.221 (drop Results for Jul-Sep 2024 (Q2 FY25))
+   by year: 2021: n 68 net +0.32 ex +0.60, 2022: n 117 net -0.40 ex -0.17, 2023: n 97 net +0.24 ex +0.24, 2024: n 115 net -0.11 ex -0.11, 2025: n 126 net +0.61 ex +0.72, 2026: n 116 net +0.09 ex +0.24
+   survivorship: in F&O by qn 1       n  507 gross +0.296 net +0.126 ex +0.241 q+ 13/22 | h1 n 330 net +0.041 ex +0.058 | h2 n 177 net +0.284 ex +0.584 | wo5 net -0.041 ex +0.076 | wo10 net -0.167 ex -0.046
+   later joiners                      n  132 gross +0.242 net +0.072 ex +0.205 q+ 10/19 | h1 n 38 net +0.896 ex +0.973 | h2 n 94 net -0.262 ex -0.105 | wo5 net -0.381 ex -0.251 | wo10 net -0.781 ex -0.653
+   without lag-rule trades            n  617 gross +0.227 net +0.057 ex +0.162 q+ 11/22 | h1 n 353 net +0.130 ex +0.133 | h2 n 264 net -0.040 ex +0.201 | wo5 net -0.081 ex +0.023 | wo10 net -0.188 ex -0.079
+   overlap with lag rule: 22
+   best 5: TVSMOTOR Results for Jan-Mar 2021 (Q4 FY21) +20.2; RECLTD Results for Jan-Mar 2024 (Q4 FY24) +20.1; ADANIPORTS Results for Oct-Dec 2025 (Q3 FY26) +15.9; LTM Results for Jul-Sep 2021 (Q2 FY22) +15.4; DIXON Results for Jan-Mar 2022 (Q4 FY22) +14.3
+----------------------------------------------------------------------------------------------------
+RA1
+   base                               n   89 gross +1.872 net +1.702 ex +1.918 q+ 16/18 | h1 n 56 net +1.138 ex +1.338 | h2 n 33 net +2.659 ex +2.902 | wo5 net +0.955 ex +1.165 | wo10 net +0.417 ex +0.646
+   own luck p (within-quarter random picks, 20,000): 0.0004; x26 Holm-equivalent if smallest: 0.012
+   LOQO excess: min +1.737 (drop Results for Jan-Mar 2025 (Q4 FY25)), max +2.127 (drop Results for Apr-Jun 2024 (Q1 FY25))
+   LOQO net:    min +1.461 (drop Results for Jan-Mar 2025 (Q4 FY25)), max +1.890 (drop Results for Apr-Jun 2024 (Q1 FY25))
+   by year: 2021: n 13 net +0.59 ex +1.09, 2022: n 17 net +1.94 ex +2.49, 2023: n 14 net +1.87 ex +1.95, 2024: n 14 net -0.09 ex -0.32, 2025: n 18 net +3.07 ex +3.38, 2026: n 13 net +2.37 ex +2.36
+   survivorship: in F&O by qn 1       n   56 gross +1.852 net +1.682 ex +1.888 q+ 14/17 | h1 n 45 net +1.645 ex +1.846 | h2 n 11 net +1.831 ex +2.064 | wo5 net +0.619 ex +0.833 | wo10 net +0.003 ex +0.244
+   later joiners                      n   33 gross +1.906 net +1.736 ex +1.969 q+ 7/12 | h1 n 11 net -0.937 ex -0.736 | h2 n 22 net +3.072 ex +3.321 | wo5 net +0.091 ex +0.388 | wo10 net -1.022 ex -0.784
+   without lag-rule trades            n   14 gross +0.457 net +0.287 ex +0.488 q+ 6/12 | h1 n 10 net -0.250 ex -0.014 | h2 n 4 net +1.630 ex +1.742 | wo5 net -1.334 ex -1.404 | wo10 net -3.550 ex -3.739
+   overlap with lag rule: 75
+   best 5: ADANIPORTS Results for Oct-Dec 2022 (Q3 FY23) +19.1; KALYANKJIL Results for Oct-Dec 2024 (Q3 FY25) +14.8; KALYANKJIL Results for Oct-Dec 2025 (Q3 FY26) +13.3; BAJFINANCE Results for Jan-Mar 2021 (Q4 FY21) +12.7; NAUKRI Results for Jan-Mar 2022 (Q4 FY22) +12.2
+----------------------------------------------------------------------------------------------------
+LAGRULE
+   base                               n   85 gross +2.132 net +1.962 ex +2.201 q+ 18/19 | h1 n 51 net +1.480 ex +1.677 | h2 n 34 net +2.686 ex +2.986 | wo5 net +1.194 ex +1.427 | wo10 net +0.630 ex +0.876
+   own luck p (within-quarter random picks, 20,000): 0.0001; x26 Holm-equivalent if smallest: 0.004
+   LOQO excess: min +2.028 (drop Results for Jan-Mar 2025 (Q4 FY25)), max +2.323 (drop Results for Apr-Jun 2023 (Q1 FY24))
+   LOQO net:    min +1.725 (drop Results for Jan-Mar 2025 (Q4 FY25)), max +2.129 (drop Results for Jul-Sep 2021 (Q2 FY22))
+   by year: 2021: n 11 net +0.28 ex +0.68, 2022: n 17 net +2.01 ex +2.57, 2023: n 12 net +2.02 ex +2.12, 2024: n 13 net +1.22 ex +1.02, 2025: n 19 net +3.13 ex +3.54, 2026: n 13 net +2.32 ex +2.31
+   survivorship: in F&O by qn 1       n   57 gross +1.869 net +1.699 ex +1.907 q+ 15/18 | h1 n 43 net +1.722 ex +1.899 | h2 n 14 net +1.628 ex +1.931 | wo5 net +0.644 ex +0.855 | wo10 net -0.060 ex +0.182
+   later joiners                      n   28 gross +2.668 net +2.498 ex +2.799 q+ 7/9 | h1 n 8 net +0.176 ex +0.485 | h2 n 20 net +3.427 ex +3.725 | wo5 net +0.661 ex +1.056 | wo10 net -0.602 ex -0.256
+   without lag-rule trades            n    0 gross +nan net +nan ex +nan q+ 0/0 | h1 n 0 net +nan ex +nan | h2 n 0 net +nan ex +nan | wo5 net +nan ex +nan | wo10 net +nan ex +nan
+   overlap with lag rule: 85
+   best 5: ADANIPORTS Results for Oct-Dec 2022 (Q3 FY23) +19.1; KALYANKJIL Results for Oct-Dec 2024 (Q3 FY25) +14.8; KALYANKJIL Results for Oct-Dec 2025 (Q3 FY26) +13.3; BAJFINANCE Results for Jan-Mar 2021 (Q4 FY21) +12.7; NAUKRI Results for Jan-Mar 2022 (Q4 FY22) +12.2
+----------------------------------------------------------------------------------------------------
+A10 nearby cut-offs (rank_DP60 > c) and A06 (rank_DPL > c)
+   A10 rank_DP60 > 60                 n 1330 gross +0.107 net -0.063 ex +0.072 q+ 13/22 | h1 n 727 net -0.085 ex -0.033 | h2 n 603 net -0.036 ex +0.197 | wo5 net -0.132 ex +0.004 | wo10 net -0.176 ex -0.040
+   A10 rank_DP60 > 70                 n 1006 gross +0.100 net -0.070 ex +0.063 q+ 12/22 | h1 n 555 net -0.024 ex +0.027 | h2 n 451 net -0.125 ex +0.106 | wo5 net -0.147 ex -0.012 | wo10 net -0.202 ex -0.067
+   A10 rank_DP60 > 75                 n  852 gross +0.219 net +0.049 ex +0.174 q+ 11/22 | h1 n 472 net +0.102 ex +0.145 | h2 n 380 net -0.017 ex +0.211 | wo5 net -0.042 ex +0.086 | wo10 net -0.106 ex +0.022
+   A10 rank_DP60 > 80                 n  681 gross +0.345 net +0.175 ex +0.316 q+ 13/22 | h1 n 370 net +0.084 ex +0.141 | h2 n 311 net +0.282 ex +0.523 | wo5 net +0.061 ex +0.206 | wo10 net -0.018 ex +0.129
+   A10 rank_DP60 > 85                 n  520 gross +0.279 net +0.109 ex +0.238 q+ 11/22 | h1 n 285 net +0.048 ex +0.086 | h2 n 235 net +0.182 ex +0.422 | wo5 net -0.041 ex +0.094 | wo10 net -0.141 ex -0.005
+   A10 rank_DP60 > 90                 n  350 gross -0.023 net -0.193 ex -0.063 q+ 8/22 | h1 n 194 net -0.364 ex -0.318 | h2 n 156 net +0.020 ex +0.254 | wo5 net -0.368 ex -0.235 | wo10 net -0.500 ex -0.376
+   A06 rank_DPL > 70                  n  990 gross +0.227 net +0.057 ex +0.179 q+ 11/22 | h1 n 559 net +0.159 ex +0.191 | h2 n 431 net -0.075 ex +0.163 | wo5 net -0.043 ex +0.082 | wo10 net -0.118 ex +0.006
+   A06 rank_DPL > 75                  n  812 gross +0.268 net +0.098 ex +0.219 q+ 12/22 | h1 n 464 net +0.327 ex +0.352 | h2 n 348 net -0.208 ex +0.043 | wo5 net -0.024 ex +0.101 | wo10 net -0.114 ex +0.011
+   A06 rank_DPL > 80                  n  639 gross +0.284 net +0.114 ex +0.234 q+ 12/22 | h1 n 368 net +0.129 ex +0.152 | h2 n 271 net +0.094 ex +0.345 | wo5 net -0.019 ex +0.101 | wo10 net -0.121 ex +0.002
+   A06 rank_DPL > 85                  n  481 gross +0.356 net +0.186 ex +0.301 q+ 12/22 | h1 n 278 net +0.165 ex +0.182 | h2 n 203 net +0.215 ex +0.464 | wo5 net +0.028 ex +0.144 | wo10 net -0.096 ex +0.021
+   A06 rank_DPL > 90                  n  326 gross +0.221 net +0.051 ex +0.206 q+ 14/22 | h1 n 199 net +0.155 ex +0.219 | h2 n 127 net -0.111 ex +0.185 | wo5 net -0.145 ex +0.012 | wo10 net -0.302 ex -0.140
+RA1 nearby cut-offs
+   lag<-8 & DQR>=0.9                  n  166 gross +0.785 net +0.615 ex +0.827 q+ 13/22 | h1 n 98 net +0.337 ex +0.533 | h2 n 68 net +1.016 ex +1.250 | wo5 net +0.179 ex +0.393 | wo10 net -0.173 ex +0.045
+   lag<-8 & DQR>=1.0                  n  130 gross +1.060 net +0.890 ex +1.092 q+ 13/21 | h1 n 81 net +0.407 ex +0.576 | h2 n 49 net +1.687 ex +1.945 | wo5 net +0.339 ex +0.544 | wo10 net -0.097 ex +0.114
+   lag<-8 & DQR>=1.1                  n  101 gross +1.505 net +1.335 ex +1.567 q+ 14/20 | h1 n 64 net +1.070 ex +1.278 | h2 n 37 net +1.793 ex +2.067 | wo5 net +0.641 ex +0.879 | wo10 net +0.082 ex +0.329
+   lag<-8 & DQR>=1.2                  n   75 gross +1.586 net +1.416 ex +1.650 q+ 11/19 | h1 n 47 net +0.931 ex +1.123 | h2 n 28 net +2.230 ex +2.536 | wo5 net +0.470 ex +0.713 | wo10 net -0.211 ex +0.018
+   lag<-10 & DQR>=0.9                 n  106 gross +1.346 net +1.176 ex +1.401 q+ 15/18 | h1 n 65 net +0.795 ex +1.027 | h2 n 41 net +1.780 ex +1.993 | wo5 net +0.529 ex +0.748 | wo10 net +0.053 ex +0.282
+   lag<-10 & DQR>=1.0                 n   89 gross +1.872 net +1.702 ex +1.918 q+ 16/18 | h1 n 56 net +1.138 ex +1.338 | h2 n 33 net +2.659 ex +2.902 | wo5 net +0.955 ex +1.165 | wo10 net +0.417 ex +0.646
+   lag<-10 & DQR>=1.1                 n   74 gross +2.030 net +1.860 ex +2.122 q+ 15/18 | h1 n 49 net +1.583 ex +1.838 | h2 n 25 net +2.403 ex +2.680 | wo5 net +0.962 ex +1.220 | wo10 net +0.299 ex +0.584
+   lag<-10 & DQR>=1.2                 n   55 gross +2.078 net +1.908 ex +2.192 q+ 12/16 | h1 n 37 net +1.425 ex +1.676 | h2 n 18 net +2.901 ex +3.251 | wo5 net +0.698 ex +1.013 | wo10 net +0.023 ex +0.319
+   lag<-12 & DQR>=0.9                 n   68 gross +1.323 net +1.153 ex +1.519 q+ 12/16 | h1 n 39 net +1.236 ex +1.633 | h2 n 29 net +1.041 ex +1.366 | wo5 net +0.146 ex +0.518 | wo10 net -0.501 ex -0.150
+   lag<-12 & DQR>=1.0                 n   55 gross +1.956 net +1.786 ex +2.180 q+ 12/16 | h1 n 34 net +1.567 ex +1.947 | h2 n 21 net +2.140 ex +2.556 | wo5 net +0.581 ex +0.985 | wo10 net -0.116 ex +0.296
+   lag<-12 & DQR>=1.1                 n   49 gross +2.193 net +2.023 ex +2.434 q+ 12/15 | h1 n 31 net +1.814 ex +2.229 | h2 n 18 net +2.383 ex +2.788 | wo5 net +0.681 ex +1.105 | wo10 net -0.111 ex +0.326
+   lag<-12 & DQR>=1.2                 n   39 gross +2.072 net +1.902 ex +2.320 q+ 10/14 | h1 n 26 net +1.252 ex +1.642 | h2 n 13 net +3.201 ex +3.676 | wo5 net +0.313 ex +0.723 | wo10 net -0.521 ex -0.147
+RA1 decomposition vs the lag rule
+   RA1 and lag rule (shared)          n   75 gross +2.136 net +1.966 ex +2.185 q+ 16/18 | h1 n 46 net +1.439 ex +1.632 | h2 n 29 net +2.801 ex +3.062 | wo5 net +1.088 ex +1.300 | wo10 net +0.445 ex +0.680
+   RA1 only (new trades)              n   14 gross +0.457 net +0.287 ex +0.488 q+ 6/12 | h1 n 10 net -0.250 ex -0.014 | h2 n 4 net +1.630 ex +1.742 | wo5 net -1.334 ex -1.404 | wo10 net -3.550 ex -3.739
+   lag rule only (dropped)            n   10 gross +2.107 net +1.937 ex +2.319 q+ 5/7 | h1 n 5 net +1.851 ex +2.091 | h2 n 5 net +2.023 ex +2.547 | wo5 net -1.565 ex -0.948 | wo10 net +nan ex +nan
+   union                              n   99 gross +1.896 net +1.726 ex +1.959 q+ 17/19 | h1 n 61 net +1.196 ex +1.400 | h2 n 38 net +2.575 ex +2.855 | wo5 net +1.059 ex +1.287 | wo10 net +0.576 ex +0.815
+----------------------------------------------------------------------------------------------------
+OWN PLACEBO A (ordinary F&O stock-days)
+placebo stock-days 123024, signal days 24927; placebo signal excess quarter-matched -0.018, date-matched -0.030
+results A10 excess quarter-matched +0.316, date-matched (vs EW universe, minus all results) +0.207
+DiD quarter-matched +0.334; DiD date-matched +0.236
+placebo p (date-matched; P(draw >= results A10 excess +0.207)): 0.0037
+   first 14: results A10 date-matched +0.139; placebo signal date-matched -0.049
+   last 8: results A10 date-matched +0.286; placebo signal date-matched -0.015
+====================================================================================================
+TRADE B - W_DQK_HI / WR_DQK_HI (buy close k+1, 20 sessions, short Nifty, net 0.19)
+====================================================================================================
+----------------------------------------------------------------------------------------------------
+W_DQK_HI: mine 195 study 195 both 195
+   base (k+1)                               n 195 net +1.979 parent +1.194 gain +0.398 q+ 15/22 | h1 n 101 net +2.599 gain +0.663 | h2 n 94 net +1.313 gain +0.114 | wo5 net +1.467 gain -0.022 | wo10 net +1.051 gain -0.382
+   own luck p 0.1174
+   LOQO gain: min +0.170 (drop Results for Jan-Mar 2026 (Q4 FY26)), max +0.609 (drop Results for Jan-Mar 2025 (Q4 FY25))
+   by year: 2021: n 22 net -1.08 gain -0.22, 2022: n 20 net +0.67 gain +2.00, 2023: n 29 net +6.39 gain -0.15, 2024: n 36 net +2.73 gain +1.18, 2025: n 49 net -0.39 gain -1.06, 2026: n 39 net +3.38 gain +1.44
+   DQK >= 2                                 n 297 net +1.573 parent +1.194 gain +0.184 q+ 16/22 | h1 n 147 net +1.992 gain +0.399 | h2 n 150 net +1.163 gain -0.027 | wo5 net +1.226 gain -0.097 | wo10 net +0.941 gain -0.337
+   DQK >= 2.5                               n 246 net +1.981 parent +1.194 gain +0.483 q+ 16/22 | h1 n 126 net +2.344 gain +0.488 | h2 n 120 net +1.600 gain +0.479 | wo5 net +1.569 gain +0.149 | wo10 net +1.229 gain -0.138
+   DQK >= 3                                 n 195 net +1.979 parent +1.194 gain +0.398 q+ 15/22 | h1 n 101 net +2.599 gain +0.663 | h2 n 94 net +1.313 gain +0.114 | wo5 net +1.467 gain -0.022 | wo10 net +1.051 gain -0.382
+   DQK >= 3.5                               n 145 net +2.005 parent +1.194 gain +0.589 q+ 12/22 | h1 n 75 net +2.202 gain +0.612 | h2 n 70 net +1.793 gain +0.563 | wo5 net +1.330 gain +0.067 | wo10 net +0.857 gain -0.397
+   DQK >= 4                                 n 110 net +2.191 parent +1.194 gain +0.920 q+ 13/21 | h1 n 55 net +2.613 gain +1.225 | h2 n 55 net +1.770 gain +0.616 | wo5 net +1.301 gain +0.241 | wo10 net +0.661 gain -0.376
+   DQK >= 5                                 n  60 net +2.587 parent +1.194 gain +1.321 q+ 12/20 | h1 n 30 net +2.307 gain +0.832 | h2 n 30 net +2.867 gain +1.811 | wo5 net +1.249 gain +0.113 | wo10 net +0.154 gain -0.823
+   survivorship: in F&O by qn 1 (parent too) n 131 net +1.782 parent +0.779 gain +0.567 q+ 15/22 | h1 n 87 net +1.832 gain +0.375 | h2 n 44 net +1.684 gain +0.945 | wo5 net +1.049 gain +0.015 | wo10 net +0.563 gain -0.490
+   later joiners (parent too)               n  64 net +2.382 parent +2.375 gain -0.321 q+ 11/15 | h1 n 14 net +7.363 gain +1.163 | h2 n 50 net +0.988 gain -0.736 | wo5 net +1.055 gain -1.239 | wo10 net +0.013 gain -1.870
+   not habitual drifters                    n 158 net +1.663 parent +0.950 gain +0.404 q+ 14/22 | h1 n 83 net +1.784 gain +0.557 | h2 n 75 net +1.530 gain +0.235 | wo5 net +1.074 gain -0.121 | wo10 net +0.604 gain -0.527
+   overlap: RSI>50 winners 136/195, habitual drifters 37
+   existing rule bought at k: n 392 net +1.447; signal at k+1 net +1.979; the rest of the pool at k+1 net +0.418
+   gain within quarter x XN tercile: +0.101; Spearman(DQK, XN) in pool +0.402
+   best 5: RECLTD Results for Apr-Jun 2023 (Q1 FY24) +26.8; DIXON Results for Jan-Mar 2023 (Q4 FY23) +21.0; TVSMOTOR Results for Jul-Sep 2021 (Q2 FY22) +20.9; HINDPETRO Results for Jul-Sep 2023 (Q2 FY24) +20.2; APLAPOLLO Results for Apr-Jun 2026 (Q1 FY27) +18.4
+----------------------------------------------------------------------------------------------------
+WR_DQK_HI: mine 136 study 136 both 136
+   base (k+1)                               n 136 net +2.699 parent +2.147 gain +0.528 q+ 19/22 | h1 n 74 net +2.979 gain +0.626 | h2 n 62 net +2.364 gain +0.411 | wo5 net +1.983 gain -0.041 | wo10 net +1.405 gain -0.472
+   own luck p 0.0790
+   LOQO gain: min +0.240 (drop Results for Jan-Mar 2026 (Q4 FY26)), max +0.731 (drop Results for Jan-Mar 2025 (Q4 FY25))
+   by year: 2021: n 16 net -0.74 gain -0.20, 2022: n 15 net +0.68 gain +1.72, 2023: n 24 net +6.59 gain +0.12, 2024: n 21 net +3.86 gain +1.53, 2025: n 33 net +0.79 gain -0.94, 2026: n 27 net +3.84 gain +1.67
+   DQK >= 2                                 n 186 net +2.439 parent +2.147 gain +0.223 q+ 18/22 | h1 n 100 net +2.588 gain +0.234 | h2 n 86 net +2.266 gain +0.210 | wo5 net +1.914 gain -0.198 | wo10 net +1.486 gain -0.553
+   DQK >= 2.5                               n 163 net +2.778 parent +2.147 gain +0.493 q+ 19/22 | h1 n 89 net +3.096 gain +0.567 | h2 n 74 net +2.394 gain +0.403 | wo5 net +2.187 gain +0.019 | wo10 net +1.706 gain -0.381
+   DQK >= 3                                 n 136 net +2.699 parent +2.147 gain +0.528 q+ 19/22 | h1 n 74 net +2.979 gain +0.626 | h2 n 62 net +2.364 gain +0.411 | wo5 net +1.983 gain -0.041 | wo10 net +1.405 gain -0.472
+   DQK >= 3.5                               n 102 net +2.439 parent +2.147 gain +0.573 q+ 14/22 | h1 n 56 net +2.467 gain +0.463 | h2 n 46 net +2.406 gain +0.707 | wo5 net +1.488 gain -0.116 | wo10 net +0.878 gain -0.731
+   DQK >= 4                                 n  77 net +2.693 parent +2.147 gain +0.924 q+ 13/19 | h1 n 39 net +3.205 gain +1.312 | h2 n 38 net +2.166 gain +0.526 | wo5 net +1.429 gain +0.020 | wo10 net +0.586 gain -0.814
+   DQK >= 5                                 n  37 net +3.720 parent +2.147 gain +1.956 q+ 9/16 | h1 n 18 net +3.267 gain +1.296 | h2 n 19 net +4.149 gain +2.582 | wo5 net +1.628 gain +0.079 | wo10 net -0.029 gain -1.497
+   survivorship: in F&O by qn 1 (parent too) n  93 net +2.024 parent +1.555 gain +0.447 q+ 18/22 | h1 n 64 net +2.103 gain +0.405 | h2 n 29 net +1.850 gain +0.539 | wo5 net +1.014 gain -0.296 | wo10 net +0.441 gain -0.870
+   later joiners (parent too)               n  43 net +4.157 parent +3.844 gain +0.416 q+ 11/12 | h1 n 10 net +8.583 gain +1.176 | h2 n 33 net +2.816 gain +0.186 | wo5 net +2.331 gain -0.762 | wo10 net +0.819 gain -1.737
+   not habitual drifters                    n 111 net +2.249 parent +1.778 gain +0.424 q+ 19/22 | h1 n 61 net +2.140 gain +0.634 | h2 n 50 net +2.382 gain +0.168 | wo5 net +1.426 gain -0.300 | wo10 net +0.807 gain -0.870
+   overlap: RSI>50 winners 136/136, habitual drifters 25
+   existing rule bought at k: n 232 net +2.418; signal at k+1 net +2.699; the rest of the pool at k+1 net +1.365
+   gain within quarter x XN tercile: +0.168; Spearman(DQK, XN) in pool +0.428
+   best 5: RECLTD Results for Apr-Jun 2023 (Q1 FY24) +26.8; DIXON Results for Jan-Mar 2023 (Q4 FY23) +21.0; TVSMOTOR Results for Jul-Sep 2021 (Q2 FY22) +20.9; HINDPETRO Results for Jul-Sep 2023 (Q2 FY24) +20.2; APLAPOLLO Results for Apr-Jun 2026 (Q1 FY27) +18.4
+----------------------------------------------------------------------------------------------------
+OWN PLACEBO B: quiet winners (XN_k > 4, no result session of the stock in [k-10, k+22]), DQK on day k, buy k+1
+quiet winners 1604, mean net +0.668; DQK >= 3: 345, net +0.251, gain vs same-month quiet winners -0.587
+   quiet DQK >= 2: n 751 gain -0.610
+   quiet DQK >= 3: n 345 gain -0.587
+   quiet DQK >= 4: n 180 gain -0.222
+results W_DQK_HI gain +0.398; DiD +0.985; placebo p 0.0301

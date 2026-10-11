@@ -1,0 +1,21 @@
+check,n,avg,net,excess,excess_h1,excess_h2,note
+A08 as tested,1023,0.4231,0.2531,0.3602,0.3357,0.3966,
+complement: no press release in 30 days,2255,-0.1311,-0.3011,-0.1634,-0.1719,-0.1538,
+PR30 == 1,524,0.4836,0.3136,0.4057,0.5845,0.1941,
+PR30 2-3,322,0.4112,0.2412,0.3307,0.1351,0.6389,
+PR30 >= 4,177,0.2658,0.0958,0.2790,0.0978,0.7950,
+A08 without its 10 most frequent symbols,807,0.3833,0.2133,0.3144,0.3126,0.3168,"BAJAJ-AUTO,BHARTIARTL,HEROMOTOCO,MARUTI,TMPV,ZYDUSLIFE,JSWSTEEL,LT,LUPIN,TVSMOTOR"
+within-stock PR minus no-PR (quarter-adjusted),2328,,,0.6032,,,"within-stock permutation p 0.0006, 132 stocks"
+"within-stock PR minus no-PR, first14",1332,,,0.5924,,,
+"within-stock PR minus no-PR, last8",996,,,0.6282,,,
+"A08: only ""other"" press releases (no business-update / results wording)",769,0.4345,0.2645,0.3632,0.2136,0.5835,
+A08: some business-update wording (sales / volumes / provisional ...),171,0.4152,0.2452,0.3588,0.6117,-0.0062,
+"A08: some results / earnings wording (previews, dates)",89,0.4850,0.3150,0.4593,1.0987,-0.6797,
+A08: a press release in the last 7 days before the cutoff,387,0.4261,0.2561,0.4233,0.2155,0.7859,
+A08: press releases only 8-30 days before,636,0.4213,0.2513,0.3217,0.4165,0.1934,
+A08 in habitual issuers (PR norm >= median 0.16/30d),912,0.4586,0.2886,0.4206,0.4913,0.3234,
+A08 in rare issuers (PR norm < median),77,0.0925,-0.0775,0.0691,-0.6698,1.4374,
+"no PR, habitual issuers",845,-0.2709,-0.4409,-0.3002,-0.3241,-0.2786,
+"no PR, rare issuers",1346,-0.1039,-0.2739,-0.1005,-0.1314,-0.0638,
+stock-quarter placebo: ordinary days of A08 stock-quarters,36339,,,0.0057,,,"ordinary 3-day returns before the same result, quarter-adjusted"
+placebo: ordinary days with a press release in their own 30 days,35276,,,-0.0138,,,

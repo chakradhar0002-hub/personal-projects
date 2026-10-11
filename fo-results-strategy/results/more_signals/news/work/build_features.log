@@ -1,0 +1,49 @@
+announcements 155600 rows, 153905 after removing exact duplicates; 212 symbols; 2021-03-01 06:55:36 .. 2026-09-30 23:52:08
+  class SUBST      61182 announcements
+  class PR         10810 announcements
+  class ORDER       1411 announcements
+  class ACQ         1922 announcements
+  class CRUP          55 announcements
+  class CRDN           2 announcements
+  class CALLANN    22971 announcements
+  class BIZ          924 announcements
+  class EVENT       7246 announcements
+  announcements on own results day / day after (excluded from counts): 27668
+
+board meeting rows 10244; results-type 7151; 212 symbols; meetings 2020-01-10 .. 2026-08-14
+
+SAST Reg 29 rows 2586 (194 symbols), 2020-01-02 14:32:00 .. 2026-09-30 17:51:00
+  promoterType x acqSaleType: {('N', 'Acquisition'): 650, ('N', 'Both'): 17, ('N', 'Disposal'): 35, ('N', 'Others'): 26, ('N', 'Sale'): 579, ('Y', 'Acquisition'): 634, ('Y', 'Both'): 94, ('Y', 'Disposal'): 28, ('Y', 'Others'): 11, ('Y', 'Sale'): 509}
+  acquisitionMode (promoters): {'Others': 543, 'Open Market': 399, 'Inter-se transfer': 224, 'Open market': 34, 'Preferential Allotment': 24, 'Gift': 16, 'Rights Issue': 14, 'Preferential allotment': 6}
+  real-decision rows: promoter buys 503, promoter sells 440, other holders buys 647, sells 613
+
+results rows 3280 written (work/feat_results.csv)
+
+coverage by quarter (% of F&O results with the feature; announcements cover 2021-03-01 .. 2026-09-30):
+                           results_for    n  NEWS30  NEWSR  RDCHG   LEAD  LEADCHG
+qn                                                                               
+0   Results for Jan-Mar 2021 (Q4 FY21)   98   100.0    0.0    0.0   98.0     98.0
+1   Results for Apr-Jun 2021 (Q1 FY22)  117   100.0  100.0    0.0   98.3     98.3
+2   Results for Jul-Sep 2021 (Q2 FY22)  125   100.0  100.0   96.8   99.2     99.2
+3   Results for Oct-Dec 2021 (Q3 FY22)  132   100.0  100.0   97.0   96.2     96.2
+4   Results for Jan-Mar 2022 (Q4 FY22)  131   100.0  100.0    0.0   99.2     99.2
+5   Results for Apr-Jun 2022 (Q1 FY23)  134   100.0  100.0  100.0   95.5     95.5
+6   Results for Jul-Sep 2022 (Q2 FY23)  133   100.0  100.0  100.0   94.7     94.7
+7   Results for Oct-Dec 2022 (Q3 FY23)  133   100.0  100.0  100.0   94.0     94.0
+8   Results for Jan-Mar 2023 (Q4 FY23)  134   100.0  100.0  100.0   95.5     95.5
+9   Results for Apr-Jun 2023 (Q1 FY24)  134   100.0  100.0  100.0   94.0     94.0
+10  Results for Jul-Sep 2023 (Q2 FY24)  132   100.0  100.0   99.2   94.7     94.7
+11  Results for Oct-Dec 2023 (Q3 FY24)  135   100.0  100.0   99.3   97.0     96.3
+12  Results for Jan-Mar 2024 (Q4 FY24)  135   100.0  100.0   99.3   97.8     97.8
+13  Results for Apr-Jun 2024 (Q1 FY25)  135   100.0  100.0   99.3   97.0     97.0
+14  Results for Jul-Sep 2024 (Q2 FY25)  134   100.0  100.0  100.0   95.5     95.5
+15  Results for Oct-Dec 2024 (Q3 FY25)  172   100.0  100.0  100.0  100.0    100.0
+16  Results for Jan-Mar 2025 (Q4 FY25)  178   100.0  100.0  100.0   98.3     98.3
+17  Results for Apr-Jun 2025 (Q1 FY26)  191   100.0  100.0  100.0   99.5     99.5
+18  Results for Jul-Sep 2025 (Q2 FY26)  191   100.0  100.0  100.0   99.5     99.5
+19  Results for Oct-Dec 2025 (Q3 FY26)  196   100.0  100.0  100.0  100.0    100.0
+20  Results for Jan-Mar 2026 (Q4 FY26)  204   100.0  100.0  100.0   99.0     99.0
+21  Results for Apr-Jun 2026 (Q1 FY27)  206   100.0  100.0  100.0  100.0    100.0
+
+placebo A stock-days 115909 (F&O, no result session within 9 before / 13 after)
+quiet days 93988; no result session in [k-10, k+22]: 87890; quiet winners (XN > 4) 1588

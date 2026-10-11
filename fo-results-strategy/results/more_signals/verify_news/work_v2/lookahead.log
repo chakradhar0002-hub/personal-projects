@@ -1,0 +1,6 @@
+{'Board Meeting Intimation': 37, 'Board meeting Cancelled': 2, 'Board Meeting Adjourned': 1}
+results with a board-meeting intimation in the 75 days before: 21 of 3280; intimated before the decision: 21; intimated after the decision: 0; none found: 3259
+  A01 LATE: n 236; intimation after decision 0, none found 231
+  A02 EARLY: n 372; intimation after decision 0, none found 369
+PR items on the cutoff day at/after 15:00 (excluded by construction): 30
+A08 trades whose only PRs fall in the last 24h before the decision: 31

@@ -1,0 +1,4 @@
+board meetings sample (8 symbols): raw 455, study file 455, common 455
+results with a matching intimation: 3236 of 3280; before decision 3233, after decision 3
+  A01 LATE (RDCHG>7): n 236; date not intimated before the decision (or no intimation found) 12; mean signed P&L of those +0.85
+  A02 EARLY (RDCHG<-7): n 372; date not intimated before the decision (or no intimation found) 0; mean signed P&L of those +nan

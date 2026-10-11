@@ -1,0 +1,100 @@
+====================================================================================================
+A10  (60-day delivery % level, top quintile of the quarter, long the 3-day window)
+====================================================================================================
+base (quarter-matched excess): n 681 net +0.175 ex +0.316 ex_h1 +0.141 ex_h2 +0.523 net_wo5 +0.061 ex_wo5 +0.206 net_wo10 -0.018 ex_wo10 +0.129
+LOQO excess min/max (dropped quarter): (np.float64(0.253700687034122), np.float64(0.39183559006764723), 20, 8)
+by calendar year (n, excess): 2021: 72 +0.13, 2022: 110 +0.33, 2023: 110 -0.42, 2024: 107 +0.44, 2025: 154 +0.60, 2026: 128 +0.59
+symbol-cluster bootstrap: 95 distinct symbols, P(mean excess <= 0) = 0.055, 90% CI [-0.009  0.664]
+most frequent symbols: {'HINDUNILVR': 22, 'TCS': 20, 'BHARTIARTL': 20, 'HCLTECH': 20, 'GODREJCP': 19, 'HDFCBANK': 19, 'INFY': 19, 'ITC': 19, 'KOTAKBANK': 19, 'LT': 19, 'SBILIFE': 19, 'POWERGRID': 19}
+industry mix (A10 share vs all):
+                                A10    all   lift
+industry                                         
+Banks                         0.101  0.102  0.989
+Computers - Software          0.101  0.076  1.340
+Insurance                     0.095  0.034  2.771
+Personal Care                 0.091  0.027  3.393
+Pharmaceuticals               0.072  0.079  0.908
+Power                         0.051  0.029  1.793
+Automobiles - 4 Wheelers      0.040  0.035  1.141
+Food And Food Processing      0.037  0.027  1.338
+Telecommunication - Services  0.034  0.020  1.731
+Finance                       0.034  0.062  0.546
+Diversified                   0.032  0.007  4.816
+Cigarettes                    0.028  0.007  3.813
+date-matched control (minus equal-weight F&O universe over the same 3 sessions):
+   A10    n 681 net +0.175 ex +0.142 ex_h1 +0.025 ex_h2 +0.281 net_wo5 +0.061 ex_wo5 +0.034 net_wo10 -0.018 ex_wo10 -0.029
+   all    n 3278 net -0.128 ex -0.065 ex_h1 -0.114 ex_h2 -0.005 net_wo5 -0.164 ex_wo5 -0.100 net_wo10 -0.191 ex_wo10 -0.123
+   A10 minus all (date-matched): 0.207
+beta-adjusted (three_day - beta x Nifty 3d; quarter-matched): n 681 net +0.048 ex +0.284 ex_h1 +0.214 ex_h2 +0.367 net_wo5 -0.064 ex_wo5 +0.174 net_wo10 -0.142 ex_wo10 +0.096
+industry x quarter matched excess (industries with >= 3 results that quarter): n 529 net +0.225 ex +0.243 ex_h1 +0.095 ex_h2 +0.407 net_wo5 +0.091 ex_wo5 +0.145 net_wo10 -0.010 ex_wo10 +0.070
+A10 median beta 0.79 vs others 1.1 ; median 60d vol 1.36 vs 1.85
+comparator: lowest-volatility quintile (60d) of the quarter: n 646 net -0.150 ex -0.022 ex_h1 -0.005 ex_h2 -0.044 net_wo5 -0.265 ex_wo5 -0.135 net_wo10 -0.348 ex_wo10 -0.220 | overlap with A10 354
+A10 outside the low-vol quintile: n 327 net +0.098 ex +0.233 ex_h1 +0.017 ex_h2 +0.502 net_wo5 -0.086 ex_wo5 +0.056 net_wo10 -0.239 ex_wo10 -0.098
+OLS three_day ~ A10 + beta + vol60 + quarter FE + industry FE: A10 coef +0.589, symbol-clustered t 2.37
+nearby cut-offs (quarter-matched excess):
+   rank>60                  n 1330 net -0.063 ex +0.072 ex_h1 -0.033 ex_h2 +0.197 net_wo5 -0.132 ex_wo5 +0.004 net_wo10 -0.176 ex_wo10 -0.040
+   rank>70                  n 1006 net -0.070 ex +0.063 ex_h1 +0.027 ex_h2 +0.106 net_wo5 -0.147 ex_wo5 -0.012 net_wo10 -0.202 ex_wo10 -0.067
+   rank>75                  n 852 net +0.049 ex +0.174 ex_h1 +0.145 ex_h2 +0.211 net_wo5 -0.042 ex_wo5 +0.086 net_wo10 -0.106 ex_wo10 +0.022
+   rank>80                  n 681 net +0.175 ex +0.316 ex_h1 +0.141 ex_h2 +0.523 net_wo5 +0.061 ex_wo5 +0.206 net_wo10 -0.018 ex_wo10 +0.129
+   rank>85                  n 520 net +0.109 ex +0.238 ex_h1 +0.086 ex_h2 +0.422 net_wo5 -0.041 ex_wo5 +0.094 net_wo10 -0.141 ex_wo10 -0.005
+   rank>90                  n 350 net -0.193 ex -0.063 ex_h1 -0.318 ex_h2 +0.254 net_wo5 -0.368 ex_wo5 -0.235 net_wo10 -0.500 ex_wo10 -0.376
+   DP60>=55                 n 720 net +0.075 ex +0.169 ex_h1 +0.038 ex_h2 +0.262 net_wo5 -0.013 ex_wo5 +0.082 net_wo10 -0.087 ex_wo10 +0.012
+   DP60>=60                 n 271 net +0.002 ex +0.109 ex_h1 -0.556 ex_h2 +0.577 net_wo5 -0.186 ex_wo5 -0.075 net_wo10 -0.332 ex_wo10 -0.217
+   DP60>=65                 n 47 net -0.308 ex -0.388 ex_h1 -0.899 ex_h2 -0.071 net_wo5 -1.096 ex_wo5 -1.158 net_wo10 -1.706 ex_wo10 -1.794
+   rank<=20 (low delivery)  n 637 net -0.390 ex -0.254 ex_h1 +0.230 ex_h2 -0.860 net_wo5 -0.528 ex_wo5 -0.389 net_wo10 -0.645 ex_wo10 -0.508
+   20-day level rank>80           n 664 net +0.150 ex +0.279 ex_h1 +0.164 ex_h2 +0.419 net_wo5 +0.042 ex_wo5 +0.175 net_wo10 -0.039 ex_wo10 +0.095
+   120-day level rank>80           n 664 net +0.157 ex +0.286 ex_h1 +0.153 ex_h2 +0.449 net_wo5 +0.041 ex_wo5 +0.174 net_wo10 -0.040 ex_wo10 +0.097
+   250-day level rank>80           n 630 net +0.073 ex +0.227 ex_h1 +0.122 ex_h2 +0.343 net_wo5 -0.029 ex_wo5 +0.127 net_wo10 -0.110 ex_wo10 +0.047
+overlap with the lag rule: 12 of 85; A10 without lag-rule trades: n 669 net +0.154 ex +0.302 ex_h1 +0.155 ex_h2 +0.474 net_wo5 +0.038 ex_wo5 +0.190 net_wo10 -0.042 ex_wo10 +0.111
+survivorship: in F&O by qn 1: n 630 net +0.243 ex +0.378 ex_h1 +0.147 ex_h2 +0.660 net_wo5 +0.131 ex_wo5 +0.269 net_wo10 +0.048 ex_wo10 +0.188 | later joiners: n 51 net -0.674 ex -0.458 ex_h1 +0.058 ex_h2 -0.917 net_wo5 -1.839 ex_wo5 -1.637 net_wo10 -2.600 ex_wo10 -2.395
+compounded 3-day return instead of the sum convention: n 681 net +0.174 ex +0.313 ex_h1 +0.137 ex_h2 +0.522 net_wo5 +0.059 ex_wo5 +0.201 net_wo10 -0.023 ex_wo10 +0.121
+
+OWN PLACEBO A: ordinary F&O stock-days (no result session of the stock in [d-10, d+13]); signal at e = d-1;
+               outcome = sum of daily returns d+1..d+3 (same convention); ranks among the quarter universe that day
+placebo stock-days 122845, signal days 24953; excess (quarter-matched) -0.026; excess (date-matched) -0.035
+placebo date-matched excess re-weighted to the results quarter mix -0.032
+results A10 date-matched excess vs all results +0.207 (quarter-matched +0.316)
+DiD (quarter-matched) +0.342; DiD (date-matched) +0.177
+placebo p (date-matched: results A10 minus EW universe +0.142 vs draws of placebo signal days): 0.0245
+   placebo first 14: signal days 13827, date-matched excess -0.050
+   placebo last 8: signal days 11126, date-matched excess -0.017
+
+====================================================================================================
+A06 (last published day delivery % spike, top quintile)
+====================================================================================================
+base: n 639 net +0.114 ex +0.234 ex_h1 +0.152 ex_h2 +0.345 net_wo5 -0.019 ex_wo5 +0.101 net_wo10 -0.121 ex_wo10 +0.002
+LOQO: (np.float64(0.17413627436112636), np.float64(0.28503974332803544), 16, 14) | by year: 2021: 68 +0.60, 2022: 117 -0.17, 2023: 97 +0.24, 2024: 115 -0.11, 2025: 126 +0.72, 2026: 116 +0.24
+symbol-cluster bootstrap: 181 symbols, P(mean excess <= 0) 0.139
+date-matched: n 639 net +0.114 ex +0.143 ex_h1 +0.048 ex_h2 +0.273 net_wo5 -0.019 ex_wo5 +0.029 net_wo10 -0.121 ex_wo10 -0.065 | all: -0.065
+   rank>70    n 990 net +0.057 ex +0.179 ex_h1 +0.191 ex_h2 +0.163 net_wo5 -0.043 ex_wo5 +0.082 net_wo10 -0.118 ex_wo10 +0.006
+   rank>75    n 811 net +0.095 ex +0.217 ex_h1 +0.352 ex_h2 +0.036 net_wo5 -0.027 ex_wo5 +0.098 net_wo10 -0.117 ex_wo10 +0.008
+   rank>85    n 481 net +0.186 ex +0.301 ex_h1 +0.182 ex_h2 +0.464 net_wo5 +0.028 ex_wo5 +0.144 net_wo10 -0.096 ex_wo10 +0.021
+   rank>90    n 326 net +0.051 ex +0.206 ex_h1 +0.219 ex_h2 +0.185 net_wo5 -0.145 ex_wo5 +0.012 net_wo10 -0.302 ex_wo10 -0.140
+   DPL>5      n 921 net -0.076 ex +0.010 ex_h1 +0.055 ex_h2 -0.060 net_wo5 -0.173 ex_wo5 -0.084 net_wo10 -0.254 ex_wo10 -0.166
+   DPL>10     n 456 net +0.072 ex +0.125 ex_h1 +0.180 ex_h2 +0.019 net_wo5 -0.091 ex_wo5 -0.031 net_wo10 -0.217 ex_wo10 -0.157
+overlap with A10: 119 ; A06 without A10: n 520 net -0.070 ex +0.031 ex_h1 +0.014 ex_h2 +0.055 net_wo5 -0.236 ex_wo5 -0.135 net_wo10 -0.361 ex_wo10 -0.258
+
+====================================================================================================
+RA1 (lag21 < -10 AND delivery qty 5/60 >= 1.0)
+====================================================================================================
+base: n 89 net +1.702 ex +1.918 ex_h1 +1.338 ex_h2 +2.902 net_wo5 +0.955 ex_wo5 +1.165 net_wo10 +0.417 ex_wo10 +0.646
+lag rule: n 85 net +1.962 ex +2.201 ex_h1 +1.677 ex_h2 +2.986 net_wo5 +1.194 ex_wo5 +1.427 net_wo10 +0.630 ex_wo10 +0.876
+LOQO RA1: (np.float64(1.7367553205593995), np.float64(2.1267360375388122), 16, 13) | by year: 2021: 13 +1.09, 2022: 17 +2.49, 2023: 14 +1.95, 2024: 14 -0.32, 2025: 18 +3.38, 2026: 13 +2.36
+union RA1 or lag rule: n 99 net +1.726 ex +1.959 ex_h1 +1.400 ex_h2 +2.855 net_wo5 +1.059 ex_wo5 +1.287 net_wo10 +0.576 ex_wo10 +0.815 | RA1 only: n 14 net +0.287 ex +0.488 ex_h1 -0.014 ex_h2 +1.742 net_wo5 -1.334 ex_wo5 -1.404 net_wo10 -3.550 ex_wo10 -3.739 | lag only: n 10 net +1.937 ex +2.319 ex_h1 +2.091 ex_h2 +2.547 net_wo5 -1.565 ex_wo5 -0.948 net_wo10 +nan ex_wo10 +nan
+lag rule AND RA1 (both volume and delivery up): n 75 net +1.966 ex +2.185 ex_h1 +1.632 ex_h2 +3.062 net_wo5 +1.088 ex_wo5 +1.300 net_wo10 +0.445 ex_wo10 +0.680
+   lag<-10 & DQR>=0.8: n 129 net +0.898 ex +1.102 ex_h1 +0.794 ex_h2 +1.543 net_wo5 +0.359 ex_wo5 +0.558 net_wo10 -0.032 ex_wo10 +0.174 | lag rule with vol>= 0.8 : n 131 net +1.284 ex +1.509 ex_h1 +1.406 ex_h2 +1.664 net_wo5 +0.728 ex_wo5 +0.958 net_wo10 +0.301 ex_wo10 +0.543
+   lag<-10 & DQR>=0.9: n 106 net +1.176 ex +1.401 ex_h1 +1.027 ex_h2 +1.993 net_wo5 +0.529 ex_wo5 +0.748 net_wo10 +0.053 ex_wo10 +0.282 | lag rule with vol>= 0.9 : n 107 net +1.684 ex +1.898 ex_h1 +1.605 ex_h2 +2.352 net_wo5 +1.031 ex_wo5 +1.252 net_wo10 +0.550 ex_wo10 +0.779
+   lag<-10 & DQR>=1.0: n 89 net +1.702 ex +1.918 ex_h1 +1.338 ex_h2 +2.902 net_wo5 +0.955 ex_wo5 +1.165 net_wo10 +0.417 ex_wo10 +0.646 | lag rule with vol>= 1.0 : n 85 net +1.962 ex +2.201 ex_h1 +1.677 ex_h2 +2.986 net_wo5 +1.194 ex_wo5 +1.427 net_wo10 +0.630 ex_wo10 +0.876
+   lag<-10 & DQR>=1.1: n 74 net +1.860 ex +2.122 ex_h1 +1.838 ex_h2 +2.680 net_wo5 +0.962 ex_wo5 +1.220 net_wo10 +0.299 ex_wo10 +0.584 | lag rule with vol>= 1.1 : n 70 net +1.962 ex +2.261 ex_h1 +1.590 ex_h2 +3.106 net_wo5 +1.043 ex_wo5 +1.342 net_wo10 +0.367 ex_wo10 +0.670
+   lag<-10 & DQR>=1.2: n 55 net +1.908 ex +2.192 ex_h1 +1.676 ex_h2 +3.251 net_wo5 +0.698 ex_wo5 +1.013 net_wo10 +0.023 ex_wo10 +0.319 | lag rule with vol>= 1.2 : n 54 net +2.340 ex +2.574 ex_h1 +1.827 ex_h2 +3.507 net_wo5 +1.231 ex_wo5 +1.462 net_wo10 +0.572 ex_wo10 +0.841
+   lag<-10 & DQR>=1.5: n 31 net +2.211 ex +2.532 ex_h1 +2.333 ex_h2 +3.017 net_wo5 +0.501 ex_wo5 +0.790 net_wo10 -0.439 ex_wo10 -0.102 | lag rule with vol>= 1.5 : n 32 net +2.876 ex +3.132 ex_h1 +2.852 ex_h2 +3.491 net_wo5 +1.139 ex_wo5 +1.381 net_wo10 +0.202 ex_wo10 +0.385
+   lag<-8 & DQR>=1: n 130 net +0.890 ex +1.092 ex_h1 +0.576 ex_h2 +1.945 net_wo5 +0.339 ex_wo5 +0.544 net_wo10 -0.097 ex_wo10 +0.114 | vol>=1: n 124 net +1.419 ex +1.622 ex_h1 +0.943 ex_h2 +2.502 net_wo5 +0.863 ex_wo5 +1.069 net_wo10 +0.424 ex_wo10 +0.628
+   lag<-12 & DQR>=1: n 55 net +1.786 ex +2.180 ex_h1 +1.947 ex_h2 +2.556 net_wo5 +0.581 ex_wo5 +0.985 net_wo10 -0.116 ex_wo10 +0.296 | vol>=1: n 56 net +2.088 ex +2.460 ex_h1 +2.335 ex_h2 +2.626 net_wo5 +0.936 ex_wo5 +1.315 net_wo10 +0.180 ex_wo10 +0.542
+   lag<-15 & DQR>=1: n 31 net +2.771 ex +3.270 ex_h1 +3.574 ex_h2 +2.901 net_wo5 +0.716 ex_wo5 +1.192 net_wo10 -0.321 ex_wo10 +0.054 | vol>=1: n 32 net +2.536 ex +3.016 ex_h1 +3.556 ex_h2 +2.476 net_wo5 +0.513 ex_wo5 +0.968 net_wo10 -0.523 ex_wo10 -0.169
+survivorship RA1: early n 56 net +1.682 ex +1.888 ex_h1 +1.846 ex_h2 +2.064 net_wo5 +0.619 ex_wo5 +0.833 net_wo10 +0.003 ex_wo10 +0.244 | later n 33 net +1.736 ex +1.969 ex_h1 -0.736 ex_h2 +3.321 net_wo5 +0.091 ex_wo5 +0.388 net_wo10 -1.022 ex_wo10 -0.784
+symbol-cluster bootstrap RA1: 66 symbols, P(mean excess <= 0) 0.0000
+date-matched RA1: n 89 net +1.702 ex +1.063 ex_h1 +0.559 ex_h2 +1.920 net_wo5 +0.955 ex_wo5 +0.435 net_wo10 +0.417 ex_wo10 +0.000
+   lag<-10 & vol>=1 & DQR>=1: n 75 net +1.966 ex +2.185 ex_h1 +1.632 ex_h2 +3.062 net_wo5 +1.088 ex_wo5 +1.300 net_wo10 +0.445 ex_wo10 +0.680
+   lag<-10 & vol>=1 & DQR<1: n 10 net +1.937 ex +2.319 ex_h1 +2.091 ex_h2 +2.547 net_wo5 -1.565 ex_wo5 -0.948 net_wo10 +nan ex_wo10 +nan
+   lag<-10 & vol<1 & DQR>=1: n 14 net +0.287 ex +0.488 ex_h1 -0.014 ex_h2 +1.742 net_wo5 -1.334 ex_wo5 -1.404 net_wo10 -3.550 ex_wo10 -3.739
+   lag<-10 & vol<1 & DQR<1: n 95 net -0.659 ex -0.428 ex_h1 -0.106 ex_h2 -0.852 net_wo5 -1.372 ex_wo5 -1.125 net_wo10 -1.842 ex_wo10 -1.587

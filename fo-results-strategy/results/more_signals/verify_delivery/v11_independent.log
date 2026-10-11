@@ -1,0 +1,19 @@
+own mapping: rows in universe 292461, renamed 9700, duplicate day-symbol 0
+   renamed tickers: {('ADANITRANS', 'ADANIENSOL'): 509, ('ANGELBRKG', 'ANGELONE'): 234, ('CADILAHC', 'ZYDUSLIFE'): 313, ('GET&D', 'GVT&D'): 644, ('GMRINFRA', 'GMRAIRPORT'): 999, ('IIFLWAM', '360ONE'): 533, ('INFRATEL', 'INDUSTOWER'): 13, ('L&TFH', 'LTF'): 840, ('LTI', 'LTM'): 498, ('LTIM', 'LTM'): 804, ('MCDOWELL-N', 'UNITDSPR'): 872, ('MINDAIND', 'UNOMINDA'): 418, ('MOTHERSUMI', 'MOTHERSON'): 377, ('SRTRANSFIN', 'SHRIRAMFIN'): 509, ('TATAMOTORS', 'TMPV'): 1215, ('ZOMATO', 'ETERNAL'): 922}
+   old ticker rows on/after the change date: []
+delivery sessions i 1250..2696: sessions in that range 1447, sessions with any row 1447
+   sessions with no delivery rows at all: []
+   rows per session: min 186 (on 2021-06-14), median 202, max 213
+own adjustment events (raw close/prev_close vs adjusted return, |a-1| >= 15%): 73; treated as share-count change (nice ratio): 73
+   not treated (demerger-like): []
+own-adjusted traded qty / project adjusted volume constant within 1%: median share per symbol 0.9993, symbols below 99%: []
+window coverage: A rows with fewer delivery values than traded days 0; B rows 0; A min values 60, B min 61; rows with day-k delivery missing 0
+  DP60       n 3280 both-finite 3280 differ>1e-3 rel: 0  max 2.48e-06
+  DQR        n 3280 both-finite 3280 differ>1e-3 rel: 0  max 4.76e-06
+  DPL        n 3280 both-finite 3280 differ>1e-3 rel: 0  max 3.33e-06
+  DQK        n 3280 both-finite 3280 differ>1e-3 rel: 0  max 4.83e-06
+  rank_DP60  n 3280 both-finite 3280 differ>1e-3 rel: 0  max 4.06e-06
+  rank_DPL   n 3280 both-finite 3280 differ>1e-3 rel: 0  max 4.06e-06
+own three_day (sum of daily returns cutoff+1..Day+1) vs outcomes three_day: max abs diff 1.00e-04; window length always 3: True
+own entry-k hedged net vs outcomes vsN_net_H20 (tradable_B): max abs diff 4.99e-05; own tradable agrees 100.00%
+saved v11_feat.csv / v11_mats.npz

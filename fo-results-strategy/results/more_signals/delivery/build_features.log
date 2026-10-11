@@ -1,0 +1,43 @@
+delivery rows 292461; sessions fetched 1447: status {'ok': 1447}, source {'full': 1446, 'mto': 1}
+rows mapped to an earlier ticker: 9700; rows in universe: 292461; duplicate day-symbol after mapping: 0
+session range with delivery files: i 1250..2696 (2020-12-01 .. 2026-09-30)
+V1 close/prev_close vs returns.csv: 292253 stock-days, |diff| < 0.05pp on 99.91%, < 0.5pp on 99.92%
+V1b traded stock-days (returns.csv non-NaN) in range: 294847; with a delivery-file row: 292451 (99.19%); with DELIV_PER: 99.19%
+    symbols with traded days but no delivery row (top 15): {'PATANJALI': 723, 'GVT&D': 378, 'ADANIPOWER': 206, 'SUZLON': 182, 'JSWENERGY': 182, 'ADANIENSOL': 168, 'CGPOWER': 140, 'PGEL': 105, 'ADANIGREEN': 65, 'CDSL': 64, 'COCHINSHIP': 64, 'PNBHOUSING': 63, 'SAGILITY': 36, 'ENRIN': 10, 'JIOFIN': 10}
+    days with most missing (top 10): {'2021-08-10': 8, '2021-08-02': 8, '2021-08-03': 8, '2021-07-30': 8, '2021-08-04': 8, '2021-08-30': 8, '2021-09-01': 8, '2021-08-31': 8, '2021-08-05': 8, '2021-08-25': 8}
+V2 TTL_TRD_QNTY x volume_factor vs adjusted volume: 292461 stock-days, within 1% on 99.94%, median ratio 1.0000
+V3 DELIV_PER vs 100 x DELIV_QTY / TTL_TRD_QNTY: within 0.01pp on 99.90% of 292461
+    DELIV_PER distribution (all stock-days): p5 21.4 median 46.0 p95 69.0; values > 100: 0
+V4 vol_ratio_5_60 recomputed from NSE traded qty vs panel: 3280 rows, within 1% on 97.65%, within 5% on 99.02%
+
+results rows 3280; A features at e = i_cut-1; B at k-1 / k / k+1
+coverage by quarter (% of F&O results with the feature):
+                           results_for    n    ACC    DQR    DPL    DPK   DPK1
+qn                                                                            
+0   Results for Jan-Mar 2021 (Q4 FY21)   98  100.0  100.0  100.0  100.0  100.0
+1   Results for Apr-Jun 2021 (Q1 FY22)  117  100.0  100.0  100.0  100.0  100.0
+2   Results for Jul-Sep 2021 (Q2 FY22)  125  100.0  100.0  100.0  100.0  100.0
+3   Results for Oct-Dec 2021 (Q3 FY22)  132  100.0  100.0  100.0  100.0  100.0
+4   Results for Jan-Mar 2022 (Q4 FY22)  131  100.0  100.0  100.0  100.0  100.0
+5   Results for Apr-Jun 2022 (Q1 FY23)  134  100.0  100.0  100.0  100.0  100.0
+6   Results for Jul-Sep 2022 (Q2 FY23)  133  100.0  100.0  100.0  100.0  100.0
+7   Results for Oct-Dec 2022 (Q3 FY23)  133  100.0  100.0  100.0  100.0  100.0
+8   Results for Jan-Mar 2023 (Q4 FY23)  134  100.0  100.0  100.0  100.0  100.0
+9   Results for Apr-Jun 2023 (Q1 FY24)  134  100.0  100.0  100.0  100.0  100.0
+10  Results for Jul-Sep 2023 (Q2 FY24)  132  100.0  100.0  100.0  100.0  100.0
+11  Results for Oct-Dec 2023 (Q3 FY24)  135  100.0  100.0  100.0  100.0  100.0
+12  Results for Jan-Mar 2024 (Q4 FY24)  135  100.0  100.0  100.0  100.0  100.0
+13  Results for Apr-Jun 2024 (Q1 FY25)  135  100.0  100.0  100.0  100.0  100.0
+14  Results for Jul-Sep 2024 (Q2 FY25)  134  100.0  100.0  100.0  100.0  100.0
+15  Results for Oct-Dec 2024 (Q3 FY25)  172  100.0  100.0  100.0  100.0  100.0
+16  Results for Jan-Mar 2025 (Q4 FY25)  178  100.0  100.0  100.0  100.0  100.0
+17  Results for Apr-Jun 2025 (Q1 FY26)  191  100.0  100.0  100.0  100.0  100.0
+18  Results for Jul-Sep 2025 (Q2 FY26)  191  100.0  100.0  100.0  100.0  100.0
+19  Results for Oct-Dec 2025 (Q3 FY26)  196  100.0  100.0  100.0  100.0  100.0
+20  Results for Jan-Mar 2026 (Q4 FY26)  204  100.0  100.0  100.0  100.0  100.0
+21  Results for Apr-Jun 2026 (Q1 FY27)  206  100.0  100.0  100.0  100.0  100.0
+
+placebo A stock-days 115909 (no result session within 9 before / 13 after); with ACC 115909, rank_ACC 115909
+
+quiet days 93988; with no result session of the stock in [k-10, k+22] (covers entry k+2 + 20): 87890
+delivery_panel.csv.gz rows 292461

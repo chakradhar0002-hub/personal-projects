@@ -42,6 +42,8 @@ checklist and concrete trades, and backtests them on your data.
 >   quarters, and it earns the same per day. See [docs/HIGHER_AVERAGE.md](docs/HIGHER_AVERAGE.md).
 > - **Past performance adds nothing to either trade:** results track record and 1-12 month price performance (71 tests).
 >   Watch item: habitual post-results drifters, about +0.5% a trade. See [docs/PAST_PERFORMANCE.md](docs/PAST_PERFORMANCE.md).
+> - **F&O positioning, delivery % and company news add nothing either:** OI build-up, futures premium, put-call ratio,
+>   implied vol, delivery buying, results timing, press releases, promoter deals (98 tests). See [docs/MORE_SIGNALS.md](docs/MORE_SIGNALS.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.

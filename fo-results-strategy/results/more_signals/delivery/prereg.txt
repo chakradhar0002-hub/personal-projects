@@ -1,0 +1,161 @@
+PRE-REGISTRATION - DELIVERY % FAMILY (trade A pre-results 3-day window, trade B post-results winner drift)
+Written 2026-10-11 BEFORE any outcome (three_day, any forward return of results or placebo days) was read or computed in
+this folder. Looked at so far: the delivery data itself, the validation checks (build_features.log) and feature-only
+counts (probe_counts.log; from outcomes.csv only the tradability flag tradable_B). The sha256 of this file is written
+to prereg.sha256 before run_tests.py is run; run_tests.py refuses to run if the hash differs.
+
+Known before writing (documented earlier work, not from this folder): all F&O results three_day +0.04%; lag 10% +
+volume rule 85 trades +2.13%; plain winners 392 trades vsN_net +1.45%; RSI>50 winners 232 trades +2.42%. Nothing about
+delivery % for any of these trades is known.
+
+------------------------------------------------------------------------------------------------------------------------
+0. DATA
+------------------------------------------------------------------------------------------------------------------------
+NSE sec_bhavdata_full_DDMMYYYY.csv for every session i 1250..2696 (2020-12-01 .. 2026-09-30): 1,446 files, plus 1 MTO
+.DAT fallback. SERIES EQ only. Kept per (day, symbol): traded qty, delivery qty, delivery %, close, prev close.
+Tickers mapped to the current symbol with the dated changes in symbolchange.csv (9,700 rows were under an earlier
+ticker). Checks (build_features.log): close/prev_close equals returns.csv on 99.91% of stock-days; traded qty x the
+split factor equals the adjusted volume on 99.94%; DELIV_PER = 100 x DELIV_QTY / TTL_TRD_QNTY on 99.90%; the panel's
+vol_ratio_5_60 is reproduced within 1% on 97.65% of the 3,280 results; 99.19% of traded stock-days have a row.
+Delivery quantity is split/bonus adjusted with the adjusted-OHLCV volume_factor; delivery % needs no adjustment.
+
+POINT IN TIME. NSE publishes the delivery file of session t in the evening of t, AFTER the close. A decision at the
+close of session d can use delivery data up to session d-1 only. Therefore:
+  trade A (buy the cutoff close i_cut): delivery features use sessions <= i_cut-1 ("last published day" = i_cut-1);
+  trade B features that need the reaction day k's delivery are traded from the close of k+1, and those that need
+  day k+1's delivery from the close of k+2 (same 20-session hold, Nifty hedge and 0.19 cost). Features using only
+  sessions <= k-1 are traded from the close of k (the documented trade).
+  The cutoff day's own delivery file (e = i_cut) is shown only as a diagnostic (D1), never as a test.
+
+FEATURES (e = last delivery session used; session grid; means over the values present)
+  DP[t] delivery %; DQA[t] delivery qty x volume_factor.
+  ACC   = mean DP over e-4..e (>= 4 values) minus mean DP over e-59..e (>= 40)      accumulation, percentage points
+  DQR   = mean DQA over e-4..e / mean DQA over e-59..e                               delivery qty 5/60 ratio
+  DPL   = DP[e] minus mean DP over e-60..e-1                                         last published day vs 60-day avg
+  DP60  = mean DP over e-59..e                                                       delivery % level
+  PR5   = compounded stock return over sessions e-4..e (returns.csv)                 price over the same 5 sessions
+  rank_X (trade A) = percentile rank 0-100 of X among the same quarter's F&O results' stocks, ALL measured on the same
+         session e as the row (point in time). Quintile top = rank > 80, bottom = rank <= 20.
+  Trade B, reaction day k:
+  ACC_pre = ACC with e = k-1 (pre-results accumulation; entry close k)
+  DPK   = DP[k] minus mean DP over k-60..k-1 (entry close k+1)
+  DQK   = DQA[k] / mean DQA over k-60..k-1 (entry close k+1)
+  DPK1  = DP[k+1] minus mean DP over k-60..k-1 (entry close k+2)
+  Feature-only counts showed that winners' reaction-day delivery % is almost always BELOW its 60-day average (median
+  DPK of the 392 winners -17.7 points; only 8 above 0), so "DPK > 0" cannot split them. The DPK split point is fixed as
+  the median DPK of the same quarter's plain winners (tradable at k+1); the same threshold is used for the W and WR
+  pools (top half / bottom half of the quarter's winners). This uses the reaction-day delivery of all winners of the
+  quarter (features only, no outcome); diagnostic D2 repeats the split with a point-in-time threshold (median DPK of all
+  winners of earlier quarters, qn >= 1). DQK cut = 3 (delivery qty at least 3x its 60-day average; about the
+  winners' median, 195 of 392). DPK1 cut = 0 (delivery % back above its normal level on the day after: 64 of 392).
+
+------------------------------------------------------------------------------------------------------------------------
+1. TRADE A - pre-results 3-day window (main family, 10 tests; L = long, S = short)
+------------------------------------------------------------------------------------------------------------------------
+Universe: 3,280 F&O results (perf/features/panel.csv), rows with three_day. Trade: buy close i_cut, sell close i_p1.
+P&L = sign x three_day; net = P&L - 0.17. Parent = all F&O results of the same quarter.
+ A01 L  ACC > 0                           5-day delivery % above its own 60-day average (accumulation)       n 1643
+ A02 L  rank_ACC > 80                     strongest accumulation of the quarter                              n  685
+ A03 S  rank_ACC <= 20                    delivery drying up (speculative / no conviction) -> short          n  534
+ A04 L  DQR >= 1.5                        delivery quantity surge (real buying 50% above normal)             n  225
+ A05 L  rank_DQR > 80                     top-quintile delivery quantity ratio                               n  458
+ A06 L  rank_DPL > 80                     last published day's delivery % spike vs its 60-day average        n  641
+ A07 L  PR5 < 0 AND ACC > 0               price down + delivery up (accumulation into weakness)              n  850
+ A08 L  PR5 > 0 AND ACC > 0               price up + delivery up (genuine buying in a rise)                  n  793
+ A09 S  PR5 > 0 AND ACC < 0               price up + delivery down (speculative rally) -> short              n  932
+ A10 L  rank_DP60 > 80                    structurally high-delivery (investor-held) stock                   n  681
+
+------------------------------------------------------------------------------------------------------------------------
+2. TRADE B - post-results winner drift (main family, 16 tests, all long)
+------------------------------------------------------------------------------------------------------------------------
+Pools (tradable F&O results, outcomes tradable_B): W = plain winners, XN > 4 (392); WR = W with cut_rsi14 > 50 (232).
+Trade: buy the entry close (k, k+1 or k+2 as stated), hold 20 sessions, short Nifty 50:
+  vsN_net = (stock return entry -> entry+20) - (Nifty return entry -> entry+20) - 0.19   [entry k = outcomes vsN_net_H20]
+  Tradable at entry k+j: session k+j+21 exists and <= 2 no-trade sessions in k+j+1..k+j+21.
+Parent of each test = the same pool, tradable at the test's entry, feature known, same quarter (so a k+1 or k+2 test
+is compared with the pool bought at the same delayed close).
+ For P in {W, WR}:
+  P_ACCPRE_HI   ACC_pre > 0            pre-results accumulation (to k-1)                                 entry k
+  P_ACCPRE_LO   ACC_pre <= 0                                                                             entry k
+  P_DPK_HI      DPK >= quarter median of winners   jump came with relatively more delivery buying          entry k+1
+  P_DPK_LO      DPK <  that median                 jump was mostly speculative / intraday                  entry k+1
+  P_DQK_HI      DQK >= 3               reaction-day delivery qty >= 3x normal                            entry k+1
+  P_DQK_LO      DQK < 3                                                                                  entry k+1
+  P_DPK1_HI     DPK1 > 0               day k+1 delivery % above its pre-results 60-day average           entry k+2
+  P_DPK1_LO     DPK1 <= 0                                                                                entry k+2
+ (Counts W / WR: ACCPRE_HI 177/101, DQK_HI 195/136, DPK1_HI 64/41; DPK halves ~196 / ~116.)
+ Both halves of each split are tested as "better than the parent" (one-sided), as in the earlier trade-B study, so
+ either direction can show; both are counted in the family.
+
+------------------------------------------------------------------------------------------------------------------------
+3. STATISTICS PER TEST (main family of 26 = 10 A + 16 B)
+------------------------------------------------------------------------------------------------------------------------
+ n; avg (net); gain over the parent (A: excess = signed P&L minus the quarter-matched mean of all F&O results;
+ B: d_par = trade minus the mean of its parent pool in the same quarter); quarters with net avg > 0 / quarters with
+ trades; first 14 (qn 0-13: Results for Jan-Mar 2021 (Q4 FY21) .. Apr-Jun 2024 (Q1 FY25)) and last 8 (qn 14-21:
+ Results for Jul-Sep 2024 (Q2 FY25) .. Apr-Jun 2026 (Q1 FY27)): n, net, gain; without the best 5 trades: net, gain.
+ LUCK p (one-sided in the stated direction):
+   A: within-quarter permutation of three_day among all F&O results (= random same-size picks per quarter from all
+      F&O results), 20,000, seed 20261011; p = (1 + #{perm >= obs}) / (1 + B).
+   B: 20,000 draws of the same per-quarter counts from the parent pool without replacement, statistic = pooled mean
+      vsN_net, seed 20261011.
+ HOLM (PRIMARY): Holm step-down over the 26 luck p values (A and B together).
+ maxT: single-step Westfall-Young within each trade (A: the same 20,000 joint within-quarter permutations; B: 10,000
+   joint permutations of row indices within quarter x stratum (W & RSI>50, W only, not W) over results tradable at k,
+   k+1 and k+2, applied to each entry's outcome); z = (stat - perm mean) / perm sd; family maxT p = min(1, 2 x
+   within-trade maxT p) (Bonferroni across the two trades).
+ PLACEBO (every test): the same signal on ordinary stock-days.
+   A: ta/build/placebo_ta.csv.gz days, in_fo True, next result in the panel (no result session within 9 sessions
+      before / 13 after); features recomputed at day k with e = k-1 and ranks among the F&O stocks of quarter qn_next
+      on that same session; outcome = 3-day forward return k -> k+3. Placebo excess = signal-day mean minus the
+      quarter-matched mean of all placebo days (results' quarter weights). DiD = results excess - placebo excess.
+      Placebo p = P(excess of a random draw of placebo signal days with the trades' per-quarter counts >= results
+      excess), 10,000 draws, seed 7. Trades in quarters without placebo signal days are left out of this comparison.
+   B: quiet days (tafa quiet_days.csv.gz: F&O stock-days with no result session of the stock in [k-10, k+20]),
+      further restricted to no result session (events i_rd / i_react) in [k-10, k+22]; quiet winner = XN_k > 4;
+      quiet RSI winner = also m2_rsi14 (RSI14 at k-2) > 50. Same features at quiet day k, same entry close (k, k+1,
+      k+2), same tradability and 20-session hedged outcome net of 0.19. DPK split point for quiet days = median DPK of
+      the calendar month's quiet winners. Quiet gain = quiet signal day minus the mean of its quiet parent of the same
+      calendar month. DiD = results d_par - quiet gain. Placebo p = P(mean of n draws (with replacement) of the quiet
+      signal days' gains >= results d_par), n = number of trades, 10,000 draws, seed 17.
+
+A test WORKS only if ALL of:
+ (a) n >= 30;
+ (b) better than its parent in both halves: gain > 0 in the first 14 AND the last 8, and net avg > 0 in both;
+ (c) Holm p < 0.10 (26-test family);
+ (d) beats its placebo: DiD > 0 AND placebo p < 0.10 (B: also quiet signal n >= 30);
+ (e) holds without its best 5 trades: net avg > 0 AND gain > 0 after removing the 5 best trades.
+ WATCH = everything except (c), with raw luck p < 0.05. Else NO. maxT is reported next to Holm.
+
+------------------------------------------------------------------------------------------------------------------------
+4. SPLITS OF THE LAG 10% + VOLUME RULE (separate family of 7; in_fo_events True, lag21 < -10, vol_ratio_5_60 >= 1.0)
+------------------------------------------------------------------------------------------------------------------------
+ Split the 85 trades into IN / OUT (features at i_cut-1). Prediction for all: IN better.
+  LS1 ACC > 0 (47/38)              LS2 DQR >= 1.0 (75/10)            LS3 DQR >= 1.5 (31/54)
+  LS4 DPL > 0 (47/38)              LS5 rank_ACC > 80 (27/58)         LS6 PR5 < 0 AND ACC > 0 (40/45)
+  LS7 rank_DP60 > 50 (31/54)
+ Report n, avg, net IN and OUT, IN/OUT in the first 14 / last 8, IN - OUT, IN net without its best 5; permutation p
+ (two-sided |IN - OUT|, 20,000 shuffles of the labels among the 85, seed 11); Holm over the splits with >= 5 per side.
+ A split "separates" only if IN - OUT > 0 in both halves, Holm p < 0.10 and IN net without best 5 > 0.
+
+------------------------------------------------------------------------------------------------------------------------
+5. REPLACEMENT TESTS (separate family of 2, long, in_fo_events True)
+------------------------------------------------------------------------------------------------------------------------
+ RA1 lag21 < -10 AND DQR >= 1.0   (delivery quantity replaces total volume; 89 trades, 75 shared with the 85)
+ RA2 lag21 < -10 AND ACC > 0      (rising delivery % replaces volume; 106 trades, 47 shared)
+ Statistics as section 3 (Holm within the 2), plus IN - OUT inside "lag < -10 alone" (194 results) with a one-sided
+ permutation p (20,000, seed 13). CAN REPLACE only if criteria (a)-(e) hold (Holm within 2) AND avg >= +2.13%.
+
+------------------------------------------------------------------------------------------------------------------------
+6. PRE-REGISTERED DIAGNOSTICS (descriptive; no p-values; cannot change a verdict)
+------------------------------------------------------------------------------------------------------------------------
+ D1 trade A tests recomputed with the cutoff day's own delivery file (e = i_cut; not tradable at the cutoff close).
+ D2 W/WR DPK halves with the point-in-time threshold (median DPK of all winners of earlier quarters; qn >= 1).
+ D3 the cost of waiting for the delivery file: W and WR (and quiet winners) bought at k, k+1, k+2.
+ D4 XN-tercile control (gain within quarter x XN tercile of the parent) for any B test that is WORKS or WATCH.
+
+OUTPUTS (this folder): prereg.txt, prereg.sha256, build_features.py/.log, probe_counts.py/.log (scripts in scripts/),
+ run.log, tests.csv, table_A.md, table_B.md, lag_rule_splits.md/.csv, replacement.csv, per_quarter.csv, trades_A.csv,
+ trades_B.csv, diagnostics.csv, feat_results.csv, feat_placeboA.csv.gz, feat_placeboB.csv.gz, delivery_panel.csv.gz.
+Anything added after the first run is marked ADDED AFTER in run.log / the report and cannot rescue a verdict.
+----------------------------------------------------------------------------------------------------------------

@@ -1,0 +1,137 @@
+new sample days (none in the earlier v01 sample): ['2021-10-12', '2022-10-27', '2023-01-18', '2023-07-17', '2023-07-18', '2023-10-17', '2024-04-23', '2024-08-02', '2024-10-15', '2025-01-20', '2025-01-28', '2025-05-20', '2025-07-31', '2026-02-20', '2026-05-20', '2026-08-10']
+2021-10-12 ok rows 2120 universe rows 243 DATE1 2021-10-12
+2022-10-27 ok rows 2280 universe rows 248 DATE1 2022-10-27
+2023-01-18 ok rows 2316 universe rows 242 DATE1 2023-01-18
+2023-07-17 ok rows 2434 universe rows 247 DATE1 2023-07-17
+2023-07-18 ok rows 2399 universe rows 240 DATE1 2023-07-18
+2023-10-17 ok rows 2531 universe rows 244 DATE1 2023-10-17
+2024-04-23 ok rows 2656 universe rows 241 DATE1 2024-04-23
+2024-08-02 ok rows 2622 universe rows 205 DATE1 2024-08-02
+2024-10-15 ok rows 2704 universe rows 206 DATE1 2024-10-15
+2025-01-20 ok rows 2806 universe rows 212 DATE1 2025-01-20
+2025-01-28 ok rows 2785 universe rows 212 DATE1 2025-01-28
+2025-05-20 ok rows 2835 universe rows 212 DATE1 2025-05-20
+2025-07-31 ok rows 2904 universe rows 214 DATE1 2025-07-31
+2026-02-20 ok rows 3099 universe rows 213 DATE1 2026-02-20
+2026-05-20 ok rows 3215 universe rows 213 DATE1 2026-05-20
+2026-08-10 ok rows 3361 universe rows 213 DATE1 2026-08-10
+fetch retries / non-200: []
+days whose DATE1 differs from the requested day: 0
+raw EQ rows vs stored rows on these days: {'right_only': 3287, 'left_only': 0, 'both': 0}
+   ttl_trd_qnty: equal on 0 / 0
+   deliv_qty: equal on 0 / 0
+   deliv_per: equal on 0 / 0
+   close: equal on 0 / 0
+   prev_close: equal on 0 / 0
+candidate (symbol, decision day) points on the new days: 46; by candidate {'A10': 24, 'A06': 16, 'W_DQK_HI': 3, 'WR_DQK_HI': 2, 'RA1': 1}
+   found in raw EQ: 0; raw == stored on deliv %, deliv qty, traded qty: 0
+   tickers differing from the current symbol: [['LTM', 'LTI', '2021-10-12'], ['LTF', 'L&TFH', '2023-10-17']]
+         cand      symbol         day  DELIV_PER  deliv_per  DELIV_QTY   deliv_qty
+0         A10    HDFCBANK  2021-10-12        NaN      52.58        NaN   2149685.0
+1         A10   SUNPHARMA  2022-10-27        NaN      67.54        NaN   2957465.0
+2         A10    AXISBANK  2023-01-18        NaN      59.05        NaN   3384383.0
+3         A10   ICICIBANK  2023-01-18        NaN      68.83        NaN   7787299.0
+4         A10   KOTAKBANK  2023-01-18        NaN      68.12        NaN   1931238.0
+5         A10     SBILIFE  2023-01-18        NaN      48.31        NaN    521178.0
+6         A10  HINDUNILVR  2023-07-17        NaN      62.71        NaN    572362.0
+7         A10        INFY  2023-07-17        NaN      57.05        NaN   6600078.0
+8         A10  ULTRACEMCO  2023-07-18        NaN      71.16        NaN    199635.0
+9         A10     HCLTECH  2024-04-23        NaN      62.01        NaN   1726335.0
+10        A10  SHRIRAMFIN  2024-04-23        NaN      54.47        NaN    315136.0
+11        A10    GODREJCP  2024-08-02        NaN      57.25        NaN    937588.0
+12        A10  PIDILITIND  2024-08-02        NaN      37.42        NaN     58598.0
+13        A10     ICICIGI  2024-10-15        NaN      53.06        NaN    381669.0
+14        A10    CHOLAFIN  2025-01-28        NaN      27.81        NaN   1226036.0
+15        A10   NESTLEIND  2025-01-28        NaN      44.76        NaN    322757.0
+16        A10    SONACOMS  2025-01-20        NaN      50.11        NaN    973671.0
+17        A10   SUNPHARMA  2025-01-28        NaN      58.15        NaN   3472848.0
+18        A10  ULTRACEMCO  2025-01-20        NaN      62.82        NaN    208604.0
+19        A10  BHARTIARTL  2025-07-31        NaN      64.10        NaN   2996816.0
+20        A10   BRITANNIA  2025-07-31        NaN      39.41        NaN    135965.0
+21        A10    DIVISLAB  2026-05-20        NaN      63.18        NaN    605095.0
+22        A10        NTPC  2026-05-20        NaN      54.86        NaN   2955132.0
+23        A10        MFSL  2026-08-10        NaN      54.08        NaN    191220.0
+24        A06         LTM  2021-10-12        NaN      40.83        NaN    107215.0
+25        A06  ULTRACEMCO  2021-10-12        NaN      57.71        NaN    235126.0
+26        A06      CONCOR  2023-01-18        NaN      64.40        NaN   1249007.0
+27        A06    JSWSTEEL  2023-07-18        NaN      46.60        NaN    712021.0
+28        A06  ULTRACEMCO  2023-07-18        NaN      71.16        NaN    199635.0
+29        A06  LAURUSLABS  2023-10-17        NaN      51.13        NaN    719888.0
+30        A06         LTF  2023-10-17        NaN      49.73        NaN  13346324.0
+31        A06     SBILIFE  2024-04-23        NaN      65.44        NaN    682332.0
+32        A06   HINDPETRO  2025-01-20        NaN      48.78        NaN   3396914.0
+33        A06  INDUSINDBK  2025-01-28        NaN      56.33        NaN   3215481.0
+34        A06      MARICO  2025-01-28        NaN      66.48        NaN    997817.0
+35        A06    UNITDSPR  2025-01-20        NaN      64.04        NaN   1031054.0
+36        A06         UPL  2025-01-28        NaN      63.71        NaN   1304791.0
+37        A06    GLENMARK  2025-05-20        NaN      59.19        NaN    509383.0
+38        A06    DIVISLAB  2026-05-20        NaN      63.18        NaN    605095.0
+39        A06   MAXHEALTH  2026-08-10        NaN      70.60        NaN   1501224.0
+40        RA1  ULTRACEMCO  2021-10-12        NaN      57.71        NaN    235126.0
+41   W_DQK_HI     POLYCAB  2023-07-18        NaN      19.03        NaN    548559.0
+42   W_DQK_HI      KAYNES  2025-07-31        NaN      20.44        NaN    794942.0
+43   W_DQK_HI         ABB  2026-02-20        NaN      22.87        NaN    922829.0
+44  WR_DQK_HI     POLYCAB  2023-07-18        NaN      19.03        NaN    548559.0
+45  WR_DQK_HI         ABB  2026-02-20        NaN      22.87        NaN    922829.0
+delivery_panel columns: ['day', 'symbol', 'deliv_per', 'deliv_qty', 'ttl_trd_qnty', 'volume_factor']
+=== rerun on cached compact rows (SERIES whitespace fix)
+new sample days (none in the earlier v01 sample): ['2021-10-12', '2022-10-27', '2023-01-18', '2023-07-17', '2023-07-18', '2023-10-17', '2024-04-23', '2024-08-02', '2024-10-15', '2025-01-20', '2025-01-28', '2025-05-20', '2025-07-31', '2026-02-20', '2026-05-20', '2026-08-10']
+fetch retries / non-200: []
+days whose DATE1 differs from the requested day: 0
+raw EQ rows vs stored rows on these days: {'both': 3287, 'left_only': 0, 'right_only': 0}
+   ttl_trd_qnty: equal on 3287 / 3287
+   deliv_qty: equal on 3287 / 3287
+   deliv_per: equal on 3287 / 3287
+   close: equal on 3287 / 3287
+   prev_close: equal on 3287 / 3287
+candidate (symbol, decision day) points on the new days: 46; by candidate {'A10': 24, 'A06': 16, 'W_DQK_HI': 3, 'WR_DQK_HI': 2, 'RA1': 1}
+   found in raw EQ: 46; raw == stored on deliv %, deliv qty, traded qty: 46
+   tickers differing from the current symbol: [['LTM', 'LTI', '2021-10-12'], ['LTF', 'L&TFH', '2023-10-17']]
+         cand      symbol         day  DELIV_PER  deliv_per  DELIV_QTY   deliv_qty
+0         A10    HDFCBANK  2021-10-12      52.58      52.58    2149685   2149685.0
+1         A10   SUNPHARMA  2022-10-27      67.54      67.54    2957465   2957465.0
+2         A10    AXISBANK  2023-01-18      59.05      59.05    3384383   3384383.0
+3         A10   ICICIBANK  2023-01-18      68.83      68.83    7787299   7787299.0
+4         A10   KOTAKBANK  2023-01-18      68.12      68.12    1931238   1931238.0
+5         A10     SBILIFE  2023-01-18      48.31      48.31     521178    521178.0
+6         A10  HINDUNILVR  2023-07-17      62.71      62.71     572362    572362.0
+7         A10        INFY  2023-07-17      57.05      57.05    6600078   6600078.0
+8         A10  ULTRACEMCO  2023-07-18      71.16      71.16     199635    199635.0
+9         A10     HCLTECH  2024-04-23      62.01      62.01    1726335   1726335.0
+10        A10  SHRIRAMFIN  2024-04-23      54.47      54.47     315136    315136.0
+11        A10    GODREJCP  2024-08-02      57.25      57.25     937588    937588.0
+12        A10  PIDILITIND  2024-08-02      37.42      37.42      58598     58598.0
+13        A10     ICICIGI  2024-10-15      53.06      53.06     381669    381669.0
+14        A10    CHOLAFIN  2025-01-28      27.81      27.81    1226036   1226036.0
+15        A10   NESTLEIND  2025-01-28      44.76      44.76     322757    322757.0
+16        A10    SONACOMS  2025-01-20      50.11      50.11     973671    973671.0
+17        A10   SUNPHARMA  2025-01-28      58.15      58.15    3472848   3472848.0
+18        A10  ULTRACEMCO  2025-01-20      62.82      62.82     208604    208604.0
+19        A10  BHARTIARTL  2025-07-31      64.10      64.10    2996816   2996816.0
+20        A10   BRITANNIA  2025-07-31      39.41      39.41     135965    135965.0
+21        A10    DIVISLAB  2026-05-20      63.18      63.18     605095    605095.0
+22        A10        NTPC  2026-05-20      54.86      54.86    2955132   2955132.0
+23        A10        MFSL  2026-08-10      54.08      54.08     191220    191220.0
+24        A06         LTM  2021-10-12      40.83      40.83     107215    107215.0
+25        A06  ULTRACEMCO  2021-10-12      57.71      57.71     235126    235126.0
+26        A06      CONCOR  2023-01-18      64.40      64.40    1249007   1249007.0
+27        A06    JSWSTEEL  2023-07-18      46.60      46.60     712021    712021.0
+28        A06  ULTRACEMCO  2023-07-18      71.16      71.16     199635    199635.0
+29        A06  LAURUSLABS  2023-10-17      51.13      51.13     719888    719888.0
+30        A06         LTF  2023-10-17      49.73      49.73   13346324  13346324.0
+31        A06     SBILIFE  2024-04-23      65.44      65.44     682332    682332.0
+32        A06   HINDPETRO  2025-01-20      48.78      48.78    3396914   3396914.0
+33        A06  INDUSINDBK  2025-01-28      56.33      56.33    3215481   3215481.0
+34        A06      MARICO  2025-01-28      66.48      66.48     997817    997817.0
+35        A06    UNITDSPR  2025-01-20      64.04      64.04    1031054   1031054.0
+36        A06         UPL  2025-01-28      63.71      63.71    1304791   1304791.0
+37        A06    GLENMARK  2025-05-20      59.19      59.19     509383    509383.0
+38        A06    DIVISLAB  2026-05-20      63.18      63.18     605095    605095.0
+39        A06   MAXHEALTH  2026-08-10      70.60      70.60    1501224   1501224.0
+40        RA1  ULTRACEMCO  2021-10-12      57.71      57.71     235126    235126.0
+41   W_DQK_HI     POLYCAB  2023-07-18      19.03      19.03     548559    548559.0
+42   W_DQK_HI      KAYNES  2025-07-31      20.44      20.44     794942    794942.0
+43   W_DQK_HI         ABB  2026-02-20      22.87      22.87     922829    922829.0
+44  WR_DQK_HI     POLYCAB  2023-07-18      19.03      19.03     548559    548559.0
+45  WR_DQK_HI         ABB  2026-02-20      22.87      22.87     922829    922829.0
+delivery_panel columns: ['day', 'symbol', 'deliv_per', 'deliv_qty', 'ttl_trd_qnty', 'volume_factor']

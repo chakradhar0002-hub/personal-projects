@@ -1,0 +1,40 @@
+lag rule: n 85 gross +2.132 quarter-matched excess +2.201 date-matched (vs EW universe, minus all results) +1.307
+RA1: n 89 gross +1.872 quarter-matched excess +1.918 date-matched (vs EW universe, minus all results) +1.128
+A10: n 681 gross +0.345 quarter-matched excess +0.316 date-matched (vs EW universe, minus all results) +0.207
+
+RA1-only trades (not in the lag rule):
+    symbol  qn   lag21  vol_ratio_5_60   DQR  three_day
+    CONCOR   2 -12.520           0.954 1.200      1.944
+CUMMINSIND   2 -17.191           0.976 1.198      3.016
+PERSISTENT   3 -10.573           0.868 1.112     -1.069
+       DLF   4 -10.199           0.969 1.131      1.973
+HEROMOTOCO   5 -11.363           0.966 1.248      1.510
+  ASHOKLEY   6 -10.361           0.888 1.026     -0.264
+      NMDC   8 -10.070           0.960 1.113     -0.517
+  SHREECEM   9 -14.230           0.921 1.290      2.749
+      OFSS  12 -13.759           0.980 1.231     -5.311
+   POLYCAB  13 -10.459           0.828 1.069     -4.829
+   HDFCAMC  15 -10.473           0.987 1.047      5.249
+     DMART  18 -10.812           1.000 1.156     -2.309
+     AMBER  21 -11.890           0.915 1.028      3.887
+ PATANJALI  21 -15.079           0.929 1.215      0.371
+
+lag-only trades (not in RA1):
+    symbol  qn   lag21  vol_ratio_5_60   DQR  three_day
+AUROPHARMA   4 -10.032           1.211 0.990     -0.939
+   RBLBANK   4 -10.367           1.197 0.885     -1.257
+      NMDC   5 -12.370           1.051 0.894      6.563
+ HINDPETRO   6 -10.305           1.035 0.606     -1.014
+CUMMINSIND  13 -13.072           1.316 0.488      6.752
+CUMMINSIND  15 -13.891           1.160 0.964      9.533
+     TRENT  15 -16.483           1.589 0.903     -4.870
+   COFORGE  17 -10.128           1.419 0.662      2.646
+     DIXON  19 -15.662           1.200 0.878      2.552
+       ITC  19 -17.933           1.051 0.747      1.105
+
+A10 per quarter:
+qn       0       1       2       3       4       5       6       7       8       9       10      11      12      13      14      15      16      17      18      19      20      21
+n    21.000  26.000  25.000  29.000  28.000  27.000  26.000  27.000  27.000  27.000  29.000  27.000  26.000  25.000  29.000  38.000  36.000  41.000  39.000  41.000  41.000  46.000
+net   0.442  -0.009  -0.572  -0.491  -0.726  -0.291   1.501  -1.135  -1.094  -0.374   0.734   0.970   1.884   0.547  -1.481   0.005   1.116   0.375   0.462   0.449   0.803   0.124
+ex   -0.209   0.100   0.441   0.316   0.275  -0.875   1.641  -0.806  -1.532   0.093   0.499   0.661   1.178   0.189  -0.193   0.961   0.328   1.109  -0.036   0.436   1.281   0.121
+A10 quarters with net > 0: 13 / 22 ; excess > 0: 16

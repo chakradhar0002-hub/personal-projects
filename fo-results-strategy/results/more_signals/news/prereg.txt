@@ -1,0 +1,183 @@
+PRE-REGISTRATION - CORPORATE NEWS FLOW FAMILY (trade A pre-results 3-day window, trade B post-results winner drift)
+Written 2026-10-11 BEFORE any outcome (three_day, any forward return of results, placebo or quiet days) was read or
+computed in this folder. Looked at so far: the announcement / board-meeting / SAST data themselves, text samples, the
+validation checks (work/build_features.log) and feature-only counts (work/probe_counts.log; from outcomes.csv only the
+tradability flag tradable_B). The sha256 of this file is written to prereg.sha256 before scripts/run_tests.py is run;
+run_tests.py refuses to run if the hash differs.
+
+Known before writing (documented earlier work, not from this folder): all F&O results three_day +0.04%; lag 10% +
+volume rule 85 trades +2.13%; plain winners 392 trades vsN_net +1.45%; RSI>50 winners 232 trades +2.42%. Nothing about
+news flow for any of these trades is known.
+
+------------------------------------------------------------------------------------------------------------------------
+0. DATA AND POINT IN TIME
+------------------------------------------------------------------------------------------------------------------------
+ a) report/nse_events.db, table an: 155,600 NSE corporate announcements of the 212 symbols (153,905 after removing exact
+    duplicates). ACTUAL coverage 2021-03-01 .. 2026-09-30 (two fetches: 01-03-2021..30-11-2022 and
+    01-12-2022..30-09-2026; every symbol present in both, newer listings from their listing). So every 30-day window
+    before a cutoff is covered for all 22 quarters (qn 0 = Results for Jan-Mar 2021 (Q4 FY21) .. qn 21 = Results for
+    Apr-Jun 2026 (Q1 FY27)); the stock's own news norm (below) needs >= 90 days of earlier data, so NEWSR exists from
+    qn 1 (Results for Apr-Jun 2021 (Q1 FY22)) on.
+ b) downloads/board_meetings.csv: NSE public board-meetings API (no login), all 212 symbols, meetings 2020-01-10 ..
+    2026-08-14, 10,244 rows (7,151 about financial results), with the broadcast time of each intimation.
+ c) downloads/sast29.csv: NSE public SAST Regulation 29 API (acquisitions / sales that cross 5% or move a holding by 2%),
+    2,586 rows, 194 symbols, 2020-01-02 .. 2026-09-30; flag promoter Y/N; time used = later of filing and dissemination.
+    Inter-se promoter transfers, gifts, schemes and transmissions are dropped (not a buy / sell decision).
+    NOT USED: the NSE insider-trading (PIT) API returns no data after ~Sep 2024 (tested), so it cannot cover the last 8
+    quarters; the 'Disclosure under SEBI Takeover Regulations' items of the announcement feed are almost all annual
+    Reg 30 / 31(4) declarations (no buy/sell direction) and are treated as routine.
+ d) events.csv results_date; fr table (2020 NSE results filings) for last year's date of qn 0-3.
+ Text (txt, bm_desc) is untrusted data: only matched against the fixed patterns of scripts/build_features.py.
+
+ DECISION TIME: a trade at the close of session d (NSE close = average price 15:00-15:30) is decided at 15:00 IST of
+ day(d). An announcement / intimation / disclosure is usable only if broadcast before that time.
+   Trade A: decision at the cutoff session i_cut.  Trade B: decision at the reaction session k = i_react.
+ Announcements on the stock's own results date and the calendar day after are left out of all news COUNTS (NEWS30,
+ norm, PR30, ORDER30, ACQ30, CRUP90) so results-day filings never count as "news flow".
+
+------------------------------------------------------------------------------------------------------------------------
+1. FEATURES (T = decision time; all windows end strictly before T)
+------------------------------------------------------------------------------------------------------------------------
+ Announcement classes (descr = NSE category; lists in build_features.py):
+   ROUTINE (share certificates, depository certificates, newspaper copies, trading window, shareholder meetings,
+     ESOP, record date / book closure, compliance reports, annual SAST / PIT declarations, interest payments ...),
+   RESULTS_CYCLE (outcome of board meeting, board meeting intimation, results filings and clarifications, investor
+     presentation, dividend), ANALYST (four analyst / investor meet categories).
+   SUBST = everything else (substantive news).  PR = 'Press Release' (+ revised).
+   ORDER = order-win categories, or Updates / General updates / Press Release whose text matches a win pattern
+     (work order, letter of award / acceptance / intent, bags, secures, wins, awarded, received ... order/contract,
+     orders worth ..., lowest bidder) and no tax / court / regulator pattern.
+   ACQ = 'Acquisition'.  CRUP / CRDN = Credit Rating categories whose text says upgrade / downgrade (only these two
+     are unambiguous).
+   CALLANN = ANALYST categories except transcripts / recordings / audio / video links.
+   BIZ = 'Monthly Business Updates', or Updates / General updates / Press Release text matching business update,
+     quarterly update, provisional business figures, monthly / auto sales, production and sales ...
+   EVENT = material corporate events: order wins, acquisition, merger / scheme / demerger, sale or disposal, agreements /
+     MoU / tie-ups, capacity addition, product launch, start of production, buyback, bonus, stock split, issue of
+     securities / QIP / rights / preferential, open offer, licences / approvals, new line of business, credit rating.
+ Features:
+   NEWS30   = # SUBST in [T-30d, T)
+   NORM30   = # SUBST in [T-395d, T-30d) x 30 / days covered (window clipped at 2021-03-01; needs >= 90 days)
+   NEWSR    = (NEWS30 + 1) / (NORM30 + 1)                             news flow vs the stock's own norm
+   PR30, ORDER30, ACQ30 = # PR / ORDER / ACQ in [T-30d, T);  CRUP90 = # CRUP in [T-90d, T)
+   CALLPRE  = # CALLANN in [T-21d, T)   (earnings call / analyst meet announced before the results; results-day
+              items count here because the window ends before the result)
+   BIZ_RX   = sum over BIZ items broadcast in [T-45d, T) whose reaction session s (first session closing after the
+              broadcast) is before the decision session, of (stock return - Nifty 50 return) on s, in %
+   RDCHG    = (results_date - quarter end) - (same for the same quarter last year), days. Last year from events.csv
+              (qn-4) or, for qn 2-3, the 2020 NSE filing date. SET MISSING for qn 0, 1 and 4: the comparison year had
+              SEBI COVID deadline extensions (Jan-Mar 2020, Apr-Jun 2020, Jan-Mar 2021 results), which make almost
+              every company look "earlier".
+   LEAD     = results_date - date of the first board-meeting intimation for a results meeting dated results_date-2
+              .. results_date+1 (only if broadcast before T); LEADNORM = median LEAD of the stock's previous <= 4
+              results meetings (>= 2, meetings > 30 days before); LEADCHG = LEAD - LEADNORM
+   PROMBUY90 / PROMSELL90 = # promoter Reg 29 acquisitions / sales (or disposals) disseminated in [T-90d, T);
+   HOLDBUY90 / HOLDSELL90 = the same for non-promoter holders (funds, institutions, other large holders).
+   (90-day windows: the 30-day counts are too small - 33 / 25 results.)
+   Trade B only: EVENT_K = # EVENT items broadcast from 00:00 of day(k-1) to 15:00 of day(k) (news on k-1 / k besides
+     the results, results-day items included);  BUSY_K = number of results (all 212 stocks) with the same reaction
+     session k.  Trade B uses NEWSR, CALLPRE and RDCHG as of the cutoff (known before k).
+
+------------------------------------------------------------------------------------------------------------------------
+2. TRADE A - pre-results 3-day window (main family, 17 tests; L = long, S = short)
+------------------------------------------------------------------------------------------------------------------------
+Universe: 3,280 F&O results (perf/features/panel.csv), rows with three_day. Trade: buy close i_cut, sell close i_p1.
+P&L = sign x three_day; net = P&L - 0.17. Parent = all F&O results of the same quarter.
+ A01 S LATE         RDCHG > 7          results later than the same quarter last year (late = bad news)        n 236
+ A02 L EARLY        RDCHG < -7         earlier than last year (early = good news)                              n 372
+ A03 S NOTICE_SHORT LEADCHG <= -7      date intimated >= 7 days later than the stock's habit (Johnson & So)    n 183
+ A04 L NOTICE_LONG  LEADCHG >= 7       date intimated >= 7 days earlier than habit                             n 280
+ A05 S NOTICE_MIN   LEAD <= 7          notice near the legal minimum                                           n 658
+ A06 L NEWS_HI      NEWSR >= 1.5       busy news flow before results (good news released early)                n 606
+ A07 S NEWS_LO      NEWSR <= 0.5       silence before results (bad news withheld; Kothari, Shu & Wysocki)      n 413
+ A08 L PRESS        PR30 >= 1          press release(s) in the 30 days before the cutoff                       n 1024
+ A09 L ORDER        ORDER30 >= 1       order win(s) in the 30 days before                                      n 171
+ A10 S ACQ          ACQ30 >= 1         acquisition announcement(s) in the 30 days before (acquirers lag)       n 303
+ A11 S NOCALL       CALLPRE == 0       no earnings call / analyst meet announced in the 21 days before         n 1021
+ A12 L BIZ_UP       BIZ_RX > 0         business update(s) in the 45 days before, market reaction positive      n 170
+ A13 S BIZ_DOWN     BIZ_RX < 0         business update(s), market reaction negative                            n 151
+ A14 L PROM_BUY     PROMBUY90 >= 1     promoter acquisition disclosed in the 90 days before                    n 112
+ A15 S PROM_SELL    PROMSELL90 >= 1    promoter sale disclosed in the 90 days before                           n 125
+ A16 L HOLD_BUY     HOLDBUY90 >= 1     large non-promoter holder buying (>= 2% / crossing 5%)                  n 281
+ A17 S HOLD_SELL    HOLDSELL90 >= 1    large non-promoter holder selling                                       n 237
+
+------------------------------------------------------------------------------------------------------------------------
+3. TRADE B - post-results winner drift (main family, 10 tests, all long, entry close k)
+------------------------------------------------------------------------------------------------------------------------
+Pools (tradable F&O results, outcomes tradable_B): W = plain winners, XN > 4 (392); WR = W with cut_rsi14 > 50 (232).
+Trade: buy close k, hold 20 sessions, short Nifty 50: vsN_net = (stock - Nifty, close k -> close k+20) - 0.19
+(= outcomes vsN_net_H20). Parent = the same pool, feature known, same quarter. One-sided "better than the parent".
+ W_EVENT_K   EVENT_K >= 1   other material news on k-1 / k besides the results (news-driven moves continue; Chan) n 43
+ W_NEWS_LO   NEWSR < 1      quieter than usual before results (weak information environment -> more drift)      n 201
+ W_NEWS_HI   NEWSR >= 1     complement half                                                                    n 180
+ W_NOCALL    CALLPRE == 0   no pre-announced call (less analyst attention -> more drift)                        n 120
+ W_CALL      CALLPRE >= 1   complement half                                                                    n 272
+ W_EARLY     RDCHG < -7     early reporter (good-news timing) among winners                                     n 53
+ WR_NEWS_LO, WR_NEWS_HI, WR_NOCALL, WR_CALL   the same in the RSI>50 pool                     n 119 / 105 / 73 / 159
+ Feature splits with fewer than 30 expected trades are NOT in the family (pre-registered, from feature counts):
+ WR_EVENT_K (23), WR_EARLY (29), W_LATE (26), W/WR promoter buying (13/8), W/WR holder buying (29/22),
+ W/WR busy day BUSY_K >= 15 (60/33; its quiet-day placebo has only 7 days, so it cannot be tested against a placebo),
+ W order win on k-1/k (5). They are reported as DIAGNOSTICS (D2) only.
+
+------------------------------------------------------------------------------------------------------------------------
+4. STATISTICS PER TEST (main family of 27 = 17 A + 10 B)
+------------------------------------------------------------------------------------------------------------------------
+ n; avg (net); gain over the parent (A: excess = signed P&L minus the quarter-matched mean of all F&O results;
+ B: d_par = trade minus the mean of its parent pool in the same quarter); quarters with net avg > 0 / quarters with
+ trades; first 14 (qn 0-13: Results for Jan-Mar 2021 (Q4 FY21) .. Apr-Jun 2024 (Q1 FY25)) and last 8 (qn 14-21:
+ Results for Jul-Sep 2024 (Q2 FY25) .. Apr-Jun 2026 (Q1 FY27)): n, net, gain; without the best 5 trades: net, gain.
+ LUCK p (one-sided in the stated direction):
+   A: within-quarter permutation of three_day among all F&O results (= random same-size picks per quarter), 20,000,
+      seed 20261011; p = (1 + #{perm >= obs}) / (1 + B).
+   B: 20,000 draws of the same per-quarter counts from the parent pool without replacement, statistic = pooled mean
+      vsN_net, seed 20261011.
+ HOLM (PRIMARY): Holm step-down over the 27 luck p values (A and B together).
+ maxT: single-step Westfall-Young within each trade (A: the same 20,000 joint within-quarter permutations; B: 10,000
+   joint permutations of rows within quarter x stratum (W & RSI>50, W only, not W) over results tradable at k);
+   family maxT p = min(1, 2 x within-trade maxT p).
+ PLACEBO (every test): the same signal on ordinary stock-days, decision 15:00 of the placebo day.
+   A: ta/build/placebo_ta.csv.gz days, in_fo True, next result in the panel (no result session within 9 sessions
+      before / 13 after), 115,909 days; outcome = 3-day forward return k -> k+3. News features (A06-A10, A12-A17) are
+      recomputed on the placebo day. Results-specific features (A01-A05 timing / notice, A11 call) have no meaning on an
+      ordinary day: their placebo is the STOCK-QUARTER placebo - the ordinary days of the same stock before that same
+      result (qn_next) carry the result's feature value (does the flag just pick stocks that do well / badly anyway?).
+      Placebo excess = signal-day mean minus the quarter-matched mean of all placebo days (results' quarter weights).
+      DiD = results excess - placebo excess. Placebo p = P(excess of a random draw of placebo signal days with the
+      trades' per-quarter counts >= results excess), 10,000 draws, seed 7.
+   B: quiet days (tafa quiet_days.csv.gz: F&O stock-days with no result session of the stock in [k-10, k+20]),
+      restricted to no result session in [k-10, k+22]; quiet winner = XN_k > 4; quiet RSI winner = also m2_rsi14 > 50;
+      20-session Nifty-hedged return from close k net of 0.19. EVENT_K on the quiet day (k-1 / k), NEWSR as of 15:00
+      two sessions before k; NOCALL / CALL / EARLY = stock-type placebo from the stock's previous result (qn_prev).
+      Quiet gain = quiet signal day minus its quiet parent (same pool, feature known) of the same calendar month.
+      DiD = results d_par - quiet gain. Placebo p = P(mean of n draws (with replacement) of the quiet signal days'
+      gains >= results d_par), n = number of trades, 10,000 draws, seed 17.
+ A test WORKS only if ALL of:
+  (a) n >= 30;
+  (b) better than its parent in both halves: gain > 0 in the first 14 AND the last 8, and net avg > 0 in both;
+  (c) Holm p < 0.10 (27-test family);
+  (d) beats its placebo: DiD > 0 AND placebo p < 0.10 (B: also quiet signal n >= 30);
+  (e) holds without its best 5 trades: net avg > 0 AND gain > 0 after removing the 5 best trades.
+  WATCH = everything except (c), with raw luck p < 0.05. Else NO. maxT is reported next to Holm.
+
+------------------------------------------------------------------------------------------------------------------------
+5. SPLITS OF THE LAG 10% + VOLUME RULE (separate family; in_fo_events True, lag21 < -10, vol_ratio_5_60 >= 1.0; 85)
+------------------------------------------------------------------------------------------------------------------------
+ Each A condition (A01-A17) splits the 85 trades into IN / OUT among the trades where the feature is known.
+ Prediction: IN better for L conditions, IN worse for S conditions. Feature-only IN counts: LATE 7, EARLY 16,
+ NOTICE_SHORT 5, NOTICE_LONG 6, NOTICE_MIN 18, NEWS_HI 22, NEWS_LO 9, PRESS 31, ORDER 3, ACQ 5, NOCALL 27, BIZ_UP 3,
+ BIZ_DOWN 6, PROM_BUY 7, PROM_SELL 5, HOLD_BUY 6, HOLD_SELL 4. Tested only with >= 5 IN and >= 5 OUT.
+ Report n, avg, net IN and OUT, IN / OUT in the first 14 / last 8, IN - OUT, net without the best 5 of the predicted
+ better side; permutation p (two-sided |IN - OUT|, 20,000 shuffles of the labels among the available trades, seed 11);
+ Holm over the tested splits. A split "separates" only if the predicted difference (L: IN - OUT, S: OUT - IN) is > 0
+ in both halves, Holm p < 0.10 and the predicted better side's net without its best 5 > 0.
+
+------------------------------------------------------------------------------------------------------------------------
+6. PRE-REGISTERED DIAGNOSTICS (descriptive; outside the family; cannot change a verdict)
+------------------------------------------------------------------------------------------------------------------------
+ D1  A, CRUP90 >= 1 (credit-rating upgrade in the 90 days before; 25 results), long: n, avg, excess, luck p.
+     A, 30-day promoter windows PROMBUY30 (33) long / PROMSELL30 (25) short: same.
+ D2  B splits below n 30 (WR_EVENT_K, WR_EARLY, W_LATE (worse expected), W/WR PROMBUY90, W/WR HOLDBUY90,
+     W/WR BUSY_K >= 15 (Hirshleifer distraction: more drift expected), W ORDER_K >= 1): n, avg, gain, luck p.
+ D3  Trade A with the decision at 15:30 instead of 15:00 is not run (15:00 is the conservative choice).
+ D4  For any WORKS / WATCH A test: the same test restricted to the quarters where every feature of the test is known,
+     and its overlap with the 85 lag-rule trades.

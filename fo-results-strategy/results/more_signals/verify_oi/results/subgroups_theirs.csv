@@ -1,0 +1,23 @@
+group,n_in,net_in,n_out,net_out,diff,test
+all winners,213,2.3358,179,0.3885,1.9473,B09
+RSI>50 winners,142,3.0366,90,1.4425,1.5942,B09
+RSI<=50 winners,71,0.9341,89,-0.6773,1.6114,B09
+habitual drifters,49,3.1278,40,1.2909,1.8369,B09
+not habitual drifters,164,2.0992,139,0.1288,1.9704,B09
+early F&O members (by qn 1),165,1.6792,125,0.3170,1.3622,B09
+later joiners,48,4.5929,54,0.5540,4.0389,B09
+XN <= median winner,73,2.2178,123,0.2342,1.9836,B09
+XN > median winner,140,2.3973,56,0.7274,1.6699,B09
+financials,66,3.1622,49,-0.9285,4.0907,B09
+non-financials,147,1.9647,130,0.8849,1.0799,B09
+all winners,92,2.9331,280,0.8440,2.0891,B13
+RSI>50 winners,57,4.7533,164,1.3900,3.3633,B13
+RSI<=50 winners,35,-0.0311,116,0.0721,-0.1032,B13
+habitual drifters,22,3.4225,64,1.9814,1.4412,B13
+not habitual drifters,70,2.7793,216,0.5071,2.2723,B13
+early F&O members (by qn 1),68,2.8412,213,0.6216,2.2196,B13
+later joiners,24,3.1936,67,1.5512,1.6424,B13
+XN <= median winner,44,2.6977,144,0.5363,2.1614,B13
+XN > median winner,48,3.1490,136,1.1699,1.9790,B13
+financials,20,0.2577,89,1.7735,-1.5157,B13
+non-financials,72,3.6763,191,0.4110,3.2654,B13

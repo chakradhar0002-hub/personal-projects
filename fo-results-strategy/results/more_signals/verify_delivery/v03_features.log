@@ -1,0 +1,63 @@
+rows 292461 renamed 9700 dup 0
+price-adjustment events |a-1|>3%: 112; treated as share-count change: 73
+
+rows compared 3280
+  ACC        both  3280  only-mine 0  only-theirs 0  differ(>0.001) 0  max rel diff 3.33e-06
+  DQR        both  3280  only-mine 0  only-theirs 0  differ(>0.001) 0  max rel diff 4.76e-06
+  DPL        both  3280  only-mine 0  only-theirs 0  differ(>0.001) 0  max rel diff 3.33e-06
+  DP60       both  3280  only-mine 0  only-theirs 0  differ(>0.001) 0  max rel diff 2.48e-06
+  PR5        both  3280  only-mine 0  only-theirs 0  differ(>0.001) 0  max rel diff 4.92e-06
+  DQK        both  3280  only-mine 0  only-theirs 0  differ(>0.001) 0  max rel diff 4.83e-06
+  DPK        both  3280  only-mine 0  only-theirs 0  differ(>0.001) 0  max rel diff 3.33e-06
+  DPK1       both  3280  only-mine 0  only-theirs 0  differ(>0.001) 0  max rel diff 3.33e-06
+  ACC_pre    both  3280  only-mine 0  only-theirs 0  differ(>0.001) 0  max rel diff 3.33e-06
+  rank_ACC   both  3280  only-mine 0  only-theirs 0  differ(>1e-06) 607  max rel diff 2.00e-02
+        symbol  qn   rank_ACC  rank_ACC_th  split_win_A  split_win_k
+1   ADANIPORTS   0  17.346939      17.3469        False        False
+7   AUROPHARMA   0  42.857143      42.8571        False        False
+12  BANDHANBNK   0  42.857143      42.8571        False        False
+15  BHARTIARTL   0  32.653061      32.6531        False        False
+19   BRITANNIA   0  15.306122      15.3061        False        False
+26       DABUR   0  17.346939      17.3469        False        False
+27    DIVISLAB   0  16.326531      16.3265        False        False
+28     DRREDDY   0  16.326531      16.3265        False        False
+  rank_DQR   both  3280  only-mine 0  only-theirs 0  differ(>1e-06) 699  max rel diff 4.35e-06
+        symbol  qn   rank_DQR  rank_DQR_th  split_win_A  split_win_k
+1   ADANIPORTS   0  19.387755     19.38780        False        False
+3   APOLLOHOSP   0  21.428571     21.42860        False        False
+18        BPCL   0   1.020408      1.02041        False        False
+19   BRITANNIA   0  16.326531     16.32650        False        False
+26       DABUR   0  17.346939     17.34690        False        False
+29   EICHERMOT   0  42.857143     42.85710        False        False
+31    GLENMARK   0  10.204082     10.20410        False        False
+49  INDUSTOWER   0   2.040816      2.04082        False        False
+  rank_DPL   both  3280  only-mine 0  only-theirs 0  differ(>1e-06) 649  max rel diff 9.71e-03
+        symbol  qn   rank_DPL  rank_DPL_th  split_win_A  split_win_k
+1   ADANIPORTS   0  29.591837      29.5918        False        False
+7   AUROPHARMA   0  42.857143      42.8571        False        False
+15  BHARTIARTL   0  43.877551      43.8776        False        False
+18        BPCL   0  16.326531      16.3265        False        False
+22       CIPLA   0  29.591837      29.5918        False        False
+24      CONCOR   0  17.346939      17.3469        False        False
+26       DABUR   0  16.326531      16.3265        False        False
+32    GODREJCP   0  30.612245      30.6122        False        False
+  rank_DP60  both  3280  only-mine 0  only-theirs 0  differ(>1e-06) 604  max rel diff 7.75e-03
+        symbol  qn  rank_DP60  rank_DP60_th  split_win_A  split_win_k
+0     ADANIENT   0   1.020408       1.02041        False        False
+11  BAJFINANCE   0  15.306122      15.30610        False        False
+25  CUMMINSIND   0  31.632653      31.63270        False        False
+30  FEDERALBNK   0  20.408163      20.40820        False        False
+47      INDIGO   0  29.591837      29.59180        False        False
+48  INDUSINDBK   0  19.387755      19.38780        False        False
+51         IOC   0  43.877551      43.87760        False        False
+57         LTF   0  16.326531      16.32650        False        False
+
+signal membership differences (mine vs theirs)
+  A10 rank_DP60>80: mine 681 theirs 681 both 681; only mine [] only theirs []
+  A06 rank_DPL>80: mine 641 theirs 641 both 641; only mine [] only theirs []
+  RA1 lag<-10 & DQR>=1: mine 89 theirs 89 both 89; only mine [] only theirs []
+  W_DQK_HI: mine 195 theirs 195 both 195; only mine [] only theirs []
+
+three_day own vs outcomes.csv: max abs diff 3.45e+00, > 1e-3: 3182
+vsN_net entry k own vs outcomes.csv (tradable_B): n 3280, max abs diff 4.99e-05, > 1e-3: 0; own tradable_k0 agrees 100.00%
+own total-volume 5/60 ratio vs panel vol_ratio_5_60: within 1% 97.65%, within 5% 99.02%

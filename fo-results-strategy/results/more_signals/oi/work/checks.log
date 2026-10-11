@@ -1,0 +1,12 @@
+sessions ok 1434 missing ['2021-03-30']
+format counts {'old': 879, 'udiff': 555} days without underlying []
+1. OI bookkeeping on 261117 consecutive non-expiry stock-days: |OI change - sum CHG_IN_OI| / OI: median 0.00e+00, 99th pct 0.00e+00, share > 1%: 0.0006
+2. OI ratio 2024-07-08 / 2024-07-05 (old -> UDiFF): n 181, median 1.005, 5th 0.961, 95th 1.066
+   UDiFF median |CHG_IN_OI| / OI on 2024-07-08: 0.0161
+   reference ratio 2024-07-05/2024-07-04: median 1.002, 5th 0.963, 95th 1.061
+   reference ratio 2024-07-09/2024-07-08: median 1.004, 5th 0.967, 95th 1.076
+3. put-call parity forward vs futures settle (front expiry, both legs traded) n 271919: median +0.015%, IQR -0.027..+0.055%, |dev| > 1%: 0.014
+   old: median +0.015%, |dev| > 1%: 0.019
+   udiff: median +0.016%, |dev| > 1%: 0.006
+4. near futures settle / underlying - 1 (old): n 159680, median +0.232%, 1st -1.327%, 99th +0.843%, |x| > 3%: 0.0018
+4. near futures settle / underlying - 1 (udiff): n 115231, median +0.201%, 1st -1.358%, 99th +0.867%, |x| > 3%: 0.0019

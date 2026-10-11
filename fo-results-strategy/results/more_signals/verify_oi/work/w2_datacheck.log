@@ -1,0 +1,99 @@
+1. cross-validation days in both of my sources: 15 ['2021-02-25', '2021-02-26', '2021-03-04', '2021-06-07', '2021-12-13', '2021-12-16', '2022-03-03', '2022-06-10', '2022-07-20', '2022-08-12', '2022-08-26', '2022-09-15', '2022-09-19', '2022-11-30', '2023-03-14']
+   vfut: rows v 8193 w 8193 matched 8193 only-v 0 only-w 0 mismatches {'settle': 0, 'close': 0, 'oi': 0, 'chg': 0, 'ctr': 0}
+   vopt: rows v 2737 w 2737 matched 2737 only-v 0 only-w 0 mismatches {'ce_oi': 0, 'pe_oi': 0, 'ce_chg': 0, 'pe_chg': 0, 'ce_ctr': 0, 'pe_ctr': 0}
+   vund: rows v 2737 w 2737 matched 2737 only-v 0 only-w 0 mismatches {'und': 0}
+   vatm: rows v 32802 w 32802 matched 32802 only-v 0 only-w 0 mismatches {'settle': 0, 'close': 0, 'ctr': 0, 'oi': 0}
+
+2. study compact DB vs my raw download (raw tickers, all fetched days)
+   study days fut 1434 / my days 1434
+   fut (day, ticker) rows: {'both': 274911, 'left_only': 0, 'right_only': 0}
+   oi_tot     vs mine: rows 274911, mismatches 0
+   chg_oi_tot vs mine: rows 274911, mismatches 0
+   e1_settle  vs mine: rows 274911, mismatches 0
+   e1_oi      vs mine: rows 274911, mismatches 0
+   e2_settle  vs mine: rows 274911, mismatches 0
+   und        vs mine: rows 274911, mismatches 0
+   expiry e1 equal 1.0 ; e2 equal 1.0
+   opt (day, ticker) rows: {'both': 274911, 'left_only': 0, 'right_only': 0}
+   ce_oi : mismatches 0 of 274911
+   pe_oi : mismatches 0 of 274911
+   ce_ctr: mismatches 0 of 274911
+   pe_ctr: mismatches 0 of 274911
+   days in one source only: []
+   2021-03-30 in sessions: True | my fetch status: 0
+
+3. sample points (raw values from my download; study feature vs mine):
+   cand     symbol  qn        day   my_CE_OI   my_PE_OI     my_futOI   my_und  B_PCR_study  B_PCR_mine  B_dCIV20_study  B_dCIV20_mine  my_CIV_k  my_CIV_k-20   day_k-20  A_BASISDEV_study  A_BASISDEV_mine  A_BASIS_study  A_BASIS_mine
+    B09 BANDHANBNK  20 2026-04-29 33278400.0 27248400.0 9.249120e+07   198.30       0.8188      0.8188             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09    HDFCAMC  16 2025-04-21  1183200.0  1001550.0 3.059550e+06  4459.80       0.8465      0.8465             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09    MPHASIS  14 2024-10-17  2710675.0  2188175.0 4.643375e+06  3080.20       0.8072      0.8072             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09     NAUKRI   8 2023-05-26   806375.0   633350.0 1.575500e+06  4197.75       0.7854      0.7854             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09 CUMMINSIND  13 2024-08-07  1804200.0  1889700.0 5.135100e+06  3748.45       1.0474      1.0474             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09      DIXON   8 2023-05-24  1412100.0  1614000.0 1.330950e+06  3514.30       1.1430      1.1430             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09      PAYTM  20 2026-05-07  9028425.0  8400575.0 1.402948e+07  1197.50       0.9305      0.9305             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09     AUBANK  16 2025-04-23 13092000.0 15906000.0 1.181100e+07   665.50       1.2149      1.2149             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09       GAIL  14 2024-11-06 37958775.0 34156950.0 6.219629e+07   208.90       0.8998      0.8998             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09       MFSL  14 2024-10-23  2354400.0  2756000.0 7.395200e+06  1271.95       1.1706      1.1706             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09  ABCAPITAL  18 2025-10-30 17896300.0 15224100.0 8.087900e+07   326.80       0.8507      0.8507             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09       OFSS  20 2026-04-23  1450425.0  1372050.0 1.629150e+06  8791.50       0.9460      0.9460             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09 BANDHANBNK   3 2022-01-24 11925000.0 10184400.0 2.324880e+07   307.85       0.8540      0.8540             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09 TATACONSUM  20 2026-05-11  6589000.0  5337750.0 1.180685e+07  1271.20       0.8101      0.8101             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09  HINDPETRO  10 2023-11-07 14199300.0 12260700.0 5.420790e+07   278.65       0.8635      0.8635             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09        SRF  15 2025-01-30  5138250.0  6453750.0 1.233600e+06  2831.10       1.2560      1.2560             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09 MANAPPURAM   5 2022-08-05 21630000.0 15612000.0 2.946000e+07   108.15       0.7218      0.7218             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09   JUBLFOOD  13 2024-08-12 10076250.0 11570000.0 4.625500e+06   651.35       1.1482      1.1482             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09 POWERINDIA  21 2026-08-10   460400.0   611525.0 5.980750e+05 36050.00       1.3282      1.3282             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B09 CUMMINSIND  20 2026-05-27  1004600.0  1112400.0 3.479600e+06  6027.00       1.1073      1.1073             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+    B13   GLENMARK  12 2024-05-27  2685400.0  2309125.0 1.221988e+07  1119.45          NaN         NaN         19.6791        19.6791   55.4481      35.7690 2024-04-26               NaN              NaN            NaN           NaN
+    B13   TVSMOTOR   2 2021-10-22  8610000.0  4586400.0 8.191400e+06   619.80          NaN         NaN          4.5812         4.5812   49.0841      44.5030 2021-09-23               NaN              NaN            NaN           NaN
+    B13  SUNPHARMA   1 2021-07-30 15919400.0 10131800.0 4.445560e+07   773.95          NaN         NaN          8.4597         8.4597   31.3047      22.8450 2021-07-01               NaN              NaN            NaN           NaN
+    B13    ICICIGI  18 2025-10-15  3401125.0  4192500.0 6.359600e+06  2020.30          NaN         NaN          5.2631         5.2631   23.1776      17.9144 2025-09-16               NaN              NaN            NaN           NaN
+    B13 FEDERALBNK  19 2026-01-16 70605000.0 59635000.0 6.525500e+07   270.25          NaN         NaN         11.6239        11.6239   30.2464      18.6226 2025-12-17               NaN              NaN            NaN           NaN
+    B13       NMDC   9 2023-08-14 59265000.0 29983500.0 7.178632e+07   118.70          NaN         NaN          4.9551         4.9551   33.4810      28.5259 2023-07-17               NaN              NaN            NaN           NaN
+    B13       BHEL  21 2026-07-16 61551000.0 47735625.0 9.530588e+07   435.40          NaN         NaN         12.2915        12.2915   45.5686      33.2772 2026-06-17               NaN              NaN            NaN           NaN
+    B13 FEDERALBNK   2 2021-10-22 75440000.0 51950000.0 1.176500e+08   103.90          NaN         NaN         17.7304        17.7304   61.3737      43.6433 2021-09-23               NaN              NaN            NaN           NaN
+    B13     MARICO   8 2023-05-08  6218400.0  4440000.0 1.100520e+07   530.70          NaN         NaN          4.3779         4.3779   24.7033      20.3254 2023-04-05               NaN              NaN            NaN           NaN
+    B13  DELHIVERY  17 2025-08-04 10061675.0  9698550.0 1.368462e+07   461.60          NaN         NaN          4.4745         4.4745   34.4656      29.9911 2025-07-07               NaN              NaN            NaN           NaN
+    A12       NTPC   4 2022-05-18 72196200.0 13543200.0 8.850960e+07   148.50          NaN         NaN             NaN            NaN       NaN          NaN        NaN           -8.6944          -8.6944        -6.1448       -6.1448
+    A12     MARICO   2 2021-10-26  3954000.0  1718000.0 6.528000e+06   563.25          NaN         NaN             NaN            NaN       NaN          NaN        NaN           -4.2845          -4.2845         0.3240        0.3240
+    A12 AUROPHARMA   2 2021-11-03  3602300.0  2260800.0 1.462055e+07   685.80          NaN         NaN             NaN            NaN       NaN          NaN        NaN           -6.7590          -6.7590        -2.2982       -2.2982
+    A12       TMPV   0 2021-05-14 58339500.0 32099550.0 1.109078e+08   312.25          NaN         NaN             NaN            NaN       NaN          NaN        NaN           -4.8804          -4.8804         3.1471        3.1471
+    A12 LAURUSLABS   6 2022-10-19  1735200.0  1352700.0 6.450300e+06   528.55          NaN         NaN             NaN            NaN       NaN          NaN        NaN          -12.1607         -12.1607        -5.1793       -5.1793
+    A12    COFORGE   5 2022-07-22   769200.0   541200.0 1.074450e+06  3726.45          NaN         NaN             NaN            NaN       NaN          NaN        NaN          -10.5617         -10.5617       -12.2003      -12.2003
+    A12        PFC   2 2021-11-09 21340400.0 11197200.0 4.369140e+07   139.05          NaN         NaN             NaN            NaN       NaN          NaN        NaN           -9.6126          -9.6126        -5.7421       -5.7421
+    A12     KAYNES  20 2026-05-11  1486200.0   846900.0 3.133800e+06  4364.30          NaN         NaN             NaN            NaN       NaN          NaN        NaN          -24.5038         -24.5038       -21.3543      -21.3543
+    A12    SIEMENS  12 2024-05-23  1254000.0  1215300.0 1.741200e+06  7371.65          NaN         NaN             NaN            NaN       NaN          NaN        NaN          -11.8533         -11.8533        -3.1477       -3.1477
+    A12  COALINDIA   7 2023-01-27 18354000.0  9332400.0 2.550240e+07   222.40          NaN         NaN             NaN            NaN       NaN          NaN        NaN          -13.3185         -13.3185        -4.8628       -4.8628
+B09-OUT      CIPLA  11 2024-01-23  5216250.0  3272100.0 1.092715e+07  1409.00       0.6273      0.6273             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+B09-OUT ICICIPRULI  21 2026-07-15 10166675.0  6664625.0 2.080972e+07   525.15       0.6555      0.6555             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+B09-OUT      NYKAA  18 2025-11-10 20265625.0 12784375.0 6.388750e+07   260.80       0.6308      0.6308             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+B09-OUT     FORTIS  21 2026-08-07  3749450.0  2552075.0 1.353072e+07   955.26       0.6807      0.6807             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+B09-OUT OBEROIRLTY  18 2025-10-16  2619050.0  1843800.0 4.725350e+06  1687.10       0.7040      0.7040             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+B09-OUT OBEROIRLTY  13 2024-07-22  3488100.0  1563100.0 7.081900e+06  1743.95       0.4481      0.4481             NaN            NaN       NaN          NaN        NaN               NaN              NaN            NaN           NaN
+   agreement (rel 1e-3): ['B_PCR: 26/26', 'B_dCIV20: 10/10', 'A_BASISDEV: 10/10', 'A_BASIS: 10/10'] | points 46 distinct days 44
+
+4. all 3,280 results rows: study feature vs mine
+   A_dOI5       study n  3279 mine n  3279 both  3279 equal 1.0000  corr 1.00000
+   A_dP5        study n  3280 mine n  3280 both  3280 equal 1.0000  corr 1.00000
+   A_dOI10      study n  3275 mine n  3275 both  3275 equal 1.0000  corr 1.00000
+   A_OI20       study n  3270 mine n  3270 both  3270 equal 1.0000  corr 1.00000
+   A_BASIS      study n  3280 mine n  3280 both  3280 equal 1.0000  corr 1.00000
+   A_BASISDEV   study n  3225 mine n  3225 both  3225 equal 1.0000  corr 1.00000
+   A_PCR        study n  3280 mine n  3280 both  3280 equal 1.0000  corr 1.00000
+   A_dPCR5      study n  3279 mine n  3279 both  3279 equal 1.0000  corr 1.00000
+   A_IV         study n  3157 mine n  3157 both  3157 equal 1.0000  corr 1.00000
+   A_IVREL      study n  3091 mine n  3091 both  3091 equal 1.0000  corr 1.00000
+   A_IVSPREAD   study n  2955 mine n  2955 both  2955 equal 1.0000  corr 1.00000
+   A_dCIV20     study n  2973 mine n  2973 both  2973 equal 1.0000  corr 1.00000
+   A_dPIV20     study n  2874 mine n  2874 both  2874 equal 1.0000  corr 1.00000
+   B_dOI1       study n  3280 mine n  3280 both  3280 equal 1.0000  corr 1.00000
+   B_dOI5       study n  3279 mine n  3279 both  3279 equal 1.0000  corr 1.00000
+   B_OI20       study n  3277 mine n  3277 both  3277 equal 1.0000  corr 1.00000
+   B_BASISDEV   study n  3235 mine n  3235 both  3235 equal 1.0000  corr 1.00000
+   B_dBASIS1    study n  3280 mine n  3280 both  3280 equal 1.0000  corr 1.00000
+   B_PCR        study n  3280 mine n  3280 both  3280 equal 1.0000  corr 1.00000
+   B_dPCR1      study n  3280 mine n  3280 both  3280 equal 1.0000  corr 1.00000
+   B_IVREL      study n  3131 mine n  3131 both  3131 equal 1.0000  corr 1.00000
+   B_IVSPREAD   study n  3075 mine n  3075 both  3075 equal 1.0000  corr 1.00000
+   B_dCIV20     study n  2990 mine n  2990 both  2990 equal 1.0000  corr 1.00000
+   B_dPIV20     study n  2917 mine n  2917 both  2917 equal 1.0000  corr 1.00000

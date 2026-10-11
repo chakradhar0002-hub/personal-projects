@@ -1,0 +1,134 @@
+PRE-REGISTRATION - FAMILY "F&O POSITIONING" (futures OI, basis, PCR, ATM implied vol) for trades A and B
+Written 2026-10-11 BEFORE any outcome (three_day, vsN_*, forward returns of placebo days) was read or computed in this
+folder, and before any OI feature was built. The F&O bhavcopy fetch (scripts/p1_fetch.py) was running while this was
+written; nothing from it has been looked at except the 4 test days used to check the parser (INFY / RELIANCE rows).
+sha256 of this file is logged in prereg.sha256 before the test script exists; the test script refuses to run if the
+hash differs. Thresholds are textbook values (10% OI change, sign of the price change, quintiles, 7-day roll rule)
+and are NOT tuned.
+
+Already known before writing (documented earlier work): trade A all F&O results +0.04% (gross three_day); lag 10% +
+volume rule 85 trades +2.13%; trade B plain winners 392 trades vsN_net +1.45%, RSI>50 winners 232 trades +2.42%.
+Nothing about any OI / basis / PCR / IV split of these trades is known.
+
+DATA
+  F&O: NSE F&O bhavcopies, sessions i = 1262 (2020-12-22) .. 2696 (2026-09-30) of sessions.csv; old format to
+  2024-07-05, UDiFF from 2024-07-08; old-format days also use the NSE cash bhavcopy close (EQ, else BE) as the
+  underlying. Compact tables in downloads/fo_compact.db (no raw zips kept). Raw tickers are mapped to the panel's
+  symbols with symbolchange.csv (a raw ticker on day d follows every rename dated after d).
+  Ours (read-only): perf/features/{panel,outcomes,history}.csv, sector_lab/data/{sessions,returns,index_close}.csv,
+  ta/build/adjusted_ohlcv.csv.gz (adjusted close, for split adjustment of OI), ta/build/placebo_ta.csv.gz (trade-A
+  placebo stock-days), tafa/C_post_results/quiet_days.csv.gz (trade-B placebo stock-days), the repo
+  results/lag10_volume/trades.csv (85 lag-rule trades).
+
+DECISION TIME / LOOK-AHEAD
+  Trade A features use data up to and including the close of the cutoff session i_cut (2 sessions before the result
+  session); trade B features up to and including the close of the reaction day k = i_react. End-of-day OI / option
+  closes are published after the close; as with the price features of earlier studies they are treated as known at
+  the close (live OI is available intraday). Robustness (reported, not a criterion): A with all features taken one
+  session earlier (i_cut - 1); B entered at the close of k+1 (hold to k+21) with the same features.
+
+FEATURE DEFINITIONS (per stock j, session i; percent units)
+  OI_i      futures open interest (shares) summed over ALL expiries (rollover-neutral), split-adjusted:
+            OI_i * f_i with f_i = underlying close / adjusted close (step changes > 2% only; otherwise f constant).
+  P_i       adjusted close (cumulated returns.csv).
+  dOI_L(i)  (OI_i / OI_{i-L} - 1) * 100;  dP_L(i) = (P_i / P_{i-L} - 1) * 100;  L = 5, 10, and 1 (B only).
+  Buildup over L (textbook, |OI change| > 10%):
+            LONG BUILDUP  dP_L > 0 and dOI_L > +10      SHORT BUILDUP  dP_L < 0 and dOI_L > +10
+            SHORT COVERING dP_L > 0 and dOI_L < -10     LONG UNWINDING dP_L < 0 and dOI_L < -10
+  OI20(i)   OI_i / mean(OI_{i-20} .. OI_{i-1})  (>= 15 of the 20 present).
+  Front contract: nearest expiry with >= 7 calendar days to expiry, else the next one (same rule for futures and
+            options).
+  BASIS(i)  (front futures settle / underlying close - 1) * 365 / days_to_expiry * 100 (annualised %).
+  BASISDEV(i) BASIS(i) - median(BASIS_{i-60} .. BASIS_{i-1}) (>= 40 of 60 present).
+  PCR(i)    total put OI / total call OI (stock options, all strikes, all expiries).  dPCR5 = PCR_i - PCR_{i-5};
+            dPCR1 = PCR_i - PCR_{i-1}.
+  ATM IV    front option expiry; ATM strike = listed strike nearest the underlying close (tie -> lower); call and put
+            NSE settle (closing) prices; a leg is used only if it traded that day (contracts > 0); Black-Scholes,
+            European, S = underlying close, T = calendar days / 365, r = 6.5%, no dividend; IV by root-finding in
+            [1%, 500%]. IV = mean of the usable legs (>= 1). CIV / PIV = call / put leg IV.
+  IVREL(i)  IV_i / median(IV_{i-60} .. IV_{i-1}) (>= 40 of 60 present).
+  IVSPREAD(i) CIV_i - PIV_i (both legs traded; Cremers-Weinbaum call-put IV spread).
+  dCIV20 = CIV_i - CIV_{i-20}; dPIV20 = PIV_i - PIV_{i-20} (An-Ang-Bali-Cakici IV innovations).
+  Quintiles: "top quintile" = value > 80th percentile, "bottom" = value <= 20th percentile of the same feature over
+  ALL F&O results of the same quarter (each measured at its own decision session: i_cut for A, k for B). Placebo
+  days use the same cut-offs computed over the placebo days of the same group (A: qn_next; B: calendar month).
+  Robustness for candidates (not a criterion): cut-offs from the previous quarter's results only (strictly point in
+  time; qn 0 keeps its own).
+
+TRADE A (pre-results 3-day window): buy the cutoff close, sell the Day+1 close: three_day (gross), net = signed - 0.17.
+  Parent = all F&O results (3,280 rows; three_day present). Sign +1 = long the window, -1 = short the window
+  (pnl = -three_day, net = pnl - 0.17).
+  id    sign  rule (at i_cut)
+  A01   +1    long buildup 5        (dP5 > 0, dOI5 > +10)
+  A02   -1    short buildup 5       (dP5 < 0, dOI5 > +10)
+  A03   +1    short covering 5      (dP5 > 0, dOI5 < -10)
+  A04   -1    long unwinding 5      (dP5 < 0, dOI5 < -10)
+  A05   +1    long buildup 10
+  A06   -1    short buildup 10
+  A07   +1    short covering 10
+  A08   -1    long unwinding 10
+  A09   +1    OI20 top quintile (positioning built into the results)
+  A10   -1    OI20 bottom quintile
+  A11   +1    BASISDEV top quintile (futures rich vs own history = long demand)
+  A12   -1    BASISDEV bottom quintile
+  A13   +1    PCR top quintile (contrarian / put-writing support reading)
+  A14   -1    PCR bottom quintile
+  A15   +1    dPCR5 top quintile
+  A16   -1    dPCR5 bottom quintile
+  A17   -1    IVREL top quintile (IV rich; high-uncertainty stocks underperform)
+  A18   +1    IVREL bottom quintile (IV cheap)
+  A19   +1    IVSPREAD top quintile (Cremers-Weinbaum)
+  A20   -1    IVSPREAD bottom quintile
+  A21   +1    dCIV20 top quintile (call IV innovation, AABC)
+  A22   -1    dPIV20 top quintile (put IV innovation, AABC)
+
+TRADE B (post-results winner drift): buy the close of k, hold 20 sessions, short Nifty: vsN_net = (stock - Nifty) -
+  0.19 (outcomes.csv vsN_net_H20, tradable_B). Parent = plain winners W (XN > 4, tradable) = 392. All tests long.
+  id    rule (W and ...)
+  B01   FRESH LONGS on k: dOI1(k) > 0 (OI up on the up day)
+  B02   strong fresh longs on k: dOI1(k) > +10
+  B03   long buildup 5 ending k (dP5 > 0, dOI5 > +10)
+  B04   long buildup 10 ending k
+  B05   short buildup 5 before the results (at i_cut: dP5 < 0, dOI5 > +10) - squeeze fuel
+  B06   OI20(k) top quintile
+  B07   BASISDEV(k) top quintile
+  B08   BASIS(k) - BASIS(k-1) top quintile (premium expanding on the winner day)
+  B09   PCR(k) top quintile
+  B10   dPCR1(k) top quintile (put writing on the up day)
+  B11   IVREL(k) bottom quintile (uncertainty resolved)
+  B12   IVSPREAD(k) top quintile
+  B13   dCIV20(k) top quintile
+  B14   dPIV20(k) bottom quintile
+
+FAMILY = the 36 tests above (A01-A22, B01-B14).
+
+STATISTICS (per test)
+  n, avg (gross signed) and net, hit rate, quarters positive (net) / quarters with trades, first 14 (qn 0-13) / last 8
+  (qn 14-21): n, net, excess vs parent; excess vs parent = mean(signed pnl - signed parent mean of the same quarter);
+  net without the 5 best (signed) trades.
+  luck p: within-quarter permutation of the outcome over the parent pool (A: all F&O results with three_day; B: W),
+  20,000 permutations each (= random same-size picks per quarter), one-sided in the test's direction.
+  Holm over the 36 luck p. maxT (Westfall-Young): max over the 36 standardised statistics per permutation draw.
+  Placebo: the same rule on ordinary stock-days without a result nearby.
+    A: placebo_ta stock-days (in F&O, >= 10 sessions after the previous result, >= 14 before the next), forward
+       3-day return k -> k+3; features at k. Placebo excess = signed (signal-days mean - all placebo days mean) per
+       qn_next, weighted to the results' quarter mix. DiD = results excess - placebo excess. placebo p = share of
+       10,000 draws (same per-quarter counts, from the placebo signal days) whose excess >= the results excess.
+    B: quiet_days stock-days (no result session in [k-10, k+20], in F&O) that are winners (day return - Nifty > 4),
+       20-session Nifty-hedged return k -> k+20 (<= 2 no-trade sessions), net of 0.19; features at k (B05: window
+       ending k-2). Placebo excess = mean(signal quiet winner - all quiet winners of the same month). DiD as above;
+       placebo p = share of 10,000 bootstrap means (same n, from the quiet signal winners' demeaned returns) >= the
+       results excess.
+  A signal WORKS only if all hold:
+    (1) better than its parent in both halves (excess > 0 in first 14 and in last 8) and net > 0 in both halves;
+    (2) Holm p < 0.10;
+    (3) beats its placebo: DiD > 0 and placebo p < 0.10;
+    (4) net without its best 5 trades > 0.
+
+SPLITS (descriptive; Holm within each split table)
+  Trade A: the 85 lag-rule trades (lag21 < -10, vol_ratio_5_60 >= 1.0, in_fo_events True) split by each of A01-A22:
+    IN vs OUT (feature known), n, avg, net, halves; two-sided permutation p of (avg IN - avg OUT), 20,000 draws;
+    Holm over splits with >= 5 trades on each side.
+  Trade B: plain winners (392) and RSI>50 winners (232) each split by B01-B14 in the same way.
+
+WHAT IS NOT DONE: no threshold search, no combination of conditions beyond the rules above, no change of horizon.
