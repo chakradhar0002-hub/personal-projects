@@ -1,0 +1,22 @@
+feature matrix rebuilt: 112 columns, NaN pattern identical, max relative diff vs features_A.csv 4.9e-06 (features_A.csv is written with 6 significant digits)
+$LAB_ROOT/negative_avg/holdout/ma4.py:90: PerformanceWarning: DataFrame is highly fragmented.  This is usually the result of calling `frame.insert` many times, which has poor performance.  Consider joining all columns at once using pd.concat(axis=1) instead. To get a de-fragmented frame, use `newframe = frame.copy()`
+  X['elig'] = X.three_day.notna()
+seed 0 q  4: pool 472 (excluded by label rule 0), scored 131, threshold -2.0518, picks 4
+seed 0 q  5: pool 603 (excluded by label rule 0), scored 134, threshold -2.1181, picks 29
+seed 0 q  6: pool 737 (excluded by label rule 0), scored 133, threshold -2.0736, picks 8
+seed 0 q  7: pool 870 (excluded by label rule 0), scored 133, threshold -1.4861, picks 8
+seed 0 q  8: pool 1003 (excluded by label rule 0), scored 134, threshold -1.4349, picks 16
+seed 0 q  9: pool 1137 (excluded by label rule 0), scored 133, threshold -1.4221, picks 16
+seed 0 q 10: pool 1270 (excluded by label rule 0), scored 132, threshold -1.1934, picks 8
+seed 0 q 11: pool 1402 (excluded by label rule 0), scored 135, threshold -1.1039, picks 22
+seed 0 q 12: pool 1537 (excluded by label rule 0), scored 135, threshold -1.2700, picks 10
+seed 0 q 13: pool 1672 (excluded by label rule 0), scored 135, threshold -1.1650, picks 11
+seed 0 q 14: pool 1807 (excluded by label rule 0), scored 134, threshold -1.1096, picks 6
+seed 0 q 15: pool 1941 (excluded by label rule 0), scored 172, threshold -0.9802, picks 7
+seed 0 q 16: pool 2113 (excluded by label rule 0), scored 178, threshold -0.8348, picks 27
+seed 0 q 17: pool 2291 (excluded by label rule 0), scored 191, threshold -0.8352, picks 13
+seed 0 q 18: pool 2482 (excluded by label rule 0), scored 191, threshold -0.7728, picks 24
+seed 0 q 19: pool 2673 (excluded by label rule 0), scored 196, threshold -0.7464, picks 19
+seed 0 q 20: pool 2869 (excluded by label rule 0), scored 203, threshold -0.8381, picks 11
+seed 0 q 21: pool 3072 (excluded by label rule 0), scored 206, threshold -0.7337, picks 30
+seed 0 done in 70s

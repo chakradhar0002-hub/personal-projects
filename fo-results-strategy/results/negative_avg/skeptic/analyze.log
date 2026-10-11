@@ -1,0 +1,160 @@
+
+=== C12 [discovery] n 88 stocks 63
+  raw -1.01  vsN -1.43  hedged short +1.24  median +1.93  wo5 +0.54  wo10 -0.01  trim10% +1.15  win% 60
+  unhedged short +0.84 (wo5 +0.01)  beta-hedged +1.34 (wo5 +0.63)  mean beta 1.03 vs base 0.99
+  base: hedged -0.98 unhedged -2.23 beta-hedged -0.97  (n 1808)
+  pooled regression stock20 = a + b*nifty20: a -1.34 b 0.79  (base a +0.79 b 1.01); short alpha after cost +1.17
+  per qn (n, mean): 0:1.0/+9.18, 1:4.0/+11.35, 2:5.0/-5.49, 3:10.0/+2.20, 4:16.0/+1.80, 5:9.0/-1.00, 6:13.0/+2.08, 7:9.0/-2.38, 8:4.0/+1.54, 9:1.0/-5.40, 10:4.0/+0.65, 11:8.0/+4.42, 12:3.0/-2.38, 13:1.0/+3.26
+  leave-one-quarter-out mean: -0:+1.15, -1:+0.76, -2:+1.65, -3:+1.12, -4:+1.12, -5:+1.50, -6:+1.10, -7:+1.66, -8:+1.23, -9:+1.32, -10:+1.27, -11:+0.93, -12:+1.37, -13:+1.22  -> min +0.76, max +1.66
+  without the 2 best quarters [1, 11]: n 76 mean +0.38
+  by entry year: 2021:10.0/+2.72, 2022:48.0/+1.44, 2023:18.0/-1.00, 2024:12.0/+2.62
+  Nifty up over the hold       n  52 hedged +2.12 (base -1.19)  unhedged -1.09 (base -4.58)  wo5 hedged +1.08
+  Nifty down over the hold     n  36 hedged -0.02 (base -0.58)  unhedged +3.63 (base +2.54)  wo5 hedged -1.40
+  Nifty above 200d at entry    n  69 hedged +1.31 (base -1.12)  unhedged +0.37 (base -2.44)  wo5 hedged +0.49
+  Nifty below 200d at entry    n  19 hedged +1.00 (base +0.30)  unhedged +2.55 (base -0.24)  wo5 hedged -1.51
+  Nifty 20d before entry > 0   n  44 hedged +0.91 (base -1.22)  unhedged -0.36 (base -2.76)  wo5 hedged -0.49
+  Nifty 20d before entry <= 0  n  44 hedged +1.57 (base -0.64)  unhedged +2.04 (base -1.44)  wo5 hedged +0.47
+  in F&O since qn<=1           n  78 hedged +1.37 wo5 +0.58 (base -0.79, n 1647)
+  later joiners (first qn>=2)  n  10 hedged +0.23 wo5 -3.73 (base -3.03, n 161)
+  worst trade -16.54 (BIOCON q2); share losing >10% 5.7% (base 9.7%); share losing >5% 14.8%
+  biggest one-day rise against the short: raw +12.81% (INDUSTOWER q7), vs Nifty +13.31%; trades with a +10% day 2; median worst intra-hold drawdown (hedged) 2.41%, 90th pct 10.76%, max 18.22%
+  5 biggest falls: LTM q4 2022-04-20 +14.9; RBLBANK q1 2021-08-03 +14.1; LUPIN q1 2021-08-11 +13.0; DRREDDY q1 2021-07-27 +11.5; AMBUJACEM q3 2022-02-18 +11.1
+  top-3 stocks share of total profit: 42% (JUBLFOOD +16.6, LUPIN +15.0, LTM +14.9); sum +109.5
+  realistic close k+1, cost 0.27: +0.64 (wo5 -0.00; base -1.03);  H10 +0.40; H40 +1.84 (n 88)
+  calendar-time C12 discovery: active days 456 (of 791), mean open positions 3.9 (max 13), mean daily +0.1411% -> x20 +2.82%, NW(20) t 2.48; incl. idle days t 2.42; annualised on active days +35.3%, vol 19.4%, worst day -7.75%, max drawdown -14.4 pts
+   best months for the short: 2021-08 +16.4, 2021-07 +9.7, 2024-02 +6.9, 2022-04 +5.8 | worst: 2023-07 -5.4, 2021-10 -3.7, 2023-05 -3.3 | total +64.4
+
+=== C12 [holdout] n 119 stocks 89
+  raw -1.11  vsN -0.49  hedged short +0.30  median +0.61  wo5 -0.38  wo10 -0.79  trim10% +0.51  win% 54
+  unhedged short +0.94 (wo5 +0.16)  beta-hedged +0.12 (wo5 -0.51)  mean beta 1.15 vs base 1.12
+  base: hedged -0.57 unhedged -0.00 beta-hedged -0.61  (n 1472)
+  pooled regression stock20 = a + b*nifty20: a -0.41 b 1.13  (base a +0.38 b 1.00); short alpha after cost +0.24
+  per qn (n, mean): 14:10.0/+3.18, 15:23.0/-0.15, 16:4.0/-3.02, 17:15.0/+0.52, 18:7.0/+3.22, 19:18.0/-0.94, 20:23.0/+0.15, 21:19.0/+0.14
+  leave-one-quarter-out mean: -14:+0.04, -15:+0.41, -16:+0.42, -17:+0.27, -18:+0.12, -19:+0.52, -20:+0.34, -21:+0.33  -> min +0.04, max +0.52
+  without the 2 best quarters [14, 18]: n 102 mean -0.18
+  by entry year: 2024:10.0/+3.18, 2025:49.0/+0.30, 2026:60.0/-0.18
+  Nifty up over the hold       n  62 hedged +0.04 (base -0.98)  unhedged -1.34 (base -2.42)  wo5 hedged -1.06
+  Nifty down over the hold     n  57 hedged +0.58 (base -0.15)  unhedged +3.41 (base +2.56)  wo5 hedged -0.50
+  Nifty above 200d at entry    n  49 hedged +1.25 (base -0.59)  unhedged +1.50 (base -0.40)  wo5 hedged -0.13
+  Nifty below 200d at entry    n  70 hedged -0.36 (base -0.55)  unhedged +0.54 (base +0.50)  wo5 hedged -1.24
+  Nifty 20d before entry > 0   n  44 hedged +0.76 (base -0.78)  unhedged +1.98 (base -0.14)  wo5 hedged -0.37
+  Nifty 20d before entry <= 0  n  75 hedged +0.03 (base -0.35)  unhedged +0.32 (base +0.15)  wo5 hedged -1.00
+  in F&O since qn<=1           n  64 hedged +0.61 wo5 -0.17 (base -0.61, n 960)
+  later joiners (first qn>=2)  n  55 hedged -0.05 wo5 -1.49 (base -0.50, n 512)
+  worst trade -24.24 (AUROPHARMA q19); share losing >10% 6.7% (base 9.2%); share losing >5% 20.2%
+  biggest one-day rise against the short: raw +10.44% (ADANIGREEN q19), vs Nifty +8.37%; trades with a +10% day 1; median worst intra-hold drawdown (hedged) 2.27%, 90th pct 11.41%, max 28.87%
+  5 biggest falls: KPITTECH q19 2026-01-29 +24.4; INOXWIND q19 2026-02-16 +14.3; IDEA q15 2025-02-12 +14.2; WIPRO q19 2026-01-19 +13.5; DELHIVERY q15 2025-02-10 +12.5
+  top-3 stocks share of total profit: 142% (KPITTECH +24.4, IDEA +14.2, DELHIVERY +12.5); sum +35.9
+  realistic close k+1, cost 0.27: +0.01 (wo5 -0.66; base -0.70);  H10 -0.19; H40 +0.55 (n 112)
+  calendar-time C12 holdout: active days 332 (of 470), mean open positions 7.2 (max 21), mean daily +0.0498% -> x20 +1.00%, NW(20) t 1.59; incl. idle days t 1.54; annualised on active days +12.4%, vol 14.2%, worst day -3.32%, max drawdown -9.1 pts
+   best months for the short: 2024-11 +3.8, 2024-12 +3.6, 2025-11 +3.0, 2026-04 +2.8 | worst: 2026-09 -3.8, 2025-01 -2.2, 2025-05 -2.1 | total +16.5
+
+=== C42 [discovery] n 74 stocks 56
+  raw -0.75  vsN -0.84  hedged short +0.65  median +0.59  wo5 -0.31  wo10 -1.13  trim10% +1.00  win% 55
+  unhedged short +0.58 (wo5 -0.67)  beta-hedged +0.85 (wo5 -0.17)  mean beta 0.95 vs base 0.99
+  base: hedged -0.98 unhedged -2.23 beta-hedged -0.97  (n 1808)
+  pooled regression stock20 = a + b*nifty20: a -0.81 b 0.66  (base a +0.79 b 1.01); short alpha after cost +0.64
+  per qn (n, mean): 0:1.0/+3.53, 1:4.0/+4.32, 2:9.0/-8.61, 3:10.0/+5.12, 4:9.0/+2.59, 5:2.0/+5.14, 6:6.0/+2.81, 7:11.0/-1.85, 8:4.0/-0.56, 9:4.0/-1.21, 10:3.0/-2.01, 11:6.0/+4.29, 12:1.0/-0.34, 13:4.0/+2.78
+  leave-one-quarter-out mean: -0:+0.61, -1:+0.44, -2:+1.93, -3:-0.05, -4:+0.38, -5:+0.52, -6:+0.46, -7:+1.08, -8:+0.72, -9:+0.75, -10:+0.76, -11:+0.33, -12:+0.66, -13:+0.53  -> min -0.05, max +1.93
+  without the 2 best quarters [3, 11]: n 58 mean -0.50
+  by entry year: 2021:14.0/-4.05, 2022:27.0/+3.76, 2023:22.0/-1.52, 2024:11.0/+3.32
+  Nifty up over the hold       n  35 hedged +2.28 (base -1.19)  unhedged -1.25 (base -4.58)  wo5 hedged +0.89
+  Nifty down over the hold     n  39 hedged -0.81 (base -0.58)  unhedged +2.22 (base +2.54)  wo5 hedged -2.88
+  Nifty above 200d at entry    n  65 hedged +0.31 (base -1.12)  unhedged +0.09 (base -2.44)  wo5 hedged -0.76
+  Nifty below 200d at entry    n   9 hedged +3.12 (base +0.30)  unhedged +4.13 (base -0.24)  wo5 hedged -0.94
+  Nifty 20d before entry > 0   n  38 hedged -0.40 (base -1.22)  unhedged -0.40 (base -2.76)  wo5 hedged -2.19
+  Nifty 20d before entry <= 0  n  36 hedged +1.76 (base -0.64)  unhedged +1.61 (base -1.44)  wo5 hedged +0.03
+  in F&O since qn<=1           n  66 hedged +0.76 wo5 -0.32 (base -0.79, n 1647)
+  later joiners (first qn>=2)  n   8 hedged -0.29 wo5 -3.66 (base -3.03, n 161)
+  worst trade -23.74 (ADANIENT q2); share losing >10% 8.1% (base 9.7%); share losing >5% 16.2%
+  biggest one-day rise against the short: raw +12.81% (INDUSTOWER q7), vs Nifty +13.31%; trades with a +10% day 1; median worst intra-hold drawdown (hedged) 1.95%, 90th pct 9.80%, max 27.97%
+  5 biggest falls: MANAPPURAM q3 2022-02-14 +19.1; LTM q4 2022-04-20 +14.9; LICHSGFIN q1 2021-07-29 +12.2; VEDL q9 2023-07-24 +11.8; DRREDDY q1 2021-07-27 +11.5
+  top-3 stocks share of total profit: 107% (MANAPPURAM +24.6, LTM +14.9, VEDL +11.8); sum +48.0
+  realistic close k+1, cost 0.27: -0.40 (wo5 -1.29; base -1.03);  H10 +0.88; H40 -0.19 (n 74)
+  calendar-time C42 discovery: active days 433 (of 838), mean open positions 3.4 (max 11), mean daily +0.1151% -> x20 +2.30%, NW(20) t 2.63; incl. idle days t 2.39; annualised on active days +28.8%, vol 14.8%, worst day -2.68%, max drawdown -15.9 pts
+   best months for the short: 2024-01 +8.4, 2024-02 +5.9, 2022-04 +5.4, 2022-03 +4.9 | worst: 2021-11 -5.0, 2021-10 -4.4, 2022-06 -2.9 | total +49.9
+
+=== C42 [holdout] n 71 stocks 62
+  raw -0.25  vsN -0.15  hedged short -0.04  median -0.02  wo5 -1.13  wo10 -1.89  trim10% -0.04  win% 49
+  unhedged short +0.08 (wo5 -0.99)  beta-hedged -0.07 (wo5 -1.18)  mean beta 1.11 vs base 1.12
+  base: hedged -0.57 unhedged -0.00 beta-hedged -0.61  (n 1472)
+  pooled regression stock20 = a + b*nifty20: a -0.16 b 0.85  (base a +0.38 b 1.00); short alpha after cost -0.01
+  per qn (n, mean): 14:9.0/+1.63, 15:16.0/-1.88, 17:12.0/-0.40, 18:8.0/+4.01, 19:10.0/+2.61, 20:6.0/-3.56, 21:10.0/-1.96
+  leave-one-quarter-out mean: -14:-0.28, -15:+0.49, -17:+0.03, -18:-0.56, -19:-0.48, -20:+0.28, -21:+0.27  -> min -0.56, max +0.49
+  without the 2 best quarters [18, 19]: n 53 mean -1.15
+  by entry year: 2024:9.0/+1.63, 2025:36.0/-0.07, 2026:26.0/-0.57
+  Nifty up over the hold       n  41 hedged +0.41 (base -0.98)  unhedged -1.02 (base -2.42)  wo5 hedged -1.50
+  Nifty down over the hold     n  30 hedged -0.65 (base -0.15)  unhedged +1.59 (base +2.56)  wo5 hedged -2.34
+  Nifty above 200d at entry    n  35 hedged +2.40 (base -0.59)  unhedged +1.96 (base -0.40)  wo5 hedged +0.41
+  Nifty below 200d at entry    n  36 hedged -2.41 (base -0.55)  unhedged -1.75 (base +0.50)  wo5 hedged -4.06
+  Nifty 20d before entry > 0   n  16 hedged +0.93 (base -0.78)  unhedged +0.79 (base -0.14)  wo5 hedged -2.17
+  Nifty 20d before entry <= 0  n  55 hedged -0.32 (base -0.35)  unhedged -0.12 (base +0.15)  wo5 hedged -1.72
+  in F&O since qn<=1           n  38 hedged -0.46 wo5 -1.86 (base -0.61, n 960)
+  later joiners (first qn>=2)  n  33 hedged +0.44 wo5 -1.87 (base -0.50, n 512)
+  worst trade -23.39 (ADANIGREEN q19); share losing >10% 9.9% (base 9.2%); share losing >5% 23.9%
+  biggest one-day rise against the short: raw +10.44% (ADANIGREEN q19), vs Nifty +8.37%; trades with a +10% day 1; median worst intra-hold drawdown (hedged) 2.25%, 90th pct 11.50%, max 28.87%
+  5 biggest falls: KPITTECH q19 2026-01-29 +24.4; WIPRO q19 2026-01-19 +13.5; AMBER q18 2025-11-07 +11.7; DELHIVERY q18 2025-11-06 +11.1; COLPAL q14 2024-10-24 +10.9
+  top-3 stocks share of total profit: nan% (KPITTECH +24.4, WIPRO +13.5, AMBER +11.7); sum -2.9
+  realistic close k+1, cost 0.27: -0.02 (wo5 -0.98; base -0.70);  H10 +0.17; H40 +0.62 (n 67)
+  calendar-time C42 holdout: active days 239 (of 471), mean open positions 5.9 (max 15), mean daily -0.0209% -> x20 -0.42%, NW(20) t -0.38; incl. idle days t -0.35; annualised on active days -5.2%, vol 17.0%, worst day -4.62%, max drawdown -12.6 pts
+   best months for the short: 2026-02 +3.6, 2025-12 +3.6, 2026-01 +3.2, 2025-11 +2.6 | worst: 2025-03 -7.9, 2026-09 -5.7, 2026-05 -4.5 | total -5.0
+
+=== C22 (post-hoc, H20 shown; H40 in last line) [discovery] n 102 stocks 67
+  raw -0.61  vsN -1.18  hedged short +0.99  median +1.85  wo5 +0.38  wo10 -0.10  trim10% +0.91  win% 60
+  unhedged short +0.44 (wo5 -0.30)  beta-hedged +1.09 (wo5 +0.46)  mean beta 1.02 vs base 0.99
+  base: hedged -0.98 unhedged -2.23 beta-hedged -0.97  (n 1808)
+  pooled regression stock20 = a + b*nifty20: a -1.08 b 0.82  (base a +0.79 b 1.01); short alpha after cost +0.91
+  per qn (n, mean): 0:1.0/+9.18, 1:4.0/+11.35, 2:5.0/-5.49, 3:10.0/+2.20, 4:17.0/+1.79, 5:16.0/-1.64, 6:14.0/+1.78, 7:10.0/-1.54, 8:5.0/+1.69, 9:2.0/-6.46, 10:4.0/+0.65, 11:8.0/+4.42, 12:5.0/+0.35, 13:1.0/+3.26
+  leave-one-quarter-out mean: -0:+0.91, -1:+0.57, -2:+1.33, -3:+0.86, -4:+0.83, -5:+1.48, -6:+0.87, -7:+1.27, -8:+0.96, -9:+1.14, -10:+1.01, -11:+0.70, -12:+1.03, -13:+0.97  -> min +0.57, max +1.48
+  without the 2 best quarters [1, 11]: n 90 mean +0.23
+  by entry year: 2021:10.0/+2.72, 2022:57.0/+0.90, 2023:21.0/-0.82, 2024:14.0/+2.88
+  Nifty up over the hold       n  63 hedged +1.62 (base -1.19)  unhedged -1.50 (base -4.58)  wo5 hedged +0.73
+  Nifty down over the hold     n  39 hedged -0.01 (base -0.58)  unhedged +3.57 (base +2.54)  wo5 hedged -1.27
+  Nifty above 200d at entry    n  79 hedged +1.03 (base -1.12)  unhedged +0.06 (base -2.44)  wo5 hedged +0.30
+  Nifty below 200d at entry    n  23 hedged +0.86 (base +0.30)  unhedged +1.73 (base -0.24)  wo5 hedged -1.12
+  Nifty 20d before entry > 0   n  56 hedged +0.44 (base -1.22)  unhedged -1.06 (base -2.76)  wo5 hedged -0.68
+  Nifty 20d before entry <= 0  n  46 hedged +1.67 (base -0.64)  unhedged +2.26 (base -1.44)  wo5 hedged +0.64
+  in F&O since qn<=1           n  91 hedged +1.05 wo5 +0.36 (base -0.79, n 1647)
+  later joiners (first qn>=2)  n  11 hedged +0.52 wo5 -3.16 (base -3.03, n 161)
+  worst trade -16.54 (BIOCON q2); share losing >10% 5.9% (base 9.7%); share losing >5% 16.7%
+  biggest one-day rise against the short: raw +12.81% (INDUSTOWER q7), vs Nifty +13.31%; trades with a +10% day 2; median worst intra-hold drawdown (hedged) 2.61%, 90th pct 10.27%, max 18.22%
+  5 biggest falls: LTM q4 2022-04-20 +14.9; RBLBANK q1 2021-08-03 +14.1; LUPIN q1 2021-08-11 +13.0; DRREDDY q1 2021-07-27 +11.5; AMBUJACEM q3 2022-02-18 +11.1
+  top-3 stocks share of total profit: 46% (JUBLFOOD +16.6, LUPIN +15.0, LTM +14.9); sum +101.3
+  realistic close k+1, cost 0.27: +0.46 (wo5 -0.10; base -1.03);  H10 +0.50; H40 +1.67 (n 102)
+
+=== C22 (post-hoc, H20 shown; H40 in last line) [holdout] n 131 stocks 92
+  raw -1.03  vsN -0.48  hedged short +0.29  median +0.61  wo5 -0.32  wo10 -0.72  trim10% +0.49  win% 54
+  unhedged short +0.86 (wo5 +0.16)  beta-hedged +0.15 (wo5 -0.42)  mean beta 1.16 vs base 1.12
+  base: hedged -0.57 unhedged -0.00 beta-hedged -0.61  (n 1472)
+  pooled regression stock20 = a + b*nifty20: a -0.43 b 1.10  (base a +0.38 b 1.00); short alpha after cost +0.26
+  per qn (n, mean): 14:10.0/+3.18, 15:23.0/-0.15, 16:6.0/-1.86, 17:15.0/+0.52, 18:7.0/+3.22, 19:19.0/-0.36, 20:31.0/-0.17, 21:20.0/+0.16
+  leave-one-quarter-out mean: -14:+0.06, -15:+0.39, -16:+0.40, -17:+0.27, -18:+0.13, -19:+0.41, -20:+0.44, -21:+0.32  -> min +0.06, max +0.44
+  without the 2 best quarters [14, 18]: n 114 mean -0.14
+  by entry year: 2024:10.0/+3.18, 2025:51.0/+0.31, 2026:70.0/-0.13
+  Nifty up over the hold       n  69 hedged +0.09 (base -0.98)  unhedged -1.32 (base -2.42)  wo5 hedged -0.94
+  Nifty down over the hold     n  62 hedged +0.52 (base -0.15)  unhedged +3.30 (base +2.56)  wo5 hedged -0.47
+  Nifty above 200d at entry    n  52 hedged +1.39 (base -0.59)  unhedged +1.51 (base -0.40)  wo5 hedged +0.04
+  Nifty below 200d at entry    n  79 hedged -0.43 (base -0.55)  unhedged +0.44 (base +0.50)  wo5 hedged -1.20
+  Nifty 20d before entry > 0   n  51 hedged +0.66 (base -0.78)  unhedged +1.83 (base -0.14)  wo5 hedged -0.36
+  Nifty 20d before entry <= 0  n  80 hedged +0.06 (base -0.35)  unhedged +0.25 (base +0.15)  wo5 hedged -0.90
+  in F&O since qn<=1           n  67 hedged +0.34 wo5 -0.42 (base -0.61, n 960)
+  later joiners (first qn>=2)  n  64 hedged +0.24 wo5 -0.95 (base -0.50, n 512)
+  worst trade -24.24 (AUROPHARMA q19); share losing >10% 6.9% (base 9.2%); share losing >5% 21.4%
+  biggest one-day rise against the short: raw +10.44% (ADANIGREEN q19), vs Nifty +8.37%; trades with a +10% day 1; median worst intra-hold drawdown (hedged) 2.25%, 90th pct 11.58%, max 28.87%
+  5 biggest falls: KPITTECH q19 2026-01-29 +24.4; INOXWIND q19 2026-02-16 +14.3; IDEA q15 2025-02-12 +14.2; WIPRO q19 2026-01-19 +13.5; DELHIVERY q15 2025-02-10 +12.5
+  top-3 stocks share of total profit: 114% (KPITTECH +17.2, IDEA +14.2, DELHIVERY +12.5); sum +38.6
+  realistic close k+1, cost 0.27: -0.02 (wo5 -0.65; base -0.70);  H10 -0.14; H40 +0.89 (n 124)
+  calendar-time C22 holdout: active days 341 (of 470), mean open positions 7.7 (max 23), mean daily +0.0493% -> x20 +0.99%, NW(20) t 1.66; incl. idle days t 1.55; annualised on active days +12.3%, vol 14.0%, worst day -3.32%, max drawdown -9.6 pts
+   best months for the short: 2024-11 +3.8, 2024-12 +3.6, 2025-11 +3.0, 2026-04 +2.8 | worst: 2026-09 -3.8, 2025-05 -3.0, 2025-01 -2.2 | total +16.8
+
+=== holdout neighbours of C12 (hedged short, H20, mean / wo5 / n)
+  XN<-3 & <SMA50 & <SMA200           +0.22 / -0.29 / 158   unhedged +0.89
+  XN<-4 & <SMA50 & <SMA200 (C12)     +0.30 / -0.38 / 119   unhedged +0.94
+  XN<-5 & <SMA50 & <SMA200           -0.01 / -0.97 / 81   unhedged +0.59
+  XN<-6 & <SMA50 & <SMA200           -0.66 / -1.63 / 58   unhedged -0.25
+  XN<-4 & <SMA200 (C22 at H20)       +0.29 / -0.32 / 131   unhedged +0.86
+  XN<-4 & >=SMA200                   -0.31 / -1.58 / 69   unhedged +0.00
+  any XN & <SMA50 & <SMA200          -0.05 / -0.25 / 482   unhedged +0.71
+  -4<=XN<0 & <SMA50 & <SMA200        -0.09 / -0.50 / 203   unhedged +0.50
+  XN>=0 & <SMA50 & <SMA200           -0.26 / -0.73 / 160   unhedged +0.80
+  all results (base)                 -0.57 / -0.66 / 1472   unhedged -0.00

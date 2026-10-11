@@ -1,0 +1,116 @@
+CANDIDATES - family "losers keep falling" (trade B, after results; SHORT the stock future, LONG Nifty)
+Written 2026-10-11 BEFORE any outcome (forward return of any kind) was computed in this folder. Only features
+(features.py -> features_all.csv, prevalence counts) have been looked at. 42 candidates, all counted.
+
+PROTOCOL
+  DISCOVERY = qn 0..13 (1,808 results). HOLDOUT qn 14..21 is SEALED: no forward return / outcome is computed or printed
+  for any result with qn >= 14 (search.py drops those rows before any price lookup and asserts it).
+  Already known from earlier work on the FULL sample (contaminated, flagged [C] below): losers XN < -4 shorted 20
+  sessions lost (~-0.3%); winners with a pre-results futures short build-up -1.46% vs Nifty (44 trades, H20); good
+  numbers but below SMA50 at k -0.73% vs Nifty (482, H20); winners with cutoff RSI <= 50 +0.04% (160, H20); non-winners
+  with RSI(14) < 50 -0.39% vs Nifty; bad numbers + breakdown on volume short +0.31% (145, H20, -0.28 w/o best 5).
+
+DATA (read-only): perf/features/panel.csv, tafa/C_post_results/features.csv, more_signals/oi/work/results_features.csv,
+  more_signals/delivery/feat_results.csv, ta/build/adjusted_ohlcv.csv.gz, sector_lab/data/{sessions,returns,
+  index_close}.csv. Joined on (symbol, qn). Universe = the 3,280 F&O results (all in F&O at the time).
+
+FEATURE DEFINITIONS (k = i_react, the reaction-day session; all % units)
+  XN        stock return on day k minus Nifty 50 return on day k (panel.XN), known at close k.
+  L2/L4/L6  XN < -2 / < -4 / < -6 ("results losers").   W = XN > 4 (winners).   nonW = XN <= 4.
+  RSIcut    cut_rsi14 (Wilder RSI(14) at the cutoff close i_cut).
+  B50 / B200  close_k below its SMA50 / SMA200 (tafa rx_close_vs_sma50_pct < 0 / rx_close_vs_sma200_pct < 0; adjusted
+            closes, traded days, incl. k).
+  BRKDN_VOL close_k < lowest low of prior 20 traded sessions AND volume_k >= 1.5 x mean volume of prior 50 sessions
+            (tafa BRKDN_VOL, requires >= 51 traded sessions).
+  BAD       reported quarter: profit YoY < -25% OR margin change YoY < -2 pp (EBITDA margin for companies, net margin for
+            banks/NBFC) (tafa BAD).  GOOD = (profit YoY > 25% and sales YoY > 15%) OR margin change > +2 pp (tafa GOOD).
+            GOOD & BELOW50 = tafa GOOD and BELOW50.
+  CLV_k     (close_k - low_k) / (high_k - low_k), adjusted OHLCV of day k (NaN if high = low). "Closed near the low" =
+            CLV_k <= 0.25.
+  SEC21_k   21-session return of the result's sector_index (events.csv mapping; Nifty 500 for unmapped industries) to
+            close k: close(k)/close(k-21) - 1. "Falling sector" = SEC21_k < 0.
+  DRIFT-    habitual negative drifter: n_drift_4_B >= 3 AND mean_drift_4_B < 0 (last 4 earlier results' 20-session
+            post-reaction drift vs Nifty, only drifts already ended before k; panel).
+  DRIFT--   strict (any reaction): n_drift_4_B = 4 AND mean_drift_4_B < 0 AND n_pos_drift_4_B <= 1.
+  VSN252-   vsN_252_B < 0 (stock return over the last 252 sessions to k minus Nifty; 12-month laggard).
+  SB_k      futures short build-up into k: B_dP5 < 0 AND B_dOI5 > +10 (5 sessions ending k: price down, futures OI over
+            all expiries up > 10%). Uses day k's F&O bhavcopy -> tradable only from k+1 (entries E1 / E1o).
+  OIUP_k    futures OI up > 5% on day k itself (B_dOI1 > 5) - fresh shorts on the down day; k's bhavcopy -> from k+1.
+  DQK3      delivery quantity on day k >= 3 x its mean over k-60..k-1 (delivery file DQK); published after close k ->
+            from k+1.
+  FT1       day k+1 stock return minus Nifty that day < 0 (fell again the next day); known at close k+1 -> E1 only.
+  SB_cut    pre-results futures short build-up at the cutoff: A_dP5 < 0 AND A_dOI5 > +10 (5 sessions to i_cut).
+
+ENTRIES / OUTCOMES (hedged with Nifty; costs 0.17 stock + 0.02 Nifty = 0.19 per round trip)
+  E0  enter at close k; exit close k+H. stock = PX(k+H)/PX(k) - 1, PX = cumulated adjusted daily returns
+      (sector_lab returns.csv, blank = 0); Nifty = N(k+H)/N(k) - 1.
+  E1  enter at close k+1; exit close k+1+H. Same, from k+1. Requires a trade on k+1.
+  E1o enter at the open of k+1 (adjusted OHLCV open), exit close k+H (H sessions k+1..k+H).
+      stock = close(k+1)/open(k+1) * PX(k+H)/PX(k+1) - 1. Nifty leg = N(k+H)/N(k) - 1 (Nifty open is not in the data;
+      the hedge leg is approximated from close k - stated limitation).
+  Tradable: entry-day trade exists (E0: XN known), exit session exists, <= 2 blank daily returns in the holding window.
+  vsN = (stock - Nifty) * 100. SHORT PROFIT (net) = -vsN - 0.19. Raw short net (unhedged, info) = -stock*100 - 0.17.
+  BASE SHORT for each (entry, H) = all tradable discovery results with that entry and H.
+
+CANDIDATES (id  signal  entry  H)
+  -- plain losers
+  C01  L4                                   E0  5
+  C02  L4                                   E0  10
+  C03  L4                                   E0  20   [C]
+  C04  L4                                   E0  40
+  C05  L2                                   E0  20
+  C06  L6                                   E0  20
+  C07  L4                                   E1  20
+  C08  L4                                   E1o 20
+  -- losers x filters
+  C09  L4 & RSIcut < 50                     E0  20
+  C10  L4 & B50                             E0  20
+  C11  L4 & B200                            E0  20
+  C12  L4 & B50 & B200                      E0  20
+  C13  L4 & BRKDN_VOL                       E0  20
+  C14  L4 & BAD                             E0  20
+  C15  L4 & CLV_k <= 0.25                   E0  20
+  C16  L4 & SEC21_k < 0                     E0  20
+  C17  L4 & DRIFT-                          E0  20
+  C18  L4 & VSN252-                         E0  20
+  C19  L4 & BAD & B50                       E0  20
+  C20  L6 & B200                            E0  20
+  C21  L2 & B200 & VSN252-                  E0  20
+  -- horizon variants
+  C22  L4 & B200                            E0  40
+  C23  L4 & B50                             E0  40
+  C24  L4 & BRKDN_VOL                       E0  40
+  C25  L4 & B50 & B200                      E0  10
+  -- next-day entries (day-k bhavcopy / delivery, follow-through)
+  C26  L4 & SB_k                            E1  20
+  C27  L4 & SB_k                            E1o 20
+  C28  L4 & OIUP_k                          E1  20
+  C29  L4 & DQK3                            E1  20
+  C30  L4 & FT1                             E1  20
+  C31  L4 & SB_k                            E1  40
+  -- other post-results groups
+  C32  GOOD & BELOW50                       E0  20   [C]
+  C33  GOOD & BELOW50                       E0  40
+  C34  GOOD & BELOW50 & XN < 0              E0  20
+  C35  W & SB_cut                           E0  20   [C]
+  C36  W & RSIcut <= 50                     E0  20   [C]
+  C37  nonW & RSIcut < 50                   E0  20   [C]
+  C38  nonW & RSIcut < 50 & B50 & B200      E0  20
+  C39  XN < 0 & B200 & VSN252-              E0  20
+  C40  XN < 0 & B200 & VSN252-              E0  40
+  C41  DRIFT-- (any reaction)               E0  20
+  C42  BAD & BRKDN_VOL                      E0  20   [C]
+  (NaN feature -> not in the signal.)
+
+FINALIST RULE (fixed now, applied mechanically by search.py)
+  Eligible only if ALL: (1) discovery trades >= 40 AND >= 7 discovery quarters with trades; (2) mean short profit net
+  > 0 in BOTH discovery halves (qn 0-6 and qn 7-13); (3) mean short profit net minus the BASE SHORT mean net of the
+  same entry and horizon >= +0.50 points.
+  Rank eligible candidates by mean short profit net WITHOUT the 5 best short trades (drop the 5 biggest falls).
+  Finalist 1 = top rank. Finalist 2 = the next-ranked eligible candidate whose trades (symbol, qn) overlap Finalist 1's
+  in less than 50% of the smaller set (so a second slot is not spent on a horizon / entry variant of the same trades).
+  At most 2. If none is eligible: no finalist (a valid answer).
+  Reported, not selection inputs: luck p (random same-size picks per quarter from the base pool, 10,000 draws,
+  one-sided), t across quarters, raw (unhedged) short, quarters short-profitable.
+SURVIVORSHIP: universe = today's 213 F&O stocks; stocks that left F&O (often after falling) are missing -> biased
+  AGAINST shorts. Not corrected.

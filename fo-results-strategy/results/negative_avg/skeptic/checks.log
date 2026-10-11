@@ -1,0 +1,45 @@
+=== extreme C12 holdout trades: raw close at entry/exit, price-factor changes in the window
+  KPITTECH   q19 entry 2026-01-29 XN -6.0 short +24.4: raw 1042.8 -> 788.7 (-24.4%), adj -24.4%, my stock -24.4%, price factors 1, Computers - Software
+  INOXWIND   q19 entry 2026-02-16 XN -5.7 short +14.3: raw 101.2 -> 78.2 (-22.7%), adj -22.7%, my stock -22.7%, price factors 1, Electrical Equipment
+  IDEA       q15 entry 2025-02-12 XN -4.8 short +14.2: raw 8.4 -> 7.0 (-17.2%), adj -17.2%, my stock -17.2%, price factors 1, Telecommunication - Services
+  WIPRO      q19 entry 2026-01-19 XN -7.6 short +13.5: raw 245.9 -> 213.3 (-13.3%), adj -13.3%, my stock -13.3%, price factors 1, Computers - Software
+  DELHIVERY  q15 entry 2025-02-10 XN -4.9 short +12.5: raw 297.2 -> 248.4 (-16.4%), adj -16.4%, my stock -16.4%, price factors 1, Travel And Transport
+  AUROPHARMA q19 entry 2026-02-10 XN -6.9 short -24.2: raw 1124.1 -> 1304.8 (+16.1%), adj +16.1%, my stock +16.1%, price factors 1, Pharmaceuticals
+  ADANIGREEN q19 entry 2026-01-23 XN -13.6 short -23.4: raw 772.8 -> 968.2 (+25.3%), adj +25.3%, my stock +25.3%, price factors 1, Power
+  MANAPPURAM q15 entry 2025-02-14 XN -7.8 short -19.2: raw 178.2 -> 211.2 (+18.6%), adj +18.6%, my stock +18.6%, price factors 1, Finance
+
+=== C12 holdout by industry (n, mean hedged short, sum)
+  Computers - Software                      12  +2.64   +31.6
+  Food And Food Processing                   7  +3.17   +22.2
+  Telecommunication - Services               2  +9.95   +19.9
+  Banks                                     12  +1.11   +13.3
+  Travel And Transport                       2  +6.57   +13.1
+  Financial Institution                      3  +4.18   +12.6
+  Consumer Durables                          4  +2.29    +9.2
+  Automobiles - 4 Wheelers                   3  +2.65    +8.0
+  Construction                               4  +1.62    +6.5
+  Miscellaneous                              3  +2.13    +6.4
+  Electrical Equipment                      12  +0.36    +4.4
+  Pesticides And Agrochemicals               4  +0.99    +4.0
+  Personal Care                              3  +0.48    +1.4
+  Auto Ancillaries                           3  -0.08    -0.2
+  Internet & E-commerce                      3  -0.76    -2.3
+  Plastic And Plastic Products               3  -4.46   -13.4
+  Finance                                    4  -3.43   -13.7
+  Steel And Steel Products                   1 -14.24   -14.2
+  Capital Markets                            5  -3.48   -17.4
+  Engineering                                3  -8.12   -24.3
+  Pharmaceuticals                            3  -8.37   -25.1
+  Power                                      3 -11.08   -33.2
+  IT/software trades 12, sum +31.6; without IT: n 107 mean +0.04
+
+=== C12 discovery: drop 5 best AND 5 worst +1.37; drop 10/10 +1.56; quarter-level mean short +1.42 t 1.10 (14 q); margin vs base per quarter +2.35 t 2.21
+
+=== C12 holdout: drop 5 best AND 5 worst +0.49; drop 10/10 +0.62; quarter-level mean short +0.39 t 0.53 (8 q); margin vs base per quarter +0.91 t 1.75
+  holdout without q14: +0.04; without q14 & q15 (Oct 2024 - Mar 2025 sell-off): +0.09 (n 86); q14+q15 only +0.86
+  conditional luck p (discovery): C12 +1.24 vs random same-quarter picks among results below SMA50 & SMA200 (pool mean +0.47, n 392): p 0.147
+  conditional luck p (holdout): C12 +0.30 vs random same-quarter picks among results below SMA50 & SMA200 (pool mean -0.05, n 482): p 0.211
+
+=== results of these stocks while NOT in F&O (events.csv in_fo False): same C12 signal, hedged 20 sessions
+  all non-F&O results    n 1182 hedged short -2.64 wo5 -2.81
+  C12 signal             n   27 hedged short -1.79 wo5 -5.57

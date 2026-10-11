@@ -1,0 +1,84 @@
+FAMILY: ranking model for falls (walk-forward models that rank F&O results by predicted fall)
+Written 2026-10-11 BEFORE any outcome was computed in this folder. Feature matrices (features only) were built by
+build_features.py; exact columns in feature_lists.txt (A: 112 features, B: 135 features).
+
+DATA / SPLIT
+  Universe: all 3,280 F&O results (perf/features/panel.csv). DISCOVERY = qn 0..13; HOLDOUT qn 14..21 SEALED (no outcome
+  for qn >= 14 is read: outcomes.csv is filtered to qn <= 13 immediately on load; the script refuses qn >= 14 unless the
+  environment variable UNSEAL_HOLDOUT=1 is set, which is NOT done in this study).
+  Scored (traded) discovery quarters: q = 4..13 (qn 0..3 only train). Discovery halves for the rule: qn 4-6 and 7-13
+  (qn 0-3 have no trades by construction).
+
+WINDOWS
+  A (pre-results 3-day): decision and entry at the CUTOFF close (session i_cut); exit at the Day+1 close (i_p1).
+     outcome y_A = three_day (outcomes.csv, sum of the 3 daily adjusted returns, %).
+     PRIMARY short profit = -three_day - 0.17 (unhedged, sell the stock future).
+     Reported too: Nifty-hedged short = -(three_day - nifty3) - 0.19, nifty3 = sum of the 3 daily Nifty 50 returns over
+     sessions i_cut+1..i_p1 (sector_lab/data/index_close.csv 'Nifty 50').
+     Eligible results: three_day not NaN. Features: features_A.csv (known at the close of i_cut; OI = bhavcopy of i_cut-1,
+     delivery through i_cut-1).
+  B (post-results 20 sessions, hedged): decision and entry at the REACTION close k (session i_react); exit at close k+20.
+     outcome y_B = vsN_H20 = raw_H20 - nifty_H20 (outcomes.csv, %). Short profit = -vsN_H20 - 0.19 (short stock future,
+     long Nifty future). Eligible results: tradable_B == True. Features: features_B.csv (known at the close of k; OI =
+     bhavcopy of i_cut <= k-2, delivery through k-1; reported numbers and reaction-day TA at k).
+
+WALK-FORWARD SCHEME (identical for every model; quarter q scored with information from before quarter q only)
+  1. Training pool for quarter q: eligible rows with qn < q whose outcome is complete before the first decision of
+     quarter q: A: i_p1 < D_q = min(i_cut of quarter-q rows); B: i_react + 20 < D_q = min(i_react of quarter-q rows).
+  2. Training target (transform on training rows only): yd = outcome - mean(outcome of the same qn within the training
+     pool), winsorized at the training pool's 1st / 99th percentiles of yd.
+  3. Features: drop a feature if < 50% non-missing in the training pool or zero variance there. For ridge / logistic:
+     winsorize each feature at its training 1st/99th percentiles, z-score with the training mean / sd, NaN -> 0.
+     GBM: winsorized raw features, NaN left to the model. Hand score: training-pool empirical CDF (see below).
+  4. Score s (LOWER s = larger predicted fall), models:
+     RIDGE : sklearn Ridge(alpha=1000) on z-scored features, target yd; s = prediction.
+     LOGIT : sklearn LogisticRegression(penalty L2, C=0.01, lbfgs, max_iter=5000) on z-scored features,
+             label = 1 if outcome < the median outcome of the same qn in the training pool (below-median = falls
+             relative to peers); s = -P(label=1).
+     GBM   : sklearn HistGradientBoostingRegressor(loss='squared_error', learning_rate=0.03, max_iter=200, max_depth=3,
+             min_samples_leaf=40, l2_regularization=1.0, max_features=0.5, early_stopping=False, random_state=0),
+             target yd; s = prediction.
+     HAND  : rank-sum of the strongest single signals, re-chosen each quarter from the training pool: for each feature,
+             Spearman correlation with the outcome within each training quarter (quarters with >= 20 rows having the
+             feature), IC = mean over quarters, t = IC / (sd / sqrt(n quarters)); keep the 5 features with the largest
+             |t|. s = mean over the 5 of sign(IC) * (u - 0.5), u = empirical CDF of the feature value within the
+             training pool (NaN -> 0.5).
+  5. Threshold fixed from the past (no same-season look-ahead): reference scores = out-of-fold scores of the last
+     min(4, available) training quarters, each quarter j scored by the same model refit on the training pool WITHOUT
+     quarter j. Threshold t_q = quantile(reference scores, p).
+       DECILE : p = 0.10.
+       BOTTOM5: p = 5 / n_(q-1), n_(q-1) = number of F&O results in quarter q-1 (aims at ~5 shorts per quarter).
+  6. Trade in quarter q: short every eligible quarter-q result with s <= t_q. No other filter, no cap.
+  Holdout re-run: the same procedure for q = 14..21 (training pool then includes every completed outcome with qn < q).
+
+CANDIDATES (14)
+  MA1  window A, RIDGE, DECILE
+  MA2  window A, RIDGE, BOTTOM5
+  MA3  window A, LOGIT, DECILE
+  MA4  window A, GBM,   DECILE
+  MA5  window A, GBM,   BOTTOM5
+  MA6  window A, HAND,  DECILE
+  MA7  window A, HAND,  BOTTOM5
+  MB1  window B, RIDGE, DECILE
+  MB2  window B, RIDGE, BOTTOM5
+  MB3  window B, LOGIT, DECILE
+  MB4  window B, GBM,   DECILE
+  MB5  window B, GBM,   BOTTOM5
+  MB6  window B, HAND,  DECILE
+  MB7  window B, HAND,  BOTTOM5
+
+BASE SHORT (same window, same scored quarters 4..13): every eligible result shorted.
+  A: mean(-three_day - 0.17); B: mean(-vsN_H20 - 0.19).
+
+FINALIST RULE (fixed now, applied mechanically by run_models.py)
+  Eligible only if ALL: (1) discovery trades >= 40 AND >= 7 discovery quarters with trades; (2) mean short profit after
+  costs > 0 in BOTH discovery halves (qn 4-6 and qn 7-13); (3) mean short profit after costs minus the base short of
+  the same window >= +0.50 points. (Window A uses the PRIMARY unhedged short for (2) and (3).)
+  Rank eligible candidates by mean short profit after costs WITHOUT the 5 best short trades (the 5 biggest falls
+  dropped). Finalist 1 = top. Finalist 2 = next eligible whose trades (symbol, qn) overlap Finalist 1's in < 50% of the
+  smaller set. At most 2; none eligible -> no finalist (valid answer).
+  Reported, not selection inputs: hedged A short, luck p (random same-size picks per quarter from the eligible pool,
+  10,000 draws, share with mean short profit >= the candidate's), t across quarters, mean out-of-sample rank IC of s.
+
+SURVIVORSHIP: universe = today's 213 F&O stocks; stocks that later left F&O (often after falling) are missing, which
+  biases results AGAINST shorts. Not corrected.

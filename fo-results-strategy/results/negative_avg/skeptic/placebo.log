@@ -1,0 +1,26 @@
+
+=== discovery-period dates (2021-04-08 .. 2024-08-16): ordinary stock-days 49754, base hedged short -1.10
+  P12 placebo of C12                   n    173 hedged -3.01 median -3.12 wo5 -3.63  unhedged -6.93 | day-clustered -2.60 over 85 days | non-overlapping n 136 -3.17
+     by year: 2021:22.0/-1.69, 2022:108.0/-2.08, 2023:32.0/-4.19, 2024:11.0/-11.32
+     busiest signal days: 2022-06-20 n20.0 -3.70, 2022-02-24 n11.0 -3.51, 2022-03-07 n7.0 -1.55
+  P42 placebo of C42 (BRKDN_VOL)       n    475 hedged -1.72 median -0.98 wo5 -1.91  unhedged -5.40 | day-clustered -0.88 over 172 days | non-overlapping n 341 -1.69
+  P12 but XN<-5                        n     97 hedged -3.16 median -3.60 wo5 -4.14  unhedged -6.96 | day-clustered -2.60 over 57 days | non-overlapping n 85 -3.45
+  below SMA50 & SMA200, any day move   n  11659 hedged -0.87 median -0.48 wo5 -0.89  unhedged -2.69 | day-clustered -0.58 over 655 days | non-overlapping n 1067 -1.02
+
+=== holdout-period dates (2024-10-08 .. 2026-09-30): ordinary stock-days 39769, base hedged short -0.88
+  P12 placebo of C12                   n    223 hedged -2.83 median -1.62 wo5 -3.26  unhedged -3.00 | day-clustered -2.37 over 102 days | non-overlapping n 173 -2.18
+     by year: 2024:15.0/-4.25, 2025:110.0/-2.46, 2026:98.0/-3.04
+     busiest signal days: 2025-04-04 n12.0 +1.48, 2026-02-12 n12.0 +3.79, 2025-02-14 n9.0 -6.85
+  P42 placebo of C42 (BRKDN_VOL)       n    609 hedged -1.67 median -1.46 wo5 -1.89  unhedged -2.15 | day-clustered -0.93 over 172 days | non-overlapping n 388 -1.32
+  P12 but XN<-5                        n     98 hedged -2.24 median -1.38 wo5 -3.19  unhedged -2.36 | day-clustered -1.83 over 60 days | non-overlapping n 78 -1.58
+  below SMA50 & SMA200, any day move   n  15405 hedged -1.31 median -0.87 wo5 -1.32  unhedged -1.66 | day-clustered -0.42 over 423 days | non-overlapping n 1371 -0.85
+
+=== same signals AT RESULTS (from skeptic_panel; hedged short H20)
+  discovery C12                        n   88 hedged +1.24 wo5 +0.54
+  discovery BRKDN_VOL (any numbers)    n  184 hedged +0.52 wo5 +0.13
+  discovery BRKDN_VOL & not BAD        n  110 hedged +0.44 wo5 -0.09
+  discovery C42                        n   74 hedged +0.65 wo5 -0.31
+  holdout   C12                        n  119 hedged +0.30 wo5 -0.38
+  holdout   BRKDN_VOL (any numbers)    n  184 hedged -0.02 wo5 -0.52
+  holdout   BRKDN_VOL & not BAD        n  113 hedged -0.01 wo5 -0.71
+  holdout   C42                        n   71 hedged -0.04 wo5 -1.13

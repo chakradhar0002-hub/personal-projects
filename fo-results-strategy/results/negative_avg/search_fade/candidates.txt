@@ -1,0 +1,90 @@
+CANDIDATES - family "fade the over-reaction" (short after a jump). Written 2026-10-11 BEFORE any outcome (forward
+return of any kind) was computed in this folder. Only features.py (features, no outcomes) has been run.
+DISCOVERY = qn 0..13. HOLDOUT qn 14..21 is SEALED: no outcome is computed or printed for qn >= 14 (evaluate.py drops those
+rows before touching any return column / forward price).
+
+FEATURE-ONLY COUNTS SEEN BEFORE WRITING (discovery, features only; features.py output):
+  The family brief's literal thresholds are almost empty, because a stock that is still > 6% above Nifty at the close
+  almost never closes in the bottom third of its day range:
+    XN > 6 / 8 / 10 & close in bottom third of day-k range: 1 / 0 / 0 trades;  winners & lag21 > 20: 1;
+    gap-up > 5% & close < open: 20;  winners & RSI(14) at k > 80: 24;  winners & BAD numbers: 34.
+  So thresholds were relaxed (on feature counts only, never on outcomes) to the versions below. Every row below counts.
+
+COMMON DEFINITIONS
+  Data: perf/features/panel.csv (keys, i_cut, i_rd, i_p1, i_react=k, XN, lag21, cut_rsi14), tafa/C_post_results/
+  features.csv (rx_rsi14, rx_gap_pct, rx_close_vs_sma50_pct, BAD, rq_pat_yoy_pct), more_signals/delivery/
+  feat_results.csv (DPK, DQK), ta/build/adjusted_ohlcv.csv.gz (day-k open/high/low/close), sector_lab/data/
+  {sessions,returns,index_close}.csv. Join on (symbol, qn). Session index = sessions.csv i.
+  XN    = reaction-day (session k) stock return minus Nifty 50 return, % (known at close k). W = XN > 4.
+  clv_k = (close_k - low_k) / (high_k - low_k) on split-adjusted OHLC of session k (NaN if high = low or not traded).
+  gap_k = rx_gap_pct = open_k / previous traded close - 1, %.   C<O = close_k < open_k.
+  rx_rsi14 = Wilder RSI(14) at close k.   rx_close_vs_sma50_pct = close_k / SMA50(incl. k) - 1, %.
+  lag21 = 21-session stock return minus Nifty to the cutoff close i_cut, %.
+  BAD   = rq_pat_yoy_pct < -25 OR margin change < -2 pp (tafa flag, reported quarter, public at the announcement).
+  rq_pat_yoy_pct = reported-quarter PAT growth y/y, %.
+  DPK   = delivery % on day k minus its mean over k-60..k-1 (points). DQK = delivery qty day k / mean k-60..k-1.
+          Day k's delivery file is published after the close of k -> these signals enter at the close of k+1.
+  r5vsN_cut = compounded stock return over sessions i_cut-4..i_cut (blank = 0, <= 1 blank) minus Nifty
+          close(i_cut)/close(i_cut-5) - 1, % (known at close i_cut).
+
+TRADE B (post-results short, Nifty-hedged). Entry e = close k (or k+1 where stated). Hold H sessions, exit close e+H.
+  stock = prod(1 + r_t, t = e+1..e+H) - 1 (adjusted daily returns, blank = 0); Nifty = close(e+H)/close(e) - 1.
+  SHORT PROFIT = -(stock - Nifty) x 100 - 0.19   (0.17 stock-future round trip + 0.02 Nifty hedge), %.
+  Universe/tradable: panel rows with outcomes.tradable_B == True (k+21 exists, <= 2 blank sessions in k+1..k+21, XN
+  known); entry k+1 additionally needs the stock to trade on k+1. Signal NaN -> not eligible.
+  BASE SHORT of a window = the same short over ALL tradable discovery results with the same entry and H.
+
+TRADE A (pre-results 3-day window). Short at close i_cut, cover at close i_p1.
+  three_day = sum of the 3 daily adjusted returns (outcomes.csv); nifty3d = sum of the 3 daily Nifty 50 returns of
+  sessions i_cut+1..i_p1. Raw short profit = -three_day - 0.17. Hedged short profit = -(three_day - nifty3d) - 0.19.
+  BASE = the same over all discovery results with three_day.
+
+CANDIDATES (35)
+ id   signal (all must be true)                                    entry      H    window
+ B01  FAILGAP3: gap_k > 3 AND close_k < open_k                       close k    1    B hedged
+ B02  FAILGAP3                                                       close k    5    B hedged
+ B03  FAILGAP3                                                       close k    20   B hedged
+ B04  FAILGAP3                                                       close k+1  5    B hedged
+ B05  W_WEAKCLOSE: XN > 4 AND clv_k < 2/3 (gave back > 1/3 of range) close k    1    B hedged
+ B06  W_WEAKCLOSE                                                    close k    5    B hedged
+ B07  W_WEAKCLOSE                                                    close k    20   B hedged
+ B08  W_WEAKCLOSE                                                    close k+1  5    B hedged
+ B09  W_RSI75: XN > 4 AND rx_rsi14 > 75                              close k    1    B hedged
+ B10  W_RSI75                                                        close k    5    B hedged
+ B11  W_RSI75                                                        close k    20   B hedged
+ B12  W_RUNUP: XN > 4 AND lag21 > 5 (ran up before results, then jumped) close k 1  B hedged
+ B13  W_RUNUP                                                        close k    5    B hedged
+ B14  W_RUNUP                                                        close k    20   B hedged
+ B15  W_STRETCH: XN > 4 AND rx_close_vs_sma50_pct > 15               close k    1    B hedged
+ B16  W_STRETCH                                                      close k    5    B hedged
+ B17  W_STRETCH                                                      close k    20   B hedged
+ B18  UP_BAD: XN > 2 AND BAD == True (price up on bad numbers)       close k    1    B hedged
+ B19  UP_BAD                                                         close k    5    B hedged
+ B20  UP_BAD                                                         close k    20   B hedged
+ B21  UP_PATDOWN: XN > 2 AND rq_pat_yoy_pct < 0 (price up, profit down) close k 1   B hedged
+ B22  UP_PATDOWN                                                     close k    5    B hedged
+ B23  UP_PATDOWN                                                     close k    20   B hedged
+ B24  BIGJUMP: XN > 8                                                close k    1    B hedged
+ B25  BIGJUMP                                                        close k    5    B hedged
+ B26  BIGJUMP                                                        close k    20   B hedged
+ B27  W_LOWDELP: XN > 4 AND DPK < -20 (weak delivery %)              close k+1  1    B hedged
+ B28  W_LOWDELP                                                      close k+1  5    B hedged
+ B29  W_LOWDELP                                                      close k+1  20   B hedged
+ B30  W_LOWDELQ: XN > 4 AND DQK < 2 (delivery qty < 2x normal)       close k+1  1    B hedged
+ B31  W_LOWDELQ                                                      close k+1  5    B hedged
+ B32  W_LOWDELQ                                                      close k+1  20   B hedged
+ A01  RUN5_8: r5vsN_cut > 8                                          close i_cut  to close i_p1   A raw (unhedged)
+ A02  RUN5_8                                                         close i_cut  to close i_p1   A Nifty-hedged
+ A03  RUN5_5: r5vsN_cut > 5                                          close i_cut  to close i_p1   A Nifty-hedged
+
+FINALIST RULE (fixed now, before any outcome):
+  1. discovery trades >= 40 AND >= 7 discovery quarters with trades;
+  2. mean short profit after costs > 0 in BOTH discovery halves (qn 0-6 and qn 7-13);
+  3. mean short profit after costs (all discovery trades) >= BASE short of the same window + 0.5 points;
+  4. rank the survivors by mean short profit after dropping the 5 best short trades (the 5 biggest falls);
+     take the top 2. If the two best are the same signal (same id prefix signal, other H / entry), the second slot goes
+     to the best-ranked different signal. If none qualifies, the answer is "none".
+  Reported for every candidate: n, quarters with trades, average stock return (raw and vs Nifty), mean short profit
+  net, without best 5, quarters short-profitable / with trades, halves, base short of the window.
+SURVIVORSHIP: universe is today's F&O list; stocks that dropped out of F&O (often after falling) are missing, which
+biases every short here downward (against the short). Not corrected.

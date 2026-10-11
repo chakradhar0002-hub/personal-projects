@@ -1,0 +1,50 @@
+====================================================================================================
+1. DISCOVERY REPRODUCTION (my code vs the search report; flag > 0.05 points or > 1 trade)
+  C12: n 88.00 (claimed 88); vsN -1.43 (claimed -1.43); raw -1.01 (claimed -1.01); short 1.24 (claimed 1.24); wo5 0.54 (claimed 0.54); h1_n 58.00 (claimed 58); h1_short 1.66 (claimed 1.66); h2_n 30.00 (claimed 30); h2_short 0.45 (claimed 0.45); base_short -0.98 (claimed -0.98); unhedged 0.84 (claimed 0.84)
+  C42: n 74.00 (claimed 74); vsN -0.84 (claimed -0.84); raw -0.75 (claimed -0.75); short 0.65 (claimed 0.65); wo5 -0.31 (claimed -0.31); h1_n 41.00 (claimed 41); h1_short 1.10 (claimed 1.1); h2_n 33.00 (claimed 33); h2_short 0.09 (claimed 0.09); base_short -0.98 (claimed -0.98); unhedged 0.58 (claimed 0.58)
+  MA4: n 132.00 (claimed 132); raw -0.59 (claimed -0.59); vsN -0.89 (claimed -0.89); short 0.42 (claimed 0.42); wo5 -0.07 (claimed -0.07); h1_n 41.00 (claimed 41); h1_short 0.34 (claimed 0.34); h2_n 91.00 (claimed 91); h2_short 0.46 (claimed 0.46); base_short -0.41 (claimed -0.41); hedged 0.70 (claimed 0.7); hedged_wo5 0.21 (claimed 0.21)
+  mismatches: none
+====================================================================================================
+2-3. HOLDOUT qn 14-21 (primary measure: C12/C42 hedged short net, MA4 unhedged short net)
+  C12: n 119 (89 stocks, max 3/stock), raw -1.11, vsN -0.49, short net +0.30 (median +0.61, w/o 5 biggest falls -0.38, w/o 10 -0.79), hedged +0.30 / unhedged +0.94, quarters 5/8 short-profitable, halves qn14-17 52.0 +0.46 / qn18-21 67.0 +0.18, t_q +0.53; base short -0.57 (n 1472, base raw -0.17, vsN +0.38), margin +0.88; luck p 0.1168 (hedged p 0.1168), Holm 0.3505; SURVIVOR NO - fails Holm p<0.10, wo5>0
+  C42: n 71 (62 stocks, max 3/stock), raw -0.25, vsN -0.15, short net -0.04 (median -0.02, w/o 5 biggest falls -1.13, w/o 10 -1.89), hedged -0.04 / unhedged +0.08, quarters 3/7 short-profitable, halves qn14-17 37.0 -0.54 / qn18-21 34.0 +0.51, t_q +0.06; base short -0.57 (n 1472, base raw -0.17, vsN +0.38), margin +0.53; luck p 0.5129 (hedged p 0.5129), Holm 1.0000; SURVIVOR NO - fails short>0, Holm p<0.10, wo5>0
+  MA4: n 137 (95 stocks, max 4/stock), raw +0.37, vsN +0.41, short net -0.54 (median -0.28, w/o 5 biggest falls -0.93, w/o 10 -1.24), hedged -0.60 / unhedged -0.54, quarters 4/8 short-profitable, halves qn14-17 53.0 -0.01 / qn18-21 84.0 -0.87, t_q -1.07; base short -0.11 (n 1471, base raw -0.06, vsN -0.03), margin -0.43; luck p 0.6613 (hedged p 0.7866), Holm 1.0000; SURVIVOR NO - fails short>0, margin>=0.5, Holm p<0.10, wo5>0
+  survivors: NONE; total candidates tried across the 4 families: 131; Holm over the 3 finalists
+4. REALISTIC (entry one session later, costs 0.25 + 0.02 hedge)
+  C12 HOLDOUT realistic: n 119, raw -0.95, vsN -0.28, short net +0.01 (w/o 5 -0.66), base -0.70, margin +0.71, luck p 0.1588
+  C12 discovery realistic: n 88, raw -0.65, vsN -0.91, short net +0.64 (w/o 5 -0.00), base -1.03, margin +1.67
+  C42 HOLDOUT realistic: n 71, raw -0.48, vsN -0.25, short net -0.02 (w/o 5 -0.98), base -0.70, margin +0.68, luck p 0.4132
+  C42 discovery realistic: n 74, raw +0.23, vsN +0.13, short net -0.40 (w/o 5 -1.29), base -1.03, margin +0.63
+  MA4 HOLDOUT realistic: n 137, raw +0.27, vsN +0.32, short net -0.52 (w/o 5 -0.89), base -0.11, margin -0.42, luck p 0.7457
+  MA4 discovery realistic: n 132, raw -0.59, vsN -0.76, short net +0.34 (w/o 5 -0.12), base -0.36, margin +0.70
+5. FULL SAMPLE (in-sample)
+  C12: n 207, raw -1.07, vsN -0.89, short net +0.70 (w/o 5 +0.31), hedged +0.70, unhedged +0.90, quarters 14/22, base -0.80, margin +1.50
+  C42: n 145, raw -0.51, vsN -0.50, short net +0.31 (w/o 5 -0.28), hedged +0.31, unhedged +0.34, quarters 11/21, base -0.80, margin +1.11
+  MA4: n 269, raw -0.10, vsN -0.23, short net -0.07 (w/o 5 -0.32), hedged +0.04, unhedged -0.07, quarters 11/18, base -0.26, margin +0.19
+====================================================================================================
+REFERENCES - known negative groups (ALREADY SEEN on the full sample; contaminated, not finalists)
+  R1 discovery: n 64, raw -0.12, vsN -0.52, short net (unhedged) -0.05 (w/o 5 -0.76), hedged +0.33, quarters 7/13, base -0.29, margin +0.24
+  R1 HOLDOUT  : n 45, raw -0.72, vsN -0.40, short net (unhedged) +0.55 (w/o 5 -0.86), hedged +0.21, quarters 3/8, base -0.11, margin +0.66, luck p 0.2100
+  R1 full     : n 109, raw -0.37, vsN -0.47, short net (unhedged) +0.20 (w/o 5 -0.41), hedged +0.28, quarters 10/21, base -0.21, margin +0.41
+  R2 discovery: n 266, raw +0.96, vsN -0.61, short net (hedged) +0.42 (w/o 5 +0.06), hedged +0.42, quarters 9/14, base -0.98, margin +1.40
+  R2 HOLDOUT  : n 216, raw -1.10, vsN -0.46, short net (hedged) +0.27 (w/o 5 -0.09), hedged +0.27, quarters 5/8, base -0.57, margin +0.84, luck p 0.1172
+  R2 full     : n 482, raw +0.04, vsN -0.54, short net (hedged) +0.35 (w/o 5 +0.14), hedged +0.35, quarters 14/22, base -0.80, margin +1.15
+  R3 discovery: n 20, raw -0.87, vsN -1.84, short net (hedged) +1.65 (w/o 5 -2.57), hedged +1.65, quarters 6/10, base -0.98, margin +2.63
+  R3 HOLDOUT  : n 24, raw -1.11, vsN -0.80, short net (hedged) +0.61 (w/o 5 -1.53), hedged +0.61, quarters 4/8, base -0.57, margin +1.18, luck p 0.2751
+  R3 full     : n 44, raw -1.00, vsN -1.27, short net (hedged) +1.08 (w/o 5 -0.76), hedged +1.08, quarters 10/18, base -0.80, margin +1.88
+  R4 discovery: n 224, raw +1.18, vsN +0.12, short net (hedged) -0.31 (w/o 5 -0.68), hedged -0.31, quarters 4/14, base -0.98, margin +0.68
+  R4 HOLDOUT  : n 200, raw -0.74, vsN -0.28, short net (hedged) +0.09 (w/o 5 -0.39), hedged +0.09, quarters 4/8, base -0.57, margin +0.66, luck p 0.0691
+  R4 full     : n 424, raw +0.28, vsN -0.07, short net (hedged) -0.12 (w/o 5 -0.36), hedged -0.12, quarters 8/22, base -0.80, margin +0.68
+  C12 5 biggest holdout short profits: KPITTECH q19 +24.4, INOXWIND q19 +14.3, IDEA q15 +14.2, WIPRO q19 +13.5, DELHIVERY q15 +12.5
+  C42 5 biggest holdout short profits: KPITTECH q19 +24.4, WIPRO q19 +13.5, AMBER q18 +11.7, DELHIVERY q18 +11.1, COLPAL q14 +10.9
+  MA4 5 biggest holdout short profits: PIIND q21 +10.5, ASTRAL q17 +10.4, BLUESTARCO q21 +10.3, DIXON q15 +10.0, CAMS q16 +7.6
+====================================================================================================
+SECONDARY (information only - NOT survivor criteria, not counted as tests)
+  C12 unhedged (short stock only) discovery: n 88, raw -1.01, vsN -1.43, short net +0.84 (w/o 5 +0.01), quarters 6/14, base -2.23, margin +3.07
+  C12 unhedged (short stock only) HOLDOUT: n 119, raw -1.11, vsN -0.49, short net +0.94 (w/o 5 +0.16), quarters 5/8, base -0.00, margin +0.94, halves +1.32 / +0.64, luck p 0.3499
+  C42 unhedged (short stock only) discovery: n 74, raw -0.75, vsN -0.84, short net +0.58 (w/o 5 -0.67), quarters 5/14, base -2.23, margin +2.80
+  C42 unhedged (short stock only) HOLDOUT: n 71, raw -0.25, vsN -0.15, short net +0.08 (w/o 5 -0.99), quarters 3/7, base -0.00, margin +0.09, halves +0.34 / -0.19, luck p 0.8702
+  MA4 Nifty-hedged discovery: n 132, raw -0.59, vsN -0.89, short net +0.70 (w/o 5 +0.21), quarters 8/10, base -0.16, margin +0.86
+  MA4 Nifty-hedged HOLDOUT: n 137, raw +0.37, vsN +0.41, short net -0.60 (w/o 5 -0.98), quarters 3/8, base -0.16, margin -0.44, halves -0.20 / -0.86, luck p 0.7896
+  C22 = L4 & B200, 40 sessions hedged (bumped by the overlap clause; not a finalist) discovery: n 102, raw -0.73, vsN -1.86, short net +1.67 (w/o 5 +0.52), quarters 10/14, base -1.59, margin +3.26
+  C22 = L4 & B200, 40 sessions hedged (bumped by the overlap clause; not a finalist) HOLDOUT: n 124, raw -2.25, vsN -1.08, short net +0.89 (w/o 5 +0.10), quarters 5/8, base -0.92, margin +1.81, halves +0.70 / +1.04, luck p 0.0226

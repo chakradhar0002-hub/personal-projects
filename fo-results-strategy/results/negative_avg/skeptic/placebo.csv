@@ -1,0 +1,9 @@
+period,signal,n,hedged,median,wo5,unhedged,day_clustered,n_days,n_nonoverlap,nonoverlap,base
+discovery-period dates,P12 placebo of C12,173,-3.0056,-3.1166,-3.6269,-6.9320,-2.5997,85,136,-3.1681,-1.0979
+discovery-period dates,P42 placebo of C42 (BRKDN_VOL),475,-1.7232,-0.9837,-1.9118,-5.3990,-0.8850,172,341,-1.6912,-1.0979
+discovery-period dates,P12 but XN<-5,97,-3.1574,-3.5985,-4.1383,-6.9565,-2.6047,57,85,-3.4542,-1.0979
+discovery-period dates,"below SMA50 & SMA200, any day move",11659,-0.8730,-0.4799,-0.8877,-2.6913,-0.5791,655,1067,-1.0214,-1.0979
+holdout-period dates,P12 placebo of C12,223,-2.8330,-1.6152,-3.2555,-3.0011,-2.3712,102,173,-2.1804,-0.8804
+holdout-period dates,P42 placebo of C42 (BRKDN_VOL),609,-1.6679,-1.4625,-1.8857,-2.1537,-0.9255,172,388,-1.3182,-0.8804
+holdout-period dates,P12 but XN<-5,98,-2.2423,-1.3829,-3.1887,-2.3607,-1.8266,60,78,-1.5786,-0.8804
+holdout-period dates,"below SMA50 & SMA200, any day move",15405,-1.3104,-0.8731,-1.3215,-1.6624,-0.4203,423,1371,-0.8468,-0.8804

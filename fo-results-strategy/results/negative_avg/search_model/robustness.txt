@@ -1,0 +1,61 @@
+BASE (all eligible results, qn 4-13): n 1335  avg ret +0.24  short net -0.41  median ret -0.04
+
+1. GBM seed stability (decile, p=0.10):
+  seed 0: n  132  avg ret -0.59  short net +0.42  w/o5 -0.07  q+ 7/10  h1 +0.34  h2 +0.46  median ret -0.61
+  seed 1: n  123  avg ret -0.46  short net +0.29  w/o5 -0.29  q+ 5/10  h1 +0.04  h2 +0.42  median ret -0.31
+  seed 2: n  116  avg ret -0.37  short net +0.20  w/o5 -0.43  q+ 5/10  h1 -0.18  h2 +0.35  median ret -0.35
+  seed 3: n  118  avg ret -0.41  short net +0.24  w/o5 -0.37  q+ 6/10  h1 -0.05  h2 +0.38  median ret -0.35
+  seed 4: n  124  avg ret -0.52  short net +0.35  w/o5 -0.23  q+ 7/10  h1 -0.09  h2 +0.58  median ret -0.61
+  seed 5: n  115  avg ret -1.02  short net +0.85  w/o5 +0.25  q+ 7/10  h1 +0.18  h2 +1.15  median ret -0.82
+  seed 6: n  125  avg ret -0.85  short net +0.68  w/o5 +0.12  q+ 7/10  h1 +0.24  h2 +0.87  median ret -0.66
+  seed 7: n  131  avg ret -0.61  short net +0.44  w/o5 -0.10  q+ 7/10  h1 +0.17  h2 +0.57  median ret -0.57
+  seed 8: n  132  avg ret -0.79  short net +0.62  w/o5 +0.09  q+ 7/10  h1 +0.53  h2 +0.66  median ret -0.61
+  seed 9: n  118  avg ret -0.52  short net +0.35  w/o5 -0.24  q+ 5/10  h1 +0.61  h2 +0.24  median ret -0.38
+  short net over seeds: mean +0.44, min +0.20, max +0.85
+
+2. threshold dose-response, seed 0 (pre-registered):
+  p=0.05: n   58  avg ret -0.05  short net -0.12  w/o5 -1.20  q+ 5/10  h1 -1.68  h2 +0.33  median ret -0.01
+  p=0.10: n  132  avg ret -0.59  short net +0.42  w/o5 -0.07  q+ 7/10  h1 +0.34  h2 +0.46  median ret -0.61
+  p=0.15: n  193  avg ret -0.38  short net +0.21  w/o5 -0.16  q+ 6/10  h1 +0.31  h2 +0.16  median ret -0.37
+  p=0.20: n  261  avg ret -0.12  short net -0.05  w/o5 -0.32  q+ 7/10  h1 -0.12  h2 -0.02  median ret -0.31
+  p=0.30: n  387  avg ret -0.04  short net -0.13  w/o5 -0.31  q+ 6/10  h1 -0.15  h2 -0.12  median ret -0.18
+
+3. per quarter (decile, seed 0):
+  qn  4: trades   4 of 131  avg ret  -1.16  short net  +0.99  base short  +0.66
+  qn  5: trades  29 of 134  avg ret  -0.14  short net  -0.03  base short  -0.92
+  qn  6: trades   8 of 133  avg ret  -1.53  short net  +1.36  base short  -0.20
+  qn  7: trades   8 of 133  avg ret  -3.45  short net  +3.28  base short  -0.01
+  qn  8: trades  16 of 134  avg ret  +2.04  short net  -2.21  base short  -0.78
+  qn  9: trades  16 of 133  avg ret  -1.52  short net  +1.35  base short  +0.13
+  qn 10: trades   8 of 132  avg ret  +0.56  short net  -0.73  base short  -0.58
+  qn 11: trades  22 of 135  avg ret  -1.28  short net  +1.11  base short  -0.65
+  qn 12: trades  10 of 135  avg ret  -0.52  short net  +0.35  base short  -1.05
+  qn 13: trades  11 of 135  avg ret  -0.80  short net  +0.63  base short  -0.70
+  distinct symbols 85; most frequent: {'DIVISLAB': 5, 'ASTRAL': 4, 'GODREJPROP': 4, 'LTF': 3, 'DABUR': 3, 'MANAPPURAM': 3, 'MUTHOOTFIN': 3, 'TATAPOWER': 3}
+  5 biggest falls (best short trades): DIVISLAB q7 -18.1%; DIVISLAB q6 -13.2%; VOLTAS q12 -12.0%; UPL q11 -11.9%; MFSL q7 -10.2%
+  5 biggest rises (worst short trades): DIXON q8 +15.1%; BAJFINANCE q5 +13.3%; BAJAJFINSV q5 +12.8%; MANAPPURAM q6 +10.2%; MPHASIS q9 +9.5%
+  share of trades with return < 0: 55% (base 50%)
+  overlap with the known lag-10%-quiet-volume group: 3 trades; without them: n  129  avg ret -0.57  short net +0.40  w/o5 -0.10  q+ 8/10  h1 +0.39  h2 +0.41  median ret -0.57
+  median lag21: trades +2.18  all +0.61
+  median vsN_63: trades -1.10  all +1.98
+  median RSI14: trades +61.57  all +53.64
+  median vol 5/60: trades +0.99  all +0.85
+  median ATR%: trades +2.55  all +2.50
+  median log mcap: trades +11.05  all +11.23
+
+4. permutation importance, q=13 model on its training pool (top 15, drop in R2):
+  A1_dCIV20                    0.0281
+  A1_IV                        0.0174
+  adx14                        0.0165
+  dist_52wh_A                  0.0121
+  tm_after                     0.0115
+  close_vs_sma200_pct          0.0114
+  NEWSR                        0.0110
+  mfi14                        0.0106
+  A1_dOI5                      0.0105
+  close_vs_sma50_pct           0.0100
+  atr14_pct                    0.0099
+  mean_three_day_4_A           0.0096
+  gap_pct                      0.0093
+  l1_ebitda_margin_chg_yoy_pp  0.0091
+  rsi2                         0.0084

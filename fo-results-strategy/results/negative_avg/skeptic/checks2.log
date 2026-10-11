@@ -1,0 +1,15 @@
+C12 holdout IT software: n 12 mean +2.64 (q19 IT n 2 mean +18.95); without IT n 107 mean +0.04 wo5 -0.56
+  without IT and without q14: n 97 mean -0.28
+  holdout base IT software q19: n 13 mean +14.37 (all IT results fell after Jan-Feb 2026 results)
+C12 holdout calendar-time without q14: mean daily +0.0245% (x20 +0.49), NW t 0.75
+C12 holdout calendar-time without IT software: x20 +1.17, NW t 1.32
+
+C22 H40 discovery: n 102 vsN -1.86 short +1.67 median +2.21 wo5 +0.52 wo10 -0.18; base -1.59; LOQO min +1.20; per qn 0:1/+42.04, 1:4/+13.28, 2:5/+0.62, 3:10/+0.14, 4:17/+1.30, 5:16/-0.18, 6:14/+1.95, 7:10/-0.44, 8:5/+2.97, 9:2/-12.36, 10:4/+1.95, 11:8/+4.19, 12:5/-0.74, 13:1/+0.90
+
+C22 H40 holdout: n 124 vsN -1.08 short +0.89 median +1.29 wo5 +0.10 wo10 -0.51; base -0.92; LOQO min +0.11; per qn 14:10/+3.52, 15:23/-0.55, 16:6/-1.61, 17:15/+1.65, 18:7/+3.02, 19:19/-2.61, 20:31/+3.24, 21:13/+0.07
+  without IT software: n 110 +0.04; without q14: +0.66; unhedged +2.08; beta-hedged +0.59; worst -37.2; share losing >10% 10.5%
+  calendar-time H40: x40 +0.53, NW(40) t 0.44
+placebo C22 H40 (discovery dates, no results within [t-10, t+41]): n 56 hedged short -2.43; ordinary base -2.20
+placebo C22 H40 (holdout dates, no results within [t-10, t+41]): n 81 hedged short -4.51; ordinary base -1.84
+
+MA4 holdout: n 137 short -0.54 median -0.28 wo5 -0.93; per qn 14:6/+0.30, 15:7/+0.44, 16:27/-0.26, 17:13/+0.10, 18:24/-0.25, 19:19/-3.49, 20:11/-3.22, 21:30/+1.15; worst -15.3; share losing >10% 2.9%

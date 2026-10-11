@@ -1,0 +1,78 @@
+CANDIDATES - FAMILY "fall into results" (trade A, short the 3-day pre-results window)
+Written 2026-10-11 BEFORE any outcome (three_day, d1-d3, Nifty window return, any forward return) was read or computed
+in this folder. Looked at so far: column dictionaries, earlier docs, and the cutoff FEATURE table (features_cutoff.csv,
+built by build_features.py, which drops every outcome column on load) with discovery feature quantiles (no outcome).
+Thresholds are round / textbook values or about the discovery top/bottom quintile of the FEATURE (not of any outcome).
+
+TRADE (every candidate): at the close of the cutoff session i_cut (2 sessions before the result session) SELL the stock
+future (short), buy it back at the close of Day+1 (i_p1). Return of the stock = three_day (outcomes.csv: sum of the 3
+daily adjusted returns i_cut -> i_p1, percent).
+  Unhedged short profit (PRIMARY)  = -three_day - 0.17
+  Nifty-hedged short profit        = -(three_day - nifty3) - 0.19, nifty3 = sum of the Nifty 50 daily returns over the
+                                     same 3 sessions (i_cut+1 .. i_p1) from sector_lab index_close.csv  (REPORTED ONLY)
+Universe: the 3,280 F&O results of perf/features/panel.csv (all in F&O at the time), rows with three_day.
+DISCOVERY = qn 0..13 only (1,808 results). HOLDOUT qn 14..21 SEALED: outcomes are filtered to qn <= 13 on load; no
+outcome / forward return of a qn >= 14 result is computed or printed. (Feature-only signal counts for qn >= 14 may be
+reported.)
+
+POINT IN TIME: price / volume / TA / sector index features use closes up to and including i_cut (the trade is at that
+close, as in every earlier trade-A study). F&O bhavcopy features (OI, PCR, IV, basis) use the A1_ columns = session
+i_cut-1, because the bhavcopy of day t is published after t's close. Delivery features end at e = i_cut-1. News
+features count only items broadcast before 15:00 IST of the cutoff day. Fundamentals = fa_panel pre-cutoff block
+(latest 4 quarters published before the cutoff). A missing feature = rule not met (NaN comparisons are False).
+
+FINALIST RULE (stated before looking; applied to the PRIMARY unhedged short):
+  (1) discovery trades >= 40 and >= 7 discovery quarters with trades;
+  (2) mean unhedged short profit after costs > 0 in BOTH discovery halves (qn 0-6 and qn 7-13);
+  (3) mean unhedged short profit after costs >= base short (all discovery results shorted: -mean(three_day) - 0.17)
+      + 0.50 points;
+  (4) rank the qualifiers by mean unhedged short profit after costs WITHOUT the 5 best short trades (the 5 biggest
+      falls removed); take at most the top 2. If none qualifies, the answer is NONE.
+  Also reported per candidate (not criteria): Nifty-hedged version, quarters short-profitable / quarters with trades,
+  within-quarter random-pick luck p (5,000 draws, one-sided, mean three_day as low as observed) and Holm over the family.
+
+CANDIDATES (id | pandas expression evaluated on features_cutoff.csv | meaning)
+S01 | lag21 < -10 and vol_ratio_5_60 < 1.0 | lag 10% quiet volume (KNOWN group, contaminated)
+S02 | lag21 < -10 and vol_ratio_5_60 < 0.8 | lag 10%, volume < 0.8
+S03 | lag21 < -15 and vol_ratio_5_60 < 1.0 | lag 15%, volume < 1.0
+S04 | lag21 < -15 and vol_ratio_5_60 < 0.8 | lag 15%, volume < 0.8
+S05 | lag21 < -20 and vol_ratio_5_60 < 1.0 | lag 20%, volume < 1.0
+S06 | lag21 < -20 and vol_ratio_5_60 < 0.8 | lag 20%, volume < 0.8
+S07 | A1_dP5 < 0 and A1_dOI5 < -10 | long unwinding 5 sessions (to i_cut-1): price down, futures OI down > 10%
+S08 | A1_dP5 < 0 and A1_dOI5 > 10 | short build-up 5 sessions: price down, futures OI up > 10%
+S09 | A1_dPIV20 > 8.5 | put IV run-up: ATM put IV up > 8.5 vol points over 20 sessions (about top quintile)
+S10 | A1_PCR > 0.72 | high put-call ratio by OI (about top quintile)
+S11 | A1_BASIS < 0 and A1_dBASIS1 < 0 | futures at an (annualised) discount to spot and the discount widening on the day
+S12 | A1_IVSPREAD < -3.1 | puts priced above calls: call-put IV spread below -3.1 (about bottom quintile)
+S13 | cut_rsi14 > 70 and vol_ratio_5_60 < 1.0 | overbought RSI(14) > 70 with falling volume
+S14 | cut_rsi14 > 70 | overbought RSI(14) > 70
+S15 | close_vs_sma50_pct > 10 | stretched: close > 10% above its 50-day average
+S16 | close_vs_sma200_pct > 30 | stretched: close > 30% above its 200-day average
+S17 | close_vs_sma50_pct > 10 and vol_ratio_5_60 < 1.0 | stretched above the 50-day average on falling volume
+S18 | ret5_vsN > 5 | big run-up: last 5 sessions beat Nifty by > 5 points
+S19 | ret5_vsN > 5 and vol_ratio_5_60 < 1.0 | 5-session run-up on falling volume
+S20 | n_pos_three_day_4_A == 0 | habitually falls into results: all of the last 4 results windows negative
+S21 | mean_three_day_4_A < -2 | habitually falls: mean of the last 4 results windows below -2% (about bottom quintile)
+S22 | mean_xn_4_A < -2 | habitually reacts badly: mean reaction vs Nifty of the last 4 results below -2%
+S23 | prev1_xn_A < -4 | last results were a loser (reaction vs Nifty < -4%)
+S24 | RDCHG > 7 | late reporter: results date > 7 days later (vs quarter end) than the same quarter last year
+S25 | NEWSR <= 0.5 | news silence: substantive news in 30 days at most half the stock's own norm
+S26 | PR30 == 0 and CALLPRE == 0 | no press release in 30 days and no earnings call announced in 21 days
+S27 | LEADCHG <= -7 | board-meeting date intimated >= 7 days later than the stock's habit
+S28 | sec21 < -5 | sector index fell > 5% over the last 21 sessions
+S29 | sec5 < -3 | sector index fell > 3% over the last 5 sessions
+S30 | l1_pat_yoy_pct < -20 | weak fundamentals: last reported quarter's profit down > 20% YoY
+S31 | l1_pat_yoy_pct < 0 and l2_pat_yoy_pct < 0 | profit down YoY in each of the last 2 reported quarters
+S32 | debt_equity > 1.5 and fin_type == "Company" | high debt non-financial (balance sheets exist only from qn 7)
+S33 | loss_any_4q == 1 | a loss in any of the last 4 reported quarters
+S34 | lag21 < -10 and vol_ratio_5_60 < 1.0 and sec21 < -5 | lag-quiet + sector falling
+S35 | lag21 < -10 and vol_ratio_5_60 < 1.0 and l1_pat_yoy_pct < 0 | lag-quiet + last quarter's profit down
+S36 | lag21 < -10 and vol_ratio_5_60 < 1.0 and mean_three_day_4_A < 0 | lag-quiet + habitually falls into results
+S37 | lag21 < -10 and vol_ratio_5_60 < 1.0 and A1_dP5 < 0 and A1_dOI5 < -10 | lag-quiet + long unwinding
+S38 | lag21 < -10 and vol_ratio_5_60 < 1.0 and ACC < 0 | lag-quiet + delivery % below its 60-day norm
+S39 | close_vs_sma50_pct > 10 and mean_three_day_4_A < 0 | stretched + habitually falls into results
+S40 | ret5_vsN > 5 and mean_three_day_4_A < 0 | 5-session run-up + habitually falls into results
+
+N CANDIDATES = 40.
+SURVIVORSHIP: the universe is today's 213 F&O stocks; stocks that later left F&O (often after falling) are missing,
+which biases results AGAINST shorts. Noted, not fixed.

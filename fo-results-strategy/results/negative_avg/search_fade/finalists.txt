@@ -1,0 +1,4 @@
+FINALISTS (rule in candidates.txt): NONE
+  candidates passing c1_n_q: 35 of 35
+  candidates passing c2_halves: 0 of 35
+  candidates passing c3_base: 4 of 35

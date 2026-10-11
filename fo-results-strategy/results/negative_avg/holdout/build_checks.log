@@ -1,0 +1,18 @@
+XN vs tafa: both finite 3280, NaN mismatch 0, max |diff| 4.97e-05
+XN vs panel: NaN mismatch 0, max |diff| 4.97e-05
+c_vs_sma50   vs up_rx_close_vs_sma50_pct: NaN mismatch 0, max |diff| 4.99e-05
+c_vs_sma200  vs up_rx_close_vs_sma200_pct: NaN mismatch 0, max |diff| 3.67e-04
+brk_dn20     vs up_rx_don20_break_dn: NaN mismatch 0, max |diff| 0.00e+00
+volr50       vs up_rx_vol_ratio_50: NaN mismatch 0, max |diff| 4.93e-05
+nhist        vs up_rx_n_hist: NaN mismatch 0, max |diff| 0.00e+00
+BAD        flag disagreements vs tafa: 0
+GOOD       flag disagreements vs tafa: 0
+BRKDN_VOL  flag disagreements vs tafa: 0
+BELOW50    flag disagreements vs tafa: 0
+C12 flag disagreements vs tafa-built: 0; C42: 0
+C12 signals qn<=13 88, qn>=14 119; C42 qn<=13 74, qn>=14 71
+three_day recomputed vs outcomes.csv: NaN mismatch 0, max |diff| 1.00e-04
+two_day (d2+d3) recomputed: NaN mismatch 1, max |diff| 7.11e-15
+B0 H20 vs outcomes raw_H20 / nifty_H20 (rows both present 3280): max |diff| stock 4.98e-05, nifty 2.24e-05
+B0 tradable rows: 3280 (qn>=14: 1472); B1 tradable 3279; three_day finite 3278
+last session 2026-09-30; latest exit used by B1: 2026-09-16

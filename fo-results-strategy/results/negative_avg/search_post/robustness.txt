@@ -1,0 +1,28 @@
+POST-SELECTION DESCRIPTIVE ONLY - discovery qn 0-13; short = -(stock-Nifty)-0.19 %
+Finalist 1 C12 = XN < -4 & close_k < SMA50 & close_k < SMA200, E0 H20 - neighbours
+XN<-2 & B50 & B200                           E0  H20  n  166  short  +0.79  w/o5  +0.26  w/o10  -0.13  base  -0.98  h1  +1.57 (100)  h2  -0.38 (66)  q+ 8/14
+XN<-3 & B50 & B200                           E0  H20  n  116  short  +0.98  w/o5  +0.27  w/o10  -0.23  base  -0.98  h1  +1.75 (76)  h2  -0.48 (40)  q+ 7/14
+XN<-4 & B50 & B200                           E0  H20  n   88  short  +1.24  w/o5  +0.54  w/o10  -0.01  base  -0.98  h1  +1.66 (58)  h2  +0.45 (30)  q+ 9/14
+XN<-5 & B50 & B200                           E0  H20  n   70  short  +1.24  w/o5  +0.34  w/o10  -0.36  base  -0.98  h1  +1.94 (45)  h2  -0.02 (25)  q+ 9/14
+XN<-6 & B50 & B200                           E0  H20  n   45  short  +1.56  w/o5  +0.30  w/o10  -0.79  base  -0.98  h1  +2.54 (27)  h2  +0.10 (18)  q+ 8/13
+XN<-4 & B50 & B200                           E0  H5   n   88  short  +0.38  w/o5  -0.17  w/o10  -0.65  base  -0.35  h1  +0.50 (58)  h2  +0.15 (30)  q+ 7/14
+XN<-4 & B50 & B200                           E0  H10  n   88  short  +0.40  w/o5  -0.24  w/o10  -0.75  base  -0.34  h1  +0.80 (58)  h2  -0.38 (30)  q+ 7/14
+XN<-4 & B50 & B200                           E0  H40  n   88  short  +1.84  w/o5  +0.50  w/o10  -0.28  base  -1.59  h1  +2.61 (58)  h2  +0.34 (30)  q+ 11/14
+XN<-4 & B50 & B200                           E1  H20  n   88  short  +0.72  w/o5  +0.08  w/o10  -0.44  base  -0.95  h1  +1.21 (58)  h2  -0.24 (30)  q+ 8/14
+XN<-4 & B50 & B200                           E1o H20  n   88  short  +1.52  w/o5  +0.84  w/o10  +0.34  base  -0.63  h1  +2.01 (58)  h2  +0.55 (30)  q+ 9/14
+XN<-4 & B50 & B200, qn >= 3 only             E0  H20  n   78  short  +1.06  w/o5  +0.38  w/o10  -0.15  base  -0.98  h1  +1.44 (48)  h2  +0.45 (30)  q+ 7/11
+XN<-4 & B50 & NOT B200                       E0  H20  n   67  short  -1.05  w/o5  -1.86  w/o10  -2.64  base  -0.98  h1  -0.80 (32)  h2  -1.29 (35)  q+ 4/13
+XN<-4 & NOT B50                              E0  H20  n   69  short  -1.56  w/o5  -2.63  w/o10  -3.35  base  -0.98  h1  -1.52 (40)  h2  -1.62 (29)  q+ 7/14
+XN in [-4, 0) & B50 & B200                   E0  H20  n  180  short  +1.11  w/o5  +0.57  w/o10  +0.18  base  -0.98  h1  +2.00 (112)  h2  -0.35 (68)  q+ 7/14
+any XN & B50 & B200                          E0  H20  n  392  short  +0.47  w/o5  +0.22  w/o10  +0.03  base  -0.98  h1  +1.46 (245)  h2  -1.18 (147)  q+ 6/14
+
+Finalist 2 C42 = BAD reported numbers & 20-day low breakdown on volume >= 1.5x at k, E0 H20 - neighbours
+BAD & BRKDN_VOL                              E0  H5   n   74  short  +1.15  w/o5  +0.52  w/o10  +0.05  base  -0.35  h1  +1.48 (41)  h2  +0.75 (33)  q+ 10/14
+BAD & BRKDN_VOL                              E0  H10  n   74  short  +0.88  w/o5  +0.09  w/o10  -0.48  base  -0.34  h1  +1.03 (41)  h2  +0.69 (33)  q+ 10/14
+BAD & BRKDN_VOL                              E0  H40  n   74  short  -0.19  w/o5  -1.26  w/o10  -2.12  base  -1.59  h1  +0.66 (41)  h2  -1.25 (33)  q+ 9/14
+BAD & BRKDN_VOL                              E1  H20  n   74  short  -0.32  w/o5  -1.21  w/o10  -1.87  base  -0.95  h1  +0.32 (41)  h2  -1.12 (33)  q+ 9/14
+BAD & BRKDN_VOL                              E1o H20  n   74  short  +0.70  w/o5  -0.26  w/o10  -1.03  base  -0.63  h1  +1.38 (41)  h2  -0.15 (33)  q+ 9/14
+BAD & BRKDN_VOL & XN<0                       E0  H20  n   74  short  +0.65  w/o5  -0.31  w/o10  -1.13  base  -0.98  h1  +1.10 (41)  h2  +0.09 (33)  q+ 8/14
+BAD & close<20d low (any volume)             E0  H20  n   82  short  +0.79  w/o5  -0.06  w/o10  -0.79  base  -0.98  h1  +1.22 (48)  h2  +0.19 (34)  q+ 8/14
+NOT BAD & BRKDN_VOL                          E0  H20  n   94  short  +0.56  w/o5  +0.00  w/o10  -0.46  base  -0.98  h1  +1.22 (42)  h2  +0.02 (52)  q+ 6/14
+BRKDN_VOL (any numbers)                      E0  H20  n  184  short  +0.52  w/o5  +0.13  w/o10  -0.19  base  -0.98  h1  +1.20 (87)  h2  -0.08 (97)  q+ 6/14

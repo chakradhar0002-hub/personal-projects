@@ -1,0 +1,44 @@
+HOLDOUT EVALUATION PLAN - family "negative average" (written 2026-10-11 BEFORE any holdout outcome was computed)
+Evaluator: independent re-implementation (own code in this folder; no search script is imported).
+
+FINALISTS (3, from the 4 search families; 131 candidates tried in total: pre 40 + post 42 + fade 35 + model 14)
+  F1 C12  results losers in a long downtrend: XN < -4 & close_k < SMA50_k & close_k < SMA200_k; trade B, short 20
+          sessions from close k, Nifty-hedged.
+  F2 C42  BAD reported numbers & BRKDN_VOL at k (close_k < min LOW of k-20..k-1, vol_k >= 1.5 x mean vol k-50..k-1,
+          >= 51 traded sessions); trade B, short 20 sessions from close k, Nifty-hedged.
+  F3 MA4  walk-forward HistGradientBoosting fall ranker, bottom decile (threshold = 10th pct of out-of-fold scores of
+          the last 4 training seasons); trade A (short at close i_cut, cover at close i_p1). Primary = unhedged.
+
+RE-IMPLEMENTATION
+  C12/C42: XN from sector_lab returns.csv and Nifty 50 closes; SMA50/SMA200, 20-day low, 50-day volume mean from
+  ta/build/adjusted_ohlcv.csv.gz on the stock's traded days (full window required); BAD from fa_panel rq_* columns.
+  Checked against tafa features.csv / panel XN (agreement reported, my flags are used).
+  MA4: the feature matrix is re-built by my own merge of the source files (panel, events_ta, fa_panel, OI, delivery,
+  news, dummies) and checked equal to search_model/features_A.csv; the walk-forward (pool, feature drop, clipping,
+  demeaned + clipped target, GBM with the stated hyper-parameters and random_state=0, out-of-fold threshold) is my own
+  code. Scored quarters 4..21: 4..13 reproduce discovery, 14..21 = holdout (training uses all completed outcomes with
+  qn < q).
+  Outcomes: trade B stock = cumulated adjusted daily returns k+1..k+20 (blank = 0), Nifty = N(k+20)/N(k)-1;
+  tradable = k+20 exists and <= 2 blank returns in k+1..k+20 and the return at k exists. Trade A = three_day
+  (outcomes.csv), recomputed from returns.csv as a check; Nifty 3-day = sum of Nifty daily returns i_cut+1..i_p1.
+
+PRIMARY HOLDOUT MEASURES (qn 14..21)
+  F1, F2: hedged short net = -(stock - Nifty)*100 - 0.19.   F3: unhedged short net = -three_day - 0.17
+  (hedged -(three_day - nifty3) - 0.19 reported too).
+  Per finalist: n, mean stock return raw and vs Nifty, mean short net, median, mean without the 5 biggest falls,
+  quarters with trades / short-profitable; base short of the same window and quarters (all eligible F&O results);
+  luck p = one-sided share of 20,000 random same-size picks per quarter from the base pool whose mean short net >=
+  the finalist's (p = (1+#)/(1+20000)); Holm across the 3 finalists.
+  SURVIVOR iff ALL: holdout short net > 0; short net - base short >= 0.5; Holm p < 0.10; holdout n >= 20;
+  short net without the 5 biggest falls > 0.
+
+REALISTIC VERSION (signal uses end-of-day data -> enter one session later; costs 0.25 futures round trip + 0.02 hedge)
+  F1, F2: enter close k+1, exit close k+21 (20 sessions), requires a trade on k+1; net = -(stock-Nifty)*100 - 0.27.
+  F3: enter close i_cut+1, cover close i_p1 (d2 + d3); unhedged net = -(d2+d3) - 0.25; hedged -0.27.
+  Base short recomputed with the same entry and costs.
+
+ALSO: discovery reproduction (flag > 0.05 points or > 1 trade), full-sample 22-quarter tables next to the base,
+  and the 4 known negative groups (contaminated, full sample already seen) on the holdout as references only:
+  quiet-volume laggards (lag21 < -10 & vol_ratio_5_60 < 1, trade A), good numbers below SMA50 (GOOD & close_k <
+  SMA50_k, B H20), winners with pre-results futures short build-up (XN > 4 & A_dP5 < 0 & A_dOI5 > 10, B H20), losers
+  XN < -4 (B H20). SURVIVORSHIP (today's 213 F&O stocks; leavers missing) biases all shorts here against the short.
