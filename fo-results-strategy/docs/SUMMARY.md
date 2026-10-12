@@ -1,32 +1,55 @@
 # Summary: trading NSE F&O stocks around quarterly results
 
-What was studied: 22 results seasons (Jan-Mar 2021 to Apr-Jun 2026 results), 4,462 results of 212 F&O stocks, all
-from NSE data (results dates and times, prices, filings, option prices). The main trade is the **3-day window**: buy
-at the close 2 sessions before the result session (the cutoff), sell at the Day+1 close. A take-profit version exits
-at the Day-1 close if Day-1 is up more than 3%, else at the Result-day close if the two days add to more than 3%, else
-at the Day+1 close. Costs are 0.17% a round trip.
+**What was studied.** 22 results seasons, from Jan-Mar 2021 to Apr-Jun 2026 results. The data covers 4,462 results of
+212 stocks, of which 3,280 came while the stock was in F&O. Everything is NSE data: results dates and times, prices,
+filings, F&O bhavcopies, option prices, delivery data and corporate announcements. Only stocks in F&O at the time are
+traded.
+
+**The two trading windows.**
+- **Before results (3-day window).** Buy at the close 2 sessions before the result session (the cutoff) and sell at the
+  Day+1 close. Cost 0.17% a round trip.
+- **After results (20 sessions).** Buy at the close of the reaction day (the first session that trades on the numbers),
+  hold 20 sessions and short Nifty against it. Cost 0.19%.
+
+**How things were tested.** Rules were written down before their results were computed. Each was checked:
+- in both halves of the data (first 14 quarters and last 8);
+- against random picks;
+- against the same signal on ordinary days without results;
+- without its best 5 trades;
+- after correcting for the number of tests run.
+
+Most findings were then rebuilt from scratch by a separate agent, and the later searches were tested once on quarters
+they had never seen.
 
 ## Bottom line
 
-1. **No rule chosen before the numbers reaches your targets honestly**: not +2% in every quarter, not a +5% average,
-   not 100% winning trades or quarters. Rules that look like that exist in hindsight, but random data produces them
-   just as easily, and they did about half as well or worse on quarters they were not chosen on.
-2. **One pattern holds up: deeply beaten-down stocks with rising volume bounce through results.** The working rule is
-   "lagged Nifty by more than 10% over the month, with volume at or above normal" (below). Expect roughly **+1% to
-   +1.5% a trade after costs**, a few trades a quarter, not +2-3%.
-3. Two separate trades also showed an edge: buying results winners for 20 sessions, and the pre-results option IV
-   run-up straddle. Both are smaller than first measured.
-4. The average F&O stock earns nothing in the 3-day window (+0.04% for stocks that were in F&O at the time, a loss
-   after costs), and nothing found predicts which stocks will fall.
+1. **No rule reaches the original targets honestly.** None makes +2% in every quarter, a +5% average, or 100% winning
+   trades or quarters. Rules that look like that exist in hindsight, but random data produces them just as easily, and
+   they did about half as well or worse on quarters they were not chosen on.
+2. **Two trades hold up**, and both are worth paper-trading:
+   - **Before results, "lag 10% + volume":** deeply beaten-down stocks with rising volume bounce through results.
+     Realistic **+1% to +1.5% a trade**.
+   - **After results, results winners:** stocks that beat Nifty by more than 4% on the reaction day keep drifting up
+     for 20 sessions, best when the stock was already strong before the results (RSI above 50). Realistic **about +1% a
+     trade over Nifty**.
+3. **Nothing else adds to them.** Over 1,000 further tests found no improvement: technical analysis, fundamentals, both
+   together, sectors, valuation, past performance, F&O open interest, implied volatility, delivery %, company news,
+   machine-learning models and options.
+4. **No short works.** The average F&O stock earns nothing in the 3-day window (+0.04%, a loss after costs) and drifts
+   up after results. Nothing found picks the stocks that will fall well enough to pay for a short.
+5. **Expect less than the backtests.** The cut-offs of both trades were chosen after looking at the data. The stock list
+   is today's F&O list, so stocks that fell out of F&O are missing, which flatters buy-the-dip and momentum trades
+   alike. A few big moves, and 2023 in particular, carry much of the profit.
 
-## The rule to paper-trade: lag 10% + volume
+## Trade 1: lag 10% + volume (before results)
 
-At the cutoff close (2 sessions before the result session), for each stock that is in F&O:
+At the cutoff close, for each stock in F&O:
 
-1. **Lag**: the stock's 21-session return minus Nifty 50's 21-session return is below **-10%**.
-2. **Volume**: the average daily volume of the last 5 sessions is at least **1.0x** (or, stricter, **1.3x**) the
-   average of the last 60 sessions (adjust volume for any bonus or split in that window).
-3. Buy at the cutoff close; sell at the Day+1 close (or use the take-profit exit).
+1. **Lag**: its 21-session return minus Nifty 50's 21-session return is below **-10%**.
+2. **Volume**: its average daily volume over the last 5 sessions is at least **1.0x** its 60-session average (stricter:
+   **1.3x**). Adjust volume for any bonus or split in that window.
+3. Buy at the cutoff close and sell at the Day+1 close. A take-profit version exits early: at the Day-1 close if that
+   day is up more than 3%, else at the result-day close if the two days add to more than 3%, else at the Day+1 close.
 
 | Version | Trades | Up | 3-day avg | After costs | Take-profit avg | Quarters with trades | Positive | Without best 5 trades |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -36,104 +59,141 @@ At the cutoff close (2 sessions before the result session), for each stock that 
 
 Why it is believable:
 
-- Volume splits the deep laggards cleanly: on rising volume they bounced, on quiet volume they kept drifting down.
-- It beats random picks from all stocks that lagged Nifty by 10%+ (for the 1.2x and 1.3x versions, chance of doing as
-  well by luck about 4-6 in 1,000).
-- The same setup on ordinary days without results makes only about +0.7% to +0.8% over 3 days, so about +1.5% a trade
-  is linked to the results.
-- Nearby cut-offs (lag 8-12%, volume 0.8-1.5x) give similar numbers; there is no cliff.
-- A shallower lag does not work: below about 10% behind Nifty the trades earn roughly nothing (lag 2-7% with volume
-  1.0x+: +0.4% to +1.1% a trade, and only because the 10%+ trades are still inside; stocks 4-8% behind lost money).
-- In the last 8 quarters, all 7 that had a trade were positive (Jan-Mar 2026 had none): 1.0x +2.86% a trade, 1.3x
-  +3.00%.
+- **Volume splits the laggards cleanly.** On rising volume they bounced; on quiet volume they kept drifting.
+- **It beats luck.** Random picks among all stocks that lagged Nifty by 10%+ do as well about 4-6 times in 1,000 (1.2x
+  and 1.3x versions).
+- **It is linked to results.** The same setup on ordinary days makes only about +0.7% to +0.8% over 3 days.
+- **There is no cliff at the cut-offs.** Lag 8-12% and volume 0.8-1.5x give similar results. A shallower lag earns
+  nothing beyond the 10%+ trades inside it.
+- **It held up recently.** In the last 8 quarters, all 7 with a trade were positive.
+- **Independent rebuilds agree.** They matched every trade, and using delivery volume instead of total volume picks
+  mostly the same trades (75 of 89).
 
 Why to stay cautious:
 
-- The 10% and 1.0x cut-offs were chosen after looking at the data, and 100+ lag/volume combinations were checked in
-  all, so the headline averages are optimistic.
-- The stock list is today's F&O list: stocks that crashed and were later dropped from F&O are missing, which flatters
-  any buy-the-dip rule.
-- A handful of crash rebounds (Adani fall Feb 2023, January sell-offs) give much of the profit; without the best 10
-  trades the 1.2x version makes about +0.7%.
-- Single trades ranged from about -11% (ETERNAL) to +19% (ADANIPORTS). Some quarters have no trade.
+- **The cut-offs were chosen after looking.** More than 100 lag and volume combinations were checked in all.
+- **A few crash rebounds carry it**, such as the Adani fall in Feb 2023 and January sell-offs. Single trades ranged
+  from about -11% to +19%.
+- **Some quarters have no trade.**
 
-### Tighter versions: same stocks, fewer trades
+Stricter versions are the same stocks with fewer trades. Without their best 5 trades they all land around +0.3% to
++1.5%, so use a deeper lag or higher volume as extra conviction, not as a separate rule. Details:
+[LAG10_VOLUME.md](LAG10_VOLUME.md).
 
-Each stricter version is a subset of the looser one with the same lag or the same volume cut (a stock that lagged 15%
-also lagged 10%; volume above 1.5x is also above 1.3x). Tightening mostly keeps the same big winners (ADANIPORTS,
-KALYANKJIL) and drops other, mostly good, trades, so the headline average rises while the trade count and the number
-of trading quarters fall. Without their best 5 trades they land between about +0.3% and +1.5%: the lag-10% versions
-+1.2% to +1.5%, the deeper lag-15% versions only +0.35% to +0.7%.
+No filter from any later study improved this rule. That covers technical analysis, fundamentals, past performance,
+F&O positioning, delivery and news.
 
-| Rule | Trades | Quarters with trades | Positive | 3-day avg | Without best 5 |
-|---|---:|---:|---:|---:|---:|
-| Lag 10%, volume 1.0x+ | 85 | 19 | 18 | +2.13% | +1.36% |
-| Lag 10%, volume 1.2x+ | 54 | 18 | 16 | +2.51% | +1.40% |
-| Lag 10%, volume 1.3x+ | 44 | 18 | 16 | +2.77% | +1.53% |
-| Lag 10%, volume 1.4x+ | 38 | 14 | 12 | +2.67% | +1.19% |
-| Lag 10%, volume 1.5x+ | 32 | 12 | 10 | +3.05% | +1.31% |
-| Lag 10%, volume 2x+ | 16 | 8 | 7 | +4.38% | +1.43% |
-| Lag 15%, volume 1.0x+ | 32 | 11 | 10 | +2.71% | +0.68% |
-| Lag 15%, volume 1.5x+ | 16 | 8 | 6 | +3.77% | +0.52% |
-| Lag 15%, volume 2x+ | 9 | 6 | 6 | +5.99% | +0.35% |
-| Lag 20%, volume 1.5x+ | 9 | 4 | 4 | +6.26% | +1.46% |
-| Lag 20%, volume 2x+ | 6 | 3 | 3 | +7.01% | too few |
+## Trade 2: results winners (after results)
 
-Use a deeper lag or higher volume as extra conviction on a trade, not as a separate rule. Volume between 1.0x and 2.0x
-earns about the same (+1.4% to +2.0% a band); only the 2x+ band stands out, because that is where the crash rebounds
-sit.
+At the reaction-day close, take stocks whose reaction-day return beat Nifty 50's by more than **4%**. Buy and hold
+**20 sessions**, short Nifty for the same value. The stronger version also needs **RSI(14) above 50** at the cutoff
+close, 2 sessions before the results.
 
-## Other trades with an edge
+| Version | Trades | Avg over Nifty after costs | Quarters positive |
+|---|---:|---:|---:|
+| All results winners | 392 | +1.45% | 15 of 22 |
+| **Winners with RSI above 50** | **232** | **+2.42%** | **17 of 22** |
+| Winners with RSI 50 or below | 160 | +0.04% | 10 of 22 |
+| RSI above 50, entered at the next open, 0.40% all-in cost | 232 | +2.04% | 14 of 22 |
 
-| Trade | Result | Caveat |
-|---|---|---|
-| **Results-winner drift**: a stock beats Nifty by more than 4% on its reaction day; buy at that close, hold 20 sessions, short Nifty against it | +1.45% a trade over Nifty after costs, 392 trades, 15 of 22 quarters positive | Lost in 2021-22 (-1.2% a trade); +1.2% in the last 8 quarters but only +0.4% unhedged. Expect about +1% |
-| **Winners with RSI above 50**: the same trade, only for winners whose RSI(14) was above 50 two sessions before the results | +2.42% a trade over Nifty after costs, 232 trades, traded in all 22 quarters, 17 positive (winners with RSI 50 or below: +0.04%) | Picked from 117 tests; lost in 2021-22; 2023 gives 46% of the profit. Expect about +1%, entering at the next open ([WINNERS_RSI50.md](WINNERS_RSI50.md)) |
-| **Pre-results IV run-up straddle**: buy the ATM straddle 5 sessions before the last close before the numbers, sell at that close | +0.065R a trade after costs, 280 trades, all 9 seasons positive (2023-25) | Out of sample +2.2% a trade; depends on fills near mid. Marginal |
+- **It traded in every quarter.** The RSI > 50 version traded in all 22 quarters, with 3 to 23 trades a quarter. It
+  made +2.65% in the first 14 quarters and +2.16% in the last 8.
+- **It is not every year.** It lost in 2021 and 2022, and 2023 gives 46% of the profit. Without 2023 it makes +1.54%.
+- **The RSI filter adds less than it seems.** Its fair same-quarter gain over all winners is +0.63% a trade, and only
+  about +0.2% to +0.4% after allowing for having picked it from 117 tests. Skipping winners with RSI 50 or below still
+  pays: they earn nothing, and lose money with a realistic entry.
+- **Enter at the next open.** You only know a stock beat Nifty by 4% near the close, so the next open is the safe
+  entry. Use stock futures, or allow about 0.40% for delivery costs.
+- **Survivor bias inflates it.** On stocks already in F&O in 2021, at the next open and 0.40% cost, it made +1.41%.
+
+Details: [WINNERS_RSI50.md](WINNERS_RSI50.md), [PATTERNS.md](PATTERNS.md).
+
+**Holding 60 sessions instead of 20** was the only way to raise the average per trade on unseen quarters: +5.10%
+against +1.85% on the same trades. But it earns the same per day and ties up three times the capital, and much of the
+extra is F&O stocks drifting above Nifty. Realistic: about +2% per 60-session trade
+([HIGHER_AVERAGE.md](HIGHER_AVERAGE.md)).
+
+## A third, marginal trade
+
+**Pre-results IV run-up straddle.** Buy the at-the-money straddle 5 sessions before the last close before the numbers,
+and sell at that close. In the original test it made +0.065R a trade after costs over 280 trades (R = the straddle's
+cost), and all 9 seasons (2023-25) were positive. On new seasons from June 2025 it made +2.2% a trade. It depends on
+getting fills near the mid price, so treat it as marginal ([REAL_DATA_RESULTS.md](REAL_DATA_RESULTS.md)).
+
+## Watch list: paper-trade with no money, definitions fixed now
+
+| Idea | Trade | Backtest | Realistic | Source |
+|---|---|---|---|---|
+| Hold results winners 60 sessions instead of 20 | After | +4.84% a trade over 22 quarters | about +2% per 60 sessions (same per day) | [HIGHER_AVERAGE.md](HIGHER_AVERAGE.md) |
+| Winners whose put-call ratio is in the top fifth at the reaction close (cut-off from the previous quarter), bought at the next open | After | 213 trades, +2.34% vs +0.39% for other winners | about +0.3% over plain winners | [MORE_SIGNALS.md](MORE_SIGNALS.md) |
+| Habitual post-results drifters: last 4 post-results drifts in the quarter's top fifth, bought after any result | After | 569 trades, +1.80% | about +0.5% | [PAST_PERFORMANCE.md](PAST_PERFORMANCE.md) |
+| Stocks that habitually rise into their results: last 4 results windows in the quarter's top tenth (found after the fact) | Before | 292 trades, +1.07% | about +0.4% | [PAST_PERFORMANCE.md](PAST_PERFORMANCE.md) |
+| A press release or regular business update in the 30 days before the cutoff | Before | 1,023 trades, +0.25% after costs | about +0.1% | [MORE_SIGNALS.md](MORE_SIGNALS.md) |
+| Short results losers already below their 50- and 200-day averages, 20 sessions against Nifty | After (short) | +0.30% on unseen quarters | about 0 | [NEGATIVE_AVERAGE.md](NEGATIVE_AVERAGE.md) |
 
 ## What did not work
 
+**Targets**
+
 | Idea | Result |
 |---|---|
-| A pre-results rule averaging +2% in every quarter | None on unseen quarters; the average stock never reached +2% in any quarter |
-| Open searches (about 350,000 rules, later about 30 million a run) and machine-learning models | Strong in the quarters used to find them, about -2% to +2% afterwards |
-| Your Condition A / B | A: +3.1% on 32 picks, but only since 2023 and on 14 stocks; A or B: +1.7% |
-| Early reporters with a strong week | +3.4% on 42 trades; realistic about +1% above the market |
-| Valuation (P/B for financials, P/E for consumer, IT, pharma; cheapest or middle of the peer group) | No edge |
-| Sector performance before results | The "hot sectors do worse" result was a flaw in the test; no edge |
-| Six fresh sector strategies (619 variants: sector leaders, rotation, busy weeks, peer pairs) | No new edge |
-| A +5% average over all quarters | Rules showing +6% exist only in hindsight, and random data finds equally good ones |
-| 100% winning trades or quarters | Perfect records appear in hindsight and in random data; afterwards about half were right |
-| Technical analysis (RSI, Stochastic, Bollinger, CCI, MFI, MACD, moving averages, ADX, candles, OBV; 44 signals) | No signal holds up; none improves or replaces the lag rule ([TECHNICAL_ANALYSIS.md](TECHNICAL_ANALYSIS.md)) |
-| Fundamental analysis (value, quality, growth, GARP, Piotroski, margins, turnarounds; before or after results) | No screen works; none improves or replaces the lag rule; reported numbers give no drift ([FUNDAMENTAL_ANALYSIS.md](FUNDAMENTAL_ANALYSIS.md)) |
-| Technical and fundamental analysis together (40 combined screens, 12 filters on the lag rule, a model on both, 117 post-results tests) | Nothing survives; the model ranks results like a coin flip; none improves the lag rule or the winner drift ([TA_FA_COMBINED.md](TA_FA_COMBINED.md)) |
-| A higher average for the winners trade (136 versions: stricter entry, exits, market backdrop, ranking models, options) | Only holding 60 sessions instead of 20 kept a higher average on unseen quarters (+5.10% vs +1.85% a trade), but it earns the same per day; options lost money ([HIGHER_AVERAGE.md](HIGHER_AVERAGE.md)) |
-| Past performance (results track record; 1-12 month return vs Nifty and sector; 52-week high; 71 tests on both trades) | Improves neither the lag rule nor the winners trade. One watch item: stocks that habitually drift up after results, bought after any result, about +0.5% a trade realistic ([PAST_PERFORMANCE.md](PAST_PERFORMANCE.md)) |
-| F&O positioning (OI build-up, futures premium, put-call ratio, implied vol), delivery %, company news flow (98 tests on both trades) | Nothing improves either trade. Watch items: winners with a high put-call ratio on the results day (about +0.3% over plain winners), a recent press release before results (about +0.1%) ([MORE_SIGNALS.md](MORE_SIGNALS.md)) |
-| Shorting (mild laggards, results losers, model "fall" picks; then 131 short rules before and after results, tested on unseen quarters) | Nothing worked; the closest, results losers already in a downtrend, made +0.30% a short on unseen quarters, about zero entered a day later ([NEGATIVE_AVERAGE.md](NEGATIVE_AVERAGE.md)) |
-| Selling the straddle across the numbers | Lost about 3.3% of the premium a trade after costs |
+| A pre-results rule averaging +2% in every quarter | None on unseen quarters; the average stock never reached +2% in any quarter ([TARGET_2PCT.md](TARGET_2PCT.md)) |
+| A +5% average over all quarters | Rules showing +6% exist only in hindsight, and random data finds equally good ones ([TARGET_5PCT.md](TARGET_5PCT.md)) |
+| 100% winning trades or quarters | Perfect records appear in hindsight and in random data; afterwards about half were right ([TARGET_100PCT.md](TARGET_100PCT.md)) |
+| A higher average for the winners trade: 136 versions with stricter entry, exits, market backdrop, ranking models and options | Only the 60-session hold kept a higher average on unseen quarters; stricter filters fell back to the base trade, and options lost 10-27% of premium a trade ([HIGHER_AVERAGE.md](HIGHER_AVERAGE.md)) |
 
-Two corrections along the way: the often-quoted "+0.28% for all stocks" in the 3-day window was inflated by results
-from before stocks joined F&O (stocks in F&O at the time: +0.04%); and the results-winner drift is weaker over 22
-quarters (+1.45%) than over the first 15 tested (+2.3%).
+**Signals, before and after results**
+
+| Idea | Result |
+|---|---|
+| Open searches (about 350,000 rules, later about 30 million a run) and machine-learning models | Strong in the quarters used to find them, about -2% to +2% afterwards |
+| Technical analysis: 44 signals (RSI, Stochastic, Bollinger, CCI, MFI, MACD, moving averages, ADX, candles, OBV) | No signal holds up; none improves or replaces the lag rule ([TECHNICAL_ANALYSIS.md](TECHNICAL_ANALYSIS.md)) |
+| Fundamental analysis (value, quality, growth, GARP, Piotroski, margins, turnarounds) | No screen works before results; reported numbers give no drift beyond what any result does ([FUNDAMENTAL_ANALYSIS.md](FUNDAMENTAL_ANALYSIS.md)) |
+| Technical and fundamental analysis together (40 screens, 12 lag-rule filters, a walk-forward model, 117 post-results tests) | Nothing survives; the model ranks results like a coin flip (AUC 0.52) ([TA_FA_COMBINED.md](TA_FA_COMBINED.md)) |
+| Past performance: results track record, 1-12 month return vs Nifty and sector, 52-week high (71 tests) | Improves neither trade; one watch item ([PAST_PERFORMANCE.md](PAST_PERFORMANCE.md)) |
+| F&O positioning (OI build-up, futures premium, put-call ratio, implied vol), delivery %, company news (98 tests) | Improves neither trade; two small watch items ([MORE_SIGNALS.md](MORE_SIGNALS.md)) |
+| Sector performance, six sector strategies (619 variants), valuation within peer groups | No edge ([SECTOR_STRATEGIES.md](SECTOR_STRATEGIES.md)) |
+| Your Condition A / B; early reporters with a strong week | A: +3.1% on 32 picks, only since 2023; early reporters realistic about +1% above the market |
+
+**Shorts and option selling**
+
+| Idea | Result |
+|---|---|
+| Shorting: 131 rules before and after results (fall into results, losers keep falling, fade big jumps, fall models), tested on unseen quarters | Nothing works: stocks drifted up, big moves kept going, losers did not keep falling; the best short makes about zero after realistic entry ([NEGATIVE_AVERAGE.md](NEGATIVE_AVERAGE.md)) |
+| Selling the straddle across the numbers | Lost about 3.3% of the premium a trade after costs |
+| Buying the Day+1 follow-through | Lost money after costs |
+
+## Corrections along the way
+
+- **The average stock earns less than first quoted.** The often-quoted "+0.28% for all stocks" in the 3-day window
+  included results from before stocks joined F&O. For stocks in F&O at the time it is +0.04%.
+- **The results-winner drift is weaker over the full sample.** It makes +1.45% over 22 quarters, against +2.3% over the
+  first 15 quarters tested.
+- **The volume rule needed a split adjustment.** One stock split (COFORGE) had inflated a volume ratio. Volume is now
+  adjusted for splits and bonuses, which changed the stricter volume versions.
 
 ## Next steps
 
-1. Paper-trade "lag 10% + volume 1.0x (or 1.3x)" for the next 2-4 results seasons with the rules fixed in advance,
-   recording entry at the cutoff close and exit at the Day+1 close, against Nifty.
-2. Size small: a single trade can lose 8-11%, and some seasons give no trade.
-3. Re-check after each season whether the live trades match the backtest (+1% to +1.5% a trade after costs).
+1. **Paper-trade the two trades** with the rules above fixed in advance, starting with the Jul-Sep 2026 results
+   (October-November 2026):
+   - lag 10% + volume before results;
+   - results winners with RSI above 50, entered at the next open, held 20 sessions against Nifty.
+2. **Log the watch list alongside**, with no money on it.
+3. **Size small.** A single trade can lose 10% or more, and some seasons give no trade before results.
+4. **Re-check after every season** that the live trades match the backtests: about +1% to +1.5% a trade for the lag
+   rule, and about +1% over Nifty for the winners trade. A simple stop rule: drop a trade if two seasons in a row come
+   in clearly below zero.
 
 ## Details
 
 - [LAG10_VOLUME.md](LAG10_VOLUME.md): the lag + volume rule, every version, quarter-by-quarter tables, independent checks
 - [LAG5_PATTERNS.md](LAG5_PATTERNS.md), [LAGGED_NIFTY_1M.md](LAGGED_NIFTY_1M.md): how the lag pattern was found
-- [TARGET_2PCT.md](TARGET_2PCT.md), [TARGET_5PCT.md](TARGET_5PCT.md), [TARGET_100PCT.md](TARGET_100PCT.md): the target searches
-- [WINNERS_RSI50.md](WINNERS_RSI50.md): results winners with RSI above 50, quarter by quarter, with independent checks
-- [HIGHER_AVERAGE.md](HIGHER_AVERAGE.md): attempts to raise that trade's average, tested on unseen quarters
-- [PAST_PERFORMANCE.md](PAST_PERFORMANCE.md): the stock's results track record and price performance on both trades
-- [MORE_SIGNALS.md](MORE_SIGNALS.md): F&O open-interest positioning, delivery % and company news flow on both trades
-- [NEGATIVE_AVERAGE.md](NEGATIVE_AVERAGE.md): the search for stocks that fall around results (shorts)
+- [WINNERS_RSI50.md](WINNERS_RSI50.md): results winners with RSI above 50, quarter by quarter
+- [HIGHER_AVERAGE.md](HIGHER_AVERAGE.md): attempts to raise the winners trade's average
+- [PAST_PERFORMANCE.md](PAST_PERFORMANCE.md): results track record and price performance on both trades
+- [MORE_SIGNALS.md](MORE_SIGNALS.md): F&O positioning, delivery % and company news on both trades
+- [NEGATIVE_AVERAGE.md](NEGATIVE_AVERAGE.md): the search for stocks that fall (shorts)
 - [TECHNICAL_ANALYSIS.md](TECHNICAL_ANALYSIS.md), [FUNDAMENTAL_ANALYSIS.md](FUNDAMENTAL_ANALYSIS.md), [TA_FA_COMBINED.md](TA_FA_COMBINED.md): TA, FA and both together
+- [TARGET_2PCT.md](TARGET_2PCT.md), [TARGET_5PCT.md](TARGET_5PCT.md), [TARGET_100PCT.md](TARGET_100PCT.md): the target searches
 - [SECTOR_STRATEGIES.md](SECTOR_STRATEGIES.md), [PATTERNS.md](PATTERNS.md), [REAL_DATA_RESULTS.md](REAL_DATA_RESULTS.md): sector ideas, winner drift, option trades
-- [reports/results_report_last_22_quarters.html](../reports/results_report_last_22_quarters.html): the full results report
+- [reports/results_report_last_22_quarters.html](../reports/results_report_last_22_quarters.html): the full 22-quarter results report
