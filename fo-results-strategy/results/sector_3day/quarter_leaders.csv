@@ -1,0 +1,23 @@
+qn,period,quarter,results,avg,up_pct,sectors_up,sectors,best,best_avg,best_n,worst,worst_avg,worst_n,auto_rank,ranked
+0,Jan-Mar 2021,Q4 FY21,98,0.821,47.959,7,15,Auto & auto parts,4.192,11,IT,-1.835,6,1,11
+1,Apr-Jun 2021,Q1 FY22,117,0.061,54.701,9,15,IT,4.094,9,Pharma & healthcare,-2.488,11,10,11
+2,Jul-Sep 2021,Q2 FY22,125,-0.843,40.8,4,15,IT,1.588,11,NBFC & financials,-4.169,17,2,13
+3,Oct-Dec 2021,Q3 FY22,132,-0.636,46.212,4,15,Banks,4.124,14,Cement & building materials,-3.433,5,4,14
+4,Jan-Mar 2022,Q4 FY22,131,-0.831,40.458,3,15,Auto & auto parts,3.676,11,Oil & gas,-3.549,7,1,13
+5,Apr-Jun 2022,Q1 FY23,134,0.754,52.239,10,15,Metals & mining,2.881,9,Oil & gas,-1.821,7,5,13
+6,Jul-Sep 2022,Q2 FY23,133,0.03,49.624,9,15,Metals & mining,1.124,9,Consumer durables & retail,-3.587,6,9,13
+7,Oct-Dec 2022,Q3 FY23,133,-0.159,44.361,6,15,Auto & auto parts,2.871,11,Consumer durables & retail,-4.606,5,1,13
+8,Jan-Mar 2023,Q4 FY23,134,0.607,55.97,9,15,Cement & building materials,2.306,5,Chemicals & agro,-1.388,4,3,13
+9,Apr-Jun 2023,Q1 FY24,133,-0.297,42.105,4,15,Auto & auto parts,1.297,11,IT,-1.887,11,1,13
+10,Jul-Sep 2023,Q2 FY24,132,0.406,53.03,9,15,Consumer durables & retail,2.511,6,Banks,-1.071,14,4,13
+11,Oct-Dec 2023,Q3 FY24,135,0.478,52.593,9,15,Consumer durables & retail,3.814,6,Chemicals & agro,-2.62,4,7,13
+12,Jan-Mar 2024,Q4 FY24,135,0.876,53.333,11,15,Auto & auto parts,3.694,11,IT,-1.596,11,1,13
+13,Apr-Jun 2024,Q1 FY25,135,0.528,53.333,9,15,Consumer durables & retail,3.804,6,Cement & building materials,-3.404,5,5,13
+14,Jul-Sep 2024,Q2 FY25,134,-1.118,41.791,4,15,IT,1.294,11,Chemicals & agro,-4.626,4,11,13
+15,Oct-Dec 2024,Q3 FY25,172,-0.787,45.349,4,15,Chemicals & agro,3.701,5,Power,-4.449,7,11,15
+16,Jan-Mar 2025,Q4 FY25,178,0.958,53.371,10,15,IT,3.704,13,FMCG,-0.932,13,6,15
+17,Apr-Jun 2025,Q1 FY26,191,-0.564,45.55,3,15,"Services, telecom & internet",2.34,14,Banks,-1.829,18,2,15
+18,Jul-Sep 2025,Q2 FY26,191,0.668,54.45,9,15,FMCG,2.693,13,Consumer durables & retail,-2.117,12,6,15
+19,Oct-Dec 2025,Q3 FY26,196,0.183,45.918,6,15,Consumer durables & retail,5.577,12,Power,-3.35,7,3,15
+20,Jan-Mar 2026,Q4 FY26,203,-0.309,45.813,7,15,Chemicals & agro,3.829,5,Consumer durables & retail,-3.806,13,6,15
+21,Apr-Jun 2026,Q1 FY27,206,0.174,50.485,9,15,Auto & auto parts,2.696,16,Power,-2.789,8,1,15
