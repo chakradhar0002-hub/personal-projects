@@ -1,0 +1,91 @@
+check: NSE lag-1 mean Spearman +0.0169 (build +0.0169), slope +0.0122 (build +0.0122)
+check: custom Cap goods/IT +0.6413 (build +0.6413); NSE Fin services/Metals +0.5206 (build +0.5206)
+
+null: 20,000 within-quarter shuffles of results across sector labels (both label sets together), seed 20261101
+
+== persistence (items 1a/1c, 1e/1g): full and halves; MDE = 2.8 x null sd ==
+NSE    mean Spearman lag 1, all 21 pairs                    obs +0.017 null -0.000 sd 0.064 p 0.793  MDE(80%, 5%) 0.180
+NSE    weighted slope lag 1, all                            obs +0.012 null -0.000 sd 0.060 p 0.834  MDE(80%, 5%) 0.168
+NSE    mean Spearman lag 1, pairs t=0..9 (first half)       obs +0.087 null +0.000 sd 0.098 p 0.382  MDE(80%, 5%) 0.274
+NSE    slope lag 1, first half                              obs +0.096 null -0.000 sd 0.089 p 0.286  MDE(80%, 5%) 0.250
+NSE    mean Spearman lag 1, pairs t=11..20 (second half)    obs -0.074 null -0.001 sd 0.089 p 0.411  MDE(80%, 5%) 0.248
+NSE    slope lag 1, second half                             obs -0.054 null -0.001 sd 0.081 p 0.515  MDE(80%, 5%) 0.227
+NSE    mean Spearman lag 4                                  obs +0.085 null -0.000 sd 0.071 p 0.226  MDE(80%, 5%) 0.198
+NSE    slope lag 4                                          obs +0.094 null -0.001 sd 0.064 p 0.136  MDE(80%, 5%) 0.178
+custom mean Spearman lag 1, all 21 pairs                    obs +0.054 null -0.001 sd 0.064 p 0.398  MDE(80%, 5%) 0.178
+custom weighted slope lag 1, all                            obs +0.001 null -0.000 sd 0.060 p 0.976  MDE(80%, 5%) 0.168
+custom mean Spearman lag 1, pairs t=0..9 (first half)       obs +0.143 null +0.000 sd 0.095 p 0.134  MDE(80%, 5%) 0.267
+custom slope lag 1, first half                              obs +0.107 null -0.000 sd 0.088 p 0.223  MDE(80%, 5%) 0.247
+custom mean Spearman lag 1, pairs t=11..20 (second half)    obs -0.048 null -0.001 sd 0.089 p 0.609  MDE(80%, 5%) 0.248
+custom slope lag 1, second half                             obs -0.105 null -0.001 sd 0.082 p 0.208  MDE(80%, 5%) 0.229
+custom mean Spearman lag 4                                  obs -0.057 null -0.000 sd 0.069 p 0.413  MDE(80%, 5%) 0.193
+custom slope lag 4                                          obs -0.033 null -0.000 sd 0.063 p 0.596  MDE(80%, 5%) 0.175
+
+== do sector labels carry any same-quarter information? between-sector SS within quarters (all cells) ==
+NSE: between-sector SS 9898 = 11.4% of the within-quarter SS; null mean 9879 (11.3%), 99th pct 11692; upper-tail p 0.478; observed / null = 1.00
+   avg best-worst spread, min 4: obs +6.54 null +6.66 p 0.744
+   avg best-worst spread, min 8: obs +4.71 null +4.41 p 0.298
+custom: between-sector SS 8446 = 9.7% of the within-quarter SS; null mean 8260 (9.5%), 99th pct 9839; upper-tail p 0.382; observed / null = 1.02
+   avg best-worst spread, min 4: obs +5.87 null +6.04 p 0.624
+   avg best-worst spread, min 8: obs +4.86 null +4.61 p 0.369
+
+== sector pairs: precise pair p and familywise maxT over all 156 pairs (NSE + custom) ==
+labels                       pair       r  null_mean  p_pair   fw78  fw156      rA      rB     pA     pB
+custom             Cap goods / IT  0.6413    -0.0773  0.0005 0.0290 0.0538  0.7175  0.6108 0.0060 0.0218
+custom             Banks / Metals  0.5689    -0.0891  0.0010 0.1079 0.1946  0.5859  0.5604 0.0238 0.0353
+   NSE      Fin services / Metals  0.5206    -0.1484  0.0015 0.0924 0.1599  0.4728  0.5789 0.0410 0.0142
+   NSE                Auto / FMCG  0.4259    -0.0752  0.0183 0.8235 0.9493  0.4115  0.3891 0.1324 0.1554
+   NSE           FMCG / Chemicals  0.4308    -0.0479  0.0317 0.9034 0.9811  0.0644  0.5317 0.7618 0.0696
+custom          NBFC/Fin / Cement  0.3879    -0.0741  0.0363 0.9444 0.9926  0.3265  0.5286 0.2602 0.0538
+   NSE Cons services / Constr mat -0.4893    -0.0300  0.0440 0.9498 0.9934 -0.6413 -0.3998 0.0845 0.2648
+   NSE           FMCG / Oil & gas  0.3440    -0.0641  0.0610 0.9958 0.9998  0.0104  0.5606 0.8342 0.0422
+   NSE                  Auto / IT -0.4819    -0.0771  0.0656 0.9969 0.9998 -0.3218 -0.5885 0.4760 0.1077
+   NSE            FMCG / Services -0.4449    -0.0448  0.0772 0.9978 0.9999 -0.3517 -0.4941 0.3908 0.1683
+custom                Auto / FMCG  0.3026    -0.0828  0.0772 0.9992 1.0000  0.2643  0.3086 0.2978 0.2413
+custom                  Auto / IT -0.4706    -0.0839  0.0791 0.9991 1.0000 -0.3087 -0.6245 0.5174 0.0825
+null max |r - mean| over 156 pairs: median 0.60, 95th 0.72
+pairs with pair p < 0.05: 7 of 156 (expected about 7.8)
+
+== top pairs: leave-one-quarter-out, drop q0-4, cells with 8+ results, NSE counterpart ==
+custom Cap goods/IT: r +0.64 (n 22); LOO +0.60 (drop Jan-Mar 2021) to +0.76 (drop Jan-Mar 2024); drop q0-4 +0.62 (n 17); cells 8+ +0.59 (n 20)
+      cells per quarter: [(np.int64(5), np.int64(6)), (np.int64(7), np.int64(9)), (np.int64(8), np.int64(11)), (np.int64(9), np.int64(11)), (np.int64(9), np.int64(11)), (np.int64(10), np.int64(11)), (np.int64(9), np.int64(11)), (np.int64(10), np.int64(11)), (np.int64(10), np.int64(11)), (np.int64(10), np.int64(11)), (np.int64(9), np.int64(10)), (np.int64(10), np.int64(11)), (np.int64(10), np.int64(11)), (np.int64(10), np.int64(11)), (np.int64(9), np.int64(11)), (np.int64(12), np.int64(13)), (np.int64(13), np.int64(13)), (np.int64(16), np.int64(13)), (np.int64(17), np.int64(13)), (np.int64(19), np.int64(13)), (np.int64(20), np.int64(13)), (np.int64(21), np.int64(13))]
+NSE    Cap goods/IT: r +0.31 (n 21); LOO +0.17 (drop Jan-Mar 2026) to +0.59 (drop Jan-Mar 2024); drop q0-4 +0.32 (n 17); cells 8+ +0.38 (n 18)
+      cells per quarter: [(np.int64(3), np.int64(6)), (np.int64(5), np.int64(8)), (np.int64(7), np.int64(10)), (np.int64(8), np.int64(10)), (np.int64(7), np.int64(10)), (np.int64(9), np.int64(10)), (np.int64(8), np.int64(10)), (np.int64(9), np.int64(10)), (np.int64(9), np.int64(10)), (np.int64(9), np.int64(10)), (np.int64(8), np.int64(9)), (np.int64(9), np.int64(10)), (np.int64(9), np.int64(10)), (np.int64(9), np.int64(10)), (np.int64(8), np.int64(10)), (np.int64(13), np.int64(12)), (np.int64(14), np.int64(12)), (np.int64(18), np.int64(12)), (np.int64(19), np.int64(12)), (np.int64(21), np.int64(12)), (np.int64(22), np.int64(12)), (np.int64(23), np.int64(12))]
+NSE    Fin services/Metals: r +0.52 (n 22); LOO +0.45 (drop Jul-Sep 2024) to +0.61 (drop Jan-Mar 2021); drop q0-4 +0.72 (n 17); cells 8+ +0.61 (n 21)
+      cells per quarter: [(np.int64(27), np.int64(6)), (np.int64(31), np.int64(9)), (np.int64(31), np.int64(9)), (np.int64(34), np.int64(9)), (np.int64(33), np.int64(9)), (np.int64(34), np.int64(9)), (np.int64(33), np.int64(9)), (np.int64(33), np.int64(9)), (np.int64(33), np.int64(9)), (np.int64(33), np.int64(9)), (np.int64(32), np.int64(9)), (np.int64(33), np.int64(9)), (np.int64(33), np.int64(9)), (np.int64(33), np.int64(9)), (np.int64(33), np.int64(9)), (np.int64(46), np.int64(9)), (np.int64(48), np.int64(10)), (np.int64(50), np.int64(10)), (np.int64(50), np.int64(10)), (np.int64(51), np.int64(10)), (np.int64(53), np.int64(9)), (np.int64(53), np.int64(10))]
+custom Banks/Metals: r +0.57 (n 22); LOO +0.50 (drop Oct-Dec 2023) to +0.66 (drop Oct-Dec 2021); drop q0-4 +0.70 (n 17); cells 8+ +0.53 (n 21)
+      cells per quarter: [(np.int64(14), np.int64(5)), (np.int64(14), np.int64(9)), (np.int64(14), np.int64(9)), (np.int64(14), np.int64(9)), (np.int64(14), np.int64(9)), (np.int64(14), np.int64(9)), (np.int64(14), np.int64(9)), (np.int64(14), np.int64(9)), (np.int64(14), np.int64(9)), (np.int64(14), np.int64(9)), (np.int64(14), np.int64(9)), (np.int64(14), np.int64(9)), (np.int64(14), np.int64(9)), (np.int64(14), np.int64(9)), (np.int64(14), np.int64(9)), (np.int64(18), np.int64(10)), (np.int64(18), np.int64(11)), (np.int64(18), np.int64(11)), (np.int64(18), np.int64(11)), (np.int64(18), np.int64(11)), (np.int64(18), np.int64(10)), (np.int64(18), np.int64(11))]
+custom NBFC/Fin/Metals: r -0.13 (n 22); LOO -0.25 (drop Apr-Jun 2022) to +0.09 (drop Jan-Mar 2021); drop q0-4 +0.38 (n 17); cells 8+ +0.09 (n 21)
+      cells per quarter: [(np.int64(13), np.int64(5)), (np.int64(17), np.int64(9)), (np.int64(17), np.int64(9)), (np.int64(20), np.int64(9)), (np.int64(19), np.int64(9)), (np.int64(20), np.int64(9)), (np.int64(19), np.int64(9)), (np.int64(19), np.int64(9)), (np.int64(19), np.int64(9)), (np.int64(19), np.int64(9)), (np.int64(18), np.int64(9)), (np.int64(19), np.int64(9)), (np.int64(19), np.int64(9)), (np.int64(19), np.int64(9)), (np.int64(19), np.int64(9)), (np.int64(26), np.int64(10)), (np.int64(28), np.int64(11)), (np.int64(30), np.int64(11)), (np.int64(30), np.int64(11)), (np.int64(31), np.int64(11)), (np.int64(33), np.int64(10)), (np.int64(33), np.int64(11))]
+NSE    Auto/IT: r -0.48 (n 22); LOO -0.55 (drop Oct-Dec 2022) to -0.41 (drop Apr-Jun 2021); drop q0-4 -0.39 (n 17); cells 8+ -0.44 (n 21)
+      cells per quarter: [(np.int64(10), np.int64(6)), (np.int64(9), np.int64(8)), (np.int64(10), np.int64(10)), (np.int64(10), np.int64(10)), (np.int64(10), np.int64(10)), (np.int64(10), np.int64(10)), (np.int64(10), np.int64(10)), (np.int64(10), np.int64(10)), (np.int64(10), np.int64(10)), (np.int64(10), np.int64(10)), (np.int64(10), np.int64(9)), (np.int64(10), np.int64(10)), (np.int64(10), np.int64(10)), (np.int64(10), np.int64(10)), (np.int64(10), np.int64(10)), (np.int64(12), np.int64(12)), (np.int64(12), np.int64(12)), (np.int64(13), np.int64(12)), (np.int64(13), np.int64(12)), (np.int64(13), np.int64(12)), (np.int64(15), np.int64(12)), (np.int64(15), np.int64(12))]
+custom Auto/IT: r -0.47 (n 22); LOO -0.53 (drop Jan-Mar 2022) to -0.39 (drop Apr-Jun 2021); drop q0-4 -0.49 (n 17); cells 8+ -0.41 (n 21)
+      cells per quarter: [(np.int64(11), np.int64(6)), (np.int64(10), np.int64(9)), (np.int64(11), np.int64(11)), (np.int64(11), np.int64(11)), (np.int64(11), np.int64(11)), (np.int64(11), np.int64(11)), (np.int64(11), np.int64(11)), (np.int64(11), np.int64(11)), (np.int64(11), np.int64(11)), (np.int64(11), np.int64(11)), (np.int64(11), np.int64(10)), (np.int64(11), np.int64(11)), (np.int64(11), np.int64(11)), (np.int64(11), np.int64(11)), (np.int64(11), np.int64(11)), (np.int64(13), np.int64(13)), (np.int64(13), np.int64(13)), (np.int64(14), np.int64(13)), (np.int64(14), np.int64(13)), (np.int64(14), np.int64(13)), (np.int64(16), np.int64(13)), (np.int64(16), np.int64(13))]
+NSE    Cons services/Constr mat: r -0.49 (n 20); LOO -0.59 (drop Oct-Dec 2023) to -0.33 (drop Apr-Jun 2024); drop q0-4 -0.38 (n 17); cells 8+ +nan (n 0)
+      cells per quarter: [(np.int64(0), np.int64(3)), (np.int64(4), np.int64(4)), (np.int64(4), np.int64(3)), (np.int64(4), np.int64(4)), (np.int64(4), np.int64(4)), (np.int64(4), np.int64(4)), (np.int64(4), np.int64(4)), (np.int64(4), np.int64(4)), (np.int64(4), np.int64(4)), (np.int64(4), np.int64(4)), (np.int64(4), np.int64(4)), (np.int64(4), np.int64(4)), (np.int64(4), np.int64(4)), (np.int64(4), np.int64(4)), (np.int64(4), np.int64(4)), (np.int64(7), np.int64(4)), (np.int64(7), np.int64(4)), (np.int64(7), np.int64(4)), (np.int64(7), np.int64(4)), (np.int64(8), np.int64(4)), (np.int64(9), np.int64(4)), (np.int64(9), np.int64(4))]
+
+== item 2 transitions: halves and LOO of best/worst next-quarter excess ==
+NSE best: next-quarter excess +0.05 (n 21); t=0..9 +0.70, t=11..20 -0.76; LOO -0.36 to +0.23; per-quarter values [-1.29, 1.97, 1.71, 8.26, 1.27, -0.93, -1.4, -3.27, 0.85, -0.2, 1.81, 0.51, 1.28, 2.63, -3.43, -1.18, -1.32, -1.7, -2.3, 0.57, -2.71]
+NSE worst: next-quarter excess +0.53 (n 21); t=0..9 -0.01, t=11..20 +0.75; LOO +0.29 to +0.67; per-quarter values [4.48, 0.6, 0.41, -2.1, -1.74, -1.37, 1.07, 2.57, -1.99, -2.03, 3.85, -1.07, 1.21, 0.96, -0.48, -1.58, 3.59, -1.03, 5.48, -0.18, 0.58]
+custom best: next-quarter excess -0.33 (n 21); t=0..9 +0.14, t=11..20 -1.17; LOO -0.51 to -0.17; per-quarter values [-1.25, 2.43, -1.31, -2.04, 0.73, 1.09, -1.1, 1.14, 1.02, 0.7, 3.34, 0.26, 0.21, -3.27, 2.51, -1.18, -1.18, -0.7, -2.1, -3.5, -2.71]
+custom worst: next-quarter excess -0.12 (n 21); t=0..9 -0.80, t=11..20 +0.82; LOO -0.39 to +0.10; per-quarter values [4.03, 0.6, -2.64, -2.1, -2.57, 0.16, -4.45, 1.1, -0.72, -1.39, -2.68, -1.07, 1.22, 1.21, 4.49, -1.58, 0.25, 1.26, 5.39, -0.18, -2.82]
+
+== tradable sector rules: average three-day sum per result and per quarter vs all F&O (gross; net = gross - 0.17) ==
+                                                               rule  results  quarters  avg_td    net  all_avg  excess  p_res  q_avg  q_all  q_excess   p_q  q_pos_net  q_beat_all    exA    pA    exB    pB  null_sd
+                                NSE: buy last quarter's best sector      151        21  -0.240 -0.410    0.018  -0.190  0.644  0.063  0.009     0.054 0.903         11          10  0.466 0.392 -0.873 0.151    0.408
+                               NSE: buy last quarter's worst sector      175        21   0.566  0.396    0.018   0.621  0.101  0.543  0.009     0.534 0.219          8          11  0.278 0.579  0.993 0.081    0.379
+                              NSE: buy last quarter's top 3 sectors      582        21  -0.008 -0.178    0.018  -0.028  0.882  0.164  0.009     0.156 0.445          8          10  0.309 0.253 -0.291 0.268    0.190
+                           NSE: buy last quarter's bottom 3 sectors      576        21   0.147 -0.023    0.018   0.099  0.619  0.063  0.009     0.054 0.803         13          12  0.002 0.995  0.182 0.520    0.193
+                           NSE: buy best sector of a year ago (t-4)      144        18   0.502  0.332    0.085   0.361  0.374  0.506  0.089     0.417 0.353          9          10  0.524 0.385  0.256 0.632    0.408
+                          NSE: buy worst sector of a year ago (t-4)      160        18   0.159 -0.011    0.085   0.057  0.885 -0.042  0.089    -0.131 0.778          7           7 -0.151 0.764  0.250 0.658    0.379
+ NSE: buy last quarter's best, picked among sectors with 8+ results      223        21   0.295  0.125    0.018   0.253  0.443  0.287  0.009     0.279 0.401         11          11  0.816 0.095 -0.166 0.708    0.330
+NSE: buy last quarter's worst, picked among sectors with 8+ results      241        21  -0.044 -0.214    0.018   0.034  0.925  0.001  0.009    -0.007 0.976          9          11 -0.483 0.256  0.572 0.237    0.320
+                             custom: buy last quarter's best sector      206        21  -0.404 -0.574    0.018  -0.365  0.294 -0.320  0.009    -0.328 0.370         10          10  0.046 0.927 -0.767 0.129    0.348
+                            custom: buy last quarter's worst sector      193        21  -0.102 -0.272    0.018  -0.134  0.698 -0.110  0.009    -0.118 0.764          7          10 -0.815 0.120  0.379 0.437    0.357
+
+== top pairs: is the co-movement the market on shared result days? split e(s,t) into Nifty part and stock part ==
+custom Cap goods/IT: total r +0.64; Nifty-part r -0.11; stock-part (vs Nifty) r +0.47; mean share of Cap goods results within 2 sessions of a IT result 0.68
+NSE    Fin services/Metals: total r +0.52; Nifty-part r -0.46; stock-part (vs Nifty) r +0.57; mean share of Fin services results within 2 sessions of a Metals result 0.79
+custom Banks/Metals: total r +0.57; Nifty-part r -0.54; stock-part (vs Nifty) r +0.61; mean share of Banks results within 2 sessions of a Metals result 0.80
+NSE    Auto/IT: total r -0.48; Nifty-part r +0.07; stock-part (vs Nifty) r -0.44; mean share of Auto results within 2 sessions of a IT result 0.36
+custom Auto/IT: total r -0.47; Nifty-part r +0.02; stock-part (vs Nifty) r -0.43; mean share of Auto results within 2 sessions of a IT result 0.64

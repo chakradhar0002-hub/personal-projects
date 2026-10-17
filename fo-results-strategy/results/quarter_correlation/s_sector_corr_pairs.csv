@@ -1,157 +1,157 @@
-labels,sector_a,sector_b,r,n_quarters,p_pair,p_familywise
-NSE,Fin services,Healthcare,-0.2626,22,0.3998,1.0
-NSE,Fin services,Cap goods,-0.3121,21,0.2924,1.0
-NSE,Fin services,Auto,-0.4335,22,0.1074,0.997
-NSE,Fin services,IT,-0.2211,22,0.4473,1.0
-NSE,Fin services,FMCG,-0.1498,22,0.6347,1.0
-NSE,Fin services,Metals,0.5206,22,0.0275,0.8406
-NSE,Fin services,Oil & gas,-0.0028,22,0.992,1.0
-NSE,Fin services,Cons dur,-0.3947,22,0.1069,0.9995
-NSE,Fin services,Cons services,-0.4751,21,0.059,0.966
-NSE,Fin services,Chemicals,0.0722,21,0.7781,1.0
-NSE,Fin services,Services,-0.0903,21,0.7396,1.0
-NSE,Fin services,Constr mat,0.1907,20,0.4688,1.0
-NSE,Healthcare,Cap goods,-0.2425,21,0.3368,1.0
-NSE,Healthcare,Auto,0.101,22,0.6977,1.0
-NSE,Healthcare,IT,-0.2923,22,0.2264,1.0
-NSE,Healthcare,FMCG,-0.0131,22,0.963,1.0
-NSE,Healthcare,Metals,-0.2481,22,0.3088,1.0
-NSE,Healthcare,Oil & gas,-0.0747,22,0.7416,1.0
-NSE,Healthcare,Cons dur,-0.2516,22,0.2854,1.0
-NSE,Healthcare,Cons services,0.3432,21,0.1444,1.0
-NSE,Healthcare,Chemicals,-0.0092,21,0.968,1.0
-NSE,Healthcare,Services,0.1838,21,0.4463,1.0
-NSE,Healthcare,Constr mat,0.098,20,0.7096,1.0
-NSE,Cap goods,Auto,0.0765,21,0.7581,1.0
-NSE,Cap goods,IT,0.3134,21,0.1914,1.0
-NSE,Cap goods,FMCG,-0.1129,21,0.6482,1.0
-NSE,Cap goods,Metals,-0.2519,21,0.3068,1.0
-NSE,Cap goods,Oil & gas,-0.294,21,0.2199,1.0
-NSE,Cap goods,Cons dur,0.1506,21,0.5412,1.0
-NSE,Cap goods,Cons services,0.2349,21,0.3258,1.0
-NSE,Cap goods,Chemicals,-0.4198,20,0.08,0.999
-NSE,Cap goods,Services,-0.4293,21,0.068,0.998
-NSE,Cap goods,Constr mat,-0.0771,20,0.7351,1.0
-NSE,Auto,IT,-0.4819,22,0.0295,0.952
-NSE,Auto,FMCG,0.4259,22,0.07,0.998
-NSE,Auto,Metals,-0.2177,22,0.3823,1.0
-NSE,Auto,Oil & gas,-0.1313,22,0.6087,1.0
-NSE,Auto,Cons dur,0.1467,22,0.5317,1.0
-NSE,Auto,Cons services,0.2343,21,0.3353,1.0
-NSE,Auto,Chemicals,0.0814,21,0.7411,1.0
-NSE,Auto,Services,0.0228,21,0.9215,1.0
-NSE,Auto,Constr mat,-0.262,20,0.2669,1.0
-NSE,IT,FMCG,-0.4547,22,0.0535,0.991
-NSE,IT,Metals,-0.0041,22,0.9875,1.0
-NSE,IT,Oil & gas,-0.0313,22,0.9085,1.0
-NSE,IT,Cons dur,0.121,22,0.6187,1.0
-NSE,IT,Cons services,-0.0241,21,0.93,1.0
-NSE,IT,Chemicals,-0.35,21,0.1389,1.0
-NSE,IT,Services,0.0671,21,0.7786,1.0
-NSE,IT,Constr mat,0.043,20,0.8611,1.0
-NSE,FMCG,Metals,-0.3924,22,0.0915,0.9995
-NSE,FMCG,Oil & gas,0.344,22,0.1439,1.0
-NSE,FMCG,Cons dur,0.04,22,0.8811,1.0
-NSE,FMCG,Cons services,-0.1823,21,0.4688,1.0
-NSE,FMCG,Chemicals,0.4308,21,0.0555,0.9975
-NSE,FMCG,Services,-0.4449,21,0.0455,0.9945
-NSE,FMCG,Constr mat,0.0868,20,0.7091,1.0
-NSE,Metals,Oil & gas,-0.2633,22,0.2874,1.0
-NSE,Metals,Cons dur,-0.1962,22,0.4028,1.0
-NSE,Metals,Cons services,-0.3663,21,0.098,1.0
-NSE,Metals,Chemicals,-0.1321,21,0.5747,1.0
-NSE,Metals,Services,-0.0287,21,0.9165,1.0
-NSE,Metals,Constr mat,0.1484,20,0.5442,1.0
-NSE,Oil & gas,Cons dur,-0.1799,22,0.4533,1.0
-NSE,Oil & gas,Cons services,-0.33,21,0.1534,1.0
-NSE,Oil & gas,Chemicals,0.2431,21,0.3093,1.0
-NSE,Oil & gas,Services,-0.0598,21,0.7886,1.0
-NSE,Oil & gas,Constr mat,-0.0273,20,0.9115,1.0
-NSE,Cons dur,Cons services,0.2607,21,0.2784,1.0
-NSE,Cons dur,Chemicals,0.0532,21,0.8311,1.0
-NSE,Cons dur,Services,0.0112,21,0.959,1.0
-NSE,Cons dur,Constr mat,-0.2369,20,0.3143,1.0
-NSE,Cons services,Chemicals,-0.4103,20,0.0785,0.9995
-NSE,Cons services,Services,0.0998,21,0.6712,1.0
-NSE,Cons services,Constr mat,-0.4893,20,0.027,0.938
-NSE,Chemicals,Services,0.1692,20,0.5042,1.0
-NSE,Chemicals,Constr mat,0.2502,19,0.3318,1.0
-NSE,Services,Constr mat,-0.071,20,0.7696,1.0
-custom,NBFC/Fin,Banks,-0.3092,22,0.2319,1.0
-custom,NBFC/Fin,Pharma,-0.3118,22,0.2529,1.0
-custom,NBFC/Fin,Auto,-0.1265,22,0.6357,1.0
-custom,NBFC/Fin,Cap goods,-0.0848,22,0.7591,1.0
-custom,NBFC/Fin,IT,-0.3032,22,0.2444,1.0
-custom,NBFC/Fin,FMCG,0.0331,22,0.8936,1.0
-custom,NBFC/Fin,Services,-0.128,22,0.6047,1.0
-custom,NBFC/Fin,Metals,-0.1308,22,0.6227,1.0
-custom,NBFC/Fin,Cons dur,-0.3893,20,0.1339,1.0
-custom,NBFC/Fin,Oil & gas,-0.0191,22,0.943,1.0
-custom,NBFC/Fin,Cement,0.3879,21,0.1034,1.0
-custom,NBFC/Fin,Chem/agro,0.0957,21,0.7171,1.0
-custom,Banks,Pharma,-0.015,22,0.954,1.0
-custom,Banks,Auto,-0.3396,22,0.1754,1.0
-custom,Banks,Cap goods,0.0124,22,0.964,1.0
-custom,Banks,IT,-0.0079,22,0.9765,1.0
-custom,Banks,FMCG,-0.2665,22,0.3013,1.0
-custom,Banks,Services,0.0142,22,0.955,1.0
-custom,Banks,Metals,0.5689,22,0.0095,0.5732
-custom,Banks,Cons dur,-0.3525,20,0.1444,1.0
-custom,Banks,Oil & gas,-0.0573,22,0.8101,1.0
-custom,Banks,Cement,-0.3186,21,0.1769,1.0
-custom,Banks,Chem/agro,-0.0429,21,0.8656,1.0
-custom,Pharma,Auto,0.1114,22,0.6677,1.0
-custom,Pharma,Cap goods,-0.3766,22,0.1179,1.0
-custom,Pharma,IT,-0.2513,22,0.2999,1.0
-custom,Pharma,FMCG,-0.1457,22,0.5577,1.0
-custom,Pharma,Services,0.2871,22,0.2429,1.0
-custom,Pharma,Metals,-0.1688,22,0.5162,1.0
-custom,Pharma,Cons dur,0.2798,20,0.2614,1.0
-custom,Pharma,Oil & gas,-0.1122,22,0.6262,1.0
-custom,Pharma,Cement,0.0382,21,0.8781,1.0
-custom,Pharma,Chem/agro,-0.0092,21,0.968,1.0
-custom,Auto,Cap goods,-0.3667,22,0.1249,1.0
-custom,Auto,IT,-0.4706,22,0.0385,0.9735
-custom,Auto,FMCG,0.3026,22,0.2184,1.0
-custom,Auto,Services,-0.1029,22,0.6772,1.0
-custom,Auto,Metals,-0.101,22,0.6842,1.0
-custom,Auto,Cons dur,0.313,20,0.1999,1.0
-custom,Auto,Oil & gas,-0.2382,22,0.3308,1.0
-custom,Auto,Cement,-0.102,21,0.6637,1.0
-custom,Auto,Chem/agro,0.0706,21,0.7781,1.0
-custom,Cap goods,IT,0.6413,22,0.003,0.2069
-custom,Cap goods,FMCG,-0.1116,22,0.6597,1.0
-custom,Cap goods,Services,-0.2176,22,0.3828,1.0
-custom,Cap goods,Metals,0.1792,22,0.4748,1.0
-custom,Cap goods,Cons dur,-0.2022,20,0.4513,1.0
-custom,Cap goods,Oil & gas,0.0879,22,0.7086,1.0
-custom,Cap goods,Cement,0.0868,21,0.7131,1.0
-custom,Cap goods,Chem/agro,-0.3857,21,0.1004,1.0
-custom,IT,FMCG,-0.3056,22,0.2149,1.0
-custom,IT,Services,0.0523,22,0.8436,1.0
-custom,IT,Metals,-0.0269,22,0.9145,1.0
-custom,IT,Cons dur,-0.0405,20,0.8901,1.0
-custom,IT,Oil & gas,0.0739,22,0.7651,1.0
-custom,IT,Cement,0.204,21,0.4093,1.0
-custom,IT,Chem/agro,-0.3495,21,0.1299,1.0
-custom,FMCG,Services,-0.3054,22,0.2184,1.0
-custom,FMCG,Metals,-0.2075,22,0.3823,1.0
-custom,FMCG,Cons dur,-0.0295,20,0.914,1.0
-custom,FMCG,Oil & gas,0.1222,22,0.6277,1.0
-custom,FMCG,Cement,-0.1245,21,0.5977,1.0
-custom,FMCG,Chem/agro,0.3036,21,0.2059,1.0
-custom,Services,Metals,-0.1892,22,0.4503,1.0
-custom,Services,Cons dur,0.0102,20,0.971,1.0
-custom,Services,Oil & gas,-0.0408,22,0.8611,1.0
-custom,Services,Cement,-0.1831,21,0.4478,1.0
-custom,Services,Chem/agro,-0.1656,21,0.4828,1.0
-custom,Metals,Cons dur,-0.3704,20,0.1189,1.0
-custom,Metals,Oil & gas,-0.1515,22,0.5352,1.0
-custom,Metals,Cement,-0.0209,21,0.9265,1.0
-custom,Metals,Chem/agro,-0.0497,21,0.8386,1.0
-custom,Cons dur,Oil & gas,-0.231,20,0.3678,1.0
-custom,Cons dur,Cement,-0.1584,20,0.5227,1.0
-custom,Cons dur,Chem/agro,-0.1959,20,0.4083,1.0
-custom,Oil & gas,Cement,-0.1145,21,0.6247,1.0
-custom,Oil & gas,Chem/agro,0.159,21,0.5037,1.0
-custom,Cement,Chem/agro,-0.154,20,0.5352,1.0
+labels,sector_a,sector_b,r,null_mean_r,n_quarters,p_pair,p_familywise
+NSE,Fin services,Healthcare,-0.2626,-0.1855,22,0.7336,1.0
+NSE,Fin services,Cap goods,-0.3121,-0.1562,21,0.5257,1.0
+NSE,Fin services,Auto,-0.4335,-0.16,22,0.2224,1.0
+NSE,Fin services,IT,-0.2211,-0.1572,22,0.7841,1.0
+NSE,Fin services,FMCG,-0.1498,-0.1555,22,0.974,1.0
+NSE,Fin services,Metals,0.5206,-0.1473,22,0.0005,0.082
+NSE,Fin services,Oil & gas,-0.0028,-0.1344,22,0.5592,1.0
+NSE,Fin services,Cons dur,-0.3947,-0.1214,22,0.2124,1.0
+NSE,Fin services,Cons services,-0.4751,-0.1067,21,0.1169,1.0
+NSE,Fin services,Chemicals,0.0722,-0.1065,21,0.4453,1.0
+NSE,Fin services,Services,-0.0903,-0.0978,21,0.9705,1.0
+NSE,Fin services,Constr mat,0.1907,-0.0955,20,0.2244,1.0
+NSE,Healthcare,Cap goods,-0.2425,-0.085,21,0.5057,1.0
+NSE,Healthcare,Auto,0.101,-0.0883,22,0.3983,1.0
+NSE,Healthcare,IT,-0.2923,-0.0887,22,0.3698,1.0
+NSE,Healthcare,FMCG,-0.0131,-0.0861,22,0.7486,1.0
+NSE,Healthcare,Metals,-0.2481,-0.0785,22,0.4723,1.0
+NSE,Healthcare,Oil & gas,-0.0747,-0.0639,22,0.963,1.0
+NSE,Healthcare,Cons dur,-0.2516,-0.0605,22,0.3918,1.0
+NSE,Healthcare,Cons services,0.3432,-0.0491,21,0.0795,0.999
+NSE,Healthcare,Chemicals,-0.0092,-0.0573,21,0.8236,1.0
+NSE,Healthcare,Services,0.1838,-0.0523,21,0.3023,1.0
+NSE,Healthcare,Constr mat,0.098,-0.0505,20,0.5642,1.0
+NSE,Cap goods,Auto,0.0765,-0.0653,21,0.5632,1.0
+NSE,Cap goods,IT,0.3134,-0.0666,21,0.089,1.0
+NSE,Cap goods,FMCG,-0.1129,-0.0689,21,0.8576,1.0
+NSE,Cap goods,Metals,-0.2519,-0.0657,21,0.4328,1.0
+NSE,Cap goods,Oil & gas,-0.294,-0.0561,21,0.2994,1.0
+NSE,Cap goods,Cons dur,0.1506,-0.0647,21,0.3558,1.0
+NSE,Cap goods,Cons services,0.2349,-0.0467,21,0.2419,1.0
+NSE,Cap goods,Chemicals,-0.4198,-0.047,20,0.1189,1.0
+NSE,Cap goods,Services,-0.4293,-0.0452,21,0.1034,1.0
+NSE,Cap goods,Constr mat,-0.0771,-0.0473,20,0.905,1.0
+NSE,Auto,IT,-0.4819,-0.0783,22,0.06,0.9985
+NSE,Auto,FMCG,0.4259,-0.0793,22,0.0175,0.7981
+NSE,Auto,Metals,-0.2177,-0.0683,22,0.5312,1.0
+NSE,Auto,Oil & gas,-0.1313,-0.0726,22,0.8026,1.0
+NSE,Auto,Cons dur,0.1467,-0.0589,22,0.3698,1.0
+NSE,Auto,Cons services,0.2343,-0.052,21,0.2399,1.0
+NSE,Auto,Chemicals,0.0814,-0.0519,21,0.5777,1.0
+NSE,Auto,Services,0.0228,-0.0464,21,0.7651,1.0
+NSE,Auto,Constr mat,-0.262,-0.0554,20,0.3688,1.0
+NSE,IT,FMCG,-0.4547,-0.0721,22,0.0895,1.0
+NSE,IT,Metals,-0.0041,-0.0642,22,0.8011,1.0
+NSE,IT,Oil & gas,-0.0313,-0.0677,22,0.8801,1.0
+NSE,IT,Cons dur,0.121,-0.053,22,0.4663,1.0
+NSE,IT,Cons services,-0.0241,-0.0485,21,0.921,1.0
+NSE,IT,Chemicals,-0.35,-0.0448,21,0.1869,1.0
+NSE,IT,Services,0.0671,-0.0464,21,0.6277,1.0
+NSE,IT,Constr mat,0.043,-0.0431,20,0.7246,1.0
+NSE,FMCG,Metals,-0.3924,-0.0696,22,0.1469,1.0
+NSE,FMCG,Oil & gas,0.344,-0.0592,22,0.0635,0.9985
+NSE,FMCG,Cons dur,0.04,-0.0638,22,0.6452,1.0
+NSE,FMCG,Cons services,-0.1823,-0.0556,21,0.5972,1.0
+NSE,FMCG,Chemicals,0.4308,-0.038,21,0.0295,0.932
+NSE,FMCG,Services,-0.4449,-0.0467,21,0.0745,0.999
+NSE,FMCG,Constr mat,0.0868,-0.0388,20,0.5857,1.0
+NSE,Metals,Oil & gas,-0.2633,-0.0733,22,0.4213,1.0
+NSE,Metals,Cons dur,-0.1962,-0.0519,22,0.5392,1.0
+NSE,Metals,Cons services,-0.3663,-0.0462,21,0.1459,1.0
+NSE,Metals,Chemicals,-0.1321,-0.0373,21,0.6802,1.0
+NSE,Metals,Services,-0.0287,-0.0346,21,0.9805,1.0
+NSE,Metals,Constr mat,0.1484,-0.0423,20,0.4203,1.0
+NSE,Oil & gas,Cons dur,-0.1799,-0.063,22,0.6087,1.0
+NSE,Oil & gas,Cons services,-0.33,-0.042,21,0.2184,1.0
+NSE,Oil & gas,Chemicals,0.2431,-0.0509,21,0.1989,1.0
+NSE,Oil & gas,Services,-0.0598,-0.0445,21,0.9505,1.0
+NSE,Oil & gas,Constr mat,-0.0273,-0.0392,20,0.9575,1.0
+NSE,Cons dur,Cons services,0.2607,-0.0383,21,0.2119,1.0
+NSE,Cons dur,Chemicals,0.0532,-0.0311,21,0.7316,1.0
+NSE,Cons dur,Services,0.0112,-0.0311,21,0.8696,1.0
+NSE,Cons dur,Constr mat,-0.2369,-0.0291,20,0.3743,1.0
+NSE,Cons services,Chemicals,-0.4103,-0.0264,20,0.1004,1.0
+NSE,Cons services,Services,0.0998,-0.0296,21,0.5817,1.0
+NSE,Cons services,Constr mat,-0.4893,-0.0304,20,0.0415,0.9555
+NSE,Chemicals,Services,0.1692,-0.0266,20,0.4328,1.0
+NSE,Chemicals,Constr mat,0.2502,-0.0284,19,0.2634,1.0
+NSE,Services,Constr mat,-0.071,-0.0322,20,0.8671,1.0
+custom,NBFC/Fin,Banks,-0.3092,-0.1308,22,0.4233,1.0
+custom,NBFC/Fin,Pharma,-0.3118,-0.1308,22,0.4348,1.0
+custom,NBFC/Fin,Auto,-0.1265,-0.1178,22,0.972,1.0
+custom,NBFC/Fin,Cap goods,-0.0848,-0.1165,22,0.901,1.0
+custom,NBFC/Fin,IT,-0.3032,-0.1133,22,0.3988,1.0
+custom,NBFC/Fin,FMCG,0.0331,-0.1169,22,0.5297,1.0
+custom,NBFC/Fin,Services,-0.128,-0.1083,22,0.9325,1.0
+custom,NBFC/Fin,Metals,-0.1308,-0.1,22,0.905,1.0
+custom,NBFC/Fin,Cons dur,-0.3893,-0.0915,20,0.2189,1.0
+custom,NBFC/Fin,Oil & gas,-0.0191,-0.0891,22,0.7676,1.0
+custom,NBFC/Fin,Cement,0.3879,-0.0746,21,0.039,0.945
+custom,NBFC/Fin,Chem/agro,0.0957,-0.0794,21,0.4583,1.0
+custom,Banks,Pharma,-0.015,-0.1132,22,0.6547,1.0
+custom,Banks,Auto,-0.3396,-0.1043,22,0.3073,1.0
+custom,Banks,Cap goods,0.0124,-0.0897,22,0.6672,1.0
+custom,Banks,IT,-0.0079,-0.0949,22,0.7111,1.0
+custom,Banks,FMCG,-0.2665,-0.1035,22,0.4823,1.0
+custom,Banks,Services,0.0142,-0.0927,22,0.6462,1.0
+custom,Banks,Metals,0.5689,-0.0886,22,0.0015,0.1094
+custom,Banks,Cons dur,-0.3525,-0.0701,20,0.2184,1.0
+custom,Banks,Oil & gas,-0.0573,-0.0779,22,0.9205,1.0
+custom,Banks,Cement,-0.3186,-0.0638,21,0.2639,1.0
+custom,Banks,Chem/agro,-0.0429,-0.0577,21,0.9555,1.0
+custom,Pharma,Auto,0.1114,-0.095,22,0.3553,1.0
+custom,Pharma,Cap goods,-0.3766,-0.0848,22,0.1984,1.0
+custom,Pharma,IT,-0.2513,-0.091,22,0.4833,1.0
+custom,Pharma,FMCG,-0.1457,-0.0902,22,0.8051,1.0
+custom,Pharma,Services,0.2871,-0.0821,22,0.096,0.9995
+custom,Pharma,Metals,-0.1688,-0.0789,22,0.7196,1.0
+custom,Pharma,Cons dur,0.2798,-0.0633,20,0.1499,1.0
+custom,Pharma,Oil & gas,-0.1122,-0.0554,22,0.7891,1.0
+custom,Pharma,Cement,0.0382,-0.0612,21,0.6747,1.0
+custom,Pharma,Chem/agro,-0.0092,-0.0573,21,0.8236,1.0
+custom,Auto,Cap goods,-0.3667,-0.0785,22,0.2069,1.0
+custom,Auto,IT,-0.4706,-0.0828,22,0.0765,0.9995
+custom,Auto,FMCG,0.3026,-0.0862,22,0.0825,0.9995
+custom,Auto,Services,-0.1029,-0.0753,22,0.901,1.0
+custom,Auto,Metals,-0.101,-0.0743,22,0.916,1.0
+custom,Auto,Cons dur,0.313,-0.0575,20,0.1129,0.9995
+custom,Auto,Oil & gas,-0.2382,-0.0693,22,0.4773,1.0
+custom,Auto,Cement,-0.102,-0.0613,21,0.8571,1.0
+custom,Auto,Chem/agro,0.0706,-0.0539,21,0.6107,1.0
+custom,Cap goods,IT,0.6413,-0.0721,22,0.0005,0.03
+custom,Cap goods,FMCG,-0.1116,-0.075,22,0.8731,1.0
+custom,Cap goods,Services,-0.2176,-0.0757,22,0.5497,1.0
+custom,Cap goods,Metals,0.1792,-0.0731,22,0.2774,1.0
+custom,Cap goods,Cons dur,-0.2022,-0.0679,20,0.6052,1.0
+custom,Cap goods,Oil & gas,0.0879,-0.0637,22,0.5032,1.0
+custom,Cap goods,Cement,0.0868,-0.0498,21,0.5452,1.0
+custom,Cap goods,Chem/agro,-0.3857,-0.0452,21,0.1474,1.0
+custom,IT,FMCG,-0.3056,-0.083,22,0.3353,1.0
+custom,IT,Services,0.0523,-0.0852,22,0.5497,1.0
+custom,IT,Metals,-0.0269,-0.0694,22,0.8586,1.0
+custom,IT,Cons dur,-0.0405,-0.0598,20,0.9295,1.0
+custom,IT,Oil & gas,0.0739,-0.0673,22,0.5562,1.0
+custom,IT,Cement,0.204,-0.0538,21,0.2709,1.0
+custom,IT,Chem/agro,-0.3495,-0.0466,21,0.1824,1.0
+custom,FMCG,Services,-0.3054,-0.0731,22,0.3268,1.0
+custom,FMCG,Metals,-0.2075,-0.0718,22,0.5377,1.0
+custom,FMCG,Cons dur,-0.0295,-0.0644,20,0.8826,1.0
+custom,FMCG,Oil & gas,0.1222,-0.0584,22,0.4448,1.0
+custom,FMCG,Cement,-0.1245,-0.0495,21,0.7416,1.0
+custom,FMCG,Chem/agro,0.3036,-0.0394,21,0.1414,1.0
+custom,Services,Metals,-0.1892,-0.0596,22,0.5977,1.0
+custom,Services,Cons dur,0.0102,-0.0628,20,0.7611,1.0
+custom,Services,Oil & gas,-0.0408,-0.0653,22,0.908,1.0
+custom,Services,Cement,-0.1831,-0.0572,21,0.5812,1.0
+custom,Services,Chem/agro,-0.1656,-0.0413,21,0.5972,1.0
+custom,Metals,Cons dur,-0.3704,-0.0498,20,0.1634,1.0
+custom,Metals,Oil & gas,-0.1515,-0.0676,22,0.7186,1.0
+custom,Metals,Cement,-0.0209,-0.0537,21,0.8896,1.0
+custom,Metals,Chem/agro,-0.0497,-0.0392,21,0.961,1.0
+custom,Cons dur,Oil & gas,-0.231,-0.0541,20,0.4753,1.0
+custom,Cons dur,Cement,-0.1584,-0.0377,20,0.6277,1.0
+custom,Cons dur,Chem/agro,-0.1959,-0.0287,20,0.4793,1.0
+custom,Oil & gas,Cement,-0.1145,-0.0367,21,0.7371,1.0
+custom,Oil & gas,Chem/agro,0.159,-0.0499,21,0.3638,1.0
+custom,Cement,Chem/agro,-0.154,-0.0302,20,0.6102,1.0

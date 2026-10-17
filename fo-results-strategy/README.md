@@ -51,6 +51,9 @@ checklist and concrete trades, and backtests them on your data.
 > - **The same by NSE's Nifty index sectors:** auto is still the only one (+1.10% a result; Nifty Auto members beat
 >   their index by +0.81%), but it rests on three stocks and on 2021-23. No other sector or index stands out. See
 >   [docs/NIFTY_SECTOR_3DAY.md](docs/NIFTY_SECTOR_3DAY.md).
+> - **Best and worst quarters are not related:** a good results season does not follow a good one, the best sector
+>   does not stay best or flip to worst, and good and bad seasons are mostly the market on the same days. See
+>   [docs/QUARTER_CORRELATION.md](docs/QUARTER_CORRELATION.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.

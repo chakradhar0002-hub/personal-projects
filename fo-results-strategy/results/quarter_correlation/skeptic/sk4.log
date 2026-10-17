@@ -1,0 +1,41 @@
+Q vs N P: r +0.710, p (2,000,000 shuffles) 0.000112
+Q vs N S: r +0.736, p (2,000,000 shuffles) 0.000162
+Q vs season P: r +0.719, p (2,000,000 shuffles) 0.000081
+Q vs season S: r +0.662, p (2,000,000 shuffles) 0.001058
+q_tests columns: ['section', 'test', 'statistic', 'value', 'n', 'p', 'null_mean', 'holm', 'meaning']
+quarter build tests: 53; sector build tests: 51 rows, of which 16 listed pairs
+sector pairs searched (78 NSE + 78 custom): 156
+
+all tests across both builds: 244 (53 quarter-level + 35 sector/stock + 156 pairs)
+ build                                                                                 test        p  holm_global  bh_global
+     q              Q (all-results average) vs (d) Nifty 50 return over the season, Pearson 0.000081     0.019764   0.013176
+     q  Q (all-results average) vs (a) Nifty 50 three-day sum on the same sessions, Pearson 0.000112     0.027216   0.013176
+     q Q (all-results average) vs (a) Nifty 50 three-day sum on the same sessions, Spearman 0.000162     0.039204   0.013176
+s-pair                                                                custom Cap goods / IT 0.000500     0.120494   0.024400
+     s                               5k Last-4 average in the top tenth: mean x this result 0.000500     0.120494   0.024400
+s-pair                                                                custom Banks / Metals 0.001050     0.250937   0.036879
+     q             Q (all-results average) vs (d) Nifty 50 return over the season, Spearman 0.001058     0.251804   0.036879
+s-pair                                                            NSE Fin services / Metals 0.001500     0.355482   0.045748
+s-pair                                                                      NSE Auto / FMCG 0.018299     1.000000   0.496109
+     s                               5j Last-4 average in the top fifth: mean x this result 0.020695     1.000000   0.504955
+s-pair                                                                 NSE FMCG / Chemicals 0.031748     1.000000   0.704238
+s-pair                                                             custom NBFC/Fin / Cement 0.036348     1.000000   0.739080
+s-pair                                                       NSE Cons services / Constr mat 0.043998     1.000000   0.818271
+     q       stock part (Q minus Nifty part) vs (c) India VIX at the first cutoff, Spearman 0.060600     1.000000   0.818271
+s-pair                                                                 NSE FMCG / Oil & gas 0.060997     1.000000   0.818271
+
+without the 140 unlisted pairs (104 tests):
+104 tests
+ build                                                                                 test        p  holm_global  bh_global     holm
+     q              Q (all-results average) vs (d) Nifty 50 return over the season, Pearson 0.000081     0.019764   0.013176 0.008424
+     q  Q (all-results average) vs (a) Nifty 50 three-day sum on the same sessions, Pearson 0.000112     0.027216   0.013176 0.011536
+     q Q (all-results average) vs (a) Nifty 50 three-day sum on the same sessions, Spearman 0.000162     0.039204   0.013176 0.016524
+s-pair                                                                custom Cap goods / IT 0.000500     0.120494   0.024400 0.050497
+     s                               5k Last-4 average in the top tenth: mean x this result 0.000500     0.120494   0.024400 0.050497
+s-pair                                                                custom Banks / Metals 0.001050     0.250937   0.036879 0.103945
+     q             Q (all-results average) vs (d) Nifty 50 return over the season, Spearman 0.001058     0.251804   0.036879 0.103945
+s-pair                                                            NSE Fin services / Metals 0.001500     0.355482   0.045748 0.145493
+s-pair                                                                      NSE Auto / FMCG 0.018299     1.000000   0.496109 1.000000
+     s                               5j Last-4 average in the top fifth: mean x this result 0.020695     1.000000   0.504955 1.000000
+
+index members, lag-1 Spearman of mean excess vs own index: all -0.109 (build 4a -0.11); t=0..9 -0.050; t=11..20 -0.197; per pair [0.01, 0.2, -0.04, -0.2, 0.32, 0.15, -0.24, -0.26, -0.36, -0.08, 0.17, 0.08, -0.15, -0.64, 0.44, -0.13, -0.42, 0.1, -0.58, -0.51, -0.16]

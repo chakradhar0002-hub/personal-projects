@@ -1,0 +1,97 @@
+last Day+1 of t-1 before first cutoff of t: 21 of 21
+
+== headline quarter-level correlations: full, halves, drop 2021 seasons (q0-4), LOO range, Fisher CI, precise p ==
+                  claim      r  n  p_precise  ci_lo  ci_hi  half1  half2  drop2021  loo_min loo_min_drop  loo_max loo_max_drop
+                Q lag 1 -0.029 21      0.929 -0.455  0.408  0.004 -0.114    -0.161   -0.214 Oct-Dec 2021    0.154 Jan-Mar 2025
+                Q lag 2 -0.187 20      0.538 -0.581  0.279 -0.115 -0.317    -0.231   -0.337 Jan-Mar 2022    0.080 Jul-Sep 2024
+                Q lag 4 -0.349 18      0.199 -0.701  0.141 -0.520 -0.348    -0.313   -0.660 Jan-Mar 2024   -0.227 Jan-Mar 2022
+                S lag 1  0.339 21      0.071 -0.109  0.672  0.283  0.047     0.334    0.155 Apr-Jun 2022    0.512 Jan-Mar 2025
+Q vs N (same-day Nifty)  0.710 22      0.000  0.411  0.871  0.803  0.843     0.641    0.663 Jul-Sep 2024    0.754 Jul-Sep 2022
+      Q vs Nifty season  0.719 22      0.000  0.427  0.875  0.782  0.770     0.717    0.672 Jul-Sep 2024    0.781 Jan-Mar 2024
+       Q vs Nifty pre20 -0.103 22      0.644 -0.503  0.333 -0.689  0.386     0.205   -0.208 Oct-Dec 2024    0.052 Jan-Mar 2022
+       Q vs Nifty pre60 -0.158 22      0.483 -0.543  0.282 -0.437  0.065    -0.169   -0.249 Oct-Dec 2024   -0.058 Jul-Sep 2021
+               Q vs VIX -0.102 22      0.649 -0.502  0.334 -0.031 -0.124    -0.036   -0.213 Jan-Mar 2025   -0.040 Jan-Mar 2022
+               S vs VIX -0.367 22      0.095 -0.683  0.065 -0.500 -0.175    -0.425   -0.481 Jan-Mar 2025   -0.303 Apr-Jun 2022
+             S vs pre20  0.227 22      0.311 -0.215  0.592  0.031  0.445     0.444    0.140 Oct-Dec 2024    0.399 Jan-Mar 2022
+                Q vs sd -0.316 22      0.153 -0.651  0.122 -0.340 -0.375    -0.349   -0.439 Jan-Mar 2021   -0.263 Jan-Mar 2022
+                 S vs N -0.209 22      0.352 -0.580  0.233 -0.506  0.552    -0.280   -0.280 Jul-Sep 2024   -0.033 Apr-Jun 2022
+  best avg vs worst avg  0.027 22      0.928 -0.399  0.443 -0.018  0.147     0.059   -0.159 Jul-Sep 2024    0.113 Apr-Jun 2024
+         Q vs worst avg  0.675 22      0.001  0.354  0.854  0.514  0.833     0.804    0.591 Jul-Sep 2024    0.746 Jul-Sep 2021
+          Q vs best avg  0.253 22      0.253 -0.188  0.610 -0.046  0.501     0.395    0.165 Jul-Sep 2024    0.480 Jan-Mar 2022
+            Q vs spread -0.142 22      0.528 -0.532  0.297 -0.286 -0.078    -0.163   -0.274 Apr-Jun 2024   -0.008 Jan-Mar 2022
+
+== mechanics ==
+sd N 0.552, sd S 0.462, corr(N,S) -0.21
+corr(Q,N) if S independent of N: +0.77 (observed +0.71)
+slope of Q on N: 0.82; mean beta-1 implied by S on N slope -0.18
+corr(N, season) +0.84; corr(S, season) -0.01
+partial corr(Q, season | N) +0.32, perm p 0.149 (approx; residuals shuffled)
+pooled beta of result three-day sums on same-session Nifty three-day sums: 1.12
+
+== power (n = 22 quarters) ==
+cross corr n=22: |rho| for 80% power at alpha 0.05: 0.57; at 0.05/13: 0.69; at 0.05/32: 0.73; at 0.05/244: 0.78
+lag-1 n=21: |rho| for 80% power at alpha 0.05: 0.58; at 0.05/13: 0.71; at 0.05/32: 0.74; at 0.05/244: 0.79
+lag-4 n=18: |rho| for 80% power at alpha 0.05: 0.62; at 0.05/13: 0.75; at 0.05/32: 0.78; at 0.05/244: 0.83
+AR(1) simulation: power of the lag-1 permutation test (400 shuffles per series, 2,000 series)
+  phi 0.2: power at p<0.05 0.14; at Bonferroni 0.05/13 (approx) 0.03
+  phi 0.3: power at p<0.05 0.24; at Bonferroni 0.05/13 (approx) 0.07
+  phi 0.4: power at p<0.05 0.41; at Bonferroni 0.05/13 (approx) 0.18
+  phi 0.5: power at p<0.05 0.59; at Bonferroni 0.05/13 (approx) 0.32
+  phi 0.6: power at p<0.05 0.74; at Bonferroni 0.05/13 (approx) 0.48
+
+== Q by results period, halves ==
+q0-10 {'mean': {'Apr-Jun': 0.17, 'Jan-Mar': 0.2, 'Jul-Sep': -0.14, 'Oct-Dec': -0.4}, 'count': {'Apr-Jun': 3, 'Jan-Mar': 3, 'Jul-Sep': 3, 'Oct-Dec': 2}}
+q11-21 {'mean': {'Apr-Jun': 0.05, 'Jan-Mar': 0.51, 'Jul-Sep': -0.22, 'Oct-Dec': -0.04}, 'count': {'Apr-Jun': 3, 'Jan-Mar': 3, 'Jul-Sep': 2, 'Oct-Dec': 3}}
+
+== walk-forward: fit on quarters before t, predict Q_t (and S_t) ==
+target  start                     model  n  hit_sign  hit_vs_mean  corr  oos_r2
+     Q      6            expanding mean 16      0.44         0.38 -0.33    0.00
+     Q      6                  always + 16      0.62         0.56   NaN    0.07
+     Q      6                     pre20 16      0.44         0.44 -0.33   -0.44
+     Q      6                     pre60 16      0.56         0.50 -0.14   -0.11
+     Q      6                       vix 16      0.50         0.62 -0.31   -0.15
+     Q      6                    vixchg 16      0.38         0.38 -0.44   -0.10
+     Q      6                     prevQ 16      0.31         0.31 -0.31   -0.16
+     Q      6                     prevS 16      0.38         0.44 -0.34   -0.23
+     Q      6                      nres 16      0.38         0.31 -0.31   -0.42
+     Q      6                    prevSd 16      0.44         0.44  0.03   -0.46
+     Q      6          same-period mean 16      0.44         0.50 -0.00   -0.36
+     Q      6 all 6 pre-season vars OLS 16      0.69         0.69 -0.19   -0.90
+     Q      8            expanding mean 14      0.43         0.36 -0.50    0.00
+     Q      8                  always + 14      0.64         0.57  0.00    0.08
+     Q      8                     pre20 14      0.43         0.43 -0.32   -0.31
+     Q      8                     pre60 14      0.57         0.50 -0.22   -0.10
+     Q      8                       vix 14      0.50         0.57 -0.41   -0.15
+     Q      8                    vixchg 14      0.36         0.36 -0.53   -0.10
+     Q      8                     prevQ 14      0.29         0.29 -0.42   -0.15
+     Q      8                     prevS 14      0.43         0.43 -0.34   -0.23
+     Q      8                      nres 14      0.36         0.29 -0.37   -0.39
+     Q      8                    prevSd 14      0.43         0.43 -0.09   -0.11
+     Q      8          same-period mean 14      0.43         0.50 -0.10   -0.20
+     Q      8 all 6 pre-season vars OLS 14      0.71         0.71 -0.20   -0.87
+     S      6            expanding mean 16      0.50         0.38  0.08    0.00
+     S      6                  always + 16      0.50         0.62   NaN    0.23
+     S      6                     pre20 16      0.44         0.56  0.24    0.00
+     S      6                     pre60 16      0.44         0.56  0.06   -0.05
+     S      6                       vix 16      0.56         0.56  0.20    0.06
+     S      6                    vixchg 16      0.44         0.50 -0.01   -0.03
+     S      6                     prevQ 16      0.50         0.25  0.14   -0.14
+     S      6                     prevS 16      0.50         0.44  0.14   -0.05
+     S      6                      nres 16      0.38         0.31 -0.12   -0.25
+     S      6                    prevSd 16      0.56         0.38 -0.30   -0.38
+     S      6          same-period mean 16      0.44         0.56 -0.14   -0.35
+     S      6 all 6 pre-season vars OLS 16      0.62         0.56  0.27   -0.24
+     S      8            expanding mean 14      0.43         0.36 -0.24    0.00
+     S      8                  always + 14      0.57         0.64 -0.00    0.37
+     S      8                     pre20 14      0.36         0.57  0.06    0.02
+     S      8                     pre60 14      0.36         0.57 -0.11   -0.03
+     S      8                       vix 14      0.50         0.64  0.06    0.08
+     S      8                    vixchg 14      0.36         0.50 -0.30   -0.03
+     S      8                     prevQ 14      0.43         0.21 -0.22   -0.19
+     S      8                     prevS 14      0.43         0.50 -0.01   -0.02
+     S      8                      nres 14      0.29         0.29 -0.48   -0.28
+     S      8                    prevSd 14      0.50         0.43 -0.31   -0.28
+     S      8          same-period mean 14      0.43         0.50 -0.30   -0.42
+     S      8 all 6 pre-season vars OLS 14      0.57         0.57 -0.18   -0.06
+actual sign of Q, q6-21: +-+-++++--+-++-+  positive 10 of 16
+actual sign of Q, q8-21: +-++++--+-++-+  positive 9 of 14

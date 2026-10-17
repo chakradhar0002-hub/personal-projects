@@ -53,4 +53,4 @@ Summary over 21 best and 21 worst transitions (expected under 2,000 within-quart
 | Best again next quarter | 3 (1.81) | 3 (1.86) |
 | Worst next quarter | 1 (1.79) | 2 (1.85) |
 
-Of the 44 best and worst slots, 9 go to a sector with only 4-5 results that quarter (shuffle null 11.6). Averages of few results swing more, which is why small sectors such as Cons services (4-9 results) top and tail the table so often; the counts above are therefore compared with the shuffle null, not with 1 in K.
+Of the 44 best and worst slots, 9 go to a sector with only 4-5 results that quarter (shuffle null 11.6). Averages of few results swing more, which is why small sectors top and tail the table so often; the counts above are therefore compared with the shuffle null, not with 1 in K.

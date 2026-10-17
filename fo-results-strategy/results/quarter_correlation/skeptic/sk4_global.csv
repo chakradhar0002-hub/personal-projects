@@ -1,0 +1,245 @@
+build,test,p,holm_global,bh_global
+q,"Autocorrelation of Q, lag 1, Pearson",0.9376,1.0,0.9919042509412993
+q,"Autocorrelation of Q, lag 1, Spearman",0.9594,1.0,0.9919220338983051
+q,"Autocorrelation of Q, lag 2, Pearson",0.5389,1.0,0.9563508491242104
+q,"Autocorrelation of Q, lag 2, Spearman",0.4219,1.0,0.9563508491242104
+q,"Autocorrelation of Q, lag 3, Pearson",0.8836,1.0,0.9919042509412993
+q,"Autocorrelation of Q, lag 3, Spearman",0.7503,1.0,0.9879619421090801
+q,"Autocorrelation of Q, lag 4, Pearson",0.1966,1.0,0.9513524323783809
+q,"Autocorrelation of Q, lag 4, Spearman",0.3937,1.0,0.9563508491242104
+q,Runs of Q above / below its median,0.8162,1.0,0.9919042509412993
+q,Next-quarter Q after the 5 best minus after the 5 worst quarters,0.5609,1.0,0.9563508491242104
+q,"Autocorrelation of the stock part, lag 1, Pearson",0.0704,1.0,0.8182714285714285
+q,"Autocorrelation of the stock part, lag 1, Spearman",0.1473,1.0,0.8935309332094369
+q,Next-quarter stock part after the 5 best minus the 5 worst stock-part quarters,0.0615,1.0,0.8182714285714285
+q,Seasonality of Q by results period (4 periods),0.4733,1.0,0.9563508491242104
+q,Seasonality of stock part by results period (4 periods),0.7722,1.0,0.9879619421090801
+q,"Q (all-results average) vs (a) Nifty 50 three-day sum on the same sessions, Pearson",0.000111999944000028,0.027215986392006807,0.013175993412003295
+q,"Q (all-results average) vs (a) Nifty 50 three-day sum on the same sessions, Spearman",0.0001619999190000405,0.0392039803980098,0.013175993412003295
+q,"Q (all-results average) vs (b) Nifty 50 return, 20 sessions before the first cutoff, Pearson",0.6554,1.0,0.9810895705521472
+q,"Q (all-results average) vs (b) Nifty 50 return, 20 sessions before the first cutoff, Spearman",0.5614,1.0,0.9563508491242104
+q,"Q (all-results average) vs (b) Nifty 50 return, 60 sessions before the first cutoff, Pearson",0.4854,1.0,0.9563508491242104
+q,"Q (all-results average) vs (b) Nifty 50 return, 60 sessions before the first cutoff, Spearman",0.5059,1.0,0.9563508491242104
+q,"Q (all-results average) vs (c) India VIX at the first cutoff, Pearson",0.639,1.0,0.9726377878636933
+q,"Q (all-results average) vs (c) India VIX at the first cutoff, Spearman",0.5415,1.0,0.9563508491242104
+q,"Q (all-results average) vs (c) India VIX change, 20 sessions before the first cutoff, Pearson",0.9215,1.0,0.9919042509412993
+q,"Q (all-results average) vs (c) India VIX change, 20 sessions before the first cutoff, Spearman",0.405,1.0,0.9563508491242104
+q,"Q (all-results average) vs (d) Nifty 50 return over the season, Pearson",8.099995950002025e-05,0.01976399011800494,0.013175993412003295
+q,"Q (all-results average) vs (d) Nifty 50 return over the season, Spearman",0.0010579994710002644,0.25180387409806293,0.036878838703437784
+q,"Q (all-results average) vs (e) cross-sectional sd of the three-day sums, Pearson",0.1472,1.0,0.8935309332094369
+q,"Q (all-results average) vs (e) cross-sectional sd of the three-day sums, Spearman",0.1247,1.0,0.8736555555555554
+q,"Q (all-results average) vs (f) number of results in the quarter, Pearson",0.8966,1.0,0.9919042509412993
+q,"Q (all-results average) vs (f) number of results in the quarter, Spearman",0.4174,1.0,0.9563508491242104
+q,"stock part (Q minus Nifty part) vs (a) Nifty 50 three-day sum on the same sessions, Pearson",0.3458,1.0,0.9563508491242104
+q,"stock part (Q minus Nifty part) vs (a) Nifty 50 three-day sum on the same sessions, Spearman",0.8593,1.0,0.9919042509412993
+q,"stock part (Q minus Nifty part) vs (b) Nifty 50 return, 20 sessions before the first cutoff, Pearson",0.2988,1.0,0.9563508491242104
+q,"stock part (Q minus Nifty part) vs (b) Nifty 50 return, 20 sessions before the first cutoff, Spearman",0.1751,1.0,0.9513524323783809
+q,"stock part (Q minus Nifty part) vs (b) Nifty 50 return, 60 sessions before the first cutoff, Pearson",0.629,1.0,0.9726377878636933
+q,"stock part (Q minus Nifty part) vs (b) Nifty 50 return, 60 sessions before the first cutoff, Spearman",0.7532,1.0,0.9879619421090801
+q,"stock part (Q minus Nifty part) vs (c) India VIX at the first cutoff, Pearson",0.0939,1.0,0.8182714285714285
+q,"stock part (Q minus Nifty part) vs (c) India VIX at the first cutoff, Spearman",0.0606,1.0,0.8182714285714285
+q,"stock part (Q minus Nifty part) vs (c) India VIX change, 20 sessions before the first cutoff, Pearson",0.5705,1.0,0.9563508491242104
+q,"stock part (Q minus Nifty part) vs (c) India VIX change, 20 sessions before the first cutoff, Spearman",0.9187,1.0,0.9919042509412993
+q,"stock part (Q minus Nifty part) vs (d) Nifty 50 return over the season, Pearson",0.9555,1.0,0.9919220338983051
+q,"stock part (Q minus Nifty part) vs (d) Nifty 50 return over the season, Spearman",0.8283,1.0,0.9919042509412993
+q,"stock part (Q minus Nifty part) vs (e) cross-sectional sd of the three-day sums, Pearson",0.702,1.0,0.98299199325748
+q,"stock part (Q minus Nifty part) vs (e) cross-sectional sd of the three-day sums, Spearman",0.5064,1.0,0.9563508491242104
+q,"stock part (Q minus Nifty part) vs (f) number of results in the quarter, Pearson",0.5197,1.0,0.9563508491242104
+q,"stock part (Q minus Nifty part) vs (f) number of results in the quarter, Spearman",0.2638,1.0,0.9563508491242104
+q,Best sector avg vs worst sector avg,0.5287,1.0,0.9563508491242104
+q,Best sector excess vs worst sector excess (both minus Q),0.5597,1.0,0.9563508491242104
+q,Q vs best-minus-worst spread,0.9415,1.0,0.9919042509412993
+q,Q vs best sector avg,0.4538,1.0,0.9563508491242104
+q,Q vs worst sector avg,0.4408,1.0,0.9563508491242104
+q,Average best-minus-worst spread over 22 quarters,0.7506,1.0,0.9879619421090801
+s,"1a NSE sectors: mean Spearman e(s,t) vs e(s,t+1)",0.7851,1.0,0.9879619421090801
+s,"1b NSE sectors: mean Spearman e(s,t) vs e(s,t+4)",0.2219,1.0,0.9513524323783809
+s,"1c NSE sectors: weighted slope e(s,t+1) on e(s,t)",0.8596,1.0,0.9919042509412993
+s,"1d NSE sectors: weighted slope e(s,t+4) on e(s,t)",0.1289,1.0,0.8736555555555554
+s,"1e Custom sectors: mean Spearman e(s,t) vs e(s,t+1)",0.4313,1.0,0.9563508491242104
+s,"1f Custom sectors: mean Spearman e(s,t) vs e(s,t+4)",0.3928,1.0,0.9563508491242104
+s,"1g Custom sectors: weighted slope e(s,t+1) on e(s,t)",0.996,1.0,1.0
+s,"1h Custom sectors: weighted slope e(s,t+4) on e(s,t)",0.6047,1.0,0.9668213363525372
+s,"2a NSE: best sector, mean rank percentile next quarter (100 = best)",0.7221,1.0,0.9879619421090801
+s,"2b NSE: worst sector, mean rank percentile next quarter (100 = best)",0.7491,1.0,0.9879619421090801
+s,"2c NSE: best sector, mean excess next quarter",0.8991,1.0,0.9919042509412993
+s,"2d NSE: worst sector, mean excess next quarter",0.2434,1.0,0.9563508491242104
+s,2e NSE: count best -> best next quarter,1.0,1.0,1.0
+s,2f NSE: count best -> worst next quarter,0.7026,1.0,0.98299199325748
+s,2g NSE: count worst -> worst next quarter,0.2694,1.0,0.9563508491242104
+s,2h NSE: count worst -> best next quarter,0.4418,1.0,0.9563508491242104
+s,"2i Custom: best sector, mean rank percentile next quarter",0.8266,1.0,0.9919042509412993
+s,"2j Custom: worst sector, mean rank percentile next quarter",0.4053,1.0,0.9563508491242104
+s,3a NSE sectors: mean r^2 over the 78 sector pairs,0.2834,1.0,0.9563508491242104
+s,3b Custom sectors: mean r^2 over the 78 sector pairs,0.6452,1.0,0.9726377878636933
+s,"4a Index members: mean Spearman of excess vs own index, t vs t+1",0.1269,1.0,0.8736555555555554
+s,"4b Index members: mean Spearman of excess vs own index, t vs t+4",0.5172,1.0,0.9563508491242104
+s,"4c Index members: weighted slope, t+1 on t",0.2294,1.0,0.9513524323783809
+s,"4d Index members: weighted slope, t+4 on t",0.6827,1.0,0.98299199325748
+s,"5a Stocks: Pearson r of x(t) and x(t+1), within-stock shuffle null",0.3158,1.0,0.9563508491242104
+s,"5b Stocks: Pearson r of x(t) and x(t+4), within-stock shuffle null",0.2804,1.0,0.9563508491242104
+s,"5c Stocks: Spearman of x(t) and x(t+1), within-stock shuffle null",0.4973,1.0,0.9563508491242104
+s,"5d Stocks: Spearman of x(t) and x(t+4), within-stock shuffle null",0.4018,1.0,0.9563508491242104
+s,"5e Stocks: Pearson r of x(t) and x(t+1), across-stock shuffle null",0.7901,1.0,0.9886379487179487
+s,"5f Stocks: Pearson r of x(t) and x(t+4), across-stock shuffle null",0.061,1.0,0.8182714285714285
+s,5g Stocks in the top fifth of x(t): mean x at their next result,0.9975,1.0,1.0
+s,5h Stocks in the bottom fifth of x(t): mean x at their next result,0.6747,1.0,0.98299199325748
+s,"5i Top fifth minus bottom fifth, x at the next result",0.7721,1.0,0.9879619421090801
+s,5j Last-4 average in the top fifth: mean x this result,0.0206948965255173,1.0,0.5049554752226222
+s,5k Last-4 average in the top tenth: mean x this result,0.0004999975000124,0.1204939753012259,0.02439987800060512
+s-pair,custom Cap goods / IT,0.0004999750012499,0.1204939753012259,0.02439987800060512
+s-pair,custom Banks / Metals,0.0010499475026248,0.2509374531273272,0.036878838703437784
+s-pair,NSE Fin services / Metals,0.0014999250037498,0.3554822258887026,0.0457477126143689
+s-pair,NSE Auto / FMCG,0.0182990850457477,1.0,0.49610852790693766
+s-pair,NSE FMCG / Chemicals,0.031748412579371,1.0,0.7042375153969567
+s-pair,custom NBFC/Fin / Cement,0.0363481825908704,1.0,0.7390797126810315
+s-pair,NSE Cons services / Constr mat,0.0439978001099945,1.0,0.8182714285714285
+s-pair,NSE FMCG / Oil & gas,0.0609969501524923,1.0,0.8182714285714285
+s-pair,NSE Auto / IT,0.0656467176641168,1.0,0.8182714285714285
+s-pair,NSE FMCG / Services,0.0772461376931153,1.0,0.8182714285714285
+s-pair,custom Auto / FMCG,0.0772461376931153,1.0,0.8182714285714285
+s-pair,custom Auto / IT,0.0791460426978651,1.0,0.8182714285714285
+s-pair,NSE Healthcare / Cons services,0.0834458277086145,1.0,0.8182714285714285
+s-pair,NSE IT / FMCG,0.0836458177091145,1.0,0.8182714285714285
+s-pair,NSE Cap goods / Services,0.0906454677266136,1.0,0.8182714285714285
+s-pair,NSE Cap goods / IT,0.0919454027298635,1.0,0.8182714285714285
+s-pair,custom Pharma / Services,0.0936453177341132,1.0,0.8182714285714285
+s-pair,NSE Cons services / Chemicals,0.1056447177641118,1.0,0.862496875156242
+s-pair,NSE Fin services / Cons services,0.1060446977651117,1.0,0.862496875156242
+s-pair,custom Auto / Cons dur,0.1130943452827358,1.0,0.8631068446577668
+s-pair,NSE Cap goods / Chemicals,0.1131943402829858,1.0,0.8631068446577668
+s-pair,custom FMCG / Chem/agro,0.1253937303134843,1.0,0.8736555555555554
+s-pair,custom Cap goods / Chem/agro,0.1458927053647317,1.0,0.8935309332094369
+s-pair,custom Pharma / Cons dur,0.1471426428678566,1.0,0.8935309332094369
+s-pair,NSE FMCG / Metals,0.1501424928753562,1.0,0.8935309332094369
+s-pair,NSE Metals / Cons services,0.1628418579071046,1.0,0.9460336506984172
+s-pair,NSE IT / Chemicals,0.1841907904604769,1.0,0.9513524323783809
+s-pair,custom IT / Chem/agro,0.1895905204739763,1.0,0.9513524323783809
+s-pair,custom Metals / Cons dur,0.191990400479976,1.0,0.9513524323783809
+s-pair,custom Pharma / Cap goods,0.2006899655017249,1.0,0.9513524323783809
+s-pair,NSE Cons dur / Cons services,0.2028398580070996,1.0,0.9513524323783809
+s-pair,custom Auto / Cap goods,0.2055397230138493,1.0,0.9513524323783809
+s-pair,custom NBFC/Fin / Cons dur,0.2170391480425978,1.0,0.9513524323783809
+s-pair,NSE Oil & gas / Cons services,0.2181390930453477,1.0,0.9513524323783809
+s-pair,NSE Oil & gas / Chemicals,0.2207889605519724,1.0,0.9513524323783809
+s-pair,NSE Auto / Cons services,0.2212389380530973,1.0,0.9513524323783809
+s-pair,NSE Fin services / Auto,0.2241387930603469,1.0,0.9513524323783809
+s-pair,NSE Fin services / Constr mat,0.2300884955752212,1.0,0.9513524323783809
+s-pair,NSE Cap goods / Cons services,0.2341382930853457,1.0,0.9513524323783809
+s-pair,NSE Fin services / Cons dur,0.2347382630868456,1.0,0.9513524323783809
+s-pair,custom Banks / Cons dur,0.2378381080945952,1.0,0.9513524323783809
+s-pair,NSE Chemicals / Constr mat,0.2546872656367182,1.0,0.9563508491242104
+s-pair,custom Banks / Cement,0.2626368681565921,1.0,0.9563508491242104
+s-pair,custom IT / Cement,0.2675366231688416,1.0,0.9563508491242104
+s-pair,custom Banks / Auto,0.2844857757112144,1.0,0.9563508491242104
+s-pair,custom Cap goods / Metals,0.2890355482225888,1.0,0.9563508491242104
+s-pair,NSE Healthcare / Services,0.3065846707664617,1.0,0.9563508491242104
+s-pair,custom FMCG / Services,0.3096345182740863,1.0,0.9563508491242104
+s-pair,custom IT / FMCG,0.320033998300085,1.0,0.9563508491242104
+s-pair,NSE Cap goods / Oil & gas,0.320133993300335,1.0,0.9563508491242104
+s-pair,NSE Auto / Constr mat,0.3580320983950802,1.0,0.9563508491242104
+s-pair,NSE Auto / Cons dur,0.3651317434128293,1.0,0.9563508491242104
+s-pair,NSE Healthcare / IT,0.3655817209139543,1.0,0.9563508491242104
+s-pair,custom Pharma / Auto,0.3708314584270786,1.0,0.9563508491242104
+s-pair,NSE Metals / Oil & gas,0.3735813209339533,1.0,0.9563508491242104
+s-pair,NSE Cap goods / Cons dur,0.3845307734613269,1.0,0.9563508491242104
+s-pair,NSE Cons dur / Constr mat,0.3931303434828259,1.0,0.9563508491242104
+s-pair,custom Oil & gas / Chem/agro,0.3954802259887006,1.0,0.9563508491242104
+s-pair,custom FMCG / Oil & gas,0.4056297185140743,1.0,0.9563508491242104
+s-pair,NSE Healthcare / Auto,0.407429628518574,1.0,0.9563508491242104
+s-pair,custom NBFC/Fin / IT,0.416179191040448,1.0,0.9563508491242104
+s-pair,NSE Healthcare / Cons dur,0.4183790810459477,1.0,0.9563508491242104
+s-pair,NSE Metals / Constr mat,0.4195790210489475,1.0,0.9563508491242104
+s-pair,NSE Chemicals / Services,0.4199290035498225,1.0,0.9563508491242104
+s-pair,custom NBFC/Fin / Pharma,0.423678816059197,1.0,0.9563508491242104
+s-pair,NSE Cap goods / Metals,0.4257787110644467,1.0,0.9563508491242104
+s-pair,NSE IT / Cons dur,0.4459777011149443,1.0,0.9563508491242104
+s-pair,custom Cons dur / Oil & gas,0.4471276436178191,1.0,0.9563508491242104
+s-pair,custom Banks / FMCG,0.4487275636218189,1.0,0.9563508491242104
+s-pair,custom NBFC/Fin / Banks,0.4510274486275686,1.0,0.9563508491242104
+s-pair,custom Auto / Oil & gas,0.4604269786510674,1.0,0.9563508491242104
+s-pair,NSE Healthcare / Metals,0.4619769011549423,1.0,0.9563508491242104
+s-pair,NSE Fin services / Chemicals,0.4700764961751912,1.0,0.9563508491242104
+s-pair,custom Pharma / IT,0.4802759862006899,1.0,0.9563508491242104
+s-pair,NSE Fin services / Cap goods,0.4847257637118144,1.0,0.9563508491242104
+s-pair,custom NBFC/Fin / Chem/agro,0.487875606219689,1.0,0.9563508491242104
+s-pair,NSE Healthcare / Cap goods,0.4952252387380631,1.0,0.9563508491242104
+s-pair,custom Cons dur / Chem/agro,0.5089245537723114,1.0,0.9563508491242104
+s-pair,custom NBFC/Fin / FMCG,0.5135243237838109,1.0,0.9563508491242104
+s-pair,NSE Auto / Metals,0.5219739013049347,1.0,0.9563508491242104
+s-pair,custom Cap goods / Oil & gas,0.5233238338083096,1.0,0.9563508491242104
+s-pair,NSE Cap goods / Auto,0.5288735563221839,1.0,0.9563508491242104
+s-pair,NSE Healthcare / Constr mat,0.5374231288435578,1.0,0.9563508491242104
+s-pair,NSE Metals / Cons dur,0.544222788860557,1.0,0.9563508491242104
+s-pair,custom Cap goods / Services,0.5468226588670566,1.0,0.9563508491242104
+s-pair,NSE Fin services / Oil & gas,0.5497225138743063,1.0,0.9563508491242104
+s-pair,custom Cap goods / Cement,0.5543722813859308,1.0,0.9563508491242104
+s-pair,custom IT / Oil & gas,0.5577721113944303,1.0,0.9563508491242104
+s-pair,custom FMCG / Metals,0.5609719514024298,1.0,0.9563508491242104
+s-pair,NSE Oil & gas / Cons dur,0.5698215089245537,1.0,0.9563508491242104
+s-pair,custom Cap goods / Cons dur,0.5735213239338033,1.0,0.9563508491242104
+s-pair,NSE FMCG / Cons services,0.5747212639368031,1.0,0.9563508491242104
+s-pair,custom Services / Cement,0.5794710264486775,1.0,0.9563508491242104
+s-pair,NSE Cons services / Services,0.5807709614519274,1.0,0.9563508491242104
+s-pair,custom IT / Services,0.5829208539573021,1.0,0.9563508491242104
+s-pair,NSE Auto / Chemicals,0.5863206839658017,1.0,0.9563508491242104
+s-pair,NSE FMCG / Constr mat,0.5879206039698015,1.0,0.9563508491242104
+s-pair,custom Services / Metals,0.6041697915104245,1.0,0.9668213363525372
+s-pair,custom Auto / Chem/agro,0.6096695165241738,1.0,0.9668213363525372
+s-pair,custom Services / Chem/agro,0.6129193540322984,1.0,0.9668213363525372
+s-pair,custom Cons dur / Cement,0.6141692915354232,1.0,0.9668213363525372
+s-pair,custom Cement / Chem/agro,0.6184190790460476,1.0,0.9672708672258695
+s-pair,NSE IT / Services,0.6370681465926704,1.0,0.9726377878636933
+s-pair,custom Banks / Cap goods,0.64056797160142,1.0,0.9726377878636933
+s-pair,custom Banks / Services,0.6457677116144193,1.0,0.9726377878636933
+s-pair,NSE FMCG / Cons dur,0.6754662266886655,1.0,0.98299199325748
+s-pair,custom Metals / Oil & gas,0.6845157742112894,1.0,0.98299199325748
+s-pair,custom Pharma / Cement,0.6888655567221639,1.0,0.98299199325748
+s-pair,custom Banks / Pharma,0.6904154792260387,1.0,0.98299199325748
+s-pair,NSE Cons dur / Chemicals,0.7006649667516625,1.0,0.98299199325748
+s-pair,custom Banks / IT,0.7010149492525374,1.0,0.98299199325748
+s-pair,custom Pharma / Metals,0.7030148492575371,1.0,0.98299199325748
+s-pair,NSE Metals / Chemicals,0.7050147492625368,1.0,0.98299199325748
+s-pair,NSE Fin services / Healthcare,0.7146142692865357,1.0,0.9879619421090801
+s-pair,NSE IT / Constr mat,0.7219639018049098,1.0,0.9879619421090801
+s-pair,NSE Healthcare / FMCG,0.7539623018849058,1.0,0.9879619421090801
+s-pair,custom NBFC/Fin / Oil & gas,0.7593120343982801,1.0,0.9879619421090801
+s-pair,NSE Auto / Services,0.7618619069046547,1.0,0.9879619421090801
+s-pair,custom Oil & gas / Cement,0.7638118094095295,1.0,0.9879619421090801
+s-pair,custom FMCG / Cement,0.768311584420779,1.0,0.9879619421090801
+s-pair,NSE Fin services / IT,0.7738113094345282,1.0,0.9879619421090801
+s-pair,custom Services / Cons dur,0.7826608669566522,1.0,0.9879619421090801
+s-pair,NSE IT / Metals,0.7852107394630269,1.0,0.9879619421090801
+s-pair,NSE Auto / Oil & gas,0.7855107244637768,1.0,0.9879619421090801
+s-pair,custom Pharma / FMCG,0.8094095295235239,1.0,0.9919042509412993
+s-pair,NSE Cons dur / Services,0.8230588470576471,1.0,0.9919042509412993
+s-pair,custom Auto / Cement,0.8357082145892706,1.0,0.9919042509412993
+s-pair,custom IT / Metals,0.8463576821158942,1.0,0.9919042509412993
+s-pair,NSE Services / Constr mat,0.8509574521273936,1.0,0.9919042509412993
+s-pair,NSE Healthcare / Chemicals,0.8518574071296435,1.0,0.9919042509412993
+s-pair,custom Pharma / Chem/agro,0.8518574071296435,1.0,0.9919042509412993
+s-pair,NSE Cap goods / FMCG,0.8617569121543923,1.0,0.9919042509412993
+s-pair,custom Pharma / Oil & gas,0.8645067746612669,1.0,0.9919042509412993
+s-pair,custom Cap goods / FMCG,0.8762561871906405,1.0,0.9919042509412993
+s-pair,NSE IT / Oil & gas,0.8918554072296385,1.0,0.9919042509412993
+s-pair,NSE Cap goods / Constr mat,0.8925553722313885,1.0,0.9919042509412993
+s-pair,custom FMCG / Cons dur,0.8995050247487626,1.0,0.9919042509412993
+s-pair,custom Metals / Cement,0.9013049347532625,1.0,0.9919042509412993
+s-pair,custom NBFC/Fin / Metals,0.9101044947752612,1.0,0.9919042509412993
+s-pair,custom Auto / Metals,0.9145042747862608,1.0,0.9919042509412993
+s-pair,NSE IT / Cons services,0.9177041147942604,1.0,0.9919042509412993
+s-pair,custom Auto / Services,0.9190540472976352,1.0,0.9919042509412993
+s-pair,custom NBFC/Fin / Cap goods,0.9243537823108844,1.0,0.9919042509412993
+s-pair,custom Banks / Oil & gas,0.927753612319384,1.0,0.9919042509412993
+s-pair,custom Services / Oil & gas,0.9327033648317584,1.0,0.9919042509412993
+s-pair,custom IT / Cons dur,0.9343032848357582,1.0,0.9919042509412993
+s-pair,NSE Oil & gas / Services,0.944152792360382,1.0,0.9919042509412993
+s-pair,custom NBFC/Fin / Services,0.9461526923653816,1.0,0.9919042509412993
+s-pair,custom Banks / Chem/agro,0.9480025998700063,1.0,0.9919042509412993
+s-pair,NSE Oil & gas / Constr mat,0.9502524873756312,1.0,0.9919042509412993
+s-pair,NSE Metals / Services,0.9512524373781313,1.0,0.9919042509412993
+s-pair,custom Metals / Chem/agro,0.9737013149342532,1.0,0.9967258959227769
+s-pair,NSE Fin services / FMCG,0.9740012999350032,1.0,0.9967258959227769
+s-pair,NSE Fin services / Services,0.9763011849407528,1.0,0.9967258959227769
+s-pair,custom NBFC/Fin / Auto,0.9890005499725014,1.0,1.0
+s-pair,NSE Healthcare / Oil & gas,0.9931003449827508,1.0,1.0

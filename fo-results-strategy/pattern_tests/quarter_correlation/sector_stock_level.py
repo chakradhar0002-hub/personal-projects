@@ -15,7 +15,9 @@ quarter (as in results/nifty_sector_3day/table_quarter_leaders.md).
 2. Transitions of the best and the worst sector into the next quarter (rank percentile, excess, best/worst counts)
    against the same shuffle null.
 3. Cross-sector correlation of e(s,t) over quarters for sectors with >= 4 results in at least 18 of 22 quarters;
-   familywise p of a pair = share of shuffles whose max |r| over all pairs reaches the observed |r| (single-step maxT).
+   pair p = share of shuffles whose r is at least as far from the pair's null mean as the observed r (two-sided, as
+   p2); familywise p = share of shuffles whose largest such distance over all pairs reaches the observed one
+   (single-step maxT).
 4. Item 1 for the members of the 13 Nifty sectoral indices with F&O members, outcome = member excess vs its own index
    (index_member_results.csv). Memberships overlap (a bank can be in Nifty Bank, Private Bank and Financial Services).
    Null: within each quarter the distinct member results are permuted over the member "slots": result r' takes over
@@ -377,8 +379,9 @@ def trans_md(k, sh):
             f'| Best again next quarter | {ts["bb"]} ({nd.bb.mean():.2f}) | {ts["wb"]} ({nd.wb.mean():.2f}) |',
             f'| Worst next quarter | {ts["bw"]} ({nd.bw.mean():.2f}) | {ts["ww"]} ({nd.ww.mean():.2f}) |', '',
             f'Of the 44 best and worst slots, {obs[k]["small"]} go to a sector with only 4-5 results that quarter (shuffle '
-            f'null {NULL[k]["small"].mean():.1f}). Averages of few results swing more, which is why small sectors such as '
-            'Cons services (4-9 results) top and tail the table so often; the counts above are therefore compared with '
+            f'null {NULL[k]["small"].mean():.1f}). Averages of few results swing more, which is why small sectors'
+            + (' such as Cons services (4-9 results)' if k == 'NSE' else '') +
+            ' top and tail the table so often; the counts above are therefore compared with '
             'the shuffle null, not with 1 in K.']
     return out
 
@@ -405,14 +408,21 @@ for k in ('NSE', 'custom'):
     pd.DataFrame(np.round(R, 3), index=names, columns=names).to_csv(f'{OUT}/s_sector_corr{"" if k == "NSE" else "_custom"}.csv')
     iu = np.triu_indices(len(keep), 1)
     assert np.allclose(R[iu], o['ru'], equal_nan=True)
+    # two-sided as in p2: distance from each pair's own null mean (the null r is below 0, about -0.03 to -0.19,
+    # because the sector excesses add up to zero each quarter); maxT over the pairs on that distance
+    assert not np.isnan(d['ru']).any()
+    mu = d['ru'].mean(axis=0)
+    dev = np.abs(d['ru'] - mu)
+    d['maxdev'] = dev.max(axis=1)
     for j, (a, bb) in enumerate(zip(*iu)):       # column j of the null pair matrix = this pair
         r = R[a, bb]
-        PAIRS.append(dict(labels=k, sector_a=names[a], sector_b=names[bb], r=r, n_quarters=int(N[a, bb]),
-                          p_pair=(1 + np.sum(np.abs(d['ru'][:, j]) >= abs(r) - 1e-12)) / (B + 1),
-                          p_familywise=(1 + np.sum(d['maxabs'] >= abs(r) - 1e-12)) / (B + 1)))
-    P(f'{k}: {len(iu[0])} pairs; mean r {np.nanmean(o["ru"]):+.3f} (null {np.nanmean(d["ru"]):+.3f}); mean r^2 '
+        PAIRS.append(dict(labels=k, sector_a=names[a], sector_b=names[bb], r=r, null_mean_r=mu[j], n_quarters=int(N[a, bb]),
+                          p_pair=(1 + np.sum(dev[:, j] >= abs(r - mu[j]) - 1e-12)) / (B + 1),
+                          p_familywise=(1 + np.sum(d['maxdev'] >= abs(r - mu[j]) - 1e-12)) / (B + 1)))
+    P(f'{k}: {len(iu[0])} pairs; mean r {np.nanmean(o["ru"]):+.3f} (null {np.nanmean(d["ru"]):+.3f}; pair null means '
+      f'{mu.min():+.2f} to {mu.max():+.2f}); mean r^2 '
       f'{np.nanmean(o["ru"] ** 2):.3f} (null {d["r2"].mean():.3f}, p {fpv(p2(np.nanmean(o["ru"] ** 2), d["r2"]))}); '
-      f'null max |r|: median {np.median(d["maxabs"]):.2f}, 95th pct {np.quantile(d["maxabs"], 0.95):.2f}')
+      f'null max |r - pair null mean|: median {np.median(d["maxdev"]):.2f}, 95th pct {np.quantile(d["maxdev"], 0.95):.2f}')
 PAIRS = pd.DataFrame(PAIRS)
 assert PAIRS.r.notna().all()
 PAIRS.round(4).to_csv(f'{OUT}/s_sector_corr_pairs.csv', index=False)
@@ -425,7 +435,8 @@ for k in ('NSE', 'custom'):
 for k, tid in (('NSE', '3a'), ('custom', '3b')):
     o, d = obs[k], NULL[k]
     add_test(3, '3-global', tid, f'{"NSE" if k == "NSE" else "Custom"} sectors: mean r^2 over the {len(o["ru"])} sector pairs', np.nanmean(o['ru'] ** 2),
-             d['r2'], f'{len(o["keep"])} sectors, 17-22 quarters per pair',
+             d['r2'], f'{len(o["keep"])} sectors, {PAIRS[PAIRS.labels == k].n_quarters.min()}-'
+             f'{PAIRS[PAIRS.labels == k].n_quarters.max()} quarters per pair',
              f'{"Custom sectors" if k == "custom" else "Sectors"}: more co-movement (or opposite movement) of sector excess '
              'across quarters than chance?', fmt=lambda v: f'{v:.3f}')
 sel = []
@@ -434,7 +445,7 @@ for k, nn in (('NSE', 5), ('custom', 3)):
     sel += [('neg', r) for r in sub.head(nn).itertuples()] + [('pos', r) for r in sub.tail(nn)[::-1].itertuples()]
 for i, (sign, r) in enumerate(sel):
     TESTS.append(dict(item=3, family='3-pairs (maxT)', id=f'3p{i + 1:02d}',
-                      test=f'{r.labels}: r({r.sector_a}, {r.sector_b})', observed=r.r, null_mean=np.nan,
+                      test=f'{r.labels}: r({r.sector_a}, {r.sector_b})', observed=r.r, null_mean=r.null_mean_r,
                       n=f'{r.n_quarters} quarters', p=r.p_pair, holm=r.p_familywise,
                       question=f'Are {r.sector_a} and {r.sector_b} {"best and worst together (opposite)" if sign == "neg" else "good and bad together (same way)"}?',
                       fmt=fp, unit=''))
@@ -451,10 +462,11 @@ def corr_md(k):
 
 def pairs_md(k, nn):
     sub = PAIRS[PAIRS.labels == k].sort_values('r')
-    out = ['| | Pair | r | Quarters | Pair p | Familywise p |', '|---|---|---:|---:|---:|---:|']
+    out = ['| | Pair | r | Null mean r | Quarters | Pair p | Familywise p |', '|---|---|---:|---:|---:|---:|---:|']
     for lab_, part in (('Most negative', sub.head(nn)), ('Most positive', sub.tail(nn)[::-1])):
         for r in part.itertuples():
-            out.append(f'| {lab_} | {r.sector_a} / {r.sector_b} | {fp(r.r)} | {r.n_quarters} | {fpv(r.p_pair)} | {fpv(r.p_familywise)} |')
+            out.append(f'| {lab_} | {r.sector_a} / {r.sector_b} | {fp(r.r)} | {fp(r.null_mean_r)} | {r.n_quarters} | '
+                       f'{fpv(r.p_pair)} | {fpv(r.p_familywise)} |')
     return out
 
 o, d = obs['NSE'], NULL['NSE']
@@ -468,15 +480,17 @@ md = ['# Which sectors are best and worst together', '',
       'excesses of all sectors add up to zero each quarter, so chance alone gives slightly negative r); mean r^2 '
       f'{np.nanmean(o["ru"] ** 2):.3f} (null {d["r2"].mean():.3f}, p {fpv(p2(np.nanmean(o["ru"] ** 2), d["r2"]))}).', '',
       ] + pairs_md('NSE', 5) + [
-      '', f'Pair p: share of {B:,} within-quarter shuffles of the results across sector labels with |r| of that pair at '
-      'least the observed |r|. Familywise p: share of shuffles whose largest |r| over all '
-      f'{len(o["ru"])} pairs reaches the observed |r| (corrects for having looked at every pair). Under the null the '
-      f'largest |r| has median {np.median(d["maxabs"]):.2f} and 95th percentile {np.quantile(d["maxabs"], 0.95):.2f}.', '',
+      '', f'Null mean r: average r of that pair over {B:,} within-quarter shuffles of the results across sector labels '
+      '(below 0 because the sector excesses add up to zero each quarter). Pair p (two-sided): share of shuffles in '
+      'which the pair\'s r is at least as far from its null mean as the observed r. Familywise p: share of shuffles '
+      f'in which the largest such distance over all {len(o["ru"])} pairs reaches the observed distance (single-step '
+      'maxT; corrects for having looked at every pair). Under the null the largest distance has median '
+      f'{np.median(d["maxdev"]):.2f} and 95th percentile {np.quantile(d["maxdev"], 0.95):.2f}.', '',
       'Short names: ' + '; '.join(f'{SHORT[NIF["names"][i]]} = {NIF["names"][i]}' for i in o['keep']) + '.', '',
       '## Custom 15 sectors', ''] + corr_md('custom') + [
       '', f'Mean r {fp(np.nanmean(oc["ru"]))} (null {fp(np.nanmean(dc["ru"]))}); mean r^2 {np.nanmean(oc["ru"] ** 2):.3f} '
-      f'(null {dc["r2"].mean():.3f}, p {fpv(p2(np.nanmean(oc["ru"] ** 2), dc["r2"]))}). Null max |r|: median '
-      f'{np.median(dc["maxabs"]):.2f}, 95th percentile {np.quantile(dc["maxabs"], 0.95):.2f}.', ''] + pairs_md('custom', 3) + [
+      f'(null {dc["r2"].mean():.3f}, p {fpv(p2(np.nanmean(oc["ru"] ** 2), dc["r2"]))}). Null max |r - null mean r|: median '
+      f'{np.median(dc["maxdev"]):.2f}, 95th percentile {np.quantile(dc["maxdev"], 0.95):.2f}.', ''] + pairs_md('custom', 3) + [
       '', 'Short names: ' + '; '.join(f'{OLD_SHORT[CUS["names"][i]]} = {CUS["names"][i]}' for i in oc['keep']) + '.']
 open(f'{OUT}/s_table_sector_corr.md', 'w').write('\n'.join(md) + '\n')
 P('\n--- s_table_sector_corr.md ---\n' + '\n'.join(md))
@@ -804,7 +818,8 @@ for r in T.itertuples():
     nm = '-' if pd.isna(r.null_mean) else r.fmt(r.null_mean) + r.unit
     md.append(f'| {r.item} | {r.id} | {r.test} | {r.fmt(r.observed)}{r.unit} | {nm} | {r.n} | {fpv(r.p)} | {fpv(r.holm)} | {r.meaning} |')
 md += ['', 'Families for Holm: item 1 (1a-1h: Spearman and slopes at lag 1 and 4, NSE and custom sectors); item 2 (2a-2j); item 3 global (3a-3b); item 4 (4a-4d); item 5 (5a-5k). Item 3 pairs (3p..): p = pair '
-       f'permutation p; the Holm column holds the familywise maxT p over all sector pairs of that label set (78 NSE, 78 '
+       f'permutation p (distance of r from the pair\'s null mean, given in the Null mean column); the Holm column holds '
+       f'the familywise maxT p over all sector pairs of that label set (78 NSE, 78 '
        f'custom), which already corrects for looking at every pair. All p are two-sided permutation p from {B:,} shuffles '
        '(fixed seeds): within-quarter shuffles of results across sector labels (items 1-3), of member results over index '
        'member slots (item 4), within-stock and across-stock shuffles (item 5a-5f), random picks within quarter '

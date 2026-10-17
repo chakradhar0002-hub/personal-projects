@@ -1,0 +1,72 @@
+pairs (t, t+1) of the same stock, both F&O: 3050
+top fifth of last quarter's x, next result: 617 results, 171 stocks, 21 quarters; avg three-day +0.01% (net of 0.17: -0.16%), all F&O same quarters +0.02%; excess x -0.02; random-pick null -0.01 sd 0.181; p 0.951 (B 200,000)
+   per quarter: avg three-day +0.07%, x +0.06; quarters with x > 0: 12 of 21; quarters with net three-day > 0: 9; quarter-clustered t 0.38, p 0.711
+   halves: q0-10 254 results x +0.33 td +0.25%; q11-21 363 results x -0.27 td -0.16%
+   leave-one-quarter-out x: -0.10 to +0.12; leave-one-stock-out x: -0.09 to +0.03
+   top 5 stocks by summed x: CUMMINSIND (13 trades, sum +39.9), FEDERALBNK (9 trades, sum +38.9), RECLTD (6 trades, sum +28.3), INDIGO (6 trades, sum +25.4), TRENT (8 trades, sum +23.9); they give -1188% of the summed excess with 7% of trades
+   stocks picked 4+ times: 80, their trades 439; x of stocks picked once: -1.40 (32)
+bottom fifth of last quarter's x, next result: 601 results, 178 stocks, 21 quarters; avg three-day +0.10% (net of 0.17: -0.07%), all F&O same quarters +0.02%; excess x +0.06; random-pick null -0.01 sd 0.185; p 0.703 (B 200,000)
+   per quarter: avg three-day -0.01%, x -0.01; quarters with x > 0: 12 of 21; quarters with net three-day > 0: 9; quarter-clustered t -0.07, p 0.944
+   halves: q0-10 245 results x -0.54 td -0.61%; q11-21 356 results x +0.47 td +0.59%
+   leave-one-quarter-out x: -0.00 to +0.13; leave-one-stock-out x: +0.03 to +0.15
+   top 5 stocks by summed x: HCLTECH (7 trades, sum +18.8), INDIGO (3 trades, sum +18.7), AMBER (2 trades, sum +18.7), NAUKRI (4 trades, sum +16.5), INDHOTEL (4 trades, sum +16.1); they give 244% of the summed excess with 3% of trades
+   stocks picked 4+ times: 72, their trades 391; x of stocks picked once: +2.57 (32)
+
+results with 4 earlier results: 2802; first quarter 4
+last-4 top fifth (TR05, pre-registered): 569 results, 147 stocks, 18 quarters; avg three-day +0.53% (net of 0.17: +0.36%), all F&O same quarters +0.09%; excess x +0.45; random-pick null +0.00 sd 0.192; p 0.021 (B 200,000)
+   per quarter: avg three-day +0.57%, x +0.48; quarters with x > 0: 15 of 18; quarters with net three-day > 0: 12; quarter-clustered t 2.66, p 0.016
+   halves: q0-10 189 results x +0.56 td +0.64%; q11-21 380 results x +0.39 td +0.48%
+   leave-one-quarter-out x: +0.36 to +0.55; leave-one-stock-out x: +0.37 to +0.51
+   top 5 stocks by summed x: ADANIPORTS (14 trades, sum +47.0), CUMMINSIND (13 trades, sum +46.6), RECLTD (7 trades, sum +40.0), POWERINDIA (4 trades, sum +34.8), TRENT (8 trades, sum +34.0); they give 80% of the summed excess with 8% of trades
+   stocks picked 4+ times: 73, their trades 450; x of stocks picked once: -3.30 (41)
+last-4 top tenth (post hoc): 292 results, 100 stocks, 18 quarters; avg three-day +1.07% (net of 0.17: +0.90%), all F&O same quarters +0.09%; excess x +0.99; random-pick null +0.00 sd 0.284; p <0.001 (B 200,000)
+   per quarter: avg three-day +1.07%, x +0.98; quarters with x > 0: 15 of 18; quarters with net three-day > 0: 14; quarter-clustered t 4.68, p <0.001
+   halves: q0-10 98 results x +0.58 td +0.65%; q11-21 194 results x +1.20 td +1.28%
+   leave-one-quarter-out x: +0.92 to +1.12; leave-one-stock-out x: +0.87 to +1.11
+   top 5 stocks by summed x: RECLTD (7 trades, sum +40.0), POWERINDIA (4 trades, sum +34.8), TRENT (7 trades, sum +34.0), CUMMINSIND (8 trades, sum +33.3), BEL (7 trades, sum +32.3); they give 60% of the summed excess with 11% of trades
+   stocks picked 4+ times: 33, their trades 175; x of stocks picked once: -4.16 (29)
+
+threshold sweep (last-4 average, share kept from the top), mean x, avg three-day, p (20,000 picks):
+  top 50%: 1405 results, x +0.16, td +0.24%, p 0.108; q0-10 x +0.30 (467), q11-21 x +0.08 (938)
+  top 40%: 1131 results, x +0.20, td +0.29%, p 0.090; q0-10 x +0.35 (376), q11-21 x +0.13 (755)
+  top 30%: 850 results, x +0.33, td +0.42%, p 0.027; q0-10 x +0.57 (282), q11-21 x +0.21 (568)
+  top 25%: 708 results, x +0.42, td +0.51%, p 0.011; q0-10 x +0.84 (236), q11-21 x +0.22 (472)
+  top 20%: 569 results, x +0.45, td +0.53%, p 0.022; q0-10 x +0.56 (189), q11-21 x +0.39 (380)
+  top 15%: 429 results, x +0.63, td +0.71%, p 0.006; q0-10 x +0.40 (142), q11-21 x +0.74 (287)
+  top 10%: 292 results, x +0.99, td +1.07%, p <0.001; q0-10 x +0.58 (98), q11-21 x +1.20 (194)
+  top 7%: 208 results, x +1.23, td +1.31%, p <0.001; q0-10 x +0.61 (70), q11-21 x +1.54 (138)
+  top 5%: 147 results, x +1.11, td +1.19%, p 0.007; q0-10 x +1.04 (49), q11-21 x +1.14 (98)
+  top 3%: 94 results, x +1.16, td +1.26%, p 0.026; q0-10 x +1.54 (30), q11-21 x +0.99 (64)
+bands of last-4 percentile: x and three-day by band
+              n     x    td
+band                       
+(0.0, 0.2]  551 -0.05  0.03
+(0.2, 0.4]  562 -0.30 -0.22
+(0.4, 0.6]  558 -0.04  0.04
+(0.6, 0.8]  562 -0.04  0.04
+(0.8, 0.9]  277 -0.12 -0.04
+(0.9, 1.0]  292  0.99  1.07
+
+F&O-only history (instead of all events):
+last-4 F&O-only top fifth: 502 results, 124 stocks, 18 quarters; avg three-day +0.67% (net of 0.17: +0.50%), all F&O same quarters +0.12%; excess x +0.58; random-pick null +0.03 sd 0.199; p 0.006 (B 50,000)
+   per quarter: avg three-day +0.67%, x +0.58; quarters with x > 0: 16 of 18; quarters with net three-day > 0: 13; quarter-clustered t 2.94, p 0.009
+   halves: q0-10 176 results x +0.56 td +0.66%; q11-21 326 results x +0.59 td +0.68%
+   leave-one-quarter-out x: +0.47 to +0.70; leave-one-stock-out x: +0.50 to +0.63
+   top 5 stocks by summed x: ADANIPORTS (14 trades, sum +47.0), CUMMINSIND (13 trades, sum +46.6), RECLTD (8 trades, sum +42.5), TRENT (7 trades, sum +34.0), TORNTPHARM (9 trades, sum +32.3); they give 70% of the summed excess with 10% of trades
+   stocks picked 4+ times: 66, their trades 405; x of stocks picked once: -1.96 (30)
+last-4 F&O-only top tenth: 259 results, 88 stocks, 18 quarters; avg three-day +1.24% (net of 0.17: +1.07%), all F&O same quarters +0.12%; excess x +1.15; random-pick null +0.02 sd 0.293; p <0.001 (B 50,000)
+   per quarter: avg three-day +1.16%, x +1.07; quarters with x > 0: 15 of 18; quarters with net three-day > 0: 15; quarter-clustered t 3.93, p 0.001
+   halves: q0-10 91 results x +0.45 td +0.55%; q11-21 168 results x +1.53 td +1.62%
+   leave-one-quarter-out x: +1.02 to +1.27; leave-one-stock-out x: +1.02 to +1.21
+   top 5 stocks by summed x: RECLTD (7 trades, sum +40.0), TRENT (7 trades, sum +34.0), CUMMINSIND (8 trades, sum +33.3), BEL (8 trades, sum +30.1), ASHOKLEY (8 trades, sum +25.6); they give 55% of the summed excess with 15% of trades
+   stocks picked 4+ times: 30, their trades 161; x of stocks picked once: -1.97 (28)
+                                         rule  results  stocks  quarters  avg_td    net  excess     p    q_x  q_pos    t_q  p_tq     xA  nA     xB  nB  loo_q_min  loo_s_min  top5_share
+   top fifth of last quarter's x, next result      617     171        21   0.012 -0.158  -0.021 0.951  0.063     12  0.375 0.711  0.333 254 -0.269 363     -0.099     -0.088     -11.881
+bottom fifth of last quarter's x, next result      601     178        21   0.098 -0.072   0.061 0.703 -0.015     12 -0.071 0.944 -0.538 245  0.472 356     -0.000      0.029       2.441
+      last-4 top fifth (TR05, pre-registered)      569     147        18   0.531  0.361   0.447 0.021  0.480     15  2.664 0.016  0.562 189  0.390 380      0.357      0.374       0.795
+                  last-4 top tenth (post hoc)      292     100        18   1.070  0.900   0.988 0.000  0.977     15  4.676 0.000  0.578  98  1.195 194      0.918      0.872       0.604
+                    last-4 F&O-only top fifth      502     124        18   0.673  0.503   0.577 0.006  0.578     16  2.943 0.009  0.559 176  0.586 326      0.469      0.497       0.699
+                    last-4 F&O-only top tenth      259      88        18   1.245  1.075   1.149 0.000  1.074     15  3.928 0.001  0.453  91  1.526 168      1.024      1.022       0.548
+
+stock x(t) vs x(t+4): r +0.037 (n 2470); t<=6 r +0.065 (n 860); t>=11 r +0.007 (n 1078); Spearman +0.033
+stock x(t) vs x(t+1): r -0.005 (n 3050); t<=9 +0.052; t>=11 -0.055; 95% CI half-width about 0.035
