@@ -46,6 +46,8 @@ checklist and concrete trades, and backtests them on your data.
 >   implied vol, delivery buying, results timing, press releases, promoter deals (98 tests). See [docs/MORE_SIGNALS.md](docs/MORE_SIGNALS.md).
 > - **No short works:** 131 rules for stocks that fall before or after results, tested on unseen quarters; the best makes
 >   about zero after realistic entry and costs. See [docs/NEGATIVE_AVERAGE.md](docs/NEGATIVE_AVERAGE.md).
+> - **Three-day results move by sector, every quarter:** only auto and auto parts stands out (+1.20% a result, 18 of 22
+>   quarters above average). See [docs/SECTOR_3DAY.md](docs/SECTOR_3DAY.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.
