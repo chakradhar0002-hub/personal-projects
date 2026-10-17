@@ -1,0 +1,207 @@
+symbol,company,industry,nifty_sector,custom_sector,results,avg,main_nifty_for_custom,differs
+BAJAJ-AUTO,Bajaj Auto Limited,Automobiles - 2 And 3 Wheelers,Automobile and Auto Components,Auto & auto parts,22,0.53,Automobile and Auto Components,False
+BHARATFORG,Bharat Forge Limited,Castings/Forgings,Automobile and Auto Components,Auto & auto parts,22,2.107,Automobile and Auto Components,False
+BOSCHLTD,Bosch Limited,Auto Ancillaries,Automobile and Auto Components,Auto & auto parts,21,0.861,Automobile and Auto Components,False
+EICHERMOT,Eicher Motors Limited,Automobiles - 4 Wheelers,Automobile and Auto Components,Auto & auto parts,22,1.641,Automobile and Auto Components,False
+FORCEMOT,FORCE MOTORS LTD,Automobiles - 4 Wheelers,Automobile and Auto Components,Auto & auto parts,2,0.762,Automobile and Auto Components,False
+HEROMOTOCO,Hero MotoCorp Limited,Automobiles - 2 And 3 Wheelers,Automobile and Auto Components,Auto & auto parts,22,0.785,Automobile and Auto Components,False
+HYUNDAI,Hyundai Motor India Limited,Automobiles - 4 Wheelers,Automobile and Auto Components,Auto & auto parts,2,6.247,Automobile and Auto Components,False
+M&M,Mahindra & Mahindra Limited,Automobiles - 4 Wheelers,Automobile and Auto Components,Auto & auto parts,22,2.587,Automobile and Auto Components,False
+MARUTI,Maruti Suzuki India Limited,Automobiles - 4 Wheelers,Automobile and Auto Components,Auto & auto parts,22,0.505,Automobile and Auto Components,False
+MOTHERSON,Samvardhana Motherson International Limited,Auto Ancillaries,Automobile and Auto Components,Auto & auto parts,22,0.556,Automobile and Auto Components,False
+SONACOMS,Sona BLW Precision Forgings Limited,Auto Ancillaries,Automobile and Auto Components,Auto & auto parts,7,0.906,Automobile and Auto Components,False
+TIINDIA,Tube Investments of India Limited,Auto Ancillaries,Automobile and Auto Components,Auto & auto parts,7,-1.646,Automobile and Auto Components,False
+TMPV,Tata Motors Passenger Vehicles Limited,Automobiles - 4 Wheelers,Automobile and Auto Components,Auto & auto parts,22,-0.036,Automobile and Auto Components,False
+TVSMOTOR,TVS Motor Company Limited,Automobiles - 2 And 3 Wheelers,Automobile and Auto Components,Auto & auto parts,22,1.969,Automobile and Auto Components,False
+UNOMINDA,UNO Minda Limited,Auto Ancillaries,Automobile and Auto Components,Auto & auto parts,5,1.1,Automobile and Auto Components,False
+ASHOKLEY,Ashok Leyland Limited,Automobiles - 4 Wheelers,Capital Goods,Auto & auto parts,22,2.279,Automobile and Auto Components,True
+AUBANK,AU Small Finance Bank Limited,Banks,Financial Services,Banks,22,-1.179,Financial Services,False
+AXISBANK,Axis Bank Limited,Banks,Financial Services,Banks,22,-1.108,Financial Services,False
+BANDHANBNK,Bandhan Bank Limited,Banks,Financial Services,Banks,22,-0.928,Financial Services,False
+BANKBARODA,Bank of Baroda,Banks,Financial Services,Banks,22,0.392,Financial Services,False
+BANKINDIA,Bank of India,Banks,Financial Services,Banks,7,1.29,Financial Services,False
+CANBK,Canara Bank,Banks,Financial Services,Banks,22,0.251,Financial Services,False
+FEDERALBNK,The Federal Bank  Limited,Banks,Financial Services,Banks,22,2.129,Financial Services,False
+HDFCBANK,HDFC Bank Limited,Banks,Financial Services,Banks,22,-0.514,Financial Services,False
+ICICIBANK,ICICI Bank Limited,Banks,Financial Services,Banks,22,2.174,Financial Services,False
+IDFCFIRSTB,IDFC First Bank Limited,Banks,Financial Services,Banks,22,1.254,Financial Services,False
+INDIANB,Indian Bank,Banks,Financial Services,Banks,7,2.594,Financial Services,False
+INDUSINDBK,IndusInd Bank Limited,Banks,Financial Services,Banks,22,-0.284,Financial Services,False
+KOTAKBANK,Kotak Mahindra Bank Limited,Banks,Financial Services,Banks,22,-1.237,Financial Services,False
+PNB,Punjab National Bank,Banks,Financial Services,Banks,22,-0.031,Financial Services,False
+RBLBANK,RBL Bank Limited,Banks,Financial Services,Banks,22,-2.2,Financial Services,False
+SBIN,State Bank of India,Banks,Financial Services,Banks,22,-0.325,Financial Services,False
+UNIONBANK,Union Bank of India,Banks,Financial Services,Banks,7,0.429,Financial Services,False
+YESBANK,Yes Bank Limited,Banks,Financial Services,Banks,7,-1.01,Financial Services,False
+ABB,ABB India Limited,Electrical Equipment,Capital Goods,Capital goods & defence,17,0.605,Capital Goods,False
+BDL,Bharat Dynamics Limited,Aerospace & Defence,Capital Goods,Capital goods & defence,5,-1.774,Capital Goods,False
+BEL,Bharat Electronics Limited,Electronics - Industrial,Capital Goods,Capital goods & defence,21,2.276,Capital Goods,False
+BHEL,Bharat Heavy Electricals Limited,Electrical Equipment,Capital Goods,Capital goods & defence,21,-0.526,Capital Goods,False
+CGPOWER,CG Power and Industrial Solutions Limited,Electrical Equipment,Capital Goods,Capital goods & defence,7,0.329,Capital Goods,False
+COCHINSHIP,Cochin Shipyard Limited,Aerospace & Defence,Capital Goods,Capital goods & defence,2,-5.928,Capital Goods,False
+CUMMINSIND,Cummins India Limited,Diesel Engines,Capital Goods,Capital goods & defence,22,2.89,Capital Goods,False
+GVT&D,GE Vernova T&D India Limited,Electrical Equipment,Capital Goods,Capital goods & defence,1,-0.052,Capital Goods,False
+HAL,Hindustan Aeronautics Limited,Aerospace & Defence,Capital Goods,Capital goods & defence,20,1.175,Capital Goods,False
+INOXWIND,Inox Wind Limited,Electrical Equipment,Capital Goods,Capital goods & defence,6,-6.071,Capital Goods,False
+KEI,KEI Industries Limited,Miscellaneous,Capital Goods,Capital goods & defence,7,1.713,Capital Goods,False
+MAZDOCK,Mazagon Dock Shipbuilders Limited,Aerospace & Defence,Capital Goods,Capital goods & defence,5,-2.031,Capital Goods,False
+POLYCAB,Polycab India Limited,Electrical Equipment,Capital Goods,Capital goods & defence,20,0.86,Capital Goods,False
+POWERINDIA,Hitachi Energy India Limited,Electrical Equipment,Capital Goods,Capital goods & defence,4,8.876,Capital Goods,False
+PREMIERENE,Premier Energies Limited,Electrical Equipment,Capital Goods,Capital goods & defence,3,-1.172,Capital Goods,False
+SIEMENS,Siemens Limited,Electrical Equipment,Capital Goods,Capital goods & defence,18,1.268,Capital Goods,False
+SUZLON,Suzlon Energy Limited,Electrical Equipment,Capital Goods,Capital goods & defence,5,-2.422,Capital Goods,False
+WAAREEENER,Waaree Energies Limited,Electrical Equipment,Capital Goods,Capital goods & defence,3,-2.438,Capital Goods,False
+LT,Larsen & Toubro Limited,Engineering,Construction,Capital goods & defence,22,0.998,Capital Goods,True
+HAVELLS,Havells India Limited,Electrical Equipment,Consumer Durables,Capital goods & defence,22,-1.946,Capital Goods,True
+VOLTAS,Voltas Limited,Engineering,Consumer Durables,Capital goods & defence,22,-1.34,Capital Goods,True
+ASTRAL,Astral Limited,Plastic And Plastic Products,Capital Goods,Cement & building materials,19,-0.308,Construction Materials,True
+SUPREMEIND,Supreme Industries Limited,Plastic And Plastic Products,Capital Goods,Cement & building materials,7,-1.79,Construction Materials,True
+AMBUJACEM,Ambuja Cements Limited,Cement And Cement Products,Construction Materials,Cement & building materials,22,-0.935,Construction Materials,False
+GRASIM,Grasim Industries Limited,Cement And Cement Products,Construction Materials,Cement & building materials,22,-0.52,Construction Materials,False
+SHREECEM,SHREE CEMENT LIMITED,Cement And Cement Products,Construction Materials,Cement & building materials,20,0.042,Construction Materials,False
+ULTRACEMCO,UltraTech Cement Limited,Cement And Cement Products,Construction Materials,Cement & building materials,22,0.446,Construction Materials,False
+PIDILITIND,Pidilite Industries Limited,Chemicals - Speciality,Chemicals,Chemicals & agro,22,0.153,Chemicals,False
+PIIND,PI Industries Limited,Pesticides And Agrochemicals,Chemicals,Chemicals & agro,21,0.062,Chemicals,False
+SOLARINDS,Solar Industries India Limited,Chemicals - Speciality,Chemicals,Chemicals & agro,7,2.902,Chemicals,False
+SRF,SRF Limited,Textiles - Synthetic,Chemicals,Chemicals & agro,22,-1.644,Chemicals,False
+UPL,UPL Limited,Pesticides And Agrochemicals,Chemicals,Chemicals & agro,22,-0.684,Chemicals,False
+KAYNES,Kaynes Technology India Limited,Consumer Durables,Capital Goods,Consumer durables & retail,5,-3.49,Consumer Durables,True
+AMBER,Amber Enterprises India Limited,Consumer Durables,Consumer Durables,Consumer durables & retail,5,1.258,Consumer Durables,False
+ASIANPAINT,Asian Paints Limited,Paints,Consumer Durables,Consumer durables & retail,22,-1.389,Consumer Durables,False
+BLUESTARCO,Blue Star Limited,Airconditioners,Consumer Durables,Consumer durables & retail,5,-1.858,Consumer Durables,False
+CROMPTON,Crompton Greaves Consumer Electricals Limited,Consumer Durables,Consumer Durables,Consumer durables & retail,19,0.301,Consumer Durables,False
+DIXON,Dixon Technologies (India) Limited,Consumer Durables,Consumer Durables,Consumer durables & retail,20,-0.499,Consumer Durables,False
+KALYANKJIL,Kalyan Jewellers India Limited,Gems Jewellery And Watches,Consumer Durables,Consumer durables & retail,7,0.389,Consumer Durables,False
+PGEL,PG Electroplast Limited,Consumer Durables,Consumer Durables,Consumer durables & retail,5,-3.789,Consumer Durables,False
+TITAN,Titan Company Limited,Gems Jewellery And Watches,Consumer Durables,Consumer durables & retail,22,-0.337,Consumer Durables,False
+DMART,Avenue Supermarts Limited,Retail,Consumer Services,Consumer durables & retail,7,-4.085,Consumer Durables,True
+TRENT,Trent Limited,Miscellaneous,Consumer Services,Consumer durables & retail,21,3.224,Consumer Durables,True
+VMM,Vishal Mega Mart Limited,Retail,Consumer Services,Consumer durables & retail,2,-2.73,Consumer Durables,True
+PAGEIND,Page Industries Limited,Textile Products,Textiles,Consumer durables & retail,18,0.068,Consumer Durables,True
+JUBLFOOD,Jubilant Foodworks Limited,Food And Food Processing,Consumer Services,FMCG,21,0.188,Fast Moving Consumer Goods,True
+BRITANNIA,Britannia Industries Limited,Food And Food Processing,Fast Moving Consumer Goods,FMCG,22,-0.225,Fast Moving Consumer Goods,False
+COLPAL,Colgate Palmolive (India) Limited,Personal Care,Fast Moving Consumer Goods,FMCG,22,-1.0,Fast Moving Consumer Goods,False
+DABUR,Dabur India Limited,Personal Care,Fast Moving Consumer Goods,FMCG,22,-0.218,Fast Moving Consumer Goods,False
+GODFRYPHLP,Godfrey Phillips India Limited,Cigarettes,Fast Moving Consumer Goods,FMCG,2,-2.25,Fast Moving Consumer Goods,False
+GODREJCP,Godrej Consumer Products Limited,Personal Care,Fast Moving Consumer Goods,FMCG,22,0.664,Fast Moving Consumer Goods,False
+HINDUNILVR,Hindustan Unilever Limited,Diversified,Fast Moving Consumer Goods,FMCG,22,-1.597,Fast Moving Consumer Goods,False
+ITC,ITC Limited,Cigarettes,Fast Moving Consumer Goods,FMCG,22,0.134,Fast Moving Consumer Goods,False
+MARICO,Marico Limited,Personal Care,Fast Moving Consumer Goods,FMCG,22,1.379,Fast Moving Consumer Goods,False
+NESTLEIND,Nestle India Limited,Food And Food Processing,Fast Moving Consumer Goods,FMCG,12,0.438,Fast Moving Consumer Goods,False
+PATANJALI,Patanjali Foods Limited,Food And Food Processing,Fast Moving Consumer Goods,FMCG,6,-1.738,Fast Moving Consumer Goods,False
+RADICO,Radico Khaitan Limited,Brew/Distilleries,Fast Moving Consumer Goods,FMCG,1,6.762,Fast Moving Consumer Goods,False
+TATACONSUM,TATA CONSUMER PRODUCTS LIMITED,Food And Food Processing,Fast Moving Consumer Goods,FMCG,22,-0.269,Fast Moving Consumer Goods,False
+UNITDSPR,United Spirits Limited,Brew/Distilleries,Fast Moving Consumer Goods,FMCG,22,1.51,Fast Moving Consumer Goods,False
+VBL,Varun Beverages Limited,Food And Food Processing,Fast Moving Consumer Goods,FMCG,7,0.67,Fast Moving Consumer Goods,False
+NAUKRI,Info Edge (India) Limited,Computers - Software,Consumer Services,IT,21,2.176,Information Technology,True
+COFORGE,Coforge Limited,Computers - Software,Information Technology,IT,21,2.345,Information Technology,False
+HCLTECH,HCL Technologies Limited,Computers - Software,Information Technology,IT,22,-1.087,Information Technology,False
+INFY,Infosys Limited,Computers - Software,Information Technology,IT,22,-1.979,Information Technology,False
+KPITTECH,KPIT Technologies Limited,Computers - Software,Information Technology,IT,7,1.632,Information Technology,False
+LTM,LTM Limited,Computers - Software,Information Technology,IT,21,0.425,Information Technology,False
+MPHASIS,MphasiS Limited,Computers - Software,Information Technology,IT,22,0.447,Information Technology,False
+OFSS,Oracle Financial Services Software Limited,Computers - Software,Information Technology,IT,19,0.566,Information Technology,False
+PERSISTENT,Persistent Systems Limited,Computers - Software,Information Technology,IT,20,1.232,Information Technology,False
+TATAELXSI,Tata Elxsi Limited,Computers - Software,Information Technology,IT,7,-1.603,Information Technology,False
+TCS,Tata Consultancy Services Limited,Computers - Software,Information Technology,IT,22,-0.432,Information Technology,False
+TECHM,Tech Mahindra Limited,Computers - Software,Information Technology,IT,22,0.865,Information Technology,False
+WIPRO,Wipro Limited,Computers - Software,Information Technology,IT,22,0.459,Information Technology,False
+APLAPOLLO,APL Apollo Tubes Limited,Steel And Steel Products,Capital Goods,Metals & mining,7,0.125,Metals & Mining,True
+HINDALCO,Hindalco Industries Limited,Aluminium,Metals & Mining,Metals & mining,21,0.206,Metals & Mining,False
+HINDZINC,Hindustan Zinc Limited,Metals,Metals & Mining,Metals & mining,6,0.796,Metals & Mining,False
+JINDALSTEL,JINDAL STEEL LIMITED,Steel And Steel Products,Metals & Mining,Metals & mining,22,-0.924,Metals & Mining,False
+JSWSTEEL,JSW Steel Limited,Steel And Steel Products,Metals & Mining,Metals & mining,22,-0.311,Metals & Mining,False
+NATIONALUM,National Aluminium Company Limited,Aluminium,Metals & Mining,Metals & mining,22,-1.028,Metals & Mining,False
+NMDC,NMDC Limited,Mining,Metals & Mining,Metals & mining,21,0.908,Metals & Mining,False
+SAIL,Steel Authority of India Limited,Steel And Steel Products,Metals & Mining,Metals & mining,21,-1.315,Metals & Mining,False
+TATASTEEL,Tata Steel Limited,Steel And Steel Products,Metals & Mining,Metals & mining,22,0.261,Metals & Mining,False
+VEDL,Vedanta Limited,Metals,Metals & Mining,Metals & mining,21,-0.096,Metals & Mining,False
+COALINDIA,Coal India Limited,Mining,Oil Gas & Consumable Fuels,Metals & mining,21,-0.432,Metals & Mining,True
+360ONE,360 ONE WAM LIMITED,Capital Markets,Financial Services,NBFC & financials,5,0.616,Financial Services,False
+ABCAPITAL,Aditya Birla Capital Limited,Finance,Financial Services,NBFC & financials,19,2.205,Financial Services,False
+ANGELONE,Angel One Limited,Capital Markets,Financial Services,NBFC & financials,7,3.674,Financial Services,False
+BAJAJFINSV,Bajaj Finserv Limited,Finance,Financial Services,NBFC & financials,22,-0.033,Financial Services,False
+BAJAJHLDNG,Bajaj Holdings & Investment Limited,Finance,Financial Services,NBFC & financials,3,3.189,Financial Services,False
+BAJFINANCE,Bajaj Finance Limited,Finance,Financial Services,NBFC & financials,22,0.601,Financial Services,False
+BSE,BSE Limited,Capital Markets,Financial Services,NBFC & financials,7,3.558,Financial Services,False
+CAMS,Computer Age Management Services Limited,Capital Markets,Financial Services,NBFC & financials,7,-1.946,Financial Services,False
+CDSL,Central Depository Services (India) Limited,Capital Markets,Financial Services,NBFC & financials,7,-6.457,Financial Services,False
+CHOLAFIN,Cholamandalam Investment and Finance Company Limited,Finance,Financial Services,NBFC & financials,22,0.678,Financial Services,False
+HDFCAMC,HDFC Asset Management Company Limited,Capital Markets,Financial Services,NBFC & financials,22,1.271,Financial Services,False
+HDFCLIFE,HDFC Life Insurance Company Limited,Insurance,Financial Services,NBFC & financials,22,-0.921,Financial Services,False
+ICICIGI,ICICI Lombard General Insurance Company Limited,Insurance,Financial Services,NBFC & financials,21,-0.055,Financial Services,False
+ICICIPRULI,ICICI Prudential Life Insurance Company Limited,Insurance,Financial Services,NBFC & financials,22,-0.63,Financial Services,False
+IEX,Indian Energy Exchange Limited,Capital Markets,Financial Services,NBFC & financials,20,-2.601,Financial Services,False
+IREDA,Indian Renewable Energy Development Agency Limited,Financial Institution,Financial Services,NBFC & financials,6,1.592,Financial Services,False
+IRFC,Indian Railway Finance Corporation Limited,Financial Institution,Financial Services,NBFC & financials,7,-1.153,Financial Services,False
+JIOFIN,Jio Financial Services Limited,Finance,Financial Services,NBFC & financials,7,0.276,Financial Services,False
+KFINTECH,Kfin Technologies Limited,Capital Markets,Financial Services,NBFC & financials,5,-1.38,Financial Services,False
+LICHSGFIN,LIC Housing Finance Limited,Finance - Housing,Financial Services,NBFC & financials,21,-1.239,Financial Services,False
+LICI,Life Insurance Corporation Of India,Insurance,Financial Services,NBFC & financials,7,2.525,Financial Services,False
+LTF,L&T Finance Limited,Finance,Financial Services,NBFC & financials,22,-1.211,Financial Services,False
+MANAPPURAM,Manappuram Finance Limited,Finance,Financial Services,NBFC & financials,21,-3.11,Financial Services,False
+MFSL,Max Financial Services Limited,Insurance,Financial Services,NBFC & financials,19,1.553,Financial Services,False
+MOTILALOFS,Motilal Oswal Financial Services Limited,Finance,Financial Services,NBFC & financials,2,-4.489,Financial Services,False
+MUTHOOTFIN,Muthoot Finance Limited,Finance,Financial Services,NBFC & financials,22,-0.353,Financial Services,False
+NAM-INDIA,Nippon Life India Asset Management Limited,Capital Markets,Financial Services,NBFC & financials,8,-0.675,Financial Services,False
+PFC,Power Finance Corporation Limited,Financial Institution,Financial Services,NBFC & financials,21,-0.629,Financial Services,False
+PNBHOUSING,PNB Housing Finance Limited,Finance - Housing,Financial Services,NBFC & financials,6,2.081,Financial Services,False
+RECLTD,REC Limited,Financial Institution,Financial Services,NBFC & financials,22,2.162,Financial Services,False
+SBICARD,SBI Cards and Payment Services Limited,Finance,Financial Services,NBFC & financials,19,-2.082,Financial Services,False
+SBILIFE,SBI Life Insurance Company Limited,Insurance,Financial Services,NBFC & financials,22,1.512,Financial Services,False
+SHRIRAMFIN,Shriram Finance Limited,Finance,Financial Services,NBFC & financials,22,-0.549,Financial Services,False
+BPCL,Bharat Petroleum Corporation Limited,Refineries,Oil Gas & Consumable Fuels,Oil & gas,22,0.341,Oil Gas & Consumable Fuels,False
+GAIL,GAIL (India) Limited,Gas,Oil Gas & Consumable Fuels,Oil & gas,21,0.075,Oil Gas & Consumable Fuels,False
+HINDPETRO,Hindustan Petroleum Corporation Limited,Refineries,Oil Gas & Consumable Fuels,Oil & gas,22,-0.32,Oil Gas & Consumable Fuels,False
+IOC,Indian Oil Corporation Limited,Refineries,Oil Gas & Consumable Fuels,Oil & gas,22,0.201,Oil Gas & Consumable Fuels,False
+OIL,Oil India Limited,Oil Exploration/Production,Oil Gas & Consumable Fuels,Oil & gas,7,-0.414,Oil Gas & Consumable Fuels,False
+ONGC,Oil & Natural Gas Corporation Limited,Oil Exploration/Production,Oil Gas & Consumable Fuels,Oil & gas,22,-1.009,Oil Gas & Consumable Fuels,False
+PETRONET,Petronet LNG Limited,Gas,Oil Gas & Consumable Fuels,Oil & gas,21,-1.067,Oil Gas & Consumable Fuels,False
+RELIANCE,Reliance Industries Limited,Refineries,Oil Gas & Consumable Fuels,Oil & gas,21,-0.744,Oil Gas & Consumable Fuels,False
+ALKEM,Alkem Laboratories Limited,Pharmaceuticals,Healthcare,Pharma & healthcare,18,-0.851,Healthcare,False
+APOLLOHOSP,Apollo Hospitals Enterprise Limited,Miscellaneous,Healthcare,Pharma & healthcare,22,1.252,Healthcare,False
+AUROPHARMA,Aurobindo Pharma Limited,Pharmaceuticals,Healthcare,Pharma & healthcare,22,0.153,Healthcare,False
+BIOCON,Biocon Limited,Pharmaceuticals,Healthcare,Pharma & healthcare,22,-0.862,Healthcare,False
+CIPLA,Cipla Limited,Pharmaceuticals,Healthcare,Pharma & healthcare,22,1.592,Healthcare,False
+DIVISLAB,Divi's Laboratories Limited,Pharmaceuticals,Healthcare,Pharma & healthcare,22,-1.112,Healthcare,False
+DRREDDY,Dr. Reddy's Laboratories Limited,Pharmaceuticals,Healthcare,Pharma & healthcare,22,-0.828,Healthcare,False
+FORTIS,Fortis Healthcare Limited,Miscellaneous,Healthcare,Pharma & healthcare,5,-0.151,Healthcare,False
+GLENMARK,Glenmark Pharmaceuticals Limited,Pharmaceuticals,Healthcare,Pharma & healthcare,22,-0.428,Healthcare,False
+LAURUSLABS,Laurus Labs Limited,Pharmaceuticals,Healthcare,Pharma & healthcare,19,0.686,Healthcare,False
+LUPIN,Lupin Limited,Pharmaceuticals,Healthcare,Pharma & healthcare,22,-0.715,Healthcare,False
+MANKIND,Mankind Pharma Limited,Pharmaceuticals,Healthcare,Pharma & healthcare,5,-1.584,Healthcare,False
+MAXHEALTH,Max Healthcare Institute Limited,Miscellaneous,Healthcare,Pharma & healthcare,7,-0.509,Healthcare,False
+SUNPHARMA,Sun Pharmaceutical Industries Limited,Pharmaceuticals,Healthcare,Pharma & healthcare,22,0.726,Healthcare,False
+TORNTPHARM,Torrent Pharmaceuticals Limited,Pharmaceuticals,Healthcare,Pharma & healthcare,20,1.6,Healthcare,False
+ZYDUSLIFE,Zydus Lifesciences Limited,Pharmaceuticals,Healthcare,Pharma & healthcare,22,1.597,Healthcare,False
+ADANIENSOL,Adani Energy Solutions Limited,Power,Power,Power,7,-1.721,Power,False
+ADANIGREEN,Adani Green Energy Limited,Power,Power,Power,7,-2.255,Power,False
+ADANIPOWER,Adani Power Limited,Power,Power,Power,2,-0.883,Power,False
+JSWENERGY,JSW Energy Limited,Power,Power,Power,7,-4.771,Power,False
+NHPC,NHPC Limited,Power,Power,Power,7,-0.709,Power,False
+NTPC,NTPC Limited,Power,Power,Power,21,1.265,Power,False
+POWERGRID,Power Grid Corporation of India Limited,Power,Power,Power,21,-1.253,Power,False
+TATAPOWER,Tata Power Company Limited,Power,Power,Power,22,-2.436,Power,False
+NBCC,NBCC (India) Limited,Construction,Construction,Real estate & construction,8,-1.494,Realty,True
+RVNL,Rail Vikas Nigam Limited,Construction,Construction,Real estate & construction,5,-2.46,Realty,True
+DLF,DLF Limited,Construction,Realty,Real estate & construction,21,0.949,Realty,False
+GODREJPROP,Godrej Properties Limited,Construction,Realty,Real estate & construction,22,-1.586,Realty,False
+LODHA,Lodha Developers Limited,Construction,Realty,Real estate & construction,7,1.287,Realty,False
+OBEROIRLTY,Oberoi Realty Limited,Construction,Realty,Real estate & construction,19,-1.247,Realty,False
+PHOENIXLTD,The Phoenix Mills Limited,Construction,Realty,Real estate & construction,6,-1.399,Realty,False
+PRESTIGE,Prestige Estates Projects Limited,Construction,Realty,Real estate & construction,7,1.734,Realty,False
+ETERNAL,ETERNAL LIMITED,Internet & E-commerce,Consumer Services,"Services, telecom & internet",7,0.48,Services,True
+INDHOTEL,The Indian Hotels Company Limited,Hotels,Consumer Services,"Services, telecom & internet",21,0.333,Services,True
+NYKAA,FSN E-Commerce Ventures Limited,Internet & E-commerce,Consumer Services,"Services, telecom & internet",7,2.643,Services,True
+SWIGGY,Swiggy Limited,Internet & E-commerce,Consumer Services,"Services, telecom & internet",3,-0.019,Services,True
+PAYTM,One 97 Communications Limited,Internet & E-commerce,Financial Services,"Services, telecom & internet",7,1.615,Services,True
+POLICYBZR,PB Fintech Limited,Internet & E-commerce,Financial Services,"Services, telecom & internet",7,-0.232,Services,True
+ADANIENT,Adani Enterprises Limited,Trading,Metals & Mining,"Services, telecom & internet",22,0.556,Services,True
+ADANIPORTS,Adani Ports and Special Economic Zone Limited,Shipping,Services,"Services, telecom & internet",22,2.735,Services,False
+CONCOR,Container Corporation of India Limited,Travel And Transport,Services,"Services, telecom & internet",22,-0.539,Services,False
+DELHIVERY,Delhivery Limited,Travel And Transport,Services,"Services, telecom & internet",7,1.253,Services,False
+GMRAIRPORT,GMR AIRPORTS LIMITED,Travel And Transport,Services,"Services, telecom & internet",21,-0.184,Services,False
+INDIGO,InterGlobe Aviation Limited,Travel And Transport,Services,"Services, telecom & internet",22,0.843,Services,False
+BHARTIARTL,Bharti Airtel Limited,Telecommunication - Services,Telecommunication,"Services, telecom & internet",22,0.467,Services,True
+IDEA,Vodafone Idea Limited,Telecommunication - Services,Telecommunication,"Services, telecom & internet",20,-2.947,Services,True
+INDUSTOWER,Indus Towers Limited,Telecommunication - Services,Telecommunication,"Services, telecom & internet",22,-1.921,Services,True

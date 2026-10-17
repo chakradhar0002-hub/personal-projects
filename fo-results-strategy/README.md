@@ -48,6 +48,9 @@ checklist and concrete trades, and backtests them on your data.
 >   about zero after realistic entry and costs. See [docs/NEGATIVE_AVERAGE.md](docs/NEGATIVE_AVERAGE.md).
 > - **Three-day results move by sector, every quarter:** only auto and auto parts stands out (+1.20% a result, 18 of 22
 >   quarters above average). See [docs/SECTOR_3DAY.md](docs/SECTOR_3DAY.md).
+> - **The same by NSE's Nifty index sectors:** auto is still the only one (+1.10% a result; Nifty Auto members beat
+>   their index by +0.81%), but it rests on three stocks and on 2021-23. No other sector or index stands out. See
+>   [docs/NIFTY_SECTOR_3DAY.md](docs/NIFTY_SECTOR_3DAY.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.

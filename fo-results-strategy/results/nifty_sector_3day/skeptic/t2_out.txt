@@ -1,0 +1,285 @@
+all-F&O placebo windows: 40406 (206 stocks)
+         fam                           group  stocks    n     avg      ex  luck_p  holm_luck_p     q_p  holm_q_p   cl2_p  holm_cl2_p  stock_perm_p  holm_stock_perm_p  q_above  nq  thin_q  thin_res
+0        NSE  Automobile and Auto Components      15  242  1.1016  1.0583  0.0010       0.0170  0.0133    0.2267  0.0055      0.0885        0.0037             0.0637       16  22       0         0
+13       NSE                           Power       8   94 -1.2903 -1.3171  0.0128       0.2056  0.0422    0.5590  0.1163      1.0000        0.0120             0.1928        7  22      15        43
+5        NSE               Consumer Durables      10  149 -0.8976 -0.9356  0.0240       0.3600  0.0705    0.8464  0.0002      0.0042        0.0418             0.5940        6  22       0         0
+16       NSE               Telecommunication       3   64 -1.4207 -1.4563  0.0240       0.3600  0.0219    0.3281  0.2847      1.0000        0.0972             1.0000        4  22      22        64
+6        NSE               Consumer Services       9  110  1.0189  1.0043  0.0380       0.4940  0.0399    0.5590  0.1881      1.0000        0.0396             0.5940       16  21       0         0
+1        NSE                   Capital Goods      23  247  0.6025  0.5524  0.0791       0.9498  0.0168    0.2695  0.2346      1.0000        0.0566             0.7364       17  22       1         3
+15       NSE                        Services       5   94  0.7634  0.7260  0.1641       1.0000  0.1417    1.0000  0.2821      1.0000        0.2720             1.0000       14  22       1         3
+12       NSE      Oil Gas & Consumable Fuels       9  179 -0.3672 -0.4016  0.2872       1.0000  0.1420    1.0000  0.0622      0.9331        0.3985             1.0000        9  22       0         0
+8        NSE              Financial Services      53  837 -0.0670 -0.1099  0.4727       1.0000  0.4453    1.0000  0.5845      1.0000        0.5256             1.0000        8  22       0         0
+10       NSE          Information Technology      12  227  0.2459  0.2157  0.5152       1.0000  0.6931    1.0000  0.6522      1.0000        0.5984             1.0000       11  22       0         0
+14       NSE                          Realty       6   82 -0.3159 -0.3635  0.5213       1.0000  0.4791    1.0000  0.5690      1.0000        0.5415             1.0000        8  22      15        41
+2        NSE                       Chemicals       5   94 -0.2792 -0.3246  0.5344       1.0000  0.3727    1.0000  0.4508      1.0000        0.6233             1.0000        6  22       1         3
+11       NSE                 Metals & Mining      10  200 -0.1665 -0.2063  0.5614       1.0000  0.3576    1.0000  0.2135      1.0000        0.6468             1.0000        8  22       0         0
+4        NSE          Construction Materials       4   86 -0.2484 -0.2952  0.5854       1.0000  0.3770    1.0000  0.3974      1.0000        0.6913             1.0000       10  22       2         6
+9        NSE                      Healthcare      16  294  0.1623  0.1137  0.6944       1.0000  0.7667    1.0000  0.6328      1.0000        0.7497             1.0000       14  22       0         0
+3        NSE                    Construction       3   35 -0.0653 -0.0894  0.9186       1.0000  0.7704    1.0000  0.9325      1.0000        0.9155             1.0000        7  22      22        35
+17       NSE                        Textiles       1   18  0.0678 -0.0755  0.9509          NaN  0.9503       NaN  0.8332         NaN        0.9698                NaN        9  18      18        18
+7        NSE      Fast Moving Consumer Goods      14  226  0.0445 -0.0085  0.9787       1.0000  0.9950    1.0000  0.9793      1.0000        0.9815             1.0000       11  22       0         0
+18  sectoral                      Nifty Auto      15  262  1.2031  1.1587  0.0003       0.0045  0.0039    0.0510  0.0019      0.0248        0.0016             0.0208       18  22       0         0
+29  sectoral         Nifty Consumer Durables       9  127 -0.8124 -0.8491  0.0603       0.7242  0.1090    1.0000  0.0097      0.1167        0.0787             0.9450        8  22       2         6
+30  sectoral                 Nifty Oil & Gas       8  158 -0.3586 -0.3965  0.3217       1.0000  0.1413    1.0000  0.0679      0.7466        0.4382             1.0000        8  22       0         0
+23  sectoral                        Nifty IT      10  213  0.2611  0.2320  0.5015       1.0000  0.6692    1.0000  0.6269      1.0000        0.6038             1.0000       10  22       0         0
+28  sectoral                    Nifty Realty       6   82 -0.3159 -0.3635  0.5213       1.0000  0.4791    1.0000  0.5690      1.0000        0.5415             1.0000        8  22      15        41
+26  sectoral                  Nifty PSU Bank       7  109  0.3348  0.2891  0.5497       1.0000  0.5970    1.0000  0.5267      1.0000        0.5969             1.0000       12  22       0         0
+24  sectoral                     Nifty Metal      11  207 -0.1566 -0.1967  0.5737       1.0000  0.3599    1.0000  0.2715      1.0000        0.6467             1.0000        8  22       0         0
+27  sectoral              Nifty Private Bank      10  205 -0.1112 -0.1567  0.6564       1.0000  0.6792    1.0000  0.7603      1.0000        0.7294             1.0000        9  22       0         0
+22  sectoral          Nifty Healthcare Index      16  294  0.1623  0.1137  0.6944       1.0000  0.7667    1.0000  0.6328      1.0000        0.7497             1.0000       14  22       0         0
+19  sectoral                      Nifty Bank      14  278  0.1057  0.0602  0.8398       1.0000  0.8351    1.0000  0.8826      1.0000        0.8741             1.0000        9  22       0         0
+25  sectoral                    Nifty Pharma      13  260  0.0942  0.0449  0.8826       1.0000  0.9910    1.0000  0.8647      1.0000        0.9079             1.0000       12  22       0         0
+20  sectoral        Nifty Financial Services      20  401  0.0557  0.0132  0.9583       1.0000  0.8460    1.0000  0.9664      1.0000        0.9652             1.0000        9  22       0         0
+21  sectoral                      Nifty FMCG      14  226  0.0445 -0.0085  0.9787       1.0000  0.9950    1.0000  0.9793      1.0000        0.9815             1.0000       11  22       0         0
+34  thematic         Nifty India Consumption      30  565  0.5109  0.4704  0.0166       0.1328  0.0708    0.3788  0.1239      0.7432        0.0585             0.4095       14  22       0         0
+33  thematic               Nifty Commodities      28  498 -0.4182 -0.4587  0.0304       0.2131  0.0077    0.0615  0.0135      0.1078        0.0751             0.4506        7  22       0         0
+31  thematic                    Nifty Energy      25  352 -0.4992 -0.5455  0.0365       0.2190  0.0239    0.1673  0.0685      0.4798        0.0486             0.3892        8  22       0         0
+35  thematic                       Nifty MNC      17  298  0.6147  0.5603  0.0493       0.2467  0.0631    0.3788  0.1495      0.7476        0.1039             0.5195       16  22       0         0
+32  thematic            Nifty Infrastructure      30  534  0.3323  0.2938  0.1500       0.6002  0.1119    0.4475  0.2840      1.0000        0.2308             0.9234       16  22       0         0
+37  thematic                      Nifty CPSE       9  130 -0.1146 -0.1293  0.7720       1.0000  0.9369    1.0000  0.8251      1.0000        0.7899             1.0000        9  22       1         1
+38  thematic           Nifty Services Sector      30  563  0.0772  0.0348  0.8574       1.0000  0.8189    1.0000  0.9010      1.0000        0.8927             1.0000       12  22       0         0
+36  thematic                       Nifty PSE      20  384  0.0289  0.0036  0.9898       1.0000  0.7100    1.0000  0.9889      1.0000        0.9901             1.0000        9  22       0         0
+
+         fam                           group      ex   top_stock  top_stock_n  ex_wo_top_stock  p_wo_top_stock  top_q  top_q_n  ex_wo_top_q  p_wo_top_q  placebo_ex  res_minus_plac   rmp_p
+0        NSE  Automobile and Auto Components  1.0583         M&M           22           0.9100          0.0062      4       10       0.9041      0.0060     -0.0584          1.0838  0.0057
+13       NSE                           Power -1.3171   TATAPOWER           22          -0.9613          0.1104     15        7      -1.1284      0.0362      0.0798         -1.3324  0.0298
+5        NSE               Consumer Durables -0.9356     HAVELLS           22          -0.7527          0.0968      7        6      -0.7727      0.0699      0.0343         -0.9126  0.0785
+16       NSE               Telecommunication -1.4563        IDEA           20          -0.7727          0.3109      0        3      -1.1809      0.0669      0.0030         -1.3628  0.0134
+6        NSE               Consumer Services  1.0043       TRENT           21           0.4826          0.3695      4        4       0.7306      0.1322      0.0879          1.3563  0.0508
+1        NSE                   Capital Goods  0.5524  CUMMINSIND           22           0.3283          0.3185     12        9       0.4176      0.1855      0.0339          0.7738  0.0217
+15       NSE                        Services  0.7260  ADANIPORTS           22           0.1261          0.8306     19        5       0.4589      0.3851      0.0575          0.6548  0.1662
+12       NSE      Oil Gas & Consumable Fuels -0.4016        ONGC           22          -0.3101          0.4302     19        9      -0.2867      0.4458      0.0093         -0.4107  0.1372
+8        NSE              Financial Services -0.1099  MANAPPURAM           21          -0.0320          0.8378      4       33      -0.0411      0.7937      0.0060         -0.1283  0.4679
+10       NSE          Information Technology  0.2157     COFORGE           21          -0.0005          0.9986     16       12       0.0396      0.9063     -0.1134          0.2739  0.5856
+14       NSE                          Realty -0.3635  GODREJPROP           22           0.1016          0.8774     11        3      -0.1008      0.8543      0.2670         -0.7603  0.2791
+2        NSE                       Chemicals -0.3246         SRF           22           0.0925          0.8733     14        4      -0.1831      0.7347     -0.0881         -0.2817  0.4915
+11       NSE                 Metals & Mining -0.2063        SAIL           21          -0.0752          0.8370     10        9      -0.1167      0.7555      0.0445         -0.2930  0.3610
+4        NSE          Construction Materials -0.2952   AMBUJACEM           22          -0.0596          0.9218     13        4      -0.1106      0.8406     -0.0061         -0.2797  0.4108
+9        NSE                      Healthcare  0.1137   ZYDUSLIFE           22          -0.0026          0.9939     17       16       0.0105      0.9712      0.0341          0.0524  0.8443
+3        NSE                    Construction -0.0894        RVNL            5           0.3108          0.7448     12        1       0.0916      0.9167     -0.1349         -0.1721  0.8174
+17       NSE                        Textiles -0.0755     PAGEIND           18              NaN          0.0001      8        1       0.5684      0.6556     -0.1774          0.1019  0.9303
+7        NSE      Fast Moving Consumer Goods -0.0085  HINDUNILVR           22           0.1678          0.6215     14       10       0.1459      0.6625     -0.1176          0.1043  0.7511
+18  sectoral                      Nifty Auto  1.1587         M&M           22           1.0320          0.0009      4       11       1.0120      0.0012     -0.0667          1.2072  0.0011
+29  sectoral         Nifty Consumer Durables -0.8491     HAVELLS           22          -0.6098          0.2104     17        9      -0.6899      0.1364      0.0578         -0.8587  0.1126
+30  sectoral                 Nifty Oil & Gas -0.3965        ONGC           22          -0.2900          0.4961      4        7      -0.2889      0.4718      0.0026         -0.4101  0.1376
+23  sectoral                        Nifty IT  0.2320     COFORGE           21           0.0018          0.9961     11       10       0.0536      0.8822     -0.0527          0.2448  0.6200
+28  sectoral                    Nifty Realty -0.3635  GODREJPROP           22           0.1016          0.8774     11        3      -0.1008      0.8543      0.2670         -0.7603  0.2791
+26  sectoral                  Nifty PSU Bank  0.2891     INDIANB            7           0.1341          0.7920      3        4       0.0136      0.9784      0.1267          0.2519  0.7124
+24  sectoral                     Nifty Metal -0.1967        SAIL           21          -0.0694          0.8444     10        9      -0.1097      0.7618      0.0466         -0.3024  0.3511
+27  sectoral              Nifty Private Bank -0.1567     RBLBANK           22           0.0944          0.7897     11        9       0.0311      0.9302     -0.0943         -0.0539  0.8840
+22  sectoral          Nifty Healthcare Index  0.1137   ZYDUSLIFE           22          -0.0026          0.9939     17       16       0.0105      0.9712      0.0341          0.0524  0.8443
+19  sectoral                      Nifty Bank  0.0602   ICICIBANK           22          -0.1176          0.7082      3       12      -0.1501      0.6205     -0.0168          0.1025  0.7916
+25  sectoral                    Nifty Pharma  0.0449   ZYDUSLIFE           22          -0.0944          0.7636     17       13      -0.0319      0.9181      0.0679         -0.0655  0.8273
+20  sectoral        Nifty Financial Services  0.0132   ICICIBANK           22          -0.1096          0.6613      0       13      -0.1088      0.6549     -0.0314          0.0930  0.7637
+21  sectoral                      Nifty FMCG -0.0085  HINDUNILVR           22           0.1678          0.6215     14       10       0.1459      0.6625     -0.1176          0.1043  0.7511
+34  thematic         Nifty India Consumption  0.4704       TRENT           21           0.3644          0.0681      4       23       0.3498      0.0761      0.0134          0.4797  0.0732
+33  thematic               Nifty Commodities -0.4587   TATAPOWER           22          -0.3653          0.0942     13       21      -0.3923      0.0717     -0.0063         -0.4824  0.0115
+31  thematic                    Nifty Energy -0.5455   TATAPOWER           22          -0.4165          0.1246     19       23      -0.4133      0.1240      0.0272         -0.5182  0.0144
+35  thematic                       Nifty MNC  0.5603  CUMMINSIND           22           0.3783          0.2096     11       14       0.3635      0.2063     -0.0359          0.5982  0.0354
+32  thematic            Nifty Infrastructure  0.2938  CUMMINSIND           22           0.1842          0.3843     17       28       0.2376      0.2505      0.0045          0.2720  0.0842
+37  thematic                      Nifty CPSE -0.1293   POWERGRID           21           0.0888          0.8589     21        9       0.0329      0.9416      0.1707         -0.2490  0.5330
+38  thematic           Nifty Services Sector  0.0348  ADANIPORTS           22          -0.0732          0.7193     19       29      -0.0665      0.7459     -0.0232          0.0727  0.7314
+36  thematic                       Nifty PSE  0.0036         BEL           21          -0.1274          0.6178     12       17      -0.1137      0.6603      0.1274         -0.0323  0.8963
+
+== per-stock detail for the flagged groups
+-- Power: ex -1.317, total ex-sum -123.8
+             n    avg     ex  ex_sum  share
+symbol                                     
+TATAPOWER   22 -2.436 -2.481 -54.589  0.441
+JSWENERGY    7 -4.771 -4.817 -33.721  0.272
+POWERGRID   21 -1.253 -1.261 -26.491  0.214
+ADANIGREEN   7 -2.255 -2.301 -16.110  0.130
+ADANIENSOL   7 -1.721 -1.767 -12.370  0.100
+NHPC         7 -0.709 -0.755  -5.286  0.043
+ADANIPOWER   2 -0.883 -0.815  -1.631  0.013
+NTPC        21  1.265  1.257  26.391 -0.213
+   by quarter n: 0:1 1:3 2:3 3:3 4:3 5:3 6:3 7:3 8:3 9:3 10:3 11:3 12:3 13:3 14:3 15:7 16:7 17:7 18:7 19:7 20:8 21:8
+   by quarter ex: 0:-8.7 1:+0.6 2:-2.4 3:+0.6 4:-1.0 5:-0.7 6:+1.6 7:+1.3 8:-1.8 9:+4.8 10:+0.4 11:-3.3 12:-3.4 13:-1.0 14:+0.6 15:-3.7 16:-1.6 17:-0.4 18:-2.0 19:-3.5 20:-0.2 21:-3.0
+   halves: first14 n 40 ex -0.55 p 0.487; last8 n 54 ex -1.89 p 0.008
+-- Telecommunication: ex -1.456, total ex-sum -93.2
+             n    avg     ex  ex_sum  share
+symbol                                     
+IDEA        20 -2.947 -2.960 -59.205  0.635
+INDUSTOWER  22 -1.921 -1.967 -43.273  0.464
+BHARTIARTL  22  0.467  0.422   9.276 -0.100
+   by quarter n: 0:3 1:2 2:3 3:3 4:3 5:3 6:3 7:3 8:3 9:3 10:3 11:3 12:3 13:3 14:3 15:3 16:3 17:3 18:2 19:3 20:3 21:3
+   by quarter ex: 0:-7.1 1:+1.0 2:-0.6 3:-1.6 4:-1.2 5:-3.4 6:-1.4 7:-3.7 8:+1.3 9:-0.3 10:-3.2 11:-0.4 12:-0.7 13:-3.6 14:-4.3 15:-2.2 16:-3.9 17:-0.5 18:+4.2 19:-0.6 20:+2.9 21:-0.1
+   halves: first14 n 41 ex -1.84 p 0.017; last8 n 23 ex -0.78 p 0.467
+-- Consumer Durables: ex -0.936, total ex-sum -139.4
+             n    avg     ex  ex_sum  share
+symbol                                     
+HAVELLS     22 -1.946 -1.992 -43.814  0.314
+ASIANPAINT  22 -1.389 -1.435 -31.567  0.226
+VOLTAS      22 -1.340 -1.385 -30.472  0.219
+PGEL         5 -3.789 -3.819 -19.096  0.137
+DIXON       20 -0.499 -0.505 -10.103  0.072
+BLUESTARCO   5 -1.858 -1.888  -9.441  0.068
+TITAN       22 -0.337 -0.382  -8.405  0.060
+KALYANKJIL   7  0.389  0.343   2.400 -0.017
+CROMPTON    19  0.301  0.261   4.955 -0.036
+AMBER        5  1.258  1.227   6.136 -0.044
+   by quarter n: 0:4 1:4 2:6 3:5 4:6 5:6 6:6 7:6 8:6 9:6 10:6 11:6 12:6 13:6 14:6 15:7 16:7 17:10 18:10 19:10 20:10 21:10
+   by quarter ex: 0:+1.1 1:+2.4 2:-0.9 3:-2.3 4:+1.1 5:-2.2 6:-1.4 7:-4.8 8:+2.6 9:-3.3 10:-2.0 11:-0.4 12:-2.0 13:+1.5 14:-4.6 15:-0.5 16:-0.7 17:-2.2 18:-1.0 19:+3.7 20:-2.5 21:-1.5
+   halves: first14 n 79 ex -0.87 p 0.120; last8 n 70 ex -1.02 p 0.096
+-- Consumer Services: ex +1.004, total ex-sum +110.5
+           n    avg     ex  ex_sum  share
+symbol                                   
+DMART      7 -4.085 -4.131 -28.916 -0.262
+VMM        2 -2.730 -2.663  -5.326 -0.048
+SWIGGY     3 -0.019 -0.035  -0.105 -0.001
+ETERNAL    7  0.480  0.434   3.036  0.027
+JUBLFOOD  21  0.188  0.179   3.759  0.034
+INDHOTEL  21  0.333  0.324   6.814  0.062
+NYKAA      7  2.643  2.597  18.179  0.165
+NAUKRI    21  2.176  2.167  45.510  0.412
+TRENT     21  3.224  3.215  67.520  0.611
+   by quarter n: 1:4 2:4 3:4 4:4 5:4 6:4 7:4 8:4 9:4 10:4 11:4 12:4 13:4 14:4 15:7 16:7 17:7 18:7 19:8 20:9 21:9
+   by quarter ex: 1:+3.1 2:+0.4 3:+3.1 4:+8.3 5:+1.3 6:-2.8 7:+1.1 8:+1.6 9:+1.2 10:+2.5 11:+4.0 12:+0.5 13:+7.3 14:+2.6 15:-3.4 16:-2.8 17:+3.6 18:-1.7 19:+2.1 20:-1.9 21:+0.6
+   halves: first14 n 52 ex +2.42 p 0.000; last8 n 58 ex -0.27 p 0.686
+-- Capital Goods: ex +0.552, total ex-sum +136.4
+             n    avg     ex  ex_sum  share
+symbol                                     
+INOXWIND     6 -6.071 -6.256 -37.538 -0.275
+KAYNES       5 -3.490 -3.521 -17.604 -0.129
+SUPREMEIND   7 -1.790 -1.836 -12.855 -0.094
+SUZLON       5 -2.422 -2.452 -12.262 -0.090
+COCHINSHIP   2 -5.928 -5.861 -11.721 -0.086
+BHEL        21 -0.526 -0.534 -11.216 -0.082
+MAZDOCK      5 -2.031 -2.061 -10.306 -0.076
+BDL          5 -1.774 -1.805  -9.024 -0.066
+WAAREEENER   3 -2.438 -2.454  -7.361 -0.054
+ASTRAL      19 -0.308 -0.358  -6.806 -0.050
+PREMIERENE   3 -1.172 -1.189  -3.566 -0.026
+GVT&D        1 -0.052 -0.225  -0.225 -0.002
+APLAPOLLO    7  0.125  0.079   0.554  0.004
+CGPOWER      7  0.329  0.282   1.977  0.014
+ABB         17  0.605  0.462   7.862  0.058
+KEI          7  1.713  1.667  11.666  0.086
+POLYCAB     20  0.860  0.854  17.082  0.125
+SIEMENS     18  1.268  1.127  20.291  0.149
+HAL         20  1.175  1.169  23.381  0.171
+POWERINDIA   4  8.876  8.697  34.787  0.255
+BEL         21  2.276  2.267  47.608  0.349
+ASHOKLEY    22  2.279  2.234  49.145  0.360
+CUMMINSIND  22  2.890  2.844  62.574  0.459
+   by quarter n: 0:3 1:5 2:7 3:8 4:7 5:9 6:8 7:9 8:9 9:9 10:8 11:9 12:9 13:9 14:8 15:13 16:14 17:18 18:19 19:21 20:22 21:23
+   by quarter ex: 0:+0.3 1:+1.1 2:+0.9 3:-1.4 4:+2.6 5:+1.8 6:-0.9 7:+1.0 8:+2.7 9:+0.8 10:-0.3 11:+1.9 12:+4.1 13:+1.3 14:+1.3 15:+1.0 16:+2.1 17:+0.2 18:+0.7 19:-0.7 20:-2.6 21:+0.3
+   halves: first14 n 109 ex +1.21 p 0.010; last8 n 138 ex +0.03 p 0.945
+-- Realty: ex -0.363, total ex-sum -29.8
+             n    avg     ex  ex_sum  share
+symbol                                     
+GODREJPROP  22 -1.586 -1.632 -35.903  1.205
+OBEROIRLTY  19 -1.247 -1.298 -24.655  0.827
+PHOENIXLTD   6 -1.399 -1.584  -9.503  0.319
+LODHA        7  1.287  1.241   8.687 -0.291
+PRESTIGE     7  1.734  1.688  11.815 -0.396
+DLF         21  0.949  0.941  19.754 -0.663
+   by quarter n: 0:1 1:2 2:2 3:3 4:3 5:3 6:3 7:3 8:3 9:3 10:3 11:3 12:3 13:3 14:3 15:5 16:6 17:6 18:6 19:6 20:6 21:6
+   by quarter ex: 0:-7.9 1:+2.0 2:+3.1 3:-0.3 4:-2.2 5:-0.5 6:-2.5 7:-1.0 8:+1.4 9:-3.7 10:+5.8 11:-7.3 12:+4.1 13:+0.7 14:+0.2 15:+1.2 16:-0.3 17:-0.1 18:-0.4 19:-0.7 20:-0.8 21:-1.3
+   halves: first14 n 38 ex -0.38 p 0.643; last8 n 44 ex -0.35 p 0.654
+-- Financial Services: ex -0.110, total ex-sum -92.0
+             n    avg     ex  ex_sum  share
+symbol                                     
+MANAPPURAM  21 -3.110 -3.139 -65.913  0.716
+IEX         20 -2.601 -2.607 -52.131  0.567
+RBLBANK     22 -2.200 -2.246 -49.406  0.537
+CDSL         7 -6.457 -6.503 -45.524  0.495
+SBICARD     19 -2.082 -2.133 -40.523  0.440
+KOTAKBANK   22 -1.237 -1.282 -28.214  0.307
+LTF         22 -1.211 -1.257 -27.649  0.301
+AUBANK      22 -1.179 -1.225 -26.944  0.293
+LICHSGFIN   21 -1.239 -1.247 -26.189  0.285
+AXISBANK    22 -1.108 -1.153 -25.369  0.276
+BANDHANBNK  22 -0.928 -0.973 -21.411  0.233
+HDFCLIFE    22 -0.921 -0.966 -21.255  0.231
+ICICIPRULI  22 -0.630 -0.675 -14.853  0.161
+CAMS         7 -1.946 -1.992 -13.945  0.152
+PFC         21 -0.629 -0.638 -13.397  0.146
+SHRIRAMFIN  22 -0.549 -0.595 -13.084  0.142
+HDFCBANK    22 -0.514 -0.560 -12.320  0.134
+MOTILALOFS   2 -4.489 -4.422  -8.843  0.096
+MUTHOOTFIN  22 -0.353 -0.398  -8.760  0.095
+IRFC         7 -1.153 -1.199  -8.391  0.091
+SBIN        22 -0.325 -0.370  -8.150  0.089
+YESBANK      7 -1.010 -1.057  -7.396  0.080
+INDUSINDBK  22 -0.284 -0.329  -7.248  0.079
+KFINTECH     5 -1.380 -1.410  -7.050  0.077
+NAM-INDIA    8 -0.675 -0.574  -4.589  0.050
+POLICYBZR    7 -0.232 -0.279  -1.950  0.021
+BAJAJFINSV  22 -0.033 -0.079  -1.736  0.019
+PNB         22 -0.031 -0.077  -1.693  0.018
+ICICIGI     21 -0.055 -0.064  -1.337  0.015
+JIOFIN       7  0.276  0.229   1.606 -0.017
+UNIONBANK    7  0.429  0.382   2.677 -0.029
+360ONE       5  0.616  0.586   2.930 -0.032
+CANBK       22  0.251  0.205   4.518 -0.049
+BANKBARODA  22  0.392  0.347   7.624 -0.083
+IREDA        6  1.592  1.407   8.443 -0.092
+BANKINDIA    7  1.290  1.244   8.705 -0.095
+BAJAJHLDNG   3  3.189  3.173   9.518 -0.103
+PAYTM        7  1.615  1.568  10.979 -0.119
+PNBHOUSING   6  2.081  1.896  11.375 -0.124
+BAJFINANCE  22  0.601  0.556  12.222 -0.133
+CHOLAFIN    22  0.678  0.633  13.916 -0.151
+LICI         7  2.525  2.479  17.353 -0.189
+INDIANB      7  2.594  2.548  17.833 -0.194
+BSE          7  3.558  3.512  24.583 -0.267
+ANGELONE     7  3.674  3.628  25.393 -0.276
+IDFCFIRSTB  22  1.254  1.208  26.586 -0.289
+HDFCAMC     22  1.271  1.225  26.953 -0.293
+MFSL        19  1.553  1.455  27.648 -0.301
+SBILIFE     22  1.512  1.467  32.265 -0.351
+ABCAPITAL   19  2.205  2.154  40.934 -0.445
+FEDERALBNK  22  2.129  2.083  45.826 -0.498
+RECLTD      22  2.162  2.116  46.559 -0.506
+ICICIBANK   22  2.174  2.129  46.828 -0.509
+   by quarter n: 0:27 1:31 2:31 3:34 4:33 5:34 6:33 7:33 8:33 9:33 10:32 11:33 12:33 13:33 14:33 15:46 16:48 17:50 18:50 19:51 20:53 21:53
+   by quarter ex: 0:+0.7 1:-0.6 2:-1.6 3:+0.4 4:-1.8 5:+1.1 6:+0.8 7:-0.1 8:-0.8 9:-0.2 10:-0.6 11:-1.0 12:-0.2 13:-0.6 14:+1.4 15:+0.1 16:-0.3 17:-0.6 18:+0.8 19:-0.1 20:+0.3 21:-0.0
+   halves: first14 n 453 ex -0.32 p 0.135; last8 n 384 ex +0.13 p 0.562
+-- Services: ex +0.726, total ex-sum +68.2
+             n    avg     ex  ex_sum  share
+symbol                                     
+CONCOR      22 -0.539 -0.584 -12.851 -0.188
+GMRAIRPORT  21 -0.184 -0.193  -4.054 -0.059
+DELHIVERY    7  1.253  1.206   8.444  0.124
+INDIGO      22  0.843  0.797  17.537  0.257
+ADANIPORTS  22  2.735  2.690  59.173  0.867
+   by quarter n: 0:3 1:4 2:4 3:4 4:4 5:4 6:4 7:4 8:4 9:4 10:4 11:4 12:4 13:4 14:4 15:5 16:5 17:5 18:5 19:5 20:5 21:5
+   by quarter ex: 0:+2.0 1:+0.8 2:+0.4 3:+2.6 4:-0.1 5:-1.0 6:+0.3 7:+3.4 8:-3.3 9:-2.0 10:+2.8 11:+1.8 12:-1.7 13:-0.0 14:+0.5 15:+1.1 16:+2.2 17:+3.2 18:-2.1 19:+5.5 20:+0.6 21:-1.6
+   halves: first14 n 55 ex +0.40 p 0.557; last8 n 39 ex +1.19 p 0.149
+
+== pairwise: PSU Bank vs Private Bank, Healthcare vs Pharma, hospitals vs pharma
+  PSU Bank (n 109, ex +0.289) vs Private Bank (n 205, ex -0.157): diff +0.446; quarter-paired t +0.64 p 0.529 (22 q); within-quarter label permutation p 0.463
+   PSU Bank by quarter ex: 0:-2.3 1:+0.3 2:-1.0 3:+7.5 4:-6.7 5:-1.3 6:+3.8 7:+3.1 8:-1.1 9:-1.2 10:+1.9 11:+3.4 12:-2.4 13:-1.0 14:+5.2 15:+1.0 16:-2.4 17:+1.0 18:+2.4 19:+0.4 20:-4.0 21:+1.3
+   PSU Bank best/worst quarter contributions: {20: -27.7, 4: -26.9, 14: 20.9, 3: 30.1}
+   PSU Bank stocks: BANKBARODA +0.35 (22.0), BANKINDIA +1.24 (7.0), CANBK +0.21 (22.0), INDIANB +2.55 (7.0), PNB -0.08 (22.0), SBIN -0.37 (22.0), UNIONBANK +0.38 (7.0)
+   Private Bank stocks: AXISBANK -1.15 (22.0), BANDHANBNK -0.97 (22.0), FEDERALBNK +2.08 (22.0), HDFCBANK -0.56 (22.0), ICICIBANK +2.13 (22.0), IDFCFIRSTB +1.21 (22.0), INDUSINDBK -0.33 (22.0), KOTAKBANK -1.28 (22.0), RBLBANK -2.25 (22.0), YESBANK -1.06 (7.0)
+   Healthcare industries: {'Miscellaneous': ['APOLLOHOSP', 'MAXHEALTH', 'FORTIS'], 'Pharmaceuticals': ['AUROPHARMA', 'BIOCON', 'CIPLA', 'DIVISLAB', 'DRREDDY', 'GLENMARK', 'LUPIN', 'SUNPHARMA', 'TORNTPHARM', 'ZYDUSLIFE', 'LAURUSLABS', 'ALKEM', 'MANKIND']}
+  Healthcare: hospitals/services (n 0, ex +nan) vs Healthcare: pharma etc. (n 294, ex +0.114): diff +nan; quarter-paired t +nan p nan (0 q); within-quarter label permutation p 0.000
+   Nifty Pharma members 260 res ex +0.045; Nifty Healthcare members 294 ex +0.114; overlap 13 stocks; Healthcare-only members: ['APOLLOHOSP', 'FORTIS', 'MAXHEALTH']
+
+== thematic indices without the Auto names
+  Nifty Infrastructure: autos ['ASHOKLEY', 'BHARATFORG', 'MOTHERSON']; with autos n 534 ex +0.294; without n 468 ex +0.109 luck p 0.618 q-t p 0.691
+  Nifty India Consumption: autos ['BAJAJ-AUTO', 'EICHERMOT', 'HEROMOTOCO', 'M&M', 'MARUTI', 'TVSMOTOR']; with autos n 565 ex +0.470; without n 433 ex +0.220 luck p 0.342 q-t p 0.372
+  Nifty MNC: autos ['ASHOKLEY', 'BOSCHLTD', 'HYUNDAI', 'MARUTI']; with autos n 298 ex +0.560; without n 231 ex +0.338 luck p 0.304 q-t p 0.292
+
+== quarter leaders under the null (results shuffled across sectors within each quarter, cell sizes kept)
+                                best_obs  best_null_mean  p_best_ge_obs  worst_obs  worst_null_mean  p_worst_ge_obs  median_cell
+Chemicals                            2.0           2.663          0.773        1.0            2.688           0.949          4.0
+Services                             3.0           2.613          0.489        2.0            2.594           0.747          4.0
+Construction Materials               0.0           2.597          1.000        2.0            2.611           0.747          4.0
+Consumer Services                    6.0           2.221          0.018        2.0            2.320           0.697          4.0
+Consumer Durables                    0.0           1.954          1.000        5.0            1.848           0.028          6.0
+Oil Gas & Consumable Fuels           0.0           1.558          1.000        1.0            1.545           0.784          8.0
+Metals & Mining                      1.0           1.352          0.749        0.0            1.379           1.000          9.0
+Information Technology               2.0           1.253          0.356        4.0            1.237           0.036         10.0
+Fast Moving Consumer Goods           2.0           1.181          0.333        0.0            1.251           1.000         10.0
+Capital Goods                        3.0           1.146          0.095        0.0            1.117           1.000          9.0
+Automobile and Auto Components       3.0           1.083          0.086        0.0            1.127           1.000         10.0
+Healthcare                           0.0           0.922          1.000        1.0            0.872           0.585         13.0
+Realty                               0.0           0.677          1.000        0.0            0.682           1.000          3.0
+Power                                0.0           0.575          1.000        3.0            0.543           0.012          3.0
+Financial Services                   0.0           0.205          1.000        1.0            0.186           0.173         33.0
+Construction                         0.0           0.000          1.000        0.0            0.000           1.000          1.0
+Telecommunication                    0.0           0.000          1.000        0.0            0.000           1.000          3.0
+Textiles                             0.0           0.000          1.000        0.0            0.000           1.000          1.0

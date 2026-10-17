@@ -1,0 +1,153 @@
+F&O results: 3278 rows, 206 symbols, 0 without a three-day sum (dropped)
+check three_day vs returns.csv: max abs diff 5.04e-07
+check vs $REPO_ROOT/results/sector_3day/results_3day.csv: 3278 matched, 0 unmatched, max abs diff 0.00e+00
+result windows span sessions 1337..2665 (2021-04-08 .. 2026-08-17)
+  Nifty Healthcare Index: 3 missing closes inside the windows span: 2021-05-05, 2021-05-25, 2021-06-18
+
+== index lists vs the F&O universe (returns.csv columns)
+22 index lists, 421 memberships, 226 distinct symbols; 342 memberships are F&O symbols
+  Nifty Auto                 sectoral list  15  F&O  15  not F&O   0
+  Nifty Bank                 sectoral list  14  F&O  14  not F&O   0
+  Nifty Financial Services   sectoral list  20  F&O  20  not F&O   0
+  Nifty FMCG                 sectoral list  15  F&O  14  not F&O   1  [UBL]
+  Nifty Healthcare Index     sectoral list  20  F&O  16  not F&O   4  [ABBOTINDIA, GLAND, IPCALAB, KIMS]
+  Nifty IT                   sectoral list  10  F&O  10  not F&O   0
+  Nifty Media                sectoral list  10  F&O   0  not F&O  10  [DBCORP, MPSLTD, NAZARA, NETWORK18, PVRINOX, PFOCUS, SAREGAMA, SUNTV, TIPSMUSIC, ZEEL]
+  Nifty Metal                sectoral list  15  F&O  11  not F&O   4  [HINDCOPPER, JSL, LLOYDSME, VAML]
+  Nifty Pharma               sectoral list  20  F&O  13  not F&O   7  [ABBOTINDIA, AJANTPHARM, GLAND, IPCALAB, PPLPHARMA, SAILIFE, WOCKPHARMA]
+  Nifty PSU Bank             sectoral list  12  F&O   7  not F&O   5  [MAHABANK, CENTRALBK, IOB, PSB, UCOBANK]  (in returns.csv but not in F&O results: MAHABANK)
+  Nifty Private Bank         sectoral list  10  F&O  10  not F&O   0
+  Nifty Realty               sectoral list  10  F&O   6  not F&O   4  [ABREL, ANANTRAJ, BRIGADE, SOBHA]
+  Nifty Consumer Durables    sectoral list  14  F&O   9  not F&O   5  [BATAINDIA, KAJARIACER, LGEINDIA, THANGAMAYL, WHIRLPOOL]
+  Nifty Oil & Gas            sectoral list  15  F&O   8  not F&O   7  [ATGL, AEGISLOG, AEGISVOPAK, CASTROLIND, CHENNPETRO, IGL, MGL]
+  Nifty Energy               thematic list  40  F&O  25  not F&O  15  [ATGL, AEGISLOG, CESC, CASTROLIND, IGL, JPPOWER, MGL, NLCINDIA, NTPCGREEN, NAVA, RPOWER, ENRIN, TDPOWERSYS, THERMAX, TORNTPOWER]  (in returns.csv but not in F&O results: ENRIN)
+  Nifty Infrastructure       thematic list  30  F&O  30  not F&O   0
+  Nifty Commodities          thematic list  30  F&O  28  not F&O   2  [TORNTPOWER, VAML]
+  Nifty India Consumption    thematic list  30  F&O  30  not F&O   0
+  Nifty MNC                  thematic list  30  F&O  17  not F&O  13  [AWL, ABBOTINDIA, CRISIL, CASTROLIND, ESCORTS, GLAND, LGEINDIA, LINDEINDIA, SCHAEFFLER, ENRIN, TIMKEN, UBL, VAML]  (in returns.csv but not in F&O results: ENRIN)
+  Nifty PSE                  thematic list  20  F&O  20  not F&O   0
+  Nifty CPSE                 thematic list  11  F&O   9  not F&O   2  [NLCINDIA, SJVN]
+  Nifty Services Sector      thematic list  30  F&O  30  not F&O   0
+
+== possible symbol renames (non-F&O list member with an F&O ISIN or a near-identical company name)
+  lookalike only (different first word, different company): IPCALAB (ipca laboratories) ~ ALKEM (alkem laboratories), ratio 0.80
+  lookalike only (different first word, different company): AJANTPHARM (ajanta pharmaceuticals) ~ TORNTPHARM (torrent pharmaceuticals), ratio 0.80
+  lookalike only (different first word, different company): SAILIFE (sai life sciences) ~ ZYDUSLIFE (zydus lifesciences), ratio 0.80
+  lookalike only (different first word, different company): NTPCGREEN (ntpc green energy) ~ ADANIGREEN (adani green energy), ratio 0.80
+  0 flagged of 61 non-F&O list members (rule: same ISIN, or name ratio >= 0.8 with the same first word) -> no rename mismatch
+F&O symbols whose events.csv company name differs from the Nifty 500 list name (ratio < 0.6): none
+
+== F&O stocks in no sectoral index: 84 of 206 (1082 of 3278 results); in none of the 22 indices: 41
+by NSE sector: Capital Goods 21, Financial Services 20, Consumer Services 9, Power 8, Services 5, Chemicals 5, Construction Materials 4, Telecommunication 3, Construction 3, Information Technology 2, Consumer Durables 1, Oil Gas & Consumable Fuels 1, Automobile and Auto Components 1, Textiles 1
+  360ONE       Financial Services                 thematic: -
+  ABB          Capital Goods                      thematic: Energy, MNC
+  ABCAPITAL    Financial Services                 thematic: -
+  ADANIENSOL   Power                              thematic: Energy, Commodities
+  ADANIGREEN   Power                              thematic: Energy, Infra, Commodities
+  ADANIPORTS   Services                           thematic: Infra, Services
+  ADANIPOWER   Power                              thematic: Energy, Infra, Commodities, Services
+  AMBUJACEM    Construction Materials             thematic: Commodities, MNC
+  ANGELONE     Financial Services                 thematic: -
+  ASIANPAINT   Consumer Durables                  thematic: Consumption
+  ASTRAL       Capital Goods                      thematic: -
+  BAJAJHLDNG   Financial Services                 thematic: -
+  BDL          Capital Goods                      thematic: -
+  BEL          Capital Goods                      thematic: PSE, CPSE
+  BHARTIARTL   Telecommunication                  thematic: Infra, Consumption, Services
+  BHEL         Capital Goods                      thematic: Energy, PSE
+  CAMS         Financial Services                 thematic: -
+  CDSL         Financial Services                 thematic: -
+  CGPOWER      Capital Goods                      thematic: Energy, Infra
+  COALINDIA    Oil Gas & Consumable Fuels         thematic: Energy, Commodities, PSE, CPSE
+  COCHINSHIP   Capital Goods                      thematic: CPSE
+  CONCOR       Services                           thematic: PSE
+  CUMMINSIND   Capital Goods                      thematic: Infra, MNC
+  DELHIVERY    Services                           thematic: -
+  DMART        Consumer Services                  thematic: Consumption, Services
+  ETERNAL      Consumer Services                  thematic: Consumption, Services
+  FORCEMOT     Automobile and Auto Components     thematic: -
+  GMRAIRPORT   Services                           thematic: -
+  GRASIM       Construction Materials             thematic: Infra, Commodities
+  GVT&D        Capital Goods                      thematic: Energy, Infra
+  HAL          Capital Goods                      thematic: PSE
+  HDFCAMC      Financial Services                 thematic: -
+  ICICIPRULI   Financial Services                 thematic: -
+  IDEA         Telecommunication                  thematic: -
+  IEX          Financial Services                 thematic: -
+  INDHOTEL     Consumer Services                  thematic: Infra, Consumption
+  INDIGO       Services                           thematic: Infra, Consumption, Services
+  INDUSTOWER   Telecommunication                  thematic: Infra
+  INOXWIND     Capital Goods                      thematic: Energy
+  IREDA        Financial Services                 thematic: -
+  IRFC         Financial Services                 thematic: PSE
+  JSWENERGY    Power                              thematic: Energy, Commodities
+  JUBLFOOD     Consumer Services                  thematic: -
+  KAYNES       Capital Goods                      thematic: -
+  KEI          Capital Goods                      thematic: -
+  KFINTECH     Financial Services                 thematic: -
+  KPITTECH     Information Technology             thematic: -
+  LICI         Financial Services                 thematic: -
+  LT           Construction                       thematic: Infra
+  LTF          Financial Services                 thematic: -
+  MANAPPURAM   Financial Services                 thematic: -
+  MAZDOCK      Capital Goods                      thematic: -
+  MOTILALOFS   Financial Services                 thematic: -
+  NAM-INDIA    Financial Services                 thematic: MNC
+  NAUKRI       Consumer Services                  thematic: Consumption
+  NBCC         Construction                       thematic: CPSE
+  NHPC         Power                              thematic: Energy, Commodities, PSE, CPSE
+  NTPC         Power                              thematic: Energy, Infra, Commodities, PSE, CPSE, Services
+  NYKAA        Consumer Services                  thematic: -
+  PAGEIND      Textiles                           thematic: -
+  PAYTM        Financial Services                 thematic: -
+  PIDILITIND   Chemicals                          thematic: Commodities
+  PIIND        Chemicals                          thematic: -
+  PNBHOUSING   Financial Services                 thematic: -
+  POLICYBZR    Financial Services                 thematic: -
+  POLYCAB      Capital Goods                      thematic: -
+  POWERGRID    Power                              thematic: Energy, Infra, PSE, CPSE, Services
+  POWERINDIA   Capital Goods                      thematic: Energy, MNC
+  PREMIERENE   Capital Goods                      thematic: -
+  RVNL         Construction                       thematic: -
+  SHREECEM     Construction Materials             thematic: Commodities
+  SIEMENS      Capital Goods                      thematic: Energy, MNC
+  SOLARINDS    Chemicals                          thematic: -
+  SRF          Chemicals                          thematic: Commodities
+  SUPREMEIND   Capital Goods                      thematic: -
+  SUZLON       Capital Goods                      thematic: Energy, Infra
+  SWIGGY       Consumer Services                  thematic: -
+  TATAELXSI    Information Technology             thematic: -
+  TATAPOWER    Power                              thematic: Energy, Infra, Commodities, Consumption, Services
+  TRENT        Consumer Services                  thematic: Consumption
+  ULTRACEMCO   Construction Materials             thematic: Infra, Commodities
+  UPL          Chemicals                          thematic: Commodities
+  VMM          Consumer Services                  thematic: -
+  WAAREEENER   Capital Goods                      thematic: -
+F&O stocks by number of sectoral indices: 0: 84, 1: 96, 2: 21, 3: 5
+
+== (1) index three-day sums vs events.csv sector_3d (older mapping), results whose sector_index is the same index
+  Nifty Auto                  262 results  max |sum - sector_3d| 9.83e-17  (compounded vs sector_3d 1.73e-03)
+  Nifty Bank                  278 results  max |sum - sector_3d| 9.88e-17  (compounded vs sector_3d 1.21e-03)
+  Nifty Financial Services    248 results  max |sum - sector_3d| 9.93e-17  (compounded vs sector_3d 1.11e-03)
+  Nifty FMCG                  181 results  max |sum - sector_3d| 9.77e-17  (compounded vs sector_3d 9.79e-04)
+  Nifty IT                    213 results  max |sum - sector_3d| 9.84e-17  (compounded vs sector_3d 3.15e-03)
+  Nifty Metal                 185 results  max |sum - sector_3d| 9.68e-17  (compounded vs sector_3d 2.92e-03)
+  Nifty Pharma                260 results  max |sum - sector_3d| 9.99e-17  (compounded vs sector_3d 9.96e-04)
+  Nifty Consumer Durables      83 results  max |sum - sector_3d| 9.77e-17  (compounded vs sector_3d 8.09e-04)
+  Nifty Oil & Gas             158 results  max |sum - sector_3d| 9.88e-17  (compounded vs sector_3d 3.00e-03)
+  Nifty Energy                 94 results  max |sum - sector_3d| 9.77e-17  (compounded vs sector_3d 1.05e-03)
+  Nifty Infrastructure         21 results  max |sum - sector_3d| 9.88e-17  (compounded vs sector_3d 5.40e-04)
+  Nifty Commodities           130 results  max |sum - sector_3d| 9.83e-17  (compounded vs sector_3d 1.43e-03)
+  Nifty India Consumption       7 results  max |sum - sector_3d| 9.21e-17  (compounded vs sector_3d 1.81e-04)
+  Nifty Services Sector        66 results  max |sum - sector_3d| 9.99e-17  (compounded vs sector_3d 6.40e-04)
+  all 3278 results, own sector_index recomputed as a sum: max abs diff 9.97e-17 (0 NaN) -> sector_3d is the summed three-day move, same definition as here
+  overlap of the old sector_index with the new membership (member results whose sector_index is that index): Auto 262/262, Bank 278/278, Fin Serv 248/401, FMCG 181/226, Healthcare 0/294, IT 213/213, Metal 185/207, Pharma 260/260, PSU Bank 0/109, Pvt Bank 0/205, Realty 0/82, Cons Dur 83/127, Oil & Gas 158/158, Energy 94/352, Infra 21/534, Commodities 130/498, Consumption 7/565, MNC 0/298, PSE 0/384, CPSE 0/130, Services 66/563
+
+== (2) Nifty 50 three-day sum vs events.csv nifty_3d
+  3278 results, max abs diff 9.89e-17, NaN 0
+
+== (3) missing index moves (any of the three index returns NaN)
+  Nifty Healthcare Index: 2 of 294 member results: SUNPHARMA Jan-Mar 2021, ZYDUSLIFE Jan-Mar 2021
+  all other indices and Nifty 50: 0 missing; total missing memberships 2 of 6146
+
+luck test: 20,000 draws per index, numpy seed 20261017, without replacement; Holm across 13 sectoral indices (holm_p); thematic luck p unadjusted. index_summary.csv also has holm_p_t_excess_index = Holm of the quarter t-test p within each group (13 sectoral, 8 thematic).

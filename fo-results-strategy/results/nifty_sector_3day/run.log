@@ -1,0 +1,95 @@
+== nifty_sector_table.py ==
+Nifty 500 list: 501 rows, 20 sectors
+F&O results 3278, stocks 206, all mapped to an NSE sector; 18 NSE sectors among them
+three_day vs results/sector_3day/results_3day.csv: 3278 matched, max abs diff 0.00e+00
+check vs returns.csv: 3278 results, max abs diff 5.04e-07
+sectors by number of results: Fin services 837, Healthcare 294, Cap goods 247, Auto 242, IT 227, FMCG 226, Metals 200, Oil & gas 179, Cons dur 149, Cons services 110, Chemicals 94, Power 94, Services 94, Constr mat 86, Realty 82, Telecom 64, Construction 35, Textiles 18
+All F&O results row: 3278 results, avg +0.04%
+
+                            sector  stocks  results   avg  median  up_pct  q_with  q_pos  first14  last8                  best_q                 worst_q
+0               Financial Services      53      837 -0.07   -0.38   47.43      22     10    -0.19   0.08   Apr-Jun 2022 (+1.85%)   Jan-Mar 2022 (-2.62%)
+1                       Healthcare      16      294  0.16   -0.24   48.64      22     11     0.21   0.10   Jul-Sep 2023 (+2.05%)   Apr-Jun 2021 (-2.49%)
+2                    Capital Goods      23      247  0.60    0.93   56.68      22     17     1.35   0.01   Jan-Mar 2024 (+4.99%)   Jan-Mar 2026 (-2.94%)
+3   Automobile and Auto Components      15      242  1.10    1.00   58.26      22     18     1.52   0.54   Jan-Mar 2021 (+4.19%)   Jul-Sep 2024 (-4.51%)
+4           Information Technology      12      227  0.25    0.13   50.66      22     11     0.18   0.33   Apr-Jun 2021 (+4.54%)   Jan-Mar 2026 (-3.36%)
+5       Fast Moving Consumer Goods      14      226  0.04   -0.31   45.58      22     10     0.34  -0.36   Jan-Mar 2021 (+2.46%)   Jul-Sep 2024 (-4.46%)
+6                  Metals & Mining      10      200 -0.17    0.15   53.00      22      8    -0.49   0.35   Apr-Jun 2022 (+2.41%)   Jul-Sep 2023 (-1.70%)
+7       Oil Gas & Consumable Fuels       9      179 -0.37   -0.63   43.58      22     10    -0.21  -0.61   Jul-Sep 2023 (+1.96%)   Jan-Mar 2022 (-3.17%)
+8                Consumer Durables      10      149 -0.90   -0.78   42.28      22      8    -0.74  -1.07   Oct-Dec 2025 (+3.91%)   Jul-Sep 2024 (-5.71%)
+9                Consumer Services       9      110  1.02   -0.00   50.00      21     15     2.50  -0.31   Apr-Jun 2024 (+7.79%)   Oct-Dec 2024 (-4.22%)
+10                       Chemicals       5       94 -0.28   -0.09   48.94      22      6    -0.40  -0.12   Jan-Mar 2026 (+3.83%)   Jul-Sep 2024 (-4.63%)
+11                           Power       8       94 -1.29   -0.80   36.17      22      6    -0.45  -1.91   Apr-Jun 2023 (+4.54%)   Jan-Mar 2021 (-7.84%)
+12                        Services       5       94  0.76    1.14   55.32      22     13     0.52   1.11   Oct-Dec 2025 (+5.66%)   Jan-Mar 2023 (-2.66%)
+13          Construction Materials       4       86 -0.25   -0.26   43.02      22     11    -0.44   0.07   Oct-Dec 2023 (+2.29%)   Apr-Jun 2024 (-3.55%)
+14                          Realty       6       82 -0.32   -0.46   43.90      22     10    -0.26  -0.36   Jul-Sep 2023 (+6.21%)   Jan-Mar 2021 (-7.09%)
+15               Telecommunication       3       64 -1.42   -0.94   37.50      22      7    -1.71  -0.91   Jul-Sep 2025 (+4.84%)   Jan-Mar 2021 (-6.23%)
+16                    Construction       3       35 -0.07   -0.52   42.86      22      8    -1.42   0.95   Jul-Sep 2024 (+8.29%)   Jan-Mar 2024 (-5.37%)
+17                        Textiles       1       18  0.07    0.42   50.00      18      9    -0.49   0.77  Jul-Sep 2024 (+10.38%)  Jan-Mar 2023 (-10.41%)
+18                 All F&O results     206     3278  0.04   -0.15   48.63      22     13     0.12  -0.06   Jan-Mar 2025 (+0.96%)   Jul-Sep 2024 (-1.12%)
+
+quarter leaders: best counts {'Cons services': 6, 'Auto': 3, 'Cap goods': 3, 'Services': 3, 'IT': 2, 'FMCG': 2, 'Chemicals': 2, 'Metals': 1}
+quarter leaders: worst counts {'Cons dur': 5, 'IT': 4, 'Power': 3, 'Constr mat': 2, 'Cons services': 2, 'Services': 2, 'Healthcare': 1, 'Fin services': 1, 'Oil & gas': 1, 'Chemicals': 1}
+Auto rank 1 in 3 of 22 quarters; top 3 in 9; bottom 3 in 2; median rank 4
+
+crosswalk: 27 of 206 stocks (388 results) sit outside the main NSE counterpart of their custom sector
+    symbol                custom_sector               nifty_sector  results
+    NAUKRI                           IT          Consumer Services       21
+  ASHOKLEY            Auto & auto parts              Capital Goods       22
+   HAVELLS      Capital goods & defence          Consumer Durables       22
+        LT      Capital goods & defence               Construction       22
+    VOLTAS      Capital goods & defence          Consumer Durables       22
+      NBCC   Real estate & construction               Construction        8
+      RVNL   Real estate & construction               Construction        5
+    ASTRAL  Cement & building materials              Capital Goods       19
+SUPREMEIND  Cement & building materials              Capital Goods        7
+ COALINDIA              Metals & mining Oil Gas & Consumable Fuels       21
+ APLAPOLLO              Metals & mining              Capital Goods        7
+  JUBLFOOD                         FMCG          Consumer Services       21
+     TRENT   Consumer durables & retail          Consumer Services       21
+   PAGEIND   Consumer durables & retail                   Textiles       18
+     DMART   Consumer durables & retail          Consumer Services        7
+    KAYNES   Consumer durables & retail              Capital Goods        5
+       VMM   Consumer durables & retail          Consumer Services        2
+  ADANIENT Services, telecom & internet            Metals & Mining       22
+BHARTIARTL Services, telecom & internet          Telecommunication       22
+INDUSTOWER Services, telecom & internet          Telecommunication       22
+  INDHOTEL Services, telecom & internet          Consumer Services       21
+      IDEA Services, telecom & internet          Telecommunication       20
+   ETERNAL Services, telecom & internet          Consumer Services        7
+     NYKAA Services, telecom & internet          Consumer Services        7
+     PAYTM Services, telecom & internet         Financial Services        7
+ POLICYBZR Services, telecom & internet         Financial Services        7
+    SWIGGY Services, telecom & internet          Consumer Services        3
+
+Auto, custom (16 stocks): 264 results avg +1.20%; NSE Auto (15 stocks): 242 results avg +1.10%; custom Auto stocks not in NSE Auto: ['ASHOKLEY']; NSE Auto stocks not in custom Auto: []
+caveat: Nifty 500 list = today's constituents and today's NSE classification (look-ahead / survivorship)
+
+== nifty_sector_significance.py ==
+luck test: 20,000 draws, same number of results per quarter, without replacement, two-sided; seed 20261017
+Holm across 17 sectors with at least 30 results; not in Holm: Textiles (18 results)
+reference, custom Auto & auto parts: 264 results, avg +1.20%, excess +1.16, quarters above 18 of 22, luck p 0.0003
+Ashok Leyland (custom Auto, NSE Capital Goods): 22 results, avg +2.28%, excess +2.23
+NSE Auto without its best stock by total: M&M: avg +0.95%, excess +0.91
+
+                            sector  stocks  results    avg  excess  q_above   q  t_quarters  ex_first14  ex_last8  avg_wo_best5  avg_wo_worst5  long_net  short_net      p  in_holm   holm
+0   Automobile and Auto Components      15      242  1.102   1.058       16  22       2.703       1.391     0.610         0.840          1.364     0.932     -1.272  0.001     True  0.018
+1                            Power       8       94 -1.290  -1.317        7  22      -2.163      -0.548    -1.887        -1.848         -0.798    -1.460      1.120  0.012     True  0.187
+2                Telecommunication       3       64 -1.421  -1.456        4  22      -2.476      -1.836    -0.779        -2.006         -0.696    -1.591      1.251  0.022     True  0.336
+3                Consumer Durables      10      149 -0.898  -0.936        6  22      -1.905      -0.865    -1.015        -1.462         -0.237    -1.068      0.728  0.023     True  0.336
+4                Consumer Services       9      110  1.019   1.004       16  21       2.198       2.422    -0.267         0.252          1.567     0.849     -1.189  0.040     True  0.515
+5                    Capital Goods      23      247  0.602   0.552       17  22       2.597       1.214     0.030         0.341          0.919     0.432     -0.772  0.077     True  0.923
+6                         Services       5       94  0.763   0.726       14  22       1.527       0.400     1.186         0.030          1.347     0.593     -0.933  0.167     True  1.000
+7       Oil Gas & Consumable Fuels       9      179 -0.367  -0.402        9  22      -1.526      -0.321    -0.524        -0.620         -0.115    -0.537      0.197  0.273     True  1.000
+8               Financial Services      53      837 -0.067  -0.110        8  22      -0.778      -0.316     0.133        -0.169          0.054    -0.237     -0.103  0.479     True  1.000
+9           Information Technology      12      227  0.246   0.216       11  22       0.400       0.077     0.412        -0.119          0.539     0.076     -0.416  0.519     True  1.000
+10                          Realty       6       82 -0.316  -0.363        8  22      -0.721      -0.380    -0.349        -0.853          0.339    -0.486      0.146  0.522     True  1.000
+11                       Chemicals       5       94 -0.279  -0.325        6  22      -0.911      -0.525    -0.043        -0.889          0.333    -0.449      0.109  0.534     True  1.000
+12                 Metals & Mining      10      200 -0.166  -0.206        8  22      -0.941      -0.603     0.428        -0.459          0.193    -0.336     -0.004  0.556     True  1.000
+13          Construction Materials       4       86 -0.248  -0.295       10  22      -0.902      -0.568     0.166        -0.628          0.186    -0.418      0.078  0.586     True  1.000
+14                      Healthcare      16      294  0.162   0.114       14  22       0.301       0.069     0.178        -0.041          0.419    -0.008     -0.332  0.695     True  1.000
+15                    Construction       3       35 -0.065  -0.089        7  22      -0.296      -1.493     0.963        -1.235          0.866    -0.235     -0.105  0.917     True  1.000
+16      Fast Moving Consumer Goods      14      226  0.045  -0.008       11  22      -0.006       0.203    -0.294        -0.259          0.255    -0.125     -0.215  0.980     True  1.000
+17                        Textiles       1       18  0.068  -0.075        9  18      -0.063      -0.829     0.866        -1.963          2.312    -0.102     -0.238  0.950    False    NaN
+
+significant after Holm (< 0.05): Automobile and Auto Components
+luck p < 0.05 before Holm: Automobile and Auto Components, Power, Telecommunication, Consumer Durables, Consumer Services

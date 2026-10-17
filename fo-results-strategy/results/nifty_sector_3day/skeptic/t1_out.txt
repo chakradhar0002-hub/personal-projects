@@ -1,0 +1,136 @@
+== (a) significance, three Auto definitions and variants (luck 20,000 draws seed 777; q = quarter t-test; cl2 = two-way stock x quarter clustered t; deff = (cl2 se / luck sd)^2)
+                                                        group  stocks    n     avg     med       up      ex  luck_p  luck_sd     q_t     q_p  nq   cl2_t   cl2_p  cl2_se    deff  stock_perm_p
+0                   NSE Auto (Automobile and Auto Components)      15  242  1.1016  1.0033  58.2645  1.0583  0.0010   0.3196  2.7026  0.0133  22  3.2749  0.0055  0.3232  1.0227        0.0037
+1                                          Nifty Auto members      15  262  1.2031  1.2013  59.5420  1.1587  0.0003   0.3068  3.2399  0.0039  22  3.8120  0.0019  0.3040  0.9819        0.0016
+2                                    custom Auto & auto parts      16  264  1.1998  1.2013  59.4697  1.1562  0.0003   0.3054  3.2270  0.0040  22  3.8283  0.0016  0.3020  0.9781        0.0009
+3    NSE Auto minus top 3 by excess (M&M,BHARATFORG,TVSMOTOR)      12  176  0.6819  0.8307  56.8182  0.6394  0.0914   0.3802  1.2483  0.2257  22  1.9137  0.0820  0.3341  0.7721           NaN
+4  Nifty Auto minus top 3 by excess (M&M,ASHOKLEY,BHARATFORG)      12  196  0.8255  0.8307  57.1429  0.7816  0.0296   0.3600  1.6045  0.1235  22  2.1223  0.0573  0.3683  1.0464           NaN
+5                    Nifty Auto minus M&M, ASHOKLEY, TVSMOTOR      12  196  0.8410  0.9002  57.1429  0.7971  0.0265   0.3600  1.9625  0.0631  22  2.8110  0.0169  0.2836  0.6204           NaN
+6                              NSE Auto minus top 5 by excess      10  133  0.4950  0.2114  52.6316  0.4534  0.3021   0.4415  0.7255  0.4762  22  1.8164  0.1027  0.2496  0.3196           NaN
+7                     NSE Auto, only stocks in F&O since qn 0      10  219  1.1518  0.9546  58.9041  1.1063  0.0010   0.3374  2.7912  0.0109  22  3.1567  0.0116  0.3505  1.0788           NaN
+8                                  NSE Auto, late F&O joiners       5   23  0.6237  1.3151  52.1739  0.6007  0.5694   1.0771  0.4791  0.6489   7  0.5606  0.6050  1.0715  0.9896           NaN
+9                                         NSE Auto ex HYUNDAI      14  240  1.0587  0.9394  57.9167  1.0145  0.0021   0.3211  2.6582  0.0147  22  3.2129  0.0068  0.3158  0.9669           NaN
+top 3 NSE Auto by total td: ['M&M', 'BHARATFORG', 'TVSMOTOR']  by total excess: ['M&M', 'BHARATFORG', 'TVSMOTOR'] ; Nifty Auto by excess: ['M&M', 'ASHOKLEY', 'BHARATFORG']
+
+per-stock excess (NSE Auto + ASHOKLEY):
+             n    avg     ex  ex_sum    med
+symbol                                     
+M&M         22  2.587  2.541  55.904  3.103
+ASHOKLEY    22  2.279  2.234  49.145  3.233
+BHARATFORG  22  2.107  2.062  45.356  3.385
+TVSMOTOR    22  1.969  1.923  42.316  0.542
+EICHERMOT   22  1.641  1.595  35.093  1.852
+BOSCHLTD    21  0.861  0.816  17.136  0.876
+HEROMOTOCO  22  0.785  0.739  16.268  1.098
+HYUNDAI      2  6.247  6.315  12.630  6.315
+MOTHERSON   22  0.556  0.511  11.237 -0.191
+BAJAJ-AUTO  22  0.530  0.484  10.658  0.476
+MARUTI      22  0.505  0.459  10.107  0.119
+SONACOMS     7  0.906  0.860   6.022  0.066
+UNOMINDA     5  1.100  1.070   5.349  4.816
+FORCEMOT     2  0.762  0.830   1.659  0.830
+TMPV        22 -0.036 -0.081  -1.785 -0.363
+TIINDIA      7 -1.646 -1.692 -11.843 -2.670
+NSE Auto stock-level: 15 stocks, mean of stock mean excess +1.229, t +2.76, p 0.0152; stocks with ex>0: 13; median stock excess +0.830
+  stocks with >=10 results: 10, mean +1.105, t +4.06, p 0.0028
+
+quarter t-test p for NSE Auto 0.0133; Holm across 17 sectors: 0.2267; smallest 4: Automobile and Auto Components 0.0133, Capital Goods 0.0168, Telecommunication 0.0219, Consumer Services 0.0399
+two-way clustered p for NSE Auto 0.0055; Holm across 17: 0.0885
+Bonferroni over a 53-test study family (17 NSE + 13 sectoral + 8 thematic + 15 custom): NSE Auto luck p 0.0010 -> 0.053; Nifty Auto 0.0003 -> 0.019; NSE Auto quarter-t 0.0133 -> 0.707
+
+== (c) halves and results years (results_date calendar year)
+          group                  part    n  stocks     avg      ex  luck_p     q_t     q_p  nq  q_above
+0      NSE Auto  first 14 q (qn 0-13)  139      10  1.5195  1.3908  0.0008  3.1845  0.0072  14       11
+1      NSE Auto   last 8 q (qn 14-21)  103      15  0.5376  0.6096  0.2214  0.5907  0.5733   8        5
+2      NSE Auto             year 2021   29      10  1.5179  1.5065  0.1205  1.0116  0.4182   3        2
+3      NSE Auto             year 2022   40      10  1.4611  1.6322  0.0371  1.5101  0.2282   4        3
+4      NSE Auto             year 2023   40      10  1.6597  1.5202  0.0281  3.1856  0.0499   4        4
+5      NSE Auto             year 2024   40      10 -0.0689 -0.2602  0.7591 -0.2186  0.8410   4        2
+6      NSE Auto             year 2025   50      13  0.2397  0.1715  0.8039  0.2431  0.8236   4        2
+7      NSE Auto             year 2026   43      15  2.0583  2.0500  0.0091  5.9517  0.0271   3        3
+8    Nifty Auto  first 14 q (qn 0-13)  153      11  1.5887  1.4600  0.0002  3.4297  0.0045  14       12
+9    Nifty Auto   last 8 q (qn 14-21)  109      15  0.6618  0.7358  0.1280  0.9846  0.3576   8        6
+10   Nifty Auto             year 2021   32      11  1.5580  1.5464  0.0922  1.0511  0.4035   3        2
+11   Nifty Auto             year 2022   44      11  1.2416  1.4126  0.0585  1.3374  0.2734   4        3
+12   Nifty Auto             year 2023   44      11  1.7552  1.6157  0.0150  3.1960  0.0495   4        4
+13   Nifty Auto             year 2024   44      11  0.4606  0.2693  0.7352  0.2409  0.8251   4        3
+14   Nifty Auto             year 2025   54      14  0.5574  0.4892  0.4624  0.7215  0.5227   4        3
+15   Nifty Auto             year 2026   44      15  1.8894  1.8771  0.0153  4.3610  0.0488   3        3
+16  custom Auto  first 14 q (qn 0-13)  153      11  1.5887  1.4600  0.0002  3.4297  0.0045  14       12
+17  custom Auto   last 8 q (qn 14-21)  111      16  0.6636  0.7375  0.1240  0.9650  0.3667   8        6
+18  custom Auto             year 2021   32      11  1.5580  1.5464  0.0922  1.0511  0.4035   3        2
+19  custom Auto             year 2022   44      11  1.2416  1.4126  0.0585  1.3374  0.2734   4        3
+20  custom Auto             year 2023   44      11  1.7552  1.6157  0.0150  3.1960  0.0495   4        4
+21  custom Auto             year 2024   44      11  0.4606  0.2693  0.7352  0.2409  0.8251   4        3
+22  custom Auto             year 2025   54      14  0.5574  0.4892  0.4624  0.7215  0.5227   4        3
+23  custom Auto             year 2026   46      16  1.8404  1.8315  0.0160  4.1396  0.0537   3        3
+NSE Auto first-14 vs last-8 quarterly excess: +1.372 vs +0.418, Welch t +1.15 p 0.272
+NSE Auto quarterly excess: 0:+3.37 1:-1.29 2:+2.16 3:+1.71 4:+4.63 5:+0.44 6:-0.26 7:+2.78 8:+1.60 9:+1.20 10:+0.51 11:+0.49 12:+2.31 13:-0.44 14:-3.39 15:-1.39 16:+0.62 17:+1.52 18:-0.14 19:+1.96 20:+1.50 21:+2.68
+NSE Auto quarterly counts: 0:10 1:9 2:10 3:10 4:10 5:10 6:10 7:10 8:10 9:10 10:10 11:10 12:10 13:10 14:10 15:12 16:12 17:13 18:13 19:13 20:15 21:15
+
+== day decomposition (excess of each day over the same-quarter all-results mean of that day, pp)
+  NSE Auto: ret_dm1 +0.100, ret_rd +0.366, ret_dp1 +0.592
+    timing After close: n 119, ex +0.452
+    timing During market: n 117, ex +1.649
+    timing Non-trading day: n 6, ex +1.577
+  Nifty Auto: ret_dm1 +0.102, ret_rd +0.328, ret_dp1 +0.728
+    timing After close: n 126, ex +0.442
+    timing During market: n 129, ex +1.898
+    timing Non-trading day: n 7, ex +0.436
+
+== (d) other benchmarks over the same 3 sessions, results vs ordinary placebo windows of the same stocks
+-- NSE Auto: 242 results, 2978 placebo windows (15 stocks)
+                          measure  res_mean     q_t     q_p   cl2_t   cl2_p  placebo_mean  res_minus_placebo_q  diff_t  diff_p
+0                   raw 3-day sum    1.1016  2.5704  0.0178  3.0619  0.0084        0.1836               0.8801  2.2461  0.0356
+1                  minus Nifty 50    0.9724  2.4416  0.0236  2.9534  0.0105        0.0661               0.8786  2.5151  0.0201
+2           minus beta x Nifty 50    0.9452  2.3869  0.0265  2.9276  0.0110        0.0594               0.8586  2.4835  0.0215
+3       market model (alpha+beta)    0.8151  2.0532  0.0527  2.5986  0.0210       -0.0695               0.8582  2.4831  0.0216
+4           minus EW F&O universe    0.9682  2.6432  0.0152  3.0501  0.0086       -0.0342               0.9858  2.9151  0.0083
+5          minus Nifty Auto index    0.7203  2.6865  0.0138  2.7054  0.0171       -0.0278               0.7718  2.7455  0.0121
+6  minus EW other members (clean)    0.8335  2.6608  0.0146  2.9349  0.0109       -0.0814               0.9327  2.9685  0.0073
+7         Nifty Auto index itself    0.3813  1.7137  0.1013  1.9347  0.0735        0.2114               0.1083  0.6496  0.5230
+8                 Nifty 50 itself    0.1292  0.8605  0.3992  0.9230  0.3717        0.1175               0.0015  0.0099  0.9922
+   placebo time-matched excess over all-F&O placebo windows: -0.058 (results excess +1.058)
+   stocks beating Nifty Auto on average: 11 of 15; median stock +0.482
+-- Nifty Auto: 262 results, 3238 placebo windows (15 stocks)
+                          measure  res_mean     q_t     q_p   cl2_t   cl2_p  placebo_mean  res_minus_placebo_q  diff_t  diff_p
+0                   raw 3-day sum    1.2031  3.0350  0.0063  3.5244  0.0034        0.1737               1.0036  2.7545  0.0119
+1                  minus Nifty 50    1.0674  2.8565  0.0094  3.3562  0.0047        0.0603               0.9880  3.0460  0.0061
+2           minus beta x Nifty 50    1.0367  2.7720  0.0114  3.3082  0.0052        0.0524               0.9645  2.9894  0.0070
+3       market model (alpha+beta)    0.9171  2.4475  0.0233  2.9829  0.0099       -0.0670               0.9643  2.9897  0.0070
+4           minus EW F&O universe    1.0659  3.0888  0.0056  3.4307  0.0041       -0.0385               1.0958  3.4860  0.0022
+5          minus Nifty Auto index    0.8103  3.2985  0.0034  3.2722  0.0056       -0.0351               0.8699  3.4577  0.0024
+6  minus EW other members (clean)    0.9314  3.3616  0.0030  3.6089  0.0028       -0.0442               0.9907  3.6082  0.0017
+7         Nifty Auto index itself    0.3928  1.8360  0.0806  2.0852  0.0558        0.2088               0.1337  0.8004  0.4324
+8                 Nifty 50 itself    0.1357  0.9142  0.3710  0.9572  0.3547        0.1133               0.0156  0.1028  0.9191
+   placebo time-matched excess over all-F&O placebo windows: -0.067 (results excess +1.159)
+   stocks beating Nifty Auto on average: 12 of 15; median stock +0.924
+
+== (e) classification: what differs between the three Auto groups
+custom - NSE: ['ASHOKLEY']  NSE - custom: []
+Nifty Auto - NSE: ['ASHOKLEY']  NSE - Nifty Auto: ['FORCEMOT']
+shared results: NSE&custom 242 of 242/264; NSE&NiftyAuto 240 of 242/262
+ASHOKLEY: 22 results, avg +2.28, ex +2.23
+  Capital Goods: n 247, avg +0.60, ex +0.55, luck p 0.0791, q-t p 0.0168
+  Capital Goods ex ASHOKLEY: n 225, avg +0.44, ex +0.39, luck p 0.2373, q-t p 0.0642
+stocks with an auto-like old NSE industry:
+                                  industry                          sector   n     ex
+symbol                                                                               
+ASHOKLEY          Automobiles - 4 Wheelers                   Capital Goods  22  2.234
+BAJAJ-AUTO  Automobiles - 2 And 3 Wheelers  Automobile and Auto Components  22  0.484
+BOSCHLTD                  Auto Ancillaries  Automobile and Auto Components  21  0.816
+EICHERMOT         Automobiles - 4 Wheelers  Automobile and Auto Components  22  1.595
+FORCEMOT          Automobiles - 4 Wheelers  Automobile and Auto Components   2  0.830
+HEROMOTOCO  Automobiles - 2 And 3 Wheelers  Automobile and Auto Components  22  0.739
+HYUNDAI           Automobiles - 4 Wheelers  Automobile and Auto Components   2  6.315
+M&M               Automobiles - 4 Wheelers  Automobile and Auto Components  22  2.541
+MARUTI            Automobiles - 4 Wheelers  Automobile and Auto Components  22  0.459
+MOTHERSON                 Auto Ancillaries  Automobile and Auto Components  22  0.511
+SONACOMS                  Auto Ancillaries  Automobile and Auto Components   7  0.860
+TIINDIA                   Auto Ancillaries  Automobile and Auto Components   7 -1.692
+TMPV              Automobiles - 4 Wheelers  Automobile and Auto Components  22 -0.081
+TVSMOTOR    Automobiles - 2 And 3 Wheelers  Automobile and Auto Components  22  1.923
+UNOMINDA                  Auto Ancillaries  Automobile and Auto Components   5  1.070
+auto-like industry stocks outside NSE Auto: ['ASHOKLEY']
+Nifty 500 NSE Auto sector: 40 stocks, 15 in the F&O study; not in the study: ['APOLLOTYRE', 'ARE&M', 'ASAHIINDIA', 'ATHERENERG', 'BALKRISIND', 'BELRISE', 'CEATLTD', 'CIEINDIA', 'CRAFTSMAN', 'ENDURANCE', 'EXIDEIND', 'GABRIEL', 'JBMA', 'JKTYRE', 'MINDACORP', 'MRF', 'MSUMI', 'OLAELEC', 'OLECTRA', 'RKFORGE', 'SANSERA', 'SCHAEFFLER', 'SHRIPISTON', 'TENNIND', 'ZFCVINDIA']
+  of those, without any returns in returns.csv: 24

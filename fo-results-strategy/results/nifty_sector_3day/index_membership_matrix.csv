@@ -1,0 +1,207 @@
+symbol,nse_sector,company,Nifty Auto,Nifty Bank,Nifty Financial Services,Nifty FMCG,Nifty Healthcare Index,Nifty IT,Nifty Media,Nifty Metal,Nifty Pharma,Nifty PSU Bank,Nifty Private Bank,Nifty Realty,Nifty Consumer Durables,Nifty Oil & Gas,Nifty Energy,Nifty Infrastructure,Nifty Commodities,Nifty India Consumption,Nifty MNC,Nifty PSE,Nifty CPSE,Nifty Services Sector,n_sectoral,n_thematic
+360ONE,Financial Services,360 ONE WAM LIMITED,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ABB,Capital Goods,ABB India Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,2
+ABCAPITAL,Financial Services,Aditya Birla Capital Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+ADANIENSOL,Power,Adani Energy Solutions Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,2
+ADANIENT,Metals & Mining,Adani Enterprises Limited,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+ADANIGREEN,Power,Adani Green Energy Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,0,3
+ADANIPORTS,Services,Adani Ports and Special Economic Zone Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,0,2
+ADANIPOWER,Power,Adani Power Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,1,0,4
+ALKEM,Healthcare,Alkem Laboratories Limited,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+AMBER,Consumer Durables,Amber Enterprises India Limited,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+AMBUJACEM,Construction Materials,Ambuja Cements Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,2
+ANGELONE,Financial Services,Angel One Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+APLAPOLLO,Capital Goods,APL Apollo Tubes Limited,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1
+APOLLOHOSP,Healthcare,Apollo Hospitals Enterprise Limited,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,1,1,3
+ASHOKLEY,Capital Goods,Ashok Leyland Limited,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,1,2
+ASIANPAINT,Consumer Durables,Asian Paints Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1
+ASTRAL,Capital Goods,Astral Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+AUBANK,Financial Services,AU Small Finance Bank Limited,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+AUROPHARMA,Healthcare,Aurobindo Pharma Limited,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+AXISBANK,Financial Services,Axis Bank Limited,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,3,1
+BAJAJ-AUTO,Automobile and Auto Components,Bajaj Auto Limited,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1
+BAJAJFINSV,Financial Services,Bajaj Finserv Limited,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+BAJAJHLDNG,Financial Services,Bajaj Holdings & Investment Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BAJFINANCE,Financial Services,Bajaj Finance Limited,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+BANDHANBNK,Financial Services,Bandhan Bank Limited,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0
+BANKBARODA,Financial Services,Bank of Baroda,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+BANKINDIA,Financial Services,Bank of India,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+BDL,Capital Goods,Bharat Dynamics Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+BEL,Capital Goods,Bharat Electronics Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,2
+BHARATFORG,Automobile and Auto Components,Bharat Forge Limited,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1
+BHARTIARTL,Telecommunication,Bharti Airtel Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,1,0,3
+BHEL,Capital Goods,Bharat Heavy Electricals Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,2
+BIOCON,Healthcare,Biocon Limited,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+BLUESTARCO,Consumer Durables,Blue Star Limited,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+BOSCHLTD,Automobile and Auto Components,Bosch Limited,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1
+BPCL,Oil Gas & Consumable Fuels,Bharat Petroleum Corporation Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,0,0,1,4
+BRITANNIA,Fast Moving Consumer Goods,Britannia Industries Limited,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,2
+BSE,Financial Services,BSE Limited,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+CAMS,Financial Services,Computer Age Management Services Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CANBK,Financial Services,Canara Bank,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+CDSL,Financial Services,Central Depository Services (India) Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+CGPOWER,Capital Goods,CG Power and Industrial Solutions Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,2
+CHOLAFIN,Financial Services,Cholamandalam Investment and Finance Company Limited,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+CIPLA,Healthcare,Cipla Limited,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+COALINDIA,Oil Gas & Consumable Fuels,Coal India Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,1,0,0,4
+COCHINSHIP,Capital Goods,Cochin Shipyard Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+COFORGE,Information Technology,Coforge Limited,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+COLPAL,Fast Moving Consumer Goods,Colgate Palmolive (India) Limited,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1
+CONCOR,Services,Container Corporation of India Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+CROMPTON,Consumer Durables,Crompton Greaves Consumer Electricals Limited,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+CUMMINSIND,Capital Goods,Cummins India Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,0,0,0,0,2
+DABUR,Fast Moving Consumer Goods,Dabur India Limited,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+DELHIVERY,Services,Delhivery Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+DIVISLAB,Healthcare,Divi's Laboratories Limited,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+DIXON,Consumer Durables,Dixon Technologies (India) Limited,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,1
+DLF,Realty,DLF Limited,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,1,0,0,0,0,1,2
+DMART,Consumer Services,Avenue Supermarts Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,2
+DRREDDY,Healthcare,Dr. Reddy's Laboratories Limited,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+EICHERMOT,Automobile and Auto Components,Eicher Motors Limited,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1
+ETERNAL,Consumer Services,ETERNAL LIMITED,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,2
+FEDERALBNK,Financial Services,The Federal Bank  Limited,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,2,1
+FORCEMOT,Automobile and Auto Components,FORCE MOTORS LTD,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+FORTIS,Healthcare,Fortis Healthcare Limited,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,2
+GAIL,Oil Gas & Consumable Fuels,GAIL (India) Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,1,0,0,1,3
+GLENMARK,Healthcare,Glenmark Pharmaceuticals Limited,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+GMRAIRPORT,Services,GMR AIRPORTS LIMITED,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+GODFRYPHLP,Fast Moving Consumer Goods,Godfrey Phillips India Limited,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+GODREJCP,Fast Moving Consumer Goods,Godrej Consumer Products Limited,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1
+GODREJPROP,Realty,Godrej Properties Limited,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0
+GRASIM,Construction Materials,Grasim Industries Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,2
+GVT&D,Capital Goods,GE Vernova T&D India Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,2
+HAL,Capital Goods,Hindustan Aeronautics Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+HAVELLS,Consumer Durables,Havells India Limited,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+HCLTECH,Information Technology,HCL Technologies Limited,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+HDFCAMC,Financial Services,HDFC Asset Management Company Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+HDFCBANK,Financial Services,HDFC Bank Limited,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,3,1
+HDFCLIFE,Financial Services,HDFC Life Insurance Company Limited,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+HEROMOTOCO,Automobile and Auto Components,Hero MotoCorp Limited,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1
+HINDALCO,Metals & Mining,Hindalco Industries Limited,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1
+HINDPETRO,Oil Gas & Consumable Fuels,Hindustan Petroleum Corporation Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,0,0,1,4
+HINDUNILVR,Fast Moving Consumer Goods,Hindustan Unilever Limited,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,2
+HINDZINC,Metals & Mining,Hindustan Zinc Limited,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+HYUNDAI,Automobile and Auto Components,Hyundai Motor India Limited,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1
+ICICIBANK,Financial Services,ICICI Bank Limited,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,3,1
+ICICIGI,Financial Services,ICICI Lombard General Insurance Company Limited,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+ICICIPRULI,Financial Services,ICICI Prudential Life Insurance Company Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+IDEA,Telecommunication,Vodafone Idea Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+IDFCFIRSTB,Financial Services,IDFC First Bank Limited,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,2,0
+IEX,Financial Services,Indian Energy Exchange Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+INDHOTEL,Consumer Services,The Indian Hotels Company Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,2
+INDIANB,Financial Services,Indian Bank,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+INDIGO,Services,InterGlobe Aviation Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,1,0,3
+INDUSINDBK,Financial Services,IndusInd Bank Limited,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,2,1
+INDUSTOWER,Telecommunication,Indus Towers Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1
+INFY,Information Technology,Infosys Limited,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+INOXWIND,Capital Goods,Inox Wind Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1
+IOC,Oil Gas & Consumable Fuels,Indian Oil Corporation Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,0,0,1,4
+IREDA,Financial Services,Indian Renewable Energy Development Agency Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+IRFC,Financial Services,Indian Railway Finance Corporation Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1
+ITC,Fast Moving Consumer Goods,ITC Limited,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1
+JINDALSTEL,Metals & Mining,JINDAL STEEL LIMITED,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1
+JIOFIN,Financial Services,Jio Financial Services Limited,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+JSWENERGY,Power,JSW Energy Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,2
+JSWSTEEL,Metals & Mining,JSW Steel Limited,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1
+JUBLFOOD,Consumer Services,Jubilant Foodworks Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+KALYANKJIL,Consumer Durables,Kalyan Jewellers India Limited,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+KAYNES,Capital Goods,Kaynes Technology India Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+KEI,Capital Goods,KEI Industries Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+KFINTECH,Financial Services,Kfin Technologies Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+KOTAKBANK,Financial Services,Kotak Mahindra Bank Limited,0,1,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,3,1
+KPITTECH,Information Technology,KPIT Technologies Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+LAURUSLABS,Healthcare,Laurus Labs Limited,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+LICHSGFIN,Financial Services,LIC Housing Finance Limited,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+LICI,Financial Services,Life Insurance Corporation Of India,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+LODHA,Realty,Lodha Developers Limited,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0
+LT,Construction,Larsen & Toubro Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1
+LTF,Financial Services,L&T Finance Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+LTM,Information Technology,LTM Limited,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+LUPIN,Healthcare,Lupin Limited,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+M&M,Automobile and Auto Components,Mahindra & Mahindra Limited,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1
+MANAPPURAM,Financial Services,Manappuram Finance Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+MANKIND,Healthcare,Mankind Pharma Limited,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+MARICO,Fast Moving Consumer Goods,Marico Limited,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+MARUTI,Automobile and Auto Components,Maruti Suzuki India Limited,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,2
+MAXHEALTH,Healthcare,Max Healthcare Institute Limited,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,1,1,3
+MAZDOCK,Capital Goods,Mazagon Dock Shipbuilders Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+MFSL,Financial Services,Max Financial Services Limited,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+MOTHERSON,Automobile and Auto Components,Samvardhana Motherson International Limited,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1,1
+MOTILALOFS,Financial Services,Motilal Oswal Financial Services Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+MPHASIS,Information Technology,MphasiS Limited,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+MUTHOOTFIN,Financial Services,Muthoot Finance Limited,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+NAM-INDIA,Financial Services,Nippon Life India Asset Management Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1
+NATIONALUM,Metals & Mining,National Aluminium Company Limited,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1
+NAUKRI,Consumer Services,Info Edge (India) Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1
+NBCC,Construction,NBCC (India) Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1
+NESTLEIND,Fast Moving Consumer Goods,Nestle India Limited,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,2
+NHPC,Power,NHPC Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,1,0,0,4
+NMDC,Metals & Mining,NMDC Limited,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,1,0,0,1,2
+NTPC,Power,NTPC Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,1,1,0,6
+NYKAA,Consumer Services,FSN E-Commerce Ventures Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+OBEROIRLTY,Realty,Oberoi Realty Limited,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0
+OFSS,Information Technology,Oracle Financial Services Software Limited,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,1
+OIL,Oil Gas & Consumable Fuels,Oil India Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,1,0,0,1,1,0,1,4
+ONGC,Oil Gas & Consumable Fuels,Oil & Natural Gas Corporation Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,1,1,0,1,5
+PAGEIND,Textiles,Page Industries Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+PATANJALI,Fast Moving Consumer Goods,Patanjali Foods Limited,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+PAYTM,Financial Services,One 97 Communications Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+PERSISTENT,Information Technology,Persistent Systems Limited,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+PETRONET,Oil Gas & Consumable Fuels,Petronet LNG Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,1,1
+PFC,Financial Services,Power Finance Corporation Limited,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1
+PGEL,Consumer Durables,PG Electroplast Limited,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+PHOENIXLTD,Realty,The Phoenix Mills Limited,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0
+PIDILITIND,Chemicals,Pidilite Industries Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1
+PIIND,Chemicals,PI Industries Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+PNB,Financial Services,Punjab National Bank,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+PNBHOUSING,Financial Services,PNB Housing Finance Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+POLICYBZR,Financial Services,PB Fintech Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+POLYCAB,Capital Goods,Polycab India Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+POWERGRID,Power,Power Grid Corporation of India Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,1,1,0,5
+POWERINDIA,Capital Goods,Hitachi Energy India Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,2
+PREMIERENE,Capital Goods,Premier Energies Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+PRESTIGE,Realty,Prestige Estates Projects Limited,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,1,0
+RADICO,Fast Moving Consumer Goods,Radico Khaitan Limited,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+RBLBANK,Financial Services,RBL Bank Limited,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0
+RECLTD,Financial Services,REC Limited,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1
+RELIANCE,Oil Gas & Consumable Fuels,Reliance Industries Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,0,0,1,3
+RVNL,Construction,Rail Vikas Nigam Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SAIL,Metals & Mining,Steel Authority of India Limited,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1
+SBICARD,Financial Services,SBI Cards and Payment Services Limited,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+SBILIFE,Financial Services,SBI Life Insurance Company Limited,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+SBIN,Financial Services,State Bank of India,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,3,1
+SHREECEM,Construction Materials,SHREE CEMENT LIMITED,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1
+SHRIRAMFIN,Financial Services,Shriram Finance Limited,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+SIEMENS,Capital Goods,Siemens Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,2
+SOLARINDS,Chemicals,Solar Industries India Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SONACOMS,Automobile and Auto Components,Sona BLW Precision Forgings Limited,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+SRF,Chemicals,SRF Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1
+SUNPHARMA,Healthcare,Sun Pharmaceutical Industries Limited,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+SUPREMEIND,Capital Goods,Supreme Industries Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+SUZLON,Capital Goods,Suzlon Energy Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,2
+SWIGGY,Consumer Services,Swiggy Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+TATACONSUM,Fast Moving Consumer Goods,TATA CONSUMER PRODUCTS LIMITED,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1
+TATAELXSI,Information Technology,Tata Elxsi Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+TATAPOWER,Power,Tata Power Company Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,0,0,0,1,0,5
+TATASTEEL,Metals & Mining,Tata Steel Limited,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1
+TCS,Information Technology,Tata Consultancy Services Limited,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+TECHM,Information Technology,Tech Mahindra Limited,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+TIINDIA,Automobile and Auto Components,Tube Investments of India Limited,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+TITAN,Consumer Durables,Titan Company Limited,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1,1
+TMPV,Automobile and Auto Components,Tata Motors Passenger Vehicles Limited,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+TORNTPHARM,Healthcare,Torrent Pharmaceuticals Limited,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,2,1
+TRENT,Consumer Services,Trent Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1
+TVSMOTOR,Automobile and Auto Components,TVS Motor Company Limited,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1
+ULTRACEMCO,Construction Materials,UltraTech Cement Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,2
+UNIONBANK,Financial Services,Union Bank of India,0,1,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,2,0
+UNITDSPR,Fast Moving Consumer Goods,United Spirits Limited,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,1,2
+UNOMINDA,Automobile and Auto Components,UNO Minda Limited,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0
+UPL,Chemicals,UPL Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,1
+VBL,Fast Moving Consumer Goods,Varun Beverages Limited,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1
+VEDL,Metals & Mining,Vedanta Limited,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,0,0,1,2
+VMM,Consumer Services,Vishal Mega Mart Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+VOLTAS,Consumer Durables,Voltas Limited,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,1,0
+WAAREEENER,Capital Goods,Waaree Energies Limited,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+WIPRO,Information Technology,Wipro Limited,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1
+YESBANK,Financial Services,Yes Bank Limited,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,2,0
+ZYDUSLIFE,Healthcare,Zydus Lifesciences Limited,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0

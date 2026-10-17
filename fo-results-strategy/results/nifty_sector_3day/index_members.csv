@@ -1,0 +1,422 @@
+index,group,symbol,in_fo_results,company,nse_sector,results,list_file,isin
+Nifty Auto,sectoral,ASHOKLEY,True,Ashok Leyland Ltd.,Capital Goods,22,ind_niftyautolist.csv,INE208A01029
+Nifty Auto,sectoral,BAJAJ-AUTO,True,Bajaj Auto Ltd.,Automobile and Auto Components,22,ind_niftyautolist.csv,INE917I01010
+Nifty Auto,sectoral,BHARATFORG,True,Bharat Forge Ltd.,Automobile and Auto Components,22,ind_niftyautolist.csv,INE465A01025
+Nifty Auto,sectoral,BOSCHLTD,True,Bosch Ltd.,Automobile and Auto Components,21,ind_niftyautolist.csv,INE323A01026
+Nifty Auto,sectoral,EICHERMOT,True,Eicher Motors Ltd.,Automobile and Auto Components,22,ind_niftyautolist.csv,INE066A01021
+Nifty Auto,sectoral,HEROMOTOCO,True,Hero MotoCorp Ltd.,Automobile and Auto Components,22,ind_niftyautolist.csv,INE158A01026
+Nifty Auto,sectoral,HYUNDAI,True,Hyundai Motor India Ltd.,Automobile and Auto Components,2,ind_niftyautolist.csv,INE0V6F01027
+Nifty Auto,sectoral,M&M,True,Mahindra & Mahindra Ltd.,Automobile and Auto Components,22,ind_niftyautolist.csv,INE101A01026
+Nifty Auto,sectoral,MARUTI,True,Maruti Suzuki India Ltd.,Automobile and Auto Components,22,ind_niftyautolist.csv,INE585B01010
+Nifty Auto,sectoral,MOTHERSON,True,Samvardhana Motherson International Ltd.,Automobile and Auto Components,22,ind_niftyautolist.csv,INE775A01035
+Nifty Auto,sectoral,SONACOMS,True,Sona BLW Precision Forgings Ltd.,Automobile and Auto Components,7,ind_niftyautolist.csv,INE073K01018
+Nifty Auto,sectoral,TVSMOTOR,True,TVS Motor Company Ltd.,Automobile and Auto Components,22,ind_niftyautolist.csv,INE494B01023
+Nifty Auto,sectoral,TMPV,True,Tata Motors Passenger Vehicles Ltd.,Automobile and Auto Components,22,ind_niftyautolist.csv,INE155A01022
+Nifty Auto,sectoral,TIINDIA,True,Tube Investments of India Ltd.,Automobile and Auto Components,7,ind_niftyautolist.csv,INE974X01010
+Nifty Auto,sectoral,UNOMINDA,True,UNO Minda Ltd.,Automobile and Auto Components,5,ind_niftyautolist.csv,INE405E01023
+Nifty Bank,sectoral,AUBANK,True,AU Small Finance Bank Ltd.,Financial Services,22,ind_niftybanklist.csv,INE949L01017
+Nifty Bank,sectoral,AXISBANK,True,Axis Bank Ltd.,Financial Services,22,ind_niftybanklist.csv,INE238A01034
+Nifty Bank,sectoral,BANKBARODA,True,Bank of Baroda,Financial Services,22,ind_niftybanklist.csv,INE028A01039
+Nifty Bank,sectoral,CANBK,True,Canara Bank,Financial Services,22,ind_niftybanklist.csv,INE476A01022
+Nifty Bank,sectoral,FEDERALBNK,True,Federal Bank Ltd.,Financial Services,22,ind_niftybanklist.csv,INE171A01029
+Nifty Bank,sectoral,HDFCBANK,True,HDFC Bank Ltd.,Financial Services,22,ind_niftybanklist.csv,INE040A01034
+Nifty Bank,sectoral,ICICIBANK,True,ICICI Bank Ltd.,Financial Services,22,ind_niftybanklist.csv,INE090A01021
+Nifty Bank,sectoral,IDFCFIRSTB,True,IDFC First Bank Ltd.,Financial Services,22,ind_niftybanklist.csv,INE092T01019
+Nifty Bank,sectoral,INDUSINDBK,True,IndusInd Bank Ltd.,Financial Services,22,ind_niftybanklist.csv,INE095A01012
+Nifty Bank,sectoral,KOTAKBANK,True,Kotak Mahindra Bank Ltd.,Financial Services,22,ind_niftybanklist.csv,INE237A01036
+Nifty Bank,sectoral,PNB,True,Punjab National Bank,Financial Services,22,ind_niftybanklist.csv,INE160A01022
+Nifty Bank,sectoral,SBIN,True,State Bank of India,Financial Services,22,ind_niftybanklist.csv,INE062A01020
+Nifty Bank,sectoral,UNIONBANK,True,Union Bank of India,Financial Services,7,ind_niftybanklist.csv,INE692A01016
+Nifty Bank,sectoral,YESBANK,True,Yes Bank Ltd.,Financial Services,7,ind_niftybanklist.csv,INE528G01035
+Nifty Financial Services,sectoral,AXISBANK,True,Axis Bank Ltd.,Financial Services,22,ind_niftyfinancelist.csv,INE238A01034
+Nifty Financial Services,sectoral,BSE,True,BSE Ltd.,Financial Services,7,ind_niftyfinancelist.csv,INE118H01025
+Nifty Financial Services,sectoral,BAJFINANCE,True,Bajaj Finance Ltd.,Financial Services,22,ind_niftyfinancelist.csv,INE296A01032
+Nifty Financial Services,sectoral,BAJAJFINSV,True,Bajaj Finserv Ltd.,Financial Services,22,ind_niftyfinancelist.csv,INE918I01026
+Nifty Financial Services,sectoral,CHOLAFIN,True,Cholamandalam Investment and Finance Company Ltd.,Financial Services,22,ind_niftyfinancelist.csv,INE121A01024
+Nifty Financial Services,sectoral,HDFCBANK,True,HDFC Bank Ltd.,Financial Services,22,ind_niftyfinancelist.csv,INE040A01034
+Nifty Financial Services,sectoral,HDFCLIFE,True,HDFC Life Insurance Company Ltd.,Financial Services,22,ind_niftyfinancelist.csv,INE795G01014
+Nifty Financial Services,sectoral,ICICIBANK,True,ICICI Bank Ltd.,Financial Services,22,ind_niftyfinancelist.csv,INE090A01021
+Nifty Financial Services,sectoral,ICICIGI,True,ICICI Lombard General Insurance Company Ltd.,Financial Services,21,ind_niftyfinancelist.csv,INE765G01017
+Nifty Financial Services,sectoral,JIOFIN,True,Jio Financial Services Ltd.,Financial Services,7,ind_niftyfinancelist.csv,INE758E01017
+Nifty Financial Services,sectoral,KOTAKBANK,True,Kotak Mahindra Bank Ltd.,Financial Services,22,ind_niftyfinancelist.csv,INE237A01036
+Nifty Financial Services,sectoral,LICHSGFIN,True,LIC Housing Finance Ltd.,Financial Services,21,ind_niftyfinancelist.csv,INE115A01026
+Nifty Financial Services,sectoral,MFSL,True,Max Financial Services Ltd.,Financial Services,19,ind_niftyfinancelist.csv,INE180A01020
+Nifty Financial Services,sectoral,MUTHOOTFIN,True,Muthoot Finance Ltd.,Financial Services,22,ind_niftyfinancelist.csv,INE414G01012
+Nifty Financial Services,sectoral,PFC,True,Power Finance Corporation Ltd.,Financial Services,21,ind_niftyfinancelist.csv,INE134E01011
+Nifty Financial Services,sectoral,RECLTD,True,REC Ltd.,Financial Services,22,ind_niftyfinancelist.csv,INE020B01018
+Nifty Financial Services,sectoral,SBICARD,True,SBI Cards and Payment Services Ltd.,Financial Services,19,ind_niftyfinancelist.csv,INE018E01016
+Nifty Financial Services,sectoral,SBILIFE,True,SBI Life Insurance Company Ltd.,Financial Services,22,ind_niftyfinancelist.csv,INE123W01016
+Nifty Financial Services,sectoral,SHRIRAMFIN,True,Shriram Finance Ltd.,Financial Services,22,ind_niftyfinancelist.csv,INE721A01047
+Nifty Financial Services,sectoral,SBIN,True,State Bank of India,Financial Services,22,ind_niftyfinancelist.csv,INE062A01020
+Nifty FMCG,sectoral,BRITANNIA,True,Britannia Industries Ltd.,Fast Moving Consumer Goods,22,ind_niftyfmcglist.csv,INE216A01030
+Nifty FMCG,sectoral,COLPAL,True,Colgate Palmolive (India) Ltd.,Fast Moving Consumer Goods,22,ind_niftyfmcglist.csv,INE259A01022
+Nifty FMCG,sectoral,DABUR,True,Dabur India Ltd.,Fast Moving Consumer Goods,22,ind_niftyfmcglist.csv,INE016A01026
+Nifty FMCG,sectoral,GODFRYPHLP,True,Godfrey Phillips India Ltd.,Fast Moving Consumer Goods,2,ind_niftyfmcglist.csv,INE260B01028
+Nifty FMCG,sectoral,GODREJCP,True,Godrej Consumer Products Ltd.,Fast Moving Consumer Goods,22,ind_niftyfmcglist.csv,INE102D01028
+Nifty FMCG,sectoral,HINDUNILVR,True,Hindustan Unilever Ltd.,Fast Moving Consumer Goods,22,ind_niftyfmcglist.csv,INE030A01027
+Nifty FMCG,sectoral,ITC,True,ITC Ltd.,Fast Moving Consumer Goods,22,ind_niftyfmcglist.csv,INE154A01025
+Nifty FMCG,sectoral,MARICO,True,Marico Ltd.,Fast Moving Consumer Goods,22,ind_niftyfmcglist.csv,INE196A01026
+Nifty FMCG,sectoral,NESTLEIND,True,Nestle India Ltd.,Fast Moving Consumer Goods,12,ind_niftyfmcglist.csv,INE239A01024
+Nifty FMCG,sectoral,PATANJALI,True,Patanjali Foods Ltd.,Fast Moving Consumer Goods,6,ind_niftyfmcglist.csv,INE619A01035
+Nifty FMCG,sectoral,RADICO,True,Radico Khaitan Ltd,Fast Moving Consumer Goods,1,ind_niftyfmcglist.csv,INE944F01028
+Nifty FMCG,sectoral,TATACONSUM,True,Tata Consumer Products Ltd.,Fast Moving Consumer Goods,22,ind_niftyfmcglist.csv,INE192A01025
+Nifty FMCG,sectoral,UBL,False,United Breweries Ltd.,Fast Moving Consumer Goods,0,ind_niftyfmcglist.csv,INE686F01025
+Nifty FMCG,sectoral,UNITDSPR,True,United Spirits Ltd.,Fast Moving Consumer Goods,22,ind_niftyfmcglist.csv,INE854D01024
+Nifty FMCG,sectoral,VBL,True,Varun Beverages Ltd.,Fast Moving Consumer Goods,7,ind_niftyfmcglist.csv,INE200M01039
+Nifty Healthcare Index,sectoral,ABBOTINDIA,False,Abbott India Ltd.,Healthcare,0,ind_niftyhealthcarelist.csv,INE358A01014
+Nifty Healthcare Index,sectoral,ALKEM,True,Alkem Laboratories Ltd.,Healthcare,18,ind_niftyhealthcarelist.csv,INE540L01014
+Nifty Healthcare Index,sectoral,APOLLOHOSP,True,Apollo Hospitals Enterprise Ltd.,Healthcare,22,ind_niftyhealthcarelist.csv,INE437A01024
+Nifty Healthcare Index,sectoral,AUROPHARMA,True,Aurobindo Pharma Ltd.,Healthcare,22,ind_niftyhealthcarelist.csv,INE406A01037
+Nifty Healthcare Index,sectoral,BIOCON,True,Biocon Ltd.,Healthcare,22,ind_niftyhealthcarelist.csv,INE376G01013
+Nifty Healthcare Index,sectoral,CIPLA,True,Cipla Ltd.,Healthcare,22,ind_niftyhealthcarelist.csv,INE059A01026
+Nifty Healthcare Index,sectoral,DIVISLAB,True,Divi's Laboratories Ltd.,Healthcare,22,ind_niftyhealthcarelist.csv,INE361B01024
+Nifty Healthcare Index,sectoral,DRREDDY,True,Dr. Reddy's Laboratories Ltd.,Healthcare,22,ind_niftyhealthcarelist.csv,INE089A01031
+Nifty Healthcare Index,sectoral,FORTIS,True,Fortis Healthcare Ltd.,Healthcare,5,ind_niftyhealthcarelist.csv,INE061F01013
+Nifty Healthcare Index,sectoral,GLAND,False,Gland Pharma Ltd.,Healthcare,0,ind_niftyhealthcarelist.csv,INE068V01023
+Nifty Healthcare Index,sectoral,GLENMARK,True,Glenmark Pharmaceuticals Ltd.,Healthcare,22,ind_niftyhealthcarelist.csv,INE935A01035
+Nifty Healthcare Index,sectoral,IPCALAB,False,Ipca Laboratories Ltd.,Healthcare,0,ind_niftyhealthcarelist.csv,INE571A01038
+Nifty Healthcare Index,sectoral,KIMS,False,Krishna Institute of Medical Sciences Ltd.,Healthcare,0,ind_niftyhealthcarelist.csv,INE967H01025
+Nifty Healthcare Index,sectoral,LAURUSLABS,True,Laurus Labs Ltd.,Healthcare,19,ind_niftyhealthcarelist.csv,INE947Q01028
+Nifty Healthcare Index,sectoral,LUPIN,True,Lupin Ltd.,Healthcare,22,ind_niftyhealthcarelist.csv,INE326A01037
+Nifty Healthcare Index,sectoral,MANKIND,True,Mankind Pharma Ltd.,Healthcare,5,ind_niftyhealthcarelist.csv,INE634S01028
+Nifty Healthcare Index,sectoral,MAXHEALTH,True,Max Healthcare Institute Ltd.,Healthcare,7,ind_niftyhealthcarelist.csv,INE027H01010
+Nifty Healthcare Index,sectoral,SUNPHARMA,True,Sun Pharmaceutical Industries Ltd.,Healthcare,22,ind_niftyhealthcarelist.csv,INE044A01036
+Nifty Healthcare Index,sectoral,TORNTPHARM,True,Torrent Pharmaceuticals Ltd.,Healthcare,20,ind_niftyhealthcarelist.csv,INE685A01028
+Nifty Healthcare Index,sectoral,ZYDUSLIFE,True,Zydus Lifesciences Ltd.,Healthcare,22,ind_niftyhealthcarelist.csv,INE010B01027
+Nifty IT,sectoral,COFORGE,True,Coforge Ltd.,Information Technology,21,ind_niftyitlist.csv,INE591G01025
+Nifty IT,sectoral,HCLTECH,True,HCL Technologies Ltd.,Information Technology,22,ind_niftyitlist.csv,INE860A01027
+Nifty IT,sectoral,INFY,True,Infosys Ltd.,Information Technology,22,ind_niftyitlist.csv,INE009A01021
+Nifty IT,sectoral,LTM,True,LTM Ltd.,Information Technology,21,ind_niftyitlist.csv,INE214T01019
+Nifty IT,sectoral,MPHASIS,True,MphasiS Ltd.,Information Technology,22,ind_niftyitlist.csv,INE356A01018
+Nifty IT,sectoral,OFSS,True,Oracle Financial Services Software Ltd.,Information Technology,19,ind_niftyitlist.csv,INE881D01027
+Nifty IT,sectoral,PERSISTENT,True,Persistent Systems Ltd.,Information Technology,20,ind_niftyitlist.csv,INE262H01021
+Nifty IT,sectoral,TCS,True,Tata Consultancy Services Ltd.,Information Technology,22,ind_niftyitlist.csv,INE467B01029
+Nifty IT,sectoral,TECHM,True,Tech Mahindra Ltd.,Information Technology,22,ind_niftyitlist.csv,INE669C01036
+Nifty IT,sectoral,WIPRO,True,Wipro Ltd.,Information Technology,22,ind_niftyitlist.csv,INE075A01022
+Nifty Media,sectoral,DBCORP,False,D.B.Corp Ltd.,Media Entertainment & Publication,0,ind_niftymedialist.csv,INE950I01011
+Nifty Media,sectoral,MPSLTD,False,MPS Ltd.,Media Entertainment & Publication,0,ind_niftymedialist.csv,INE943D01017
+Nifty Media,sectoral,NAZARA,False,Nazara Technologies Ltd.,Media Entertainment & Publication,0,ind_niftymedialist.csv,INE418L01047
+Nifty Media,sectoral,NETWORK18,False,Network18 Media & Investments Ltd.,Media Entertainment & Publication,0,ind_niftymedialist.csv,INE870H01013
+Nifty Media,sectoral,PVRINOX,False,PVR INOX Ltd.,Media Entertainment & Publication,0,ind_niftymedialist.csv,INE191H01014
+Nifty Media,sectoral,PFOCUS,False,Prime Focus Ltd.,Media Entertainment & Publication,0,ind_niftymedialist.csv,INE367G01038
+Nifty Media,sectoral,SAREGAMA,False,Saregama India Ltd,Media Entertainment & Publication,0,ind_niftymedialist.csv,INE979A01025
+Nifty Media,sectoral,SUNTV,False,Sun TV Network Ltd.,Media Entertainment & Publication,0,ind_niftymedialist.csv,INE424H01027
+Nifty Media,sectoral,TIPSMUSIC,False,Tips Music Ltd.,Media Entertainment & Publication,0,ind_niftymedialist.csv,INE716B01029
+Nifty Media,sectoral,ZEEL,False,Zee Entertainment Enterprises Ltd.,Media Entertainment & Publication,0,ind_niftymedialist.csv,INE256A01028
+Nifty Metal,sectoral,APLAPOLLO,True,APL Apollo Tubes Ltd.,Capital Goods,7,ind_niftymetallist.csv,INE702C01027
+Nifty Metal,sectoral,ADANIENT,True,Adani Enterprises Ltd.,Metals & Mining,22,ind_niftymetallist.csv,INE423A01024
+Nifty Metal,sectoral,HINDALCO,True,Hindalco Industries Ltd.,Metals & Mining,21,ind_niftymetallist.csv,INE038A01020
+Nifty Metal,sectoral,HINDCOPPER,False,Hindustan Copper Ltd.,Metals & Mining,0,ind_niftymetallist.csv,INE531E01026
+Nifty Metal,sectoral,HINDZINC,True,Hindustan Zinc Ltd.,Metals & Mining,6,ind_niftymetallist.csv,INE267A01025
+Nifty Metal,sectoral,JSWSTEEL,True,JSW Steel Ltd.,Metals & Mining,22,ind_niftymetallist.csv,INE019A01038
+Nifty Metal,sectoral,JSL,False,Jindal Stainless Ltd.,Metals & Mining,0,ind_niftymetallist.csv,INE220G01021
+Nifty Metal,sectoral,JINDALSTEL,True,Jindal Steel Ltd.,Metals & Mining,22,ind_niftymetallist.csv,INE749A01030
+Nifty Metal,sectoral,LLOYDSME,False,Lloyds Metals And Energy Ltd.,Metals & Mining,0,ind_niftymetallist.csv,INE281B01032
+Nifty Metal,sectoral,NMDC,True,NMDC Ltd.,Metals & Mining,21,ind_niftymetallist.csv,INE584A01023
+Nifty Metal,sectoral,NATIONALUM,True,National Aluminium Co. Ltd.,Metals & Mining,22,ind_niftymetallist.csv,INE139A01034
+Nifty Metal,sectoral,SAIL,True,Steel Authority of India Ltd.,Metals & Mining,21,ind_niftymetallist.csv,INE114A01011
+Nifty Metal,sectoral,TATASTEEL,True,Tata Steel Ltd.,Metals & Mining,22,ind_niftymetallist.csv,INE081A01020
+Nifty Metal,sectoral,VAML,False,Vedanta Aluminium Metal Ltd.,Metals & Mining,0,ind_niftymetallist.csv,INE1CDF01017
+Nifty Metal,sectoral,VEDL,True,Vedanta Ltd.,Metals & Mining,21,ind_niftymetallist.csv,INE205A01025
+Nifty Pharma,sectoral,ABBOTINDIA,False,Abbott India Ltd.,Healthcare,0,ind_niftypharmalist.csv,INE358A01014
+Nifty Pharma,sectoral,AJANTPHARM,False,Ajanta Pharmaceuticals Ltd.,Healthcare,0,ind_niftypharmalist.csv,INE031B01049
+Nifty Pharma,sectoral,ALKEM,True,Alkem Laboratories Ltd.,Healthcare,18,ind_niftypharmalist.csv,INE540L01014
+Nifty Pharma,sectoral,AUROPHARMA,True,Aurobindo Pharma Ltd.,Healthcare,22,ind_niftypharmalist.csv,INE406A01037
+Nifty Pharma,sectoral,BIOCON,True,Biocon Ltd.,Healthcare,22,ind_niftypharmalist.csv,INE376G01013
+Nifty Pharma,sectoral,CIPLA,True,Cipla Ltd.,Healthcare,22,ind_niftypharmalist.csv,INE059A01026
+Nifty Pharma,sectoral,DIVISLAB,True,Divi's Laboratories Ltd.,Healthcare,22,ind_niftypharmalist.csv,INE361B01024
+Nifty Pharma,sectoral,DRREDDY,True,Dr. Reddy's Laboratories Ltd.,Healthcare,22,ind_niftypharmalist.csv,INE089A01031
+Nifty Pharma,sectoral,GLAND,False,Gland Pharma Ltd.,Healthcare,0,ind_niftypharmalist.csv,INE068V01023
+Nifty Pharma,sectoral,GLENMARK,True,Glenmark Pharmaceuticals Ltd.,Healthcare,22,ind_niftypharmalist.csv,INE935A01035
+Nifty Pharma,sectoral,IPCALAB,False,Ipca Laboratories Ltd.,Healthcare,0,ind_niftypharmalist.csv,INE571A01038
+Nifty Pharma,sectoral,LAURUSLABS,True,Laurus Labs Ltd.,Healthcare,19,ind_niftypharmalist.csv,INE947Q01028
+Nifty Pharma,sectoral,LUPIN,True,Lupin Ltd.,Healthcare,22,ind_niftypharmalist.csv,INE326A01037
+Nifty Pharma,sectoral,MANKIND,True,Mankind Pharma Ltd.,Healthcare,5,ind_niftypharmalist.csv,INE634S01028
+Nifty Pharma,sectoral,PPLPHARMA,False,Piramal Pharma Ltd.,Healthcare,0,ind_niftypharmalist.csv,INE0DK501011
+Nifty Pharma,sectoral,SAILIFE,False,Sai Life Sciences Ltd.,Healthcare,0,ind_niftypharmalist.csv,INE570L01029
+Nifty Pharma,sectoral,SUNPHARMA,True,Sun Pharmaceutical Industries Ltd.,Healthcare,22,ind_niftypharmalist.csv,INE044A01036
+Nifty Pharma,sectoral,TORNTPHARM,True,Torrent Pharmaceuticals Ltd.,Healthcare,20,ind_niftypharmalist.csv,INE685A01028
+Nifty Pharma,sectoral,WOCKPHARMA,False,Wockhardt Ltd.,Healthcare,0,ind_niftypharmalist.csv,INE049B01025
+Nifty Pharma,sectoral,ZYDUSLIFE,True,Zydus Lifesciences Ltd.,Healthcare,22,ind_niftypharmalist.csv,INE010B01027
+Nifty PSU Bank,sectoral,BANKBARODA,True,Bank of Baroda,Financial Services,22,ind_niftypsubanklist.csv,INE028A01039
+Nifty PSU Bank,sectoral,BANKINDIA,True,Bank of India,Financial Services,7,ind_niftypsubanklist.csv,INE084A01016
+Nifty PSU Bank,sectoral,MAHABANK,False,Bank of Maharashtra,Financial Services,0,ind_niftypsubanklist.csv,INE457A01014
+Nifty PSU Bank,sectoral,CANBK,True,Canara Bank,Financial Services,22,ind_niftypsubanklist.csv,INE476A01022
+Nifty PSU Bank,sectoral,CENTRALBK,False,Central Bank of India,Financial Services,0,ind_niftypsubanklist.csv,INE483A01010
+Nifty PSU Bank,sectoral,INDIANB,True,Indian Bank,Financial Services,7,ind_niftypsubanklist.csv,INE562A01011
+Nifty PSU Bank,sectoral,IOB,False,Indian Overseas Bank,Financial Services,0,ind_niftypsubanklist.csv,INE565A01014
+Nifty PSU Bank,sectoral,PSB,False,Punjab & Sind Bank,Financial Services,0,ind_niftypsubanklist.csv,INE608A01012
+Nifty PSU Bank,sectoral,PNB,True,Punjab National Bank,Financial Services,22,ind_niftypsubanklist.csv,INE160A01022
+Nifty PSU Bank,sectoral,SBIN,True,State Bank of India,Financial Services,22,ind_niftypsubanklist.csv,INE062A01020
+Nifty PSU Bank,sectoral,UCOBANK,False,UCO Bank,Financial Services,0,ind_niftypsubanklist.csv,INE691A01018
+Nifty PSU Bank,sectoral,UNIONBANK,True,Union Bank of India,Financial Services,7,ind_niftypsubanklist.csv,INE692A01016
+Nifty Private Bank,sectoral,AXISBANK,True,Axis Bank Ltd.,Financial Services,22,ind_nifty_privatebanklist.csv,INE238A01034
+Nifty Private Bank,sectoral,BANDHANBNK,True,Bandhan Bank Ltd.,Financial Services,22,ind_nifty_privatebanklist.csv,INE545U01014
+Nifty Private Bank,sectoral,FEDERALBNK,True,Federal Bank Ltd.,Financial Services,22,ind_nifty_privatebanklist.csv,INE171A01029
+Nifty Private Bank,sectoral,HDFCBANK,True,HDFC Bank Ltd.,Financial Services,22,ind_nifty_privatebanklist.csv,INE040A01034
+Nifty Private Bank,sectoral,ICICIBANK,True,ICICI Bank Ltd.,Financial Services,22,ind_nifty_privatebanklist.csv,INE090A01021
+Nifty Private Bank,sectoral,IDFCFIRSTB,True,IDFC First Bank Ltd.,Financial Services,22,ind_nifty_privatebanklist.csv,INE092T01019
+Nifty Private Bank,sectoral,INDUSINDBK,True,IndusInd Bank Ltd.,Financial Services,22,ind_nifty_privatebanklist.csv,INE095A01012
+Nifty Private Bank,sectoral,KOTAKBANK,True,Kotak Mahindra Bank Ltd.,Financial Services,22,ind_nifty_privatebanklist.csv,INE237A01036
+Nifty Private Bank,sectoral,RBLBANK,True,RBL Bank Ltd.,Financial Services,22,ind_nifty_privatebanklist.csv,INE976G01028
+Nifty Private Bank,sectoral,YESBANK,True,Yes Bank Ltd.,Financial Services,7,ind_nifty_privatebanklist.csv,INE528G01035
+Nifty Realty,sectoral,ABREL,False,Aditya Birla Real Estate Ltd.,Realty,0,ind_niftyrealtylist.csv,INE055A01016
+Nifty Realty,sectoral,ANANTRAJ,False,Anant Raj Ltd.,Realty,0,ind_niftyrealtylist.csv,INE242C01024
+Nifty Realty,sectoral,BRIGADE,False,Brigade Enterprises Ltd.,Realty,0,ind_niftyrealtylist.csv,INE791I01019
+Nifty Realty,sectoral,DLF,True,DLF Ltd.,Realty,21,ind_niftyrealtylist.csv,INE271C01023
+Nifty Realty,sectoral,GODREJPROP,True,Godrej Properties Ltd.,Realty,22,ind_niftyrealtylist.csv,INE484J01027
+Nifty Realty,sectoral,LODHA,True,Lodha Developers Ltd.,Realty,7,ind_niftyrealtylist.csv,INE670K01029
+Nifty Realty,sectoral,OBEROIRLTY,True,Oberoi Realty Ltd.,Realty,19,ind_niftyrealtylist.csv,INE093I01010
+Nifty Realty,sectoral,PHOENIXLTD,True,Phoenix Mills Ltd.,Realty,6,ind_niftyrealtylist.csv,INE211B01039
+Nifty Realty,sectoral,PRESTIGE,True,Prestige Estates Projects Ltd.,Realty,7,ind_niftyrealtylist.csv,INE811K01011
+Nifty Realty,sectoral,SOBHA,False,Sobha Ltd.,Realty,0,ind_niftyrealtylist.csv,INE671H01015
+Nifty Consumer Durables,sectoral,AMBER,True,Amber Enterprises India Ltd.,Consumer Durables,5,ind_niftyconsumerdurableslist.csv,INE371P01015
+Nifty Consumer Durables,sectoral,BATAINDIA,False,Bata India Ltd.,Consumer Durables,0,ind_niftyconsumerdurableslist.csv,INE176A01028
+Nifty Consumer Durables,sectoral,BLUESTARCO,True,Blue Star Ltd.,Consumer Durables,5,ind_niftyconsumerdurableslist.csv,INE472A01039
+Nifty Consumer Durables,sectoral,CROMPTON,True,Crompton Greaves Consumer Electricals Ltd.,Consumer Durables,19,ind_niftyconsumerdurableslist.csv,INE299U01018
+Nifty Consumer Durables,sectoral,DIXON,True,Dixon Technologies (India) Ltd.,Consumer Durables,20,ind_niftyconsumerdurableslist.csv,INE935N01020
+Nifty Consumer Durables,sectoral,HAVELLS,True,Havells India Ltd.,Consumer Durables,22,ind_niftyconsumerdurableslist.csv,INE176B01034
+Nifty Consumer Durables,sectoral,KAJARIACER,False,Kajaria Ceramics Ltd.,Consumer Durables,0,ind_niftyconsumerdurableslist.csv,INE217B01036
+Nifty Consumer Durables,sectoral,KALYANKJIL,True,Kalyan Jewellers India Ltd.,Consumer Durables,7,ind_niftyconsumerdurableslist.csv,INE303R01014
+Nifty Consumer Durables,sectoral,LGEINDIA,False,LG Electronics India Ltd.,Consumer Durables,0,ind_niftyconsumerdurableslist.csv,INE324D01010
+Nifty Consumer Durables,sectoral,PGEL,True,PG Electroplast Ltd.,Consumer Durables,5,ind_niftyconsumerdurableslist.csv,INE457L01029
+Nifty Consumer Durables,sectoral,THANGAMAYL,False,Thangamayil Jewellery Ltd.,Consumer Durables,0,ind_niftyconsumerdurableslist.csv,INE085J01014
+Nifty Consumer Durables,sectoral,TITAN,True,Titan Company Ltd.,Consumer Durables,22,ind_niftyconsumerdurableslist.csv,INE280A01028
+Nifty Consumer Durables,sectoral,VOLTAS,True,Voltas Ltd.,Consumer Durables,22,ind_niftyconsumerdurableslist.csv,INE226A01021
+Nifty Consumer Durables,sectoral,WHIRLPOOL,False,Whirlpool of India Ltd.,Consumer Durables,0,ind_niftyconsumerdurableslist.csv,INE716A01013
+Nifty Oil & Gas,sectoral,ATGL,False,Adani Total Gas Ltd.,Oil Gas & Consumable Fuels,0,ind_niftyoilgaslist.csv,INE399L01023
+Nifty Oil & Gas,sectoral,AEGISLOG,False,Aegis Logistics Ltd.,Oil Gas & Consumable Fuels,0,ind_niftyoilgaslist.csv,INE208C01025
+Nifty Oil & Gas,sectoral,AEGISVOPAK,False,Aegis Vopak Terminals Ltd.,Oil Gas & Consumable Fuels,0,ind_niftyoilgaslist.csv,INE0INX01018
+Nifty Oil & Gas,sectoral,BPCL,True,Bharat Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftyoilgaslist.csv,INE029A01011
+Nifty Oil & Gas,sectoral,CASTROLIND,False,Castrol India Ltd.,Oil Gas & Consumable Fuels,0,ind_niftyoilgaslist.csv,INE172A01027
+Nifty Oil & Gas,sectoral,CHENNPETRO,False,Chennai Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,0,ind_niftyoilgaslist.csv,INE178A01016
+Nifty Oil & Gas,sectoral,GAIL,True,GAIL (India) Ltd.,Oil Gas & Consumable Fuels,21,ind_niftyoilgaslist.csv,INE129A01019
+Nifty Oil & Gas,sectoral,HINDPETRO,True,Hindustan Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftyoilgaslist.csv,INE094A01015
+Nifty Oil & Gas,sectoral,IOC,True,Indian Oil Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftyoilgaslist.csv,INE242A01010
+Nifty Oil & Gas,sectoral,IGL,False,Indraprastha Gas Ltd.,Oil Gas & Consumable Fuels,0,ind_niftyoilgaslist.csv,INE203G01027
+Nifty Oil & Gas,sectoral,MGL,False,Mahanagar Gas Ltd.,Oil Gas & Consumable Fuels,0,ind_niftyoilgaslist.csv,INE002S01010
+Nifty Oil & Gas,sectoral,ONGC,True,Oil & Natural Gas Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftyoilgaslist.csv,INE213A01029
+Nifty Oil & Gas,sectoral,OIL,True,Oil India Ltd.,Oil Gas & Consumable Fuels,7,ind_niftyoilgaslist.csv,INE274J01014
+Nifty Oil & Gas,sectoral,PETRONET,True,Petronet LNG Ltd.,Oil Gas & Consumable Fuels,21,ind_niftyoilgaslist.csv,INE347G01014
+Nifty Oil & Gas,sectoral,RELIANCE,True,Reliance Industries Ltd.,Oil Gas & Consumable Fuels,21,ind_niftyoilgaslist.csv,INE002A01018
+Nifty Energy,thematic,ABB,True,ABB India Ltd.,Capital Goods,17,ind_niftyenergylist.csv,INE117A01022
+Nifty Energy,thematic,ADANIENSOL,True,Adani Energy Solutions Ltd.,Power,7,ind_niftyenergylist.csv,INE931S01010
+Nifty Energy,thematic,ADANIGREEN,True,Adani Green Energy Ltd.,Power,7,ind_niftyenergylist.csv,INE364U01010
+Nifty Energy,thematic,ADANIPOWER,True,Adani Power Ltd.,Power,2,ind_niftyenergylist.csv,INE814H01029
+Nifty Energy,thematic,ATGL,False,Adani Total Gas Ltd.,Oil Gas & Consumable Fuels,0,ind_niftyenergylist.csv,INE399L01023
+Nifty Energy,thematic,AEGISLOG,False,Aegis Logistics Ltd.,Oil Gas & Consumable Fuels,0,ind_niftyenergylist.csv,INE208C01025
+Nifty Energy,thematic,BHEL,True,Bharat Heavy Electricals Ltd.,Capital Goods,21,ind_niftyenergylist.csv,INE257A01026
+Nifty Energy,thematic,BPCL,True,Bharat Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftyenergylist.csv,INE029A01011
+Nifty Energy,thematic,CESC,False,CESC Ltd.,Power,0,ind_niftyenergylist.csv,INE486A01021
+Nifty Energy,thematic,CGPOWER,True,CG Power and Industrial Solutions Ltd.,Capital Goods,7,ind_niftyenergylist.csv,INE067A01029
+Nifty Energy,thematic,CASTROLIND,False,Castrol India Ltd.,Oil Gas & Consumable Fuels,0,ind_niftyenergylist.csv,INE172A01027
+Nifty Energy,thematic,COALINDIA,True,Coal India Ltd.,Oil Gas & Consumable Fuels,21,ind_niftyenergylist.csv,INE522F01014
+Nifty Energy,thematic,GAIL,True,GAIL (India) Ltd.,Oil Gas & Consumable Fuels,21,ind_niftyenergylist.csv,INE129A01019
+Nifty Energy,thematic,GVT&D,True,GE Vernova T&D India Ltd.,Capital Goods,1,ind_niftyenergylist.csv,INE200A01026
+Nifty Energy,thematic,HINDPETRO,True,Hindustan Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftyenergylist.csv,INE094A01015
+Nifty Energy,thematic,POWERINDIA,True,Hitachi Energy India Ltd.,Capital Goods,4,ind_niftyenergylist.csv,INE07Y701011
+Nifty Energy,thematic,IOC,True,Indian Oil Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftyenergylist.csv,INE242A01010
+Nifty Energy,thematic,IGL,False,Indraprastha Gas Ltd.,Oil Gas & Consumable Fuels,0,ind_niftyenergylist.csv,INE203G01027
+Nifty Energy,thematic,INOXWIND,True,Inox Wind Ltd.,Capital Goods,6,ind_niftyenergylist.csv,INE066P01011
+Nifty Energy,thematic,JSWENERGY,True,JSW Energy Ltd.,Power,7,ind_niftyenergylist.csv,INE121E01018
+Nifty Energy,thematic,JPPOWER,False,Jaiprakash Power Ventures Ltd.,Power,0,ind_niftyenergylist.csv,INE351F01018
+Nifty Energy,thematic,MGL,False,Mahanagar Gas Ltd.,Oil Gas & Consumable Fuels,0,ind_niftyenergylist.csv,INE002S01010
+Nifty Energy,thematic,NHPC,True,NHPC Ltd.,Power,7,ind_niftyenergylist.csv,INE848E01016
+Nifty Energy,thematic,NLCINDIA,False,NLC India Ltd.,Power,0,ind_niftyenergylist.csv,INE589A01014
+Nifty Energy,thematic,NTPCGREEN,False,NTPC Green Energy Ltd.,Power,0,ind_niftyenergylist.csv,INE0ONG01011
+Nifty Energy,thematic,NTPC,True,NTPC Ltd.,Power,21,ind_niftyenergylist.csv,INE733E01010
+Nifty Energy,thematic,NAVA,False,Nava Ltd.,Power,0,ind_niftyenergylist.csv,INE725A01030
+Nifty Energy,thematic,ONGC,True,Oil & Natural Gas Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftyenergylist.csv,INE213A01029
+Nifty Energy,thematic,OIL,True,Oil India Ltd.,Oil Gas & Consumable Fuels,7,ind_niftyenergylist.csv,INE274J01014
+Nifty Energy,thematic,PETRONET,True,Petronet LNG Ltd.,Oil Gas & Consumable Fuels,21,ind_niftyenergylist.csv,INE347G01014
+Nifty Energy,thematic,POWERGRID,True,Power Grid Corporation of India Ltd.,Power,21,ind_niftyenergylist.csv,INE752E01010
+Nifty Energy,thematic,RELIANCE,True,Reliance Industries Ltd.,Oil Gas & Consumable Fuels,21,ind_niftyenergylist.csv,INE002A01018
+Nifty Energy,thematic,RPOWER,False,Reliance Power Ltd.,Power,0,ind_niftyenergylist.csv,INE614G01033
+Nifty Energy,thematic,ENRIN,False,Siemens Energy India Ltd.,Capital Goods,0,ind_niftyenergylist.csv,INE1NPP01017
+Nifty Energy,thematic,SIEMENS,True,Siemens Ltd.,Capital Goods,18,ind_niftyenergylist.csv,INE003A01024
+Nifty Energy,thematic,SUZLON,True,Suzlon Energy Ltd.,Capital Goods,5,ind_niftyenergylist.csv,INE040H01021
+Nifty Energy,thematic,TDPOWERSYS,False,TD Power Systems Ltd.,Capital Goods,0,ind_niftyenergylist.csv,INE419M01035
+Nifty Energy,thematic,TATAPOWER,True,Tata Power Co. Ltd.,Power,22,ind_niftyenergylist.csv,INE245A01021
+Nifty Energy,thematic,THERMAX,False,Thermax Ltd.,Capital Goods,0,ind_niftyenergylist.csv,INE152A01029
+Nifty Energy,thematic,TORNTPOWER,False,Torrent Power Ltd.,Power,0,ind_niftyenergylist.csv,INE813H01021
+Nifty Infrastructure,thematic,ADANIGREEN,True,Adani Green Energy Ltd.,Power,7,ind_niftyinfralist.csv,INE364U01010
+Nifty Infrastructure,thematic,ADANIPORTS,True,Adani Ports and Special Economic Zone Ltd.,Services,22,ind_niftyinfralist.csv,INE742F01042
+Nifty Infrastructure,thematic,ADANIPOWER,True,Adani Power Ltd.,Power,2,ind_niftyinfralist.csv,INE814H01029
+Nifty Infrastructure,thematic,APOLLOHOSP,True,Apollo Hospitals Enterprise Ltd.,Healthcare,22,ind_niftyinfralist.csv,INE437A01024
+Nifty Infrastructure,thematic,ASHOKLEY,True,Ashok Leyland Ltd.,Capital Goods,22,ind_niftyinfralist.csv,INE208A01029
+Nifty Infrastructure,thematic,BHARATFORG,True,Bharat Forge Ltd.,Automobile and Auto Components,22,ind_niftyinfralist.csv,INE465A01025
+Nifty Infrastructure,thematic,BPCL,True,Bharat Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftyinfralist.csv,INE029A01011
+Nifty Infrastructure,thematic,BHARTIARTL,True,Bharti Airtel Ltd.,Telecommunication,22,ind_niftyinfralist.csv,INE397D01024
+Nifty Infrastructure,thematic,CGPOWER,True,CG Power and Industrial Solutions Ltd.,Capital Goods,7,ind_niftyinfralist.csv,INE067A01029
+Nifty Infrastructure,thematic,CUMMINSIND,True,Cummins India Ltd.,Capital Goods,22,ind_niftyinfralist.csv,INE298A01020
+Nifty Infrastructure,thematic,DLF,True,DLF Ltd.,Realty,21,ind_niftyinfralist.csv,INE271C01023
+Nifty Infrastructure,thematic,FORTIS,True,Fortis Healthcare Ltd.,Healthcare,5,ind_niftyinfralist.csv,INE061F01013
+Nifty Infrastructure,thematic,GAIL,True,GAIL (India) Ltd.,Oil Gas & Consumable Fuels,21,ind_niftyinfralist.csv,INE129A01019
+Nifty Infrastructure,thematic,GVT&D,True,GE Vernova T&D India Ltd.,Capital Goods,1,ind_niftyinfralist.csv,INE200A01026
+Nifty Infrastructure,thematic,GRASIM,True,Grasim Industries Ltd.,Construction Materials,22,ind_niftyinfralist.csv,INE047A01021
+Nifty Infrastructure,thematic,HINDPETRO,True,Hindustan Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftyinfralist.csv,INE094A01015
+Nifty Infrastructure,thematic,INDHOTEL,True,Indian Hotels Co. Ltd.,Consumer Services,21,ind_niftyinfralist.csv,INE053A01029
+Nifty Infrastructure,thematic,IOC,True,Indian Oil Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftyinfralist.csv,INE242A01010
+Nifty Infrastructure,thematic,INDUSTOWER,True,Indus Towers Ltd.,Telecommunication,22,ind_niftyinfralist.csv,INE121J01017
+Nifty Infrastructure,thematic,INDIGO,True,InterGlobe Aviation Ltd.,Services,22,ind_niftyinfralist.csv,INE646L01027
+Nifty Infrastructure,thematic,LT,True,Larsen & Toubro Ltd.,Construction,22,ind_niftyinfralist.csv,INE018A01030
+Nifty Infrastructure,thematic,MAXHEALTH,True,Max Healthcare Institute Ltd.,Healthcare,7,ind_niftyinfralist.csv,INE027H01010
+Nifty Infrastructure,thematic,NTPC,True,NTPC Ltd.,Power,21,ind_niftyinfralist.csv,INE733E01010
+Nifty Infrastructure,thematic,ONGC,True,Oil & Natural Gas Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftyinfralist.csv,INE213A01029
+Nifty Infrastructure,thematic,POWERGRID,True,Power Grid Corporation of India Ltd.,Power,21,ind_niftyinfralist.csv,INE752E01010
+Nifty Infrastructure,thematic,RELIANCE,True,Reliance Industries Ltd.,Oil Gas & Consumable Fuels,21,ind_niftyinfralist.csv,INE002A01018
+Nifty Infrastructure,thematic,MOTHERSON,True,Samvardhana Motherson International Ltd.,Automobile and Auto Components,22,ind_niftyinfralist.csv,INE775A01035
+Nifty Infrastructure,thematic,SUZLON,True,Suzlon Energy Ltd.,Capital Goods,5,ind_niftyinfralist.csv,INE040H01021
+Nifty Infrastructure,thematic,TATAPOWER,True,Tata Power Co. Ltd.,Power,22,ind_niftyinfralist.csv,INE245A01021
+Nifty Infrastructure,thematic,ULTRACEMCO,True,UltraTech Cement Ltd.,Construction Materials,22,ind_niftyinfralist.csv,INE481G01011
+Nifty Commodities,thematic,APLAPOLLO,True,APL Apollo Tubes Ltd.,Capital Goods,7,ind_niftycommoditieslist.csv,INE702C01027
+Nifty Commodities,thematic,ADANIENSOL,True,Adani Energy Solutions Ltd.,Power,7,ind_niftycommoditieslist.csv,INE931S01010
+Nifty Commodities,thematic,ADANIGREEN,True,Adani Green Energy Ltd.,Power,7,ind_niftycommoditieslist.csv,INE364U01010
+Nifty Commodities,thematic,ADANIPOWER,True,Adani Power Ltd.,Power,2,ind_niftycommoditieslist.csv,INE814H01029
+Nifty Commodities,thematic,AMBUJACEM,True,Ambuja Cements Ltd.,Construction Materials,22,ind_niftycommoditieslist.csv,INE079A01024
+Nifty Commodities,thematic,BPCL,True,Bharat Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftycommoditieslist.csv,INE029A01011
+Nifty Commodities,thematic,COALINDIA,True,Coal India Ltd.,Oil Gas & Consumable Fuels,21,ind_niftycommoditieslist.csv,INE522F01014
+Nifty Commodities,thematic,GRASIM,True,Grasim Industries Ltd.,Construction Materials,22,ind_niftycommoditieslist.csv,INE047A01021
+Nifty Commodities,thematic,HINDALCO,True,Hindalco Industries Ltd.,Metals & Mining,21,ind_niftycommoditieslist.csv,INE038A01020
+Nifty Commodities,thematic,HINDPETRO,True,Hindustan Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftycommoditieslist.csv,INE094A01015
+Nifty Commodities,thematic,IOC,True,Indian Oil Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftycommoditieslist.csv,INE242A01010
+Nifty Commodities,thematic,JSWENERGY,True,JSW Energy Ltd.,Power,7,ind_niftycommoditieslist.csv,INE121E01018
+Nifty Commodities,thematic,JSWSTEEL,True,JSW Steel Ltd.,Metals & Mining,22,ind_niftycommoditieslist.csv,INE019A01038
+Nifty Commodities,thematic,JINDALSTEL,True,Jindal Steel Ltd.,Metals & Mining,22,ind_niftycommoditieslist.csv,INE749A01030
+Nifty Commodities,thematic,NHPC,True,NHPC Ltd.,Power,7,ind_niftycommoditieslist.csv,INE848E01016
+Nifty Commodities,thematic,NMDC,True,NMDC Ltd.,Metals & Mining,21,ind_niftycommoditieslist.csv,INE584A01023
+Nifty Commodities,thematic,NTPC,True,NTPC Ltd.,Power,21,ind_niftycommoditieslist.csv,INE733E01010
+Nifty Commodities,thematic,ONGC,True,Oil & Natural Gas Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftycommoditieslist.csv,INE213A01029
+Nifty Commodities,thematic,OIL,True,Oil India Ltd.,Oil Gas & Consumable Fuels,7,ind_niftycommoditieslist.csv,INE274J01014
+Nifty Commodities,thematic,PIDILITIND,True,Pidilite Industries Ltd.,Chemicals,22,ind_niftycommoditieslist.csv,INE318A01026
+Nifty Commodities,thematic,RELIANCE,True,Reliance Industries Ltd.,Oil Gas & Consumable Fuels,21,ind_niftycommoditieslist.csv,INE002A01018
+Nifty Commodities,thematic,SRF,True,SRF Ltd.,Chemicals,22,ind_niftycommoditieslist.csv,INE647A01010
+Nifty Commodities,thematic,SHREECEM,True,Shree Cement Ltd.,Construction Materials,20,ind_niftycommoditieslist.csv,INE070A01015
+Nifty Commodities,thematic,TATAPOWER,True,Tata Power Co. Ltd.,Power,22,ind_niftycommoditieslist.csv,INE245A01021
+Nifty Commodities,thematic,TATASTEEL,True,Tata Steel Ltd.,Metals & Mining,22,ind_niftycommoditieslist.csv,INE081A01020
+Nifty Commodities,thematic,TORNTPOWER,False,Torrent Power Ltd.,Power,0,ind_niftycommoditieslist.csv,INE813H01021
+Nifty Commodities,thematic,UPL,True,UPL Ltd.,Chemicals,22,ind_niftycommoditieslist.csv,INE628A01036
+Nifty Commodities,thematic,ULTRACEMCO,True,UltraTech Cement Ltd.,Construction Materials,22,ind_niftycommoditieslist.csv,INE481G01011
+Nifty Commodities,thematic,VAML,False,Vedanta Aluminium Metal Ltd.,Metals & Mining,0,ind_niftycommoditieslist.csv,INE1CDF01017
+Nifty Commodities,thematic,VEDL,True,Vedanta Ltd.,Metals & Mining,21,ind_niftycommoditieslist.csv,INE205A01025
+Nifty India Consumption,thematic,APOLLOHOSP,True,Apollo Hospitals Enterprise Ltd.,Healthcare,22,ind_niftyconsumptionlist.csv,INE437A01024
+Nifty India Consumption,thematic,ASIANPAINT,True,Asian Paints Ltd.,Consumer Durables,22,ind_niftyconsumptionlist.csv,INE021A01026
+Nifty India Consumption,thematic,DMART,True,Avenue Supermarts Ltd.,Consumer Services,7,ind_niftyconsumptionlist.csv,INE192R01011
+Nifty India Consumption,thematic,BAJAJ-AUTO,True,Bajaj Auto Ltd.,Automobile and Auto Components,22,ind_niftyconsumptionlist.csv,INE917I01010
+Nifty India Consumption,thematic,BHARTIARTL,True,Bharti Airtel Ltd.,Telecommunication,22,ind_niftyconsumptionlist.csv,INE397D01024
+Nifty India Consumption,thematic,BRITANNIA,True,Britannia Industries Ltd.,Fast Moving Consumer Goods,22,ind_niftyconsumptionlist.csv,INE216A01030
+Nifty India Consumption,thematic,DLF,True,DLF Ltd.,Realty,21,ind_niftyconsumptionlist.csv,INE271C01023
+Nifty India Consumption,thematic,DIXON,True,Dixon Technologies (India) Ltd.,Consumer Durables,20,ind_niftyconsumptionlist.csv,INE935N01020
+Nifty India Consumption,thematic,EICHERMOT,True,Eicher Motors Ltd.,Automobile and Auto Components,22,ind_niftyconsumptionlist.csv,INE066A01021
+Nifty India Consumption,thematic,ETERNAL,True,Eternal Ltd.,Consumer Services,7,ind_niftyconsumptionlist.csv,INE758T01015
+Nifty India Consumption,thematic,FORTIS,True,Fortis Healthcare Ltd.,Healthcare,5,ind_niftyconsumptionlist.csv,INE061F01013
+Nifty India Consumption,thematic,GODREJCP,True,Godrej Consumer Products Ltd.,Fast Moving Consumer Goods,22,ind_niftyconsumptionlist.csv,INE102D01028
+Nifty India Consumption,thematic,HEROMOTOCO,True,Hero MotoCorp Ltd.,Automobile and Auto Components,22,ind_niftyconsumptionlist.csv,INE158A01026
+Nifty India Consumption,thematic,HINDUNILVR,True,Hindustan Unilever Ltd.,Fast Moving Consumer Goods,22,ind_niftyconsumptionlist.csv,INE030A01027
+Nifty India Consumption,thematic,ITC,True,ITC Ltd.,Fast Moving Consumer Goods,22,ind_niftyconsumptionlist.csv,INE154A01025
+Nifty India Consumption,thematic,INDHOTEL,True,Indian Hotels Co. Ltd.,Consumer Services,21,ind_niftyconsumptionlist.csv,INE053A01029
+Nifty India Consumption,thematic,NAUKRI,True,Info Edge (India) Ltd.,Consumer Services,21,ind_niftyconsumptionlist.csv,INE663F01032
+Nifty India Consumption,thematic,INDIGO,True,InterGlobe Aviation Ltd.,Services,22,ind_niftyconsumptionlist.csv,INE646L01027
+Nifty India Consumption,thematic,M&M,True,Mahindra & Mahindra Ltd.,Automobile and Auto Components,22,ind_niftyconsumptionlist.csv,INE101A01026
+Nifty India Consumption,thematic,MARUTI,True,Maruti Suzuki India Ltd.,Automobile and Auto Components,22,ind_niftyconsumptionlist.csv,INE585B01010
+Nifty India Consumption,thematic,MAXHEALTH,True,Max Healthcare Institute Ltd.,Healthcare,7,ind_niftyconsumptionlist.csv,INE027H01010
+Nifty India Consumption,thematic,NESTLEIND,True,Nestle India Ltd.,Fast Moving Consumer Goods,12,ind_niftyconsumptionlist.csv,INE239A01024
+Nifty India Consumption,thematic,TVSMOTOR,True,TVS Motor Company Ltd.,Automobile and Auto Components,22,ind_niftyconsumptionlist.csv,INE494B01023
+Nifty India Consumption,thematic,TATACONSUM,True,Tata Consumer Products Ltd.,Fast Moving Consumer Goods,22,ind_niftyconsumptionlist.csv,INE192A01025
+Nifty India Consumption,thematic,TATAPOWER,True,Tata Power Co. Ltd.,Power,22,ind_niftyconsumptionlist.csv,INE245A01021
+Nifty India Consumption,thematic,TITAN,True,Titan Company Ltd.,Consumer Durables,22,ind_niftyconsumptionlist.csv,INE280A01028
+Nifty India Consumption,thematic,TORNTPHARM,True,Torrent Pharmaceuticals Ltd.,Healthcare,20,ind_niftyconsumptionlist.csv,INE685A01028
+Nifty India Consumption,thematic,TRENT,True,Trent Ltd.,Consumer Services,21,ind_niftyconsumptionlist.csv,INE849A01020
+Nifty India Consumption,thematic,UNITDSPR,True,United Spirits Ltd.,Fast Moving Consumer Goods,22,ind_niftyconsumptionlist.csv,INE854D01024
+Nifty India Consumption,thematic,VBL,True,Varun Beverages Ltd.,Fast Moving Consumer Goods,7,ind_niftyconsumptionlist.csv,INE200M01039
+Nifty MNC,thematic,ABB,True,ABB India Ltd.,Capital Goods,17,ind_niftymnclist.csv,INE117A01022
+Nifty MNC,thematic,AWL,False,AWL Agri Business Ltd.,Fast Moving Consumer Goods,0,ind_niftymnclist.csv,INE699H01024
+Nifty MNC,thematic,ABBOTINDIA,False,Abbott India Ltd.,Healthcare,0,ind_niftymnclist.csv,INE358A01014
+Nifty MNC,thematic,AMBUJACEM,True,Ambuja Cements Ltd.,Construction Materials,22,ind_niftymnclist.csv,INE079A01024
+Nifty MNC,thematic,ASHOKLEY,True,Ashok Leyland Ltd.,Capital Goods,22,ind_niftymnclist.csv,INE208A01029
+Nifty MNC,thematic,BOSCHLTD,True,Bosch Ltd.,Automobile and Auto Components,21,ind_niftymnclist.csv,INE323A01026
+Nifty MNC,thematic,BRITANNIA,True,Britannia Industries Ltd.,Fast Moving Consumer Goods,22,ind_niftymnclist.csv,INE216A01030
+Nifty MNC,thematic,CRISIL,False,CRISIL Ltd.,Financial Services,0,ind_niftymnclist.csv,INE007A01025
+Nifty MNC,thematic,CASTROLIND,False,Castrol India Ltd.,Oil Gas & Consumable Fuels,0,ind_niftymnclist.csv,INE172A01027
+Nifty MNC,thematic,COLPAL,True,Colgate Palmolive (India) Ltd.,Fast Moving Consumer Goods,22,ind_niftymnclist.csv,INE259A01022
+Nifty MNC,thematic,CUMMINSIND,True,Cummins India Ltd.,Capital Goods,22,ind_niftymnclist.csv,INE298A01020
+Nifty MNC,thematic,ESCORTS,False,Escorts Kubota Ltd.,Capital Goods,0,ind_niftymnclist.csv,INE042A01014
+Nifty MNC,thematic,GLAND,False,Gland Pharma Ltd.,Healthcare,0,ind_niftymnclist.csv,INE068V01023
+Nifty MNC,thematic,HINDUNILVR,True,Hindustan Unilever Ltd.,Fast Moving Consumer Goods,22,ind_niftymnclist.csv,INE030A01027
+Nifty MNC,thematic,POWERINDIA,True,Hitachi Energy India Ltd.,Capital Goods,4,ind_niftymnclist.csv,INE07Y701011
+Nifty MNC,thematic,HYUNDAI,True,Hyundai Motor India Ltd.,Automobile and Auto Components,2,ind_niftymnclist.csv,INE0V6F01027
+Nifty MNC,thematic,LGEINDIA,False,LG Electronics India Ltd.,Consumer Durables,0,ind_niftymnclist.csv,INE324D01010
+Nifty MNC,thematic,LINDEINDIA,False,Linde India Ltd.,Chemicals,0,ind_niftymnclist.csv,INE473A01011
+Nifty MNC,thematic,MARUTI,True,Maruti Suzuki India Ltd.,Automobile and Auto Components,22,ind_niftymnclist.csv,INE585B01010
+Nifty MNC,thematic,NESTLEIND,True,Nestle India Ltd.,Fast Moving Consumer Goods,12,ind_niftymnclist.csv,INE239A01024
+Nifty MNC,thematic,NAM-INDIA,True,Nippon Life India Asset Management Ltd.,Financial Services,8,ind_niftymnclist.csv,INE298J01013
+Nifty MNC,thematic,OFSS,True,Oracle Financial Services Software Ltd.,Information Technology,19,ind_niftymnclist.csv,INE881D01027
+Nifty MNC,thematic,SCHAEFFLER,False,Schaeffler India Ltd.,Automobile and Auto Components,0,ind_niftymnclist.csv,INE513A01022
+Nifty MNC,thematic,ENRIN,False,Siemens Energy India Ltd.,Capital Goods,0,ind_niftymnclist.csv,INE1NPP01017
+Nifty MNC,thematic,SIEMENS,True,Siemens Ltd.,Capital Goods,18,ind_niftymnclist.csv,INE003A01024
+Nifty MNC,thematic,TIMKEN,False,Timken India Ltd.,Capital Goods,0,ind_niftymnclist.csv,INE325A01013
+Nifty MNC,thematic,UBL,False,United Breweries Ltd.,Fast Moving Consumer Goods,0,ind_niftymnclist.csv,INE686F01025
+Nifty MNC,thematic,UNITDSPR,True,United Spirits Ltd.,Fast Moving Consumer Goods,22,ind_niftymnclist.csv,INE854D01024
+Nifty MNC,thematic,VAML,False,Vedanta Aluminium Metal Ltd.,Metals & Mining,0,ind_niftymnclist.csv,INE1CDF01017
+Nifty MNC,thematic,VEDL,True,Vedanta Ltd.,Metals & Mining,21,ind_niftymnclist.csv,INE205A01025
+Nifty PSE,thematic,BEL,True,Bharat Electronics Ltd.,Capital Goods,21,ind_niftypselist.csv,INE263A01024
+Nifty PSE,thematic,BHEL,True,Bharat Heavy Electricals Ltd.,Capital Goods,21,ind_niftypselist.csv,INE257A01026
+Nifty PSE,thematic,BPCL,True,Bharat Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftypselist.csv,INE029A01011
+Nifty PSE,thematic,COALINDIA,True,Coal India Ltd.,Oil Gas & Consumable Fuels,21,ind_niftypselist.csv,INE522F01014
+Nifty PSE,thematic,CONCOR,True,Container Corporation of India Ltd.,Services,22,ind_niftypselist.csv,INE111A01025
+Nifty PSE,thematic,GAIL,True,GAIL (India) Ltd.,Oil Gas & Consumable Fuels,21,ind_niftypselist.csv,INE129A01019
+Nifty PSE,thematic,HAL,True,Hindustan Aeronautics Ltd.,Capital Goods,20,ind_niftypselist.csv,INE066F01020
+Nifty PSE,thematic,HINDPETRO,True,Hindustan Petroleum Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftypselist.csv,INE094A01015
+Nifty PSE,thematic,IOC,True,Indian Oil Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftypselist.csv,INE242A01010
+Nifty PSE,thematic,IRFC,True,Indian Railway Finance Corporation Ltd.,Financial Services,7,ind_niftypselist.csv,INE053F01010
+Nifty PSE,thematic,NHPC,True,NHPC Ltd.,Power,7,ind_niftypselist.csv,INE848E01016
+Nifty PSE,thematic,NMDC,True,NMDC Ltd.,Metals & Mining,21,ind_niftypselist.csv,INE584A01023
+Nifty PSE,thematic,NTPC,True,NTPC Ltd.,Power,21,ind_niftypselist.csv,INE733E01010
+Nifty PSE,thematic,NATIONALUM,True,National Aluminium Co. Ltd.,Metals & Mining,22,ind_niftypselist.csv,INE139A01034
+Nifty PSE,thematic,ONGC,True,Oil & Natural Gas Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftypselist.csv,INE213A01029
+Nifty PSE,thematic,OIL,True,Oil India Ltd.,Oil Gas & Consumable Fuels,7,ind_niftypselist.csv,INE274J01014
+Nifty PSE,thematic,PFC,True,Power Finance Corporation Ltd.,Financial Services,21,ind_niftypselist.csv,INE134E01011
+Nifty PSE,thematic,POWERGRID,True,Power Grid Corporation of India Ltd.,Power,21,ind_niftypselist.csv,INE752E01010
+Nifty PSE,thematic,RECLTD,True,REC Ltd.,Financial Services,22,ind_niftypselist.csv,INE020B01018
+Nifty PSE,thematic,SAIL,True,Steel Authority of India Ltd.,Metals & Mining,21,ind_niftypselist.csv,INE114A01011
+Nifty CPSE,thematic,BEL,True,Bharat Electronics Ltd.,Capital Goods,21,ind_niftycpselist.csv,INE263A01024
+Nifty CPSE,thematic,COALINDIA,True,Coal India Ltd.,Oil Gas & Consumable Fuels,21,ind_niftycpselist.csv,INE522F01014
+Nifty CPSE,thematic,COCHINSHIP,True,Cochin Shipyard Ltd.,Capital Goods,2,ind_niftycpselist.csv,INE704P01025
+Nifty CPSE,thematic,NBCC,True,NBCC (India) Ltd.,Construction,8,ind_niftycpselist.csv,INE095N01031
+Nifty CPSE,thematic,NHPC,True,NHPC Ltd.,Power,7,ind_niftycpselist.csv,INE848E01016
+Nifty CPSE,thematic,NLCINDIA,False,NLC India Ltd.,Power,0,ind_niftycpselist.csv,INE589A01014
+Nifty CPSE,thematic,NTPC,True,NTPC Ltd.,Power,21,ind_niftycpselist.csv,INE733E01010
+Nifty CPSE,thematic,ONGC,True,Oil & Natural Gas Corporation Ltd.,Oil Gas & Consumable Fuels,22,ind_niftycpselist.csv,INE213A01029
+Nifty CPSE,thematic,OIL,True,Oil India Ltd.,Oil Gas & Consumable Fuels,7,ind_niftycpselist.csv,INE274J01014
+Nifty CPSE,thematic,POWERGRID,True,Power Grid Corporation of India Ltd.,Power,21,ind_niftycpselist.csv,INE752E01010
+Nifty CPSE,thematic,SJVN,False,SJVN Ltd.,Power,0,ind_niftycpselist.csv,INE002L01015
+Nifty Services Sector,thematic,ADANIPORTS,True,Adani Ports and Special Economic Zone Ltd.,Services,22,ind_niftyservicelist.csv,INE742F01042
+Nifty Services Sector,thematic,ADANIPOWER,True,Adani Power Ltd.,Power,2,ind_niftyservicelist.csv,INE814H01029
+Nifty Services Sector,thematic,APOLLOHOSP,True,Apollo Hospitals Enterprise Ltd.,Healthcare,22,ind_niftyservicelist.csv,INE437A01024
+Nifty Services Sector,thematic,DMART,True,Avenue Supermarts Ltd.,Consumer Services,7,ind_niftyservicelist.csv,INE192R01011
+Nifty Services Sector,thematic,AXISBANK,True,Axis Bank Ltd.,Financial Services,22,ind_niftyservicelist.csv,INE238A01034
+Nifty Services Sector,thematic,BSE,True,BSE Ltd.,Financial Services,7,ind_niftyservicelist.csv,INE118H01025
+Nifty Services Sector,thematic,BAJFINANCE,True,Bajaj Finance Ltd.,Financial Services,22,ind_niftyservicelist.csv,INE296A01032
+Nifty Services Sector,thematic,BAJAJFINSV,True,Bajaj Finserv Ltd.,Financial Services,22,ind_niftyservicelist.csv,INE918I01026
+Nifty Services Sector,thematic,BHARTIARTL,True,Bharti Airtel Ltd.,Telecommunication,22,ind_niftyservicelist.csv,INE397D01024
+Nifty Services Sector,thematic,ETERNAL,True,Eternal Ltd.,Consumer Services,7,ind_niftyservicelist.csv,INE758T01015
+Nifty Services Sector,thematic,FEDERALBNK,True,Federal Bank Ltd.,Financial Services,22,ind_niftyservicelist.csv,INE171A01029
+Nifty Services Sector,thematic,HCLTECH,True,HCL Technologies Ltd.,Information Technology,22,ind_niftyservicelist.csv,INE860A01027
+Nifty Services Sector,thematic,HDFCBANK,True,HDFC Bank Ltd.,Financial Services,22,ind_niftyservicelist.csv,INE040A01034
+Nifty Services Sector,thematic,HDFCLIFE,True,HDFC Life Insurance Company Ltd.,Financial Services,22,ind_niftyservicelist.csv,INE795G01014
+Nifty Services Sector,thematic,ICICIBANK,True,ICICI Bank Ltd.,Financial Services,22,ind_niftyservicelist.csv,INE090A01021
+Nifty Services Sector,thematic,INDUSINDBK,True,IndusInd Bank Ltd.,Financial Services,22,ind_niftyservicelist.csv,INE095A01012
+Nifty Services Sector,thematic,INFY,True,Infosys Ltd.,Information Technology,22,ind_niftyservicelist.csv,INE009A01021
+Nifty Services Sector,thematic,INDIGO,True,InterGlobe Aviation Ltd.,Services,22,ind_niftyservicelist.csv,INE646L01027
+Nifty Services Sector,thematic,JIOFIN,True,Jio Financial Services Ltd.,Financial Services,7,ind_niftyservicelist.csv,INE758E01017
+Nifty Services Sector,thematic,KOTAKBANK,True,Kotak Mahindra Bank Ltd.,Financial Services,22,ind_niftyservicelist.csv,INE237A01036
+Nifty Services Sector,thematic,MAXHEALTH,True,Max Healthcare Institute Ltd.,Healthcare,7,ind_niftyservicelist.csv,INE027H01010
+Nifty Services Sector,thematic,NTPC,True,NTPC Ltd.,Power,21,ind_niftyservicelist.csv,INE733E01010
+Nifty Services Sector,thematic,POWERGRID,True,Power Grid Corporation of India Ltd.,Power,21,ind_niftyservicelist.csv,INE752E01010
+Nifty Services Sector,thematic,SBILIFE,True,SBI Life Insurance Company Ltd.,Financial Services,22,ind_niftyservicelist.csv,INE123W01016
+Nifty Services Sector,thematic,SHRIRAMFIN,True,Shriram Finance Ltd.,Financial Services,22,ind_niftyservicelist.csv,INE721A01047
+Nifty Services Sector,thematic,SBIN,True,State Bank of India,Financial Services,22,ind_niftyservicelist.csv,INE062A01020
+Nifty Services Sector,thematic,TCS,True,Tata Consultancy Services Ltd.,Information Technology,22,ind_niftyservicelist.csv,INE467B01029
+Nifty Services Sector,thematic,TATAPOWER,True,Tata Power Co. Ltd.,Power,22,ind_niftyservicelist.csv,INE245A01021
+Nifty Services Sector,thematic,TECHM,True,Tech Mahindra Ltd.,Information Technology,22,ind_niftyservicelist.csv,INE669C01036
+Nifty Services Sector,thematic,WIPRO,True,Wipro Ltd.,Information Technology,22,ind_niftyservicelist.csv,INE075A01022

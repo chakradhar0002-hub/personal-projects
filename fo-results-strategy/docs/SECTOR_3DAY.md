@@ -21,7 +21,10 @@ returns) look like, sector by sector?
 - **Auto and auto parts is the one sector that stands out**: +1.20% a result (264 results, 16 stocks), above the
   average result of the same quarter in 18 of 22 quarters, in both halves of the data, and in every calendar year.
   Random picks of the same size do this well about 3 times in 10,000, and it stays clearly significant after allowing
-  for the 15 sectors compared (adjusted p 0.004). Details below.
+  for the 15 sectors compared (adjusted p 0.004). Details below. With NSE's own sectors
+  ([NIFTY_SECTOR_3DAY.md](NIFTY_SECTOR_3DAY.md)) it is still the only one, but weaker than this p suggests: it rests
+  on three stocks (M&M, Bharat Forge, TVS Motor) and on 2021-23, and tests that allow for stocks moving together give
+  NSE's auto sector an adjusted p of 0.06 to 0.23.
 - **Power is the weakest** (-1.29% a result, positive in 6 of 22 quarters), but it is only 94 results and is not
   significant once the 15-sector comparison is allowed for (adjusted p 0.18).
 - **Every other sector is within about ±0.5%** of the average and indistinguishable from chance (adjusted p 1.00):

@@ -141,7 +141,7 @@ depends on getting fills near the mid price, so treat it as marginal ([REAL_DATA
 | Habitual post-results drifters: average of the last 4 post-results drifts in the quarter's top fifth, bought after any result | After | 569 trades, +1.80% (18 quarters from Jan-Mar 2022 results; +0.81% in the last 8) | about +0.5% | [PAST_PERFORMANCE.md](PAST_PERFORMANCE.md) |
 | Stocks that habitually rise into their results: average of the last 4 results windows in the quarter's top tenth (found after the fact) | Before | 292 trades, +1.07% before costs (+0.90% after) | about half that: +0.45% after costs | [PAST_PERFORMANCE.md](PAST_PERFORMANCE.md) |
 | A press release or regular business update in the 30 days before the cutoff | Before | Press releases: 1,023 trades, +0.25% after costs; business-update issuers (found after the fact): 323 results, +0.87% over the average result | about +0.1% | [MORE_SIGNALS.md](MORE_SIGNALS.md) |
-| Buy every auto and auto-parts F&O stock at its cutoff close, sell at the Day+1 close (found in the sector table) | Before | 264 results, +1.20% (+1.03% after costs), above the quarter's average result in 18 of 22 quarters; ordinary days +0.20% | well under +1% | [SECTOR_3DAY.md](SECTOR_3DAY.md) |
+| Buy every auto and auto-parts F&O stock at its cutoff close, sell at the Day+1 close (found in the sector table) | Before | 264 results, +1.20% (+1.03% after costs), above the quarter's average result in 18 of 22 quarters; ordinary days +0.20%. With NSE's own auto sector +1.10% (242 results), but it rests on 3 stocks and on 2021-23 | well under +1% | [SECTOR_3DAY.md](SECTOR_3DAY.md), [NIFTY_SECTOR_3DAY.md](NIFTY_SECTOR_3DAY.md) |
 | Short results losers already below their 50- and 200-day averages, 20 sessions against Nifty | After (short) | +0.30% on unseen quarters | about 0 | [NEGATIVE_AVERAGE.md](NEGATIVE_AVERAGE.md) |
 
 ## What did not work
@@ -211,6 +211,7 @@ depends on getting fills near the mid price, so treat it as marginal ([REAL_DATA
 - [MORE_SIGNALS.md](MORE_SIGNALS.md): F&O positioning, delivery % and company news on both trades
 - [NEGATIVE_AVERAGE.md](NEGATIVE_AVERAGE.md): the search for stocks that fall (shorts)
 - [SECTOR_3DAY.md](SECTOR_3DAY.md): the three-day results move by sector for every quarter
+- [NIFTY_SECTOR_3DAY.md](NIFTY_SECTOR_3DAY.md): the same by NSE's Nifty index sectors and sectoral indices, against each index
 - [TECHNICAL_ANALYSIS.md](TECHNICAL_ANALYSIS.md), [FUNDAMENTAL_ANALYSIS.md](FUNDAMENTAL_ANALYSIS.md), [TA_FA_COMBINED.md](TA_FA_COMBINED.md): TA, FA and both together
 - [TARGET_2PCT.md](TARGET_2PCT.md), [TARGET_5PCT.md](TARGET_5PCT.md), [TARGET_100PCT.md](TARGET_100PCT.md): the target searches
 - [SECTOR_STRATEGIES.md](SECTOR_STRATEGIES.md), [PATTERNS.md](PATTERNS.md), [REAL_DATA_RESULTS.md](REAL_DATA_RESULTS.md): sector ideas, winner drift, option trades

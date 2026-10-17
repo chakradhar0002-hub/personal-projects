@@ -1,0 +1,18 @@
+hospitals: n 34, stocks 3, avg +0.683, ex +0.640, luck p 0.467, q-t p 0.272
+pharma (NSE Healthcare ex hospitals): n 260, stocks 13, avg +0.094, ex +0.045, luck p 0.890, q-t p 0.991
+  hospitals minus pharma quarterly: +0.974, t +1.00, 22 q; per stock: {'APOLLOHOSP': {'size': 22, 'mean': 1.21}, 'FORTIS': {'size': 5, 'mean': -0.18}, 'MAXHEALTH': {'size': 7, 'mean': -0.55}}
+
+thematic own-index excess (results vs placebo) after removing a block of names
+  Nifty India Consumption without autos (['BAJAJ-AUTO', 'EICHERMOT', 'HEROMOTOCO', 'M&M', 'MARUTI', 'TVSMOTOR']): n 433, vs index +0.283 (q-t p 0.182); placebo +0.062; results-minus-placebo +0.214 p 0.365
+  Nifty MNC without autos (['ASHOKLEY', 'BOSCHLTD', 'HYUNDAI', 'MARUTI']): n 231, vs index +0.290 (q-t p 0.368); placebo +0.034; results-minus-placebo +0.242 p 0.439
+  Nifty Infrastructure without autos (['ASHOKLEY', 'BHARATFORG', 'MOTHERSON']): n 468, vs index -0.145 (q-t p 0.416); placebo +0.072; results-minus-placebo -0.233 p 0.236
+  Nifty Commodities without Power-sector stocks (['ADANIENSOL', 'ADANIGREEN', 'ADANIPOWER', 'JSWENERGY', 'NHPC', 'NTPC', 'TATAPOWER']): n 425, vs index -0.410 (q-t p 0.013); placebo +0.026; results-minus-placebo -0.462 p 0.009
+  Nifty Energy without Power-sector stocks (['ADANIENSOL', 'ADANIGREEN', 'ADANIPOWER', 'JSWENERGY', 'NHPC', 'NTPC', 'POWERGRID', 'TATAPOWER']): n 258, vs index -0.213 (q-t p 0.371); placebo +0.034; results-minus-placebo -0.258 p 0.264
+  Nifty Commodities without nothing ([]): n 498, vs index -0.539 (q-t p 0.001); placebo +0.047; results-minus-placebo -0.616 p 0.000
+  Commodities members by NSE sector (n, ex vs all): {'Capital Goods': {'size': 7, 'mean': 0.08}, 'Chemicals': {'size': 66, 'mean': -0.77}, 'Construction Materials': {'size': 86, 'mean': -0.3}, 'Metals & Mining': {'size': 129, 'mean': -0.04}, 'Oil Gas & Consumable Fuels': {'size': 137, 'mean': -0.37}, 'Power': {'size': 73, 'mean': -1.33}}
+
+cl2 diagnostics (variance pieces of the mean): stock, quarter, cell
+  Automobile and Auto Components: se_stock 0.252, se_quarter 0.354, se_iid 0.308, luck sd 0.323; t with quarter-cluster only +2.99, stock-cluster only +4.20
+  Consumer Durables: se_stock 0.294, se_quarter 0.479, se_iid 0.558, luck sd 0.419; t with quarter-cluster only -1.95, stock-cluster only -3.18
+  Power: se_stock 0.694, se_quarter 0.423, se_iid 0.444, luck sd 0.526; t with quarter-cluster only -3.11, stock-cluster only -1.90
+  Telecommunication: se_stock 0.818, se_quarter 0.499, se_iid 0.502, luck sd 0.647; t with quarter-cluster only -2.92, stock-cluster only -1.78

@@ -1,0 +1,49 @@
+206 stocks: 108 have their first in-F&O result after qn 0 (1153 results); 19 have no returns before 2021-03 (listed later): ['DELHIVERY', 'ETERNAL', 'HYUNDAI', 'IREDA', 'JIOFIN', 'KALYANKJIL', 'KAYNES', 'KFINTECH', 'LICI', 'LODHA', 'MANKIND', 'NYKAA', 'PAYTM', 'POLICYBZR', 'PREMIERENE', 'SONACOMS', 'SWIGGY', 'VMM', 'WAAREEENER']
+first in-F&O qn distribution: {0: 98, 1: 23, 2: 8, 3: 5, 4: 1, 5: 1, 10: 1, 15: 36, 16: 6, 17: 13, 18: 1, 19: 4, 20: 7, 21: 2}
+      fam                           group  stocks  late_fo  listed_later  res  res_late_fo  ex_all  ex_incumbents  n_inc  ex_late
+0     NSE  Automobile and Auto Components      15        5             2  242           23   1.058          1.106    219    0.601
+1     NSE                   Capital Goods      23       20             3  247          185   0.552          2.129     62    0.024
+2     NSE                       Chemicals       5        1             0   94            7  -0.325         -0.580     87    2.856
+3     NSE                    Construction       3        2             0   35           13  -0.089          0.953     22   -1.853
+4     NSE          Construction Materials       4        1             0   86           20  -0.295         -0.382     66   -0.009
+5     NSE               Consumer Durables      10        6             1  149           61  -0.936         -1.298     88   -0.412
+6     NSE               Consumer Services       9        9             4  110          110   1.004            NaN      0    1.004
+7     NSE      Fast Moving Consumer Goods      14        5             0  226           28  -0.008         -0.004    198   -0.042
+8     NSE              Financial Services      53       26             6  837          258  -0.110         -0.130    579   -0.065
+9     NSE                      Healthcare      16        5             1  294           54   0.114          0.213    240   -0.328
+10    NSE          Information Technology      12        6             0  227           95   0.216         -0.333    132    0.978
+11    NSE                 Metals & Mining      10        4             0  200           69  -0.206         -0.307    131   -0.016
+12    NSE      Oil Gas & Consumable Fuels       9        4             0  179           70  -0.402         -0.351    109   -0.481
+13    NSE                           Power       8        7             0   94           72  -1.317         -2.481     22   -0.961
+14    NSE                          Realty       6        5             1   82           60  -0.363         -1.632     22    0.102
+15    NSE                        Services       5        2             1   94           28   0.726          0.968     66    0.157
+16    NSE               Telecommunication       3        0             0   64            0  -1.456         -1.456     64      NaN
+17    NSE                        Textiles       1        0             0   18            0  -0.075         -0.075     18      NaN
+18  index                      Nifty Auto      15        4             2  262           21   1.159          1.209    241    0.579
+19  index                      Nifty Bank      14        2             0  278           14   0.060          0.081    264   -0.337
+20  index        Nifty Financial Services      20        7             1  401          115   0.013          0.115    286   -0.240
+21  index                      Nifty FMCG      14        5             0  226           28  -0.008         -0.004    198   -0.042
+22  index          Nifty Healthcare Index      16        5             1  294           54   0.114          0.213    240   -0.328
+23  index                        Nifty IT      10        4             0  213           81   0.232         -0.333    132    1.153
+24  index                     Nifty Metal      11        5             0  207           76  -0.197         -0.307    131   -0.007
+25  index                    Nifty Pharma      13        3             1  260           42   0.045          0.113    218   -0.308
+26  index                  Nifty PSU Bank       7        3             0  109           21   0.289          0.026     88    1.391
+27  index              Nifty Private Bank      10        1             0  205            7  -0.157         -0.125    198   -1.057
+28  index                    Nifty Realty       6        5             1   82           60  -0.363         -1.632     22    0.102
+29  index         Nifty Consumer Durables       9        6             1  127           61  -0.849         -1.253     66   -0.412
+30  index                 Nifty Oil & Gas       8        3             0  158           49  -0.397         -0.351    109   -0.498
+31  index                    Nifty Energy      25       18             0  352          203  -0.546         -0.487    149   -0.589
+32  index            Nifty Infrastructure      30       12             0  534          139   0.294          0.410    395   -0.037
+33  index               Nifty Commodities      28       12             0  498          148  -0.459         -0.562    350   -0.215
+34  index         Nifty India Consumption      30       11             1  565          149   0.470          0.382    416    0.718
+35  index                       Nifty MNC      17        5             1  298           54   0.560          0.397    244    1.298
+36  index                       Nifty PSE      20       13             0  384          230   0.004         -0.073    154    0.055
+37  index                      Nifty CPSE       9        8             0  130          108  -0.129         -1.055     22    0.059
+38  index           Nifty Services Sector      30        8             2  563           79   0.035          0.051    484   -0.067
+
+pre-F&O results of today's F&O stocks: 1099 results, 115 stocks; avg +0.803, excess over same-quarter in-F&O avg +0.746, median +0.242
+  quarterly mean excess: t +3.34 over 21 quarters; stocks with positive mean: 65 of 115
+  last 4 results before F&O entry: n 364, excess +0.411
+in-F&O results: late joiners n 1153 ex +0.055; incumbents n 2125 ex -0.030
+pre-F&O results by NSE sector (n, ex): {'Automobile and Auto Components': {'size': 61, 'mean': 1.66}, 'Capital Goods': {'size': 224, 'mean': 1.06}, 'Chemicals': {'size': 16, 'mean': 2.09}, 'Construction': {'size': 31, 'mean': -1.67}, 'Construction Materials': {'size': 2, 'mean': 0.71}, 'Consumer Durables': {'size': 71, 'mean': 1.76}, 'Consumer Services': {'size': 56, 'mean': 1.4}, 'Fast Moving Consumer Goods': {'size': 72, 'mean': 1.74}, 'Financial Services': {'size': 292, 'mean': 0.54}, 'Healthcare': {'size': 50, 'mean': 0.9}, 'Information Technology': {'size': 37, 'mean': 1.83}, 'Metals & Mining': {'size': 19, 'mean': -1.95}, 'Oil Gas & Consumable Fuels': {'size': 18, 'mean': 0.45}, 'Power': {'size': 82, 'mean': -0.4}, 'Realty': {'size': 50, 'mean': -0.63}, 'Services': {'size': 12, 'mean': -0.07}, 'Telecommunication': {'size': 2, 'mean': -1.21}, 'Textiles': {'size': 4, 'mean': -0.95}}
+  Auto pre-F&O: {'BOSCHLTD': {'size': 1, 'mean': -2.78}, 'FORCEMOT': {'size': 8, 'mean': 5.22}, 'HYUNDAI': {'size': 6, 'mean': 1.42}, 'SONACOMS': {'size': 14, 'mean': 1.77}, 'TIINDIA': {'size': 15, 'mean': -1.13}, 'UNOMINDA': {'size': 17, 'mean': 2.71}}
