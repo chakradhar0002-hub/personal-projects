@@ -1,0 +1,10 @@
+                                            rule         p      p_tq
+0     top fifth of last quarter's x, next result  0.950505  0.711387
+1  bottom fifth of last quarter's x, next result  0.702791  0.943738
+2        last-4 top fifth (TR05, pre-registered)  0.020695  0.016342
+3                    last-4 top tenth (post hoc)  0.000500  0.000217
+4                      last-4 F&O-only top fifth  0.005580  0.009097
+5                      last-4 F&O-only top tenth  0.000120  0.001083
+custom_sector Capital goods & defence / IT: r +0.6413, null mean -0.0770, sd 0.2281, two-sided centred p 0.000355 (B 200,000); x 244 tests = 0.087
+custom_sector Banks / Metals & mining: r +0.5689, null mean -0.0872, sd 0.2213, two-sided centred p 0.001405 (B 200,000); x 244 tests = 0.343
+nifty_sector Financial Services / Metals & Mining: r +0.5206, null mean -0.1468, sd 0.2185, two-sided centred p 0.001265 (B 200,000); x 244 tests = 0.309

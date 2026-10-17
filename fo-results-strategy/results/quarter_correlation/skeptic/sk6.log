@@ -1,0 +1,8 @@
+top 20% q4-10: 189 results, x +0.56, td +0.64%, p 0.067
+top 20% q11-21: 380 results, x +0.39, td +0.48%, p 0.114
+top 20% q4-13 (PAST_PERF first part): 270 results, x +0.84, td +1.08%, p 0.003
+top 20% q14-21 (last 8): 299 results, x +0.10, td +0.04%, p 0.721
+top 10% q4-10: 98 results, x +0.58, td +0.65%, p 0.206
+top 10% q11-21: 194 results, x +1.20, td +1.28%, p 0.001
+top 10% q4-13 (PAST_PERF first part): 140 results, x +1.00, td +1.23%, p 0.014
+top 10% q14-21 (last 8): 152 results, x +0.98, td +0.92%, p 0.014

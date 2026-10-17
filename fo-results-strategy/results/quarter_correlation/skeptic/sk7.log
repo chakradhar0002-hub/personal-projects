@@ -1,0 +1,4 @@
+t<=9: 1251 pairs, Pearson +0.052, Spearman +0.059, across-stock null p 0.066
+t>=11: 1667 pairs, Pearson -0.055, Spearman -0.042, across-stock null p 0.025
+t=10..20 (second half incl. 10): 1799 pairs, Pearson -0.042, Spearman -0.031, across-stock null p 0.076
+difference of halves: z 2.87, two-sided normal p 0.0041
