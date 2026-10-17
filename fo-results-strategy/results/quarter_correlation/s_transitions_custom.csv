@@ -1,0 +1,23 @@
+qn,period,quarter,Q,ranked,best,best_avg,best_n,worst,worst_avg,worst_n,next_ranked,best_next_rank,best_next_avg,best_next_n,worst_next_rank,worst_next_avg,worst_next_n,Q_next
+0,Jan-Mar 2021,Q4 FY21,0.821,11,Auto & auto parts,4.192,11,IT,-1.835,6,11.0,10.0,-1.184,10.0,1.0,4.094,9.0,0.061
+1,Apr-Jun 2021,Q1 FY22,0.061,11,IT,4.094,9,Pharma & healthcare,-2.488,11,13.0,1.0,1.588,11.0,5.0,-0.239,11.0,-0.843
+2,Jul-Sep 2021,Q2 FY22,-0.843,13,IT,1.588,11,NBFC & financials,-4.169,17,14.0,11.0,-1.944,11.0,13.0,-3.278,20.0,-0.636
+3,Oct-Dec 2021,Q3 FY22,-0.636,14,Banks,4.124,14,Cement & building materials,-3.433,5,13.0,11.0,-2.874,14.0,12.0,-2.936,4.0,-0.831
+4,Jan-Mar 2022,Q4 FY22,-0.831,13,Auto & auto parts,3.676,11,Oil & gas,-3.549,7,13.0,5.0,1.484,11.0,13.0,-1.821,7.0,0.754
+5,Apr-Jun 2022,Q1 FY23,0.754,13,Metals & mining,2.881,9,Oil & gas,-1.821,7,13.0,1.0,1.124,9.0,7.0,0.186,7.0,0.03
+6,Jul-Sep 2022,Q2 FY23,0.03,13,Metals & mining,1.124,9,Consumer durables & retail,-3.587,6,13.0,10.0,-1.255,9.0,13.0,-4.606,5.0,-0.159
+7,Oct-Dec 2022,Q3 FY23,-0.159,13,Auto & auto parts,2.871,11,Consumer durables & retail,-4.606,5,13.0,3.0,1.749,11.0,5.0,1.703,6.0,0.607
+8,Jan-Mar 2023,Q4 FY23,0.607,13,Cement & building materials,2.306,5,Chemicals & agro,-1.388,4,13.0,3.0,0.723,5.0,12.0,-1.015,4.0,-0.297
+9,Apr-Jun 2023,Q1 FY24,-0.297,13,Auto & auto parts,1.297,11,IT,-1.887,11,13.0,4.0,1.104,11.0,12.0,-0.984,10.0,0.406
+10,Jul-Sep 2023,Q2 FY24,0.406,13,Consumer durables & retail,2.511,6,Banks,-1.071,14,13.0,1.0,3.814,6.0,12.0,-2.202,14.0,0.478
+11,Oct-Dec 2023,Q3 FY24,0.478,13,Consumer durables & retail,3.814,6,Chemicals & agro,-2.62,4,13.0,4.0,1.132,6.0,11.0,-0.191,4.0,0.876
+12,Jan-Mar 2024,Q4 FY24,0.876,13,Auto & auto parts,3.694,11,IT,-1.596,11,13.0,5.0,0.738,11.0,3.0,1.753,11.0,0.528
+13,Apr-Jun 2024,Q1 FY25,0.528,13,Consumer durables & retail,3.804,6,Cement & building materials,-3.404,5,13.0,12.0,-4.383,6.0,4.0,0.09,5.0,-1.118
+14,Jul-Sep 2024,Q2 FY25,-1.118,13,IT,1.294,11,Chemicals & agro,-4.626,4,15.0,2.0,1.72,13.0,1.0,3.701,5.0,-0.787
+15,Oct-Dec 2024,Q3 FY25,-0.787,15,Chemicals & agro,3.701,5,Power,-4.449,7,15.0,12.0,-0.219,5.0,14.0,-0.623,7.0,0.958
+16,Jan-Mar 2025,Q4 FY25,0.958,15,IT,3.704,13,FMCG,-0.932,13,15.0,14.0,-1.746,13.0,4.0,-0.315,13.0,-0.564
+17,Apr-Jun 2025,Q1 FY26,-0.564,15,"Services, telecom & internet",2.34,14,Banks,-1.829,18,15.0,10.0,-0.032,13.0,3.0,1.931,18.0,0.668
+18,Jul-Sep 2025,Q2 FY26,0.668,15,FMCG,2.693,13,Consumer durables & retail,-2.117,12,15.0,13.0,-1.913,13.0,1.0,5.577,12.0,0.183
+19,Oct-Dec 2025,Q3 FY26,0.183,15,Consumer durables & retail,5.577,12,Power,-3.35,7,15.0,15.0,-3.806,13.0,8.0,-0.489,8.0,-0.309
+20,Jan-Mar 2026,Q4 FY26,-0.309,15,Chemicals & agro,3.829,5,Consumer durables & retail,-3.806,13,15.0,13.0,-2.531,5.0,14.0,-2.643,13.0,0.174
+21,Apr-Jun 2026,Q1 FY27,0.174,15,Auto & auto parts,2.696,16,Power,-2.789,8,,,,,,,,

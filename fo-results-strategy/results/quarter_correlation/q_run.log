@@ -1,0 +1,206 @@
+== quarter_level.py ==
+F&O results 3278, stocks 206, quarters 22; sector labels and three_day match nifty_sector_3day/results_3day.csv; nifty_3d matches Nifty 50 closes (max abs diff 9.9e-17)
+best / worst sector per quarter match nifty_sector_3day/quarter_leaders.csv (22 of 22)
+
+per quarter (%; vix in index points):
+ qn       period quarter  results first_cutoff last_day_p1  season_sessions   avg median up_pct nifty_part stock_part   sd best_avg  best_n worst_avg  worst_n spread  ranked nifty_pre20 nifty_pre60   vix vix_chg20 nifty_season best_excess worst_excess          best         worst
+  0 Jan-Mar 2021 Q4 FY21       98   2021-04-08  2021-07-01               57 +0.82  -0.21     48      +0.78      +0.04 6.02    +4.19      10     -1.83        6  +6.03       9       -0.55       +3.67 20.31     -4.37        +5.42       +3.37        -2.66          Auto            IT
+  1 Apr-Jun 2021 Q1 FY22      117   2021-07-06  2021-08-17               29 +0.06  +0.35     55      +0.64      -0.57 4.97    +4.54       8     -2.49       11  +7.03      12       +0.50       +6.35 12.28     -2.95        +5.03       +4.48        -2.55            IT    Healthcare
+  2 Jul-Sep 2021 Q2 FY22      125   2021-10-06  2021-11-16               27 -0.84  -1.25     41      -0.42      -0.42 5.29    +1.32      10     -2.42       31  +3.74      12       +1.64      +12.47 17.33     +2.43        +2.00       +2.16        -1.58          Auto  Fin services
+  3 Oct-Dec 2021 Q3 FY22      132   2022-01-10  2022-02-18               28 -0.64  -0.36     46      -0.80      +0.17 5.54    +2.50       4     -3.04        4  +5.54      13       +3.66       -0.87 17.68     +1.11        -4.04       +3.14        -2.40 Cons services    Constr mat
+  4 Jan-Mar 2022 Q4 FY22      131   2022-04-07  2022-05-31               35 -0.83  -0.98     40      -0.28      -0.55 5.81    +7.43       4     -3.17        8 +10.60      13       +7.92       -2.02 19.00     -8.47        -5.98       +8.26        -2.34 Cons services     Oil & gas
+  5 Apr-Jun 2022 Q1 FY23      134   2022-07-06  2022-08-17               28 +0.75  +0.63     52      +1.50      -0.75 4.63    +2.54       9     -1.45        6  +3.99      13       -2.24      -10.09 20.27     +0.43       +12.22       +1.78        -2.21     Cap goods      Cons dur
+  6 Jul-Sep 2022 Q2 FY23      133   2022-10-06  2022-11-21               30 +0.03  -0.07     50      +0.93      -0.90 4.67    +1.49       9     -2.73        4  +4.22      13       -1.66       +6.85 19.32     -0.05        +4.78       +1.46        -2.76        Metals Cons services
+  7 Oct-Dec 2022 Q3 FY23      133   2023-01-05  2023-02-15               28 -0.16  -0.49     44      -0.04      -0.12 5.25    +3.29       4     -4.98        6  +8.26      13       -3.32       +5.94 14.98     +1.58        +0.13       +3.45        -4.82      Services      Cons dur
+  8 Jan-Mar 2023 Q4 FY23      134   2023-04-10  2023-05-31               35 +0.61  +0.40     56      +0.63      -0.02 4.28    +3.30       9     -2.66        4  +5.95      13       -0.73       -2.64 12.27     -0.18        +5.17       +2.69        -3.27     Cap goods      Services
+  9 Apr-Jun 2023 Q1 FY24      133   2023-07-10  2023-08-16               26 -0.30  -0.51     42      -0.31      +0.01 4.26    +1.26       9     -3.61        6  +4.87      13       +4.27       +8.67 11.46     +0.34        +0.56       +1.55        -3.32          FMCG      Cons dur
+ 10 Jul-Sep 2023 Q2 FY24      132   2023-10-09  2023-11-16               27 +0.41  +0.38     53      -0.03      +0.44 4.01    +3.24       4     -1.75        9  +4.99      13       -1.09       +0.66 11.40     +0.53        +1.30       +2.84        -2.16      Services            IT
+ 11 Oct-Dec 2023 Q3 FY24      135   2024-01-09  2024-02-21               30 +0.48  +0.54     53      +0.12      +0.36 6.39    +4.45       4     -2.62        4  +7.07      13       +2.61       +8.85 13.26     +0.50        +2.37       +3.97        -3.10 Cons services     Chemicals
+ 12 Jan-Mar 2024 Q4 FY24      135   2024-04-09  2024-05-31               35 +0.88  +0.23     53      +0.23      +0.65 5.51    +4.99       9     -2.11       10  +7.10      13       +0.66       +4.60 11.36     -2.25        -0.49       +4.12        -2.99     Cap goods            IT
+ 13 Apr-Jun 2024 Q1 FY25      135   2024-07-09  2024-08-16               26 +0.53  +0.82     53      -0.02      +0.55 4.77    +7.79       4     -3.55        4 +11.34      13       +5.05       +7.38 14.28     -2.12        +0.44       +7.26        -4.08 Cons services    Constr mat
+ 14 Jul-Sep 2024 Q2 FY25      134   2024-10-08  2024-11-18               28 -1.12  -0.95     42      -0.76      -0.36 5.44    +1.51       4     -5.71        6  +7.22      13       +0.31       +2.87 14.59     +0.35        -6.23       +2.63        -4.59 Cons services      Cons dur
+ 15 Oct-Dec 2024 Q3 FY25      172   2025-01-07  2025-02-18               31 -0.79  -0.51     45      -0.01      -0.77 5.64    +3.70       5     -4.45        7  +8.15      15       -3.70       -5.16 14.66     +0.55        -3.22       +4.49        -3.66     Chemicals         Power
+ 16 Jan-Mar 2025 Q4 FY25      178   2025-04-08  2025-06-02               35 +0.96  +0.70     53      +0.47      +0.49 4.66    +4.33      12     -1.87        7  +6.20      15       -0.07       -3.82 20.44     +6.97        +9.68       +3.37        -2.83            IT Cons services
+ 17 Apr-Jun 2025 Q1 FY26      191   2025-07-08  2025-08-18               28 -0.56  -0.35     46      -0.35      -0.21 5.53    +3.03       7     -2.81       10  +5.84      15       +1.67      +13.94 12.20     -1.82        -2.53       +3.59        -2.25 Cons services      Cons dur
+ 18 Jul-Sep 2025 Q2 FY26      191   2025-10-07  2025-11-17               27 +0.67  +0.47     54      +0.24      +0.43 4.44    +2.40      12     -1.39        5  +3.79      15       +1.35       -0.97 10.05     -0.79        +3.60       +1.73        -2.05          FMCG      Services
+ 19 Oct-Dec 2025 Q3 FY26      196   2026-01-07  2026-02-20               31 +0.18  -0.37     46      -0.12      +0.30 5.43    +5.66       5     -3.35        7  +9.01      15       +1.17       +3.38  9.95     -1.00        -2.18       +5.48        -3.53      Services         Power
+ 20 Jan-Mar 2026 Q4 FY26      203   2026-04-07  2026-06-04               39 -0.31  -0.50     46      -0.17      -0.14 5.67    +3.83       5     -3.36       12  +7.19      15       -6.63      -11.67 24.70     +6.84        +1.27       +4.14        -3.06     Chemicals            IT
+ 21 Apr-Jun 2026 Q1 FY27      206   2026-07-07  2026-08-17               29 +0.17  +0.08     50      +0.26      -0.09 4.87    +2.85      15     -2.79        8  +5.64      15       +5.52       +1.67 11.65     -5.38        -0.46       +2.68        -2.96          Auto         Power
+
+Q over 22 quarters: mean +0.05, sd 0.64, min -1.12 (Jul-Sep 2024), max +0.96 (Jan-Mar 2025), quarters with Q > 0: 13 of 22
+Nifty part: mean +0.11, sd 0.55; stock part: mean -0.07, sd 0.46
+
+== 2. persistence of good and bad quarters ==
+null: 20,000 shuffles of the order of the 22 quarters, seed 20261017; two-sided p = twice the smaller tail
+ lag   method     r  pairs null_mean     p
+   1  Pearson -0.03     21     -0.05 0.938
+   1 Spearman -0.06     21     -0.05 0.959
+   2  Pearson -0.19     20     -0.05 0.539
+   2 Spearman -0.23     20     -0.05 0.422
+   3  Pearson -0.08     19     -0.05 0.884
+   3 Spearman -0.12     19     -0.05 0.750
+   4  Pearson -0.35     18     -0.05 0.197
+   4 Spearman -0.25     18     -0.05 0.394
+classic ACF of Q (overall mean, total variance), lags 1-4: -0.03, -0.18, -0.08, -0.30 (descriptive)
+
+runs test: median of Q +0.12; sequence above (+) / below (-) the median: +----+--+-++++--+-++-+
+runs 13 (expected 12 for 11 above / 11 below; null mean 11.98), p 0.816; fewer runs than expected would mean good and bad quarters come in streaks
+transitions (21 pairs):
+next quarter  above  below
+this quarter              
+above             4      6
+below             6      5
+
+next quarter after the 5 best quarters (of the 21 with a next one; Q of the last quarter, Apr-Jun 2026, is +0.17 and has no next one):
+  Jan-Mar 2025 Q +0.96 -> Apr-Jun 2025 Q -0.56
+  Jan-Mar 2024 Q +0.88 -> Apr-Jun 2024 Q +0.53
+  Jan-Mar 2021 Q +0.82 -> Apr-Jun 2021 Q +0.06
+  Apr-Jun 2022 Q +0.75 -> Jul-Sep 2022 Q +0.03
+  Jul-Sep 2025 Q +0.67 -> Oct-Dec 2025 Q +0.18
+next quarter after the 5 worst quarters:
+  Jul-Sep 2024 Q -1.12 -> Oct-Dec 2024 Q -0.79
+  Jul-Sep 2021 Q -0.84 -> Oct-Dec 2021 Q -0.64
+  Jan-Mar 2022 Q -0.83 -> Apr-Jun 2022 Q +0.75
+  Oct-Dec 2024 Q -0.79 -> Jan-Mar 2025 Q +0.96
+  Oct-Dec 2021 Q -0.64 -> Jan-Mar 2022 Q -0.83
+average next Q after best 5: +0.05; after worst 5: -0.11; difference +0.16 (null mean -0.08), p 0.561
+
+stock part (Q minus Nifty part), lag 1:
+  lag 1 Pearson: r +0.34, pairs 21, null mean -0.047, p 0.070
+  lag 1 Spearman: r +0.27, pairs 21, null mean -0.047, p 0.147
+  next stock part after the 5 best stock-part quarters +0.13, after the 5 worst -0.34, difference +0.47 (null mean -0.06), p 0.061
+descriptive, Nifty part lag-1 Pearson r +0.17 (not tested)
+
+== 3. seasonality by results period ==
+         quarters  results mean_Q median_Q  q_pos nifty_part stock_part  min_Q  max_Q
+pgroup                                                                               
+Jan-Mar         6      879  +0.35    +0.71      4      +0.28      +0.08  -0.83  +0.96
+Apr-Jun         6      916  +0.11    +0.12      4      +0.29      -0.18  -0.56  +0.75
+Jul-Sep         5      715  -0.17    +0.03      3      -0.01      -0.16  -1.12  +0.67
+Oct-Dec         5      768  -0.18    -0.16      2      -0.17      -0.01  -0.79  +0.48
+Q: between-period sum of squares 1.094, share of variance (eta^2) 0.13, null mean eta^2 0.14, upper-tail p 0.473
+stock part: between-period sum of squares 0.260, share of variance (eta^2) 0.06, null mean eta^2 0.14, upper-tail p 0.772
+
+== 4. what good and bad quarters have in common ==
+    target                                                  variable   method     r  n null_mean      p
+         Q           (a) Nifty 50 three-day sum on the same sessions  Pearson +0.71 22     +0.00 <0.001
+         Q           (a) Nifty 50 three-day sum on the same sessions Spearman +0.74 22     +0.00 <0.001
+         Q  (b) Nifty 50 return, 20 sessions before the first cutoff  Pearson -0.10 22     -0.00  0.655
+         Q  (b) Nifty 50 return, 20 sessions before the first cutoff Spearman -0.13 22     -0.00  0.561
+         Q  (b) Nifty 50 return, 60 sessions before the first cutoff  Pearson -0.16 22     -0.00  0.485
+         Q  (b) Nifty 50 return, 60 sessions before the first cutoff Spearman -0.15 22     -0.00  0.506
+         Q                         (c) India VIX at the first cutoff  Pearson -0.10 22     +0.00  0.639
+         Q                         (c) India VIX at the first cutoff Spearman -0.13 22     +0.00  0.541
+         Q (c) India VIX change, 20 sessions before the first cutoff  Pearson +0.03 22     +0.00  0.921
+         Q (c) India VIX change, 20 sessions before the first cutoff Spearman -0.19 22     +0.00  0.405
+         Q                       (d) Nifty 50 return over the season  Pearson +0.72 22     +0.00 <0.001
+         Q                       (d) Nifty 50 return over the season Spearman +0.66 22     +0.00  0.001
+         Q              (e) cross-sectional sd of the three-day sums  Pearson -0.32 22     -0.00  0.147
+         Q              (e) cross-sectional sd of the three-day sums Spearman -0.33 22     -0.00  0.125
+         Q                      (f) number of results in the quarter  Pearson -0.03 22     +0.00  0.897
+         Q                      (f) number of results in the quarter Spearman +0.18 22     -0.00  0.417
+stock part           (a) Nifty 50 three-day sum on the same sessions  Pearson -0.21 22     +0.00  0.346
+stock part           (a) Nifty 50 three-day sum on the same sessions Spearman -0.04 22     +0.00  0.859
+stock part  (b) Nifty 50 return, 20 sessions before the first cutoff  Pearson +0.23 22     -0.00  0.299
+stock part  (b) Nifty 50 return, 20 sessions before the first cutoff Spearman +0.30 22     -0.00  0.175
+stock part  (b) Nifty 50 return, 60 sessions before the first cutoff  Pearson +0.11 22     +0.00  0.629
+stock part  (b) Nifty 50 return, 60 sessions before the first cutoff Spearman +0.07 22     +0.00  0.753
+stock part                         (c) India VIX at the first cutoff  Pearson -0.37 22     +0.00  0.094
+stock part                         (c) India VIX at the first cutoff Spearman -0.40 22     +0.00  0.061
+stock part (c) India VIX change, 20 sessions before the first cutoff  Pearson +0.13 22     +0.00  0.570
+stock part (c) India VIX change, 20 sessions before the first cutoff Spearman -0.02 22     +0.00  0.919
+stock part                       (d) Nifty 50 return over the season  Pearson -0.01 22     +0.00  0.955
+stock part                       (d) Nifty 50 return over the season Spearman +0.05 22     +0.00  0.828
+stock part              (e) cross-sectional sd of the three-day sums  Pearson -0.08 22     +0.00  0.702
+stock part              (e) cross-sectional sd of the three-day sums Spearman -0.15 22     +0.00  0.506
+stock part                      (f) number of results in the quarter  Pearson +0.15 22     +0.00  0.520
+stock part                      (f) number of results in the quarter Spearman +0.24 22     +0.00  0.264
+
+R^2 of Q on (a) the Nifty part alone: 0.50 (r +0.71); Q = -0.05 + 0.82 x Nifty part; residual sd 0.46 vs sd of Q 0.64
+variance of Q 0.411 = Nifty part 0.305 (74%) + stock part 0.214 (52%) + 2 x covariance -0.107 (-26%)
+Pearson correlations among the quarter variables (descriptive):
+             nifty_part nifty_pre20 nifty_pre60    vix vix_chg20 nifty_season     sd results    avg stock_part
+nifty_part        +1.00       -0.31       -0.28  +0.19     -0.08        +0.84  -0.30   -0.16  +0.71      -0.21
+nifty_pre20       -0.31       +1.00       +0.41  -0.35     -0.63        -0.35  +0.02   -0.10  -0.10      +0.23
+nifty_pre60       -0.28       +0.41       +1.00  -0.46     -0.27        -0.23  +0.11   -0.28  -0.16      +0.11
+vix               +0.19       -0.35       -0.46  +1.00     +0.36        +0.28  +0.28   -0.12  -0.10      -0.37
+vix_chg20         -0.08       -0.63       -0.27  +0.36     +1.00        +0.32  -0.15   +0.23  +0.03      +0.13
+nifty_season      +0.84       -0.35       -0.23  +0.28     +0.32        +1.00  -0.41   -0.14  +0.72      -0.01
+sd                -0.30       +0.02       +0.11  +0.28     -0.15        -0.41  +1.00   -0.03  -0.32      -0.08
+results           -0.16       -0.10       -0.28  -0.12     +0.23        -0.14  -0.03   +1.00  -0.03      +0.15
+avg               +0.71       -0.10       -0.16  -0.10     +0.03        +0.72  -0.32   -0.03  +1.00      +0.54
+stock_part        -0.21       +0.23       +0.11  -0.37     +0.13        -0.01  -0.08   +0.15  +0.54      +1.00
+
+== 5. best vs worst sector ==
+null: 2,000 within-quarter shuffles of the three-day sums across the sector labels (cell sizes kept, Q unchanged), best / worst recomputed among sectors with >= 4 results; seed 20261022
+                                                    test observed null_mean null_lo null_hi     p
+                     Best sector avg vs worst sector avg    +0.03     +0.15   -0.27   +0.52 0.529
+Best sector excess vs worst sector excess (both minus Q)    -0.21     -0.09   -0.50   +0.33 0.560
+                            Q vs best-minus-worst spread    -0.14     -0.16   -0.54   +0.22 0.942
+                                    Q vs best sector avg    +0.25     +0.38   -0.02   +0.68 0.454
+                                   Q vs worst sector avg    +0.67     +0.56   +0.25   +0.80 0.441
+        Average best-minus-worst spread over 22 quarters    +6.54     +6.67   +5.96   +7.43 0.751
+
+average over the 22 quarters: best sector +3.62 (null +3.41), worst sector -2.92 (null -3.26), Q +0.05
+best sector excess over Q: avg +3.57; worst: -2.96
+Spearman, descriptive: best vs worst -0.02, best excess vs worst excess -0.31, Q vs spread -0.11
+
+== all tests, Holm within each section ==
+ section                                                                                                   test  value  n null_mean      p  holm
+       2                                                                   Autocorrelation of Q, lag 1, Pearson  -0.03 21     -0.05  0.938 1.000
+       2                                                                  Autocorrelation of Q, lag 1, Spearman  -0.06 21     -0.05  0.959 1.000
+       2                                                                   Autocorrelation of Q, lag 2, Pearson  -0.19 20     -0.05  0.539 1.000
+       2                                                                  Autocorrelation of Q, lag 2, Spearman  -0.23 20     -0.05  0.422 1.000
+       2                                                                   Autocorrelation of Q, lag 3, Pearson  -0.08 19     -0.05  0.884 1.000
+       2                                                                  Autocorrelation of Q, lag 3, Spearman  -0.12 19     -0.05  0.750 1.000
+       2                                                                   Autocorrelation of Q, lag 4, Pearson  -0.35 18     -0.05  0.197 1.000
+       2                                                                  Autocorrelation of Q, lag 4, Spearman  -0.25 18     -0.05  0.394 1.000
+       2                                                                     Runs of Q above / below its median +13.00 22    +11.98  0.816 1.000
+       2                                       Next-quarter Q after the 5 best minus after the 5 worst quarters  +0.16 21     -0.08  0.561 1.000
+       2                                                      Autocorrelation of the stock part, lag 1, Pearson  +0.34 21     -0.05  0.070 0.845
+       2                                                     Autocorrelation of the stock part, lag 1, Spearman  +0.27 21     -0.05  0.147 1.000
+       2                         Next-quarter stock part after the 5 best minus the 5 worst stock-part quarters  +0.47 21     -0.06  0.061 0.799
+       3                                                         Seasonality of Q by results period (4 periods)  +0.13 22     +0.14  0.473 0.947
+       3                                                Seasonality of stock part by results period (4 periods)  +0.06 22     +0.14  0.772 0.947
+       4                    Q (all-results average) vs (a) Nifty 50 three-day sum on the same sessions, Pearson  +0.71 22     +0.00 <0.001 0.006
+       4                   Q (all-results average) vs (a) Nifty 50 three-day sum on the same sessions, Spearman  +0.74 22     +0.00 <0.001 0.006
+       4           Q (all-results average) vs (b) Nifty 50 return, 20 sessions before the first cutoff, Pearson  -0.10 22     -0.00  0.655 1.000
+       4          Q (all-results average) vs (b) Nifty 50 return, 20 sessions before the first cutoff, Spearman  -0.13 22     -0.00  0.561 1.000
+       4           Q (all-results average) vs (b) Nifty 50 return, 60 sessions before the first cutoff, Pearson  -0.16 22     -0.00  0.485 1.000
+       4          Q (all-results average) vs (b) Nifty 50 return, 60 sessions before the first cutoff, Spearman  -0.15 22     -0.00  0.506 1.000
+       4                                  Q (all-results average) vs (c) India VIX at the first cutoff, Pearson  -0.10 22     +0.00  0.639 1.000
+       4                                 Q (all-results average) vs (c) India VIX at the first cutoff, Spearman  -0.13 22     +0.00  0.541 1.000
+       4          Q (all-results average) vs (c) India VIX change, 20 sessions before the first cutoff, Pearson  +0.03 22     +0.00  0.921 1.000
+       4         Q (all-results average) vs (c) India VIX change, 20 sessions before the first cutoff, Spearman  -0.19 22     +0.00  0.405 1.000
+       4                                Q (all-results average) vs (d) Nifty 50 return over the season, Pearson  +0.72 22     +0.00 <0.001 0.009
+       4                               Q (all-results average) vs (d) Nifty 50 return over the season, Spearman  +0.66 22     +0.00  0.001 0.043
+       4                       Q (all-results average) vs (e) cross-sectional sd of the three-day sums, Pearson  -0.32 22     -0.00  0.147 1.000
+       4                      Q (all-results average) vs (e) cross-sectional sd of the three-day sums, Spearman  -0.33 22     -0.00  0.125 1.000
+       4                               Q (all-results average) vs (f) number of results in the quarter, Pearson  -0.03 22     +0.00  0.897 1.000
+       4                              Q (all-results average) vs (f) number of results in the quarter, Spearman  +0.18 22     -0.00  0.417 1.000
+       4            stock part (Q minus Nifty part) vs (a) Nifty 50 three-day sum on the same sessions, Pearson  -0.21 22     +0.00  0.346 1.000
+       4           stock part (Q minus Nifty part) vs (a) Nifty 50 three-day sum on the same sessions, Spearman  -0.04 22     +0.00  0.859 1.000
+       4   stock part (Q minus Nifty part) vs (b) Nifty 50 return, 20 sessions before the first cutoff, Pearson  +0.23 22     -0.00  0.299 1.000
+       4  stock part (Q minus Nifty part) vs (b) Nifty 50 return, 20 sessions before the first cutoff, Spearman  +0.30 22     -0.00  0.175 1.000
+       4   stock part (Q minus Nifty part) vs (b) Nifty 50 return, 60 sessions before the first cutoff, Pearson  +0.11 22     +0.00  0.629 1.000
+       4  stock part (Q minus Nifty part) vs (b) Nifty 50 return, 60 sessions before the first cutoff, Spearman  +0.07 22     +0.00  0.753 1.000
+       4                          stock part (Q minus Nifty part) vs (c) India VIX at the first cutoff, Pearson  -0.37 22     +0.00  0.094 1.000
+       4                         stock part (Q minus Nifty part) vs (c) India VIX at the first cutoff, Spearman  -0.40 22     +0.00  0.061 1.000
+       4  stock part (Q minus Nifty part) vs (c) India VIX change, 20 sessions before the first cutoff, Pearson  +0.13 22     +0.00  0.570 1.000
+       4 stock part (Q minus Nifty part) vs (c) India VIX change, 20 sessions before the first cutoff, Spearman  -0.02 22     +0.00  0.919 1.000
+       4                        stock part (Q minus Nifty part) vs (d) Nifty 50 return over the season, Pearson  -0.01 22     +0.00  0.955 1.000
+       4                       stock part (Q minus Nifty part) vs (d) Nifty 50 return over the season, Spearman  +0.05 22     +0.00  0.828 1.000
+       4               stock part (Q minus Nifty part) vs (e) cross-sectional sd of the three-day sums, Pearson  -0.08 22     +0.00  0.702 1.000
+       4              stock part (Q minus Nifty part) vs (e) cross-sectional sd of the three-day sums, Spearman  -0.15 22     +0.00  0.506 1.000
+       4                       stock part (Q minus Nifty part) vs (f) number of results in the quarter, Pearson  +0.15 22     +0.00  0.520 1.000
+       4                      stock part (Q minus Nifty part) vs (f) number of results in the quarter, Spearman  +0.24 22     +0.00  0.264 1.000
+       5                                                                    Best sector avg vs worst sector avg  +0.03 22     +0.15  0.529 1.000
+       5                                               Best sector excess vs worst sector excess (both minus Q)  -0.21 22     -0.09  0.560 1.000
+       5                                                                           Q vs best-minus-worst spread  -0.14 22     -0.16  0.942 1.000
+       5                                                                                   Q vs best sector avg  +0.25 22     +0.38  0.454 1.000
+       5                                                                                  Q vs worst sector avg  +0.67 22     +0.56  0.441 1.000
+       5                                                       Average best-minus-worst spread over 22 quarters  +6.54 22     +6.67  0.751 1.000
+section 2 (13 tests): p < 0.05 before Holm: 0; after Holm: 0
+section 3 (2 tests): p < 0.05 before Holm: 0; after Holm: 0
+section 4 (32 tests): p < 0.05 before Holm: 4; after Holm: 4 -> Q (all-results average) vs (a) Nifty 50 three-day sum on the same sessions, Pearson; Q (all-results average) vs (a) Nifty 50 three-day sum on the same sessions, Spearman; Q (all-results average) vs (d) Nifty 50 return over the season, Pearson; Q (all-results average) vs (d) Nifty 50 return over the season, Spearman
+section 5 (6 tests): p < 0.05 before Holm: 0; after Holm: 0

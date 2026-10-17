@@ -1,0 +1,354 @@
+== sector_stock_level.py ==
+B = 2000 shuffles per null; seeds {'sector': 20261017, 'index': 20261018, 'stock_within': 20261019, 'stock_across': 20261020, 'quint': 20261021, 'last4': 20261022}
+F&O results 3278, stocks 206, quarters 22; three_day matches nifty_sector_3day/results_3day.csv; 18 NSE sectors, 15 custom sectors
+Q_t (all F&O average, %): Q4 FY21 +0.82, Q1 FY22 +0.06, Q2 FY22 -0.84, Q3 FY22 -0.64, Q4 FY22 -0.83, Q1 FY23 +0.75, Q2 FY23 +0.03, Q3 FY23 -0.16, Q4 FY23 +0.61, Q1 FY24 -0.30, Q2 FY24 +0.41, Q3 FY24 +0.48, Q4 FY24 +0.88, Q1 FY25 +0.53, Q2 FY25 -1.12, Q3 FY25 -0.79, Q4 FY25 +0.96, Q1 FY26 -0.56, Q2 FY26 +0.67, Q3 FY26 +0.18, Q4 FY26 -0.31, Q1 FY27 +0.17
+NSE sectors: best / worst sector of all 22 quarters reproduce the earlier quarter-leaders table
+custom sectors: best / worst sector of all 22 quarters reproduce the earlier quarter-leaders table
+
+== 1. Sector persistence (sector excess e(s,t) = sector average - all-F&O average Q_t)
+NSE sectors: lag 1: mean Spearman over 21 quarter pairs +0.02 (null mean -0.00, p 0.785); pairs positive 11 of 21; sectors per pair 8-15
+NSE sectors: lag 4: mean Spearman over 18 quarter pairs +0.09 (null mean -0.00, p 0.222); pairs positive 8 of 18; sectors per pair 9-15
+NSE sectors: weighted slope of e(s,t+1) on e(s,t): +0.012 over 277 sector-pairs (null mean +0.001, p 0.860); lag 4: +0.094 over 234 (null mean -0.001, p 0.129)
+custom sectors: lag 1: mean Spearman over 21 quarter pairs +0.05 (null mean +0.00, p 0.431); pairs positive 12 of 21; sectors per pair 10-15
+custom sectors: lag 4: mean Spearman over 18 quarter pairs -0.06 (null mean -0.00, p 0.393); pairs positive 8 of 18; sectors per pair 11-15
+custom sectors: weighted slope of e(s,t+1) on e(s,t): +0.001 over 280 sector-pairs (null mean +0.001, p 0.996); lag 4: -0.033 over 236 (null mean -0.002, p 0.605)
+
+== 2. Best and worst sector of a quarter, next quarter
+NSE: best sector next quarter: 21 transitions, rank percentile 47.2 (100 = best; null 49.8, p 0.722), excess +0.05 (null -0.01, p 0.899)
+NSE: worst sector next quarter: 21 transitions, rank percentile 52.3 (null 49.9, p 0.749), excess +0.53 (null -0.00, p 0.243)
+NSE: counts best->best 2 (expected 1.85), best->worst 1 (1.90), worst->worst 0 (1.87), worst->best 3 (1.89)
+NSE (descriptive): best or worst slots (of 44) taken by a sector with only 4-5 results that quarter: 16 (shuffle null mean 20.9; small sectors have noisier averages)
+custom: best sector next quarter: 21 transitions, rank percentile 48.5 (100 = best; null 50.0, p 0.827), excess -0.33 (null -0.01, p 0.426)
+custom: worst sector next quarter: 21 transitions, rank percentile 44.2 (null 50.1, p 0.405), excess -0.12 (null +0.01, p 0.751)
+custom: counts best->best 3 (expected 1.81), best->worst 1 (1.79), worst->worst 2 (1.85), worst->best 3 (1.86)
+custom (descriptive): best or worst slots (of 44) taken by a sector with only 4-5 results that quarter: 9 (shuffle null mean 11.6; small sectors have noisier averages)
+
+--- s_table_transitions.md ---
+# Best and worst sector of each quarter, and where they ranked the next quarter
+
+## NSE index sectors
+
+| Results for | Quarter | All F&O avg | Best sector (avg, n) | Its rank next quarter | Its avg next quarter | Worst sector (avg, n) | Its rank next quarter | Its avg next quarter | All F&O avg next quarter |
+|---|---|---:|---|---:|---:|---|---:|---:|---:|
+| Jan-Mar 2021 | Q4 FY21 | +0.82% | Auto +4.19% (10) | 11 of 12 | -1.23% | IT -1.83% (6) | 1 of 12 | +4.54% | +0.06% |
+| Apr-Jun 2021 | Q1 FY22 | +0.06% | IT +4.54% (8) | 2 of 12 | +1.12% | Healthcare -2.49% (11) | 4 of 12 | -0.24% | -0.84% |
+| Jul-Sep 2021 | Q2 FY22 | -0.84% | Auto +1.32% (10) | 3 of 13 | +1.07% | Fin services -2.42% (31) | 6 of 13 | -0.23% | -0.64% |
+| Oct-Dec 2021 | Q3 FY22 | -0.64% | Cons services +2.50% (4) | 1 of 13 | +7.43% | Constr mat -3.04% (4) | 12 of 13 | -2.94% | -0.83% |
+| Jan-Mar 2022 | Q4 FY22 | -0.83% | Cons services +7.43% (4) | 3 of 13 | +2.02% | Oil & gas -3.17% (8) | 11 of 13 | -0.99% | +0.75% |
+| Apr-Jun 2022 | Q1 FY23 | +0.75% | Cap goods +2.54% (9) | 10 of 13 | -0.90% | Cons dur -1.45% (6) | 12 of 13 | -1.34% | +0.03% |
+| Jul-Sep 2022 | Q2 FY23 | +0.03% | Metals +1.49% (9) | 11 of 13 | -1.55% | Cons services -2.73% (4) | 4 of 13 | +0.92% | -0.16% |
+| Oct-Dec 2022 | Q3 FY23 | -0.16% | Services +3.29% (4) | 13 of 13 | -2.66% | Cons dur -4.98% (6) | 2 of 13 | +3.18% | +0.61% |
+| Jan-Mar 2023 | Q4 FY23 | +0.61% | Cap goods +3.30% (9) | 5 of 13 | +0.55% | Services -2.66% (4) | 12 of 13 | -2.29% | -0.30% |
+| Apr-Jun 2023 | Q1 FY24 | -0.30% | FMCG +1.26% (9) | 8 of 13 | +0.21% | Cons dur -3.61% (6) | 11 of 13 | -1.63% | +0.41% |
+| Jul-Sep 2023 | Q2 FY24 | +0.41% | Services +3.24% (4) | 5 of 13 | +2.29% | IT -1.75% (9) | 2 of 13 | +4.33% | +0.48% |
+| Oct-Dec 2023 | Q3 FY24 | +0.48% | Cons services +4.45% (4) | 4 of 13 | +1.39% | Chemicals -2.62% (4) | 10 of 13 | -0.19% | +0.88% |
+| Jan-Mar 2024 | Q4 FY24 | +0.88% | Cap goods +4.99% (9) | 3 of 13 | +1.81% | IT -2.11% (10) | 5 of 13 | +1.73% | +0.53% |
+| Apr-Jun 2024 | Q1 FY25 | +0.53% | Cons services +7.79% (4) | 1 of 13 | +1.51% | Constr mat -3.55% (4) | 6 of 13 | -0.16% | -1.12% |
+| Jul-Sep 2024 | Q2 FY25 | -1.12% | Cons services +1.51% (4) | 14 of 15 | -4.22% | Cons dur -5.71% (6) | 11 of 15 | -1.27% | -0.79% |
+| Oct-Dec 2024 | Q3 FY25 | -0.79% | Chemicals +3.70% (5) | 10 of 15 | -0.22% | Power -4.45% (7) | 13 of 15 | -0.62% | +0.96% |
+| Jan-Mar 2025 | Q4 FY25 | +0.96% | IT +4.33% (12) | 14 of 15 | -1.89% | Cons services -1.87% (7) | 1 of 15 | +3.03% | -0.56% |
+| Apr-Jun 2025 | Q1 FY26 | -0.56% | Cons services +3.03% (7) | 12 of 15 | -1.03% | Cons dur -2.81% (10) | 9 of 15 | -0.37% | +0.67% |
+| Jul-Sep 2025 | Q2 FY26 | +0.67% | FMCG +2.40% (12) | 13 of 15 | -2.12% | Services -1.39% (5) | 1 of 15 | +5.66% | +0.18% |
+| Oct-Dec 2025 | Q3 FY26 | +0.18% | Services +5.66% (5) | 7 of 15 | +0.26% | Power -3.35% (7) | 10 of 15 | -0.49% | -0.31% |
+| Jan-Mar 2026 | Q4 FY26 | -0.31% | Chemicals +3.83% (5) | 14 of 15 | -2.53% | IT -3.36% (12) | 4 of 15 | +0.75% | +0.17% |
+| Apr-Jun 2026 | Q1 FY27 | +0.17% | Auto +2.85% (15) | - | - | Power -2.79% (8) | - | - | - |
+
+Best and worst sector: highest and lowest average three-day sum among sectors with at least 4 results that quarter (n = number of results). Rank next quarter: among the sectors with at least 4 results next quarter (1 = best); "-" when the sector has fewer than 4 results next quarter.
+
+Summary over 21 best and 21 worst transitions (expected under 2,000 within-quarter shuffles of the results across sector labels in brackets):
+
+| | Best sector of quarter t | Worst sector of quarter t |
+|---|---:|---:|
+| Mean rank percentile next quarter (100 = best, 0 = worst) | 47.2 (49.8) | 52.3 (49.9) |
+| Mean excess over all F&O next quarter | +0.05% (-0.01%) | +0.53% (-0.00%) |
+| Best again next quarter | 2 (1.85) | 3 (1.89) |
+| Worst next quarter | 1 (1.90) | 0 (1.87) |
+
+Of the 44 best and worst slots, 16 go to a sector with only 4-5 results that quarter (shuffle null 20.9). Averages of few results swing more, which is why small sectors such as Cons services (4-9 results) top and tail the table so often; the counts above are therefore compared with the shuffle null, not with 1 in K.
+
+Short names: Fin services = Financial Services; Healthcare = Healthcare; Cap goods = Capital Goods; Auto = Automobile and Auto Components; IT = Information Technology; FMCG = Fast Moving Consumer Goods; Metals = Metals & Mining; Oil & gas = Oil Gas & Consumable Fuels; Cons dur = Consumer Durables; Cons services = Consumer Services; Chemicals = Chemicals; Power = Power; Services = Services; Constr mat = Construction Materials; Realty = Realty; Telecom = Telecommunication; Construction = Construction; Textiles = Textiles.
+
+## Custom 15 sectors (summary only; per-quarter rows in s_transitions_custom.csv)
+
+Summary over 21 best and 21 worst transitions (expected under 2,000 within-quarter shuffles of the results across sector labels in brackets):
+
+| | Best sector of quarter t | Worst sector of quarter t |
+|---|---:|---:|
+| Mean rank percentile next quarter (100 = best, 0 = worst) | 48.5 (50.0) | 44.2 (50.1) |
+| Mean excess over all F&O next quarter | -0.33% (-0.01%) | -0.12% (+0.01%) |
+| Best again next quarter | 3 (1.81) | 3 (1.86) |
+| Worst next quarter | 1 (1.79) | 2 (1.85) |
+
+Of the 44 best and worst slots, 9 go to a sector with only 4-5 results that quarter (shuffle null 11.6). Averages of few results swing more, which is why small sectors such as Cons services (4-9 results) top and tail the table so often; the counts above are therefore compared with the shuffle null, not with 1 in K.
+
+== 3. Which sectors are best and worst together (correlation of sector excess across quarters)
+NSE: 13 sectors with >= 4 results in >= 18 of 22 quarters: Fin services (22), Healthcare (22), Cap goods (21), Auto (22), IT (22), FMCG (22), Metals (22), Oil & gas (22), Cons dur (22), Cons services (21), Chemicals (21), Services (21), Constr mat (20)
+NSE: 78 pairs; mean r -0.067 (null -0.066); mean r^2 0.065 (null 0.057, p 0.283); null max |r|: median 0.58, 95th pct 0.71
+custom: 13 sectors with >= 4 results in >= 18 of 22 quarters: NBFC/Fin (22), Banks (22), Pharma (22), Auto (22), Cap goods (22), IT (22), FMCG (22), Services (22), Metals (22), Cons dur (20), Oil & gas (22), Cement (21), Chem/agro (21)
+custom: 78 pairs; mean r -0.071 (null -0.073); mean r^2 0.053 (null 0.057, p 0.645); null max |r|: median 0.58, 95th pct 0.71
+NSE most negative pairs: Cons services / Constr mat -0.49 (n 20, pair p 0.027, familywise p 0.938); Auto / IT -0.48 (n 22, pair p 0.029, familywise p 0.952); Fin services / Cons services -0.48 (n 21, pair p 0.059, familywise p 0.966); IT / FMCG -0.45 (n 22, pair p 0.053, familywise p 0.991); FMCG / Services -0.44 (n 21, pair p 0.045, familywise p 0.995)
+NSE most positive pairs: Fin services / Metals +0.52 (n 22, pair p 0.027, familywise p 0.841); FMCG / Chemicals +0.43 (n 21, pair p 0.055, familywise p 0.998); Auto / FMCG +0.43 (n 22, pair p 0.070, familywise p 0.998); FMCG / Oil & gas +0.34 (n 22, pair p 0.144, familywise p 1.000); Healthcare / Cons services +0.34 (n 21, pair p 0.144, familywise p 1.000)
+custom most negative pairs: Auto / IT -0.47 (n 22, pair p 0.038, familywise p 0.974); NBFC/Fin / Cons dur -0.39 (n 20, pair p 0.134, familywise p 1.000); Cap goods / Chem/agro -0.39 (n 21, pair p 0.100, familywise p 1.000); Pharma / Cap goods -0.38 (n 22, pair p 0.118, familywise p 1.000); Metals / Cons dur -0.37 (n 20, pair p 0.119, familywise p 1.000)
+custom most positive pairs: Cap goods / IT +0.64 (n 22, pair p 0.003, familywise p 0.207); Banks / Metals +0.57 (n 22, pair p 0.009, familywise p 0.573); NBFC/Fin / Cement +0.39 (n 21, pair p 0.103, familywise p 1.000); Auto / Cons dur +0.31 (n 20, pair p 0.200, familywise p 1.000); FMCG / Chem/agro +0.30 (n 21, pair p 0.206, familywise p 1.000)
+
+--- s_table_sector_corr.md ---
+# Which sectors are best and worst together
+
+Pearson correlation, across quarters, of sector excess e(s,t) (sector average three-day sum minus the all-F&O average of that quarter), for sectors with at least 4 results in at least 18 of the 22 quarters. Each pair uses the quarters where both sectors have at least 4 results.
+
+## NSE index sectors
+
+| | Fin services | Healthcare | Cap goods | Auto | IT | FMCG | Metals | Oil & gas | Cons dur | Cons services | Chemicals | Services | Constr mat |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Fin services | - | -0.26 | -0.31 | -0.43 | -0.22 | -0.15 | +0.52 | -0.00 | -0.39 | -0.48 | +0.07 | -0.09 | +0.19 |
+| Healthcare | -0.26 | - | -0.24 | +0.10 | -0.29 | -0.01 | -0.25 | -0.07 | -0.25 | +0.34 | -0.01 | +0.18 | +0.10 |
+| Cap goods | -0.31 | -0.24 | - | +0.08 | +0.31 | -0.11 | -0.25 | -0.29 | +0.15 | +0.23 | -0.42 | -0.43 | -0.08 |
+| Auto | -0.43 | +0.10 | +0.08 | - | -0.48 | +0.43 | -0.22 | -0.13 | +0.15 | +0.23 | +0.08 | +0.02 | -0.26 |
+| IT | -0.22 | -0.29 | +0.31 | -0.48 | - | -0.45 | -0.00 | -0.03 | +0.12 | -0.02 | -0.35 | +0.07 | +0.04 |
+| FMCG | -0.15 | -0.01 | -0.11 | +0.43 | -0.45 | - | -0.39 | +0.34 | +0.04 | -0.18 | +0.43 | -0.44 | +0.09 |
+| Metals | +0.52 | -0.25 | -0.25 | -0.22 | -0.00 | -0.39 | - | -0.26 | -0.20 | -0.37 | -0.13 | -0.03 | +0.15 |
+| Oil & gas | -0.00 | -0.07 | -0.29 | -0.13 | -0.03 | +0.34 | -0.26 | - | -0.18 | -0.33 | +0.24 | -0.06 | -0.03 |
+| Cons dur | -0.39 | -0.25 | +0.15 | +0.15 | +0.12 | +0.04 | -0.20 | -0.18 | - | +0.26 | +0.05 | +0.01 | -0.24 |
+| Cons services | -0.48 | +0.34 | +0.23 | +0.23 | -0.02 | -0.18 | -0.37 | -0.33 | +0.26 | - | -0.41 | +0.10 | -0.49 |
+| Chemicals | +0.07 | -0.01 | -0.42 | +0.08 | -0.35 | +0.43 | -0.13 | +0.24 | +0.05 | -0.41 | - | +0.17 | +0.25 |
+| Services | -0.09 | +0.18 | -0.43 | +0.02 | +0.07 | -0.44 | -0.03 | -0.06 | +0.01 | +0.10 | +0.17 | - | -0.07 |
+| Constr mat | +0.19 | +0.10 | -0.08 | -0.26 | +0.04 | +0.09 | +0.15 | -0.03 | -0.24 | -0.49 | +0.25 | -0.07 | - |
+
+Mean r over the 78 pairs -0.07 (shuffle null -0.07: the excesses of all sectors add up to zero each quarter, so chance alone gives slightly negative r); mean r^2 0.065 (null 0.057, p 0.283).
+
+| | Pair | r | Quarters | Pair p | Familywise p |
+|---|---|---:|---:|---:|---:|
+| Most negative | Cons services / Constr mat | -0.49 | 20 | 0.027 | 0.938 |
+| Most negative | Auto / IT | -0.48 | 22 | 0.029 | 0.952 |
+| Most negative | Fin services / Cons services | -0.48 | 21 | 0.059 | 0.966 |
+| Most negative | IT / FMCG | -0.45 | 22 | 0.053 | 0.991 |
+| Most negative | FMCG / Services | -0.44 | 21 | 0.045 | 0.995 |
+| Most positive | Fin services / Metals | +0.52 | 22 | 0.027 | 0.841 |
+| Most positive | FMCG / Chemicals | +0.43 | 21 | 0.055 | 0.998 |
+| Most positive | Auto / FMCG | +0.43 | 22 | 0.070 | 0.998 |
+| Most positive | FMCG / Oil & gas | +0.34 | 22 | 0.144 | 1.000 |
+| Most positive | Healthcare / Cons services | +0.34 | 21 | 0.144 | 1.000 |
+
+Pair p: share of 2,000 within-quarter shuffles of the results across sector labels with |r| of that pair at least the observed |r|. Familywise p: share of shuffles whose largest |r| over all 78 pairs reaches the observed |r| (corrects for having looked at every pair). Under the null the largest |r| has median 0.58 and 95th percentile 0.71.
+
+Short names: Fin services = Financial Services; Healthcare = Healthcare; Cap goods = Capital Goods; Auto = Automobile and Auto Components; IT = Information Technology; FMCG = Fast Moving Consumer Goods; Metals = Metals & Mining; Oil & gas = Oil Gas & Consumable Fuels; Cons dur = Consumer Durables; Cons services = Consumer Services; Chemicals = Chemicals; Services = Services; Constr mat = Construction Materials.
+
+## Custom 15 sectors
+
+| | NBFC/Fin | Banks | Pharma | Auto | Cap goods | IT | FMCG | Services | Metals | Cons dur | Oil & gas | Cement | Chem/agro |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| NBFC/Fin | - | -0.31 | -0.31 | -0.13 | -0.08 | -0.30 | +0.03 | -0.13 | -0.13 | -0.39 | -0.02 | +0.39 | +0.10 |
+| Banks | -0.31 | - | -0.01 | -0.34 | +0.01 | -0.01 | -0.27 | +0.01 | +0.57 | -0.35 | -0.06 | -0.32 | -0.04 |
+| Pharma | -0.31 | -0.01 | - | +0.11 | -0.38 | -0.25 | -0.15 | +0.29 | -0.17 | +0.28 | -0.11 | +0.04 | -0.01 |
+| Auto | -0.13 | -0.34 | +0.11 | - | -0.37 | -0.47 | +0.30 | -0.10 | -0.10 | +0.31 | -0.24 | -0.10 | +0.07 |
+| Cap goods | -0.08 | +0.01 | -0.38 | -0.37 | - | +0.64 | -0.11 | -0.22 | +0.18 | -0.20 | +0.09 | +0.09 | -0.39 |
+| IT | -0.30 | -0.01 | -0.25 | -0.47 | +0.64 | - | -0.31 | +0.05 | -0.03 | -0.04 | +0.07 | +0.20 | -0.35 |
+| FMCG | +0.03 | -0.27 | -0.15 | +0.30 | -0.11 | -0.31 | - | -0.31 | -0.21 | -0.03 | +0.12 | -0.12 | +0.30 |
+| Services | -0.13 | +0.01 | +0.29 | -0.10 | -0.22 | +0.05 | -0.31 | - | -0.19 | +0.01 | -0.04 | -0.18 | -0.17 |
+| Metals | -0.13 | +0.57 | -0.17 | -0.10 | +0.18 | -0.03 | -0.21 | -0.19 | - | -0.37 | -0.15 | -0.02 | -0.05 |
+| Cons dur | -0.39 | -0.35 | +0.28 | +0.31 | -0.20 | -0.04 | -0.03 | +0.01 | -0.37 | - | -0.23 | -0.16 | -0.20 |
+| Oil & gas | -0.02 | -0.06 | -0.11 | -0.24 | +0.09 | +0.07 | +0.12 | -0.04 | -0.15 | -0.23 | - | -0.11 | +0.16 |
+| Cement | +0.39 | -0.32 | +0.04 | -0.10 | +0.09 | +0.20 | -0.12 | -0.18 | -0.02 | -0.16 | -0.11 | - | -0.15 |
+| Chem/agro | +0.10 | -0.04 | -0.01 | +0.07 | -0.39 | -0.35 | +0.30 | -0.17 | -0.05 | -0.20 | +0.16 | -0.15 | - |
+
+Mean r -0.07 (null -0.07); mean r^2 0.053 (null 0.057, p 0.645). Null max |r|: median 0.58, 95th percentile 0.71.
+
+| | Pair | r | Quarters | Pair p | Familywise p |
+|---|---|---:|---:|---:|---:|
+| Most negative | Auto / IT | -0.47 | 22 | 0.038 | 0.974 |
+| Most negative | NBFC/Fin / Cons dur | -0.39 | 20 | 0.134 | 1.000 |
+| Most negative | Cap goods / Chem/agro | -0.39 | 21 | 0.100 | 1.000 |
+| Most positive | Cap goods / IT | +0.64 | 22 | 0.003 | 0.207 |
+| Most positive | Banks / Metals | +0.57 | 22 | 0.009 | 0.573 |
+| Most positive | NBFC/Fin / Cement | +0.39 | 21 | 0.103 | 1.000 |
+
+Short names: NBFC/Fin = NBFC & financials; Banks = Banks; Pharma = Pharma & healthcare; Auto = Auto & auto parts; Cap goods = Capital goods & defence; IT = IT; FMCG = FMCG; Services = Services, telecom & internet; Metals = Metals & mining; Cons dur = Consumer durables & retail; Oil & gas = Oil & gas; Cement = Cement & building materials; Chem/agro = Chemicals & agro.
+
+== 4. Members of the 13 Nifty sectoral indices with F&O members: excess vs own index
+2822 member results (sectoral group), 2196 distinct results in at least one sectoral index; excess recomputed from index_close.csv matches index_member_results.csv (max abs diff 5.0e-07 pp); 2 member results without an index move (missing closes) left out
+memberships per member result: 1 index(es): 1680, 2 index(es): 406, 3 index(es): 110
+per-quarter index excesses reproduce results/nifty_sector_3day/index_excess_by_quarter.csv
+indices with >= 4 member results per quarter: 11-13
+lag 1: mean Spearman over 21 pairs -0.11 (null -0.00, p 0.127), pairs positive 8; slope -0.078 over 256 index-pairs (null -0.000, p 0.229)
+lag 4: mean Spearman over 18 pairs +0.06 (null +0.00, p 0.517), pairs positive 10; slope +0.021 over 217 index-pairs (null -0.011, p 0.683)
+
+--- s_table_persistence.md ---
+# Do sector excesses carry over to the next quarter?
+
+Sector excess = sector average three-day sum minus the all-F&O average of the quarter. Index members: the members' average excess over their own sectoral index. Spearman = rank correlation, over the sectors (indices) with at least 4 results in both quarters, of the excess in quarter t and in quarter t+1 (t+4 = the same results period a year later). Slope = pooled weighted regression of the later excess on the earlier one (weight n1*n2/(n1+n2)).
+
+## Summary
+
+Lag 1:
+
+| | Mean Spearman | Null mean | p | Pairs positive | Slope | Null mean | p |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| NSE sectors | +0.02 | -0.00 | 0.785 | 11 of 21 | +0.01 | +0.00 | 0.860 |
+| Custom sectors | +0.05 | +0.00 | 0.431 | 12 of 21 | +0.00 | +0.00 | 0.996 |
+| Sectoral index members (vs own index) | -0.11 | -0.00 | 0.127 | 8 of 21 | -0.08 | -0.00 | 0.229 |
+
+Lag 4:
+
+| | Mean Spearman | Null mean | p | Pairs positive | Slope | Null mean | p |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| NSE sectors | +0.09 | -0.00 | 0.222 | 8 of 18 | +0.09 | -0.00 | 0.129 |
+| Custom sectors | -0.06 | -0.00 | 0.393 | 8 of 18 | -0.03 | -0.00 | 0.605 |
+| Sectoral index members (vs own index) | +0.06 | +0.00 | 0.517 | 10 of 18 | +0.02 | -0.01 | 0.683 |
+
+Null: 2,000 within-quarter shuffles of the results across sector labels (every cell keeps its size); for the index members, within-quarter shuffles of the member results over the member slots (a result takes over all index memberships of the slot it lands in, so overlapping indices stay overlapping; its excess is recomputed against each of those indices on its own sessions). p two-sided, before Holm (Holm p in s_table_tests.md).
+
+## Lag 1, per quarter pair
+
+| Results for t -> t+1 | NSE sectors | Spearman | Custom sectors | Spearman | Sectoral indices | Spearman |
+|---|---:|---:|---:|---:|---:|---:|
+| Jan-Mar 2021 -> Apr-Jun 2021 | 8 | -0.33 | 10 | -0.33 | 11 | +0.01 |
+| Apr-Jun 2021 -> Jul-Sep 2021 | 11 | +0.06 | 11 | -0.02 | 11 | +0.20 |
+| Jul-Sep 2021 -> Oct-Dec 2021 | 12 | +0.12 | 13 | +0.10 | 12 | -0.04 |
+| Oct-Dec 2021 -> Jan-Mar 2022 | 13 | +0.48 | 13 | +0.27 | 12 | -0.20 |
+| Jan-Mar 2022 -> Apr-Jun 2022 | 13 | +0.27 | 13 | -0.14 | 12 | +0.32 |
+| Apr-Jun 2022 -> Jul-Sep 2022 | 13 | -0.03 | 13 | +0.47 | 12 | +0.15 |
+| Jul-Sep 2022 -> Oct-Dec 2022 | 13 | -0.33 | 13 | +0.20 | 12 | -0.24 |
+| Oct-Dec 2022 -> Jan-Mar 2023 | 13 | +0.04 | 13 | +0.02 | 12 | -0.26 |
+| Jan-Mar 2023 -> Apr-Jun 2023 | 13 | +0.42 | 13 | +0.57 | 12 | -0.36 |
+| Apr-Jun 2023 -> Jul-Sep 2023 | 13 | +0.15 | 13 | +0.29 | 12 | -0.08 |
+| Jul-Sep 2023 -> Oct-Dec 2023 | 13 | +0.23 | 13 | +0.16 | 12 | +0.17 |
+| Oct-Dec 2023 -> Jan-Mar 2024 | 13 | +0.21 | 13 | +0.02 | 12 | +0.08 |
+| Jan-Mar 2024 -> Apr-Jun 2024 | 13 | -0.03 | 13 | +0.20 | 12 | -0.15 |
+| Apr-Jun 2024 -> Jul-Sep 2024 | 13 | +0.10 | 13 | -0.15 | 12 | -0.64 |
+| Jul-Sep 2024 -> Oct-Dec 2024 | 13 | -0.04 | 13 | +0.22 | 12 | +0.44 |
+| Oct-Dec 2024 -> Jan-Mar 2025 | 15 | +0.28 | 15 | +0.04 | 13 | -0.13 |
+| Jan-Mar 2025 -> Apr-Jun 2025 | 15 | -0.32 | 15 | -0.34 | 13 | -0.42 |
+| Apr-Jun 2025 -> Jul-Sep 2025 | 15 | -0.31 | 15 | +0.00 | 13 | +0.10 |
+| Jul-Sep 2025 -> Oct-Dec 2025 | 15 | -0.39 | 15 | -0.27 | 13 | -0.58 |
+| Oct-Dec 2025 -> Jan-Mar 2026 | 15 | -0.10 | 15 | -0.12 | 13 | -0.51 |
+| Jan-Mar 2026 -> Apr-Jun 2026 | 15 | -0.14 | 15 | -0.06 | 13 | -0.16 |
+
+## Lag 4, per quarter pair
+
+| Results for t -> t+4 | NSE sectors | Spearman | Custom sectors | Spearman | Sectoral indices | Spearman |
+|---|---:|---:|---:|---:|---:|---:|
+| Jan-Mar 2021 -> Jan-Mar 2022 | 9 | +0.50 | 11 | -0.01 | 11 | +0.35 |
+| Apr-Jun 2021 -> Apr-Jun 2022 | 12 | -0.07 | 11 | -0.28 | 11 | +0.16 |
+| Jul-Sep 2021 -> Jul-Sep 2022 | 12 | -0.46 | 13 | -0.20 | 12 | +0.65 |
+| Oct-Dec 2021 -> Oct-Dec 2022 | 13 | +0.53 | 13 | +0.29 | 12 | -0.06 |
+| Jan-Mar 2022 -> Jan-Mar 2023 | 13 | +0.68 | 13 | +0.48 | 12 | +0.16 |
+| Apr-Jun 2022 -> Apr-Jun 2023 | 13 | +0.41 | 13 | +0.16 | 12 | +0.34 |
+| Jul-Sep 2022 -> Jul-Sep 2023 | 13 | -0.24 | 13 | -0.73 | 12 | -0.13 |
+| Oct-Dec 2022 -> Oct-Dec 2023 | 13 | +0.50 | 13 | +0.05 | 12 | -0.03 |
+| Jan-Mar 2023 -> Jan-Mar 2024 | 13 | +0.51 | 13 | +0.29 | 12 | +0.04 |
+| Apr-Jun 2023 -> Apr-Jun 2024 | 13 | -0.23 | 13 | +0.16 | 12 | -0.45 |
+| Jul-Sep 2023 -> Jul-Sep 2024 | 13 | -0.16 | 13 | -0.54 | 12 | +0.10 |
+| Oct-Dec 2023 -> Oct-Dec 2024 | 13 | -0.01 | 13 | -0.14 | 12 | +0.30 |
+| Jan-Mar 2024 -> Jan-Mar 2025 | 13 | -0.35 | 13 | -0.12 | 12 | -0.75 |
+| Apr-Jun 2024 -> Apr-Jun 2025 | 13 | +0.10 | 13 | -0.05 | 12 | -0.14 |
+| Jul-Sep 2024 -> Jul-Sep 2025 | 13 | -0.03 | 13 | +0.15 | 12 | +0.11 |
+| Oct-Dec 2024 -> Oct-Dec 2025 | 15 | -0.07 | 15 | -0.20 | 13 | -0.02 |
+| Jan-Mar 2025 -> Jan-Mar 2026 | 15 | -0.29 | 15 | -0.42 | 13 | -0.03 |
+| Apr-Jun 2025 -> Apr-Jun 2026 | 15 | +0.21 | 15 | +0.10 | 13 | +0.37 |
+
+== 5. Stock level: x = three-day sum minus the all-F&O average of the quarter
+3050 consecutive-quarter pairs (t, t+1) from 204 stocks; 2470 pairs (t, t+4); 22 results whose next result is more than one quarter later (left out); 206 last results
+Pearson lag 1: -0.01; within-stock null mean +0.01 p 0.316; across-stock null mean -0.00 p 0.790
+Pearson lag 4: +0.04; within-stock null mean +0.02 p 0.280; across-stock null mean -0.00 p 0.061
+Spearman lag 1: +0.00; within-stock null mean +0.02 p 0.497; across-stock null mean -0.00 p 0.790
+Spearman lag 4: +0.03; within-stock null mean +0.02 p 0.402; across-stock null mean +0.00 p 0.093
+quintiles of x(t) (1 = bottom fifth) -> x at the next result (t+1):
+ quintile  pairs   x_t  x_next  up_next  x_next_first14  x_next_last8  n_first14  n_last8
+        1    600 -6.88    0.07    46.67           -0.36          0.58        323      277
+        2    610 -2.57    0.01    49.02           -0.07          0.11        331      279
+        3    606 -0.19   -0.34    46.04           -0.34         -0.34        329      277
+        4    615  2.32    0.23    51.22            0.32          0.12        335      280
+        5    619  7.17   -0.02    49.76            0.17         -0.24        335      284
+top fifth next -0.02 (random-pick null -0.02, p 0.998); bottom fifth next +0.07 (null -0.01, p 0.675); spread -0.09 (null -0.01, p 0.772)
+last-4 history: 4462 events of the 206 stocks (any F&O status); 2802 F&O results with 4 earlier results
+last-4 average three-day sum, top fifth: 569 results, avg three-day +0.53%, x +0.45 (first 14 q +0.84 (270), last 8 q +0.10 (299)); random-pick null +0.01, p 0.021
+last-4 average three-day sum, top tenth: 292 results, avg three-day +1.07%, x +0.99 (first 14 q +1.00 (140), last 8 q +0.98 (152)); random-pick null +0.00, p <0.001
+vs docs/PAST_PERFORMANCE.md (3,280-result panel incl. RELIANCE Q1 FY24 and VEDL Q4 FY26, whose events.csv in_fo is blank): top fifth 569 trades +0.53%, here 569 +0.53%; top tenth 292 trades +1.07% (excess over all results +0.99), here 292 +1.07% (x +0.99)
+
+--- s_table_stock.md ---
+# Stock level: does a stock's results move carry over?
+
+x = a result's three-day sum minus the average of all F&O results that quarter (pp). Pairs: the same stock in quarter t and t+1 (consecutive results) or t+4 (same results period a year later).
+
+| Statistic | Observed | Within-stock null mean | p | Across-stock null mean | p | Pairs |
+|---|---:|---:|---:|---:|---:|---:|
+| Pearson r, t vs t+1 | -0.01 | +0.01 | 0.316 | -0.00 | 0.790 | 3,050 |
+| Pearson r, t vs t+4 | +0.04 | +0.02 | 0.280 | -0.00 | 0.061 | 2,470 |
+| Spearman, t vs t+1 | +0.00 | +0.02 | 0.497 | -0.00 | 0.790 | 3,050 |
+| Spearman, t vs t+4 | +0.03 | +0.02 | 0.402 | +0.00 | 0.093 | 2,470 |
+
+Within-stock null: 2,000 shuffles of each stock's own quarters (keeps each stock's average, so it asks whether neighbouring quarters are more alike than any two quarters of the same stock). Across-stock null: shuffles of x across stocks within each quarter (no carry-over of any kind). p two-sided, before Holm.
+
+## Quintiles of x in quarter t and x at the next result (quarter t+1)
+
+| Fifth of x(t) | Pairs | Avg x(t) | Avg x next | Next up | First 14 q | Last 8 q |
+|---|---:|---:|---:|---:|---:|---:|
+| Bottom | 600 | -6.88 | +0.07 | 47% | -0.36 (323) | +0.58 (277) |
+| 2 | 610 | -2.57 | +0.01 | 49% | -0.07 (331) | +0.11 (279) |
+| 3 | 606 | -0.19 | -0.34 | 46% | -0.34 (329) | -0.34 (277) |
+| 4 | 615 | +2.32 | +0.23 | 51% | +0.32 (335) | +0.12 (280) |
+| Top | 619 | +7.17 | -0.02 | 50% | +0.17 (335) | -0.24 (284) |
+
+Top fifth next: p 0.998; bottom fifth next: p 0.675; top minus bottom -0.09: p 0.772 (random-pick null: next-quarter x shuffled across the stocks with results in both quarters, within quarter). Next up = share of next results with x > 0. First 14 q / last 8 q: next result in Apr-Jun 2021 .. Apr-Jun 2024 results / Jul-Sep 2024 .. Apr-Jun 2026 results.
+
+## Comparison: the last-4 track record of docs/PAST_PERFORMANCE.md (rebuilt here)
+
+| Signal | Results | Avg three-day | Avg x | x first 14 q | x last 8 q | p |
+|---|---:|---:|---:|---:|---:|---:|
+| Last-4 average, top fifth (TR05) | 569 | +0.53% | +0.45 | +0.84 | +0.10 | 0.021 |
+| Last-4 average, top tenth | 292 | +1.07% | +0.99 | +1.00 | +0.98 | <0.001 |
+
+Last-4 average = mean three-day sum of the stock's 4 previous results (any F&O status, as in pattern_tests/past_performance/features/build_panel.py), ranked within the quarter among results with 4 earlier results. The top tenth reproduces the 292 trades at +1.07% of PAST_PERFORMANCE.md.
+
+== tests (Holm within each family; 3-pairs: familywise maxT p over all pairs instead of Holm)
+1a [1] NSE sectors: mean Spearman e(s,t) vs e(s,t+1): +0.02 (null -0.00), n 21 pairs, 8-15 sectors, p 0.785, Holm 1.000 | Do sectors that beat (lag) the quarter average beat (lag) it again next quarter? (rank order of sectors) -> no, within chance
+1b [1] NSE sectors: mean Spearman e(s,t) vs e(s,t+4): +0.09 (null -0.00), n 18 pairs, 9-15 sectors, p 0.222, Holm 1.000 | Do sectors that beat the quarter average beat it again in the same results period a year later? -> no, within chance
+1c [1] NSE sectors: weighted slope e(s,t+1) on e(s,t): +0.01 (null +0.00), n 277 sector-pairs, p 0.860, Holm 1.000 | Pooled: how much of a sector's excess this quarter carries into next quarter (pp per pp) -> no, within chance
+1d [1] NSE sectors: weighted slope e(s,t+4) on e(s,t): +0.09 (null -0.00), n 234 sector-pairs, p 0.129, Holm 1.000 | Pooled: how much of a sector's excess carries into the same period a year later (pp per pp) -> no, within chance
+1e [1] Custom sectors: mean Spearman e(s,t) vs e(s,t+1): +0.05 (null +0.00), n 21 pairs, 10-15 sectors, p 0.431, Holm 1.000 | Do custom sectors that beat (lag) the quarter average beat (lag) it again next quarter? (rank order of sectors) -> no, within chance
+1f [1] Custom sectors: mean Spearman e(s,t) vs e(s,t+4): -0.06 (null -0.00), n 18 pairs, 11-15 sectors, p 0.393, Holm 1.000 | Do custom sectors that beat the quarter average beat it again in the same results period a year later? -> no, within chance
+1g [1] Custom sectors: weighted slope e(s,t+1) on e(s,t): +0.00 (null +0.00), n 280 sector-pairs, p 0.996, Holm 1.000 | Pooled: how much of a custom sector's excess this quarter carries into next quarter (pp per pp) -> no, within chance
+1h [1] Custom sectors: weighted slope e(s,t+4) on e(s,t): -0.03 (null -0.00), n 236 sector-pairs, p 0.605, Holm 1.000 | Pooled: how much of a custom sector's excess carries into the same period a year later (pp per pp) -> no, within chance
+2a [2] NSE: best sector, mean rank percentile next quarter (100 = best): 47.2 (null 49.8), n 21 quarters, p 0.722, Holm 1.000 | Does the best sector stay near the top next quarter? -> no, within chance
+2b [2] NSE: worst sector, mean rank percentile next quarter (100 = best): 52.3 (null 49.9), n 21 quarters, p 0.749, Holm 1.000 | Does the worst sector stay near the bottom next quarter? -> no, within chance
+2c [2] NSE: best sector, mean excess next quarter: +0.05% (null -0.01%), n 21 quarters, p 0.899, Holm 1.000 | Does the best sector still beat the quarter average next quarter? -> no, within chance
+2d [2] NSE: worst sector, mean excess next quarter: +0.53% (null -0.00%), n 21 quarters, p 0.243, Holm 1.000 | Does the worst sector still lag the quarter average next quarter? -> no, within chance
+2e [2] NSE: count best -> best next quarter: 2 (null 1.85), n 21 quarters, p 1.000, Holm 1.000 | Is the best sector best again? -> no, within chance
+2f [2] NSE: count best -> worst next quarter: 1 (null 1.90), n 21 quarters, p 0.703, Holm 1.000 | Does the best sector flip to worst? -> no, within chance
+2g [2] NSE: count worst -> worst next quarter: 0 (null 1.87), n 21 quarters, p 0.269, Holm 1.000 | Is the worst sector worst again? -> no, within chance
+2h [2] NSE: count worst -> best next quarter: 3 (null 1.89), n 21 quarters, p 0.442, Holm 1.000 | Does the worst sector flip to best? -> no, within chance
+2i [2] Custom: best sector, mean rank percentile next quarter: 48.5 (null 50.0), n 21 quarters, p 0.827, Holm 1.000 | Custom sectors: does the best sector stay near the top? -> no, within chance
+2j [2] Custom: worst sector, mean rank percentile next quarter: 44.2 (null 50.1), n 21 quarters, p 0.405, Holm 1.000 | Custom sectors: does the worst sector stay near the bottom? -> no, within chance
+3a [3-global] NSE sectors: mean r^2 over the 78 sector pairs: 0.065 (null 0.057), n 13 sectors, 17-22 quarters per pair, p 0.283, Holm 0.567 | Sectors: more co-movement (or opposite movement) of sector excess across quarters than chance? -> no, within chance
+3b [3-global] Custom sectors: mean r^2 over the 78 sector pairs: 0.053 (null 0.057), n 13 sectors, 17-22 quarters per pair, p 0.645, Holm 0.645 | Custom sectors: more co-movement (or opposite movement) of sector excess across quarters than chance? -> no, within chance
+3p01 [3-pairs (maxT)] NSE: r(Cons services, Constr mat): -0.49 (null -), n 20 quarters, p 0.027, Holm 0.938 | Are Cons services and Constr mat best and worst together (opposite)? -> only before multiple-testing correction (p < 0.05, Holm p >= 0.05)
+3p02 [3-pairs (maxT)] NSE: r(Auto, IT): -0.48 (null -), n 22 quarters, p 0.029, Holm 0.952 | Are Auto and IT best and worst together (opposite)? -> only before multiple-testing correction (p < 0.05, Holm p >= 0.05)
+3p03 [3-pairs (maxT)] NSE: r(Fin services, Cons services): -0.48 (null -), n 21 quarters, p 0.059, Holm 0.966 | Are Fin services and Cons services best and worst together (opposite)? -> no, within chance
+3p04 [3-pairs (maxT)] NSE: r(IT, FMCG): -0.45 (null -), n 22 quarters, p 0.053, Holm 0.991 | Are IT and FMCG best and worst together (opposite)? -> no, within chance
+3p05 [3-pairs (maxT)] NSE: r(FMCG, Services): -0.44 (null -), n 21 quarters, p 0.045, Holm 0.995 | Are FMCG and Services best and worst together (opposite)? -> only before multiple-testing correction (p < 0.05, Holm p >= 0.05)
+3p06 [3-pairs (maxT)] NSE: r(Fin services, Metals): +0.52 (null -), n 22 quarters, p 0.027, Holm 0.841 | Are Fin services and Metals good and bad together (same way)? -> only before multiple-testing correction (p < 0.05, Holm p >= 0.05)
+3p07 [3-pairs (maxT)] NSE: r(FMCG, Chemicals): +0.43 (null -), n 21 quarters, p 0.055, Holm 0.998 | Are FMCG and Chemicals good and bad together (same way)? -> no, within chance
+3p08 [3-pairs (maxT)] NSE: r(Auto, FMCG): +0.43 (null -), n 22 quarters, p 0.070, Holm 0.998 | Are Auto and FMCG good and bad together (same way)? -> no, within chance
+3p09 [3-pairs (maxT)] NSE: r(FMCG, Oil & gas): +0.34 (null -), n 22 quarters, p 0.144, Holm 1.000 | Are FMCG and Oil & gas good and bad together (same way)? -> no, within chance
+3p10 [3-pairs (maxT)] NSE: r(Healthcare, Cons services): +0.34 (null -), n 21 quarters, p 0.144, Holm 1.000 | Are Healthcare and Cons services good and bad together (same way)? -> no, within chance
+3p11 [3-pairs (maxT)] custom: r(Auto, IT): -0.47 (null -), n 22 quarters, p 0.038, Holm 0.974 | Are Auto and IT best and worst together (opposite)? -> only before multiple-testing correction (p < 0.05, Holm p >= 0.05)
+3p12 [3-pairs (maxT)] custom: r(NBFC/Fin, Cons dur): -0.39 (null -), n 20 quarters, p 0.134, Holm 1.000 | Are NBFC/Fin and Cons dur best and worst together (opposite)? -> no, within chance
+3p13 [3-pairs (maxT)] custom: r(Cap goods, Chem/agro): -0.39 (null -), n 21 quarters, p 0.100, Holm 1.000 | Are Cap goods and Chem/agro best and worst together (opposite)? -> no, within chance
+3p14 [3-pairs (maxT)] custom: r(Cap goods, IT): +0.64 (null -), n 22 quarters, p 0.003, Holm 0.207 | Are Cap goods and IT good and bad together (same way)? -> only before multiple-testing correction (p < 0.05, Holm p >= 0.05)
+3p15 [3-pairs (maxT)] custom: r(Banks, Metals): +0.57 (null -), n 22 quarters, p 0.009, Holm 0.573 | Are Banks and Metals good and bad together (same way)? -> only before multiple-testing correction (p < 0.05, Holm p >= 0.05)
+3p16 [3-pairs (maxT)] custom: r(NBFC/Fin, Cement): +0.39 (null -), n 21 quarters, p 0.103, Holm 1.000 | Are NBFC/Fin and Cement good and bad together (same way)? -> no, within chance
+4a [4] Index members: mean Spearman of excess vs own index, t vs t+1: -0.11 (null -0.00), n 21 pairs, 11-13 indices, p 0.127, Holm 0.508 | Do index members that beat (lag) their own index as a group do so again next quarter? (rank order of indices) -> no, within chance
+4b [4] Index members: mean Spearman of excess vs own index, t vs t+4: +0.06 (null +0.00), n 18 pairs, 11-13 indices, p 0.517, Holm 1.000 | Do index members that beat (lag) their own index as a group do so again a year later? -> no, within chance
+4c [4] Index members: weighted slope, t+1 on t: -0.08 (null -0.00), n 256 index-pairs, p 0.229, Holm 0.688 | Pooled: how much of the members' excess vs their index carries into next quarter (pp per pp) -> no, within chance
+4d [4] Index members: weighted slope, t+4 on t: +0.02 (null -0.01), n 217 index-pairs, p 0.683, Holm 1.000 | Pooled: how much carries into the same period a year later (pp per pp) -> no, within chance
+5a [5] Stocks: Pearson r of x(t) and x(t+1), within-stock shuffle null: -0.01 (null +0.01), n 3,050 pairs, p 0.316, Holm 1.000 | Is a stock's results move next quarter tied to this quarter's more than to a random other quarter of the same stock? -> no, within chance
+5b [5] Stocks: Pearson r of x(t) and x(t+4), within-stock shuffle null: +0.04 (null +0.02), n 2,470 pairs, p 0.280, Holm 1.000 | Same, for the same results period a year later -> no, within chance
+5c [5] Stocks: Spearman of x(t) and x(t+1), within-stock shuffle null: +0.00 (null +0.02), n 3,050 pairs, p 0.497, Holm 1.000 | As 5a, on ranks (less sensitive to a few huge moves) -> no, within chance
+5d [5] Stocks: Spearman of x(t) and x(t+4), within-stock shuffle null: +0.03 (null +0.02), n 2,470 pairs, p 0.402, Holm 1.000 | As 5b, on ranks -> no, within chance
+5e [5] Stocks: Pearson r of x(t) and x(t+1), across-stock shuffle null: -0.01 (null -0.00), n 3,050 pairs, p 0.790, Holm 1.000 | Any carry-over at all (stock trait or momentum) from one quarter to the next? -> no, within chance
+5f [5] Stocks: Pearson r of x(t) and x(t+4), across-stock shuffle null: +0.04 (null -0.00), n 2,470 pairs, p 0.061, Holm 0.549 | Any carry-over at all to the same period a year later? -> no, within chance
+5g [5] Stocks in the top fifth of x(t): mean x at their next result: -0.02% (null -0.02%), n 619 results, p 0.998, Holm 1.000 | Do this quarter's best results movers beat the next quarter's average? -> no, within chance
+5h [5] Stocks in the bottom fifth of x(t): mean x at their next result: +0.07% (null -0.01%), n 600 results, p 0.675, Holm 1.000 | Do this quarter's worst results movers lag the next quarter's average? -> no, within chance
+5i [5] Top fifth minus bottom fifth, x at the next result: -0.09% (null -0.01%), n 619 + 600 results, p 0.772, Holm 1.000 | Long last quarter's best movers, short the worst: any spread? -> no, within chance
+5j [5] Last-4 average in the top fifth: mean x this result: +0.45% (null +0.01%), n 569 results, p 0.021, Holm 0.210 | Rebuild of PAST_PERFORMANCE.md (pre-registered TR05): habitual risers into results -> only before multiple-testing correction (p < 0.05, Holm p >= 0.05) (observed above chance)
+5k [5] Last-4 average in the top tenth: mean x this result: +0.99% (null +0.00%), n 292 results, p <0.001, Holm 0.005 | Rebuild of PAST_PERFORMANCE.md's post-hoc top tenth (292 trades; same data, so not an independent confirmation): habitual risers into results -> yes, beyond chance after Holm (observed above chance)

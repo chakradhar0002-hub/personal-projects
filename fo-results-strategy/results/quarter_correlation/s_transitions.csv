@@ -1,0 +1,23 @@
+qn,period,quarter,Q,ranked,best,best_avg,best_n,worst,worst_avg,worst_n,next_ranked,best_next_rank,best_next_avg,best_next_n,worst_next_rank,worst_next_avg,worst_next_n,Q_next
+0,Jan-Mar 2021,Q4 FY21,0.821,9,Automobile and Auto Components,4.191,10,Information Technology,-1.835,6,12.0,11.0,-1.231,9.0,1.0,4.539,8.0,0.061
+1,Apr-Jun 2021,Q1 FY22,0.061,12,Information Technology,4.539,8,Healthcare,-2.488,11,12.0,2.0,1.124,10.0,4.0,-0.239,11.0,-0.843
+2,Jul-Sep 2021,Q2 FY22,-0.843,12,Automobile and Auto Components,1.319,10,Financial Services,-2.424,31,13.0,3.0,1.075,10.0,6.0,-0.23,34.0,-0.636
+3,Oct-Dec 2021,Q3 FY22,-0.636,13,Consumer Services,2.499,4,Construction Materials,-3.036,4,13.0,1.0,7.426,4.0,12.0,-2.936,4.0,-0.831
+4,Jan-Mar 2022,Q4 FY22,-0.831,13,Consumer Services,7.426,4,Oil Gas & Consumable Fuels,-3.175,8,13.0,3.0,2.025,4.0,11.0,-0.989,8.0,0.754
+5,Apr-Jun 2022,Q1 FY23,0.754,13,Capital Goods,2.537,9,Consumer Durables,-1.455,6,13.0,10.0,-0.899,8.0,12.0,-1.338,6.0,0.03
+6,Jul-Sep 2022,Q2 FY23,0.03,13,Metals & Mining,1.492,9,Consumer Services,-2.726,4,13.0,11.0,-1.555,9.0,4.0,0.916,4.0,-0.159
+7,Oct-Dec 2022,Q3 FY23,-0.159,13,Services,3.286,4,Consumer Durables,-4.977,6,13.0,13.0,-2.659,4.0,2.0,3.181,6.0,0.607
+8,Jan-Mar 2023,Q4 FY23,0.607,13,Capital Goods,3.296,9,Services,-2.659,4,13.0,5.0,0.55,9.0,12.0,-2.287,4.0,-0.297
+9,Apr-Jun 2023,Q1 FY24,-0.297,13,Fast Moving Consumer Goods,1.256,9,Consumer Durables,-3.613,6,13.0,8.0,0.209,10.0,11.0,-1.625,6.0,0.406
+10,Jul-Sep 2023,Q2 FY24,0.406,13,Services,3.243,4,Information Technology,-1.751,9,13.0,5.0,2.288,4.0,2.0,4.332,10.0,0.478
+11,Oct-Dec 2023,Q3 FY24,0.478,13,Consumer Services,4.451,4,Chemicals,-2.62,4,13.0,4.0,1.389,4.0,10.0,-0.191,4.0,0.876
+12,Jan-Mar 2024,Q4 FY24,0.876,13,Capital Goods,4.994,9,Information Technology,-2.109,10,13.0,3.0,1.811,9.0,5.0,1.734,10.0,0.528
+13,Apr-Jun 2024,Q1 FY25,0.528,13,Consumer Services,7.79,4,Construction Materials,-3.55,4,13.0,1.0,1.508,4.0,6.0,-0.161,4.0,-1.118
+14,Jul-Sep 2024,Q2 FY25,-1.118,13,Consumer Services,1.508,4,Consumer Durables,-5.712,6,15.0,14.0,-4.217,7.0,11.0,-1.268,7.0,-0.787
+15,Oct-Dec 2024,Q3 FY25,-0.787,15,Chemicals,3.701,5,Power,-4.449,7,15.0,10.0,-0.219,5.0,13.0,-0.623,7.0,0.958
+16,Jan-Mar 2025,Q4 FY25,0.958,15,Information Technology,4.33,12,Consumer Services,-1.874,7,15.0,14.0,-1.887,12.0,1.0,3.027,7.0,-0.564
+17,Apr-Jun 2025,Q1 FY26,-0.564,15,Consumer Services,3.027,7,Consumer Durables,-2.814,10,15.0,12.0,-1.029,7.0,9.0,-0.365,10.0,0.668
+18,Jul-Sep 2025,Q2 FY26,0.668,15,Fast Moving Consumer Goods,2.403,12,Services,-1.386,5,15.0,13.0,-2.116,12.0,1.0,5.664,5.0,0.183
+19,Oct-Dec 2025,Q3 FY26,0.183,15,Services,5.664,5,Power,-3.35,7,15.0,7.0,0.262,5.0,10.0,-0.489,8.0,-0.309
+20,Jan-Mar 2026,Q4 FY26,-0.309,15,Chemicals,3.829,5,Information Technology,-3.365,12,15.0,14.0,-2.531,5.0,4.0,0.752,12.0,0.174
+21,Apr-Jun 2026,Q1 FY27,0.174,15,Automobile and Auto Components,2.855,15,Power,-2.789,8,,,,,,,,
