@@ -1,0 +1,13 @@
+select on three_day start 2 absIC: trades 621, net +0.27%, hit 50.2%, excess vs quarter mean +0.42% (quarters >0 14/20), vs same-cutoff mean +0.02%, without lag trades net +0.08% excess +0.23% (n 568)
+select on three_day start 2 abs_t: trades 621, net +0.55%, hit 52.5%, excess vs quarter mean +0.71% (quarters >0 17/20), vs same-cutoff mean +0.21%, without lag trades net +0.33% excess +0.48% (n 566)
+select on three_day start 4 absIC: trades 569, net +0.19%, hit 49.6%, excess vs quarter mean +0.28% (quarters >0 12/18), vs same-cutoff mean -0.02%, without lag trades net +0.01% excess +0.09% (n 521)
+select on three_day start 4 abs_t: trades 569, net +0.48%, hit 51.8%, excess vs quarter mean +0.56% (quarters >0 15/18), vs same-cutoff mean +0.15%, without lag trades net +0.25% excess +0.33% (n 520)
+     picks: 4:dist_ema_5- 5:dist_ema_5- 6:dist_ema_5- 7:dist_ema_5- 8:dist_ema_10- 9:dist_ema_10- 10:dist_sma_10- 11:slope_sma_50- 12:slope_sma_50- 13:slope_sma_50- 14:slope_sma_50- 15:slope_sma_50- 16:slope_sma_50- 17:slope_sma_50- 18:slope_sma_50- 19:slope_sma_50- 20:slope_sma_50- 21:slope_sma_50-
+select on three_day start 8 absIC: trades 461, net +0.16%, hit 49.2%, excess vs quarter mean +0.21% (quarters >0 9/14), vs same-cutoff mean +0.03%, without lag trades net -0.03% excess +0.03% (n 423)
+select on three_day start 8 abs_t: trades 461, net +0.38%, hit 51.4%, excess vs quarter mean +0.44% (quarters >0 11/14), vs same-cutoff mean +0.14%, without lag trades net +0.16% excess +0.22% (n 422)
+select on y_dd      start 2 absIC: trades 612, net +0.16%, hit 46.6%, excess vs quarter mean +0.31% (quarters >0 14/20), vs same-cutoff mean +0.11%, without lag trades net +0.11% excess +0.25% (n 587)
+select on y_dd      start 2 abs_t: trades 608, net +0.27%, hit 49.0%, excess vs quarter mean +0.42% (quarters >0 13/20), vs same-cutoff mean +0.18%, without lag trades net +0.25% excess +0.39% (n 593)
+select on y_dd      start 4 absIC: trades 560, net +0.27%, hit 47.1%, excess vs quarter mean +0.35% (quarters >0 13/18), vs same-cutoff mean +0.10%, without lag trades net +0.24% excess +0.32% (n 539)
+select on y_dd      start 4 abs_t: trades 556, net +0.23%, hit 48.4%, excess vs quarter mean +0.31% (quarters >0 12/18), vs same-cutoff mean +0.12%, without lag trades net +0.23% excess +0.30% (n 544)
+select on y_dd      start 8 absIC: trades 454, net +0.23%, hit 47.8%, excess vs quarter mean +0.28% (quarters >0 9/14), vs same-cutoff mean +0.12%, without lag trades net +0.22% excess +0.27% (n 440)
+select on y_dd      start 8 abs_t: trades 451, net +0.19%, hit 48.3%, excess vs quarter mean +0.24% (quarters >0 8/14), vs same-cutoff mean +0.15%, without lag trades net +0.20% excess +0.24% (n 445)

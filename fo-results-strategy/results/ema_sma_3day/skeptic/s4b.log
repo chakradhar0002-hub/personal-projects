@@ -1,0 +1,13 @@
+== raw
+  dist_ema_5 - dist_sma_5: IC diff -0.013 z -2.91 p 0.004 maxT(11, z) 0.037
+  dist_ema_10 - dist_sma_10: IC diff +0.007 z +1.74 p 0.082 maxT(11, z) 0.544
+  slope_ema_20 - slope_sma_20: IC diff -0.021 z -2.34 p 0.020 maxT(11, z) 0.172
+  slope_ema_200 - slope_sma_200: IC diff -0.023 z -2.29 p 0.019 maxT(11, z) 0.195
+  smallest maxT p 0.037
+== same-cutoff demeaned
+  dist_ema_5 - dist_sma_5: IC diff -0.008 z -1.80 p 0.074 maxT(11, z) 0.498
+  dist_ema_10 - dist_sma_10: IC diff +0.008 z +1.88 p 0.061 maxT(11, z) 0.437
+  dist_ema_200 - dist_sma_200: IC diff +0.007 z +1.67 p 0.094 maxT(11, z) 0.597
+  slope_ema_50 - slope_sma_50: IC diff +0.022 z +2.08 p 0.039 maxT(11, z) 0.296
+  spread_ema50_200 - spread_sma50_200: IC diff +0.011 z +1.74 p 0.084 maxT(11, z) 0.544
+  smallest maxT p 0.296

@@ -1,0 +1,174 @@
+== leave-one-quarter-out and drop-the-worst-quarters
+  slope_sma_50   all -0.052 (t -2.77); LOO range -0.044 (drop q16, t -2.46) .. -0.060; drop 3 most negative quarters [16, 3, 4]: -0.030 t -1.81 pos 8/19; median quarterly IC -0.051
+      sign test 8/22 positive: two-sided binomial p 0.286
+  slope_ema_20   all -0.047 (t -2.29); LOO range -0.039 (drop q16, t -1.96) .. -0.055; drop 3 most negative quarters [16, 2, 3]: -0.020 t -1.22 pos 7/19; median quarterly IC -0.022
+      sign test 7/22 positive: two-sided binomial p 0.134
+  dist_sma_100   all -0.045 (t -2.69); LOO range -0.036 (drop q16, t -2.46) .. -0.052; drop 3 most negative quarters [16, 4, 3]: -0.024 t -1.80 pos 7/19; median quarterly IC -0.028
+      sign test 7/22 positive: two-sided binomial p 0.134
+  slope_ema_50   all -0.045 (t -2.23); LOO range -0.035 (drop q16, t -1.90) .. -0.054; drop 3 most negative quarters [16, 4, 2]: -0.020 t -1.18 pos 7/19; median quarterly IC -0.030
+      sign test 7/22 positive: two-sided binomial p 0.134
+  dist_ema_50    all -0.043 (t -2.23); LOO range -0.034 (drop q16, t -1.90) .. -0.049; drop 3 most negative quarters [16, 3, 2]: -0.018 t -1.15 pos 10/19; median quarterly IC -0.022
+      sign test 10/22 positive: two-sided binomial p 0.832
+  dist_sma_50    all -0.037 (t -1.99); LOO range -0.029 (drop q16, t -1.65) .. -0.043; drop 3 most negative quarters [16, 2, 3]: -0.013 t -0.86 pos 10/19; median quarterly IC -0.007
+      sign test 10/22 positive: two-sided binomial p 0.832
+
+== drop the most extreme results (pooled excess) / bottom-fifth average without them
+  slope_sma_50 drop 5 best                     n= 3273 meanIC -0.049 t -2.67 pos 8/22 p 0.007
+  slope_sma_50 drop 5 worst                    n= 3273 meanIC -0.053 t -2.76 pos 8/22 p 0.004
+  slope_sma_50 drop 5 best+5 worst             n= 3268 meanIC -0.050 t -2.66 pos 8/22 p 0.003
+  slope_sma_50 drop 10 best                    n= 3268 meanIC -0.049 t -2.68 pos 8/22 p 0.008
+  slope_sma_50 drop 10 worst                   n= 3268 meanIC -0.052 t -2.62 pos 8/22 p 0.004
+  slope_sma_50 drop 10 best+10 worst           n= 3258 meanIC -0.049 t -2.53 pos 8/22 p 0.003
+  slope_ema_20 drop 5 best                     n= 3273 meanIC -0.045 t -2.22 pos 7/22 p 0.014
+  slope_ema_20 drop 5 worst                    n= 3273 meanIC -0.048 t -2.28 pos 8/22 p 0.006
+  slope_ema_20 drop 5 best+5 worst             n= 3268 meanIC -0.046 t -2.21 pos 8/22 p 0.012
+  slope_ema_20 drop 10 best                    n= 3268 meanIC -0.045 t -2.20 pos 8/22 p 0.013
+  slope_ema_20 drop 10 worst                   n= 3268 meanIC -0.046 t -2.14 pos 8/22 p 0.015
+  slope_ema_20 drop 10 best+10 worst           n= 3258 meanIC -0.043 t -2.05 pos 9/22 p 0.014
+  dist_sma_100 drop 5 best                     n= 3273 meanIC -0.044 t -2.65 pos 6/22 p 0.019
+  dist_sma_100 drop 5 worst                    n= 3273 meanIC -0.047 t -2.74 pos 7/22 p 0.008
+  dist_sma_100 drop 5 best+5 worst             n= 3268 meanIC -0.046 t -2.70 pos 6/22 p 0.011
+  dist_sma_100 drop 10 best                    n= 3268 meanIC -0.043 t -2.61 pos 6/22 p 0.017
+  dist_sma_100 drop 10 worst                   n= 3268 meanIC -0.047 t -2.62 pos 8/22 p 0.008
+  dist_sma_100 drop 10 best+10 worst           n= 3258 meanIC -0.045 t -2.55 pos 7/22 p 0.012
+  slope_ema_50 drop 5 best                     n= 3273 meanIC -0.043 t -2.15 pos 7/22 p 0.019
+  slope_ema_50 drop 5 worst                    n= 3273 meanIC -0.046 t -2.23 pos 7/22 p 0.007
+  slope_ema_50 drop 5 best+5 worst             n= 3268 meanIC -0.044 t -2.16 pos 7/22 p 0.011
+  slope_ema_50 drop 10 best                    n= 3268 meanIC -0.042 t -2.13 pos 7/22 p 0.019
+  slope_ema_50 drop 10 worst                   n= 3268 meanIC -0.045 t -2.12 pos 7/22 p 0.015
+  slope_ema_50 drop 10 best+10 worst           n= 3258 meanIC -0.043 t -2.03 pos 7/22 p 0.014
+  dist_ema_50 drop 5 best                      n= 3273 meanIC -0.041 t -2.20 pos 9/22 p 0.026
+  dist_ema_50 drop 5 worst                     n= 3273 meanIC -0.045 t -2.28 pos 10/22 p 0.014
+  dist_ema_50 drop 5 best+5 worst              n= 3268 meanIC -0.043 t -2.26 pos 9/22 p 0.012
+  dist_ema_50 drop 10 best                     n= 3268 meanIC -0.041 t -2.19 pos 9/22 p 0.027
+  dist_ema_50 drop 10 worst                    n= 3268 meanIC -0.044 t -2.21 pos 10/22 p 0.014
+  dist_ema_50 drop 10 best+10 worst            n= 3258 meanIC -0.043 t -2.18 pos 9/22 p 0.017
+  dist_sma_50 drop 5 best                      n= 3273 meanIC -0.036 t -1.94 pos 10/22 p 0.045
+  dist_sma_50 drop 5 worst                     n= 3273 meanIC -0.039 t -2.04 pos 11/22 p 0.031
+  dist_sma_50 drop 5 best+5 worst              n= 3268 meanIC -0.037 t -1.99 pos 11/22 p 0.031
+  dist_sma_50 drop 10 best                     n= 3268 meanIC -0.035 t -1.94 pos 9/22 p 0.055
+  dist_sma_50 drop 10 worst                    n= 3268 meanIC -0.038 t -1.96 pos 11/22 p 0.031
+  dist_sma_50 drop 10 best+10 worst            n= 3258 meanIC -0.036 t -1.91 pos 10/22 p 0.045
+
+== bottom fifth (favourable side) average gross, with / without big winners
+  slope_sma_50   bottom +0.65 (n 665), median +0.25; minus 5 best +0.52; minus 10 best +0.42; winsorised 1%/99% +0.63 | top -0.17 median -0.26
+  slope_ema_20   bottom +0.31 (n 665), median -0.08; minus 5 best +0.17; minus 10 best +0.06; winsorised 1%/99% +0.28 | top -0.08 median -0.27
+  dist_sma_100   bottom +0.69 (n 665), median +0.58; minus 5 best +0.55; minus 10 best +0.44; winsorised 1%/99% +0.71 | top +0.09 median -0.21
+  slope_ema_50   bottom +0.45 (n 665), median +0.09; minus 5 best +0.33; minus 10 best +0.22; winsorised 1%/99% +0.45 | top -0.22 median -0.34
+  dist_ema_50    bottom +0.53 (n 665), median +0.28; minus 5 best +0.39; minus 10 best +0.28; winsorised 1%/99% +0.54 | top -0.12 median -0.34
+  dist_sma_50    bottom +0.50 (n 665), median +0.28; minus 5 best +0.38; minus 10 best +0.27; winsorised 1%/99% +0.50 | top +0.02 median -0.23
+
+== subgroups
+  slope_sma_50
+    mcap >= quarter median                       n= 1500 meanIC -0.052 t -1.42 pos 9/22 p 0.053
+    mcap < quarter median                        n= 1486 meanIC -0.060 t -2.07 pos 5/22 p 0.025
+    mcap missing                                 n=  292 meanIC +0.005 t +0.07 pos 10/20 p 0.940
+    in F&O since qn 0                            n= 2125 meanIC -0.054 t -2.15 pos 8/22 p 0.016
+    joined F&O later (first qn >= 1)             n= 1153 meanIC -0.070 t -1.77 pos 6/21 p 0.037
+    joined F&O qn >= 14                          n=  385 meanIC -0.090 t -1.62 pos 2/7 p 0.086
+    excluding the 85 lag10+volume trades         n= 3193 meanIC -0.040 t -2.17 pos 9/22 p 0.027
+    Company (non-financial)                      n= 2500 meanIC -0.060 t -2.69 pos 7/22 p 0.004
+    Bank / NBFC                                  n=  778 meanIC -0.037 t -1.28 pos 8/22 p 0.318
+  slope_ema_20
+    mcap >= quarter median                       n= 1500 meanIC -0.032 t -0.75 pos 10/22 p 0.226
+    mcap < quarter median                        n= 1486 meanIC -0.063 t -2.25 pos 7/22 p 0.020
+    mcap missing                                 n=  292 meanIC -0.044 t -0.50 pos 10/20 p 0.606
+    in F&O since qn 0                            n= 2125 meanIC -0.043 t -1.83 pos 8/22 p 0.042
+    joined F&O later (first qn >= 1)             n= 1153 meanIC -0.063 t -1.69 pos 9/21 p 0.056
+    joined F&O qn >= 14                          n=  385 meanIC -0.028 t -0.51 pos 3/7 p 0.592
+    excluding the 85 lag10+volume trades         n= 3193 meanIC -0.035 t -1.70 pos 7/22 p 0.050
+    Company (non-financial)                      n= 2500 meanIC -0.048 t -2.01 pos 9/22 p 0.020
+    Bank / NBFC                                  n=  778 meanIC -0.049 t -1.58 pos 9/22 p 0.183
+  dist_sma_100
+    mcap >= quarter median                       n= 1500 meanIC -0.040 t -1.26 pos 11/22 p 0.135
+    mcap < quarter median                        n= 1486 meanIC -0.066 t -2.47 pos 5/22 p 0.013
+    mcap missing                                 n=  292 meanIC +0.030 t +0.33 pos 13/20 p 0.720
+    in F&O since qn 0                            n= 2125 meanIC -0.040 t -1.68 pos 7/22 p 0.068
+    joined F&O later (first qn >= 1)             n= 1153 meanIC -0.067 t -1.86 pos 7/21 p 0.044
+    joined F&O qn >= 14                          n=  385 meanIC -0.103 t -1.57 pos 2/7 p 0.050
+    excluding the 85 lag10+volume trades         n= 3193 meanIC -0.032 t -1.95 pos 9/22 p 0.083
+    Company (non-financial)                      n= 2500 meanIC -0.060 t -2.99 pos 4/22 p 0.003
+    Bank / NBFC                                  n=  778 meanIC -0.020 t -0.68 pos 10/22 p 0.591
+  slope_ema_50
+    mcap >= quarter median                       n= 1500 meanIC -0.036 t -0.94 pos 9/22 p 0.179
+    mcap < quarter median                        n= 1486 meanIC -0.056 t -1.97 pos 6/22 p 0.036
+    mcap missing                                 n=  292 meanIC +0.024 t +0.29 pos 12/20 p 0.760
+    in F&O since qn 0                            n= 2125 meanIC -0.042 t -1.69 pos 8/22 p 0.052
+    joined F&O later (first qn >= 1)             n= 1153 meanIC -0.064 t -1.59 pos 9/21 p 0.056
+    joined F&O qn >= 14                          n=  385 meanIC -0.085 t -1.33 pos 2/7 p 0.111
+    excluding the 85 lag10+volume trades         n= 3193 meanIC -0.033 t -1.64 pos 9/22 p 0.068
+    Company (non-financial)                      n= 2500 meanIC -0.052 t -2.24 pos 8/22 p 0.012
+    Bank / NBFC                                  n=  778 meanIC -0.023 t -0.90 pos 10/22 p 0.525
+
+== lag-rule overlap
+  slope_sma_50   lag trades in bottom fifth 60 of 85; in top fifth 1
+  slope_ema_20   lag trades in bottom fifth 74 of 85; in top fifth 0
+  dist_sma_100   lag trades in bottom fifth 71 of 85; in top fifth 0
+  slope_ema_50   lag trades in bottom fifth 79 of 85; in top fifth 0
+  dist_ema_50    lag trades in bottom fifth 81 of 85; in top fifth 0
+  dist_sma_50    lag trades in bottom fifth 83 of 85; in top fifth 0
+  slope_sma_50 bottom fifth net: all +0.48 (n 665); without lag trades +0.25 (n 605); the lag trades inside it +2.80 (n 60)
+
+== market timing: outcome three_day minus Nifty 3-day; Nifty own trend as a "feature"
+   slope_sma_50 vs three_day - Nifty            n= 3278 meanIC -0.041 t -2.16 pos 8/22 p 0.025
+   slope_ema_20 vs three_day - Nifty            n= 3278 meanIC -0.011 t -0.57 pos 11/22 p 0.537
+   dist_sma_100 vs three_day - Nifty            n= 3278 meanIC -0.024 t -1.50 pos 10/22 p 0.183
+   slope_ema_50 vs three_day - Nifty            n= 3278 meanIC -0.017 t -0.89 pos 10/22 p 0.335
+   dist_ema_50 vs three_day - Nifty             n= 3278 meanIC -0.010 t -0.54 pos 12/22 p 0.592
+   dist_sma_50 vs three_day - Nifty             n= 3278 meanIC -0.005 t -0.26 pos 13/22 p 0.790
+   nifty_slope_sma_50 (market-level) vs three_day n= 3278 meanIC -0.094 t -3.05 pos 5/22 p <0.001
+   nifty_dist_sma_50 (market-level) vs three_day n= 3278 meanIC -0.157 t -5.85 pos 2/22 p <0.001
+   nifty_ret50 (market-level) vs three_day      n= 3278 meanIC -0.103 t -4.32 pos 4/22 p <0.001
+   slope_sma_50 minus Nifty slope vs three_day - Nifty n= 3278 meanIC -0.036 t -2.18 pos 8/22 p 0.044
+   corr within quarter (mean Spearman) slope_sma_50 vs nifty_slope_sma_50: 0.149
+
+== plain past return: IC of controls, correlation with the MA features, partial ICs
+   ret_5d_pct                                   n= 3278 meanIC -0.033 t -1.51 pos 8/22 p 0.074
+   stock_21d_pct                                n= 3278 meanIC -0.022 t -1.37 pos 10/22 p 0.222
+   lag_pct                                      n= 3278 meanIC +0.012 t +0.77 pos 13/22 p 0.494
+   ret50                                        n= 3278 meanIC -0.045 t -2.36 pos 8/22 p 0.012
+   ret100                                       n= 3278 meanIC -0.046 t -2.74 pos 8/22 p 0.006
+   ret250                                       n= 3278 meanIC +0.010 t +0.43 pos 14/22 p 0.571
+   mean within-quarter Spearman between features and controls:
+      slope_sma_50 ret_5d_pct=+0.16 stock_21d_pct=+0.52 lag_pct=+0.52 ret50=+0.96 ret100=+0.64 ret250=+0.41
+      slope_ema_20 ret_5d_pct=+0.50 stock_21d_pct=+0.85 lag_pct=+0.82 ret50=+0.60 ret100=+0.40 ret250=+0.27
+      dist_sma_100 ret_5d_pct=+0.33 stock_21d_pct=+0.65 lag_pct=+0.64 ret50=+0.86 ret100=+0.83 ret250=+0.52
+      slope_ema_50 ret_5d_pct=+0.32 stock_21d_pct=+0.79 lag_pct=+0.78 ret50=+0.82 ret100=+0.64 ret250=+0.42
+      dist_ema_50 ret_5d_pct=+0.55 stock_21d_pct=+0.85 lag_pct=+0.82 ret50=+0.81 ret100=+0.61 ret250=+0.41
+      dist_sma_50 ret_5d_pct=+0.50 stock_21d_pct=+0.85 lag_pct=+0.83 ret50=+0.81 ret100=+0.51 ret250=+0.34
+   partial IC of the MA feature after controlling (within quarter, ranks):
+      slope_sma_50   | stock_21d_pct                            partial IC -0.049 t -2.77 pos 7/22 p 0.009
+      slope_sma_50   | lag_pct                                  partial IC -0.071 t -3.71 pos 4/22 p <0.001
+      slope_sma_50   | ret50                                    partial IC -0.031 t -1.65 pos 8/22 p 0.087
+      slope_sma_50   | ret100                                   partial IC -0.031 t -1.66 pos 10/22 p 0.093
+      slope_sma_50   | ret_5d_pct+stock_21d_pct+ret50+ret100    partial IC -0.036 t -1.88 pos 8/22 p 0.051
+      slope_ema_20   | stock_21d_pct                            partial IC -0.045 t -1.79 pos 8/22 p 0.013
+      slope_ema_20   | lag_pct                                  partial IC -0.094 t -3.62 pos 5/22 p <0.001
+      slope_ema_20   | ret50                                    partial IC -0.025 t -1.44 pos 9/22 p 0.151
+      slope_ema_20   | ret100                                   partial IC -0.030 t -1.63 pos 9/22 p 0.091
+      slope_ema_20   | ret_5d_pct+stock_21d_pct+ret50+ret100    partial IC -0.033 t -1.51 pos 9/22 p 0.071
+      dist_sma_100   | stock_21d_pct                            partial IC -0.039 t -2.32 pos 7/22 p 0.032
+      dist_sma_100   | lag_pct                                  partial IC -0.070 t -4.00 pos 3/22 p 0.001
+      dist_sma_100   | ret50                                    partial IC -0.010 t -0.57 pos 9/22 p 0.572
+      dist_sma_100   | ret100                                   partial IC -0.009 t -0.60 pos 9/22 p 0.587
+      dist_sma_100   | ret_5d_pct+stock_21d_pct+ret50+ret100    partial IC +0.017 t +0.80 pos 15/22 p 0.355
+      slope_ema_50   | stock_21d_pct                            partial IC -0.038 t -1.74 pos 9/22 p 0.035
+      slope_ema_50   | lag_pct                                  partial IC -0.083 t -3.51 pos 4/22 p <0.001
+      slope_ema_50   | ret50                                    partial IC -0.013 t -0.71 pos 7/22 p 0.470
+      slope_ema_50   | ret100                                   partial IC -0.018 t -1.03 pos 9/22 p 0.312
+      slope_ema_50   | ret_5d_pct+stock_21d_pct+ret50+ret100    partial IC -0.012 t -0.59 pos 10/22 p 0.513
+      dist_ema_50    | stock_21d_pct                            partial IC -0.041 t -1.81 pos 10/22 p 0.021
+      dist_ema_50    | lag_pct                                  partial IC -0.090 t -3.81 pos 5/22 p <0.001
+      dist_ema_50    | ret50                                    partial IC -0.009 t -0.44 pos 9/22 p 0.638
+      dist_ema_50    | ret100                                   partial IC -0.015 t -0.85 pos 10/22 p 0.402
+      dist_ema_50    | ret_5d_pct+stock_21d_pct+ret50+ret100    partial IC +0.006 t +0.25 pos 14/22 p 0.740
+      dist_sma_50    | stock_21d_pct                            partial IC -0.028 t -1.35 pos 10/22 p 0.114
+      dist_sma_50    | lag_pct                                  partial IC -0.083 t -3.68 pos 6/22 p <0.001
+      dist_sma_50    | ret50                                    partial IC +0.002 t +0.10 pos 11/22 p 0.906
+      dist_sma_50    | ret100                                   partial IC -0.013 t -0.80 pos 12/22 p 0.455
+      dist_sma_50    | ret_5d_pct+stock_21d_pct+ret50+ret100    partial IC +0.012 t +0.53 pos 14/22 p 0.485
+   reverse: partial IC of the past return after controlling for slope_sma_50:
+      stock_21d_pct  | slope_sma_50 partial IC +0.005 t +0.32 pos 11/22 p 0.782
+      lag_pct        | slope_sma_50 partial IC +0.045 t +2.67 pos 14/22 p 0.009
+      ret50          | slope_sma_50 partial IC +0.016 t +0.85 pos 9/22 p 0.371
+      ret100         | slope_sma_50 partial IC -0.014 t -0.80 pos 11/22 p 0.446

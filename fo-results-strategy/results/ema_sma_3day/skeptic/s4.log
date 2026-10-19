@@ -1,0 +1,49 @@
+== EMA vs SMA pairs: within-quarter Spearman between them; IC difference (EMA - SMA), paired over 22 quarters, joint within-quarter shuffle p (B=5000)
+  dist_ema_5        vs dist_sma_5        rank corr 0.968 | IC -0.013 vs +0.001, diff -0.013 (EMA "better" = more extreme in the IC direction in 16/22 q) p 0.003 maxT(11) 0.502
+  dist_ema_10       vs dist_sma_10       rank corr 0.974 | IC -0.032 vs -0.039, diff +0.007 (EMA "better" = more extreme in the IC direction in 7/22 q) p 0.089 maxT(11) 0.946
+  dist_ema_20       vs dist_sma_20       rank corr 0.976 | IC -0.038 vs -0.033, diff -0.005 (EMA "better" = more extreme in the IC direction in 14/22 q) p 0.200 maxT(11) 0.995
+  dist_ema_50       vs dist_sma_50       rank corr 0.972 | IC -0.043 vs -0.037, diff -0.006 (EMA "better" = more extreme in the IC direction in 13/22 q) p 0.174 maxT(11) 0.986
+  dist_ema_100      vs dist_sma_100      rank corr 0.976 | IC -0.041 vs -0.045, diff +0.004 (EMA "better" = more extreme in the IC direction in 9/22 q) p 0.293 maxT(11) 0.999
+  dist_ema_200      vs dist_sma_200      rank corr 0.976 | IC -0.026 vs -0.029, diff +0.004 (EMA "better" = more extreme in the IC direction in 10/22 q) p 0.365 maxT(11) 0.999
+  slope_ema_20      vs slope_sma_20      rank corr 0.865 | IC -0.047 vs -0.026, diff -0.021 (EMA "better" = more extreme in the IC direction in 13/22 q) p 0.017 maxT(11) 0.089
+  slope_ema_50      vs slope_sma_50      rank corr 0.828 | IC -0.045 vs -0.052, diff +0.007 (EMA "better" = more extreme in the IC direction in 10/22 q) p 0.534 maxT(11) 0.957
+  slope_ema_200     vs slope_sma_200     rank corr 0.847 | IC -0.025 vs -0.003, diff -0.023 (EMA "better" = more extreme in the IC direction in 14/22 q) p 0.024 maxT(11) 0.067
+  spread_ema20_50   vs spread_sma20_50   rank corr 0.897 | IC -0.037 vs -0.026, diff -0.012 (EMA "better" = more extreme in the IC direction in 13/22 q) p 0.146 maxT(11) 0.628
+  spread_ema50_200  vs spread_sma50_200  rank corr 0.945 | IC -0.004 vs -0.013, diff +0.009 (EMA "better" = more extreme in the IC direction in 7/22 q) p 0.111 maxT(11) 0.805
+
+== binary EMA vs SMA: agreement and excess difference
+  above_ema_20    vs above_sma_20    same value 93.9%, overlap (Jaccard) 0.89 | excess -0.11 vs -0.07; EMA-only n 116 -0.50 vs SMA-only n 83 +0.26 (Welch p 0.272)
+  above_ema_50    vs above_sma_50    same value 93.2%, overlap (Jaccard) 0.89 | excess -0.14 vs -0.14; EMA-only n 123 -0.12 vs SMA-only n 100 -0.09 (Welch p 0.968)
+  above_ema_200   vs above_sma_200   same value 93.8%, overlap (Jaccard) 0.91 | excess -0.09 vs -0.06; EMA-only n 136 -0.63 vs SMA-only n 67 -0.24 (Welch p 0.586)
+  state_ema20_50  vs state_sma20_50  same value 85.9%, overlap (Jaccard) 0.79 | excess -0.15 vs -0.11; EMA-only n 244 +0.08 vs SMA-only n 218 +0.45 (Welch p 0.460)
+  state_ema50_200 vs state_sma50_200 same value 90.5%, overlap (Jaccard) 0.86 | excess +0.01 vs +0.02; EMA-only n 223 -0.18 vs SMA-only n 88 -0.16 (Welch p 0.974)
+  xup_ema20_50    vs xup_sma20_50    same value 91.7%, overlap (Jaccard) 0.16 | excess +0.11 vs +0.46; EMA-only n 124 +0.24 vs SMA-only n 147 +0.70 (Welch p 0.457)
+  xdn_ema20_50    vs xdn_sma20_50    same value 90.9%, overlap (Jaccard) 0.14 | excess +0.10 vs -0.57; EMA-only n 135 +0.79 vs SMA-only n 162 -0.19 (Welch p 0.117)
+  xup_ema50_200   vs xup_sma50_200   same value 97.6%, overlap (Jaccard) 0.01 | excess +0.57 vs +0.02; EMA-only n 40 +0.66 vs SMA-only n 38 +0.10 (Welch p 0.636)
+  xdn_ema50_200   vs xdn_sma50_200   same value 98.0%, overlap (Jaccard) 0.03 | excess +1.53 vs +2.05; EMA-only n 39 +1.42 vs SMA-only n 25 +1.91 (Welch p 0.697)
+  pxup_ema20      vs pxup_sma20      same value 91.2%, overlap (Jaccard) 0.61 | excess +0.15 vs +0.13; EMA-only n 178 +0.46 vs SMA-only n 109 +0.57 (Welch p 0.864)
+  pxdn_ema20      vs pxdn_sma20      same value 90.4%, overlap (Jaccard) 0.59 | excess +0.01 vs -0.18; EMA-only n 196 +0.29 vs SMA-only n 119 -0.43 (Welch p 0.225)
+  bull_stack_ema  vs bull_stack_sma  same value 90.3%, overlap (Jaccard) 0.71 | excess -0.06 vs +0.00; EMA-only n 304 -0.28 vs SMA-only n 13 -1.51 (Welch p 0.410)
+  bear_stack_ema  vs bear_stack_sma  same value 94.0%, overlap (Jaccard) 0.59 | excess +0.40 vs +0.41; EMA-only n 154 +0.47 vs SMA-only n 42 +0.70 (Welch p 0.787)
+
+== post-hoc: after-close subgroup (not pre-registered)
+  slope_sma_50   raw -0.096 (p <0.001) | xs_nifty -0.083 (p <0.001) | date_dm(all results) -0.055 (p 0.016) | q0-13 -0.105 (p <0.001) | q14-21 -0.082 (p 0.016) | q0-13 dm -0.059 (p 0.053) | q14-21 dm -0.048 (p 0.177)
+  dist_sma_100   raw -0.093 (p <0.001) | xs_nifty -0.070 (p 0.003) | date_dm(all results) -0.045 (p 0.055) | q0-13 -0.083 (p 0.008) | q14-21 -0.111 (p 0.001) | q0-13 dm -0.037 (p 0.244) | q14-21 dm -0.058 (p 0.090)
+  slope_ema_50   raw -0.092 (p <0.001) | xs_nifty -0.063 (p 0.006) | date_dm(all results) -0.042 (p 0.076) | q0-13 -0.089 (p 0.005) | q14-21 -0.098 (p 0.003) | q0-13 dm -0.037 (p 0.239) | q14-21 dm -0.052 (p 0.130)
+  dist_ema_50    raw -0.088 (p <0.001) | xs_nifty -0.054 (p 0.019) | date_dm(all results) -0.033 (p 0.160) | q0-13 -0.088 (p 0.008) | q14-21 -0.089 (p 0.006) | q0-13 dm -0.031 (p 0.323) | q14-21 dm -0.035 (p 0.327)
+  dist_sma_20    raw -0.058 (p 0.016) | xs_nifty -0.020 (p 0.388) | date_dm(all results) -0.014 (p 0.567) | q0-13 -0.067 (p 0.033) | q14-21 -0.042 (p 0.219) | q0-13 dm -0.019 (p 0.558) | q14-21 dm -0.004 (p 0.887)
+  27 features x 3 timing groups: |t| >= 2.0 in 22 of 81 ; largest:
+     timing               f         t        ic
+After close    dist_sma_100 -4.087946 -0.092933
+After close    slope_sma_50 -4.006316 -0.096493
+After close spread_ema20_50 -3.850902 -0.089941
+After close     dist_ema_50 -3.621941 -0.088309
+After close    slope_ema_50 -3.609191 -0.091957
+After close    dist_ema_100 -3.552405 -0.085593
+  after-close slope_sma_50 maxT27 p 0.0002; x3 timing groups (Bonferroni) 0.001
+
+== death-cross signals (small n)
+  xdn_sma50_200: n 27, excess +2.05, median +1.70, drop best 1 +1.75, drop best 3 +1.21; lag trades among them 3; distinct symbols 25; excess vs Nifty +1.68
+    top 3: INDIANB q15 +9.3, INDIANB q21 +9.2, LICHSGFIN q14 +6.1
+  xdn_ema50_200: n 41, excess +1.53, median +1.83, drop best 1 +1.09, drop best 3 +0.66; lag trades among them 8; distinct symbols 35; excess vs Nifty +0.99
+    top 3: ADANIPORTS q7 +19.1, PIIND q4 +10.0, PRESTIGE q15 +6.8

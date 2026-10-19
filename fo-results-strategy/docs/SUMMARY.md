@@ -161,6 +161,7 @@ depends on getting fills near the mid price, so treat it as marginal ([REAL_DATA
 |---|---|
 | Open searches (about 350,000 rules, later about 30 million a run) and machine-learning models | Strong in the quarters used to find them, about -2% to +2% a trade afterwards (the 2%-target score model -3.8% to +0.7%) ([TARGET_2PCT.md](TARGET_2PCT.md), [TARGET_5PCT.md](TARGET_5PCT.md)) |
 | Technical analysis: 44 signals (RSI, Stochastic, Bollinger, CCI, MFI, MACD, moving averages, ADX, candles, OBV) | No signal holds up; none improves or replaces the lag rule ([TECHNICAL_ANALYSIS.md](TECHNICAL_ANALYSIS.md)) |
+| EMA and SMA: 59 signals (close vs 5-200 day averages, slopes, EMA vs SMA, 9/21, 12/26, 20/50, 50/200 crosses, stacks) | A small negative link that is market timing, not the stock: among results on the same day it vanishes; none of the 59 passes, and EMA and SMA say the same as plain past return ([EMA_SMA_3DAY.md](EMA_SMA_3DAY.md)) |
 | Fundamental analysis (value, quality, growth, GARP, Piotroski, margins, turnarounds) | No screen works before results; reported numbers give no drift beyond what any result does ([FUNDAMENTAL_ANALYSIS.md](FUNDAMENTAL_ANALYSIS.md)) |
 | Technical and fundamental analysis together (40 screens, 12 lag-rule filters, walk-forward models, 117 post-results tests) | Nothing passes the correction for the number of tests, and the models rank results like a coin flip (AUC 0.52). The one lead, winners with RSI above 50, is Trade 2 above ([TA_FA_COMBINED.md](TA_FA_COMBINED.md)) |
 | Past performance: results track record, 1-12 month return vs Nifty and sector, 52-week high (71 tests) | Improves neither trade; two watch items ([PAST_PERFORMANCE.md](PAST_PERFORMANCE.md)) |
@@ -214,6 +215,7 @@ depends on getting fills near the mid price, so treat it as marginal ([REAL_DATA
 - [SECTOR_3DAY.md](SECTOR_3DAY.md): the three-day results move by sector for every quarter
 - [NIFTY_SECTOR_3DAY.md](NIFTY_SECTOR_3DAY.md): the same by NSE's Nifty index sectors and sectoral indices, against each index
 - [QUARTER_CORRELATION.md](QUARTER_CORRELATION.md): whether best and worst quarters, sectors and stocks predict each other
+- [EMA_SMA_3DAY.md](EMA_SMA_3DAY.md): EMA and SMA signals at the cutoff against the three-day results move
 - [TECHNICAL_ANALYSIS.md](TECHNICAL_ANALYSIS.md), [FUNDAMENTAL_ANALYSIS.md](FUNDAMENTAL_ANALYSIS.md), [TA_FA_COMBINED.md](TA_FA_COMBINED.md): TA, FA and both together
 - [TARGET_2PCT.md](TARGET_2PCT.md), [TARGET_5PCT.md](TARGET_5PCT.md), [TARGET_100PCT.md](TARGET_100PCT.md): the target searches
 - [SECTOR_STRATEGIES.md](SECTOR_STRATEGIES.md), [PATTERNS.md](PATTERNS.md), [REAL_DATA_RESULTS.md](REAL_DATA_RESULTS.md): sector ideas, winner drift, option trades

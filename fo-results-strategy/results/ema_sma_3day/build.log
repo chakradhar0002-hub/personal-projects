@@ -1,0 +1,119 @@
+=== build_features.py
+prices: 506835 stock-days, 213 symbols; close = raw_close x price_factor (vs stored close: max rel diff 8.0e-08)
+identity check: my SMA/EMA vs build_panel.roll()/seeded() on every stock-day: max rel diff 0.0e+00, NaN pattern mismatches 0
+results: 3278 F&O results, 206 symbols, qn 0..21; three_day = d1 + d2 + d3 vs 100 x events.three_day max diff 2.1e-14
+  traded at the cutoff: 3278 of 3278
+validation vs events_ta.csv (stored with 6 significant digits):
+  results close_vs_sma20_pct         n=  3278  max abs diff 4.99e-05  max rel diff 4.87e-06  max (diff - 6-digit half-unit) -7.73e-11 pct pts  rel<=1e-6 2227  within rounding+1e-9 3278  within rounding+5e-06 3278/3278  NaN mismatches 0
+  results close_vs_sma50_pct         n=  3278  max abs diff 4.98e-05  max rel diff 4.81e-06  max (diff - 6-digit half-unit) 1.09e-07 pct pts  rel<=1e-6 2257  within rounding+1e-9 3277  within rounding+5e-06 3278/3278  NaN mismatches 0
+  results close_vs_sma200_pct        n=  3278  max abs diff 2.68e-04  max rel diff 4.86e-06  max (diff - 6-digit half-unit) 1.47e-06 pct pts  rel<=1e-6 2003  within rounding+1e-9 3273  within rounding+5e-06 3278/3278  NaN mismatches 0
+  results macd_pct (EMA12-EMA26)/C   n=  3278  max abs diff 3.43e-05  max rel diff 4.81e-06  max (diff - 6-digit half-unit) 1.36e-07 pct pts  rel<=1e-6 1961  within rounding+1e-9 3274  within rounding+5e-06 3278/3278  NaN mismatches 0
+  results state_sma50_200        vs golden_state  mismatches 0 of 3278
+  results _golden_state          vs golden_state  mismatches 0 of 3278
+  results _golden_x10            vs golden_x10    mismatches 0 of 3278
+  results _death_x10             vs death_x10     mismatches 0 of 3278
+  results spread_sma50_200 vs sma50_vs_sma200_pct max abs diff 4.99e-05
+placebo: 164882 stock-days in placebo_ta, 120238 with in_fo True kept (0 before the first season dropped); seasons start at sessions 0:1337, 1:1397, 2:1460, 3:1525, 4:1585, 5:1646, 6:1708, 7:1771, 8:1833, 9:1895, 10:1957, 11:2020, 12:2082, 13:2143, 14:2205, 15:2267, 16:2330, 17:2391, 18:2453, 19:2516, 20:2575, 21:2636
+  traded on the placebo day: 120238 of 120238
+validation vs placebo_ta.csv.gz (6 significant digits):
+  placebo close_vs_sma20_pct         n=120238  max abs diff 5.00e-05  max rel diff inf  max (diff - 6-digit half-unit) 1.38e-06 pct pts  rel<=1e-6 81330  within rounding+1e-9 120190  within rounding+5e-06 120238/120238  NaN mismatches 0
+  placebo close_vs_sma50_pct         n=120238  max abs diff 5.13e-05  max rel diff 9.18e-05  max (diff - 6-digit half-unit) 1.69e-06 pct pts  rel<=1e-6 82698  within rounding+1e-9 120182  within rounding+5e-06 120238/120238  NaN mismatches 0
+  placebo close_vs_sma200_pct        n=120238  max abs diff 4.78e-04  max rel diff 7.68e-05  max (diff - 6-digit half-unit) 1.59e-06 pct pts  rel<=1e-6 73283  within rounding+1e-9 120089  within rounding+5e-06 120238/120238  NaN mismatches 0
+  placebo macd_pct (EMA12-EMA26)/C   n=120238  max abs diff 4.98e-05  max rel diff 6.13e-05  max (diff - 6-digit half-unit) 4.96e-07 pct pts  rel<=1e-6 72106  within rounding+1e-9 120180  within rounding+5e-06 120238/120238  NaN mismatches 0
+  placebo state_sma50_200 vs golden_state mismatches 0 of 120238
+VALIDATION PASSED
+NaN count per feature (results / placebo):
+  dist_ema_5             0 /      0
+  dist_ema_10            0 /      0
+  dist_ema_20            0 /      0
+  dist_ema_50            0 /      0
+  dist_ema_100           0 /      0
+  dist_ema_200           0 /      0
+  dist_sma_5             0 /      0
+  dist_sma_10            0 /      0
+  dist_sma_20            0 /      0
+  dist_sma_50            0 /      0
+  dist_sma_100           0 /      0
+  dist_sma_200           0 /      0
+  slope_ema_20           0 /      0
+  slope_ema_50           0 /      0
+  slope_ema_200          0 /      0
+  slope_sma_20           0 /      0
+  slope_sma_50           0 /      0
+  slope_sma_200          0 /      0
+  ema_vs_sma_20          0 /      0
+  ema_vs_sma_50          0 /      0
+  ema_vs_sma_200         0 /      0
+  spread_ema9_21         0 /      0
+  spread_ema12_26        0 /      0
+  spread_ema20_50        0 /      0
+  spread_ema50_200       0 /      0
+  spread_sma20_50        0 /      0
+  spread_sma50_200       0 /      0
+  above_ema_20           0 /      0
+  above_ema_50           0 /      0
+  above_ema_200          0 /      0
+  above_sma_20           0 /      0
+  above_sma_50           0 /      0
+  above_sma_200          0 /      0
+  state_ema9_21          0 /      0
+  state_ema12_26         0 /      0
+  state_ema20_50         0 /      0
+  state_ema50_200        0 /      0
+  state_sma20_50         0 /      0
+  state_sma50_200        0 /      0
+  xup_ema9_21            0 /      0
+  xup_ema12_26           0 /      0
+  xup_ema20_50           0 /      0
+  xup_ema50_200          0 /      0
+  xup_sma20_50           0 /      0
+  xup_sma50_200          0 /      0
+  xdn_ema9_21            0 /      0
+  xdn_ema12_26           0 /      0
+  xdn_ema20_50           0 /      0
+  xdn_ema50_200          0 /      0
+  xdn_sma20_50           0 /      0
+  xdn_sma50_200          0 /      0
+  pxup_ema20             0 /      0
+  pxup_sma20             0 /      0
+  pxdn_ema20             0 /      0
+  pxdn_sma20             0 /      0
+  bull_stack_ema         0 /      0
+  bear_stack_ema         0 /      0
+  bull_stack_sma         0 /      0
+  bear_stack_sma         0 /      0
+binary signal counts (results / placebo):
+  above_ema_20        1789 /  66084
+  above_ema_50        1904 /  67869
+  above_ema_200       2174 /  76425
+  above_sma_20        1756 /  65598
+  above_sma_50        1881 /  66439
+  above_sma_200       2105 /  74146
+  state_ema9_21       1854 /  66244
+  state_ema12_26      1920 /  66318
+  state_ema20_50      1994 /  67906
+  state_ema50_200     2205 /  78996
+  state_sma20_50      1968 /  65490
+  state_sma50_200     2070 /  74990
+  xup_ema9_21          350 /  12851
+  xup_ema12_26         284 /   9861
+  xup_ema20_50         177 /   5327
+  xup_ema50_200         41 /   1639
+  xup_sma20_50         200 /   6409
+  xup_sma50_200         39 /   1716
+  xdn_ema9_21          390 /  11966
+  xdn_ema12_26         303 /   8979
+  xdn_ema20_50         182 /   4808
+  xdn_ema50_200         41 /   1889
+  xdn_sma20_50         209 /   6034
+  xdn_sma50_200         27 /   2023
+  pxup_ema20           634 /  22251
+  pxup_sma20           565 /  20414
+  pxdn_ema20           651 /  21829
+  pxdn_sma20           574 /  19932
+  bull_stack_ema      1095 /  41352
+  bear_stack_ema       440 /  20282
+  bull_stack_sma       804 /  31296
+  bear_stack_sma       328 /  16029
+wrote features_events.csv (3278 rows x 68 cols), features_placebo.csv.gz (120238 rows x 63 cols)
+DEVIATION: Validation slack: PLAN.txt allowed |diff| <= 6-digit half-unit + 1e-9; used + 5e-06 percentage points because adjusted_ohlcv.csv.gz stores price_factor with 8 significant digits (a split/bonus step inside an MA window carries up to ~5e-8 relative error). The MA code itself is identical to build_panel.roll()/seeded() (identity check above). The 1e-6-relative and +1e-9 counts are printed next to each check.

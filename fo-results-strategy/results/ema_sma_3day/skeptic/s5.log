@@ -1,0 +1,42 @@
+== walk-forward: choose feature + direction on quarters < t only; trade the favourable fifth in quarter t (net of 0.17%)
+ start quarter 2 (baseline: all results long, same quarters: avg net -0.15%, hit 47.3%)
+  continuous, pick by absIC                    OOS quarters 20, trades 621, avg net +0.27%, hit rate 50.2%, quarters positive 14/20, quarter-mean t +1.34 | long-short (fav - unfav fifth, 2 x cost) avg/quarter +0.18% pos 9/20
+     picks: 2:slope_sma_200+ 3:dist_sma_10- 4:dist_sma_10- 5:dist_sma_10- 6:dist_sma_10- 7:dist_sma_10- 8:dist_ema_20- 9:dist_ema_20- 10:dist_sma_10- 11:slope_sma_50- 12:slope_sma_50- 13:slope_sma_50- 14:slope_sma_50- 15:slope_sma_50- 16:dist_sma_10- 17:slope_ema_20- 18:slope_ema_20- 19:slope_ema_20- 20:slope_sma_50- 21:slope_sma_50-
+     OOS in q14-21 only: trades 299, avg net +0.03%, hit 47.5%
+  continuous, pick by abs_t                    OOS quarters 20, trades 621, avg net +0.55%, hit rate 52.5%, quarters positive 15/20, quarter-mean t +2.39 | long-short (fav - unfav fifth, 2 x cost) avg/quarter +0.42% pos 9/20
+ start quarter 4 (baseline: all results long, same quarters: avg net -0.08%, hit 47.7%)
+  continuous, pick by absIC                    OOS quarters 18, trades 569, avg net +0.19%, hit rate 49.6%, quarters positive 13/18, quarter-mean t +1.17 | long-short (fav - unfav fifth, 2 x cost) avg/quarter -0.08% pos 7/18
+     picks: 4:dist_sma_10- 5:dist_sma_10- 6:dist_sma_10- 7:dist_sma_10- 8:dist_ema_20- 9:dist_ema_20- 10:dist_sma_10- 11:slope_sma_50- 12:slope_sma_50- 13:slope_sma_50- 14:slope_sma_50- 15:slope_sma_50- 16:dist_sma_10- 17:slope_ema_20- 18:slope_ema_20- 19:slope_ema_20- 20:slope_sma_50- 21:slope_sma_50-
+     OOS in q14-21 only: trades 299, avg net +0.03%, hit 47.5%
+  continuous, pick by abs_t                    OOS quarters 18, trades 569, avg net +0.48%, hit rate 51.8%, quarters positive 14/18, quarter-mean t +2.20 | long-short (fav - unfav fifth, 2 x cost) avg/quarter +0.13% pos 7/18
+ start quarter 8 (baseline: all results long, same quarters: avg net -0.05%, hit 48.1%)
+  continuous, pick by absIC                    OOS quarters 14, trades 461, avg net +0.16%, hit rate 49.2%, quarters positive 10/14, quarter-mean t +0.86 | long-short (fav - unfav fifth, 2 x cost) avg/quarter -0.26% pos 4/14
+     picks: 8:dist_ema_20- 9:dist_ema_20- 10:dist_sma_10- 11:slope_sma_50- 12:slope_sma_50- 13:slope_sma_50- 14:slope_sma_50- 15:slope_sma_50- 16:dist_sma_10- 17:slope_ema_20- 18:slope_ema_20- 19:slope_ema_20- 20:slope_sma_50- 21:slope_sma_50-
+     OOS in q14-21 only: trades 299, avg net +0.03%, hit 47.5%
+  continuous, pick by abs_t                    OOS quarters 14, trades 461, avg net +0.38%, hit rate 51.4%, quarters positive 10/14, quarter-mean t +1.41 | long-short (fav - unfav fifth, 2 x cost) avg/quarter +0.06% pos 6/14
+ start quarter 14 (baseline: all results long, same quarters: avg net -0.23%, hit 46.8%)
+  continuous, pick by absIC                    OOS quarters 8, trades 299, avg net +0.03%, hit rate 47.5%, quarters positive 5/8, quarter-mean t +0.16 | long-short (fav - unfav fifth, 2 x cost) avg/quarter -0.39% pos 2/8
+     picks: 14:slope_sma_50- 15:slope_sma_50- 16:dist_sma_10- 17:slope_ema_20- 18:slope_ema_20- 19:slope_ema_20- 20:slope_sma_50- 21:slope_sma_50-
+     OOS in q14-21 only: trades 299, avg net +0.03%, hit 47.5%
+  continuous, pick by abs_t                    OOS quarters 8, trades 299, avg net +0.37%, hit rate 50.8%, quarters positive 5/8, quarter-mean t +0.81 | long-short (fav - unfav fifth, 2 x cost) avg/quarter +0.23% pos 4/8
+
+== choose once on q0-13 (slope_sma_50, mean IC -0.056), trade it in q14-21: trades 299, avg net +0.37%, hit 50.8%, quarters positive 5/8; without lag trades +0.05% (n 272)
+
+== the T5 claim: long the bottom fifth of slope_sma_50 (chosen in-sample as the best of 59)
+  trades 665, avg net +0.48%, hit 50.7%, quarters positive 16/22, quarter-mean t +2.40, trade-level t +2.47
+  without the 60 lag trades: 605 trades avg net +0.25%, hit 49.3%, quarters positive 13/22, quarter-mean t +1.27; q0-13 +0.42, q14-21 +0.05
+  bottom fifth market-adjusted: three_day - Nifty +0.40% (all results -0.05%), minus same-cutoff-date mean of all results +0.30%; without lag trades +0.12%
+  bottom fifth vs quarter mean (excess) +0.61%; without lag trades +0.38%
+  favourable fifth (side chosen in-sample) across the 27 features: net range -0.23 .. +0.52; median +0.28; without lag trades median +0.06, max +0.32
+           f      net  net_nolag
+dist_sma_100 0.515715   0.288973
+  dist_ema_5 0.485484   0.321869
+slope_sma_50 0.482457   0.252224
+ dist_sma_10 0.463734   0.303963
+dist_ema_100 0.420155   0.189273
+  shuffle null for "best favourable fifth of 27, side chosen in-sample": mean +0.40% gross, 95th pct +0.58%; observed +0.69% -> p 0.006
+  bottom fifth of ret50         : n 665 avg net +0.60%, without lag trades +0.39% (lag trades inside 71); overlap with slope_sma_50 bottom fifth 564
+  bottom fifth of ret100        : n 665 avg net +0.34%, without lag trades +0.10% (lag trades inside 54); overlap with slope_sma_50 bottom fifth 360
+  bottom fifth of stock_21d_pct : n 665 avg net +0.22%, without lag trades -0.04% (lag trades inside 85); overlap with slope_sma_50 bottom fifth 297
+  bottom fifth of lag_pct       : n 665 avg net -0.21%, without lag trades -0.53% (lag trades inside 85); overlap with slope_sma_50 bottom fifth 294
+  post hoc: after-close results only, bottom fifth of slope_sma_50: n 399 avg net +0.57%, without lag trades +0.25%; q0-13 +0.53, q14-21 +0.62; date-demeaned +0.39

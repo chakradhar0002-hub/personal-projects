@@ -1,0 +1,8 @@
+raw three_day         : best slope_sma_50 -0.052 maxT27 p 0.037; average IC of 27 -0.0294 p 0.022; negative 26/27; unadjusted p<0.05: 12 (P null >= k: 0.023)
+three_day - Nifty     : best ema_vs_sma_200 -0.041 maxT27 p 0.169; average IC of 27 -0.0066 p 0.611; negative 18/27; unadjusted p<0.05: 2 (P null >= k: 0.213)
+same-cutoff demeaned  : best dist_sma_5 +0.034 maxT27 p 0.401; average IC of 27 +0.0071 p 0.583; negative 5/27; unadjusted p<0.05: 0 (P null >= k: 1.000)
+placebo raw ICs: -0.064 .. -0.005 (27/27 negative); day-demeaned: -0.026 .. +0.021 (17/27 negative), mean |IC| 0.012
+   most negative day-demeaned placebo: dist_sma_10 raw -0.051 demeaned -0.026
+   most negative day-demeaned placebo: dist_ema_5 raw -0.040 demeaned -0.025
+   most negative day-demeaned placebo: dist_ema_10 raw -0.054 demeaned -0.025
+   most negative day-demeaned placebo: dist_sma_5 raw -0.032 demeaned -0.023

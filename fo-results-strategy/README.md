@@ -54,6 +54,9 @@ checklist and concrete trades, and backtests them on your data.
 > - **Best and worst quarters are not related:** a good results season does not follow a good one, the best sector
 >   does not stay best or flip to worst, and good and bad seasons are mostly the market on the same days. See
 >   [docs/QUARTER_CORRELATION.md](docs/QUARTER_CORRELATION.md).
+> - **EMA and SMA vs the three-day move:** a small negative link (stocks above rising averages do slightly worse), but
+>   it is market timing, not the stock: among results on the same day it vanishes. Nothing passes. See
+>   [docs/EMA_SMA_3DAY.md](docs/EMA_SMA_3DAY.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.

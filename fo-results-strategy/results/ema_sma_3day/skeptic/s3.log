@@ -1,0 +1,61 @@
+== check: events nifty_3d vs my Nifty sum of daily returns i+1..i+3: mean abs diff 0.000 pp, corr 1.0000
+results sharing a cutoff session with >= 1 other result: 3210 of 3278; distinct cutoff sessions 584 (per quarter median 24)
+mean within-quarter Spearman of feature with Nifty dist from its SMA50 at the cutoff:
+   slope_sma_50=+0.14 slope_ema_20=+0.24 dist_sma_100=+0.19 slope_ema_50=+0.22 dist_ema_50=+0.25 dist_ema_100=+0.21 dist_sma_50=+0.25 dist_sma_20=+0.26 dist_ema_200=+0.15
+
+== results: IC raw / minus Nifty / cutoff-date demeaned (only results sharing a cutoff) 
+  slope_sma_50   raw -0.052 (t -2.77, 8/22, p 0.006) | xs_nifty -0.041 (t -2.16, 8/22, p 0.030) | raw_same_sample -0.052 (t -2.91, 7/22, p 0.006) | date_demeaned -0.019 (t -0.91, 9/22, p 0.308)
+  slope_ema_20   raw -0.047 (t -2.29, 7/22, p 0.008) | xs_nifty -0.011 (t -0.57, 11/22, p 0.545) | raw_same_sample -0.050 (t -2.47, 5/22, p 0.009) | date_demeaned +0.007 (t +0.35, 15/22, p 0.694)
+  dist_sma_100   raw -0.045 (t -2.69, 7/22, p 0.015) | xs_nifty -0.024 (t -1.50, 10/22, p 0.192) | raw_same_sample -0.046 (t -2.70, 6/22, p 0.013) | date_demeaned +0.002 (t +0.09, 11/22, p 0.933)
+  slope_ema_50   raw -0.045 (t -2.23, 7/22, p 0.014) | xs_nifty -0.017 (t -0.89, 10/22, p 0.333) | raw_same_sample -0.047 (t -2.36, 7/22, p 0.011) | date_demeaned +0.004 (t +0.17, 13/22, p 0.839)
+  dist_ema_50    raw -0.043 (t -2.23, 10/22, p 0.018) | xs_nifty -0.010 (t -0.54, 12/22, p 0.591) | raw_same_sample -0.044 (t -2.28, 9/22, p 0.017) | date_demeaned +0.011 (t +0.52, 13/22, p 0.555)
+  dist_ema_100   raw -0.041 (t -2.12, 8/22, p 0.027) | xs_nifty -0.016 (t -0.87, 11/22, p 0.373) | raw_same_sample -0.042 (t -2.14, 7/22, p 0.021) | date_demeaned +0.006 (t +0.32, 14/22, p 0.734)
+  dist_sma_50    raw -0.037 (t -1.99, 10/22, p 0.038) | xs_nifty -0.005 (t -0.26, 13/22, p 0.786) | raw_same_sample -0.038 (t -2.05, 10/22, p 0.035) | date_demeaned +0.012 (t +0.61, 14/22, p 0.493)
+  dist_sma_20    raw -0.033 (t -1.60, 11/22, p 0.061) | xs_nifty +0.006 (t +0.35, 14/22, p 0.715) | raw_same_sample -0.034 (t -1.65, 10/22, p 0.061) | date_demeaned +0.020 (t +1.15, 13/22, p 0.267)
+  dist_ema_200   raw -0.026 (t -1.17, 11/22, p 0.150) | xs_nifty -0.008 (t -0.36, 14/22, p 0.674) | raw_same_sample -0.027 (t -1.21, 11/22, p 0.135) | date_demeaned +0.009 (t +0.41, 13/22, p 0.633)
+
+== placebo: 120238 stock-days, 1332 days; IC by season (raw = as the build / minus Nifty / day-demeaned)
+  slope_sma_50   three_day -0.044 (t -4.46, 4/22) | xs_nifty -0.007 (t -1.09, 8/22) | y_dd +0.004 (t +0.56, 11/22) | res-pl (xs_nifty) -0.033 p 0.105 | res-pl (demeaned) -0.023 p 0.251
+  slope_ema_20   three_day -0.064 (t -5.62, 2/22) | xs_nifty -0.024 (t -2.82, 5/22) | y_dd -0.014 (t -1.60, 9/22) | res-pl (xs_nifty) +0.013 p 0.450 | res-pl (demeaned) +0.021 p 0.214
+  dist_sma_100   three_day -0.051 (t -5.08, 3/22) | xs_nifty -0.012 (t -1.68, 5/22) | y_dd -0.001 (t -0.11, 11/22) | res-pl (xs_nifty) -0.012 p 0.475 | res-pl (demeaned) +0.003 p 0.882
+  slope_ema_50   three_day -0.058 (t -5.14, 3/22) | xs_nifty -0.015 (t -1.92, 6/22) | y_dd -0.004 (t -0.49, 11/22) | res-pl (xs_nifty) -0.002 p 0.911 | res-pl (demeaned) +0.008 p 0.651
+  dist_ema_50    three_day -0.063 (t -6.63, 2/22) | xs_nifty -0.020 (t -2.65, 7/22) | y_dd -0.010 (t -1.16, 10/22) | res-pl (xs_nifty) +0.010 p 0.518 | res-pl (demeaned) +0.021 p 0.239
+  dist_ema_100   three_day -0.053 (t -5.39, 3/22) | xs_nifty -0.012 (t -1.74, 5/22) | y_dd -0.001 (t -0.12, 11/22) | res-pl (xs_nifty) -0.004 p 0.825 | res-pl (demeaned) +0.007 p 0.680
+  dist_sma_50    three_day -0.061 (t -6.60, 2/22) | xs_nifty -0.018 (t -2.43, 7/22) | y_dd -0.010 (t -1.09, 10/22) | res-pl (xs_nifty) +0.014 p 0.353 | res-pl (demeaned) +0.022 p 0.194
+  dist_sma_20    three_day -0.063 (t -7.18, 1/22) | xs_nifty -0.028 (t -3.25, 6/22) | y_dd -0.022 (t -2.49, 6/22) | res-pl (xs_nifty) +0.035 p 0.080 | res-pl (demeaned) +0.042 p 0.024
+  dist_ema_200   three_day -0.038 (t -3.99, 5/22) | xs_nifty -0.003 (t -0.40, 9/22) | y_dd +0.008 (t +1.16, 11/22) | res-pl (xs_nifty) -0.005 p 0.813 | res-pl (demeaned) +0.001 p 0.973
+  placebo: Nifty dist from SMA50 (market-level) vs three_day: mean IC -0.140 (t -5.80, 2/22)
+  placebo pure cross-section (Spearman inside each day, averaged over days):
+     slope_sma_50   mean daily IC +0.0078 over 1179 days (naive t +1.41; overlapping windows)
+     slope_ema_20   mean daily IC -0.0032 over 1179 days (naive t -0.57; overlapping windows)
+     dist_sma_100   mean daily IC +0.0057 over 1179 days (naive t +1.00; overlapping windows)
+     slope_ema_50   mean daily IC +0.0055 over 1179 days (naive t +0.97; overlapping windows)
+     dist_ema_50    mean daily IC +0.0003 over 1179 days (naive t +0.05; overlapping windows)
+     dist_ema_100   mean daily IC +0.0087 over 1179 days (naive t +1.51; overlapping windows)
+
+== Nifty itself, every session from the first results season (1332 sessions): Spearman(dist from SMA50, next-3-day return) -0.012 (overlapping windows)
+   on the 584 results cutoff sessions only: -0.045
+
+== by result timing (mean IC over quarters; components; reaction day = d2 during market, d3 after close / non-trading)
+  slope_sma_50
+    all             n=3278 three_day -0.052 d1 -0.030 d2 -0.036 d3 -0.034 react -0.032 pre -0.039 xs_nifty -0.041 | p(three_day) 0.005 p(react) 0.068
+    After close     n=1954 three_day -0.096 d1 -0.020 d2 -0.075 d3 -0.070 react -0.070 pre -0.064 xs_nifty -0.083 | p(three_day) <0.001 p(react) 0.002
+    During market   n=1025 three_day +0.009 d1 -0.032 d2 +0.010 d3 +0.008 react +0.010 pre -0.006 xs_nifty +0.013 | p(three_day) 0.788 p(react) 0.789
+    Non-trading day n= 277 three_day +0.024 d1 -0.112 d2 -0.029 d3 +0.121 react +0.121 pre -0.032 xs_nifty +0.002 | p(three_day) 0.735 p(react) 0.073
+  slope_ema_20
+    all             n=3278 three_day -0.047 d1 -0.074 d2 -0.041 d3 +0.001 react -0.000 pre -0.068 xs_nifty -0.011 | p(three_day) 0.010 p(react) 0.983
+    After close     n=1954 three_day -0.071 d1 -0.079 d2 -0.092 d3 -0.008 react -0.008 pre -0.116 xs_nifty -0.036 | p(three_day) 0.003 p(react) 0.736
+    During market   n=1025 three_day -0.028 d1 -0.053 d2 -0.010 d3 +0.010 react -0.010 pre -0.008 xs_nifty -0.003 | p(three_day) 0.409 p(react) 0.760
+    Non-trading day n= 277 three_day -0.026 d1 -0.125 d2 +0.036 d3 -0.054 react -0.054 pre -0.025 xs_nifty +0.011 | p(three_day) 0.706 p(react) 0.427
+  dist_sma_100
+    all             n=3278 three_day -0.045 d1 -0.044 d2 -0.034 d3 -0.022 react -0.024 pre -0.042 xs_nifty -0.024 | p(three_day) 0.012 p(react) 0.182
+    After close     n=1954 three_day -0.093 d1 -0.042 d2 -0.085 d3 -0.054 react -0.054 pre -0.085 xs_nifty -0.070 | p(three_day) <0.001 p(react) 0.020
+    During market   n=1025 three_day +0.002 d1 -0.030 d2 +0.005 d3 +0.024 react +0.005 pre +0.009 xs_nifty +0.016 | p(three_day) 0.933 p(react) 0.889
+    Non-trading day n= 277 three_day +0.007 d1 -0.098 d2 +0.035 d3 +0.010 react +0.010 pre +0.000 xs_nifty +0.004 | p(three_day) 0.916 p(react) 0.893
+  dist_ema_50
+    all             n=3278 three_day -0.043 d1 -0.058 d2 -0.038 d3 -0.007 react -0.010 pre -0.053 xs_nifty -0.010 | p(three_day) 0.017 p(react) 0.546
+    After close     n=1954 three_day -0.088 d1 -0.064 d2 -0.096 d3 -0.031 react -0.031 pre -0.110 xs_nifty -0.054 | p(three_day) <0.001 p(react) 0.197
+    During market   n=1025 three_day -0.007 d1 -0.049 d2 +0.000 d3 +0.021 react +0.000 pre +0.007 xs_nifty +0.018 | p(three_day) 0.826 p(react) 0.998
+    Non-trading day n= 277 three_day +0.045 d1 -0.117 d2 +0.097 d3 +0.010 react +0.010 pre +0.026 xs_nifty +0.051 | p(three_day) 0.489 p(react) 0.883
+  slope_sma_50: after close minus during market IC -0.105, paired t p 0.023 (22 q)
+  slope_ema_20: after close minus during market IC -0.044, paired t p 0.287 (22 q)

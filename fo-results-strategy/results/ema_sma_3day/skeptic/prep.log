@@ -1,0 +1,2 @@
+events 3278 {'symbol': 0, 'qn': 0, 'i': 0, 'ret21': 0, 'ret50': 0, 'ret100': 0, 'ret250': 0, 'my_slope_sma_50': 0, 'my_dist_sma_100': 0, 'my_dist_sma_50': 0, 'nifty_slope_sma_50': 0, 'nifty_dist_sma_50': 0, 'nifty_ret50': 0, 'nifty_fwd3': 0}
+placebo 120238 {'symbol': 0, 'i': 0, 'qn': 0, 'ret21': 0, 'ret50': 0, 'ret100': 0, 'ret250': 0, 'my_slope_sma_50': 0, 'my_dist_sma_100': 0, 'my_dist_sma_50': 0, 'nifty_slope_sma_50': 0, 'nifty_dist_sma_50': 0, 'nifty_ret50': 0, 'nifty_fwd3': 0}

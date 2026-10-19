@@ -1,0 +1,289 @@
+=== EMA / SMA vs the three-day results move: run log
+PLAN.txt sha256 4cab04cbe5b326bffd68be03025dad84aefe4c531cf1cc0f9e38b06b12149198  recorded 4cab04cbe5b326bffd68be03025dad84aefe4c531cf1cc0f9e38b06b12149198  MATCH
+=== build_features.py
+prices: 506835 stock-days, 213 symbols; close = raw_close x price_factor (vs stored close: max rel diff 8.0e-08)
+identity check: my SMA/EMA vs build_panel.roll()/seeded() on every stock-day: max rel diff 0.0e+00, NaN pattern mismatches 0
+results: 3278 F&O results, 206 symbols, qn 0..21; three_day = d1 + d2 + d3 vs 100 x events.three_day max diff 2.1e-14
+  traded at the cutoff: 3278 of 3278
+validation vs events_ta.csv (stored with 6 significant digits):
+  results close_vs_sma20_pct         n=  3278  max abs diff 4.99e-05  max rel diff 4.87e-06  max (diff - 6-digit half-unit) -7.73e-11 pct pts  rel<=1e-6 2227  within rounding+1e-9 3278  within rounding+5e-06 3278/3278  NaN mismatches 0
+  results close_vs_sma50_pct         n=  3278  max abs diff 4.98e-05  max rel diff 4.81e-06  max (diff - 6-digit half-unit) 1.09e-07 pct pts  rel<=1e-6 2257  within rounding+1e-9 3277  within rounding+5e-06 3278/3278  NaN mismatches 0
+  results close_vs_sma200_pct        n=  3278  max abs diff 2.68e-04  max rel diff 4.86e-06  max (diff - 6-digit half-unit) 1.47e-06 pct pts  rel<=1e-6 2003  within rounding+1e-9 3273  within rounding+5e-06 3278/3278  NaN mismatches 0
+  results macd_pct (EMA12-EMA26)/C   n=  3278  max abs diff 3.43e-05  max rel diff 4.81e-06  max (diff - 6-digit half-unit) 1.36e-07 pct pts  rel<=1e-6 1961  within rounding+1e-9 3274  within rounding+5e-06 3278/3278  NaN mismatches 0
+  results state_sma50_200        vs golden_state  mismatches 0 of 3278
+  results _golden_state          vs golden_state  mismatches 0 of 3278
+  results _golden_x10            vs golden_x10    mismatches 0 of 3278
+  results _death_x10             vs death_x10     mismatches 0 of 3278
+  results spread_sma50_200 vs sma50_vs_sma200_pct max abs diff 4.99e-05
+placebo: 164882 stock-days in placebo_ta, 120238 with in_fo True kept (0 before the first season dropped); seasons start at sessions 0:1337, 1:1397, 2:1460, 3:1525, 4:1585, 5:1646, 6:1708, 7:1771, 8:1833, 9:1895, 10:1957, 11:2020, 12:2082, 13:2143, 14:2205, 15:2267, 16:2330, 17:2391, 18:2453, 19:2516, 20:2575, 21:2636
+  traded on the placebo day: 120238 of 120238
+validation vs placebo_ta.csv.gz (6 significant digits):
+  placebo close_vs_sma20_pct         n=120238  max abs diff 5.00e-05  max rel diff inf  max (diff - 6-digit half-unit) 1.38e-06 pct pts  rel<=1e-6 81330  within rounding+1e-9 120190  within rounding+5e-06 120238/120238  NaN mismatches 0
+  placebo close_vs_sma50_pct         n=120238  max abs diff 5.13e-05  max rel diff 9.18e-05  max (diff - 6-digit half-unit) 1.69e-06 pct pts  rel<=1e-6 82698  within rounding+1e-9 120182  within rounding+5e-06 120238/120238  NaN mismatches 0
+  placebo close_vs_sma200_pct        n=120238  max abs diff 4.78e-04  max rel diff 7.68e-05  max (diff - 6-digit half-unit) 1.59e-06 pct pts  rel<=1e-6 73283  within rounding+1e-9 120089  within rounding+5e-06 120238/120238  NaN mismatches 0
+  placebo macd_pct (EMA12-EMA26)/C   n=120238  max abs diff 4.98e-05  max rel diff 6.13e-05  max (diff - 6-digit half-unit) 4.96e-07 pct pts  rel<=1e-6 72106  within rounding+1e-9 120180  within rounding+5e-06 120238/120238  NaN mismatches 0
+  placebo state_sma50_200 vs golden_state mismatches 0 of 120238
+VALIDATION PASSED
+NaN count per feature (results / placebo):
+  dist_ema_5             0 /      0
+  dist_ema_10            0 /      0
+  dist_ema_20            0 /      0
+  dist_ema_50            0 /      0
+  dist_ema_100           0 /      0
+  dist_ema_200           0 /      0
+  dist_sma_5             0 /      0
+  dist_sma_10            0 /      0
+  dist_sma_20            0 /      0
+  dist_sma_50            0 /      0
+  dist_sma_100           0 /      0
+  dist_sma_200           0 /      0
+  slope_ema_20           0 /      0
+  slope_ema_50           0 /      0
+  slope_ema_200          0 /      0
+  slope_sma_20           0 /      0
+  slope_sma_50           0 /      0
+  slope_sma_200          0 /      0
+  ema_vs_sma_20          0 /      0
+  ema_vs_sma_50          0 /      0
+  ema_vs_sma_200         0 /      0
+  spread_ema9_21         0 /      0
+  spread_ema12_26        0 /      0
+  spread_ema20_50        0 /      0
+  spread_ema50_200       0 /      0
+  spread_sma20_50        0 /      0
+  spread_sma50_200       0 /      0
+  above_ema_20           0 /      0
+  above_ema_50           0 /      0
+  above_ema_200          0 /      0
+  above_sma_20           0 /      0
+  above_sma_50           0 /      0
+  above_sma_200          0 /      0
+  state_ema9_21          0 /      0
+  state_ema12_26         0 /      0
+  state_ema20_50         0 /      0
+  state_ema50_200        0 /      0
+  state_sma20_50         0 /      0
+  state_sma50_200        0 /      0
+  xup_ema9_21            0 /      0
+  xup_ema12_26           0 /      0
+  xup_ema20_50           0 /      0
+  xup_ema50_200          0 /      0
+  xup_sma20_50           0 /      0
+  xup_sma50_200          0 /      0
+  xdn_ema9_21            0 /      0
+  xdn_ema12_26           0 /      0
+  xdn_ema20_50           0 /      0
+  xdn_ema50_200          0 /      0
+  xdn_sma20_50           0 /      0
+  xdn_sma50_200          0 /      0
+  pxup_ema20             0 /      0
+  pxup_sma20             0 /      0
+  pxdn_ema20             0 /      0
+  pxdn_sma20             0 /      0
+  bull_stack_ema         0 /      0
+  bear_stack_ema         0 /      0
+  bull_stack_sma         0 /      0
+  bear_stack_sma         0 /      0
+binary signal counts (results / placebo):
+  above_ema_20        1789 /  66084
+  above_ema_50        1904 /  67869
+  above_ema_200       2174 /  76425
+  above_sma_20        1756 /  65598
+  above_sma_50        1881 /  66439
+  above_sma_200       2105 /  74146
+  state_ema9_21       1854 /  66244
+  state_ema12_26      1920 /  66318
+  state_ema20_50      1994 /  67906
+  state_ema50_200     2205 /  78996
+  state_sma20_50      1968 /  65490
+  state_sma50_200     2070 /  74990
+  xup_ema9_21          350 /  12851
+  xup_ema12_26         284 /   9861
+  xup_ema20_50         177 /   5327
+  xup_ema50_200         41 /   1639
+  xup_sma20_50         200 /   6409
+  xup_sma50_200         39 /   1716
+  xdn_ema9_21          390 /  11966
+  xdn_ema12_26         303 /   8979
+  xdn_ema20_50         182 /   4808
+  xdn_ema50_200         41 /   1889
+  xdn_sma20_50         209 /   6034
+  xdn_sma50_200         27 /   2023
+  pxup_ema20           634 /  22251
+  pxup_sma20           565 /  20414
+  pxdn_ema20           651 /  21829
+  pxdn_sma20           574 /  19932
+  bull_stack_ema      1095 /  41352
+  bear_stack_ema       440 /  20282
+  bull_stack_sma       804 /  31296
+  bear_stack_sma       328 /  16029
+wrote features_events.csv (3278 rows x 68 cols), features_placebo.csv.gz (120238 rows x 63 cols)
+
+=== run_tests.py
+results: 3278 (qn 0..21), mean three_day +0.04%, median -0.15%, sd 5.19; first 14 q mean +0.12%, last 8 q -0.06%
+placebo: 120238 ordinary F&O stock-days, mean three_day +0.21%, seasons with days: 22 (min 2512, max 7471 per season)
+per quarter: qn, period, results, mean three_day (%), placebo days, placebo mean three_day (%)
+   0 Jan-Mar 2021    98  +0.82    2512  +0.40
+   1 Apr-Jun 2021   117  +0.06    4310  +0.78
+   2 Jul-Sep 2021   125  -0.84    4985  +0.12
+   3 Oct-Dec 2021   132  -0.64    4782  +0.42
+   4 Jan-Mar 2022   131  -0.83    4792  -0.42
+   5 Apr-Jun 2022   134  +0.75    4993  +0.14
+   6 Jul-Sep 2022   133  +0.03    5280  -0.02
+   7 Oct-Dec 2022   133  -0.16    5102  -0.02
+   8 Jan-Mar 2023   134  +0.61    4974  +0.78
+   9 Apr-Jun 2023   133  -0.30    5022  +0.36
+  10 Jul-Sep 2023   132  +0.41    5200  +1.00
+  11 Oct-Dec 2023   135  +0.48    5245  +0.45
+  12 Jan-Mar 2024   135  +0.88    4961  +0.79
+  13 Apr-Jun 2024   135  +0.53    5216  +0.16
+  14 Jul-Sep 2024   134  -1.12    5198  -0.18
+  15 Oct-Dec 2024   172  -0.79    6603  -0.16
+  16 Jan-Mar 2025   178  +0.96    6596  +0.69
+  17 Apr-Jun 2025   191  -0.56    7193  +0.21
+  18 Jul-Sep 2025   191  +0.67    7471  +0.11
+  19 Oct-Dec 2025   196  +0.18    7105  -0.70
+  20 Jan-Mar 2026   203  -0.31    7418  +0.53
+  21 Apr-Jun 2026   206  +0.17    5280  -0.47
+
+=== T1 continuous: per-quarter Spearman IC, 5000 within-quarter shuffles (seed 20261019)
+IC cross-check vs scipy.spearmanr (qn 0, dist_ema_5): diff 1.4e-17
+feature (sorted by |mean IC|): n, mean IC, t, quarters IC>0, perm p, maxT p | pooled rho vs excess (p) | first 14 q IC (perm p, maxT p) | last 8 q IC (perm p) | placebo IC | results-placebo (p) | IC d1/d2/d3 | conf
+  slope_sma_50      n=3278 IC -0.052 t -2.77 pos 8/22 p 0.003 maxT 0.037 | rho -0.044 (0.012) | -0.056 (0.016, 0.157) | -0.045 (0.094) | -0.044 | -0.008 (0.664) | -0.030/-0.036/-0.034 | no
+  slope_ema_20      n=3278 IC -0.047 t -2.29 pos 7/22 p 0.008 maxT 0.074 | rho -0.048 (0.006) | -0.054 (0.023, 0.184) | -0.036 (0.181) | -0.064 | +0.016 (0.351) | -0.074/-0.041/+0.001 | no
+  dist_sma_100      n=3278 IC -0.045 t -2.69 pos 7/22 p 0.008 maxT 0.103 | rho -0.038 (0.028) | -0.035 (0.142, 0.676) | -0.063 (0.015) | -0.051 | +0.006 (0.682) | -0.044/-0.034/-0.022 | no
+  slope_ema_50      n=3278 IC -0.045 t -2.23 pos 7/22 p 0.009 maxT 0.105 | rho -0.041 (0.019) | -0.041 (0.086, 0.496) | -0.052 (0.046) | -0.058 | +0.013 (0.425) | -0.055/-0.038/-0.011 | no
+  dist_ema_50       n=3278 IC -0.043 t -2.23 pos 10/22 p 0.015 maxT 0.143 | rho -0.039 (0.024) | -0.040 (0.090, 0.514) | -0.047 (0.071) | -0.063 | +0.020 (0.202) | -0.058/-0.038/-0.007 | no
+  ema_vs_sma_200    n=3278 IC -0.042 t -2.18 pos 8/22 p 0.024 maxT 0.164 | rho -0.040 (0.022) | -0.030 (0.220, 0.807) | -0.063 (0.016) | -0.016 | -0.025 (0.292) | -0.002/-0.022/-0.041 | no
+  dist_ema_100      n=3278 IC -0.041 t -2.12 pos 8/22 p 0.019 maxT 0.176 | rho -0.035 (0.043) | -0.034 (0.152, 0.700) | -0.054 (0.036) | -0.053 | +0.012 (0.455) | -0.043/-0.036/-0.015 | no
+  dist_sma_10       n=3278 IC -0.039 t -1.72 pos 8/22 p 0.032 maxT 0.232 | rho -0.033 (0.059) | -0.049 (0.041, 0.268) | -0.020 (0.449) | -0.051 | +0.012 (0.665) | -0.064/-0.034/-0.002 | no
+  spread_ema9_21    n=3278 IC -0.038 t -1.98 pos 9/22 p 0.031 maxT 0.251 | rho -0.038 (0.028) | -0.041 (0.089, 0.504) | -0.033 (0.201) | -0.061 | +0.023 (0.152) | -0.067/-0.033/+0.003 | no
+  dist_ema_20       n=3278 IC -0.038 t -1.84 pos 9/22 p 0.034 maxT 0.252 | rho -0.036 (0.039) | -0.048 (0.044, 0.301) | -0.020 (0.443) | -0.062 | +0.024 (0.236) | -0.070/-0.034/+0.003 | no
+  spread_ema20_50   n=3278 IC -0.037 t -2.05 pos 9/22 p 0.032 maxT 0.264 | rho -0.036 (0.038) | -0.028 (0.233, 0.837) | -0.053 (0.042) | -0.044 | +0.007 (0.674) | -0.029/-0.024/-0.023 | no
+  dist_sma_50       n=3278 IC -0.037 t -1.99 pos 10/22 p 0.036 maxT 0.271 | rho -0.037 (0.036) | -0.037 (0.118, 0.614) | -0.038 (0.150) | -0.061 | +0.024 (0.091) | -0.057/-0.030/-0.004 | no
+  spread_ema12_26   n=3278 IC -0.035 t -1.90 pos 9/22 p 0.048 maxT 0.332 | rho -0.036 (0.042) | -0.035 (0.146, 0.679) | -0.036 (0.163) | -0.057 | +0.022 (0.153) | -0.056/-0.030/-0.001 | no
+  dist_sma_20       n=3278 IC -0.033 t -1.60 pos 11/22 p 0.063 maxT 0.406 | rho -0.034 (0.049) | -0.046 (0.054, 0.350) | -0.010 (0.695) | -0.063 | +0.030 (0.166) | -0.072/-0.028/+0.007 | no
+  dist_ema_10       n=3278 IC -0.032 t -1.52 pos 8/22 p 0.079 maxT 0.448 | rho -0.029 (0.102) | -0.043 (0.069, 0.419) | -0.011 (0.672) | -0.054 | +0.022 (0.369) | -0.064/-0.032/+0.005 | no
+  dist_sma_200      n=3278 IC -0.029 t -1.38 pos 9/22 p 0.096 maxT 0.547 | rho -0.023 (0.192) | -0.022 (0.361, 0.951) | -0.042 (0.106) | -0.036 | +0.006 (0.758) | -0.019/-0.025/-0.014 | no
+  spread_sma20_50   n=3278 IC -0.026 t -1.58 pos 9/22 p 0.148 maxT 0.698 | rho -0.034 (0.053) | -0.018 (0.435, 0.983) | -0.039 (0.139) | -0.035 | +0.009 (0.541) | -0.028/-0.009/-0.017 | no
+  dist_ema_200      n=3278 IC -0.026 t -1.17 pos 11/22 p 0.149 maxT 0.698 | rho -0.021 (0.225) | -0.018 (0.456, 0.984) | -0.039 (0.135) | -0.038 | +0.013 (0.516) | -0.022/-0.025/-0.009 | no
+  slope_sma_20      n=3278 IC -0.026 t -1.57 pos 10/22 p 0.150 maxT 0.703 | rho -0.028 (0.112) | -0.029 (0.229, 0.830) | -0.020 (0.431) | -0.042 | +0.016 (0.304) | -0.054/-0.020/+0.009 | no
+  slope_ema_200     n=3278 IC -0.025 t -1.13 pos 9/22 p 0.151 maxT 0.713 | rho -0.021 (0.236) | -0.015 (0.536, 0.997) | -0.044 (0.095) | -0.033 | +0.008 (0.714) | -0.015/-0.022/-0.010 | no
+  ema_vs_sma_20     n=3278 IC -0.019 t -0.94 pos 8/22 p 0.283 maxT 0.905 | rho -0.024 (0.167) | -0.033 (0.172, 0.733) | +0.004 (0.873) | -0.034 | +0.015 (0.494) | -0.043/-0.012/+0.007 | no
+  spread_sma50_200  n=3278 IC -0.013 t -0.63 pos 11/22 p 0.477 maxT 0.989 | rho -0.010 (0.567) | +0.001 (0.965, 1.000) | -0.038 (0.154) | -0.005 | -0.008 (0.725) | +0.017/-0.012/-0.014 | no
+  dist_ema_5        n=3278 IC -0.013 t -0.65 pos 12/22 p 0.495 maxT 0.991 | rho -0.012 (0.475) | -0.019 (0.426, 0.978) | -0.001 (0.957) | -0.040 | +0.027 (0.258) | -0.048/-0.026/+0.015 | no
+  ema_vs_sma_50     n=3278 IC -0.008 t -0.48 pos 11/22 p 0.667 maxT 1.000 | rho -0.015 (0.391) | -0.024 (0.325, 0.926) | +0.020 (0.450) | -0.032 | +0.024 (0.195) | -0.028/-0.002/+0.005 | no
+  spread_ema50_200  n=3278 IC -0.004 t -0.16 pos 13/22 p 0.842 maxT 1.000 | rho -0.000 (0.980) | +0.011 (0.653, 1.000) | -0.029 (0.274) | -0.009 | +0.005 (0.821) | +0.016/-0.011/-0.003 | no
+  slope_sma_200     n=3278 IC -0.003 t -0.11 pos 10/22 p 0.875 maxT 1.000 | rho +0.004 (0.833) | -0.005 (0.839, 1.000) | +0.000 (0.990) | -0.013 | +0.010 (0.671) | +0.010/-0.004/-0.002 | no
+  dist_sma_5        n=3278 IC +0.001 t +0.03 pos 11/22 p 0.975 maxT 1.000 | rho -0.002 (0.900) | -0.001 (0.982, 1.000) | +0.003 (0.928) | -0.032 | +0.033 (0.190) | -0.039/-0.014/+0.019 | no
+
+Quintiles (average three_day % by fifth within quarter, bottom .. top; top - bottom; quarters top > bottom):
+  slope_sma_50      +0.65 -0.01 -0.07 -0.21 -0.17 | -0.82 | 6/22  (n 665/656/654/656/647)
+  slope_ema_20      +0.31 +0.48 -0.11 -0.39 -0.08 | -0.40 | 9/22  (n 665/656/654/656/647)
+  dist_sma_100      +0.69 -0.14 -0.21 -0.23 +0.09 | -0.59 | 7/22  (n 665/656/654/656/647)
+  slope_ema_50      +0.45 -0.00 -0.12 +0.09 -0.22 | -0.67 | 9/22  (n 665/656/654/656/647)
+  dist_ema_50       +0.53 -0.01 -0.12 -0.07 -0.12 | -0.65 | 9/22  (n 665/656/654/656/647)
+  ema_vs_sma_200    +0.21 +0.33 +0.00 +0.05 -0.38 | -0.59 | 8/22  (n 665/656/654/656/647)
+  dist_ema_100      +0.59 -0.13 -0.32 +0.05 +0.00 | -0.59 | 10/22  (n 665/656/654/656/647)
+  dist_sma_10       +0.63 -0.14 -0.08 -0.18 -0.03 | -0.67 | 10/22  (n 665/656/654/656/647)
+  spread_ema9_21    +0.42 +0.14 -0.02 -0.20 -0.15 | -0.58 | 8/22  (n 665/656/654/656/647)
+  dist_ema_20       +0.45 +0.14 -0.35 -0.11 +0.06 | -0.39 | 10/22  (n 665/656/654/656/647)
+  spread_ema20_50   +0.49 -0.02 -0.08 -0.02 -0.17 | -0.67 | 7/22  (n 665/656/654/656/647)
+  dist_sma_50       +0.50 +0.12 -0.42 -0.03 +0.02 | -0.48 | 8/22  (n 665/656/654/656/647)
+  spread_ema12_26   +0.53 +0.03 -0.27 +0.13 -0.22 | -0.74 | 8/22  (n 665/656/654/656/647)
+  dist_sma_20       +0.55 -0.10 -0.19 +0.00 -0.07 | -0.62 | 7/22  (n 665/656/654/656/647)
+  dist_ema_10       +0.45 +0.06 -0.16 -0.15 +0.00 | -0.45 | 9/22  (n 665/656/654/656/647)
+  dist_sma_200      +0.28 -0.04 -0.01 +0.04 -0.07 | -0.35 | 10/22  (n 665/656/654/656/647)
+  spread_sma20_50   +0.32 -0.07 +0.22 -0.22 -0.05 | -0.36 | 8/22  (n 665/656/654/656/647)
+  dist_ema_200      +0.52 -0.43 +0.11 -0.03 +0.04 | -0.48 | 10/22  (n 665/656/654/656/647)
+  slope_sma_20      +0.32 +0.14 -0.16 -0.13 +0.03 | -0.29 | 11/22  (n 665/656/654/656/647)
+  slope_ema_200     +0.28 -0.02 -0.04 +0.08 -0.10 | -0.39 | 9/22  (n 665/656/654/656/647)
+  ema_vs_sma_20     +0.32 -0.12 +0.01 -0.01 -0.00 | -0.32 | 8/22  (n 665/656/654/656/647)
+  spread_sma50_200  -0.06 +0.17 +0.29 -0.23 +0.03 | +0.09 | 12/22  (n 665/656/654/656/647)
+  dist_ema_5        +0.66 -0.43 -0.10 -0.27 +0.35 | -0.31 | 10/22  (n 665/656/654/656/647)
+  ema_vs_sma_50     +0.15 -0.01 +0.14 +0.20 -0.28 | -0.43 | 8/22  (n 665/656/654/656/647)
+  spread_ema50_200  +0.00 +0.04 +0.17 -0.06 +0.06 | +0.06 | 13/22  (n 665/656/654/656/647)
+  slope_sma_200     +0.04 +0.03 -0.07 +0.26 -0.06 | -0.10 | 13/22  (n 665/656/654/656/647)
+  dist_sma_5        +0.35 -0.14 -0.30 +0.04 +0.26 | -0.08 | 11/22  (n 665/656/654/656/647)
+
+=== T2 binary: 20000 random same-size within-quarter picks (seed 20261020)
+feature (sorted by luck p): n with, avg with / without, excess, quarters beating all, luck p, Holm p | first 14 q excess (p, Holm) | last 8 q excess (p) | placebo diff (n) | results-placebo (p, quarters) | excess d1/d2/d3 | conf
+  state_ema20_50    n=1994 -0.03 / +0.16 ex -0.15 beat 8/22 p 0.033 Holm 1.000 | -0.10 n=1194 (0.224, 1.000) | -0.21 n=800 (0.071) | -0.08 (n=67906) | -0.07 (0.360, 22 q) | -0.05/-0.03/-0.07 | no
+  xdn_sma50_200     n=  27 +1.84 / +0.03 ex +2.05 beat 10/11 p 0.041 Holm 1.000 | +0.90 n=9 (0.591, 1.000) | +2.63 n=18 (0.034) | +0.04 (n=2023) | +2.37 (0.008, 11 q) | +0.16/+0.86/+1.03 | no
+  above_ema_50      n=1904 +0.02 / +0.07 ex -0.14 beat 9/22 p 0.044 Holm 1.000 | -0.14 n=1145 (0.106, 1.000) | -0.15 n=759 (0.223) | -0.10 (n=67869) | -0.06 (0.377, 22 q) | -0.07/-0.02/-0.05 | no
+  above_sma_50      n=1881 +0.03 / +0.06 ex -0.14 beat 8/22 p 0.046 Holm 1.000 | -0.11 n=1113 (0.217, 1.000) | -0.19 n=768 (0.110) | -0.10 (n=66439) | -0.04 (0.478, 22 q) | -0.10/+0.02/-0.06 | no
+  state_ema9_21     n=1854 +0.04 / +0.04 ex -0.14 beat 7/22 p 0.048 Holm 1.000 | -0.15 n=1100 (0.112, 1.000) | -0.14 n=754 (0.233) | -0.11 (n=66244) | -0.10 (0.248, 22 q) | -0.09/-0.02/-0.04 | no
+  xdn_ema50_200     n=  41 +1.25 / +0.03 ex +1.53 beat 11/16 p 0.066 Holm 1.000 | +3.40 n=17 (0.007, 0.214) | +0.21 n=24 (0.852) | +0.33 (n=1889) | +1.79 (0.035, 16 q) | +0.01/+0.40/+1.13 | no
+  bear_stack_ema    n= 440 +0.27 / +0.01 ex +0.40 beat 14/22 p 0.074 Holm 1.000 | +0.24 n=184 (0.500, 1.000) | +0.52 n=256 (0.077) | +0.22 (n=20282) | -0.06 (0.815, 22 q) | +0.09/+0.14/+0.16 | no
+  xdn_sma20_50      n= 209 -0.70 / +0.09 ex -0.57 beat 11/22 p 0.100 Holm 1.000 | -0.85 n=129 (0.052, 1.000) | -0.12 n=80 (0.828) | +0.03 (n=6034) | +0.01 (0.978, 22 q) | +0.24/-0.18/-0.63 | no
+  state_ema12_26    n=1920 +0.06 / +0.02 ex -0.11 beat 8/22 p 0.112 Holm 1.000 | -0.05 n=1144 (0.603, 1.000) | -0.21 n=776 (0.073) | -0.11 (n=66318) | +0.01 (0.914, 22 q) | -0.08/+0.00/-0.04 | no
+  state_sma20_50    n=1968 -0.01 / +0.12 ex -0.11 beat 10/22 p 0.125 Holm 1.000 | -0.06 n=1140 (0.481, 1.000) | -0.17 n=828 (0.137) | -0.08 (n=65490) | -0.00 (0.971, 22 q) | -0.04/-0.01/-0.06 | no
+  bear_stack_sma    n= 328 +0.17 / +0.03 ex +0.41 beat 13/21 p 0.127 Holm 1.000 | -0.08 n=127 (0.853, 1.000) | +0.72 n=201 (0.034) | +0.26 (n=16029) | -0.12 (0.728, 21 q) | +0.19/+0.17/+0.06 | no
+  above_ema_200     n=2174 -0.00 / +0.13 ex -0.09 beat 9/22 p 0.138 Holm 1.000 | -0.07 n=1339 (0.289, 1.000) | -0.12 n=835 (0.305) | -0.08 (n=76425) | -0.02 (0.754, 22 q) | -0.01/-0.05/-0.03 | no
+  above_ema_20      n=1789 +0.07 / +0.01 ex -0.11 beat 8/22 p 0.141 Holm 1.000 | -0.11 n=1048 (0.266, 1.000) | -0.12 n=741 (0.339) | -0.10 (n=66084) | -0.09 (0.325, 22 q) | -0.10/-0.03/+0.02 | no
+  xdn_ema9_21       n= 390 +0.29 / +0.01 ex +0.35 beat 13/22 p 0.148 Holm 1.000 | +0.73 n=200 (0.035, 1.000) | -0.05 n=190 (0.899) | +0.08 (n=11966) | +0.34 (0.158, 22 q) | +0.20/+0.18/-0.02 | no
+  xup_sma20_50      n= 200 +0.57 / +0.01 ex +0.46 beat 13/21 p 0.184 Holm 1.000 | +0.03 n=99 (0.942, 1.000) | +0.88 n=101 (0.073) | +0.07 (n=6409) | -0.01 (0.985, 21 q) | -0.07/+0.20/+0.33 | no
+  xdn_ema12_26      n= 303 +0.23 / +0.02 ex +0.37 beat 15/22 p 0.189 Holm 1.000 | +0.74 n=151 (0.062, 1.000) | +0.00 n=152 (0.996) | +0.09 (n=8979) | +0.18 (0.590, 22 q) | +0.29/+0.11/-0.03 | no
+  xup_ema9_21       n= 350 -0.15 / +0.06 ex -0.29 beat 9/22 p 0.261 Holm 1.000 | -0.19 n=182 (0.591, 1.000) | -0.39 n=168 (0.286) | -0.06 (n=12851) | -0.49 (0.124, 22 q) | +0.01/-0.09/-0.21 | no
+  above_sma_200     n=2105 +0.03 / +0.07 ex -0.06 beat 9/22 p 0.355 Holm 1.000 | -0.03 n=1300 (0.654, 1.000) | -0.10 n=805 (0.402) | -0.06 (n=74146) | -0.01 (0.884, 22 q) | -0.01/-0.03/-0.01 | no
+  pxdn_sma20        n= 574 -0.17 / +0.09 ex -0.18 beat 9/22 p 0.366 Holm 1.000 | -0.32 n=297 (0.239, 1.000) | -0.02 n=277 (0.942) | +0.07 (n=19932) | -0.29 (0.198, 22 q) | +0.05/-0.14/-0.08 | no
+  above_sma_20      n=1756 +0.12 / -0.05 ex -0.07 beat 16/22 p 0.372 Holm 1.000 | -0.07 n=1030 (0.483, 1.000) | -0.07 n=726 (0.590) | -0.11 (n=65598) | -0.03 (0.800, 22 q) | -0.09/-0.02/+0.04 | no
+  pxup_ema20        n= 634 +0.22 / -0.00 ex +0.15 beat 12/22 p 0.423 Holm 1.000 | +0.17 n=337 (0.484, 1.000) | +0.12 n=297 (0.660) | +0.12 (n=22251) | +0.02 (0.929, 22 q) | +0.00/+0.04/+0.10 | no
+  xup_ema50_200     n=  41 +0.95 / +0.03 ex +0.57 beat 9/16 p 0.454 Holm 1.000 | +0.60 n=23 (0.551, 1.000) | +0.55 n=18 (0.636) | -0.19 (n=1639) | +2.80 (0.062, 16 q) | -0.06/-0.14/+0.78 | no
+  pxup_sma20        n= 565 +0.22 / +0.00 ex +0.13 beat 10/22 p 0.498 Holm 1.000 | +0.08 n=295 (0.769, 1.000) | +0.19 n=270 (0.499) | +0.12 (n=20414) | -0.07 (0.776, 22 q) | +0.05/+0.01/+0.07 | no
+  bull_stack_ema    n=1095 +0.11 / +0.01 ex -0.06 beat 9/22 p 0.622 Holm 1.000 | -0.06 n=729 (0.679, 1.000) | -0.06 n=366 (0.772) | -0.12 (n=41352) | -0.04 (0.765, 22 q) | -0.08/-0.05/+0.07 | no
+  xup_ema12_26      n= 284 +0.27 / +0.02 ex +0.11 beat 13/22 p 0.700 Holm 1.000 | +0.45 n=151 (0.240, 1.000) | -0.28 n=133 (0.508) | -0.08 (n=9861) | +0.05 (0.888, 22 q) | +0.04/+0.14/-0.06 | no
+  state_sma50_200   n=2070 +0.05 / +0.03 ex +0.02 beat 11/22 p 0.734 Holm 1.000 | +0.01 n=1303 (0.827, 1.000) | +0.03 n=767 (0.802) | -0.02 (n=74990) | +0.04 (0.720, 22 q) | +0.00/-0.03/+0.05 | no
+  xup_ema20_50      n= 177 +0.28 / +0.03 ex +0.11 beat 10/21 p 0.771 Holm 1.000 | -0.09 n=92 (0.857, 1.000) | +0.32 n=85 (0.563) | -0.07 (n=5327) | +0.31 (0.548, 21 q) | +0.04/-0.02/+0.09 | no
+  xdn_ema20_50      n= 182 -0.13 / +0.05 ex +0.10 beat 11/20 p 0.781 Holm 1.000 | +0.55 n=103 (0.265, 1.000) | -0.48 n=79 (0.402) | -0.05 (n=4808) | +0.39 (0.399, 20 q) | +0.32/+0.08/-0.30 | no
+  state_ema50_200   n=2205 +0.04 / +0.05 ex +0.01 beat 12/22 p 0.899 Holm 1.000 | +0.01 n=1372 (0.879, 1.000) | +0.00 n=833 (0.977) | -0.04 (n=78996) | +0.04 (0.555, 22 q) | +0.01/-0.02/+0.01 | no
+  pxdn_ema20        n= 651 -0.00 / +0.05 ex +0.01 beat 10/22 p 0.960 Holm 1.000 | -0.05 n=335 (0.838, 1.000) | +0.07 n=316 (0.779) | +0.03 (n=21829) | -0.01 (0.946, 22 q) | +0.05/-0.06/+0.03 | no
+  xup_sma50_200     n=  39 +0.20 / +0.04 ex +0.02 beat 7/15 p 0.977 Holm 1.000 | -0.26 n=16 (0.827, 1.000) | +0.22 n=23 (0.825) | -0.24 (n=1716) | -0.08 (0.920, 15 q) | -0.17/-0.09/+0.29 | no
+  bull_stack_sma    n= 804 +0.16 / +0.00 ex +0.00 beat 10/22 p 0.997 Holm 1.000 | -0.13 n=555 (0.437, 1.000) | +0.30 n=249 (0.308) | -0.15 (n=31296) | +0.06 (0.760, 22 q) | -0.09/-0.02/+0.11 | no
+(extra, descriptive) |pooled Spearman| between the 27 continuous features: median 0.524, share above 0.5: 52% (they mostly measure one thing: how far the price has run)
+
+=== T3 confirmation (first 14 quarters familywise p < 0.05 AND last 8 same sign with p < 0.05)
+  continuous: 0 of 27 confirmed; maxT p < 0.05 in q0-13: 0; perm p < 0.05 in q14-21: 5
+  binary    : 0 of 32 confirmed; Holm p < 0.05 in q0-13: 0; luck p < 0.05 in q14-21: 2
+  unadjusted p < 0.05 over all 22 quarters: continuous 13 of 27 (expected by chance ~1.4), binary 5 of 32 (~1.6)
+  familywise p < 0.05 over all 22 quarters: continuous (maxT) 1, binary (Holm) 0
+  cross-check with docs/TECHNICAL_ANALYSIS.md: golden-cross state (state_sma50_200) 2070 results, avg +0.05% (doc: 2,070 trades, +0.05%)
+
+=== 6 strongest features by overall p (ties by |z|): slope_sma_50 (p 0.003, z 2.90), slope_ema_20 (p 0.008, z 2.63), dist_sma_100 (p 0.008, z 2.53), slope_ema_50 (p 0.009, z 2.52), dist_ema_50 (p 0.015, z 2.39), dist_ema_100 (p 0.019, z 2.29)
+quarterly values of the 6 strongest written to table_by_quarter.md:
+  | Quarter | Results | Avg three_day | SMA 50 slope over 5 days (`slope_sma_50`): IC | EMA 20 slope over 5 days (`slope_ema_20`): IC | Close vs SMA 100 (`dist_sma_100`): IC | EMA 50 slope over 5 days (`slope_ema_50`): IC | Close vs EMA 50 (`dist_ema_50`): IC | Close vs EMA 100 (`dist_ema_100`): IC |
+  |:---|---:|---:|---:|---:|---:|---:|---:|---:|
+  | 0 Jan-Mar 2021 | 98 | +0.82 | -0.151 | -0.135 | -0.111 | -0.142 | -0.142 | -0.110 |
+  | 1 Apr-Jun 2021 | 117 | +0.06 | +0.129 | +0.113 | +0.101 | +0.136 | +0.085 | +0.126 |
+  | 2 Jul-Sep 2021 | 125 | -0.84 | -0.105 | -0.219 | -0.112 | -0.171 | -0.186 | -0.137 |
+  | 3 Oct-Dec 2021 | 132 | -0.64 | -0.202 | -0.210 | -0.137 | -0.148 | -0.186 | -0.171 |
+  | 4 Jan-Mar 2022 | 131 | -0.83 | -0.152 | -0.208 | -0.147 | -0.188 | -0.169 | -0.168 |
+  | 5 Apr-Jun 2022 | 134 | +0.75 | +0.002 | +0.031 | +0.001 | +0.015 | +0.012 | +0.025 |
+  | 6 Jul-Sep 2022 | 133 | +0.03 | -0.039 | +0.074 | +0.020 | +0.061 | +0.056 | +0.033 |
+  | 7 Oct-Dec 2022 | 133 | -0.16 | -0.084 | -0.049 | -0.063 | -0.071 | -0.065 | -0.068 |
+  | 8 Jan-Mar 2023 | 134 | +0.61 | -0.030 | -0.082 | -0.028 | -0.048 | -0.045 | -0.066 |
+  | 9 Apr-Jun 2023 | 133 | -0.30 | -0.009 | +0.009 | -0.006 | -0.010 | +0.011 | -0.019 |
+  | 10 Jul-Sep 2023 | 132 | +0.41 | -0.139 | -0.059 | -0.075 | -0.083 | -0.032 | -0.031 |
+  | 11 Oct-Dec 2023 | 135 | +0.48 | -0.063 | -0.026 | +0.016 | -0.006 | +0.002 | +0.013 |
+  | 12 Jan-Mar 2024 | 135 | +0.88 | +0.021 | +0.011 | +0.051 | +0.046 | +0.093 | +0.060 |
+  | 13 Apr-Jun 2024 | 135 | +0.53 | +0.043 | -0.005 | +0.006 | +0.038 | +0.005 | +0.039 |
+  | 14 Jul-Sep 2024 | 134 | -1.12 | -0.073 | -0.041 | -0.099 | -0.079 | -0.040 | -0.098 |
+  | 15 Oct-Dec 2024 | 172 | -0.79 | +0.022 | -0.063 | -0.027 | -0.012 | -0.085 | -0.037 |
+  | 16 Jan-Mar 2025 | 178 | +0.96 | -0.202 | -0.222 | -0.245 | -0.257 | -0.224 | -0.264 |
+  | 17 Apr-Jun 2025 | 191 | -0.56 | +0.014 | -0.008 | -0.011 | -0.009 | -0.011 | -0.007 |
+  | 18 Jul-Sep 2025 | 191 | +0.67 | -0.065 | -0.018 | -0.050 | -0.055 | +0.014 | +0.007 |
+  | 19 Oct-Dec 2025 | 196 | +0.18 | -0.124 | -0.016 | -0.103 | -0.081 | -0.078 | -0.075 |
+  | 20 Jan-Mar 2026 | 203 | -0.31 | +0.049 | +0.043 | +0.035 | +0.045 | +0.029 | +0.052 |
+  | 21 Apr-Jun 2026 | 206 | +0.17 | +0.023 | +0.041 | -0.007 | +0.031 | +0.017 | -0.007 |
+  | All 22 quarters | 3,278 | +0.04 | -0.052 | -0.047 | -0.045 | -0.045 | -0.043 | -0.041 |
+  | Quarters positive |  |  | 8 of 22 | 7 of 22 | 7 of 22 | 7 of 22 | 10 of 22 | 8 of 22 |
+  | p |  |  | 0.003 | 0.008 | 0.008 | 0.009 | 0.015 | 0.019 |
+
+=== T5 tradable (familywise p < 0.05 overall)
+  long the bottom fifth of slope_sma_50: 665 trades, avg gross +0.65%, avg net +0.48%, win rate 50.7%, quarters positive 16 of 22, first 14 q +0.57%, last 8 q +0.37%, without the 5 best trades +0.35%, without the 60 lag 10% + volume trades: 605 trades +0.25%
+    same rule on ordinary days (placebo, extra): 24,056 stock-days, avg net +0.32% (all ordinary days, same side, net +0.04%); results minus placebo +0.16%
+
+=== DEVIATIONS from PLAN.txt
+  1. Validation slack: PLAN.txt allowed |diff| <= 6-digit half-unit + 1e-9; used + 5e-06 percentage points because adjusted_ohlcv.csv.gz stores price_factor with 8 significant digits (a split/bonus step inside an MA window carries up to ~5e-8 relative error). The MA code itself is identical to build_panel.roll()/seeded() (identity check above). The 1e-6-relative and +1e-9 counts are printed next to each check.
+  2. Addition (descriptive, not in PLAN.txt): run.log prints the pooled rank correlation between the 27 continuous features, to show they are not 27 independent tests.
+  3. Addition (descriptive, not in PLAN.txt): T5 also shows the same tradable rule on the ordinary-day placebo (fifths cut within each results season), to show whether the tradable version is specific to results.

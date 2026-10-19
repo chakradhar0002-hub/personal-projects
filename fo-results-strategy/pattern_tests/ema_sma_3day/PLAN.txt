@@ -1,0 +1,107 @@
+EMA / SMA vs THE THREE-DAY RESULTS MOVE: PRE-REGISTERED PLAN
+=============================================================
+Question (user): "Check with EMA and SMA: is there any correlation with the three-day results move?"
+Written before any outcome (three_day, d1, d2, d3, excess) was read or computed. Only column names, row counts,
+NaN counts and session ranges of the inputs were looked at. This file is not edited after its sha256 is recorded in
+PLAN.sha256; any deviation is written in the DEVIATIONS section of results/ema_sma_3day/run.log.
+
+DATA (paths read from env vars; LAB = LAB_ROOT, TA = TA_BUILD, OUT = results/ema_sma_3day)
+  Results : LAB/sector_lab/data/events.csv, rows with in_fo == True (3,278 results, 206 symbols, qn 0..21;
+            qn 0 = results for Jan-Mar 2021 ... qn 21 = Apr-Jun 2026). Signal day k = i_cut (cutoff close, 2 sessions
+            before the result session). Trade window: cutoff close -> Day+1 close (sessions i_cut+1, +2, +3).
+  Prices  : TA/adjusted_ohlcv.csv.gz (split/bonus adjusted, session grid; only traded sessions are listed).
+  Check   : TA/events_ta.csv (close_vs_sma20/50/200_pct, macd_pct, golden_state, golden_x10, death_x10).
+  Placebo : TA/placebo_ta.csv.gz rows with in_fo == True (quiet non-results F&O stock-days; signal day k = column i;
+            d1, d2, d3 = returns on k+1..k+3 in %, three_day = their sum).
+  Earlier : results/lag10_volume/trades.csv (lag 10% + volume rule, 85 trades), docs/TECHNICAL_ANALYSIS.md.
+  Costs   : 0.17% a round trip.
+
+FEATURES (59; all at the cutoff close k, from adjusted closes up to and including k only; C = close at k)
+  Conventions (identical to TA/build_panel.py): every MA runs on the stock's OWN traded days (a no-trade session is
+  skipped, so "k-5" means 5 traded days earlier). SMA(n) = simple mean of the last n closes including day k.
+  EMA(n) = seeded with the simple mean of the first n closes (value defined from the n-th traded close on), then
+  EMA_t = EMA_{t-1} + alpha (C_t - EMA_{t-1}), alpha = 2/(n+1).
+  Periods P = 5, 10, 20, 50, 100, 200 for both EMA and SMA; EMA also 9, 12, 21, 26 (crossover pairs only).
+  Continuous (27):
+    dist_ema_N, dist_sma_N   = (C / MA_N - 1) x 100, N in P                                         (12)
+    slope_ema_N, slope_sma_N = (MA_N(k) / MA_N(k-5 traded days) - 1) x 100, N in 20, 50, 200          (6)
+    ema_vs_sma_N             = (EMA_N / SMA_N - 1) x 100, N in 20, 50, 200                             (3)
+    spread_X                 = (fast / slow - 1) x 100 for X in ema9_21, ema12_26, ema20_50, ema50_200,
+                               sma20_50, sma50_200                                                      (6)
+  Binary (32), 1 / 0:
+    above_ema_N, above_sma_N : C > MA_N, N in 20, 50, 200                                               (6)
+    state_X                  : fast > slow, the 6 crossover pairs                                       (6)
+    xup_X / xdn_X            : fast crossed above / below slow within the last 5 traded days: for some j in
+                               k-4..k, fast <= slow on j-1 and fast > slow on j (down: fast >= slow on j-1 and
+                               fast < slow on j); the 6 pairs                                           (12)
+    pxup_ema20, pxup_sma20, pxdn_ema20, pxdn_sma20 : close crossed above / below that MA within the last 3 traded
+                               days: for some j in k-2..k, C <= MA on j-1 and C > MA on j (down mirrored)  (4)
+    bull_stack_ema : C > EMA20 > EMA50 > EMA200;  bear_stack_ema : C < EMA20 < EMA50 < EMA200;
+    bull_stack_sma, bear_stack_sma likewise with SMAs                                                   (4)
+  NaN rules: a feature is NaN if the stock did not trade at k, or has fewer traded closes up to k than needed:
+    MA_N value at k needs N closes (SMA window / EMA seed); slope_N needs N + 5; xup/xdn need slow N + 5 (the pair
+    must be defined on k-5); pxup/pxdn need 20 + 3; stacks need 200. NaN count per feature is reported.
+  Comparisons (>, <=) are plain float comparisons without a tolerance, as golden_state / crossed() in the builder.
+
+OUTCOME
+  three_day (%) = d1 + d2 + d3 (Day-1, Result-day, Day+1 daily returns; NaN -> 0), gross.
+  excess = three_day minus the same-quarter mean of all 3,278 in_fo results.
+  Components d1, d2, d3: reported descriptively (mean IC per component / binary excess per component), not tested.
+
+TESTS
+  T1 continuous (27 features):
+    - IC_q = Spearman correlation (average ranks for ties) between the feature and three_day over quarter q's results
+      with the feature defined. mean IC over the 22 quarters; t = mean / sd(ddof=1) x sqrt(number of quarters);
+      quarters with IC > 0 (of 22).
+    - Permutation p: three_day is shuffled within each quarter (equivalent to shuffling every feature's row vector
+      jointly within the quarter, so cross-feature correlation is kept for maxT), 5,000 times, numpy seed 20261019.
+      p = (1 + #{|mean IC_perm| >= |mean IC_obs|}) / (1 + 5,000), two-sided.
+    - Familywise maxT p (27 features): (1 + #{shuffles with max_f |mean IC_perm,f| >= |mean IC_obs|}) / (1 + 5,000).
+    - Pooled Spearman of the feature vs excess over all results (scipy p, asymptotic).
+    - Quintiles: within each quarter the feature is cut into fifths by average rank r among the quarter's n defined
+      values: fifth = floor((r - 1) x 5 / n) + 1. Average three_day per fifth = mean over all results in that fifth
+      across quarters (trade-weighted); top-minus-bottom spread; quarters where the top fifth beat the bottom fifth.
+  T2 binary (32 features):
+    - avg three_day with / without the signal; signal excess = mean of excess over signal results; quarters where the
+      signal group's mean beat the all-results mean of that quarter (of quarters with >= 1 signal).
+    - Luck p: 20,000 random picks of the same number of results inside each quarter (without replacement, from that
+      quarter's results with the feature defined), numpy seed 20261020. Statistic = trade-weighted mean three_day of
+      the pick. Null mean = sum_q n_q x pool mean_q / sum_q n_q. p = (1 + #{|sim - null| >= |obs - null|}) /
+      (1 + 20,000), two-sided. Holm step-down across the 32 binary features (a feature with no signal is left out).
+  T3 split: everything above also for qn 0-13 (first 14 quarters) and qn 14-21 (last 8), using the same shuffles /
+    picks restricted to those quarters. maxT inside the first 14 across the 27 continuous features; Holm inside the
+    first 14 across the binary features.
+    CONFIRMED only if: familywise p < 0.05 in qn 0-13 (maxT for continuous, Holm for binary) AND in qn 14-21 the
+    same sign (mean IC, or signal excess) with an unadjusted p < 0.05 (perm p / luck p in those 8 quarters).
+  T4 placebo (ordinary days): placebo stock-days (in_fo True) get the SAME features at k from the same price series.
+    Quarter of a placebo day = by results season: season q runs from the earliest cutoff session (min i_cut) of
+    quarter q's in_fo results up to the session before the earliest cutoff of quarter q+1 (season 21 runs to the end
+    of the data); i.e. the quarter whose results season most recently began. Seasons do not overlap in the data.
+    Continuous: placebo IC_q = Spearman(feature, placebo three_day) over all placebo stock-days of season q; placebo
+    mean IC over the 22 seasons; results-minus-placebo = mean over q of (IC_q results - IC_q placebo), one-sample
+    t-test of the 22 differences (two-sided).
+    Binary: placebo excess = placebo three_day minus the same-season mean of all placebo days; placebo difference =
+    mean placebo excess over signal days (trade-weighted); results-minus-placebo by quarter: per quarter (signal mean
+    excess, results) - (signal mean excess, placebo), one-sample t-test over quarters where both exist.
+    This shows whether a link is specific to results or just ordinary momentum / mean reversion.
+  T5 tradable, only for features with familywise p < 0.05 over all 22 quarters (maxT / Holm): continuous -> long the
+    fifth on the favourable side (top fifth if mean IC > 0, bottom fifth if < 0); binary -> long the signal if its
+    excess > 0, else short it (short return = -three_day). Net = gross - 0.17. Report trades, avg net, win rate,
+    per quarter, without the 5 best trades, and without the lag 10% + volume rule trades (matched on symbol + qn).
+    If nothing qualifies, run.log says so and t5_tradable.md is not written.
+  By-quarter table: the 6 strongest features over both families by overall p (perm p / luck p); ties broken by the
+    larger |z| (|obs - null| / sd of the shuffle or pick distribution). Quarterly IC (continuous) or quarterly signal
+    excess (binary) for all 22 quarters.
+
+VALIDATION (build_features.py)
+  - Close series: adjusted close recomputed as raw_close x price_factor (raw prices are exact, and price_factor is
+    constant between corporate actions, so ratios are exact up to float precision).
+  - My (C / SMA_n - 1) x 100 for n = 20, 50, 200 vs events_ta.csv close_vs_sma*_pct and (EMA12 - EMA26) / C x 100 vs
+    macd_pct: report max abs and max relative diff. events_ta.csv stores %.6g (6 significant digits, rounding up to
+    5e-6 relative), so the pass rule is: relative diff <= 1e-6 OR |diff| within half a unit of the file's 6th
+    significant digit (+1e-9). Also state_sma50_200 vs golden_state, and SMA50/SMA200 crosses over 10 days vs
+    golden_x10 / death_x10 (exact match expected).
+
+OUTPUT FORMAT
+  Percent values signed with 2 decimals (+0.41 / -0.53, ASCII hyphen); correlations 3 decimals; p values 3 decimals,
+  "<0.001" below 0.0005. No absolute machine paths in committed outputs. Python run as python3 -P.
