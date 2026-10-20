@@ -1,0 +1,200 @@
+== patterns (have = results with the needed lags; null shuffles within quarter inside that subset)
+
+-- pattern UUU: 322 results, 117 stocks, 19 quarters; avg y +0.76%, x +0.70; share up 54.0%
+   results per stock: max 8, stocks with >= 4 34; top-5 stocks (RECLTD 5x +5.7, MOTHERSON 3x +9.2, ANGELONE 3x +7.8, M&M 7x +2.7, ADANIPORTS 7x +2.6) give 52% of the summed x
+   without those 5 stocks: 297 results, x +0.36; stocks with mean x of the favoured sign 56 of 117
+   quarters with mean x of the favoured sign 16 of 19; best 2 quarters (q5 +2.33 n17, q15 +2.39 n15) give 34% of the sum; leave-one-quarter-out mean x +0.61 .. +0.77
+   SE of mean x: iid 0.28, clustered by stock 0.27 (t +2.59), by quarter 0.19 (t +3.72)
+   x (quarter excess)                    : +0.70 (n 322) p 0.010 | first 14 q +0.82 | last 8 q +0.58
+   same-cutoff demeaned (in_fo)          : +0.49 (n 318) p 0.039 | first 14 q +0.65 | last 8 q +0.34
+   same-cutoff demeaned (all events)     : +0.43 (n 319) p 0.015 | first 14 q +0.61 | last 8 q +0.25
+   minus Nifty, quarter-demeaned         : +0.67 (n 322) p 0.009 | first 14 q +0.77 | last 8 q +0.57
+   minus beta*Nifty, quarter-demeaned    : +0.67 (n 322) p 0.011 | first 14 q +0.79 | last 8 q +0.55
+
+-- pattern DDD: 477 results, 147 stocks, 19 quarters; avg y -0.28%, x -0.31; share up 46.1%
+   results per stock: max 12, stocks with >= 4 57; top-5 stocks (IDEA 12x -3.4, DIVISLAB 4x -7.7, MANAPPURAM 5x -6.1, INOXWIND 3x -9.6, ASIANPAINT 6x -3.9) give 104% of the summed x
+   without those 5 stocks: 447 results, x +0.01; stocks with mean x of the favoured sign 68 of 147
+   quarters with mean x of the favoured sign 12 of 19; best 2 quarters (q19 -1.48 n30, q11 -2.33 n18) give 58% of the sum; leave-one-quarter-out mean x -0.41 .. -0.23
+   SE of mean x: iid 0.23, clustered by stock 0.22 (t -1.38), by quarter 0.20 (t -1.54)
+   x (quarter excess)                    : -0.31 (n 477) p 0.151 | first 14 q -0.44 | last 8 q -0.17
+   same-cutoff demeaned (in_fo)          : -0.15 (n 469) p 0.403 | first 14 q -0.19 | last 8 q -0.11
+   same-cutoff demeaned (all events)     : -0.51 (n 472) p 0.197 | first 14 q -0.57 | last 8 q -0.45
+   minus Nifty, quarter-demeaned         : -0.29 (n 477) p 0.144 | first 14 q -0.43 | last 8 q -0.15
+   minus beta*Nifty, quarter-demeaned    : -0.25 (n 477) p 0.215 | first 14 q -0.38 | last 8 q -0.11
+
+-- pattern UUUU: 165 results, 73 stocks, 18 quarters; avg y +0.85%, x +0.77; share up 52.7%
+   results per stock: max 6, stocks with >= 4 15; top-5 stocks (MOTHERSON 2x +8.9, ASHOKLEY 4x +3.4, ANGELONE 2x +6.6, POLYCAB 3x +4.4, HYUNDAI 2x +6.3) give 55% of the summed x
+   without those 5 stocks: 152 results, x +0.38; stocks with mean x of the favoured sign 38 of 73
+   quarters with mean x of the favoured sign 14 of 18; best 2 quarters (q13 +4.18 n8, q20 +3.02 n11) give 52% of the sum; leave-one-quarter-out mean x +0.60 .. +0.86
+   SE of mean x: iid 0.38, clustered by stock 0.28 (t +2.76), by quarter 0.29 (t +2.67)
+   x (quarter excess)                    : +0.77 (n 165) p 0.053 | first 14 q +0.71 | last 8 q +0.82
+   same-cutoff demeaned (in_fo)          : +0.46 (n 164) p 0.165 | first 14 q +0.46 | last 8 q +0.46
+   same-cutoff demeaned (all events)     : +0.41 (n 164) p 0.108 | first 14 q +0.44 | last 8 q +0.38
+   minus Nifty, quarter-demeaned         : +0.71 (n 165) p 0.046 | first 14 q +0.63 | last 8 q +0.78
+   minus beta*Nifty, quarter-demeaned    : +0.68 (n 165) p 0.060 | first 14 q +0.59 | last 8 q +0.75
+
+-- pattern DDUU: 175 results, 122 stocks, 18 quarters; avg y -0.69%, x -0.84; share up 41.7%
+   results per stock: max 3, stocks with >= 4 0; top-5 stocks (BANDHANBNK 2x -8.8, BHARATFORG 1x -15.3, CANBK 2x -6.5, IDFCFIRSTB 3x -4.1, JINDALSTEL 3x -3.9) give 48% of the summed x
+   without those 5 stocks: 164 results, x -0.47; stocks with mean x of the favoured sign 77 of 122
+   quarters with mean x of the favoured sign 12 of 18; best 2 quarters (q8 -4.03 n14, q21 -3.86 n8) give 60% of the sum; leave-one-quarter-out mean x -1.01 .. -0.56
+   SE of mean x: iid 0.38, clustered by stock 0.38 (t -2.23), by quarter 0.42 (t -1.98)
+   x (quarter excess)                    : -0.84 (n 175) p 0.027 | first 14 q -0.97 | last 8 q -0.64
+   same-cutoff demeaned (in_fo)          : -0.51 (n 171) p 0.134 | first 14 q -0.35 | last 8 q -0.73
+   same-cutoff demeaned (all events)     : -0.97 (n 173) p 0.061 | first 14 q -0.89 | last 8 q -1.09
+   minus Nifty, quarter-demeaned         : -0.73 (n 175) p 0.041 | first 14 q -0.74 | last 8 q -0.71
+   minus beta*Nifty, quarter-demeaned    : -0.72 (n 175) p 0.032 | first 14 q -0.76 | last 8 q -0.68
+
+-- pattern DDDU: 201 results, 140 stocks, 18 quarters; avg y -0.74%, x -0.78; share up 48.3%
+   results per stock: max 4, stocks with >= 4 1; top-5 stocks (INDUSINDBK 2x -8.6, SAIL 1x -16.5, BIOCON 3x -5.2, HCLTECH 2x -7.3, AXISBANK 2x -6.9) give 50% of the summed x
+   without those 5 stocks: 191 results, x -0.41; stocks with mean x of the favoured sign 77 of 140
+   quarters with mean x of the favoured sign 12 of 18; best 2 quarters (q15 -1.63 n18, q18 -2.35 n12) give 37% of the sum; leave-one-quarter-out mean x -0.89 .. -0.68
+   SE of mean x: iid 0.34, clustered by stock 0.35 (t -2.25), by quarter 0.30 (t -2.60)
+   x (quarter excess)                    : -0.78 (n 201) p 0.029 | first 14 q -0.59 | last 8 q -0.97
+   same-cutoff demeaned (in_fo)          : -0.62 (n 196) p 0.050 | first 14 q -0.44 | last 8 q -0.79
+   same-cutoff demeaned (all events)     : -0.90 (n 197) p 0.055 | first 14 q -0.69 | last 8 q -1.09
+   minus Nifty, quarter-demeaned         : -0.79 (n 201) p 0.015 | first 14 q -0.68 | last 8 q -0.90
+   minus beta*Nifty, quarter-demeaned    : -0.78 (n 201) p 0.018 | first 14 q -0.66 | last 8 q -0.89
+
+-- pattern DDDD: 257 results, 105 stocks, 18 quarters; avg y -0.53%, x -0.54; share up 44.4%
+   results per stock: max 10, stocks with >= 4 19; top-5 stocks (IDEA 10x -3.2, DIVISLAB 3x -8.1, INOXWIND 2x -10.0, ASIANPAINT 5x -3.5, RBLBANK 2x -8.0) give 79% of the summed x
+   without those 5 stocks: 235 results, x -0.12; stocks with mean x of the favoured sign 53 of 105
+   quarters with mean x of the favoured sign 12 of 18; best 2 quarters (q11 -7.48 n6, q19 -2.24 n15) give 56% of the sum; leave-one-quarter-out mean x -0.67 .. -0.38
+   SE of mean x: iid 0.31, clustered by stock 0.27 (t -2.00), by quarter 0.31 (t -1.76)
+   x (quarter excess)                    : -0.54 (n 257) p 0.083 | first 14 q -0.63 | last 8 q -0.46
+   same-cutoff demeaned (in_fo)          : -0.32 (n 253) p 0.207 | first 14 q -0.49 | last 8 q -0.17
+   same-cutoff demeaned (all events)     : -0.66 (n 255) p 0.172 | first 14 q -0.94 | last 8 q -0.42
+   minus Nifty, quarter-demeaned         : -0.52 (n 257) p 0.058 | first 14 q -0.71 | last 8 q -0.36
+   minus beta*Nifty, quarter-demeaned    : -0.47 (n 257) p 0.100 | first 14 q -0.67 | last 8 q -0.29
+
+-- pattern DD: 892 results, 181 stocks, 20 quarters; avg y -0.09%, x -0.12; share up 46.6%
+   results per stock: max 14, stocks with >= 4 117; top-5 stocks (IDEA 14x -3.2, MANAPPURAM 8x -4.8, INOXWIND 4x -8.1, DIVISLAB 7x -4.6, RBLBANK 8x -3.6) give 172% of the summed x
+   without those 5 stocks: 851 results, x +0.09; stocks with mean x of the favoured sign 82 of 181
+   quarters with mean x of the favoured sign 11 of 20; best 2 quarters (q5 -1.40 n38, q7 -1.33 n39) give 102% of the sum; leave-one-quarter-out mean x -0.17 .. -0.06
+   SE of mean x: iid 0.17, clustered by stock 0.17 (t -0.66), by quarter 0.16 (t -0.70)
+   x (quarter excess)                    : -0.12 (n 892) p 0.449 | first 14 q -0.43 | last 8 q +0.25
+   same-cutoff demeaned (in_fo)          : -0.14 (n 873) p 0.298 | first 14 q -0.34 | last 8 q +0.10
+   same-cutoff demeaned (all events)     : -0.43 (n 880) p 0.156 | first 14 q -0.69 | last 8 q -0.12
+   minus Nifty, quarter-demeaned         : -0.09 (n 892) p 0.480 | first 14 q -0.39 | last 8 q +0.24
+   minus beta*Nifty, quarter-demeaned    : -0.06 (n 892) p 0.665 | first 14 q -0.35 | last 8 q +0.27
+
+-- streak 3 ups (= DUUU): 148 results, 109 stocks, 18 quarters; avg y +0.77%, x +0.67; share up 56.8%
+   results per stock: max 3, stocks with >= 4 0; top-5 stocks (RECLTD 1x +19.2, M&M 3x +5.6, BEL 2x +7.1, PIIND 2x +6.7, ADANIPORTS 2x +5.9) give 76% of the summed x
+   without those 5 stocks: 138 results, x +0.17; stocks with mean x of the favoured sign 64 of 109
+   quarters with mean x of the favoured sign 10 of 18; best 2 quarters (q5 +2.80 n12, q12 +2.55 n10) give 60% of the sum; leave-one-quarter-out mean x +0.48 .. +0.83
+   SE of mean x: iid 0.44, clustered by stock 0.45 (t +1.48), by quarter 0.39 (t +1.72)
+   x (quarter excess)                    : +0.67 (n 148) p 0.092 | first 14 q +1.05 | last 8 q +0.25
+   same-cutoff demeaned (in_fo)          : +0.56 (n 145) p 0.124 | first 14 q +0.91 | last 8 q +0.18
+   same-cutoff demeaned (all events)     : +0.47 (n 146) p 0.095 | first 14 q +0.83 | last 8 q +0.09
+   minus Nifty, quarter-demeaned         : +0.67 (n 148) p 0.094 | first 14 q +1.00 | last 8 q +0.31
+   minus beta*Nifty, quarter-demeaned    : +0.70 (n 148) p 0.077 | first 14 q +1.05 | last 8 q +0.30
+
+-- lag 3 up (A2): 1361 results, 200 stocks, 19 quarters; avg y +0.30%, x +0.24; share up 49.1%
+   results per stock: max 14, stocks with >= 4 149; top-5 stocks (CUMMINSIND 13x +4.3, ADANIPORTS 14x +3.6, RECLTD 12x +3.4, BEL 12x +3.2, OFSS 8x +4.8) give 68% of the summed x
+   without those 5 stocks: 1302 results, x +0.08; stocks with mean x of the favoured sign 97 of 200
+   quarters with mean x of the favoured sign 13 of 19; best 2 quarters (q21 +1.02 n93, q20 +0.58 n98) give 46% of the sum; leave-one-quarter-out mean x +0.18 .. +0.29
+   SE of mean x: iid 0.14, clustered by stock 0.14 (t +1.73), by quarter 0.11 (t +2.20)
+   x (quarter excess)                    : +0.24 (n 1361) p 0.020 | first 14 q +0.06 | last 8 q +0.42
+   same-cutoff demeaned (in_fo)          : +0.17 (n 1335) p 0.062 | first 14 q -0.04 | last 8 q +0.37
+   same-cutoff demeaned (all events)     : +0.01 (n 1345) p 0.039 | first 14 q -0.24 | last 8 q +0.24
+   minus Nifty, quarter-demeaned         : +0.27 (n 1361) p 0.008 | first 14 q +0.10 | last 8 q +0.43
+   minus beta*Nifty, quarter-demeaned    : +0.26 (n 1361) p 0.005 | first 14 q +0.10 | last 8 q +0.43
+
+-- lag 3 down (A2): 1573 results, 203 stocks, 19 quarters; avg y -0.16%, x -0.21; share up 48.6%
+   results per stock: max 16, stocks with >= 4 162; top-5 stocks (IDEA 15x -3.1, INDUSTOWER 13x -2.8, SBICARD 14x -2.4, PGEL 2x -16.4, ASIANPAINT 12x -2.7) give 56% of the summed x
+   without those 5 stocks: 1517 results, x -0.09; stocks with mean x of the favoured sign 115 of 203
+   quarters with mean x of the favoured sign 13 of 19; best 2 quarters (q21 -0.84 n113, q20 -0.54 n105) give 47% of the sum; leave-one-quarter-out mean x -0.25 .. -0.16
+   SE of mean x: iid 0.13, clustered by stock 0.13 (t -1.58), by quarter 0.10 (t -2.13)
+   x (quarter excess)                    : -0.21 (n 1573) p 0.023 | first 14 q -0.04 | last 8 q -0.37
+   same-cutoff demeaned (in_fo)          : -0.14 (n 1548) p 0.069 | first 14 q +0.04 | last 8 q -0.32
+   same-cutoff demeaned (all events)     : -0.41 (n 1558) p 0.033 | first 14 q -0.21 | last 8 q -0.62
+   minus Nifty, quarter-demeaned         : -0.23 (n 1573) p 0.005 | first 14 q -0.08 | last 8 q -0.38
+   minus beta*Nifty, quarter-demeaned    : -0.22 (n 1573) p 0.007 | first 14 q -0.07 | last 8 q -0.38
+
+== continuous features (IC with each outcome; p from 2,000 within-quarter shuffles)
+
+-- feature best of last 4 (best4): 2797 results, 206 stocks
+   x (quarter excess)                    : IC +0.057 t +2.60 pos 11/18 n 2797 p 0.005 | first +0.074 (10 q) | last +0.035
+   same-cutoff demeaned (in_fo)          : IC +0.061 t +3.18 pos 16/18 n 2748 p 0.003 | first +0.065 (10 q) | last +0.057
+   same-cutoff demeaned (all events)     : IC +0.063 t +3.22 pos 16/18 n 2768 p 0.001 | first +0.068 (10 q) | last +0.056
+   minus Nifty, quarter-demeaned         : IC +0.062 t +3.03 pos 15/18 n 2797 p 0.003 | first +0.081 (10 q) | last +0.038
+   minus beta*Nifty, quarter-demeaned    : IC +0.057 t +2.79 pos 13/18 n 2797 p 0.005 | first +0.073 (10 q) | last +0.037
+   per-quarter IC: max q11 +0.266, q13 +0.237; leave-one-quarter-out +0.045 .. +0.063; without the best 2 quarters +0.032
+   most influential stocks (IC change when dropped): IDEA -0.0051, PIIND -0.0042, SBICARD -0.0037, AUROPHARMA -0.0032, CDSL -0.0031; dropping these 5: IC +0.037
+   top fifth: 567 results, 125 stocks, x +0.39, y_dd +0.40, x_mm +0.32; top-5 stocks give 87% of summed x (TRENT 15x, RECLTD 7x, CUMMINSIND 13x, BEL 8x, POWERINDIA 4x); without them x +0.06
+
+-- feature average of last 8 (mean_h8): 2239 results, 201 stocks
+   x (quarter excess)                    : IC +0.056 t +2.89 pos 11/14 n 2239 p 0.014 | first +0.085 (6 q) | last +0.034
+   same-cutoff demeaned (in_fo)          : IC +0.060 t +2.79 pos 10/14 n 2205 p 0.005 | first +0.085 (6 q) | last +0.041
+   same-cutoff demeaned (all events)     : IC +0.060 t +2.80 pos 10/14 n 2222 p 0.006 | first +0.089 (6 q) | last +0.038
+   minus Nifty, quarter-demeaned         : IC +0.058 t +2.89 pos 10/14 n 2239 p 0.008 | first +0.089 (6 q) | last +0.035
+   minus beta*Nifty, quarter-demeaned    : IC +0.053 t +2.62 pos 11/14 n 2239 p 0.017 | first +0.081 (6 q) | last +0.033
+   per-quarter IC: max q10 +0.170, q13 +0.137; leave-one-quarter-out +0.047 .. +0.068; without the best 2 quarters +0.040
+   most influential stocks (IC change when dropped): ADANIPORTS -0.0054, M&M -0.0054, ASHOKLEY -0.0048, SBICARD -0.0046, ASIANPAINT -0.0038; dropping these 5: IC +0.031
+   top fifth: 452 results, 101 stocks, x +0.45, y_dd +0.28, x_mm +0.29; top-5 stocks give 100% of summed x (TRENT 12x, ADANIPORTS 11x, M&M 13x, POWERINDIA 4x, ASHOKLEY 10x); without them x +0.00
+
+-- feature average of last 4 (mean_h4): 2797 results, 206 stocks
+   x (quarter excess)                    : IC +0.048 t +2.13 pos 12/18 n 2797 p 0.016 | first +0.080 (10 q) | last +0.007
+   same-cutoff demeaned (in_fo)          : IC +0.062 t +3.03 pos 15/18 n 2748 p <0.001 | first +0.093 (10 q) | last +0.023
+   same-cutoff demeaned (all events)     : IC +0.068 t +3.26 pos 15/18 n 2768 p <0.001 | first +0.102 (10 q) | last +0.025
+   minus Nifty, quarter-demeaned         : IC +0.052 t +2.25 pos 14/18 n 2797 p 0.009 | first +0.092 (10 q) | last +0.003
+   minus beta*Nifty, quarter-demeaned    : IC +0.047 t +1.94 pos 15/18 n 2797 p 0.019 | first +0.087 (10 q) | last -0.002
+   per-quarter IC: max q5 +0.271, q11 +0.246; leave-one-quarter-out +0.034 .. +0.056; without the best 2 quarters +0.021
+   most influential stocks (IC change when dropped): TORNTPHARM -0.0048, IDEA -0.0045, PIIND -0.0043, CUMMINSIND -0.0037, SBICARD -0.0034; dropping these 5: IC +0.026
+   top fifth: 567 results, 147 stocks, x +0.46, y_dd +0.43, x_mm +0.35; top-5 stocks give 78% of summed x (ADANIPORTS 14x, CUMMINSIND 13x, RECLTD 7x, POWERINDIA 4x, TRENT 8x); without them x +0.11
+
+-- feature ups in last 4 (n_up4): 2797 results, 206 stocks
+   x (quarter excess)                    : IC +0.043 t +1.85 pos 9/18 n 2797 p 0.030 | first +0.058 (10 q) | last +0.024
+   same-cutoff demeaned (in_fo)          : IC +0.056 t +2.57 pos 12/18 n 2748 p 0.004 | first +0.072 (10 q) | last +0.035
+   same-cutoff demeaned (all events)     : IC +0.057 t +2.65 pos 12/18 n 2768 p <0.001 | first +0.076 (10 q) | last +0.034
+   minus Nifty, quarter-demeaned         : IC +0.047 t +2.00 pos 10/18 n 2797 p 0.019 | first +0.067 (10 q) | last +0.021
+   minus beta*Nifty, quarter-demeaned    : IC +0.045 t +1.89 pos 10/18 n 2797 p 0.025 | first +0.066 (10 q) | last +0.019
+   per-quarter IC: max q11 +0.299, q5 +0.216; leave-one-quarter-out +0.028 .. +0.049; without the best 2 quarters +0.016
+   most influential stocks (IC change when dropped): IDEA -0.0054, CUMMINSIND -0.0037, PIIND -0.0035, ASHOKLEY -0.0034, SBICARD -0.0033; dropping these 5: IC +0.023
+   top fifth: 713 results, 167 stocks, x +0.38, y_dd +0.34, x_mm +0.32; top-5 stocks give 76% of summed x (CUMMINSIND 13x, RECLTD 9x, ADANIPORTS 14x, COFORGE 10x, POWERINDIA 4x); without them x +0.10
+
+-- feature lag 3 (h3): 2934 results, 206 stocks
+   x (quarter excess)                    : IC +0.042 t +1.83 pos 14/19 n 2934 p 0.023 | first +0.009 (11 q) | last +0.087
+   same-cutoff demeaned (in_fo)          : IC +0.041 t +1.88 pos 13/19 n 2883 p 0.033 | first +0.003 (11 q) | last +0.093
+   same-cutoff demeaned (all events)     : IC +0.039 t +1.83 pos 13/19 n 2903 p 0.043 | first -0.001 (11 q) | last +0.095
+   minus Nifty, quarter-demeaned         : IC +0.053 t +2.64 pos 16/19 n 2934 p 0.005 | first +0.021 (11 q) | last +0.097
+   minus beta*Nifty, quarter-demeaned    : IC +0.052 t +2.46 pos 16/19 n 2934 p 0.006 | first +0.016 (11 q) | last +0.101
+   per-quarter IC: max q21 +0.202, q13 +0.173; leave-one-quarter-out +0.033 .. +0.055; without the best 2 quarters +0.025
+   most influential stocks (IC change when dropped): UPL -0.0040, CUMMINSIND -0.0037, PERSISTENT -0.0036, PIIND -0.0033, IDEA -0.0033; dropping these 5: IC +0.024
+   top fifth: 596 results, 178 stocks, x +0.49, y_dd +0.30, x_mm +0.49; top-5 stocks give 51% of summed x (CUMMINSIND 10x, RECLTD 6x, BEL 6x, ADANIPORTS 5x, PIIND 7x); without them x +0.25
+
+-- feature lag 4 (h4): 2801 results, 206 stocks
+   x (quarter excess)                    : IC +0.037 t +2.11 pos 12/18 n 2801 p 0.059 | first +0.067 (10 q) | last +0.001
+   same-cutoff demeaned (in_fo)          : IC +0.039 t +1.88 pos 14/18 n 2752 p 0.044 | first +0.071 (10 q) | last -0.000
+   same-cutoff demeaned (all events)     : IC +0.048 t +2.63 pos 13/18 n 2772 p 0.015 | first +0.082 (10 q) | last +0.005
+   minus Nifty, quarter-demeaned         : IC +0.040 t +2.33 pos 12/18 n 2801 p 0.043 | first +0.078 (10 q) | last -0.008
+   minus beta*Nifty, quarter-demeaned    : IC +0.037 t +2.14 pos 11/18 n 2801 p 0.059 | first +0.076 (10 q) | last -0.010
+   per-quarter IC: max q11 +0.206, q6 +0.157; leave-one-quarter-out +0.027 .. +0.045; without the best 2 quarters +0.019
+   most influential stocks (IC change when dropped): CANBK -0.0050, BHARATFORG -0.0046, TORNTPHARM -0.0039, NMDC -0.0034, JUBLFOOD -0.0034; dropping these 5: IC +0.016
+   top fifth: 569 results, 180 stocks, x +0.44, y_dd +0.41, x_mm +0.38; top-5 stocks give 72% of summed x (BHARATFORG 8x, CUMMINSIND 10x, TRENT 7x, ADANIPORTS 5x, TORNTPHARM 5x); without them x +0.13
+
+-- feature lag 1 (h1): 3177 results, 206 stocks
+   x (quarter excess)                    : IC +0.005 t +0.22 pos 7/21 n 3177 p 0.803 | first +0.040 (13 q) | last -0.053
+   same-cutoff demeaned (in_fo)          : IC +0.029 t +1.56 pos 12/21 n 3119 p 0.108 | first +0.066 (13 q) | last -0.031
+   same-cutoff demeaned (all events)     : IC +0.030 t +1.48 pos 10/21 n 3141 p 0.094 | first +0.073 (13 q) | last -0.039
+   minus Nifty, quarter-demeaned         : IC +0.005 t +0.25 pos 7/21 n 3177 p 0.803 | first +0.041 (13 q) | last -0.052
+   minus beta*Nifty, quarter-demeaned    : IC +0.001 t +0.04 pos 8/21 n 3177 p 0.994 | first +0.037 (13 q) | last -0.058
+   per-quarter IC: max q5 +0.229, q7 +0.208; leave-one-quarter-out -0.006 .. +0.012; without the best 2 quarters -0.018
+   most influential stocks (IC change when dropped): FEDERALBNK -0.0046, AUROPHARMA -0.0038, PIIND -0.0036, MANAPPURAM -0.0029, ICICIBANK -0.0026; dropping these 5: IC -0.013
+   top fifth: 643 results, 179 stocks, x -0.01, y_dd +0.18, x_mm -0.02; top-5 stocks give -1641% of summed x (FEDERALBNK 9x, COFORGE 7x, CUMMINSIND 12x, RECLTD 6x, PIIND 7x); without them x -0.28
+
+== lag-1 after-the-fact split, by outcome definition (mean quarterly IC; quarters negative)
+   x (quarter excess)                     qn 1-7: IC +0.096, negative 1/7
+   x (quarter excess)                     qn 8-21: IC -0.041, negative 13/14
+   x (quarter excess)                     qn 14-21: IC -0.053, negative 8/8
+   same-cutoff demeaned (in_fo)           qn 1-7: IC +0.092, negative 1/7
+   same-cutoff demeaned (in_fo)           qn 8-21: IC -0.003, negative 8/14
+   same-cutoff demeaned (in_fo)           qn 14-21: IC -0.031, negative 6/8
+   same-cutoff demeaned (all events)      qn 1-7: IC +0.113, negative 1/7
+   same-cutoff demeaned (all events)      qn 8-21: IC -0.011, negative 10/14
+   same-cutoff demeaned (all events)      qn 14-21: IC -0.039, negative 8/8
+   minus Nifty, quarter-demeaned          qn 1-7: IC +0.094, negative 1/7
+   minus Nifty, quarter-demeaned          qn 8-21: IC -0.039, negative 13/14
+   minus Nifty, quarter-demeaned          qn 14-21: IC -0.052, negative 8/8
+   minus beta*Nifty, quarter-demeaned     qn 1-7: IC +0.092, negative 1/7
+   minus beta*Nifty, quarter-demeaned     qn 8-21: IC -0.045, negative 12/14
+   minus beta*Nifty, quarter-demeaned     qn 14-21: IC -0.058, negative 8/8

@@ -1,0 +1,77 @@
+== 1. tests in all_tests.csv: 84
+family
+C                  28
+A1                  8
+A2                  8
+C-streak            8
+E-raw               8
+E-partial           8
+D                   7
+B                   3
+C-global            3
+C-alt               2
+C-streak-global     1
+all 84: 84 tests; raw p<0.05 18 (chance 4.2); Holm<0.05 0; BH q<0.05 0; BH q<0.10 10
+   E-raw-lag7     obs +0.0680 n 2387 p 0.001 Holm-all 84 0.118 BH 0.091
+   E-raw-lag1     obs +0.0525 n 3177 p 0.003 Holm-all 84 0.232 BH 0.091
+   D-best4        obs +0.0568 n 2797 p 0.004 Holm-all 84 0.295 BH 0.091
+   E-raw-lag8     obs +0.0598 n 2247 p 0.006 Holm-all 84 0.454 BH 0.091
+   E-part-lag7    obs +0.0558 n 2387 p 0.006 Holm-all 84 0.464 BH 0.091
+   C3-UUU         obs +0.6964 n 322 p 0.008 Holm-all 84 0.648 BH 0.091
+directional: 68 tests; raw p<0.05 11 (chance 3.4); Holm<0.05 0; BH q<0.05 0; BH q<0.10 0
+   D-best4        obs +0.0568 n 2797 p 0.004 Holm-directional 0.245 BH 0.221
+   C3-UUU         obs +0.6964 n 322 p 0.008 Holm-directional 0.549 BH 0.221
+   D-mean_h8      obs +0.0560 n 2239 p 0.011 Holm-directional 0.713 BH 0.221
+   D-mean_h4      obs +0.0476 n 2797 p 0.016 Holm-directional 1.000 BH 0.221
+   A2-lag3        obs +0.4540 n 2934 p 0.018 Holm-directional 1.000 BH 0.221
+   C4-DDUU        obs -0.8374 n 175 p 0.023 Holm-directional 1.000 BH 0.221
+magnitude: 16 tests; raw p<0.05 7 (chance 0.8); Holm<0.05 2; BH q<0.05 7; BH q<0.10 10
+   E-raw-lag7     obs +0.0680 n 2387 p 0.001 Holm-magnitude 0.022 BH 0.022
+   E-raw-lag1     obs +0.0525 n 3177 p 0.003 Holm-magnitude 0.042 BH 0.022
+   E-raw-lag8     obs +0.0598 n 2247 p 0.006 Holm-magnitude 0.078 BH 0.023
+   E-part-lag7    obs +0.0558 n 2387 p 0.006 Holm-magnitude 0.078 BH 0.023
+   E-raw-lag2     obs +0.0474 n 3060 p 0.008 Holm-magnitude 0.101 BH 0.025
+   E-raw-lag4     obs +0.0490 n 2801 p 0.010 Holm-magnitude 0.110 BH 0.025
+directional: first-14q raw p<0.05 10/68, last-8q raw p<0.05 10/68; same sign both halves 33/68
+directional tests with raw p<0.05 in BOTH halves, same sign: []
+descriptive extra p values also printed in run.log (not in any family): A2 x-diff 8 + share-up diff 8, streak trend 1, vol60/vol60_ex context 2, partial vol60_ex 8, H luck p 2 -> 29 more; plus the after-the-fact lag-1 split (no p)
+
+== 1b. ONE within-quarter shuffle of x, all 66 directional statistics (the 68 family tests; C-alt = C3 UDU/DUD are inside C) -> global maxT. 95th pct of max |z| under the null: 3.32
+   IC best4     obs +0.0568 z +2.99 p(single) 0.003 global maxT p 0.122
+   C UUU        obs +0.6964 z +2.61 p(single) 0.009 global maxT p 0.303
+   IC mean_h8   obs +0.0560 z +2.60 p(single) 0.009 global maxT p 0.309
+   IC mean_h4   obs +0.0476 z +2.49 p(single) 0.010 global maxT p 0.393
+   A2 lag3      obs +0.4540 z +2.37 p(single) 0.016 global maxT p 0.484
+   C DDUU       obs -0.8374 z -2.26 p(single) 0.026 global maxT p 0.586
+   C DDDU       obs -0.7805 z -2.26 p(single) 0.023 global maxT p 0.591
+   IC h3        obs +0.0420 z +2.25 p(single) 0.026 global maxT p 0.606
+   IC n_up4     obs +0.0430 z +2.22 p(single) 0.025 global maxT p 0.634
+   C UUUU       obs +0.7741 z +2.06 p(single) 0.040 global maxT p 0.760
+   IC-only family (18 features: A1 8, B 3, D 7): 95th pct max|z| 2.94; best4 maxT-18 p 0.043; mean_h8 0.131
+   check h1: IC +0.0047 null sd 0.0183 p 0.780
+   check h3: IC +0.0420 null sd 0.0188 p 0.026
+   check best4: IC +0.0568 null sd 0.0190 p 0.003
+   check mean_h8: IC +0.0560 null sd 0.0216 p 0.009
+
+== 2. power / smallest detectable effect (normal approx with the permutation null sd; homogeneous true IC)
+sd of x 5.15; a true IC rho moves the favoured fifth by about rho*sd*1.40 = 7.22*rho points (IC 0.03 -> +0.22, 0.05 -> +0.36, 0.08 -> +0.58)
+maxT-8 critical |z| first 14 q 2.70; last 8 q single test 1.96
+lag | null sd all / first / last | MDE80 single test | MDE80 maxT-8 (all q) | P(CONFIRM) at IC 0.03 / 0.05 / 0.08 / 0.10 | IC giving 80% confirm | observed IC, 95% CI (quarter t)
+  1 | 0.0183 / 0.0243 / 0.0259 | 0.051 | 0.065 | 0.02 / 0.13 / 0.63 / 0.90 | 0.091 | +0.005 [-0.040, +0.049]
+  2 | 0.0185 / 0.0250 / 0.0260 | 0.052 | 0.066 | 0.01 / 0.12 / 0.60 / 0.88 | 0.093 | +0.026 [-0.032, +0.084]
+  3 | 0.0188 / 0.0263 / 0.0257 | 0.053 | 0.067 | 0.01 / 0.10 / 0.55 / 0.84 | 0.096 | +0.042 [-0.006, +0.090]
+  4 | 0.0193 / 0.0269 / 0.0273 | 0.054 | 0.069 | 0.01 / 0.09 / 0.50 / 0.81 | 0.099 | +0.037 [-0.000, +0.075]
+  5 | 0.0196 / 0.0285 / 0.0252 | 0.055 | 0.070 | 0.01 / 0.09 / 0.48 / 0.77 | 0.103 | +0.020 [-0.017, +0.056]
+  6 | 0.0202 / 0.0308 / 0.0263 | 0.057 | 0.072 | 0.01 / 0.07 / 0.39 / 0.68 | 0.110 | +0.008 [-0.036, +0.051]
+  7 | 0.0210 / 0.0326 / 0.0265 | 0.059 | 0.075 | 0.01 / 0.06 / 0.34 / 0.62 | 0.116 | +0.027 [-0.003, +0.057]
+  8 | 0.0216 / 0.0353 / 0.0267 | 0.060 | 0.077 | 0.01 / 0.05 / 0.28 / 0.53 | 0.125 | +0.001 [-0.062, +0.065]
+pattern means: null sd of mean x and the MDE (80% power, Holm within its length) vs observed
+   UUU: n 322, sd 0.29, MDE80 single 0.80 pts, MDE80 Holm-8 1.03 pts, observed +0.70
+   DDD: n 477, sd 0.24, MDE80 single 0.66 pts, MDE80 Holm-8 0.84 pts, observed -0.31
+   UUUU: n 165, sd 0.40, MDE80 single 1.12 pts, MDE80 Holm-16 1.52 pts, observed +0.77
+   DDDD: n 257, sd 0.32, MDE80 single 0.90 pts, MDE80 Holm-16 1.22 pts, observed -0.54
+
+== omnibus count: directional statistics with |z| >= 1.96: observed 11 of 66; null mean 3.3, 95th pct 10, p 0.038
+   effective number of independent directional tests (Li-Ji) about 37.0; Sidak on best single p 0.003 -> 0.105
+   the statistics with |z| >= 1.96: IC best4 (+2.99), C UUU (+2.61), IC mean_h8 (+2.60), IC mean_h4 (+2.49), A2 lag3 (+2.37), C DDUU (-2.26), C DDDU (-2.26), IC h3 (+2.25), IC n_up4 (+2.22), C UUUU (+2.06), S+4 (+2.06)
+   without the track-record cluster (54 statistics): observed 4, null mean 2.7, p 0.275

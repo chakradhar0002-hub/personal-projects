@@ -168,6 +168,7 @@ depends on getting fills near the mid price, so treat it as marginal ([REAL_DATA
 | F&O positioning (OI build-up, futures premium, put-call ratio, implied vol), delivery %, company news (98 tests) | Improves neither trade; two small watch items ([MORE_SIGNALS.md](MORE_SIGNALS.md)) |
 | Sector performance, six sector strategies (619 variants), valuation within peer groups | No edge ([SECTOR_STRATEGIES.md](SECTOR_STRATEGIES.md); sector performance and peer-group valuation in [TARGET_2PCT.md](TARGET_2PCT.md)) |
 | Last season's best or worst sector, or a stock's last result, as a guide to the next season (244 tests) | No memory: good seasons do not follow good ones, the best sector lands mid-table next quarter, and buying last quarter's best sector made -0.24% a result; good and bad seasons are mostly the market on the same days ([QUARTER_CORRELATION.md](QUARTER_CORRELATION.md)) |
+| A stock's earlier three-day results moves, each earlier quarter on its own, up/down sequences, streaks and size (84 tests) | No memory: none predicts the direction of the next move (0 of 84 pass); last quarter is +0.005; the only recurring lean is the existing track-record watch item, and size persistence is ordinary volatility ([PREVIOUS_QUARTERS.md](PREVIOUS_QUARTERS.md)) |
 | Your Condition A / B; early reporters with a strong week | A: +3.1% on 32 picks (14 stocks), but it trailed the average stock in results up to May 2023 and was designed on the same years; B: +0.96% on 76 picks; early reporters realistic about +1% above the market, zero not ruled out ([TARGET_2PCT.md](TARGET_2PCT.md)) |
 
 **Shorts and option selling**
@@ -216,6 +217,7 @@ depends on getting fills near the mid price, so treat it as marginal ([REAL_DATA
 - [NIFTY_SECTOR_3DAY.md](NIFTY_SECTOR_3DAY.md): the same by NSE's Nifty index sectors and sectoral indices, against each index
 - [QUARTER_CORRELATION.md](QUARTER_CORRELATION.md): whether best and worst quarters, sectors and stocks predict each other
 - [EMA_SMA_3DAY.md](EMA_SMA_3DAY.md): EMA and SMA signals at the cutoff against the three-day results move
+- [PREVIOUS_QUARTERS.md](PREVIOUS_QUARTERS.md): a stock's earlier three-day results moves, quarter by quarter, against its next one
 - [TECHNICAL_ANALYSIS.md](TECHNICAL_ANALYSIS.md), [FUNDAMENTAL_ANALYSIS.md](FUNDAMENTAL_ANALYSIS.md), [TA_FA_COMBINED.md](TA_FA_COMBINED.md): TA, FA and both together
 - [TARGET_2PCT.md](TARGET_2PCT.md), [TARGET_5PCT.md](TARGET_5PCT.md), [TARGET_100PCT.md](TARGET_100PCT.md): the target searches
 - [SECTOR_STRATEGIES.md](SECTOR_STRATEGIES.md), [PATTERNS.md](PATTERNS.md), [REAL_DATA_RESULTS.md](REAL_DATA_RESULTS.md): sector ideas, winner drift, option trades

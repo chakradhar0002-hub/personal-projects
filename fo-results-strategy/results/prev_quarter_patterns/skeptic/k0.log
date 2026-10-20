@@ -1,0 +1,6 @@
+h1..h8 recomputed from events: max abs diff 4.96e-09
+x check 9.194527805789221e-09
+results 3278, stocks 206; share of results sharing a cutoff with another in_fo result 0.979 (3210); with another event of any status 0.987
+distinct cutoff sessions per quarter (median) 24.5
+beta median 1.02 missing 0 | vol250 missing 0 | vix range 9.95 25.64
+corr(y_dd, x) = 0.869 ; sd x 5.15 sd y_dd 4.48 sd x_mm 4.91

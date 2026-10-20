@@ -1,0 +1,23 @@
+== A1 (lags), both sides same-cutoff demeaned, outcome y_dd_all
+  hdd1     all +0.031 p 0.100 maxT 0.574 | first +0.064 maxT 0.095 | last -0.023 p 0.366 | confirmed False
+  hdd2     all +0.049 p 0.008 maxT 0.066 | first +0.062 maxT 0.120 | last +0.031 p 0.254 | confirmed False
+  hdd3     all +0.060 p 0.002 maxT 0.012 | first +0.022 maxT 0.986 | last +0.114 p <0.001 | confirmed False
+  hdd4     all +0.050 p 0.009 maxT 0.079 | first +0.071 maxT 0.082 | last +0.024 p 0.327 | confirmed False
+  hdd5     all +0.037 p 0.067 maxT 0.435 | first +0.030 maxT 0.958 | last +0.044 p 0.098 | confirmed False
+  hdd6     all +0.010 p 0.631 maxT 1.000 | first -0.039 maxT 0.849 | last +0.058 p 0.030 | confirmed False
+  hdd7     all +0.026 p 0.219 maxT 0.867 | first +0.016 maxT 1.000 | last +0.034 p 0.195 | confirmed False
+  hdd8     all +0.003 p 0.884 maxT 1.000 | first +0.046 maxT 0.836 | last -0.030 p 0.267 | confirmed False
+== D (counts/averages), both sides same-cutoff demeaned, outcome y_dd_all
+  n_up4d   all +0.078 p <0.001 maxT 0.000 | first +0.094 maxT 0.005 | last +0.057 p 0.034 | confirmed True
+  n_up8d   all +0.083 p <0.001 maxT 0.001 | first +0.085 maxT 0.112 | last +0.081 p 0.005 | confirmed False
+  mean2d   all +0.043 p 0.020 maxT 0.106 | first +0.075 maxT 0.019 | last -0.004 p 0.832 | confirmed False
+  mean4d   all +0.078 p <0.001 maxT 0.000 | first +0.105 maxT 0.001 | last +0.046 p 0.084 | confirmed False
+  mean8d   all +0.070 p 0.002 maxT 0.012 | first +0.070 maxT 0.276 | last +0.070 p 0.011 | confirmed False
+  best4d   all +0.065 p 0.001 maxT 0.006 | first +0.082 maxT 0.024 | last +0.043 p 0.104 | confirmed False
+  worst4d  all +0.052 p 0.009 maxT 0.045 | first +0.071 maxT 0.069 | last +0.029 p 0.270 | confirmed False
+
+mean4d top fifth: 543 trades, 136 stocks, gross +0.67%, net +0.50%, x +0.58, y_dd_all +0.50; first 14 q net +0.94% (252) last 8 q +0.12% (291); quarters net>0 13/18; top-5 stocks share of summed x 57% (CUMMINSIND, POWERINDIA, ANGELONE, TORNTPHARM, RECLTD); without them x +0.27; overlap pp_top10 250
+
+best4d top fifth: 543 trades, 127 stocks, gross +0.36%, net +0.19%, x +0.28, y_dd_all +0.16; first 14 q net +0.64% (252) last 8 q -0.20% (291); quarters net>0 10/18; top-5 stocks share of summed x 119% (TRENT, ABCAPITAL, BEL, POWERINDIA, CUMMINSIND); without them x -0.06; overlap pp_top10 197
+
+hdd3 top fifth: 587 trades, 178 stocks, gross +0.65%, net +0.48%, x +0.59, y_dd_all +0.19; first 14 q net +0.61% (290) last 8 q +0.34% (297); quarters net>0 14/19; top-5 stocks share of summed x 44% (RECLTD, CUMMINSIND, PERSISTENT, COFORGE, M&M); without them x +0.36; overlap pp_top10 139

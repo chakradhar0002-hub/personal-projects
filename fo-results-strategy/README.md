@@ -57,6 +57,9 @@ checklist and concrete trades, and backtests them on your data.
 > - **EMA and SMA vs the three-day move:** a small negative link (stocks above rising averages do slightly worse), but
 >   it is market timing, not the stock: among results on the same day it vanishes. Nothing passes. See
 >   [docs/EMA_SMA_3DAY.md](docs/EMA_SMA_3DAY.md).
+> - **A stock's earlier three-day results moves:** each earlier quarter on its own, up/down sequences and streaks do
+>   not predict the direction of the next move (0 of 84 tests pass); only the known track-record watch item recurs. See
+>   [docs/PREVIOUS_QUARTERS.md](docs/PREVIOUS_QUARTERS.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.
