@@ -1,0 +1,106 @@
+PRE-REGISTRATION: does a stock's three-day results move in each earlier quarter predict its next one?
+Written before any outcome statistic of this study was computed. Not edited afterwards; deviations go in the
+DEVIATIONS section of results/prev_quarter_patterns/run.log.
+
+User question: "For the three-day results move, check each previous quarter individually: can you find any pattern?"
+For every result, look at the SAME stock's three-day results moves in each earlier quarter one at a time (last quarter,
+2 back, ... 8 back = two years, including the same results period 1 and 2 years ago = lags 4 and 8) and in combination
+(up/down sequences, streaks, counts, averages), and test whether any of it predicts the stock's next three-day move.
+
+DATA (read-only): LAB_ROOT/sector_lab/data/events.csv (4,462 rows, one per (symbol, qn), qn 0..21 = results for
+Jan-Mar 2021 ... Apr-Jun 2026), LAB_ROOT/sector_lab/data/returns.csv (daily close-to-close returns, row = session i).
+three_day = ret_dm1 + ret_rd + ret_dp1 (sum, fraction); used in % (x100). There is no history before qn 0, so lag k
+exists only from qn k on.
+
+DEFINITIONS
+- Universe of outcomes: the 3,278 results with in_fo == True (stock in F&O at the time).
+- Outcome: y = three_day in %; x = y minus the mean y of the in_fo results of the same quarter ("excess").
+- History: the same stock's earlier results of ANY F&O status (all 4,460 events with non-missing three_day). Each is
+  measured as h = three_day (%) minus the mean three_day (%) of ALL 4,460-set events of that quarter.
+  Lag k (k = 1..8) = the stock's event in quarter t-k exactly; missing if the stock has no event there or its
+  three_day is missing. Implementation guard: assert that every used lag event's Day+1 (i_p1) and reaction day
+  (i_react) are before the current result's cutoff session i_cut (no look-ahead in the move itself).
+  Note: the centring mean of quarter t-k uses all events of that quarter; a handful of late reporters of quarter t-1
+  can close after an early reporter's cutoff in quarter t. This shifts every result of quarter t by the same constant
+  for a given lag, so it does not affect within-quarter rank ICs; it can only affect the up/down sign. Logged.
+- Up / down of a history result: up = h > 0, down = h <= 0. Outcome up = y > 0.
+- Lag-1 day components: the lag-1 event's ret_dm1, ret_rd, ret_dp1 (%), each minus the mean of the same day over the
+  quarter-(t-1) events of the 4,460 set.
+- Sequences: for length L in {2, 3, 4} (all of lags 1..L present), the string of U/D written OLDEST FIRST, so the last
+  letter is the most recent result (e.g. L = 3 "UDU" = up 3 back, down 2 back, up last quarter).
+- Streaks: signed streak at lag 1: +j = exactly j consecutive ups ending last quarter (lags 1..j up and lag j+1
+  present and down), +4 = "4+" (lags 1..4 all up); -j / -4 the same for downs. A streak whose end is not observed
+  (a missing lag inside the first 4 before the streak ends) is missing. Up-streak 0 = any down streak.
+- Alternation: length-3 patterns UDU and DUD (UDUD / DUDU appear in the length-4 table).
+- Counts and averages (all lags of the window present): n_up4 (ups in lags 1-4, 0..4), n_up8 (lags 1-8, 0..8),
+  mean_h2, mean_h4, mean_h8 (mean h of lags 1-2, 1-4, 1-8), best4 = max h of lags 1-4, worst4 = min h of lags 1-4.
+- Magnitude: |y(t)| and |three_day(t-k)| (raw %, not centred).
+- Ordinary volatility vol60: sd (ddof 1) of the stock's daily returns over sessions i_cut-59 .. i_cut inclusive (the 60
+  sessions ending at the cutoff close, known at the decision), from returns.csv; at least 40 non-missing returns,
+  else missing. Check version vol60_ex: the same window with the stock's own earlier results sessions (i_m1, i_rd,
+  i_p1 of any of its events) removed (at least 40 left).
+
+TESTS (n and the number of quarters used are reported for every test)
+Shuffle scheme for the rank-IC families (A1, B, D, E raw): B = 5,000 within-quarter permutations of the outcome over
+all in_fo results of the quarter, the SAME permutation applied to every feature of the family (keeps the dependence
+between features for maxT). For a Spearman IC inside one quarter this is distributionally identical to shuffling the
+feature among the results that have it (only the within-subset ranks matter). Spearman uses average ranks for ties.
+A quarter enters a feature's IC only with >= 20 results having that feature. Mean IC = equal-weight mean over the
+quarters used; t = mean / (sd / sqrt(quarters)). p (two-sided) = (1 + #{|null - null mean| >= |obs - null mean|}) /
+(B + 1). maxT familywise p: each feature standardised by its null mean and sd; share of shuffles in which the largest
+standardised distance over the family reaches the feature's observed one.
+Group-mean tests (A2, C, streaks, alternation): permutations of x (or y) WITHIN the analysis subset (results having
+the needed lags) within each quarter, so every quarter keeps its group sizes; two-sided around the null mean.
+
+A. Each previous quarter individually, lags k = 1..8.
+   A1 rank IC: in each quarter t with >= 20 results having lag k, Spearman between h(t-k) and x(t); mean IC, t,
+      quarters positive; p from 5,000 shuffles; maxT familywise over the 8 lags. Seed 20261101.
+   A2 direction: among results with lag k: share up (y > 0) and average y after an up (h > 0) vs after a down;
+      primary statistic = average y after up minus average y after down; luck p from 20,000 within-quarter random
+      splits of the same sizes (seed 20261102 + k); Holm over the 8 lags. Also reported: the same difference in x and
+      in share up (with their own p from the same splits; not in the Holm family).
+B. Last quarter's three days separately: lag-1 Day-1, Result-day, Day+1 components as predictors of x: mean IC, p
+   (shuffle scheme above, seed 20261103), Holm over 3.
+C. Up/down sequences of the last 2, 3 and 4 results (all present): for every pattern (4, 8, 16) count, average y,
+   average x, share up; per length a global permutation test of "pattern explains x" (between-pattern sum of squares
+   of x, 5,000 within-quarter shuffles of the pattern labels inside the subset; seeds 20261104 + L) and per-pattern
+   luck p (mean x of the pattern, same shuffles) with Holm within the length. The 3 global tests are also Holm-ed
+   across lengths. Streaks: the 8 signed-streak levels (-4+..-1, +1..+4+) with count, average y, x, share up, per-level
+   p with Holm over the 8, and a global between-level test (seed 20261108). Alternation UDU and DUD: p with Holm over
+   2 (same shuffles as length 3).
+D. Counts and averages: n_up4, n_up8, mean_h2, mean_h4, mean_h8, best4, worst4 (7 features): mean IC, t, quarters
+   positive, p, maxT across the 7 (shuffle scheme above, seed 20261109); average x and y by level (counts) or by
+   within-quarter fifth (continuous features).
+E. Magnitude: Spearman of |y(t)| with |three_day(t-k)|, k = 1..8 (mean quarterly IC, p, Holm over 8; seed 20261110),
+   and the partial rank IC controlling for vol60 (within each quarter: ranks of |y|, |lag k| and vol60 among results
+   having all three; partial r = residual correlation after regressing each rank on the vol60 rank; null =
+   5,000 within-quarter permutations of the |y| residual, seed 20261111 + k; Holm over 8). Check: vol60_ex.
+   Also average |y| by within-quarter fifth of |lag 1| and of vol60. Size only, not direction (straddle question);
+   no cash trade can use it, and no option prices are used here.
+F. Quarter by quarter, t = 1..21: lag-1 IC (n), lag-4 IC (n, t >= 4), share up after a lag-1 up, share up after a
+   lag-1 down (with counts); plus a quarter x lag (1..8) IC matrix in by_quarter.csv. Descriptive (no p).
+G. Split: every test of A-E also for outcome quarters qn 0-13 ("first 14 q") and qn 14-21 ("last 8 q"), with the
+   familywise correction redone inside the half. CONFIRMED only if familywise significant (maxT / Holm within its
+   family, < 0.05) in qn 0-13 AND the same sign with p < 0.05 in qn 14-21.
+H. For anything CONFIRMED, or with familywise p < 0.05 on all quarters: the tradable version, buy at the cutoff close and
+   sell at the Day+1 close (gross = y; a short if the signal points down), after 0.17% round-trip costs: trades,
+   average gross / net, win rate, per quarter, without the 5 best trades, first 14 q / last 8 q, and overlap with the
+   lag 10% + volume rule trades (results/lag10_volume/trades.csv, matched on symbol and qn) and with the
+   PAST_PERFORMANCE last-4 top-tenth signal (rebuilt as in validation 2). A1 / B / D features trade the favoured
+   within-quarter fifth (top fifth if IC > 0, bottom fifth if IC < 0); A2 the favoured side (after up or after down);
+   C / streak / alternation the pattern (long if its x > 0, short if < 0). E has no cash version (needs option
+   prices); stated as such. If nothing qualifies, table_tradable.md says so.
+
+VALIDATION (asserted in build_history.py)
+1. QUARTER_CORRELATION.md definition: x_qc = three_day% minus the mean of in_fo results of the quarter; pooled Pearson
+   of a stock's x_qc(t) and x_qc(t+1), both results in_fo -> about 3,050 pairs, r -0.01 (differs from ours: our
+   history includes non-F&O events, is centred on the all-event quarter mean, and the IC is a within-quarter Spearman
+   averaged over quarters instead of one pooled Pearson).
+2. PAST_PERFORMANCE.md last-4 average: mean three_day of the stock's last 4 earlier results (any status) whose i_p1 and
+   i_react are before this result's i_cut (not necessarily consecutive quarters), results with >= 4 such; within-
+   quarter percentile rank > 0.9 -> 292 trades, average three-day +1.07%.
+
+OUTPUTS: results/prev_quarter_patterns/: history.csv, run.log, table_lags.md + lags.csv, table_components.md,
+table_sequences.md, table_counts.md, table_magnitude.md, table_by_quarter.md (+ by_quarter.csv), table_tradable.md.
+Formats: percent signed 2 decimals (+0.41), correlations 3 decimals, p 3 decimals ("<0.001"). python3 -P.
+Scripts read LAB = env LAB_ROOT (default 'lab'), OUT = env OUT (default REPO_ROOT/results/prev_quarter_patterns).

@@ -1,0 +1,3 @@
+id,test,signal,confirmed,fw_p,side,trades,avg_gross,avg_net,win,q_pos,q_n,net_no5,net_first14,n_first14,net_last8,n_last8,luck_p,overlap_lag10,overlap_top10,n_rest,net_rest
+D-mean_h8,Rank IC of Average h of the last 8 with x(t),Top fifth of average of the last 8,False,0.04679,long,452,0.56139,0.39139,52.65487,9,14,0.19019,1.12121,161,-0.0124,291,0.03959,10,170,279,-0.06519
+D-best4,Rank IC of Best of the last 4 with x(t),Top fifth of best of the last 4,False,0.0194,long,567,0.4727,0.3027,50.97002,9,18,0.14108,0.55505,269,0.0749,298,0.03799,17,220,339,-0.15581

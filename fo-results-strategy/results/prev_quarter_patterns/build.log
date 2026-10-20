@@ -1,0 +1,31 @@
+== build_history.py ==
+events 4462, with three_day 4460, in_fo 3278, stocks 212
+all-event quarter means of three_day (%), used to centre h: q0 +1.07, q1 +0.59, q2 -0.67, q3 -0.75, q4 -0.19, q5 +0.90, q6 +0.59, q7 -0.02, q8 +0.61, q9 +0.07, q10 +0.94, q11 +0.18, q12 +1.08, q13 +0.84, q14 -0.63, q15 -0.51, q16 +1.04, q17 -0.26, q18 +0.67, q19 +0.52, q20 -0.23, q21 +0.36
+in_fo results 3278 from 206 stocks; per quarter q0 98, q1 117, q2 125, q3 132, q4 131, q5 134, q6 133, q7 133, q8 134, q9 133, q10 132, q11 135, q12 135, q13 135, q14 134, q15 172, q16 178, q17 191, q18 191, q19 196, q20 203, q21 206
+lag 1: 3177 results have the event exactly 1 quarter(s) back (look-ahead check passed: its Day+1 and reaction day are before the cutoff)
+lag 2: 3060 results have the event exactly 2 quarter(s) back (look-ahead check passed: its Day+1 and reaction day are before the cutoff)
+lag 3: 2934 results have the event exactly 3 quarter(s) back (look-ahead check passed: its Day+1 and reaction day are before the cutoff)
+lag 4: 2801 results have the event exactly 4 quarter(s) back (look-ahead check passed: its Day+1 and reaction day are before the cutoff)
+lag 5: 2669 results have the event exactly 5 quarter(s) back (look-ahead check passed: its Day+1 and reaction day are before the cutoff)
+lag 6: 2528 results have the event exactly 6 quarter(s) back (look-ahead check passed: its Day+1 and reaction day are before the cutoff)
+lag 7: 2387 results have the event exactly 7 quarter(s) back (look-ahead check passed: its Day+1 and reaction day are before the cutoff)
+lag 8: 2247 results have the event exactly 8 quarter(s) back (look-ahead check passed: its Day+1 and reaction day are before the cutoff)
+centring note: 21 in_fo results have a cutoff on or before the last Day+1 of quarter t-1 (the quarter-(t-1) mean is then not fully known at their cutoff; this shifts h of a whole quarter by one constant)
+seq2: 3058 results
+seq3: 2931 results
+seq4: 2797 results
+streak: 2956 results
+n_up4: 2797 results
+n_up8: 2239 results
+mean_h2: 3058 results
+mean_h4: 2797 results
+mean_h8: 2239 results
+best4: 2797 results
+worst4: 2797 results
+vol60 (sd of daily returns over sessions i_cut-59..i_cut, %): 3278 results (median 1.75); vol60_ex (own results sessions removed): 3278; Spearman vol60 vs vol60_ex 0.982
+VALIDATION 1 (QUARTER_CORRELATION.md definition: both results in_fo, x centred on the in_fo quarter mean, pooled Pearson): 3050 pairs, r -0.0050 = -0.01 at 2 decimals (doc: 3,050 pairs, -0.01)
+  ours (history of any F&O status, centred on the all-event quarter mean): 3177 results with lag 1, pooled Pearson x vs h1 -0.012; the main test (A1) is a within-quarter Spearman averaged over quarters
+VALIDATION 2 (PAST_PERFORMANCE.md last-4 average, top tenth within the quarter): 2802 results with 4 earlier results; top tenth 292 trades, average three-day +1.07% (doc: 292 trades, +1.07%); top fifth 569 trades +0.53% (doc: 569, +0.53%)
+  ours: mean_h4 needs lags 1-4 all present and is centred: 2797 results (vs 2802); Spearman mean_h4 vs pp_last4 on common results 0.995
+lag 10% + volume rule: 85 trades in trades.csv, 85 matched to in_fo results
+wrote history.csv: 3278 rows, 47 columns

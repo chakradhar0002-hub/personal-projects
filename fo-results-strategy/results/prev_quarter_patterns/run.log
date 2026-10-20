@@ -1,0 +1,246 @@
+== build_history.py ==
+events 4462, with three_day 4460, in_fo 3278, stocks 212
+all-event quarter means of three_day (%), used to centre h: q0 +1.07, q1 +0.59, q2 -0.67, q3 -0.75, q4 -0.19, q5 +0.90, q6 +0.59, q7 -0.02, q8 +0.61, q9 +0.07, q10 +0.94, q11 +0.18, q12 +1.08, q13 +0.84, q14 -0.63, q15 -0.51, q16 +1.04, q17 -0.26, q18 +0.67, q19 +0.52, q20 -0.23, q21 +0.36
+in_fo results 3278 from 206 stocks; per quarter q0 98, q1 117, q2 125, q3 132, q4 131, q5 134, q6 133, q7 133, q8 134, q9 133, q10 132, q11 135, q12 135, q13 135, q14 134, q15 172, q16 178, q17 191, q18 191, q19 196, q20 203, q21 206
+lag 1: 3177 results have the event exactly 1 quarter(s) back (look-ahead check passed: its Day+1 and reaction day are before the cutoff)
+lag 2: 3060 results have the event exactly 2 quarter(s) back (look-ahead check passed: its Day+1 and reaction day are before the cutoff)
+lag 3: 2934 results have the event exactly 3 quarter(s) back (look-ahead check passed: its Day+1 and reaction day are before the cutoff)
+lag 4: 2801 results have the event exactly 4 quarter(s) back (look-ahead check passed: its Day+1 and reaction day are before the cutoff)
+lag 5: 2669 results have the event exactly 5 quarter(s) back (look-ahead check passed: its Day+1 and reaction day are before the cutoff)
+lag 6: 2528 results have the event exactly 6 quarter(s) back (look-ahead check passed: its Day+1 and reaction day are before the cutoff)
+lag 7: 2387 results have the event exactly 7 quarter(s) back (look-ahead check passed: its Day+1 and reaction day are before the cutoff)
+lag 8: 2247 results have the event exactly 8 quarter(s) back (look-ahead check passed: its Day+1 and reaction day are before the cutoff)
+centring note: 21 in_fo results have a cutoff on or before the last Day+1 of quarter t-1 (the quarter-(t-1) mean is then not fully known at their cutoff; this shifts h of a whole quarter by one constant)
+seq2: 3058 results
+seq3: 2931 results
+seq4: 2797 results
+streak: 2956 results
+n_up4: 2797 results
+n_up8: 2239 results
+mean_h2: 3058 results
+mean_h4: 2797 results
+mean_h8: 2239 results
+best4: 2797 results
+worst4: 2797 results
+vol60 (sd of daily returns over sessions i_cut-59..i_cut, %): 3278 results (median 1.75); vol60_ex (own results sessions removed): 3278; Spearman vol60 vs vol60_ex 0.982
+VALIDATION 1 (QUARTER_CORRELATION.md definition: both results in_fo, x centred on the in_fo quarter mean, pooled Pearson): 3050 pairs, r -0.0050 = -0.01 at 2 decimals (doc: 3,050 pairs, -0.01)
+  ours (history of any F&O status, centred on the all-event quarter mean): 3177 results with lag 1, pooled Pearson x vs h1 -0.012; the main test (A1) is a within-quarter Spearman averaged over quarters
+VALIDATION 2 (PAST_PERFORMANCE.md last-4 average, top tenth within the quarter): 2802 results with 4 earlier results; top tenth 292 trades, average three-day +1.07% (doc: 292 trades, +1.07%); top fifth 569 trades +0.53% (doc: 569, +0.53%)
+  ours: mean_h4 needs lags 1-4 all present and is centred: 2797 results (vs 2802); Spearman mean_h4 vs pp_last4 on common results 0.995
+lag 10% + volume rule: 85 trades in trades.csv, 85 matched to in_fo results
+wrote history.csv: 3278 rows, 47 columns
+
+== run_tests.py ==
+PLAN.txt sha256 9280b51459ae1b13707a14069360ce7a55e888539dc192ef4ab34edc0ac28457 (recorded 9280b51459ae1b13707a14069360ce7a55e888539dc192ef4ab34edc0ac28457): MATCH
+B = 5000 shuffles (A2: 20000 random splits); seeds {'A1': 20261101, 'A2': 20261102, 'B': 20261103, 'C': 20261104, 'streak': 20261108, 'D': 20261109, 'E': 20261110, 'Epart': 20261111, 'H': 20261120} (C uses seed C + L: L = 4 shares 20261108 with the streak test as pre-registered; harmless, different subsets)
+3278 in_fo results, 206 stocks, 22 quarters; all F&O average three-day +0.04%, share up 48.6%
+
+== A1. Each previous quarter individually: within-quarter Spearman of h(t-k) and x(t)
+lag 1: 3177 results in 21 quarters (qn 1-21); mean IC +0.005 (null mean +0.000), t +0.22, quarters positive 7 of 21, p 0.785, maxT p 1.000 | first 14 q: IC +0.040 (13 q, 1707 results) p 0.100 maxT 0.556 | last 8 q: IC -0.053 (8 q, 1470 results) p 0.045
+lag 2: 3060 results in 20 quarters (qn 2-21); mean IC +0.026 (null mean +0.001), t +0.94, quarters positive 10 of 20, p 0.174, maxT p 0.787 | first 14 q: IC +0.031 (12 q, 1589 results) p 0.240 maxT 0.884 | last 8 q: IC +0.020 (8 q, 1471 results) p 0.476
+lag 3: 2934 results in 19 quarters (qn 3-21); mean IC +0.042 (null mean +0.000), t +1.83, quarters positive 14 of 19, p 0.028, maxT p 0.185 | first 14 q: IC +0.009 (11 q, 1463 results) p 0.742 maxT 1.000 | last 8 q: IC +0.087 (8 q, 1471 results) p <0.001
+lag 4: 2801 results in 18 quarters (qn 4-21); mean IC +0.037 (null mean +0.000), t +2.11, quarters positive 12 of 18, p 0.054, maxT p 0.360 | first 14 q: IC +0.067 (10 q, 1330 results) p 0.014 maxT 0.114 | last 8 q: IC +0.001 (8 q, 1471 results) p 0.991
+lag 5: 2669 results in 17 quarters (qn 5-21); mean IC +0.020 (null mean -0.001), t +1.15, quarters positive 10 of 17, p 0.306, maxT p 0.945 | first 14 q: IC +0.018 (9 q, 1200 results) p 0.528 maxT 0.997 | last 8 q: IC +0.022 (8 q, 1469 results) p 0.396
+lag 6: 2528 results in 16 quarters (qn 6-21); mean IC +0.008 (null mean +0.000), t +0.37, quarters positive 8 of 16, p 0.692, maxT p 1.000 | first 14 q: IC -0.023 (8 q, 1066 results) p 0.488 maxT 0.995 | last 8 q: IC +0.038 (8 q, 1462 results) p 0.140
+lag 7: 2387 results in 15 quarters (qn 7-21); mean IC +0.027 (null mean +0.000), t +1.93, quarters positive 9 of 15, p 0.187, maxT p 0.817 | first 14 q: IC +0.030 (7 q, 933 results) p 0.343 maxT 0.967 | last 8 q: IC +0.025 (8 q, 1454 results) p 0.353
+lag 8: 2247 results in 14 quarters (qn 8-21); mean IC +0.001 (null mean +0.000), t +0.04, quarters positive 7 of 14, p 0.952, maxT p 1.000 | first 14 q: IC +0.046 (6 q, 800 results) p 0.199 maxT 0.825 | last 8 q: IC -0.032 (8 q, 1447 results) p 0.230
+
+== A2. Direction: results after a lag-k up (h > 0) vs after a lag-k down
+lag 1: 3177 results in 21 quarters; after an up 1478: share up 48.9%, avg y +0.00%, avg x -0.01 | after a down 1699: share up 48.4%, avg y +0.03%, avg x +0.00 | difference y -0.02 luck p 0.959 Holm 1.000; x -0.01 p 0.959; share up +0.5 pts p 0.665 | first 14 q diff y +0.38 p 0.089 Holm 0.621 (13 q, 1707 results) | last 8 q -0.48 p 0.067 (8 q, 1470 results)
+lag 2: 3060 results in 20 quarters; after an up 1416: share up 49.7%, avg y +0.17%, avg x +0.15 | after a down 1644: share up 47.4%, avg y -0.12%, avg x -0.12 | difference y +0.29 luck p 0.144 Holm 0.865; x +0.27 p 0.144; share up +2.3 pts p 0.228 | first 14 q diff y +0.30 p 0.278 Holm 1.000 (12 q, 1589 results) | last 8 q +0.27 p 0.336 (8 q, 1471 results)
+lag 3: 2934 results in 19 quarters; after an up 1361: share up 49.1%, avg y +0.30%, avg x +0.24 | after a down 1573: share up 48.6%, avg y -0.16%, avg x -0.21 | difference y +0.45 luck p 0.018 Holm 0.143; x +0.45 p 0.018; share up +0.5 pts p 0.822 | first 14 q diff y +0.12 p 0.677 Holm 1.000 (11 q, 1463 results) | last 8 q +0.80 p 0.004 (8 q, 1471 results)
+lag 4: 2801 results in 18 quarters; after an up 1308: share up 49.4%, avg y +0.28%, avg x +0.20 | after a down 1493: share up 48.6%, avg y -0.07%, avg x -0.16 | difference y +0.35 luck p 0.063 Holm 0.438; x +0.36 p 0.063; share up +0.8 pts p 0.594 | first 14 q diff y +0.70 p 0.011 Holm 0.091 (10 q, 1330 results) | last 8 q +0.04 p 0.819 (8 q, 1471 results)
+lag 5: 2669 results in 17 quarters; after an up 1243: share up 50.2%, avg y +0.11%, avg x -0.03 | after a down 1426: share up 48.7%, avg y +0.15%, avg x +0.03 | difference y -0.04 luck p 0.764 Holm 1.000; x -0.06 p 0.764; share up +1.5 pts p 0.490 | first 14 q diff y -0.24 p 0.424 Holm 1.000 (9 q, 1200 results) | last 8 q +0.12 p 0.769 (8 q, 1469 results)
+lag 6: 2528 results in 16 quarters; after an up 1183: share up 49.7%, avg y +0.12%, avg x +0.04 | after a down 1345: share up 48.7%, avg y +0.07%, avg x -0.04 | difference y +0.06 luck p 0.666 Holm 1.000; x +0.08 p 0.666; share up +1.0 pts p 0.515 | first 14 q diff y -0.39 p 0.228 Holm 1.000 (8 q, 1066 results) | last 8 q +0.39 p 0.131 (8 q, 1462 results)
+lag 7: 2387 results in 15 quarters; after an up 1111: share up 50.7%, avg y +0.18%, avg x +0.07 | after a down 1276: share up 47.8%, avg y +0.04%, avg x -0.06 | difference y +0.14 luck p 0.526 Holm 1.000; x +0.13 p 0.526; share up +2.9 pts p 0.200 | first 14 q diff y +0.13 p 0.743 Holm 1.000 (7 q, 933 results) | last 8 q +0.15 p 0.590 (8 q, 1454 results)
+lag 8: 2247 results in 14 quarters; after an up 1044: share up 48.5%, avg y -0.01%, avg x -0.14 | after a down 1203: share up 50.3%, avg y +0.23%, avg x +0.12 | difference y -0.23 luck p 0.229 Holm 1.000; x -0.26 p 0.229; share up -1.8 pts p 0.369 | first 14 q diff y -0.03 p 0.960 Holm 1.000 (6 q, 800 results) | last 8 q -0.35 p 0.148 (8 q, 1447 results)
+
+== B. Last quarter's three days separately (each minus the quarter mean of the same day)
+Day-1: 3177 results in 21 quarters; mean IC -0.014, t -0.71, positive 8 of 21, p 0.447, Holm 0.799 | first 14 q IC +0.002 p 0.939 Holm 1.000 | last 8 q IC -0.039 p 0.136
+Result day: 3177 results in 21 quarters; mean IC -0.020, t -1.01, positive 7 of 21, p 0.259, Holm 0.776 | first 14 q IC +0.000 p 0.994 Holm 1.000 | last 8 q IC -0.054 p 0.040
+Day+1: 3177 results in 21 quarters; mean IC +0.015, t +0.68, positive 10 of 21, p 0.400, Holm 0.799 | first 14 q IC +0.038 p 0.120 Holm 0.360 | last 8 q IC -0.022 p 0.398
+
+== C. Up/down sequences of the last 2, 3 and 4 results (oldest first; last letter = last quarter)
+  UU: 683 results, avg y +0.14%, share up 49.3%, avg x +0.10, p 0.572, Holm 1.000 | first 14 q x +0.14 (364) p 0.558 Holm 0.955 | last 8 q x +0.06 (319) p 0.840
+  UD: 733 results, avg y +0.21%, share up 50.1%, avg x +0.19, p 0.244, Holm 0.976 | first 14 q x +0.16 (371) p 0.478 Holm 0.955 | last 8 q x +0.22 (362) p 0.347
+  DU: 750 results, avg y -0.15%, share up 48.1%, avg x -0.14, p 0.380, Holm 1.000 | first 14 q x +0.26 (374) p 0.260 Holm 0.779 | last 8 q x -0.54 (376) p 0.019
+  DD: 892 results, avg y -0.09%, share up 46.6%, avg x -0.12, p 0.422, Holm 1.000 | first 14 q x -0.43 (479) p 0.024 Holm 0.096 | last 8 q x +0.25 (413) p 0.234
+  UUU: 322 results, avg y +0.76%, share up 54.0%, avg x +0.70, p 0.008, Holm 0.066 | first 14 q x +0.82 (159) p 0.031 Holm 0.250 | last 8 q x +0.58 (163) p 0.132
+  UUD: 331 results, avg y +0.13%, share up 46.8%, avg x +0.10, p 0.695, Holm 1.000 | first 14 q x -0.27 (174) p 0.431 Holm 1.000 | last 8 q x +0.52 (157) p 0.180
+  UDU: 335 results, avg y -0.04%, share up 47.5%, avg x -0.05, p 0.845, Holm 1.000 | first 14 q x +0.09 (148) p 0.825 Holm 1.000 | last 8 q x -0.17 (187) p 0.637
+  DUU: 336 results, avg y -0.33%, share up 46.1%, avg x -0.40, p 0.139, Holm 0.964 | first 14 q x -0.31 (180) p 0.372 Holm 1.000 | last 8 q x -0.49 (156) p 0.215
+  UDD: 373 results, avg y +0.34%, share up 48.3%, avg x +0.23, p 0.354, Holm 1.000 | first 14 q x -0.30 (188) p 0.365 Holm 1.000 | last 8 q x +0.78 (185) p 0.029
+  DUD: 377 results, avg y +0.18%, share up 52.5%, avg x +0.11, p 0.638, Holm 1.000 | first 14 q x +0.27 (172) p 0.450 Holm 1.000 | last 8 q x -0.01 (205) p 0.963
+  DDU: 380 results, avg y -0.19%, share up 49.7%, avg x -0.23, p 0.342, Holm 1.000 | first 14 q x +0.43 (191) p 0.222 Holm 1.000 | last 8 q x -0.90 (189) p 0.012
+  DDD: 477 results, avg y -0.28%, share up 46.1%, avg x -0.31, p 0.138, Holm 0.964 | first 14 q x -0.44 (249) p 0.126 Holm 0.880 | last 8 q x -0.17 (228) p 0.582
+  UUUU: 165 results, avg y +0.85%, share up 52.7%, avg x +0.77, p 0.046, Holm 0.649 | first 14 q x +0.71 (72) p 0.198 Holm 1.000 | last 8 q x +0.82 (93) p 0.108
+  UUUD: 146 results, avg y +0.18%, share up 44.5%, avg x +0.15, p 0.715, Holm 1.000 | first 14 q x -0.33 (69) p 0.553 Holm 1.000 | last 8 q x +0.58 (77) p 0.316
+  UUDU: 139 results, avg y +0.00%, share up 45.3%, avg x -0.03, p 0.943, Holm 1.000 | first 14 q x +0.73 (58) p 0.266 Holm 1.000 | last 8 q x -0.57 (81) p 0.335
+  UDUU: 144 results, avg y +0.15%, share up 52.1%, avg x +0.10, p 0.822, Holm 1.000 | first 14 q x +0.75 (60) p 0.261 Holm 1.000 | last 8 q x -0.36 (84) p 0.523
+  DUUU: 148 results, avg y +0.77%, share up 56.8%, avg x +0.67, p 0.107, Holm 1.000 | first 14 q x +1.05 (78) p 0.060 Holm 0.837 | last 8 q x +0.25 (70) p 0.680
+  UUDD: 183 results, avg y +0.60%, share up 51.4%, avg x +0.47, p 0.193, Holm 1.000 | first 14 q x +0.16 (100) p 0.758 Holm 1.000 | last 8 q x +0.85 (83) p 0.123
+  UDUD: 177 results, avg y -0.05%, share up 50.3%, avg x -0.10, p 0.777, Holm 1.000 | first 14 q x +0.40 (75) p 0.519 Holm 1.000 | last 8 q x -0.46 (102) p 0.358
+  DUUD: 167 results, avg y +0.37%, share up 50.9%, avg x +0.26, p 0.487, Holm 1.000 | first 14 q x +0.08 (87) p 0.895 Holm 1.000 | last 8 q x +0.46 (80) p 0.406
+  UDDU: 160 results, avg y +0.24%, share up 48.8%, avg x +0.12, p 0.763, Holm 1.000 | first 14 q x +1.24 (73) p 0.029 Holm 0.461 | last 8 q x -0.83 (87) p 0.121
+  DUDU: 180 results, avg y +0.07%, share up 49.4%, avg x +0.01, p 0.979, Holm 1.000 | first 14 q x -0.18 (74) p 0.754 Holm 1.000 | last 8 q x +0.14 (106) p 0.758
+  DDUU: 175 results, avg y -0.69%, share up 41.7%, avg x -0.84, p 0.023, Holm 0.371 | first 14 q x -0.97 (103) p 0.039 Holm 0.579 | last 8 q x -0.64 (72) p 0.287
+  UDDD: 194 results, avg y +0.18%, share up 49.0%, avg x +0.04, p 0.919, Holm 1.000 | first 14 q x -0.16 (103) p 0.715 Holm 1.000 | last 8 q x +0.26 (91) p 0.612
+  DUDD: 180 results, avg y +0.19%, share up 45.6%, avg x +0.07, p 0.859, Holm 1.000 | first 14 q x -0.77 (78) p 0.162 Holm 1.000 | last 8 q x +0.71 (102) p 0.151
+  DDUD: 181 results, avg y +0.38%, share up 54.7%, avg x +0.23, p 0.567, Holm 1.000 | first 14 q x -0.03 (78) p 0.939 Holm 1.000 | last 8 q x +0.42 (103) p 0.412
+  DDDU: 201 results, avg y -0.74%, share up 48.3%, avg x -0.78, p 0.024, Holm 0.371 | first 14 q x -0.59 (99) p 0.217 Holm 1.000 | last 8 q x -0.97 (102) p 0.052
+  DDDD: 257 results, avg y -0.53%, share up 44.4%, avg x -0.54, p 0.069, Holm 0.902 | first 14 q x -0.63 (120) p 0.122 Holm 1.000 | last 8 q x -0.46 (137) p 0.282
+length 2: global "pattern explains x": 3058 results in 20 quarters, between-pattern SS 59.7 (null mean 78.7), p 0.518, Holm over 3 lengths 0.518 | first 14 q p 0.153 Holm 0.356 (1588 results, 12 q) | last 8 q p 0.125 (1470 results, 8 q)
+length 3: global "pattern explains x": 2931 results in 19 quarters, between-pattern SS 304.8 (null mean 183.7), p 0.116, Holm over 3 lengths 0.349 | first 14 q p 0.200 Holm 0.356 (1461 results, 11 q) | last 8 q p 0.034 (1470 results, 8 q)
+length 4: global "pattern explains x": 2797 results in 18 quarters, between-pattern SS 557.6 (null mean 394.6), p 0.134, Holm over 3 lengths 0.349 | first 14 q p 0.119 Holm 0.356 (1327 results, 10 q) | last 8 q p 0.214 (1470 results, 8 q)
+
+-- streaks: signed number of consecutive ups (+) or downs (-) ending last quarter (4 = 4 or more)
+  4+ ups: 165 results, avg y +0.85%, share up 52.7%, avg x +0.77, p 0.039, Holm 0.315 | first 14 q x +0.71 (72) Holm 1.000 | last 8 q x +0.82 (93) p 0.112
+  3 ups: 148 results, avg y +0.77%, share up 56.8%, avg x +0.67, p 0.105, Holm 0.627 | first 14 q x +1.05 (78) Holm 0.422 | last 8 q x +0.25 (70) p 0.697
+  2 ups: 336 results, avg y -0.33%, share up 46.1%, avg x -0.40, p 0.123, Holm 0.627 | first 14 q x -0.31 (180) Holm 1.000 | last 8 q x -0.49 (156) p 0.211
+  1 up: 750 results, avg y -0.15%, share up 48.1%, avg x -0.14, p 0.213, Holm 0.852 | first 14 q x +0.26 (374) Holm 1.000 | last 8 q x -0.54 (376) p 0.024
+  1 down: 733 results, avg y +0.21%, share up 50.1%, avg x +0.19, p 0.381, Holm 1.000 | first 14 q x +0.16 (371) Holm 1.000 | last 8 q x +0.22 (362) p 0.354
+  2 downs: 373 results, avg y +0.34%, share up 48.3%, avg x +0.23, p 0.357, Holm 1.000 | first 14 q x -0.30 (188) Holm 1.000 | last 8 q x +0.78 (185) p 0.034
+  3 downs: 194 results, avg y +0.18%, share up 49.0%, avg x +0.04, p 0.918, Holm 1.000 | first 14 q x -0.16 (103) Holm 1.000 | last 8 q x +0.26 (91) p 0.626
+  4+ downs: 257 results, avg y -0.53%, share up 44.4%, avg x -0.54, p 0.069, Holm 0.482 | first 14 q x -0.63 (120) Holm 0.946 | last 8 q x -0.46 (137) p 0.271
+streak global test: 2956 results in 20 quarters, SS 352.3 (null 181.4) p 0.058 | first 14 q p 0.213 | last 8 q p 0.055
+streak trend (descriptive, not pre-registered as a test): mean within-quarter Spearman of the signed streak with x +0.013 over 20 quarters, p 0.521
+
+-- alternation: UDU and DUD (last 3)
+  UDU: 335 results, avg y -0.04%, share up 47.5%, avg x -0.05, p 0.845, Holm over 2 1.000 | first 14 q x +0.09 Holm 0.901 | last 8 q x -0.17 p 0.637
+  DUD: 377 results, avg y +0.18%, share up 52.5%, avg x +0.11, p 0.638, Holm over 2 1.000 | first 14 q x +0.27 Holm 0.901 | last 8 q x -0.01 p 0.963
+
+== D. Counts and averages of earlier results (all needed lags present)
+Ups in the last 4: 2797 results in 18 quarters (qn 4-21); mean IC +0.043, t +1.85, positive 9 of 18, p 0.029, maxT 0.132 | first 14 q IC +0.058 (10 q) p 0.037 maxT 0.169 | last 8 q IC +0.024 p 0.375
+Ups in the last 8: 2239 results in 14 quarters (qn 8-21); mean IC +0.041, t +2.66, positive 10 of 14, p 0.068, maxT 0.266 | first 14 q IC +0.045 (6 q) p 0.215 maxT 0.658 | last 8 q IC +0.037 p 0.170
+Average h of the last 2: 3058 results in 20 quarters (qn 2-21); mean IC +0.012, t +0.45, positive 9 of 20, p 0.544, maxT 0.972 | first 14 q IC +0.041 (12 q) p 0.110 maxT 0.416 | last 8 q IC -0.032 p 0.220
+Average h of the last 4: 2797 results in 18 quarters (qn 4-21); mean IC +0.048, t +2.13, positive 12 of 18, p 0.016, maxT 0.077 | first 14 q IC +0.080 (10 q) p 0.006 maxT 0.025 | last 8 q IC +0.007 p 0.800
+Average h of the last 8: 2239 results in 14 quarters (qn 8-21); mean IC +0.056, t +2.89, positive 11 of 14, p 0.011, maxT 0.047 | first 14 q IC +0.085 (6 q) p 0.018 maxT 0.089 | last 8 q IC +0.034 p 0.199
+Best of the last 4: 2797 results in 18 quarters (qn 4-21); mean IC +0.057, t +2.60, positive 11 of 18, p 0.004, maxT 0.019 | first 14 q IC +0.074 (10 q) p 0.008 maxT 0.043 | last 8 q IC +0.035 p 0.200
+Worst of the last 4: 2797 results in 18 quarters (qn 4-21); mean IC +0.029, t +1.65, positive 12 of 18, p 0.136, maxT 0.477 | first 14 q IC +0.047 (10 q) p 0.092 maxT 0.358 | last 8 q IC +0.007 p 0.794
+  n_up4 = 0: 257 results, avg y -0.53%, share up 44.4%, x -0.54
+  n_up4 = 1: 756 results, avg y -0.02%, share up 49.3%, x -0.13
+  n_up4 = 2: 1042 results, avg y +0.09%, share up 48.8%, x -0.01
+  n_up4 = 3: 577 results, avg y +0.28%, share up 49.7%, x +0.23
+  n_up4 = 4: 165 results, avg y +0.85%, share up 52.7%, x +0.77
+  n_up8 = 0: 21 results, avg y +0.90%, share up 57.1%, x +0.92
+  n_up8 = 1: 100 results, avg y -0.23%, share up 46.0%, x -0.29
+  n_up8 = 2: 326 results, avg y +0.05%, share up 48.5%, x -0.07
+  n_up8 = 3: 549 results, avg y -0.25%, share up 45.9%, x -0.40
+  n_up8 = 4: 569 results, avg y +0.24%, share up 51.7%, x +0.14
+  n_up8 = 5: 397 results, avg y +0.45%, share up 51.4%, x +0.34
+  n_up8 = 6: 220 results, avg y +0.27%, share up 52.3%, x +0.15
+  n_up8 = 7: 53 results, avg y +0.27%, share up 47.2%, x +0.16
+  n_up8 = 8: 4 results, avg y -1.88%, share up 25.0%, x -2.06
+  mean_h2 fifth 1: 604 results, avg -5.16, y +0.23%, x +0.22 (first -0.43, last +0.91)
+  mean_h2 fifth 2: 613 results, avg -2.10, y -0.17%, x -0.18 (first -0.08, last -0.30)
+  mean_h2 fifth 3: 609 results, avg -0.31, y -0.03%, x -0.04 (first +0.27, last -0.38)
+  mean_h2 fifth 4: 613 results, avg +1.53, y -0.23%, x -0.25 (first -0.40, last -0.09)
+  mean_h2 fifth 5: 619 results, avg +4.87, y +0.27%, x +0.25 (first +0.63, last -0.15)
+  mean_h4 fifth 1: 551 results, avg -3.80, y +0.02%, x -0.06 (first -0.21, last +0.08)
+  mean_h4 fifth 2: 562 results, avg -1.58, y -0.22%, x -0.31 (first -0.67, last +0.02)
+  mean_h4 fifth 3: 555 results, avg -0.32, y +0.07%, x -0.01 (first -0.23, last +0.19)
+  mean_h4 fifth 4: 562 results, avg +1.02, y +0.02%, x -0.07 (first +0.30, last -0.40)
+  mean_h4 fifth 5: 567 results, avg +3.57, y +0.54%, x +0.46 (first +0.85, last +0.10)
+  mean_h8 fifth 1: 441 results, avg -2.82, y -0.08%, x -0.19 (first +0.12, last -0.36)
+  mean_h8 fifth 2: 450 results, avg -1.29, y -0.23%, x -0.35 (first -1.03, last +0.02)
+  mean_h8 fifth 3: 446 results, avg -0.30, y +0.06%, x -0.06 (first -0.50, last +0.18)
+  mean_h8 fifth 4: 450 results, avg +0.71, y +0.26%, x +0.14 (first +0.63, last -0.12)
+  mean_h8 fifth 5: 452 results, avg +2.69, y +0.56%, x +0.45 (first +0.86, last +0.22)
+  best4 fifth 1: 551 results, avg -0.21, y -0.35%, x -0.44 (first -0.44, last -0.43)
+  best4 fifth 2: 562 results, avg +2.50, y +0.03%, x -0.06 (first -0.30, last +0.17)
+  best4 fifth 3: 555 results, avg +4.44, y -0.03%, x -0.11 (first -0.20, last -0.02)
+  best4 fifth 4: 562 results, avg +6.69, y +0.31%, x +0.22 (first +0.49, last -0.02)
+  best4 fifth 5: 567 results, avg +11.40, y +0.47%, x +0.39 (first +0.49, last +0.30)
+  worst4 fifth 1: 551 results, avg -11.11, y -0.13%, x -0.21 (first -0.40, last -0.04)
+  worst4 fifth 2: 562 results, avg -6.69, y +0.24%, x +0.15 (first +0.02, last +0.28)
+  worst4 fifth 3: 555 results, avg -4.89, y -0.44%, x -0.52 (first -0.66, last -0.39)
+  worst4 fifth 4: 562 results, avg -3.24, y +0.43%, x +0.35 (first +0.49, last +0.21)
+  worst4 fifth 5: 567 results, avg -0.60, y +0.32%, x +0.24 (first +0.57, last -0.06)
+
+== E. Magnitude: does a big mover stay a big mover? |y(t)| vs |three_day(t-k)|
+context: vol60 vs |y|: mean IC +0.117 over 22 quarters (3278 results), p <0.001
+context: vol60_ex vs |y|: mean IC +0.111 over 22 quarters (3278 results), p <0.001
+lag 1: raw: 3177 results in 21 q, mean IC +0.053, t +3.05, positive 15 of 21, p 0.003, Holm 0.020 (first 14 q +0.048 Holm 0.250, last 8 q +0.060 p 0.020) | partial (vol60): 3177 results, IC +0.029, t +1.80, positive 13 of 21, p 0.106, Holm 0.388 (first 14 q +0.029 Holm 1.000, last 8 q +0.030 p 0.258) | partial (vol60_ex) +0.040 p 0.028
+lag 2: raw: 3060 results in 20 q, mean IC +0.047, t +3.26, positive 15 of 20, p 0.008, Holm 0.042 (first 14 q +0.056 Holm 0.156, last 8 q +0.034 p 0.191) | partial (vol60): 3060 results, IC +0.033, t +2.07, positive 13 of 20, p 0.070, Holm 0.388 (first 14 q +0.045 Holm 0.431, last 8 q +0.016 p 0.554) | partial (vol60_ex) +0.034 p 0.067
+lag 3: raw: 2934 results in 19 q, mean IC +0.029, t +1.71, positive 12 of 19, p 0.132, Holm 0.264 (first 14 q +0.029 Holm 0.615, last 8 q +0.028 p 0.273) | partial (vol60): 2934 results, IC +0.016, t +0.87, positive 10 of 19, p 0.402, Holm 0.804 (first 14 q +0.017 Holm 1.000, last 8 q +0.014 p 0.598) | partial (vol60_ex) +0.017 p 0.345
+lag 4: raw: 2801 results in 18 q, mean IC +0.049, t +2.09, positive 13 of 18, p 0.010, Holm 0.042 (first 14 q +0.073 Holm 0.056, last 8 q +0.019 p 0.483) | partial (vol60): 2801 results, IC +0.036, t +1.56, positive 11 of 18, p 0.060, Holm 0.388 (first 14 q +0.065 Holm 0.186, last 8 q +0.001 p 0.995) | partial (vol60_ex) +0.037 p 0.057
+lag 5: raw: 2669 results in 17 q, mean IC +0.050, t +3.44, positive 13 of 17, p 0.011, Holm 0.042 (first 14 q +0.036 Holm 0.615, last 8 q +0.066 p 0.011) | partial (vol60): 2669 results, IC +0.038, t +2.65, positive 13 of 17, p 0.055, Holm 0.388 (first 14 q +0.026 Holm 1.000, last 8 q +0.052 p 0.051) | partial (vol60_ex) +0.039 p 0.044
+lag 6: raw: 2528 results in 16 q, mean IC +0.028, t +1.73, positive 10 of 16, p 0.155, Holm 0.264 (first 14 q +0.025 Holm 0.615, last 8 q +0.032 p 0.227) | partial (vol60): 2528 results, IC +0.015, t +0.84, positive 9 of 16, p 0.468, Holm 0.804 (first 14 q +0.018 Holm 1.000, last 8 q +0.012 p 0.668) | partial (vol60_ex) +0.016 p 0.422
+lag 7: raw: 2387 results in 15 q, mean IC +0.068, t +3.55, positive 13 of 15, p 0.001, Holm 0.011 (first 14 q +0.077 Holm 0.136, last 8 q +0.060 p 0.024) | partial (vol60): 2387 results, IC +0.056, t +2.89, positive 12 of 15, p 0.006, Holm 0.046 (first 14 q +0.072 Holm 0.186, last 8 q +0.041 p 0.118) | partial (vol60_ex) +0.057 p 0.007
+lag 8: raw: 2247 results in 14 q, mean IC +0.060, t +3.80, positive 12 of 14, p 0.006, Holm 0.034 (first 14 q +0.055 Holm 0.481, last 8 q +0.063 p 0.016) | partial (vol60): 2247 results, IC +0.042, t +2.78, positive 11 of 14, p 0.056, Holm 0.388 (first 14 q +0.045 Holm 1.000, last 8 q +0.041 p 0.131) | partial (vol60_ex) +0.043 p 0.045
+  |y| by fifth of abs1: fifth 1: 628 results, avg abs1 0.60, avg |y| 3.88%, median 3.04%, share > 5% 29.6%
+  |y| by fifth of abs1: fifth 2: 636 results, avg abs1 1.76, avg |y| 3.45%, median 2.83%, share > 5% 25.6%
+  |y| by fifth of abs1: fifth 3: 634 results, avg abs1 3.12, avg |y| 4.01%, median 3.24%, share > 5% 31.4%
+  |y| by fifth of abs1: fifth 4: 636 results, avg abs1 5.00, avg |y| 3.84%, median 2.97%, share > 5% 28.0%
+  |y| by fifth of abs1: fifth 5: 643 results, avg abs1 9.25, avg |y| 4.40%, median 3.44%, share > 5% 34.7%
+  |y| by fifth of vol60: fifth 1: 647 results, avg vol60 1.24, avg |y| 3.28%, median 2.70%, share > 5% 22.1%
+  |y| by fifth of vol60: fifth 2: 656 results, avg vol60 1.53, avg |y| 3.66%, median 2.73%, share > 5% 28.8%
+  |y| by fifth of vol60: fifth 3: 654 results, avg vol60 1.76, avg |y| 3.87%, median 2.98%, share > 5% 28.6%
+  |y| by fifth of vol60: fifth 4: 656 results, avg vol60 2.04, avg |y| 4.37%, median 3.51%, share > 5% 35.7%
+  |y| by fifth of vol60: fifth 5: 665 results, avg vol60 2.63, avg |y| 4.43%, median 3.44%, share > 5% 33.8%
+  vol60 fifth 1: |y| after a big last-quarter move 3.07% vs small 3.40% (628 results)
+  vol60 fifth 2: |y| after a big last-quarter move 3.89% vs small 3.50% (636 results)
+  vol60 fifth 3: |y| after a big last-quarter move 4.10% vs small 3.61% (634 results)
+  vol60 fifth 4: |y| after a big last-quarter move 4.34% vs small 4.39% (636 results)
+  vol60 fifth 5: |y| after a big last-quarter move 4.52% vs small 4.32% (643 results)
+
+== F. Quarter by quarter
+Apr-Jun 2021 (q1): 117 results, avg +0.06%; lag-1 IC +0.046 (117); lag-4 IC - (0); up after up 56.8% (44), up after down 53.4% (73); avg y after up +0.66%, after down -0.30%
+Jul-Sep 2021 (q2): 125 results, avg -0.84%; lag-1 IC -0.059 (125); lag-4 IC - (0); up after up 35.0% (60), up after down 46.2% (65); avg y after up -1.20%, after down -0.52%
+Oct-Dec 2021 (q3): 132 results, avg -0.64%; lag-1 IC +0.059 (132); lag-4 IC - (0); up after up 50.8% (61), up after down 42.3% (71); avg y after up -0.12%, after down -1.08%
+Jan-Mar 2022 (q4): 131 results, avg -0.83%; lag-1 IC +0.137 (131); lag-4 IC -0.027 (131); up after up 43.7% (71), up after down 36.7% (60); avg y after up -0.33%, after down -1.42%
+Apr-Jun 2022 (q5): 134 results, avg +0.75%; lag-1 IC +0.229 (134); lag-4 IC +0.057 (134); up after up 62.7% (59), up after down 44.0% (75); avg y after up +1.56%, after down +0.12%
+Jul-Sep 2022 (q6): 133 results, avg +0.03%; lag-1 IC +0.052 (133); lag-4 IC +0.157 (133); up after up 49.3% (67), up after down 50.0% (66); avg y after up +0.39%, after down -0.34%
+Oct-Dec 2022 (q7): 133 results, avg -0.16%; lag-1 IC +0.208 (133); lag-4 IC +0.000 (133); up after up 58.9% (56), up after down 33.8% (77); avg y after up +1.11%, after down -1.08%
+Jan-Mar 2023 (q8): 134 results, avg +0.61%; lag-1 IC -0.105 (134); lag-4 IC +0.081 (134); up after up 49.2% (59), up after down 61.3% (75); avg y after up +0.12%, after down +0.99%
+Apr-Jun 2023 (q9): 133 results, avg -0.30%; lag-1 IC -0.046 (133); lag-4 IC +0.143 (133); up after up 39.4% (66), up after down 44.8% (67); avg y after up -0.53%, after down -0.06%
+Jul-Sep 2023 (q10): 132 results, avg +0.41%; lag-1 IC -0.034 (130); lag-4 IC +0.053 (131); up after up 53.7% (54), up after down 52.6% (76); avg y after up +0.27%, after down +0.48%
+Oct-Dec 2023 (q11): 135 results, avg +0.48%; lag-1 IC +0.108 (135); lag-4 IC +0.206 (134); up after up 60.0% (60), up after down 46.7% (75); avg y after up +0.85%, after down +0.18%
+Jan-Mar 2024 (q12): 135 results, avg +0.88%; lag-1 IC -0.039 (135); lag-4 IC -0.037 (134); up after up 50.7% (71), up after down 56.2% (64); avg y after up +0.72%, after down +1.05%
+Apr-Jun 2024 (q13): 135 results, avg +0.53%; lag-1 IC -0.036 (135); lag-4 IC +0.032 (133); up after up 52.7% (55), up after down 53.8% (80); avg y after up +0.53%, after down +0.53%
+Jul-Sep 2024 (q14): 134 results, avg -1.12%; lag-1 IC -0.032 (134); lag-4 IC -0.084 (134); up after up 40.9% (66), up after down 42.6% (68); avg y after up -1.23%, after down -1.01%
+Oct-Dec 2024 (q15): 172 results, avg -0.79%; lag-1 IC -0.002 (172); lag-4 IC +0.036 (172); up after up 44.9% (78), up after down 45.7% (94); avg y after up -0.90%, after down -0.70%
+Jan-Mar 2025 (q16): 178 results, avg +0.96%; lag-1 IC -0.062 (178); lag-4 IC -0.060 (178); up after up 54.4% (90), up after down 52.3% (88); avg y after up +0.74%, after down +1.18%
+Apr-Jun 2025 (q17): 191 results, avg -0.56%; lag-1 IC -0.017 (191); lag-4 IC -0.008 (191); up after up 42.7% (89), up after down 48.0% (102); avg y after up -0.96%, after down -0.22%
+Jul-Sep 2025 (q18): 191 results, avg +0.67%; lag-1 IC -0.038 (191); lag-4 IC +0.040 (191); up after up 55.4% (92), up after down 53.5% (99); avg y after up +0.47%, after down +0.85%
+Oct-Dec 2025 (q19): 196 results, avg +0.18%; lag-1 IC -0.145 (196); lag-4 IC +0.063 (196); up after up 45.1% (91), up after down 46.7% (105); avg y after up -0.01%, after down +0.35%
+Jan-Mar 2026 (q20): 203 results, avg -0.31%; lag-1 IC -0.029 (203); lag-4 IC +0.014 (203); up after up 44.1% (93), up after down 47.3% (110); avg y after up -0.71%, after down +0.03%
+Apr-Jun 2026 (q21): 206 results, avg +0.17%; lag-1 IC -0.096 (205); lag-4 IC +0.007 (206); up after up 46.9% (96), up after down 53.2% (109); avg y after up -0.25%, after down +0.53%
+lag-1 IC positive in 7 of 21 quarters; lag-4 in 12 of 18; up-after-up share > up-after-down share in 9 of 21 quarters
+after the fact, qn 1-7 (Apr-Jun 2021 to Oct-Dec 2022): mean lag-1 IC +0.096, negative in 1 of 7 quarters; after a lag-1 up 418 results avg y +0.26%, after a down 487 avg y -0.65% (net -0.82%); after-a-down beat after-an-up in 1 of 7 quarters
+after the fact, qn 8-21 (Jan-Mar 2023 to Apr-Jun 2026): mean lag-1 IC -0.041, negative in 13 of 14 quarters; after a lag-1 up 1060 results avg y -0.09%, after a down 1212 avg y +0.30% (net +0.13%); after-a-down beat after-an-up in 13 of 14 quarters
+after the fact, qn 14-21 (Jul-Sep 2024 to Apr-Jun 2026): mean lag-1 IC -0.053, negative in 8 of 8 quarters; after a lag-1 up 695 results avg y -0.31%, after a down 775 avg y +0.17% (net +0.00%); after-a-down beat after-an-up in 8 of 8 quarters
+
+== G. Confirmation (familywise significant in qn 0-13 AND same sign, p < 0.05 in qn 14-21) and familywise p < 0.05 on all quarters
+84 tests in total: A1 8, A2 8, B 3, C 28, C-global 3, C-streak 8, C-streak-global 1, C-alt 2, D 7, E-raw 8, E-partial 8
+  D-mean_h8 [D] Rank IC of Average h of the last 8 with x(t): obs +0.0560, p 0.011, familywise 0.047 | first 14 q familywise 0.089 (obs +0.0851) | last 8 q p 0.199 (obs +0.0342) | confirmed no
+  D-best4 [D] Rank IC of Best of the last 4 with x(t): obs +0.0568, p 0.004, familywise 0.019 | first 14 q familywise 0.043 (obs +0.0745) | last 8 q p 0.200 (obs +0.0348) | confirmed no
+  E-raw-lag1 [E-raw] |y| vs |three_day(t-1)| rank IC: obs +0.0525, p 0.003, familywise 0.020 | first 14 q familywise 0.250 (obs +0.0479) | last 8 q p 0.020 (obs +0.0601) | confirmed no
+  E-raw-lag2 [E-raw] |y| vs |three_day(t-2)| rank IC: obs +0.0474, p 0.008, familywise 0.042 | first 14 q familywise 0.156 (obs +0.0565) | last 8 q p 0.191 (obs +0.0338) | confirmed no
+  E-raw-lag4 [E-raw] |y| vs |three_day(t-4)| rank IC: obs +0.0490, p 0.010, familywise 0.042 | first 14 q familywise 0.056 (obs +0.0730) | last 8 q p 0.483 (obs +0.0191) | confirmed no
+  E-raw-lag5 [E-raw] |y| vs |three_day(t-5)| rank IC: obs +0.0504, p 0.011, familywise 0.042 | first 14 q familywise 0.615 (obs +0.0363) | last 8 q p 0.011 (obs +0.0663) | confirmed no
+  E-raw-lag7 [E-raw] |y| vs |three_day(t-7)| rank IC: obs +0.0680, p 0.001, familywise 0.011 | first 14 q familywise 0.136 (obs +0.0768) | last 8 q p 0.024 (obs +0.0603) | confirmed no
+  E-part-lag7 [E-partial] |y| vs |three_day(t-7)| partial rank IC given vol60: obs +0.0558, p 0.006, familywise 0.046 | first 14 q familywise 0.186 (obs +0.0723) | last 8 q p 0.118 (obs +0.0414) | confirmed no
+  E-raw-lag8 [E-raw] |y| vs |three_day(t-8)| rank IC: obs +0.0598, p 0.006, familywise 0.034 | first 14 q familywise 0.481 (obs +0.0551) | last 8 q p 0.016 (obs +0.0634) | confirmed no
+confirmed: 0; familywise p < 0.05 on all quarters: 9; raw p < 0.05: 18 of 84 (expected by chance about 4)
+  A1: 8 tests, smallest p 0.028 (A1-lag3), smallest familywise p 0.185, confirmed 0
+  A2: 8 tests, smallest p 0.018 (A2-lag3), smallest familywise p 0.143, confirmed 0
+  B: 3 tests, smallest p 0.259 (B-l1_rd), smallest familywise p 0.776, confirmed 0
+  C: 28 tests, smallest p 0.008 (C3-UUU), smallest familywise p 0.066, confirmed 0
+  C-global: 3 tests, smallest p 0.116 (Cglob3), smallest familywise p 0.349, confirmed 0
+  C-streak: 8 tests, smallest p 0.039 (S+4), smallest familywise p 0.315, confirmed 0
+  C-streak-global: 1 tests, smallest p 0.058 (Sglob), smallest familywise p 0.058, confirmed 0
+  C-alt: 2 tests, smallest p 0.638 (ALT-DUD), smallest familywise p 1.000, confirmed 0
+  D: 7 tests, smallest p 0.004 (D-best4), smallest familywise p 0.019, confirmed 0
+  E-raw: 8 tests, smallest p 0.001 (E-raw-lag7), smallest familywise p 0.011, confirmed 0
+  E-partial: 8 tests, smallest p 0.006 (E-part-lag7), smallest familywise p 0.046, confirmed 0
+
+== H. Tradable versions of anything confirmed or familywise p < 0.05 on all quarters
+D-mean_h8 (long): 452 trades, avg gross +0.56%, net +0.39%, win 52.7%, quarters positive 9 of 14, without 5 best +0.19%, first 14 q +1.12% (161), last 8 q -0.01% (291), luck p 0.040; overlap lag10+volume 10, last-4 top tenth 170; the other 279 trades net -0.07%
+D-best4 (long): 567 trades, avg gross +0.47%, net +0.30%, win 51.0%, quarters positive 9 of 18, without 5 best +0.14%, first 14 q +0.56% (269), last 8 q +0.07% (298), luck p 0.038; overlap lag10+volume 17, last-4 top tenth 220; the other 339 trades net -0.16%
+size: 7 magnitude tests qualify (E-raw-lag1, E-raw-lag2, E-raw-lag4, E-raw-lag5, E-raw-lag7, E-part-lag7, E-raw-lag8); no cash trade (needs option prices)
+
+== DEVIATIONS from PLAN.txt
+- Global "pattern explains x" tests (C lengths, streaks) use the upper tail of the between-pattern sum of squares (a variance statistic: only large values mean the pattern explains x), not "two-sided around the null mean" as the plan's general wording for group-mean tests says. Per-pattern tests are two-sided as planned.
+- Added (descriptive, not in any family): the share-up and x differences in A2 with their own p, the signed-streak trend IC, vol60 vs |y| context ICs, |y| by fifth tables, in H a luck p against random picks of the same size in each quarter (5,000 shuffles), and in F an after-the-fact split of the lag-1 result by period (qn 1-7, 8-21, 14-21), chosen after seeing the quarter table: descriptive only, no p value.
+- Seeds: C length 4 uses 20261104 + 4 = 20261108, the same seed as the streak test, exactly as pre-registered.
