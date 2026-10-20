@@ -1,0 +1,40 @@
+140 candidate trades (each feature / pattern in both directions)
+
+== each previous quarter individually (lags 1-8: fifths and up/down sides): families ('lag',), training through t-1, pick by t
+   17 OOS quarters (q5-21), 608 trades: avg net +0.07%, hit rate (net > 0) 50%, excess over the quarter +0.24; quarters net > 0: 10 of 17; per-quarter mean net +0.18 (t +0.78); per-quarter mean excess +0.28
+   qn 0-13: 316 trades, net +0.24%, excess +0.35, hit 51%
+   qn 14-21: 292 trades, net -0.11%, excess +0.11, hit 49%
+   picks: q5 h1 top fifth, long (n27, net +1.22); q6 h1 top fifth, long (n27, net -0.47); q7 after lag-1 up, long (n56, net +0.94); q8 after lag-1 down, short (n75, net -1.16); q9 h1 top fifth, long (n27, net -0.25); q10 h6 bottom fifth, long (n26, net +0.99); q11 h6 bottom fifth, long (n26, net +0.45); q12 h6 bottom fifth, long (n26, net +2.09); q13 h6 bottom fifth, long (n26, net +0.20); q14 h6 bottom fifth, long (n26, net +0.27); q15 h6 bottom fifth, long (n33, net -1.37); q16 h6 bottom fifth, long (n35, net -0.14); q17 h7 top fifth, long (n38, net +0.49); q18 h7 top fifth, long (n39, net +0.37); q19 h7 top fifth, long (n39, net -0.01); q20 h7 top fifth, long (n40, net -1.44); q21 h6 top fifth, long (n42, net +0.86)
+
+== every candidate: families ('lag', 'B', 'D', 'pattern'), training through t-1, pick by t
+   17 OOS quarters (q5-21), 445 trades: avg net -0.05%, hit rate (net > 0) 50%, excess over the quarter -0.04; quarters net > 0: 10 of 17; per-quarter mean net +0.03 (t +0.10); per-quarter mean excess +0.04
+   qn 0-13: 253 trades, net +0.61%, excess +0.42, hit 55%
+   qn 14-21: 192 trades, net -0.92%, excess -0.65, hit 44%
+   picks: q5 h1 top fifth, long (n27, net +1.22); q6 pattern DD, short (n45, net -0.56); q7 pattern UUD, short (n23, net +1.49); q8 mean_h4 top fifth, long (n27, net +0.74); q9 mean_h4 top fifth, long (n27, net -0.20); q10 h6 bottom fifth, long (n26, net +0.99); q11 h6 bottom fifth, long (n26, net +0.45); q12 h6 bottom fifth, long (n26, net +2.09); q13 h6 bottom fifth, long (n26, net +0.20); q14 mean_h4 top fifth, long (n27, net -2.81); q15 pattern UDDU, long (n9, net -0.41); q16 pattern UDDU, long (n13, net -0.97); q17 mean_h2 top fifth, long (n39, net -2.17); q18 l1_dp1 top fifth, long (n39, net -0.59); q19 pattern UUU, long (n23, net +0.11); q20 pattern UUU, long (n22, net +0.40); q21 pattern UUU, long (n20, net +0.54)
+
+== every candidate, skip the last quarter in training (no overlap with late reporters): families ('lag', 'B', 'D', 'pattern'), training through t-2, pick by t
+   16 OOS quarters (q6-21), 414 trades: avg net +0.19%, hit rate (net > 0) 50%, excess over the quarter +0.28; quarters net > 0: 9 of 16; per-quarter mean net +0.09 (t +0.35); per-quarter mean excess +0.21
+   qn 0-13: 208 trades, net +0.58%, excess +0.50, hit 53%
+   qn 14-21: 206 trades, net -0.21%, excess +0.06, hit 47%
+   picks: q6 h1 top fifth, long (n27, net -0.47); q7 pattern DD, short (n39, net +1.32); q8 pattern UUD, short (n11, net -0.89); q9 mean_h4 top fifth, long (n27, net -0.20); q10 mean_h4 top fifth, long (n26, net +1.00); q11 h6 bottom fifth, long (n26, net +0.45); q12 h6 bottom fifth, long (n26, net +2.09); q13 h6 bottom fifth, long (n26, net +0.20); q14 h6 bottom fifth, long (n26, net +0.27); q15 mean_h4 top fifth, long (n35, net -0.86); q16 pattern UDDU, long (n13, net -0.97); q17 pattern UDDU, long (n11, net -1.13); q18 mean_h2 top fifth, long (n39, net +1.16); q19 l1_dp1 top fifth, long (n40, net -1.49); q20 pattern UUU, long (n22, net +0.40); q21 pattern UUU, long (n20, net +0.54)
+
+== every candidate, pick by training mean (not t): families ('lag', 'B', 'D', 'pattern'), training through t-1, pick by mean
+   17 OOS quarters (q5-21), 204 trades: avg net +0.12%, hit rate (net > 0) 55%, excess over the quarter +0.15; quarters net > 0: 7 of 17; per-quarter mean net +0.14 (t +0.39); per-quarter mean excess +0.22
+   qn 0-13: 134 trades, net +0.18%, excess +0.10, hit 55%
+   qn 14-21: 70 trades, net -0.01%, excess +0.25, hit 54%
+   picks: q5 l1_dp1 top fifth, long (n27, net +1.15); q6 pattern DD, short (n45, net -0.56); q7 pattern UUD, short (n23, net +1.49); q8 pattern DUUD, short (n6, net -1.50); q9 pattern UDUU, long (n6, net -1.98); q10 pattern DUUU, long (n5, net +2.02); q11 pattern DUUU, long (n4, net +1.75); q12 pattern UDUU, long (n8, net -0.93); q13 pattern DUUU, long (n10, net -0.43); q14 pattern DUUU, long (n6, net -0.89); q15 pattern DUUU, long (n7, net +1.75); q16 pattern DUUU, long (n10, net +1.74); q17 pattern DUUU, long (n13, net -1.29); q18 pattern DUUU, long (n6, net +2.28); q19 pattern DUUU, long (n11, net -0.02); q20 pattern DUUU, long (n11, net -1.74); q21 pattern DUUU, long (n6, net -0.43)
+
+== counts / averages only (track record): families ('D',), training through t-1, pick by t
+   16 OOS quarters (q6-21), 513 trades: avg net +0.10%, hit rate (net > 0) 51%, excess over the quarter +0.18; quarters net > 0: 9 of 16; per-quarter mean net +0.18 (t +0.47); per-quarter mean excess +0.24
+   qn 0-13: 215 trades, net +0.93%, excess +0.79, hit 54%
+   qn 14-21: 298 trades, net -0.49%, excess -0.26, hit 48%
+   picks: q6 mean_h2 top fifth, long (n27, net -0.63); q7 mean_h2 top fifth, long (n27, net +0.70); q8 mean_h4 top fifth, long (n27, net +0.74); q9 mean_h4 top fifth, long (n27, net -0.20); q10 mean_h4 top fifth, long (n26, net +1.00); q11 mean_h4 top fifth, long (n27, net +2.57); q12 mean_h4 top fifth, long (n27, net +1.93); q13 mean_h4 top fifth, long (n27, net +1.29); q14 mean_h4 top fifth, long (n27, net -2.81); q15 mean_h2 top fifth, long (n35, net -0.67); q16 mean_h2 top fifth, long (n36, net +1.63); q17 mean_h2 top fifth, long (n39, net -2.17); q18 mean_h2 top fifth, long (n39, net +1.16); q19 mean_h2 top fifth, long (n40, net -1.69); q20 mean_h4 top fifth, long (n41, net -0.75); q21 mean_h4 top fifth, long (n41, net +0.78)
+
+== sequences and streaks only: families ('pattern',), training through t-1, pick by t
+   16 OOS quarters (q6-21), 306 trades: avg net +0.20%, hit rate (net > 0) 53%, excess over the quarter +0.25; quarters net > 0: 9 of 16; per-quarter mean net +0.32 (t +1.29); per-quarter mean excess +0.40
+   qn 0-13: 166 trades, net +0.23%, excess +0.17, hit 55%
+   qn 14-21: 140 trades, net +0.16%, excess +0.35, hit 50%
+   picks: q6 pattern DD, short (n45, net -0.56); q7 pattern UUD, short (n23, net +1.49); q8 pattern UUD, short (n11, net -0.89); q9 pattern UUUD, short (n8, net -0.65); q10 pattern DU, long (n29, net +0.83); q11 pattern DU, long (n36, net -0.23); q12 pattern UDDU, long (n11, net +2.19); q13 pattern UDDU, long (n3, net +1.11); q14 pattern UDDU, long (n6, net +1.47); q15 pattern UDDU, long (n9, net -0.41); q16 pattern UDDU, long (n13, net -0.97); q17 pattern UUU, long (n27, net -0.58); q18 pattern UUU, long (n20, net +1.17); q19 pattern UUU, long (n23, net +0.11); q20 pattern UUU, long (n22, net +0.40); q21 pattern UUU, long (n20, net +0.54)
+
+baseline: buy every in_fo result in qn 5-21: 2675 trades, net -0.04%, hit 48%
+null (200 within-quarter shuffles), every candidate, pick by t: OOS excess mean -0.006, sd 0.195, 95% range -0.39 .. +0.36

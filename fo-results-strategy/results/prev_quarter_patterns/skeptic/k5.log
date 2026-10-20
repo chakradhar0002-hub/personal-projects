@@ -1,0 +1,34 @@
+== Spearman (pooled) between the D features and the PAST_PERFORMANCE last-4 average (pp_last4)
+   best4    rho +0.697 (n 2797)
+   mean_h4  rho +0.995 (n 2797)
+   mean_h8  rho +0.702 (n 2239)
+   n_up4    rho +0.785 (n 2797)
+   n_up8    rho +0.585 (n 2239)
+   h3       rho +0.472 (n 2801)
+   h4       rho +0.514 (n 2801)
+
+== does the feature add anything beyond pp_last4? partial rank IC with x (and with y_dd_all), control = pp_last4
+   best4   : raw IC +0.057 (p 0.006); beyond pp_last4 +0.036 (p 0.067, n 2797, 18 q); same-cutoff outcome beyond pp_last4 +0.023 (p 0.251)
+   mean_h8 : raw IC +0.056 (p 0.010); beyond pp_last4 +0.042 (p 0.060, n 2239, 14 q); same-cutoff outcome beyond pp_last4 +0.031 (p 0.160)
+   n_up4   : raw IC +0.043 (p 0.026); beyond pp_last4 +0.013 (p 0.493, n 2797, 18 q); same-cutoff outcome beyond pp_last4 +0.009 (p 0.675)
+   n_up8   : raw IC +0.041 (p 0.058); beyond pp_last4 +0.023 (p 0.277, n 2239, 14 q); same-cutoff outcome beyond pp_last4 +0.022 (p 0.324)
+   h3      : raw IC +0.042 (p 0.027); beyond pp_last4 +0.040 (p 0.051, n 2801, 18 q); same-cutoff outcome beyond pp_last4 +0.022 (p 0.248)
+   worst4  : raw IC +0.029 (p 0.128); beyond pp_last4 -0.004 (p 0.850, n 2797, 18 q); same-cutoff outcome beyond pp_last4 -0.001 (p 0.987)
+   reverse: pp_last4 beyond best4 +0.011 (p 0.554)
+
+== top-fifth trades vs the PAST_PERFORMANCE top tenth
+   best4: 567 trades; inside pp top tenth 220 net +0.83% (x +0.94); outside 347 net -0.03% (x +0.04, y_dd_all -0.15); outside both pp and lag10vol 339 net -0.16%; outside, last 8 q -0.23% (189)
+   mean_h8: 452 trades; inside pp top tenth 170 net +1.07% (x +1.15); outside 282 net -0.02% (x +0.02, y_dd_all -0.15); outside both pp and lag10vol 279 net -0.07%; outside, last 8 q -0.36% (179)
+   mean_h4: 567 trades; inside pp top tenth 292 net +0.90% (x +0.99); outside 275 net -0.19% (x -0.10, y_dd_all +0.00); outside both pp and lag10vol 270 net -0.26%; outside, last 8 q -1.04% (146)
+   pp top tenth itself: 292 trades, net +0.90%, first 14 q +1.06% (140), last 8 q +0.75% (152); x +0.99, y_dd_all +0.65; stocks 100
+   pp top tenth: top-5 stocks RECLTD 7x, POWERINDIA 4x, TRENT 7x, CUMMINSIND 8x, BEL 7x give 60% of summed x
+
+== UUU / 4+ ups vs the track record
+   UUU: 322 results; share in pp top tenth 44%, in mean_h4 top fifth 66%; x inside pp top tenth +1.54 (142), outside +0.03 (180)
+   UUUU: 165 results; share in pp top tenth 66%, in mean_h4 top fifth 89%; x inside pp top tenth +1.32 (109), outside -0.29 (56)
+   UUU indicator beyond mean_h4: partial IC +0.037 (p 0.057)
+
+== QUARTER_CORRELATION.md: last quarter top / bottom fifth of movers (doc: -0.02 / +0.07 over the quarter)
+   ours (h1 fifths, x): top -0.01 (643), bottom +0.10 (628)
+   PAST_PERFORMANCE "rose in the last results window": 1,548 trades, +0.03%, +0.32% first / -0.31% last | ours after lag-1 up (h>0): 1478, +0.00%, first 14 q +0.29% / last 8 q -0.31%
+   PAST_PERFORMANCE "rose in 3 or 4 of the last 4": 816, +0.39%, +0.95/-0.10 | ours n_up4>=3: 742, +0.41%, first +0.82% / last +0.06%

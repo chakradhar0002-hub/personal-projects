@@ -1,0 +1,64 @@
+ordinary predictor windows present (lag 1): 3178; ordinary outcome windows: 3278, 3278, 3278, 3278
+
+== partial rank IC of |three_day(t-k)| with |y(t)|, controls added step by step (p: 2,000 within-quarter shuffles)
+lag | none | vol60 (build) | vol60 + vol250 | + beta + mcap | + VIX at cutoff | + sector dummies
+  1 | +0.053 (0.005) | +0.029 (0.114) | +0.030 (0.104) | +0.039 (0.039) | +0.040 (0.042) | +0.017 (0.412) | n 2890, 21 q
+  2 | +0.047 (0.011) | +0.033 (0.080) | +0.024 (0.183) | +0.015 (0.425) | +0.015 (0.435) | -0.009 (0.638) | n 2779, 20 q
+  3 | +0.029 (0.147) | +0.016 (0.417) | +0.007 (0.695) | +0.006 (0.738) | +0.003 (0.874) | -0.015 (0.441) | n 2662, 19 q
+  4 | +0.049 (0.009) | +0.036 (0.060) | +0.030 (0.121) | +0.031 (0.138) | +0.032 (0.106) | +0.007 (0.746) | n 2539, 18 q
+  5 | +0.050 (0.010) | +0.038 (0.058) | +0.033 (0.091) | +0.030 (0.167) | +0.028 (0.187) | +0.014 (0.493) | n 2421, 17 q
+  6 | +0.028 (0.160) | +0.015 (0.422) | +0.013 (0.532) | -0.004 (0.814) | -0.004 (0.859) | -0.012 (0.591) | n 2295, 16 q
+  7 | +0.068 (0.002) | +0.056 (0.010) | +0.055 (0.006) | +0.047 (0.033) | +0.047 (0.035) | +0.044 (0.055) | n 2194, 15 q
+  8 | +0.060 (0.005) | +0.042 (0.040) | +0.041 (0.060) | +0.033 (0.129) | +0.031 (0.152) | +0.020 (0.378) | n 2096, 14 q
+   none              : Holm over 8 lags min 0.016; lags with Holm < 0.05: [1, 2, 4, 5, 7, 8]; mean of the 8 lag ICs +0.048
+   vol60 (build)     : Holm over 8 lags min 0.080; lags with Holm < 0.05: []; mean of the 8 lag ICs +0.033
+   vol60 + vol250    : Holm over 8 lags min 0.048; lags with Holm < 0.05: [7]; mean of the 8 lag ICs +0.029
+   + beta + mcap     : Holm over 8 lags min 0.268; lags with Holm < 0.05: []; mean of the 8 lag ICs +0.025
+   + VIX at cutoff   : Holm over 8 lags min 0.284; lags with Holm < 0.05: []; mean of the 8 lag ICs +0.024
+   + sector dummies  : Holm over 8 lags min 0.440; lags with Holm < 0.05: []; mean of the 8 lag ICs +0.008
+   full controls, halves: lag 1 +0.013 / +0.025; lag 2 -0.016 / +0.002; lag 3 -0.021 / -0.007; lag 4 +0.029 / -0.021; lag 5 -0.008 / +0.039; lag 6 -0.021 / -0.002; lag 7 +0.067 / +0.024; lag 8 +0.032 / +0.011
+
+== context ICs with |y| (raw within-quarter Spearman, mean over quarters)
+   vol60      IC +0.117 pos 20/22
+   vol250     IC +0.126 pos 21/22
+   beta       IC +0.061 pos 17/22
+   mcap_r     IC -0.120 pos 2/22
+   vix        IC -0.021 pos 8/22
+   nifty_vol20 IC -0.038 pos 7/22
+
+== common sample (all 8 lags present): 2239 results, qn 8-21; full controls
+   lag 1: raw +0.049; partial +0.008 p 0.767 pos 8/14
+   lag 2: raw +0.031; partial -0.007 p 0.778 pos 6/14
+   lag 3: raw +0.020; partial -0.020 p 0.356 pos 4/14
+   lag 4: raw +0.052; partial +0.036 p 0.107 pos 9/14
+   lag 5: raw +0.034; partial +0.003 p 0.913 pos 10/14
+   lag 6: raw +0.024; partial -0.015 p 0.499 pos 6/14
+   lag 7: raw +0.079; partial +0.053 p 0.022 pos 10/14
+   lag 8: raw +0.061; partial +0.022 p 0.342 pos 9/14
+   mean |move| of last 4 results: partial IC -0.008 p 0.704 pos 10/18 n 2535 | first -0.010 last -0.004
+
+== (a) ordinary 3-day windows of the same stock in the lag-k period as predictors of |y| (same controls)
+   lag-1 period, window ending 8 sessions before its cutoff: raw +0.041, partial +0.004 p 0.827 (n 2891)
+   lag-1 period, window ending 13 sessions before its cutoff: raw +0.008, partial -0.030 p 0.110 (n 2892)
+   lag-1 period, window ending 18 sessions before its cutoff: raw +0.010, partial -0.015 p 0.456 (n 2890)
+   lag-1 RESULTS move on the same results: partial +0.018 p 0.388
+   lag-2 period, window ending 8 sessions before its cutoff: raw +0.021, partial -0.022 p 0.269 (n 2779)
+   lag-2 period, window ending 13 sessions before its cutoff: raw -0.008, partial -0.036 p 0.066 (n 2780)
+   lag-2 period, window ending 18 sessions before its cutoff: raw +0.055, partial +0.028 p 0.134 (n 2778)
+   lag-2 RESULTS move on the same results: partial -0.009 p 0.675
+   lag-4 period, window ending 8 sessions before its cutoff: raw +0.022, partial -0.013 p 0.541 (n 2539)
+   lag-4 period, window ending 13 sessions before its cutoff: raw +0.010, partial -0.019 p 0.363 (n 2540)
+   lag-4 period, window ending 18 sessions before its cutoff: raw +0.008, partial -0.026 p 0.229 (n 2539)
+   lag-4 RESULTS move on the same results: partial +0.007 p 0.751
+
+== (b) |three_day(t-k)| as predictor of |ordinary 3-day windows after this result| (controls vol60, vol250, beta, mcap, VIX, sector)
+   lag 1: ordinary windows partial ICs -0.074, -0.001, +0.003, -0.016 (mean -0.022) vs results window +0.017
+   lag 2: ordinary windows partial ICs +0.023, -0.019, +0.015, -0.027 (mean -0.002) vs results window -0.009
+   lag 4: ordinary windows partial ICs -0.035, -0.022, -0.023, -0.035 (mean -0.029) vs results window +0.007
+   lag 7: ordinary windows partial ICs -0.005, -0.004, -0.028, -0.031 (mean -0.017) vs results window +0.044
+   lag 8: ordinary windows partial ICs -0.009, +0.029, +0.013, +0.069 (mean +0.025) vs results window +0.020
+
+== practical: average |y| by within-quarter fifth of |lag-1 move| inside vol60 terciles
+   vol60 tercile 1: fifth 1 3.34%, fifth 2 3.45%, fifth 3 3.18%, fifth 4 3.76%, fifth 5 2.95% (n 1065)
+   vol60 tercile 2: fifth 1 3.96%, fifth 2 3.55%, fifth 3 3.84%, fifth 4 3.80%, fifth 5 4.91% (n 1052)
+   vol60 tercile 3: fifth 1 4.26%, fifth 2 4.31%, fifth 3 4.44%, fifth 4 4.36%, fifth 5 4.63% (n 1060)
