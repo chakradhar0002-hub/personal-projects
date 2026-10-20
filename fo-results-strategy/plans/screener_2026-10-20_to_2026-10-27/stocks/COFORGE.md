@@ -2,7 +2,7 @@
 
 **Results board meeting Fri 23-Oct-2026** (Financial Results; source: NSE board meetings + event calendar). Sector: Information Technology.
 
-- Timing of its past results: During market 12/22 (after close 9, non-trading day 1). Expected reaction day: Fri 23-Oct, the Result day: of its results on trading days, 9 after the close, 12 during market hours; mixed, it could be Day+1.
+- Timing of its past results: During market or before open 12/22 (after close 9, non-trading day 1). Expected reaction day: Fri 23-Oct, the Result day: of its results on trading days, 9 after the close, 4 during market hours, 8 before the open; mixed, it could be Day+1.
 - Three-day window (project convention): cutoff Wed 21-Oct close, Day-1 Thu 22-Oct, Result day Fri 23-Oct, Day+1 Mon 26-Oct.
 - Pre-results entry (cutoff close): Wed 21-Oct close.
 

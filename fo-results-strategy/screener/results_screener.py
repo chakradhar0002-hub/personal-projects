@@ -666,15 +666,19 @@ def main():
                        tc.get("Non-trading day", 0))
         n_t, n_td = ac + dmb + nt, ac + dmb
         cats = {"After close": ac, "During market": dmb, "Non-trading day": nt}
+        # "Before open" reacts on the Result day like "During market" (analyze_events.py); name it in the labels
+        bo = tc.get("Before open", 0)
+        nm = {"During market": "During market or before open"} if bo else {}
         if n_t:
             ranked = sorted(cats.values(), reverse=True)
             if ranked[0] == ranked[1]:
                 usual = "Mixed"
-                usual_txt = "Mixed: " + ", ".join(f"{k.lower()} {v}" for k, v in cats.items() if v) + f" (of {n_t})"
+                usual_txt = "Mixed: " + ", ".join(f"{nm.get(k, k).lower()} {v}" for k, v in cats.items() if v) + f" (of {n_t})"
             else:
                 usual = max(cats, key=cats.get)
-                others = ", ".join(f"{k.lower()} {v}" for k, v in cats.items() if k != usual and v)
-                usual_txt = f"{usual} {cats[usual]}/{n_t}" + (f" ({others})" if others else "")
+                others = ", ".join(f"{nm.get(k, k).lower()} {v}" for k, v in cats.items() if k != usual and v)
+                usual_txt = f"{nm.get(usual, usual)} {cats[usual]}/{n_t}" + (f" ({others})" if others else "")
+                usual = nm.get(usual, usual)
         else:
             usual, usual_txt = "Unknown", "no past results"
         td_usual = ("After close" if ac > dmb else "During market" if dmb > ac else "Mixed") if n_td else "Unknown"
@@ -684,7 +688,7 @@ def main():
         if not w:
             continue
         on_session = w["on_session"]
-        split = f"{ac} after the close, {dmb} during market hours"
+        split = f"{ac} after the close, {dmb - bo} during market hours" + (f", {bo} before the open" if bo else "")
         if not on_session:
             react_short, react_basis = "Result day", "Result day: the meeting is on a non-trading day"
         elif td_usual == "After close":

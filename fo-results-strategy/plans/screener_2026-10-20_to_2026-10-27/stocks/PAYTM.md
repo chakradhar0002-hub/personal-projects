@@ -2,7 +2,7 @@
 
 **Results board meeting Mon 26-Oct-2026** (Financial Results; source: NSE board meetings + event calendar). Sector: Financial Services.
 
-- Timing of its past results: After close 15/20 (during market 4, non-trading day 1). Expected reaction day: Tue 27-Oct, the Day+1: of its results on trading days, 15 after the close, 4 during market hours.
+- Timing of its past results: After close 15/20 (during market or before open 4, non-trading day 1). Expected reaction day: Tue 27-Oct, the Day+1: of its results on trading days, 15 after the close, 3 during market hours, 1 before the open.
 - Three-day window (project convention): cutoff Thu 22-Oct close, Day-1 Fri 23-Oct, Result day Mon 26-Oct, Day+1 Tue 27-Oct.
 - Pre-results entry (cutoff close): Thu 22-Oct close.
 
