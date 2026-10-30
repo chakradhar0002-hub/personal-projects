@@ -1,0 +1,17 @@
+ADDENDUM TO PLAN.txt: KEEP AWAY FROM WEEKENDS AND HOLIDAYS  (written before any outcome of this version was computed)
+
+User request: "Don't check near the weekend or holidays."
+Everything in PLAN.txt applies (MAIN sample, exclusions, signal, outcomes, same-day peers, inference, confirmation rule),
+restricted as follows. Calendar = the NSE session list; a holiday is a weekday with no session; a weekend session
+(Muhurat trading, special Saturday sessions) counts as a break, never as a normal session.
+- NO-BREAK: day0 (the session before day1, whose close starts day1's return), day1, day2 and day3 fall on four
+  consecutive calendar days, all Monday to Friday: no weekend and no holiday anywhere from day0 to day3. Day3 is then a
+  Thursday (day0 Monday) or a Friday (day0 Tuesday).
+- NOT-NEAR (headline): NO-BREAK, and the calendar day after day3 is also a normal weekday session (day3 is not the last
+  session before a weekend or holiday). In practice day0 Monday .. day3 Thursday with the Friday open.
+Tests on both: the main table (all days / after two up / after one down / after two down) and the same-day peer
+difference in share down and in mean day 3 (t-test over dates, month bootstrap); first half / second half and the
+CONFIRMED rule of PLAN.txt; size versions (both days below -1% and -2%); day-3 opening gap vs open-to-close; every
+calendar quarter; the bounce trade and the short after 0.17% costs. Streaks longer than 2 days are not tested here (they
+cannot fit inside four consecutive weekdays). Descriptive on full MAIN: the result by weekday of day3 and by whether the
+window contains a weekend or a holiday.
