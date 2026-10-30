@@ -22,6 +22,9 @@ trade.**
 The same holds away from weekends and holidays: on Monday-to-Thursday stretches with the Friday open, the third day fell
 46.1% of the time after two down days, against 49.3% on all such days (details below).
 
+After **three** down days it is the same: the fourth day fell 47.4% of the time, against 48.7% for all stretches, and in
+the Monday-to-Friday version with no weekend inside the difference is within chance (details below).
+
 - **The raw odds are close to a coin flip.** After two down days, day 3 closed down 47.6% of the time and up 52.1%.
   On all days it was 48.7% down and 50.9% up.
 - **Against other stocks on the same day, there is a small, steady bounce.**
@@ -218,6 +221,162 @@ Below its same-day peers (a bounce) in 16 of 22 quarters.
 - **Fridays are the exception.** With day 3 a Monday to Thursday, the bounce is 2.2 to 3.0 points. With day 3 a Friday it is -0.5 (not significant), which is why the 'no break inside' version, half of it Fridays, is weaker (-1.5 points).
 - **Stretches with a weekend inside** show the clearest bounce (-2.9 points). Those with a holiday inside are few (1,151) and fell 62.4% of the time, but so did other stocks on those days, so against peers they are within chance.
 
+## Three down days, then the fourth day
+
+The same test one day longer, under a third plan written before computing it (plan sha256 `289899888a14db889ed2317289349fcca51cd248cb57906f4c07f76209ebbe6f`). The four days must be free of results, splits and ex-dates. A stretch from the session before day 1 to day 4 with no weekend inside can only run Monday to Friday, so in that version day 4 is always a Friday.
+
+- **All ordinary days: no tendency to a fourth down day.**
+  - After three down days, day 4 fell 47.4% of the time, against 48.7% for all four-day stretches.
+  - That is 1.9 points less often than other stocks the same day (p 0.006 to 0.011).
+  - It is weaker than after two down days. It is not significant in the second half, so it fails the rule set in advance, and it leaned that way in only 12 of 22 quarters.
+- **No weekend or holiday inside (Monday to Friday):**
+  - Day 4 fell 53.2% of the time (2,394 stretches), against 50.1% for all such stretches.
+  - Day 4 is always a Friday there, and Fridays already lean down for these stocks. Against other stocks on the same Fridays, the difference is within chance (+1.6 or -0.8 points depending on weighting, p 0.35).
+  - Shorting it breaks even after costs (+0.00%), and buying loses -0.34%.
+- **No holiday nearby (weekends allowed):** 46.5% down against 48.9%, -1.7 points against peers (p 0.04), not confirmed.
+- **Bigger falls.** When all three days fell more than 1%, day 4 fell 42.9% of the time and averaged +0.28%, 3.5 points below peers (p 0.012). It is still worth only about +0.1% after costs.
+- **By weekday.** With day 4 on Tuesday to Thursday the stocks bounce (2 to 5 points below peers); on Monday there is no difference, and on Friday they fall a little more often (+1.3, not significant).
+- **The index.** After the Nifty 50 fell three days in a row, it fell on day 4 51.8% of the time, against 45.2% on other days (p 0.032). The average day 4 is -0.07%, too small to trade.
+
+### All ordinary days
+
+| Group | Windows | Day 4 down | ± (date-clustered SE) | Day 4 up | Mean day 4 | Day 4 vs Nifty (pts) |
+|---|---:|---:|---:|---:|---:|---:|
+| All windows | 147,579 | 48.7% | ±0.7 | 50.9% | +0.07% | +0.04 |
+| After three up days | 19,363 | 49.5% | ±0.8 | 50.2% | +0.07% | +0.02 |
+| After two down days | 34,730 | 47.5% | ±1.0 | 52.1% | +0.06% | +0.04 |
+| After three down days | 16,517 | 47.4% | ±1.2 | 52.3% | +0.06% | +0.06 |
+
+| Three-down minus same-day peers | Three-down windows | Dates | Each date equal (pts) | Weighted by count (pts) | p (t) | p (month bootstrap) |
+|---|---:|---:|---:|---:|---:|---:|
+| Share down | 16,517 | 1,241 | -1.87 | -1.96 | 0.006 | 0.011 |
+| Mean day 4 | 16,517 | 1,241 | +0.05 | +0.04 | 0.049 | 0.048 |
+
+| Half | Day 4 dates | Three-down windows | Day 4 down | vs same-day peers (pts) | p (t) | p (bootstrap) |
+|---|---:|---:|---:|---:|---:|---:|
+| First half | 2021-04-28 .. 2024-06-27 | 7,628 | 46.6% | -2.23 | 0.022 | 0.024 |
+| Second half | 2024-06-28 .. 2026-09-30 | 8,889 | 48.0% | -1.39 | 0.134 | 0.184 |
+
+CONFIRMED by the plan's rule: **no**.
+
+| Trade, after 0.17% costs | Trades | Avg net | Winning | Without the 5 best | First half | Second half |
+|---|---:|---:|---:|---:|---:|---:|
+| Buy at the day-3 close, sell at the day-4 close | 16,517 | -0.11% | 47.6% | -0.11% | -0.09% | -0.13% |
+| Short at the day-3 close, cover at the day-4 close | 16,517 | -0.23% | 43.0% | -0.24% | -0.25% | -0.21% |
+
+### No weekend or holiday inside (Monday to Friday, day 4 a Friday)
+
+| Group | Windows | Day 4 down | ± (date-clustered SE) | Day 4 up | Mean day 4 | Day 4 vs Nifty (pts) |
+|---|---:|---:|---:|---:|---:|---:|
+| All windows | 23,462 | 50.1% | ±1.8 | 49.5% | +0.02% | -0.02 |
+| After three up days | 3,230 | 49.6% | ±2.0 | 49.9% | +0.08% | +0.06 |
+| After two down days | 5,183 | 52.2% | ±2.9 | 47.5% | -0.13% | -0.09 |
+| After three down days | 2,394 | 53.2% | ±3.3 | 46.6% | -0.17% | -0.12 |
+
+| Three-down minus same-day peers | Three-down windows | Dates | Each date equal (pts) | Weighted by count (pts) | p (t) | p (month bootstrap) |
+|---|---:|---:|---:|---:|---:|---:|
+| Share down | 2,394 | 197 | +1.63 | -0.84 | 0.356 | 0.343 |
+| Mean day 4 | 2,394 | 197 | -0.00 | -0.00 | 0.984 | 0.969 |
+
+| Half | Day 4 dates | Three-down windows | Day 4 down | vs same-day peers (pts) | p (t) | p (bootstrap) |
+|---|---:|---:|---:|---:|---:|---:|
+| First half | 2021-04-30 .. 2024-06-14 | 1,060 | 53.4% | +3.82 | 0.143 | 0.132 |
+| Second half | 2024-06-28 .. 2026-09-25 | 1,334 | 53.1% | -1.26 | 0.571 | 0.589 |
+
+CONFIRMED by the plan's rule: **no**.
+
+| Trade, after 0.17% costs | Trades | Avg net | Winning | Without the 5 best | First half | Second half |
+|---|---:|---:|---:|---:|---:|---:|
+| Buy at the day-3 close, sell at the day-4 close | 2,394 | -0.34% | 42.7% | -0.36% | -0.33% | -0.36% |
+| Short at the day-3 close, cover at the day-4 close | 2,394 | +0.00% | 48.7% | -0.01% | -0.01% | +0.02% |
+
+### No holiday nearby (weekends allowed)
+
+| Group | Windows | Day 4 down | ± (date-clustered SE) | Day 4 up | Mean day 4 | Day 4 vs Nifty (pts) |
+|---|---:|---:|---:|---:|---:|---:|
+| All windows | 108,727 | 48.9% | ±0.8 | 50.7% | +0.05% | +0.03 |
+| After three up days | 14,175 | 50.4% | ±1.0 | 49.1% | +0.02% | +0.02 |
+| After two down days | 25,562 | 46.7% | ±1.1 | 52.9% | +0.09% | +0.05 |
+| After three down days | 12,001 | 46.5% | ±1.4 | 53.2% | +0.11% | +0.07 |
+
+| Three-down minus same-day peers | Three-down windows | Dates | Each date equal (pts) | Weighted by count (pts) | p (t) | p (month bootstrap) |
+|---|---:|---:|---:|---:|---:|---:|
+| Share down | 12,001 | 920 | -1.66 | -1.96 | 0.036 | 0.040 |
+| Mean day 4 | 12,001 | 920 | +0.04 | +0.05 | 0.175 | 0.154 |
+
+| Half | Day 4 dates | Three-down windows | Day 4 down | vs same-day peers (pts) | p (t) | p (bootstrap) |
+|---|---:|---:|---:|---:|---:|---:|
+| First half | 2021-04-28 .. 2024-06-26 | 5,680 | 45.5% | -2.07 | 0.069 | 0.058 |
+| Second half | 2024-06-27 .. 2026-09-29 | 6,321 | 47.4% | -1.13 | 0.289 | 0.362 |
+
+CONFIRMED by the plan's rule: **no**.
+
+| Trade, after 0.17% costs | Trades | Avg net | Winning | Without the 5 best | First half | Second half |
+|---|---:|---:|---:|---:|---:|---:|
+| Buy at the day-3 close, sell at the day-4 close | 12,001 | -0.06% | 48.4% | -0.07% | -0.03% | -0.10% |
+| Short at the day-3 close, cover at the day-4 close | 12,001 | -0.28% | 41.9% | -0.28% | -0.31% | -0.24% |
+
+### More on all ordinary days
+
+| Signal | Windows | Day 4 down | Mean day 4 | vs peers, dates equal (pts) | p | vs peers, weighted (pts) |
+|---|---:|---:|---:|---:|---:|---:|
+| Three down days (any) | 16,517 | 47.4% | +0.06% | -1.87 | 0.012 | -1.96 |
+| Exactly three (the day before was not down) | 8,660 | 47.4% | +0.08% | -1.81 | 0.028 | -1.78 |
+| All three days below -1% | 2,233 | 42.9% | +0.28% | -3.54 | 0.012 | -2.56 |
+
+| Part of day 4 | After three down days | Other stocks | Difference, same day (pts) | p |
+|---|---:|---:|---:|---:|
+| Opening gap | +0.10% | +0.14% | +0.02 | 0.037 |
+| Open to close | -0.03% | -0.07% | +0.03 | 0.185 |
+| Whole day 4 | +0.06% | +0.07% | +0.05 | 0.046 |
+
+#### By weekday of day 4
+
+| Day 4 weekday | Three-down windows | Day 4 down | Other stocks down | vs same-day peers (pts) | p |
+|---|---:|---:|---:|---:|---:|
+| Mon | 3,607 | 47.2% | 48.8% | -0.13 | 0.904 |
+| Tue | 3,526 | 43.5% | 48.9% | -2.35 | 0.112 |
+| Wed | 3,196 | 45.1% | 46.7% | -5.30 | 0.003 |
+| Thu | 3,167 | 47.4% | 49.5% | -2.40 | 0.094 |
+| Fri | 2,993 | 54.8% | 50.7% | +1.29 | 0.358 |
+
+#### Every quarter
+
+| Quarter | Three-down windows | Day 4 down | Other stocks down | vs same-day peers (pts) | Mean day 4 |
+|---|---:|---:|---:|---:|---:|
+| 2021 Q2 | 227 | 42.3% | 51.0% | -8.77 | +0.28% |
+| 2021 Q3 | 448 | 42.6% | 46.1% | -4.36 | +0.27% |
+| 2021 Q4 | 764 | 51.7% | 49.2% | +1.59 | -0.15% |
+| 2022 Q1 | 646 | 46.9% | 47.6% | -3.28 | -0.05% |
+| 2022 Q2 | 807 | 53.0% | 52.6% | -2.64 | -0.13% |
+| 2022 Q3 | 684 | 47.1% | 46.7% | +1.42 | +0.09% |
+| 2022 Q4 | 699 | 47.1% | 49.8% | -0.64 | +0.06% |
+| 2023 Q1 | 884 | 53.3% | 52.0% | +0.18 | -0.14% |
+| 2023 Q2 | 333 | 36.3% | 41.5% | +1.65 | +0.40% |
+| 2023 Q3 | 533 | 43.9% | 47.2% | -4.06 | +0.27% |
+| 2023 Q4 | 436 | 39.9% | 43.8% | -8.83 | +0.23% |
+| 2024 Q1 | 631 | 40.1% | 49.2% | +3.24 | +0.39% |
+| 2024 Q2 | 559 | 43.6% | 44.6% | -7.88 | +0.21% |
+| 2024 Q3 | 570 | 43.5% | 46.6% | +3.18 | +0.21% |
+| 2024 Q4 | 981 | 56.3% | 51.4% | +0.51 | -0.31% |
+| 2025 Q1 | 1,044 | 50.7% | 50.3% | -4.05 | -0.13% |
+| 2025 Q2 | 623 | 35.0% | 45.7% | -2.20 | +0.49% |
+| 2025 Q3 | 1,240 | 50.6% | 51.1% | +0.32 | +0.04% |
+| 2025 Q4 | 1,022 | 40.8% | 50.2% | -5.47 | +0.28% |
+| 2026 Q1 | 1,195 | 48.2% | 55.7% | +1.69 | -0.03% |
+| 2026 Q2 | 829 | 49.3% | 45.2% | +1.28 | +0.05% |
+| 2026 Q3 | 1,362 | 50.1% | 55.0% | -6.61 | +0.03% |
+
+Below its same-day peers (a bounce) in 12 of 22 quarters.
+
+#### The index itself
+
+| Index (2016 .. Sep 2026) | Three-down runs | Next day down | Other days down | Mean next day | p (Fisher) |
+|---|---:|---:|---:|---:|---:|
+| Nifty 50 | 305 | 51.8% | 45.2% | -0.07% | 0.032 |
+| Nifty Bank | 288 | 46.2% | 46.5% | +0.06% | 0.950 |
+
+
 ## The main numbers
 
 | Sample | Group | Triples | Day 3 down | ± (date-clustered SE) | Day 3 up | Mean day 3 | Median day 3 | Day 3 vs Nifty (pts) |
@@ -405,6 +564,7 @@ Files: scripts in `pattern_tests/two_down_days/` and outputs in
 - run_tests.py: the tests.
 - skeptic/checks.py: day 4, market vs stock, the index, and quarters.
 - PLAN_NO_WEEKEND.txt and no_weekend.py: the version away from weekends and holidays.
+- PLAN_THREE_DOWN.txt and three_down.py: three down days, then the fourth.
 
 The scripts read `LAB_ROOT` (the scratch data folder), `TA_BUILD` (the adjusted prices) and `CA_DIR` (NSE corporate
 actions, downloaded). The file of stretches (days.csv.gz, 23 MB) is not committed; build_days.py rebuilds it.

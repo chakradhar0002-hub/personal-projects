@@ -1,0 +1,29 @@
+ADDENDUM TO PLAN.txt: THREE DOWN DAYS, THEN THE FOURTH DAY  (written before any outcome of this version was computed)
+
+User question: "Can you check three days down, then the fourth day?"
+Same data, definitions, exclusions, peers, inference and confirmation rule as PLAN.txt, with a four-day window.
+- Window: day0 .. day4 = five consecutive sessions, the stock traded on all five; r1 .. r4 = the daily returns of
+  day1 .. day4 (adjusted close-to-close, %). Signal known at the day-3 close; outcome on day 4.
+- Exclusions: a result or reaction session of the stock in [day1 - 5, day4 + 5]; a split / bonus / demerger
+  (price_factor change) on day1 .. day4; any NSE corporate-action ex-date on day1 .. day4.
+- MAIN: the stock in F&O on day3 (previous result in F&O and next, if any, in F&O; a result with no in_fo value counts
+  as in F&O, as in build_days.py), day3 on or after the stock's first known result, May 2021 .. Sep 2026.
+- Signal 3D: r1 < 0, r2 < 0 and r3 < 0. Also reported: EXACTLY three (the day before day1 not down) and all three below
+  -1%.
+- Outcome: day 4 down (r4 < 0); share up; mean r4; r4 minus Nifty 50's day-4 return.
+- Comparisons: all windows; after three up days; after two down days (r2, r3 < 0); SAME-DAY PEERS on the day-4 date
+  (3D minus every other eligible window that date; mean over dates, equal weight, and weighted by 3D count).
+- Inference: t-test of the per-date differences over dates; 5,000-draw block bootstrap by calendar month (seed
+  20261101); date-clustered standard errors for raw shares.
+- Calendar versions (the user asked not to check near weekends or holidays):
+  ALL: every window above.
+  NO-BREAK: day0 .. day4 on five consecutive calendar weekdays (Monday to Friday), so no weekend and no holiday inside;
+            day 4 is then always a Friday.
+  HOLIDAY-FREE: no weekday holiday and no weekend session (Muhurat, special Saturday) from day0 to the first weekday
+            after day4; ordinary weekends allowed.
+  A weekend session counts as a break. Descriptive on ALL: the result by weekday of day 4.
+- Also: the day-4 opening gap (open4 / close3 - 1) vs open-to-close, for 3D vs same-day peers; Nifty 50 and Nifty Bank
+  themselves after three down days (2016 .. Sep 2026); every calendar quarter (ALL); the trade (buy at the day-3 close,
+  sell at the day-4 close; the short version) after 0.17% costs, without the 5 best trades, by half.
+- CONFIRMED only if the same-day peer difference in share down has p < 0.05 by both tests in the first half AND the
+  same sign with p < 0.05 by both in the second half (halves split at the median day-4 date), per calendar version.
