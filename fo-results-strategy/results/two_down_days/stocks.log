@@ -1,0 +1,14 @@
+PLAN_STOCKS.txt sha256 3f7e4c7d06f6c20abcfd5fbe791ed5a4e65734b24f78132a2d791a54305ad9f4 (MATCH)
+Two down days, then day 3 | All ordinary days: tested 196; lean down/bounce 61/135; BH peers 0; BH own 0; confirmed 0; spread of z 1.138 vs null 1.075 p 0.267; halves rho +0.217 n 136 p 0.0115
+Two down days, then day 3 | Away from weekends and holidays (Mon..Thu, Friday open): tested 112; lean down/bounce 40/72; BH peers 1; BH own 0; confirmed 0; spread of z 1.064 vs null 1.024 p 0.373; halves rho -0.111 n 76 p 0.3427
+Three down days, then day 4 | All ordinary days: tested 179; lean down/bounce 62/117; BH peers 0; BH own 0; confirmed 0; spread of z 1.139 vs null 1.049 p 0.211; halves rho +0.157 n 134 p 0.0707
+Three down days, then day 4 | No holiday nearby (weekends allowed): tested 152; lean down/bounce 57/95; BH peers 0; BH own 0; confirmed 0; spread of z 1.047 vs null 1.019 p 0.387; halves rho +0.070 n 133 p 0.4130
+| Signal | Version | Stocks tested | Lean to keep falling / to bounce | Pass BH vs peers | Pass BH vs own normal | Confirmed in both halves | Spread of stock results vs chance | First half vs second half (rank corr.) |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Two down days, then day 3 | All ordinary days | 196 | 61 / 135 | 0 | 0 | 0 | 1.14 vs 1.08 (p 0.267) | +0.22 (136 stocks, p 0.011) |
+| Two down days, then day 3 | Away from weekends and holidays (Mon..Thu, Friday open) | 112 | 40 / 72 | 1 | 0 | 0 | 1.06 vs 1.02 (p 0.373) | -0.11 (76 stocks, p 0.343) |
+| Three down days, then day 4 | All ordinary days | 179 | 62 / 117 | 0 | 0 | 0 | 1.14 vs 1.05 (p 0.211) | +0.16 (134 stocks, p 0.071) |
+| Three down days, then day 4 | No holiday nearby (weekends allowed) | 152 | 57 / 95 | 0 | 0 | 0 | 1.05 vs 1.02 (p 0.387) | +0.07 (133 stocks, p 0.413) |
+| Signal | Version | Stock | Times | Next day down | Normal | vs peers (pts) | BH q vs peers | BH q vs own | First half / second half | Confirmed |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Two down days, then day 3 | Away from weekends and holidays (Mon..Thu, Friday open) | CIPLA | 38 | 26.3% | 48.5% | -26.7 | 0.004 | 0.953 | -14.2 / -36.9 | no |

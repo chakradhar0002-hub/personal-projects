@@ -1,0 +1,22 @@
+ADDENDUM: TWO AND THREE DOWN DAYS, STOCK BY STOCK  (written before any per-stock outcome of this version was computed;
+an earlier per-stock table for two down days on all ordinary days, table_stocks.md, has been seen)
+
+User question: "Can you check it with each stock?"  Same data, samples and definitions as PLAN.txt, PLAN_NO_WEEKEND.txt
+and PLAN_THREE_DOWN.txt.
+- Signals and samples: 2D (outcome day 3) on the MAIN two-day sample, versions ALL ordinary days and NOT-NEAR (Monday ..
+  Thursday, Friday open); 3D (outcome day 4) on the MAIN four-day sample, versions ALL and HOLIDAY-FREE.
+- Per stock with at least 30 signal windows in that sample (fewer: listed, not tested):
+  (i) vs OWN NORMAL: share of next days down after the signal vs the stock's own share down over all its windows in that
+      sample; binomial test.
+  (ii) vs SAME-DAY PEERS: on each signal date, the stock's next day down (0/1) minus the share down of every other
+      eligible stock without the signal that date; mean over the stock's signal dates; t-test over those dates.
+  Holm and BH across the tested stocks, per signal x version x comparison.
+- CONFIRMED for a stock: (ii) significant after Holm across stocks in the first half AND the same sign with p < 0.05 in
+  the second half (halves split at the median date of the sample).
+- Do stocks have their own pattern at all? (a) Heterogeneity: the spread (variance) of the per-stock z-scores of (ii)
+  against 1,000 permutations that shuffle the signal labels among stocks within each date (seed 20261103), p = share of
+  permutations with at least the observed spread. (b) Persistence: Spearman correlation across stocks of the (ii)
+  difference in the first half with that in the second half (stocks with at least 15 signal windows in each half),
+  permutation p from shuffling stocks (10,000).
+- Tradable check only if some stock is confirmed: buy (or short) at the signal close, sell at the next close, after
+  0.17% costs, in the second half.

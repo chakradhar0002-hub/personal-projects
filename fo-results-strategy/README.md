@@ -63,7 +63,8 @@ checklist and concrete trades, and backtests them on your data.
 > - **Two down days on ordinary days:** the third day is not more likely to be down (47.6% vs 48.7% on any day);
 >   against same-day peers there is a small, steady bounce worth about +0.04%, far below costs. Away from weekends
 >   and holidays it is the same (46.1% vs 49.3%), and after three down days too (fourth day down 47.4% vs 48.7%). By
->   sector no group tends to keep falling; the few sector indices that lean that way follow the Nifty 50. See
+>   sector no group tends to keep falling; the few sector indices that lean that way follow the Nifty 50. Stock by
+>   stock, none of 196 has a reliable pattern of its own (only Cipla passes once, unconfirmed). See
 >   [docs/TWO_DOWN_DAYS.md](docs/TWO_DOWN_DAYS.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >

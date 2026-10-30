@@ -28,6 +28,9 @@ the Monday-to-Friday version with no weekend inside the difference is within cha
 By sector it is the same: no sector's stocks tend to keep falling, and the few sector indices that lean that way just follow
 the Nifty 50 (details below).
 
+Stock by stock it is the same: no stock has a reliable pattern of its own, and the spread of results across stocks is
+what chance gives (details below).
+
 - **The raw odds are close to a coin flip.** After two down days, day 3 closed down 47.6% of the time and up 52.1%.
   On all days it was 48.7% down and 50.9% up.
 - **Against other stocks on the same day, there is a small, steady bounce.**
@@ -53,6 +56,8 @@ the Nifty 50 (details below).
   time, against 44.6% on other days (p 0.011). Its average third day is still about zero, so this is not a trade either.
 - **No single stock has a reliable pattern.**
   - Of 196 stocks tested, none passes the correction for testing 196.
+  - The same holds after three down days and away from weekends and holidays; only Cipla passes once, without
+    confirmation (details below).
   - Stocks such as BSE (60% down after two down days) or NHPC (39%) are within chance for that many tests.
 
 ## Away from weekends and holidays
@@ -455,6 +460,62 @@ Each cell: share of next days down after the signal vs the same sector's other s
 
 The full tables, with p values, both calendar versions and the halves, are in [table_sector.md](../results/two_down_days/table_sector.md).
 
+## Stock by stock
+
+Checked under a fifth plan written before computing it (plan sha256 `3f7e4c7d06f6c20abcfd5fbe791ed5a4e65734b24f78132a2d791a54305ad9f4`). It covers two down days (on all ordinary days, and Monday to Thursday with the Friday open) and three down days (on all ordinary days, and with no holiday nearby). Each stock with at least 30 cases is tested two ways:
+
+- **Against its own normal:** how often it fell after the signal, against how often it fell on any day in the sample.
+- **Against other stocks the same day:** how often it fell, against the other stocks without the signal on that date.
+
+With 110 to 200 stocks in each version, a few will look extreme just by luck. So each result is corrected for the number of stocks tested (Holm and BH). A stock counts only if it passes in the first half of the data and points the same way in the second.
+
+**No stock has a reliable tendency of its own to keep falling, or to bounce.**
+
+- **Two down days, all ordinary days:** of 196 stocks, 61 leaned towards a third down day and 135 towards a bounce, measured against other stocks that day. None passes the correction, against peers or against its own normal.
+  - The closest are bounces: Siemens, Bharti Airtel, M&M, BHEL and Aditya Birla Capital (BH q 0.08).
+- **Three down days:** of 179 stocks, none passes in either version.
+- **Monday to Thursday, Friday open:** only Cipla passes the correction.
+  - In 38 cases it fell on the third day 26.3% of the time, against 48.5% normally (-26.7 points against other stocks that day).
+  - It points the same way in both halves (-14.2 and -36.9 points). But the first half alone does not pass the correction, so it is not confirmed, and 38 cases is few.
+- **The spread is what chance gives.** If some stocks had a pattern of their own, their results would spread wider than when the signal is shuffled among the stocks on each date. They do not, in any of the four versions (p 0.21 to 0.39).
+- **Little carries over between halves.** For two down days on all ordinary days, the stocks that bounced most in the first half tended to bounce a bit more in the second (rank correlation +0.22, p 0.011). The other three versions show nothing clear (-0.11 to +0.16, p 0.07 to 0.41). It is a faint hint, too weak to pick stocks with.
+
+| Signal | Version | Stocks tested | Lean to keep falling / to bounce | Pass BH vs peers | Pass BH vs own normal | Confirmed in both halves | Spread of stock results vs chance | First half vs second half (rank corr.) |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Two down days, then day 3 | All ordinary days | 196 | 61 / 135 | 0 | 0 | 0 | 1.14 vs 1.08 (p 0.267) | +0.22 (136 stocks, p 0.011) |
+| Two down days, then day 3 | Away from weekends and holidays (Mon..Thu, Friday open) | 112 | 40 / 72 | 1 | 0 | 0 | 1.06 vs 1.02 (p 0.373) | -0.11 (76 stocks, p 0.343) |
+| Three down days, then day 4 | All ordinary days | 179 | 62 / 117 | 0 | 0 | 0 | 1.14 vs 1.05 (p 0.211) | +0.16 (134 stocks, p 0.071) |
+| Three down days, then day 4 | No holiday nearby (weekends allowed) | 152 | 57 / 95 | 0 | 0 | 0 | 1.05 vs 1.02 (p 0.387) | +0.07 (133 stocks, p 0.413) |
+
+### The most extreme stocks, all within chance
+
+All ordinary days, at least 30 cases. "vs peers": next day down, the stock minus the other stocks that day, in points. BH q above 0.05 means it is not significant once the number of stocks tested is allowed for.
+
+| Signal | Lean | Stock | Times | Next day down | Normal | vs peers (pts) | BH q |
+|---|---|---|---:|---:|---:|---:|---:|
+| Two down days, then day 3 | keep falling | SUPREMEIND | 96 | 58.3% | 52.6% | +8.6 | 0.45 |
+| Two down days, then day 3 | keep falling | SUZLON | 72 | 58.3% | 58.0% | +7.8 | 0.51 |
+| Two down days, then day 3 | keep falling | ASTRAL | 218 | 54.6% | 50.4% | +6.5 | 0.38 |
+| Two down days, then day 3 | keep falling | WAAREEENER | 37 | 54.1% | 53.8% | +5.8 | 0.76 |
+| Two down days, then day 3 | keep falling | IRFC | 104 | 56.7% | 55.0% | +5.3 | 0.60 |
+| Two down days, then day 3 | bounce | SIEMENS | 129 | 37.2% | 45.9% | -12.8 | 0.08 |
+| Two down days, then day 3 | bounce | APLAPOLLO | 69 | 37.7% | 46.0% | -10.1 | 0.48 |
+| Two down days, then day 3 | bounce | BHARTIARTL | 219 | 42.9% | 47.6% | -9.7 | 0.08 |
+| Two down days, then day 3 | bounce | M&M | 229 | 42.8% | 47.9% | -9.6 | 0.08 |
+| Two down days, then day 3 | bounce | BHEL | 194 | 37.6% | 44.0% | -9.4 | 0.08 |
+| Three down days, then day 4 | keep falling | POLICYBZR | 48 | 66.7% | 52.1% | +18.4 | 0.37 |
+| Three down days, then day 4 | keep falling | ETERNAL | 47 | 61.7% | 48.6% | +9.9 | 0.64 |
+| Three down days, then day 4 | keep falling | PGEL | 33 | 63.6% | 55.3% | +9.5 | 0.77 |
+| Three down days, then day 4 | keep falling | HINDZINC | 30 | 56.7% | 50.9% | +8.9 | 0.79 |
+| Three down days, then day 4 | keep falling | PIIND | 115 | 57.4% | 51.6% | +8.4 | 0.37 |
+| Three down days, then day 4 | bounce | NESTLEIND | 58 | 34.5% | 49.8% | -16.2 | 0.37 |
+| Three down days, then day 4 | bounce | 360ONE | 30 | 30.0% | 52.8% | -14.5 | 0.53 |
+| Three down days, then day 4 | bounce | GLENMARK | 93 | 35.5% | 45.7% | -13.4 | 0.37 |
+| Three down days, then day 4 | bounce | BHEL | 71 | 35.2% | 44.2% | -11.6 | 0.37 |
+| Three down days, then day 4 | bounce | BEL | 83 | 36.1% | 47.1% | -11.6 | 0.37 |
+
+Every stock, both signals and both calendar versions: [table_each_stock.md](../results/two_down_days/table_each_stock.md).
+
 ## The main numbers
 
 | Sample | Group | Triples | Day 3 down | ± (date-clustered SE) | Day 3 up | Mean day 3 | Median day 3 | Day 3 vs Nifty (pts) |
@@ -619,7 +680,7 @@ size of the fall adds little once the stock is compared with others on the same 
   comparison removes that. This matters most for big falls.
 - **Long history.** On all days since 2016, the third day after two down days was down 48.9% of the time, against 49.5%
   on all days. Same-day peers give -1.8 points. Results and dividends before 2021 are not excluded in that sample.
-- **Independent rebuild.** A second build from the raw data, sharing only the plan, matched: 47.6% down after two down days, -2.4 points against same-day peers, both halves significant, the index and the trade results. The only difference was two results with no F&O flag recorded (Reliance and Vedanta, both always in F&O). Counting them as in F&O, as here, the counts are identical. A second rebuild of the three-down version matched every count (147,579 stretches, 16,517 after three down days), share and peer difference, and the halves.
+- **Independent rebuild.** A second build from the raw data, sharing only the plan, matched: 47.6% down after two down days, -2.4 points against same-day peers, both halves significant, the index and the trade results. The only difference was two results with no F&O flag recorded (Reliance and Vedanta, both always in F&O). Counting them as in F&O, as here, the counts are identical. A second rebuild of the three-down version matched every count (147,579 stretches, 16,517 after three down days), share and peer difference, and the halves. A third rebuild of the sector version matched the sector results. It also showed that FMCG's confirmation depends on where the halves are split: splitting at the median of distinct dates instead, FMCG misses and Oil & Gas passes, while Healthcare (Monday to Thursday) still passes. So the FMCG result is fragile.
 - **Dividend coverage.** NSE returned no corporate actions for ICICI Prudential Life (and for a few stocks that pay no dividend), so its ex-dividend days could not be removed. One stock among 206 does not change the result.
 - **Survivorship.** The stocks are today's F&O list. Stocks that fell out of F&O, often after long declines, are missing,
   and that could understate how often weak stocks kept falling.
@@ -645,6 +706,7 @@ Files: scripts in `pattern_tests/two_down_days/` and outputs in
 - PLAN_NO_WEEKEND.txt and no_weekend.py: the version away from weekends and holidays.
 - PLAN_THREE_DOWN.txt and three_down.py: three down days, then the fourth.
 - PLAN_SECTOR.txt and sector.py: by sector, and the sector indices.
+- PLAN_STOCKS.txt and stocks.py: stock by stock.
 
 The scripts read `LAB_ROOT` (the scratch data folder), `TA_BUILD` (the adjusted prices) and `CA_DIR` (NSE corporate
 actions, downloaded). The file of stretches (days.csv.gz, 23 MB) is not committed; build_days.py rebuilds it.
