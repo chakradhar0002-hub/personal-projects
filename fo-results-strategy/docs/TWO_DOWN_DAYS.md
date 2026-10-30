@@ -43,8 +43,9 @@ the Monday-to-Friday version with no weekend inside the difference is within cha
   time.
   - Up streaks lean the other way: after 1 to 4 up days, the next day fell 1.6 to 3.4 points more often than peers.
   - So individual stocks show a small short-term reversal in both directions.
-- **The bounce happens during the session, not at the open.** Day 3's opening gap is the same as peers', and the
-  difference comes from open to close. It does not reverse on day 4, so it is not a quirk of closing prices.
+- **Where it happens.** In average return the extra comes during the session: the opening gap averages the same as
+  peers', and open to close is +0.04 points better. Counted as how often they fall, fewer two-down stocks also open
+  lower (about 1 point). The bounce does not reverse on day 4, so it is not a quirk of closing prices.
 - **The index itself is different.** After the Nifty 50 fell two days in a row, it fell on the third day 50.6% of the
   time, against 44.6% on other days (p 0.011). Its average third day is still about zero, so this is not a trade either.
 - **No single stock has a reliable pattern.**
@@ -541,7 +542,8 @@ size of the fall adds little once the stock is compared with others on the same 
   comparison removes that. This matters most for big falls.
 - **Long history.** On all days since 2016, the third day after two down days was down 48.9% of the time, against 49.5%
   on all days. Same-day peers give -1.8 points. Results and dividends before 2021 are not excluded in that sample.
-- **Independent rebuild.** A second build from the raw data, sharing only the plan, matched: 47.6% down after two down days, -2.4 points against same-day peers, both halves significant, the index and the trade results. The only difference was two results with no F&O flag recorded (Reliance and Vedanta, both always in F&O). Counting them as in F&O, as here, the counts are identical.
+- **Independent rebuild.** A second build from the raw data, sharing only the plan, matched: 47.6% down after two down days, -2.4 points against same-day peers, both halves significant, the index and the trade results. The only difference was two results with no F&O flag recorded (Reliance and Vedanta, both always in F&O). Counting them as in F&O, as here, the counts are identical. A second rebuild of the three-down version matched every count (147,579 stretches, 16,517 after three down days), share and peer difference, and the halves.
+- **Dividend coverage.** NSE returned no corporate actions for ICICI Prudential Life (and for a few stocks that pay no dividend), so its ex-dividend days could not be removed. One stock among 206 does not change the result.
 - **Survivorship.** The stocks are today's F&O list. Stocks that fell out of F&O, often after long declines, are missing,
   and that could understate how often weak stocks kept falling.
 - **What a trader can use.** A third down day is not more likely after two down days, so two red days alone are no
