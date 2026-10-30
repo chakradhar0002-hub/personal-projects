@@ -1,0 +1,52 @@
+TWO DOWN DAYS ON ORDINARY DAYS: IS THE THIRD DAY DOWN?  (written before any outcome was computed)
+
+Question (user): for any F&O stock, ignoring events, if the stock is down two days in a row, does it go down on the
+third day or not?
+
+DATA
+- Split/bonus-adjusted daily OHLCV of the 213 current F&O stocks (TA build adjusted_ohlcv.csv.gz), sessions
+  2015-11-09 to 2026-09-30, on the Nifty 50 session grid (sessions.csv). A stock's first traded return is dropped.
+- Results: events.csv (4,462 results, Jan-Mar 2021 .. Apr-Jun 2026 results), result session i_rd and reaction session
+  i_react, in_fo per result.
+- Corporate actions: NSE corporates-corporateActions API, ex-dates Jan 2021 .. Sep 2026 (dividends, splits, bonus,
+  rights, demergers, buybacks, ...), downloaded as untrusted data and parsed with json only.
+- Nifty 50, Nifty Bank, India VIX closes: index_close.csv.
+
+DEFINITIONS
+- r_t = adjusted close-to-close return of session t, in %. Down: r < 0. Up: r > 0. Flat: r = 0.
+- A triple (day1, day2, day3) = three consecutive sessions; the stock traded on day0 (the session before day1), day1,
+  day2 and day3. Signal known at the day-2 close; outcome on day 3.
+- Exclusions ("not considering the events"):
+  (a) a result session i_rd or reaction session i_react of the stock within 5 sessions of day1..day3
+      (any such session in [day1 - 5, day3 + 5]);
+  (b) a split / bonus / demerger (price_factor change) between day0 and day3;
+  (c) any NSE corporate-action ex-date of the stock (dividend or other) on day1, day2 or day3.
+- Samples:
+  MAIN: day2 between the stock's first known result and 2026-09-30, the stock in F&O on day2 (previous result in F&O and
+        next result, if any, in F&O; after the last known result, that result's in_fo), exclusions (a)-(c) applied.
+        Calendar span about May 2021 .. Sep 2026.
+  ALL21: the same span and exclusions, any F&O status.
+  LONG: 2016 .. 2026, all days of the 213 stocks, only (b) applied (results and dividends before 2021 are not known):
+        a rough long-history check only.
+- Signal (2D): r1 < 0 and r2 < 0.  Outcome: day 3 down (r3 < 0); also share up, share flat, mean and median r3, r3 minus
+  Nifty 50's day-3 return.
+- Comparisons: (i) all triples; (ii) after two up days (r1 > 0, r2 > 0); (iii) after one down day (r2 < 0, any r1);
+  (iv) SAME-DAY PEERS: for each day3 date with at least one 2D triple and one other triple, share down among 2D triples
+  minus share down among the other triples that date; mean over dates (each date weighted equally) and the 2D-count
+  weighted mean. Same for mean r3.
+- Inference: t-test of the per-date differences over dates; block bootstrap by calendar month (5,000 draws, seed
+  20261030), two-sided. Raw shares get a date-clustered standard error.
+- Streaks: exactly k consecutive down (or up) days ending at day2, k = 1..5 and 6+ (counted on consecutive traded
+  sessions): count, next-day share down, mean next return, same-day peer difference.
+- Size: (r1 + r2) fifths within each day3 date (all triples): next-day share down and mean; 2D versions with both days
+  below -1% and both below -2%; "two down days vs Nifty" (stock minus Nifty below 0 on both days).
+- Day-3 split for 2D vs same-day peers: overnight gap (open3 / close2 - 1) and intraday (close3 / open3 - 1).
+- Market state: Nifty 50 down on both day1 and day2 vs not; India VIX at the day-2 close above / below the sample median.
+- Index itself (all sessions 2016-2026): Nifty 50 and Nifty Bank after two down days: share down next day, mean.
+- Stability (MAIN): by calendar year; by calendar quarter (every quarter); first half / second half (split at the
+  median day3 date); by NSE index sector; by stock: share down after 2D vs the stock's own share down over all its MAIN
+  triples, binomial test, Holm and BH (q 0.05) across stocks.
+- Tradable (MAIN): buy at the day-2 close, sell at the day-3 close; the short version; hold 2 sessions (day3 + day4) and
+  5 sessions (day3..day7, all traded); 0.17% round-trip cost; per year; without the 5 best trades.
+- CONFIRMED only if the same-day peer difference in share down (iv) has p < 0.05 by both the t-test and the month
+  bootstrap in the first half AND the same sign with p < 0.05 (both) in the second half of MAIN.

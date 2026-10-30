@@ -1,0 +1,8 @@
+adjusted OHLCV: 213 stocks, 2697 sessions 2015-11-09 .. 2026-09-30
+results: 4462 events, 7085 result/reaction session marks, symbols with events 212
+corporate actions for the 213 stocks: 1935 ex-dates (1664 dividends) 2021-01-13 .. 2026-09-30
+triples (day0..day3 traded): 505,290; with a known result before day2: 269,910
+  of those near a result (+-5 sessions): 59,357; split/bonus/demerger: 237; NSE ex-date on day1..day3: 5,425; not in F&O on day2: 72,801
+MAIN 151,513 triples, 206 stocks, day3 2021-04-27 .. 2026-09-30; ALL21 207,076; LONG 504,834
+check: |R - returns.csv| max 5.25e-05 pct over 506,304 stock-days (2015-12-02 and 2016-06-21 dropped: they follow a trading day missing from the session list)
+check: no stock has a return on its first traded session

@@ -218,6 +218,7 @@ depends on getting fills near the mid price, so treat it as marginal ([REAL_DATA
 - [QUARTER_CORRELATION.md](QUARTER_CORRELATION.md): whether best and worst quarters, sectors and stocks predict each other
 - [EMA_SMA_3DAY.md](EMA_SMA_3DAY.md): EMA and SMA signals at the cutoff against the three-day results move
 - [PREVIOUS_QUARTERS.md](PREVIOUS_QUARTERS.md): a stock's earlier three-day results moves, quarter by quarter, against its next one
+- [TWO_DOWN_DAYS.md](TWO_DOWN_DAYS.md): on ordinary days, whether two down days are followed by a third
 - [TECHNICAL_ANALYSIS.md](TECHNICAL_ANALYSIS.md), [FUNDAMENTAL_ANALYSIS.md](FUNDAMENTAL_ANALYSIS.md), [TA_FA_COMBINED.md](TA_FA_COMBINED.md): TA, FA and both together
 - [TARGET_2PCT.md](TARGET_2PCT.md), [TARGET_5PCT.md](TARGET_5PCT.md), [TARGET_100PCT.md](TARGET_100PCT.md): the target searches
 - [SECTOR_STRATEGIES.md](SECTOR_STRATEGIES.md), [PATTERNS.md](PATTERNS.md), [REAL_DATA_RESULTS.md](REAL_DATA_RESULTS.md): sector ideas, winner drift, option trades

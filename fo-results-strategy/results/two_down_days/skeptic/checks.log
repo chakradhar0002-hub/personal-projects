@@ -1,0 +1,26 @@
+1. day 3 vs day 4 for two-down stocks, minus same-day peers (pts; share down x100)
+   share down day 3       -2.404  p 0.0000  dates 1328
+   share down day 4       +0.285  p 0.5344  dates 1328
+   mean day 3             +0.041  p 0.0255  dates 1328
+   mean day 4             +0.011  p 0.5317  dates 1327
+   mean day 3 + day 4     +0.052  p 0.0350  dates 1327
+   day-3 opening gap      +0.002  p 0.7809  dates 1328
+   day-3 open to close    +0.039  p 0.0238  dates 1328
+
+2. market vs stock: raw share down after two down days, and minus same-day peers
+   two down     n  35679  raw down  47.6%  other stocks on the same days (weighted by signal count)  49.8%  vs peers: equal-weight dates -2.40 (p 0.000), signal-weighted -2.27
+   both < -1%   n   8974  raw down  44.2%  other stocks on the same days (weighted by signal count)  47.1%  vs peers: equal-weight dates -0.96 (p 0.302), signal-weighted -2.90
+   both < -2%   n   2117  raw down  37.8%  other stocks on the same days (weighted by signal count)  42.1%  vs peers: equal-weight dates -1.78 (p 0.249), signal-weighted -4.30
+
+3. Nifty 50 after two down days (2016-01 .. 2026-09), by half; bootstrap of sessions by month
+   2016-2020 after 2 down:  48.6% down (n 259), other sessions  43.8%  diff +4.9  chi2 p 0.185
+   2021-2026 after 2 down:  52.0% down (n 346), other sessions  45.3%  diff +6.7  chi2 p 0.035
+   all       after 2 down:  50.6% down (n 605), other sessions  44.6%  diff +6.0  chi2 p 0.011
+   month bootstrap of the difference: 95% range +1.5 .. +10.5 pts, p 0.011
+
+4. quarters: share-down difference vs same-day peers
+   negative (bounce) in 17 of 22 quarters; sign test p 0.017
+   leave-one-quarter-out: -2.56 .. -2.16 pts
+
+5. size of the effect in money: the extra share of up days is about 2.4 points, the extra mean return about +0.04 points;
+   costs are 0.17% a round trip, so the bounce is about a quarter of one trade's costs.

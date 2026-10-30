@@ -60,6 +60,9 @@ checklist and concrete trades, and backtests them on your data.
 > - **A stock's earlier three-day results moves:** each earlier quarter on its own, up/down sequences and streaks do
 >   not predict the direction of the next move (0 of 84 tests pass); only the known track-record watch item recurs. See
 >   [docs/PREVIOUS_QUARTERS.md](docs/PREVIOUS_QUARTERS.md).
+> - **Two down days on ordinary days:** the third day is not more likely to be down (47.6% vs 48.7% on any day);
+>   against same-day peers there is a small, steady bounce worth about +0.04%, far below costs. See
+>   [docs/TWO_DOWN_DAYS.md](docs/TWO_DOWN_DAYS.md).
 > - **The original trades lost money after costs:** the condor/straddle across the numbers and the Day+1 follow-through.
 >
 > See [docs/REAL_DATA_RESULTS.md](docs/REAL_DATA_RESULTS.md). It's a small edge that depends on fills near mid, so paper-trade it first.
