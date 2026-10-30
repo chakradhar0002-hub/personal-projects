@@ -1,0 +1,29 @@
+ADDENDUM: TWO AND THREE DOWN DAYS BY SECTOR  (written before any sector outcome was computed)
+
+User question: "Can you check it with sector?"  Two parts, same data and definitions as PLAN.txt, PLAN_NO_WEEKEND.txt
+and PLAN_THREE_DOWN.txt.
+
+PART A. STOCKS, BY NSE INDEX SECTOR (nifty_sector from results/nifty_sector_3day/results_3day.csv; 18 sectors)
+- Signals: 2D (day1, day2 down; outcome day 3) on the MAIN two-day sample (build_days.py), and 3D (day1..day3 down;
+  outcome day 4) on the MAIN four-day sample (three_down.py).
+- Calendar versions: ALL ordinary days; away from weekends and holidays = NOT-NEAR for 2D (Monday..Thursday, Friday
+  open; PLAN_NO_WEEKEND.txt) and HOLIDAY-FREE for 3D (PLAN_THREE_DOWN.txt; the Monday..Friday version is too small per
+  sector).
+- Per sector: windows with the signal, share of next days down, mean next-day return; (i) vs ALL same-day peers (every
+  other eligible stock that date) and (ii) vs SAME-SECTOR same-day peers (other eligible stocks of that sector that date,
+  without the signal); per-date differences averaged over dates, t-test over dates and 5,000-draw month bootstrap (seed
+  20261102). Sectors with fewer than 100 signal windows are reported but not tested.
+- Multiple testing: Holm and BH across the tested sectors, separately for each signal x version x comparison.
+- CONFIRMED for a sector only if its same-sector peer difference in share down is significant after Holm across sectors
+  (bootstrap p) in the first half AND the same sign with p < 0.05 (bootstrap) in the second half (halves split at the
+  median date of that sample).
+PART B. SECTOR INDICES THEMSELVES (index_close.csv), sessions 2016-01 .. 2026-09, a return only between two consecutive
+  sessions that both have a close (2015-12-02 and 2016-06-21 dropped):
+  Nifty Auto, Bank, Financial Services, FMCG, IT, Media, Metal, Pharma, PSU Bank, Private Bank, Realty, Healthcare,
+  Consumer Durables, Oil & Gas; Nifty 50 for reference.
+- After two down days (outcome day 3) and after three down days (outcome day 4): share of next days down vs all other
+  sessions of that index (Fisher exact test), mean next-day return; and the same with the index's return minus Nifty
+  50's (sector relative to the market: two / three days below Nifty, next day below Nifty?).
+- Versions: all sessions; no weekend or holiday inside the window (2D: day0..day3 on four consecutive calendar weekdays;
+  3D: day0..day4 on five).
+- Holm and BH across the 14 sector indices, per signal x version x measure.

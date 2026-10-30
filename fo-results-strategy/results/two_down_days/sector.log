@@ -1,0 +1,274 @@
+PLAN_SECTOR.txt sha256 93f0d7d80c8221223a15ee2afbc3617256165100c60188a0eb116eedbfdf4a91 (MATCH)
+2D sample 151,513 (away 24,251); 3D sample 147,579 (away 108,727); stocks without a sector: 0
+### Two down days, then day 3: All ordinary days
+
+| Sector | Windows | Stocks | Next day down | Same sector, no signal | Mean next day | vs all stocks (pts) | Holm | vs own sector (pts) | p | Holm | First half / second half (pts) | Confirmed |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Construction Materials | 935 | 4 | 47.2% | 48.9% | -0.00% | -4.46 | 0.045 | -7.02 | <0.001 | 0.012 | -6.92 / -7.14 | no |
+| Construction | 401 | 3 | 48.9% | 51.4% | +0.05% | -1.17 | 1.000 | -6.60 | 0.026 | 0.260 | - / -6.60 | no |
+| Oil Gas & Consumable Fuels | 1,863 | 9 | 45.7% | 47.6% | +0.08% | -5.12 | <0.001 | -6.36 | <0.001 | <0.001 | -7.52 / -4.94 | no |
+| Telecommunication | 694 | 3 | 47.3% | 50.3% | +0.12% | -3.36 | 0.604 | -6.17 | 0.016 | 0.197 | -9.87 / -1.65 | no |
+| Services | 1,012 | 5 | 48.1% | 48.7% | -0.02% | -4.35 | 0.091 | -5.64 | 0.002 | 0.022 | -7.61 / -3.51 | no |
+| Fast Moving Consumer Goods | 2,472 | 14 | 46.9% | 50.3% | +0.04% | -3.34 | 0.030 | -5.09 | <0.001 | <0.001 | -5.50 / -4.57 | yes |
+| Healthcare | 3,078 | 16 | 45.8% | 49.3% | +0.12% | -4.70 | <0.001 | -4.40 | <0.001 | <0.001 | -3.65 / -5.42 | no |
+| Consumer Services | 1,266 | 9 | 48.7% | 50.0% | +0.04% | -1.85 | 1.000 | -4.05 | 0.038 | 0.338 | -5.01 / -3.23 | no |
+| Automobile and Auto Components | 2,733 | 15 | 48.0% | 49.2% | +0.02% | -2.40 | 0.339 | -3.09 | 0.019 | 0.207 | -3.53 / -2.58 | no |
+| Metals & Mining | 2,030 | 10 | 45.4% | 47.6% | +0.03% | -3.94 | 0.045 | -2.98 | 0.014 | 0.182 | -2.90 / -3.08 | no |
+| Consumer Durables | 1,658 | 10 | 48.3% | 49.8% | +0.00% | -2.11 | 1.000 | -2.59 | 0.153 | 0.917 | -1.85 / -3.41 | no |
+| Capital Goods | 2,538 | 23 | 46.4% | 48.2% | +0.09% | -4.07 | 0.006 | -2.10 | 0.088 | 0.640 | -2.21 / -1.99 | no |
+| Information Technology | 2,601 | 12 | 49.9% | 49.8% | -0.01% | -0.42 | 1.000 | -2.05 | 0.080 | 0.640 | -2.87 / -1.02 | no |
+| Chemicals | 1,065 | 5 | 48.2% | 50.1% | +0.04% | +0.59 | 1.000 | -1.20 | 0.579 | 1.000 | -0.87 / -1.57 | no |
+| Financial Services | 9,240 | 53 | 48.2% | 49.0% | +0.07% | -0.52 | 1.000 | -0.59 | 0.462 | 1.000 | -0.92 / -0.16 | no |
+| Power | 1,003 | 8 | 46.7% | 48.7% | +0.10% | -2.43 | 1.000 | +0.68 | 0.772 | 1.000 | +0.00 / +1.14 | no |
+| Realty | 897 | 6 | 49.5% | 47.1% | +0.01% | +0.03 | 1.000 | +1.66 | 0.510 | 1.000 | -0.70 / +3.43 | no |
+| Textiles | 193 | 1 | 45.1% | 51.9% | +0.12% | -3.90 | 1.000 | - | - | 1.000 | - / - | no |
+
+Tested sectors (at least 100 windows): 18. Falling more often than their own sector the next day: 2 of 18. Significant after Holm across sectors (own-sector comparison): 5. Confirmed in both halves: 1.
+
+### Two down days, then day 3: Away from weekends and holidays (Mon..Thu, Friday open)
+
+| Sector | Windows | Stocks | Next day down | Same sector, no signal | Mean next day | vs all stocks (pts) | Holm | vs own sector (pts) | p | Holm | First half / second half (pts) | Confirmed |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Telecommunication | 109 | 3 | 40.4% | 50.1% | +0.26% | -9.43 | 0.827 | -16.38 | 0.065 | 0.778 | -14.86 / -19.05 | no |
+| Construction | 65 | 3 | 52.3% | 52.8% | +0.00% | -0.02 | not tested | -15.00 | 0.188 | not tested | - / -15.00 | no |
+| Healthcare | 455 | 16 | 42.2% | 49.1% | +0.20% | -10.40 | 0.006 | -12.52 | <0.001 | <0.001 | -13.62 / -10.96 | yes |
+| Construction Materials | 156 | 4 | 42.3% | 51.7% | +0.20% | -8.13 | 0.510 | -11.79 | 0.056 | 0.728 | -6.30 / -18.47 | no |
+| Oil Gas & Consumable Fuels | 263 | 9 | 46.4% | 47.7% | +0.04% | -4.68 | 1.000 | -9.89 | 0.020 | 0.306 | -10.97 / -8.43 | no |
+| Fast Moving Consumer Goods | 371 | 14 | 43.1% | 53.8% | +0.16% | -0.01 | 1.000 | -6.49 | 0.045 | 0.627 | -5.78 / -7.32 | no |
+| Consumer Durables | 238 | 10 | 47.9% | 51.7% | +0.01% | -4.30 | 1.000 | -6.36 | 0.134 | 1.000 | -6.57 / -6.10 | no |
+| Capital Goods | 391 | 23 | 45.3% | 51.1% | +0.15% | -7.03 | 0.252 | -5.22 | 0.094 | 1.000 | -7.26 / -3.15 | no |
+| Information Technology | 374 | 12 | 48.7% | 48.2% | +0.14% | -3.85 | 1.000 | -4.64 | 0.128 | 1.000 | -9.53 / +1.47 | no |
+| Consumer Services | 176 | 9 | 54.5% | 52.2% | -0.10% | -0.91 | 1.000 | -4.36 | 0.378 | 1.000 | -1.32 / -6.35 | no |
+| Automobile and Auto Components | 412 | 15 | 47.3% | 48.2% | +0.07% | -2.53 | 1.000 | -3.02 | 0.321 | 1.000 | -8.83 / +3.23 | no |
+| Metals & Mining | 320 | 10 | 45.9% | 49.0% | +0.11% | -3.14 | 1.000 | -0.94 | 0.819 | 1.000 | -2.44 / +0.78 | no |
+| Financial Services | 1,413 | 53 | 45.6% | 51.6% | +0.18% | -0.67 | 1.000 | -0.84 | 0.682 | 1.000 | -1.87 / +0.56 | no |
+| Chemicals | 153 | 5 | 43.8% | 49.5% | +0.10% | -2.70 | 1.000 | +2.15 | 0.600 | 1.000 | +12.50 / -7.96 | no |
+| Services | 164 | 5 | 48.2% | 48.6% | -0.03% | +0.53 | 1.000 | +2.95 | 0.572 | 1.000 | -2.90 / +10.42 | no |
+| Power | 160 | 8 | 51.2% | 47.9% | -0.04% | -1.01 | 1.000 | +5.91 | 0.274 | 1.000 | +6.90 / +5.22 | no |
+| Realty | 138 | 6 | 53.6% | 44.6% | +0.02% | +0.60 | 1.000 | +7.58 | 0.149 | 1.000 | -2.00 / +14.05 | no |
+| Textiles | 32 | 1 | 28.1% | 53.7% | +0.54% | -18.86 | not tested | - | - | not tested | - / - | no |
+
+Tested sectors (at least 100 windows): 16. Falling more often than their own sector the next day: 4 of 16. Significant after Holm across sectors (own-sector comparison): 1. Confirmed in both halves: 1.
+
+### Three down days, then day 4: All ordinary days
+
+| Sector | Windows | Stocks | Next day down | Same sector, no signal | Mean next day | vs all stocks (pts) | Holm | vs own sector (pts) | p | Holm | First half / second half (pts) | Confirmed |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Telecommunication | 321 | 3 | 47.0% | 49.9% | +0.28% | -3.05 | 1.000 | -7.99 | 0.022 | 0.336 | -10.81 / -5.09 | no |
+| Services | 473 | 5 | 48.8% | 48.6% | -0.07% | -4.36 | 0.454 | -7.92 | 0.005 | 0.077 | -9.14 / -6.81 | no |
+| Construction | 195 | 3 | 51.8% | 50.6% | -0.08% | +1.54 | 1.000 | -7.53 | 0.101 | 1.000 | - / -7.53 | no |
+| Construction Materials | 428 | 4 | 48.4% | 48.2% | -0.05% | -4.58 | 0.372 | -5.75 | 0.040 | 0.566 | -9.06 / -1.94 | no |
+| Healthcare | 1,374 | 16 | 44.2% | 49.2% | +0.15% | -4.86 | 0.007 | -4.77 | <0.001 | 0.007 | -3.90 / -5.94 | no |
+| Consumer Durables | 769 | 10 | 49.0% | 49.7% | -0.02% | -1.93 | 1.000 | -4.38 | 0.050 | 0.600 | -7.33 / -1.39 | no |
+| Consumer Services | 601 | 9 | 48.3% | 49.9% | +0.10% | -1.40 | 1.000 | -3.27 | 0.122 | 1.000 | -4.70 / -2.27 | no |
+| Automobile and Auto Components | 1,287 | 15 | 47.2% | 49.2% | +0.04% | -2.43 | 1.000 | -3.16 | 0.045 | 0.588 | -1.34 / -5.02 | no |
+| Oil Gas & Consumable Fuels | 832 | 9 | 47.1% | 47.1% | +0.08% | -3.22 | 1.000 | -2.81 | 0.243 | 1.000 | -5.85 / +0.62 | no |
+| Fast Moving Consumer Goods | 1,128 | 14 | 46.3% | 49.8% | +0.08% | -2.92 | 0.728 | -2.62 | 0.138 | 1.000 | -2.33 / -2.97 | no |
+| Capital Goods | 1,143 | 23 | 43.7% | 48.1% | +0.18% | -3.87 | 0.045 | -1.97 | 0.195 | 1.000 | -0.30 / -3.28 | no |
+| Metals & Mining | 890 | 10 | 44.4% | 47.5% | +0.09% | -2.03 | 1.000 | -0.96 | 0.586 | 1.000 | -1.26 / -0.60 | no |
+| Financial Services | 4,347 | 53 | 48.3% | 48.9% | +0.06% | -0.35 | 1.000 | -0.47 | 0.646 | 1.000 | -0.68 / -0.23 | no |
+| Information Technology | 1,256 | 12 | 50.3% | 49.9% | -0.03% | +0.98 | 1.000 | -0.14 | 0.909 | 1.000 | -0.56 / +0.33 | no |
+| Chemicals | 504 | 5 | 49.6% | 49.5% | +0.00% | +2.37 | 1.000 | +1.66 | 0.447 | 1.000 | +2.65 / +0.58 | no |
+| Power | 453 | 8 | 47.5% | 48.4% | +0.04% | -1.96 | 1.000 | +2.30 | 0.450 | 1.000 | -1.76 / +4.33 | no |
+| Realty | 430 | 6 | 49.5% | 47.6% | -0.07% | +0.49 | 1.000 | +4.28 | 0.112 | 1.000 | +0.66 / +6.44 | no |
+| Textiles | 86 | 1 | 36.0% | 51.7% | +0.39% | -8.38 | not tested | - | - | not tested | - / - | no |
+
+Tested sectors (at least 100 windows): 17. Falling more often than their own sector the next day: 3 of 17. Significant after Holm across sectors (own-sector comparison): 1. Confirmed in both halves: 0.
+
+### Three down days, then day 4: No holiday nearby (weekends allowed)
+
+| Sector | Windows | Stocks | Next day down | Same sector, no signal | Mean next day | vs all stocks (pts) | Holm | vs own sector (pts) | p | Holm | First half / second half (pts) | Confirmed |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Telecommunication | 223 | 3 | 45.3% | 50.5% | +0.27% | -4.11 | 1.000 | -11.51 | 0.012 | 0.204 | -10.90 / -12.16 | no |
+| Consumer Services | 457 | 9 | 46.6% | 50.8% | +0.11% | -3.32 | 1.000 | -6.08 | 0.015 | 0.228 | -8.49 / -4.52 | no |
+| Consumer Durables | 557 | 10 | 47.9% | 49.5% | +0.01% | -2.07 | 1.000 | -5.55 | 0.033 | 0.432 | -6.82 / -4.21 | no |
+| Construction Materials | 305 | 4 | 45.2% | 48.4% | +0.09% | -5.56 | 0.205 | -5.44 | 0.092 | 1.000 | -8.33 / -2.06 | no |
+| Construction | 127 | 3 | 50.4% | 50.6% | +0.04% | +1.79 | 1.000 | -5.32 | 0.433 | 1.000 | - / -5.32 | no |
+| Services | 346 | 5 | 51.2% | 48.7% | -0.09% | -1.01 | 1.000 | -4.49 | 0.095 | 1.000 | -6.25 / -2.98 | no |
+| Fast Moving Consumer Goods | 827 | 14 | 43.4% | 50.3% | +0.20% | -3.91 | 0.366 | -4.33 | 0.016 | 0.228 | -3.54 / -5.26 | no |
+| Healthcare | 959 | 16 | 43.3% | 48.7% | +0.20% | -4.39 | 0.150 | -3.78 | 0.012 | 0.204 | -3.10 / -4.74 | no |
+| Oil Gas & Consumable Fuels | 624 | 9 | 46.8% | 47.9% | +0.13% | -2.92 | 1.000 | -2.89 | 0.300 | 1.000 | -6.77 / +1.96 | no |
+| Automobile and Auto Components | 937 | 15 | 46.2% | 49.6% | +0.14% | -2.09 | 1.000 | -2.38 | 0.207 | 1.000 | +0.29 / -5.07 | no |
+| Capital Goods | 825 | 23 | 43.9% | 49.0% | +0.14% | -2.85 | 0.834 | -1.21 | 0.506 | 1.000 | +2.39 / -4.19 | no |
+| Chemicals | 357 | 5 | 46.2% | 49.8% | +0.07% | +0.22 | 1.000 | -0.03 | 0.980 | 1.000 | +0.63 / -0.80 | no |
+| Metals & Mining | 671 | 10 | 44.7% | 48.6% | +0.08% | -0.57 | 1.000 | +0.21 | 0.920 | 1.000 | -0.35 / +0.85 | no |
+| Information Technology | 945 | 12 | 51.0% | 50.1% | -0.05% | +0.89 | 1.000 | +0.34 | 0.857 | 1.000 | -1.91 / +2.71 | no |
+| Financial Services | 3,153 | 53 | 47.1% | 49.1% | +0.13% | +0.45 | 1.000 | +0.65 | 0.590 | 1.000 | +0.25 / +1.08 | no |
+| Power | 313 | 8 | 48.2% | 48.6% | -0.04% | -1.88 | 1.000 | +3.86 | 0.248 | 1.000 | -3.17 / +7.56 | no |
+| Realty | 312 | 6 | 48.1% | 48.3% | +0.02% | -1.67 | 1.000 | +5.68 | 0.073 | 0.874 | +0.00 / +9.05 | no |
+| Textiles | 63 | 1 | 34.9% | 52.3% | +0.39% | -8.75 | not tested | - | - | not tested | - / - | no |
+
+Tested sectors (at least 100 windows): 17. Falling more often than their own sector the next day: 5 of 17. Significant after Holm across sectors (own-sector comparison): 0. Confirmed in both halves: 0.
+
+### After 2 down days, the index, all sessions
+
+| Index | Runs | Next day down | Other sessions down | Mean next day | p (Fisher) | Holm | BH q |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Nifty Auto | 629 | 48.5% | 47.3% | -0.03% | 0.615 | 1.000 | 0.663 |
+| Nifty Bank | 601 | 47.9% | 46.1% | +0.02% | 0.430 | 1.000 | 0.586 |
+| Nifty Financial Services | 598 | 49.5% | 45.5% | -0.00% | 0.085 | 0.934 | 0.244 |
+| Nifty FMCG | 620 | 45.8% | 49.6% | +0.07% | 0.099 | 0.987 | 0.244 |
+| Nifty IT | 608 | 47.0% | 48.8% | +0.03% | 0.460 | 1.000 | 0.586 |
+| Nifty Media | 650 | 50.2% | 47.9% | -0.10% | 0.343 | 1.000 | 0.586 |
+| Nifty Metal | 575 | 47.5% | 45.5% | -0.00% | 0.422 | 1.000 | 0.586 |
+| Nifty Pharma | 670 | 51.9% | 47.7% | -0.03% | 0.061 | 0.726 | 0.244 |
+| Nifty PSU Bank | 643 | 48.7% | 49.2% | -0.01% | 0.821 | 1.000 | 0.821 |
+| Nifty Private Bank | 608 | 47.9% | 46.6% | +0.03% | 0.579 | 1.000 | 0.663 |
+| Nifty Realty | 620 | 52.9% | 44.0% | -0.14% | <0.001 | 0.002 | 0.002 |
+| Nifty Healthcare Index | 336 | 50.6% | 45.5% | +0.02% | 0.105 | 0.987 | 0.244 |
+| Nifty Consumer Durables | 350 | 47.7% | 44.6% | -0.07% | 0.304 | 1.000 | 0.586 |
+| Nifty Oil & Gas | 383 | 52.5% | 43.5% | -0.14% | 0.002 | 0.030 | 0.016 |
+| Nifty 50 (reference) | 605 | 50.6% | 44.6% | -0.00% | 0.011 | - | - |
+
+Higher than on other sessions: 11 of 14; Holm p < 0.05: 2.
+
+### After 2 down days, the index minus Nifty 50, all sessions
+
+| Index | Runs | Next day down | Other sessions down | Mean next day | p (Fisher) | Holm | BH q |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Nifty Auto | 693 | 53.7% | 50.2% | -0.00% | 0.112 | 1.000 | 0.426 |
+| Nifty Bank | 700 | 51.1% | 50.8% | -0.01% | 0.895 | 1.000 | 1.000 |
+| Nifty Financial Services | 658 | 49.5% | 49.3% | -0.01% | 0.928 | 1.000 | 1.000 |
+| Nifty FMCG | 695 | 48.2% | 53.3% | +0.02% | 0.022 | 0.303 | 0.295 |
+| Nifty IT | 673 | 50.8% | 50.2% | -0.04% | 0.789 | 1.000 | 1.000 |
+| Nifty Media | 749 | 51.9% | 54.0% | -0.03% | 0.342 | 1.000 | 0.799 |
+| Nifty Metal | 612 | 47.2% | 48.4% | +0.01% | 0.645 | 1.000 | 1.000 |
+| Nifty Pharma | 730 | 52.1% | 51.5% | -0.03% | 0.794 | 1.000 | 1.000 |
+| Nifty PSU Bank | 740 | 52.0% | 53.6% | +0.02% | 0.461 | 1.000 | 0.923 |
+| Nifty Private Bank | 707 | 52.8% | 50.3% | -0.02% | 0.273 | 1.000 | 0.763 |
+| Nifty Realty | 690 | 52.2% | 48.7% | -0.04% | 0.122 | 1.000 | 0.426 |
+| Nifty Healthcare Index | 384 | 50.8% | 50.6% | +0.06% | 1.000 | 1.000 | 1.000 |
+| Nifty Consumer Durables | 458 | 55.5% | 49.8% | -0.03% | 0.042 | 0.547 | 0.295 |
+| Nifty Oil & Gas | 459 | 52.5% | 51.8% | -0.04% | 0.826 | 1.000 | 1.000 |
+
+Higher than on other sessions: 10 of 14; Holm p < 0.05: 0.
+
+### After 2 down days, the index, no weekend or holiday inside
+
+| Index | Runs | Next day down | Other sessions down | Mean next day | p (Fisher) | Holm | BH q |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Nifty Auto | 222 | 50.0% | 46.0% | -0.10% | 0.314 | 1.000 | 0.733 |
+| Nifty Bank | 189 | 44.4% | 46.4% | +0.05% | 0.681 | 1.000 | 0.810 |
+| Nifty Financial Services | 199 | 44.2% | 46.1% | +0.02% | 0.687 | 1.000 | 0.810 |
+| Nifty FMCG | 206 | 46.1% | 48.1% | +0.11% | 0.634 | 1.000 | 0.810 |
+| Nifty IT | 187 | 52.4% | 50.6% | -0.03% | 0.682 | 1.000 | 0.810 |
+| Nifty Media | 207 | 49.8% | 47.3% | -0.19% | 0.579 | 1.000 | 0.810 |
+| Nifty Metal | 182 | 47.8% | 48.2% | -0.09% | 0.934 | 1.000 | 0.934 |
+| Nifty Pharma | 202 | 53.5% | 46.6% | -0.01% | 0.093 | 1.000 | 0.651 |
+| Nifty PSU Bank | 213 | 46.5% | 48.3% | -0.09% | 0.695 | 1.000 | 0.810 |
+| Nifty Private Bank | 197 | 45.2% | 46.4% | +0.02% | 0.808 | 1.000 | 0.871 |
+| Nifty Realty | 196 | 52.0% | 43.7% | -0.22% | 0.043 | 0.597 | 0.597 |
+| Nifty Healthcare Index | 99 | 54.5% | 45.8% | -0.02% | 0.142 | 1.000 | 0.661 |
+| Nifty Consumer Durables | 109 | 51.4% | 45.1% | -0.14% | 0.241 | 1.000 | 0.733 |
+| Nifty Oil & Gas | 114 | 51.8% | 46.0% | -0.16% | 0.294 | 1.000 | 0.733 |
+| Nifty 50 (reference) | 207 | 50.7% | 45.7% | -0.04% | 0.234 | - | - |
+
+Higher than on other sessions: 8 of 14; Holm p < 0.05: 0.
+
+### After 2 down days, the index minus Nifty 50, no weekend or holiday inside
+
+| Index | Runs | Next day down | Other sessions down | Mean next day | p (Fisher) | Holm | BH q |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Nifty Auto | 237 | 56.5% | 48.0% | +0.00% | 0.028 | 0.392 | 0.392 |
+| Nifty Bank | 227 | 48.0% | 50.7% | +0.01% | 0.539 | 1.000 | 0.845 |
+| Nifty Financial Services | 208 | 46.2% | 48.8% | +0.04% | 0.527 | 1.000 | 0.845 |
+| Nifty FMCG | 230 | 47.4% | 51.0% | +0.05% | 0.359 | 1.000 | 0.845 |
+| Nifty IT | 218 | 52.8% | 50.4% | -0.08% | 0.586 | 1.000 | 0.845 |
+| Nifty Media | 231 | 53.7% | 52.9% | -0.08% | 0.879 | 1.000 | 1.000 |
+| Nifty Metal | 199 | 48.7% | 50.1% | +0.00% | 0.749 | 1.000 | 0.953 |
+| Nifty Pharma | 255 | 50.2% | 50.2% | -0.00% | 1.000 | 1.000 | 1.000 |
+| Nifty PSU Bank | 249 | 49.8% | 54.5% | +0.04% | 0.205 | 1.000 | 0.845 |
+| Nifty Private Bank | 253 | 52.6% | 50.5% | -0.01% | 0.604 | 1.000 | 0.845 |
+| Nifty Realty | 213 | 54.5% | 48.0% | -0.13% | 0.117 | 1.000 | 0.816 |
+| Nifty Healthcare Index | 117 | 45.3% | 51.7% | +0.11% | 0.243 | 1.000 | 0.845 |
+| Nifty Consumer Durables | 140 | 52.9% | 49.4% | +0.00% | 0.495 | 1.000 | 0.845 |
+| Nifty Oil & Gas | 158 | 50.0% | 50.1% | -0.03% | 1.000 | 1.000 | 1.000 |
+
+Higher than on other sessions: 6 of 14; Holm p < 0.05: 0.
+
+### After 3 down days, the index, all sessions
+
+| Index | Runs | Next day down | Other sessions down | Mean next day | p (Fisher) | Holm | BH q |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Nifty Auto | 305 | 47.2% | 47.6% | -0.01% | 0.903 | 1.000 | 1.000 |
+| Nifty Bank | 288 | 46.2% | 46.5% | +0.06% | 0.950 | 1.000 | 1.000 |
+| Nifty Financial Services | 296 | 45.9% | 46.4% | +0.08% | 0.902 | 1.000 | 1.000 |
+| Nifty FMCG | 283 | 43.8% | 49.3% | +0.06% | 0.089 | 0.982 | 0.313 |
+| Nifty IT | 286 | 47.6% | 48.4% | +0.04% | 0.802 | 1.000 | 1.000 |
+| Nifty Media | 326 | 47.5% | 48.6% | +0.03% | 0.767 | 1.000 | 1.000 |
+| Nifty Metal | 273 | 46.2% | 45.9% | +0.05% | 0.949 | 1.000 | 1.000 |
+| Nifty Pharma | 348 | 52.0% | 48.2% | -0.06% | 0.206 | 1.000 | 0.576 |
+| Nifty PSU Bank | 314 | 49.0% | 49.1% | -0.06% | 1.000 | 1.000 | 1.000 |
+| Nifty Private Bank | 291 | 43.6% | 47.3% | +0.15% | 0.263 | 1.000 | 0.613 |
+| Nifty Realty | 328 | 51.2% | 45.3% | -0.22% | 0.051 | 0.609 | 0.237 |
+| Nifty Healthcare Index | 169 | 45.6% | 46.9% | +0.11% | 0.806 | 1.000 | 1.000 |
+| Nifty Consumer Durables | 166 | 53.6% | 44.3% | -0.20% | 0.026 | 0.341 | 0.183 |
+| Nifty Oil & Gas | 201 | 56.7% | 44.0% | -0.23% | <0.001 | 0.012 | 0.012 |
+| Nifty 50 (reference) | 305 | 51.8% | 45.2% | -0.07% | 0.032 | - | - |
+
+Higher than on other sessions: 5 of 14; Holm p < 0.05: 1.
+
+### After 3 down days, the index minus Nifty 50, all sessions
+
+| Index | Runs | Next day down | Other sessions down | Mean next day | p (Fisher) | Holm | BH q |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Nifty Auto | 372 | 54.3% | 50.5% | -0.01% | 0.180 | 1.000 | 0.373 |
+| Nifty Bank | 358 | 51.7% | 50.8% | +0.02% | 0.776 | 1.000 | 0.776 |
+| Nifty Financial Services | 326 | 48.2% | 49.5% | +0.02% | 0.679 | 1.000 | 0.731 |
+| Nifty FMCG | 335 | 45.4% | 52.9% | +0.04% | 0.010 | 0.141 | 0.141 |
+| Nifty IT | 342 | 54.1% | 49.7% | -0.10% | 0.147 | 1.000 | 0.373 |
+| Nifty Media | 388 | 50.3% | 54.0% | +0.01% | 0.186 | 1.000 | 0.373 |
+| Nifty Metal | 289 | 45.3% | 48.4% | +0.02% | 0.350 | 1.000 | 0.612 |
+| Nifty Pharma | 380 | 50.5% | 51.8% | -0.01% | 0.657 | 1.000 | 0.731 |
+| Nifty PSU Bank | 386 | 51.3% | 53.5% | +0.04% | 0.440 | 1.000 | 0.616 |
+| Nifty Private Bank | 372 | 54.6% | 50.4% | -0.00% | 0.146 | 1.000 | 0.373 |
+| Nifty Realty | 360 | 51.7% | 49.3% | -0.07% | 0.427 | 1.000 | 0.616 |
+| Nifty Healthcare Index | 195 | 44.6% | 51.5% | +0.13% | 0.077 | 0.997 | 0.373 |
+| Nifty Consumer Durables | 254 | 56.3% | 50.5% | -0.04% | 0.101 | 1.000 | 0.373 |
+| Nifty Oil & Gas | 241 | 50.6% | 52.2% | -0.06% | 0.676 | 1.000 | 0.731 |
+
+Higher than on other sessions: 6 of 14; Holm p < 0.05: 0.
+
+### After 3 down days, the index, no weekend or holiday inside
+
+| Index | Runs | Next day down | Other sessions down | Mean next day | p (Fisher) | Holm | BH q |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Nifty Auto | 48 | 45.8% | 45.7% | +0.33% | 1.000 | 1.000 | 1.000 |
+| Nifty Bank | 40 | 42.5% | 45.6% | +0.02% | 0.741 | 1.000 | 1.000 |
+| Nifty Financial Services | 42 | 33.3% | 45.3% | +0.23% | 0.145 | 1.000 | 1.000 |
+| Nifty FMCG | 47 | 46.8% | 47.2% | +0.07% | 1.000 | 1.000 | 1.000 |
+| Nifty IT | 36 | 50.0% | 52.3% | +0.02% | 0.862 | 1.000 | 1.000 |
+| Nifty Media | 48 | 50.0% | 46.5% | -0.06% | 0.759 | 1.000 | 1.000 |
+| Nifty Metal | 31 | 51.6% | 48.9% | -0.00% | 0.853 | 1.000 | 1.000 |
+| Nifty Pharma | 47 | 63.8% | 47.2% | -0.09% | 0.043 | 0.608 | 0.608 |
+| Nifty PSU Bank | 48 | 47.9% | 46.5% | -0.27% | 0.879 | 1.000 | 1.000 |
+| Nifty Private Bank | 42 | 40.5% | 46.8% | +0.27% | 0.515 | 1.000 | 1.000 |
+| Nifty Realty | 45 | 51.1% | 44.3% | -0.54% | 0.430 | 1.000 | 1.000 |
+| Nifty Healthcare Index | 24 | 50.0% | 48.5% | +0.10% | 1.000 | 1.000 | 1.000 |
+| Nifty Consumer Durables | 30 | 46.7% | 46.2% | -0.06% | 1.000 | 1.000 | 1.000 |
+| Nifty Oil & Gas | 29 | 51.7% | 43.0% | +0.05% | 0.430 | 1.000 | 1.000 |
+| Nifty 50 (reference) | 52 | 48.1% | 45.4% | +0.10% | 0.767 | - | - |
+
+Higher than on other sessions: 9 of 14; Holm p < 0.05: 0.
+
+### After 3 down days, the index minus Nifty 50, no weekend or holiday inside
+
+| Index | Runs | Next day down | Other sessions down | Mean next day | p (Fisher) | Holm | BH q |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Nifty Auto | 63 | 50.8% | 49.0% | +0.06% | 0.891 | 1.000 | 1.000 |
+| Nifty Bank | 49 | 53.1% | 49.9% | +0.01% | 0.762 | 1.000 | 1.000 |
+| Nifty Financial Services | 44 | 34.1% | 49.7% | +0.09% | 0.056 | 0.612 | 0.157 |
+| Nifty FMCG | 55 | 41.8% | 52.3% | +0.06% | 0.152 | 1.000 | 0.354 |
+| Nifty IT | 47 | 51.1% | 52.0% | -0.21% | 1.000 | 1.000 | 1.000 |
+| Nifty Media | 51 | 68.6% | 53.6% | -0.50% | 0.051 | 0.609 | 0.157 |
+| Nifty Metal | 39 | 46.2% | 49.1% | +0.05% | 0.740 | 1.000 | 1.000 |
+| Nifty Pharma | 67 | 47.8% | 50.7% | +0.01% | 0.691 | 1.000 | 1.000 |
+| Nifty PSU Bank | 62 | 40.3% | 53.6% | +0.06% | 0.056 | 0.612 | 0.157 |
+| Nifty Private Bank | 57 | 64.9% | 49.9% | -0.15% | 0.045 | 0.589 | 0.157 |
+| Nifty Realty | 51 | 52.9% | 52.0% | -0.12% | 1.000 | 1.000 | 1.000 |
+| Nifty Healthcare Index | 29 | 31.0% | 54.8% | +0.34% | 0.018 | 0.252 | 0.157 |
+| Nifty Consumer Durables | 39 | 48.7% | 51.6% | -0.06% | 0.862 | 1.000 | 1.000 |
+| Nifty Oil & Gas | 37 | 51.4% | 50.2% | -0.06% | 1.000 | 1.000 | 1.000 |
+
+Higher than on other sessions: 6 of 14; Holm p < 0.05: 0.
+

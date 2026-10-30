@@ -25,6 +25,9 @@ The same holds away from weekends and holidays: on Monday-to-Thursday stretches 
 After **three** down days it is the same: the fourth day fell 47.4% of the time, against 48.7% for all stretches, and in
 the Monday-to-Friday version with no weekend inside the difference is within chance (details below).
 
+By sector it is the same: no sector's stocks tend to keep falling, and the few sector indices that lean that way just follow
+the Nifty 50 (details below).
+
 - **The raw odds are close to a coin flip.** After two down days, day 3 closed down 47.6% of the time and up 52.1%.
   On all days it was 48.7% down and 50.9% up.
 - **Against other stocks on the same day, there is a small, steady bounce.**
@@ -378,6 +381,80 @@ Below its same-day peers (a bounce) in 12 of 22 quarters.
 | Nifty Bank | 288 | 46.2% | 46.5% | +0.06% | 0.950 |
 
 
+## By sector
+
+Checked two ways, under a fourth plan written before computing it (plan sha256 `93f0d7d80c8221223a15ee2afbc3617256165100c60188a0eb116eedbfdf4a91`):
+
+- **Stocks, by NSE sector.** Each stock is compared with the other stocks of its own sector on the same day that did not have the signal, so a whole sector moving together does not count.
+- **The sector indices themselves**, 2016 to Sep 2026.
+
+Many sectors means many chances for a lucky one, so each result is corrected for the number of sectors tested (Holm). A sector counts only if it is significant after that correction in the first half and points the same way in the second.
+
+**No sector shows a tendency to keep falling.**
+
+- **Stocks after two down days:**
+  - In 16 of 18 sectors, they fell on day 3 less often than the rest of their sector that day.
+  - Five sectors pass the correction: Construction Materials, Oil & Gas, Services, FMCG and Healthcare.
+  - Only FMCG holds in both halves: 46.9% down against 50.3%, a 5-point bounce against its own sector.
+  - Banks and other financials (53 stocks) show no difference.
+  - Realty and Power lean slightly the other way, within chance.
+- **Away from weekends and holidays** (Monday to Thursday, Friday open), Healthcare is the clear one: 42.2% fell on day 3, against 49.1% for the rest of the sector, confirmed in both halves. Realty (+7.6 points) and Power (+5.9) lean towards a third down day, but neither is near significant.
+- **Stocks after three down days:**
+  - 14 of 17 sectors bounced against their own sector on day 4.
+  - Only Healthcare passes the correction (44.2% against 49.2%), and nothing holds in both halves.
+  - With no holiday nearby, nothing passes. Realty leans towards a fourth down day (+5.7 points, p 0.07).
+- **The indices themselves:**
+  - After two down days, Nifty Realty fell on day 3 52.9% of the time, against 44.0% on other days. Nifty Oil & Gas fell 52.5% against 43.5%. After three down days, Oil & Gas fell 56.7% against 44.0%. All three pass the correction.
+  - But the Nifty 50 itself does the same (50.6% against 44.6%), and against the Nifty 50 none of them is significant. So it is the market continuing, not the sector.
+  - Away from weekends and holidays, no index passes.
+  - The average next day is about -0.1% to -0.2%, and these sector indices have no liquid futures to trade.
+
+### Stocks: next day down, the stock vs the rest of its sector the same day
+
+Each cell: share of next days down after the signal vs the same sector's other stocks; the difference in points (negative = a bounce against its own sector). Marked when significant after Holm across sectors, or confirmed in both halves.
+
+| Sector | 2D, all days | 2D, away from weekends/holidays | 3D, all days | 3D, no holiday nearby |
+|---|---:|---:|---:|---:|
+| Financial Services | 48.2% vs 49.0%, -0.6 | 45.6% vs 51.6%, -0.8 | 48.3% vs 48.9%, -0.5 | 47.1% vs 49.1%, +0.6 |
+| Healthcare | 45.8% vs 49.3%, -4.4 (Holm <0.001) | 42.2% vs 49.1%, -12.5 **(confirmed)** | 44.2% vs 49.2%, -4.8 (Holm 0.007) | 43.3% vs 48.7%, -3.8 |
+| Automobile and Auto Components | 48.0% vs 49.2%, -3.1 | 47.3% vs 48.2%, -3.0 | 47.2% vs 49.2%, -3.2 | 46.2% vs 49.6%, -2.4 |
+| Information Technology | 49.9% vs 49.8%, -2.0 | 48.7% vs 48.2%, -4.6 | 50.3% vs 49.9%, -0.1 | 51.0% vs 50.1%, +0.3 |
+| Capital Goods | 46.4% vs 48.2%, -2.1 | 45.3% vs 51.1%, -5.2 | 43.7% vs 48.1%, -2.0 | 43.9% vs 49.0%, -1.2 |
+| Fast Moving Consumer Goods | 46.9% vs 50.3%, -5.1 **(confirmed)** | 43.1% vs 53.8%, -6.5 | 46.3% vs 49.8%, -2.6 | 43.4% vs 50.3%, -4.3 |
+| Metals & Mining | 45.4% vs 47.6%, -3.0 | 45.9% vs 49.0%, -0.9 | 44.4% vs 47.5%, -1.0 | 44.7% vs 48.6%, +0.2 |
+| Oil Gas & Consumable Fuels | 45.7% vs 47.6%, -6.4 (Holm <0.001) | 46.4% vs 47.7%, -9.9 | 47.1% vs 47.1%, -2.8 | 46.8% vs 47.9%, -2.9 |
+| Consumer Durables | 48.3% vs 49.8%, -2.6 | 47.9% vs 51.7%, -6.4 | 49.0% vs 49.7%, -4.4 | 47.9% vs 49.5%, -5.6 |
+| Consumer Services | 48.7% vs 50.0%, -4.0 | 54.5% vs 52.2%, -4.4 | 48.3% vs 49.9%, -3.3 | 46.6% vs 50.8%, -6.1 |
+| Chemicals | 48.2% vs 50.1%, -1.2 | 43.8% vs 49.5%, +2.2 | 49.6% vs 49.5%, +1.7 | 46.2% vs 49.8%, -0.0 |
+| Services | 48.1% vs 48.7%, -5.6 (Holm 0.022) | 48.2% vs 48.6%, +2.9 | 48.8% vs 48.6%, -7.9 | 51.2% vs 48.7%, -4.5 |
+| Power | 46.7% vs 48.7%, +0.7 | 51.2% vs 47.9%, +5.9 | 47.5% vs 48.4%, +2.3 | 48.2% vs 48.6%, +3.9 |
+| Construction Materials | 47.2% vs 48.9%, -7.0 (Holm 0.012) | 42.3% vs 51.7%, -11.8 | 48.4% vs 48.2%, -5.7 | 45.2% vs 48.4%, -5.4 |
+| Realty | 49.5% vs 47.1%, +1.7 | 53.6% vs 44.6%, +7.6 | 49.5% vs 47.6%, +4.3 | 48.1% vs 48.3%, +5.7 |
+| Telecommunication | 47.3% vs 50.3%, -6.2 | 40.4% vs 50.1%, -16.4 | 47.0% vs 49.9%, -8.0 | 45.3% vs 50.5%, -11.5 |
+| Construction | 48.9% vs 51.4%, -6.6 | 52.3% vs 52.8%, -15.0 | 51.8% vs 50.6%, -7.5 | 50.4% vs 50.6%, -5.3 |
+| Textiles | - | - | - | - |
+
+### The sector indices: next day down after two or three down days, vs other sessions
+
+| Index | After 2 down: index | After 2 down: vs Nifty | After 3 down: index | After 3 down: vs Nifty |
+|---|---:|---:|---:|---:|
+| Nifty Auto | 48.5% vs 47.3% | 53.7% vs 50.2% | 47.2% vs 47.6% | 54.3% vs 50.5% |
+| Nifty Bank | 47.9% vs 46.1% | 51.1% vs 50.8% | 46.2% vs 46.5% | 51.7% vs 50.8% |
+| Nifty Financial Services | 49.5% vs 45.5% | 49.5% vs 49.3% | 45.9% vs 46.4% | 48.2% vs 49.5% |
+| Nifty FMCG | 45.8% vs 49.6% | 48.2% vs 53.3% | 43.8% vs 49.3% | 45.4% vs 52.9% |
+| Nifty IT | 47.0% vs 48.8% | 50.8% vs 50.2% | 47.6% vs 48.4% | 54.1% vs 49.7% |
+| Nifty Media | 50.2% vs 47.9% | 51.9% vs 54.0% | 47.5% vs 48.6% | 50.3% vs 54.0% |
+| Nifty Metal | 47.5% vs 45.5% | 47.2% vs 48.4% | 46.2% vs 45.9% | 45.3% vs 48.4% |
+| Nifty Pharma | 51.9% vs 47.7% | 52.1% vs 51.5% | 52.0% vs 48.2% | 50.5% vs 51.8% |
+| Nifty PSU Bank | 48.7% vs 49.2% | 52.0% vs 53.6% | 49.0% vs 49.1% | 51.3% vs 53.5% |
+| Nifty Private Bank | 47.9% vs 46.6% | 52.8% vs 50.3% | 43.6% vs 47.3% | 54.6% vs 50.4% |
+| Nifty Realty | 52.9% vs 44.0% (Holm 0.002) | 52.2% vs 48.7% | 51.2% vs 45.3% | 51.7% vs 49.3% |
+| Nifty Healthcare | 50.6% vs 45.5% | 50.8% vs 50.6% | 45.6% vs 46.9% | 44.6% vs 51.5% |
+| Nifty Consumer Durables | 47.7% vs 44.6% | 55.5% vs 49.8% | 53.6% vs 44.3% | 56.3% vs 50.5% |
+| Nifty Oil & Gas | 52.5% vs 43.5% (Holm 0.030) | 52.5% vs 51.8% | 56.7% vs 44.0% (Holm 0.012) | 50.6% vs 52.2% |
+
+The full tables, with p values, both calendar versions and the halves, are in [table_sector.md](../results/two_down_days/table_sector.md).
+
 ## The main numbers
 
 | Sample | Group | Triples | Day 3 down | ± (date-clustered SE) | Day 3 up | Mean day 3 | Median day 3 | Day 3 vs Nifty (pts) |
@@ -496,7 +573,7 @@ size of the fall adds little once the stock is compared with others on the same 
 | 2026 Q2 | 1,987 | 43.9% | 46.2% | -0.73 | +0.38% | +0.27% |
 | 2026 Q3 | 2,860 | 49.4% | 56.0% | -7.16 | +0.02% | -0.15% |
 
-## By sector
+## By sector, against all stocks (two down days)
 
 | Sector | Two-down triples | Day 3 down | Other stocks down | Difference, same day (pts) | Mean day 3 | Others mean day 3 |
 |---|---:|---:|---:|---:|---:|---:|
@@ -567,6 +644,7 @@ Files: scripts in `pattern_tests/two_down_days/` and outputs in
 - skeptic/checks.py: day 4, market vs stock, the index, and quarters.
 - PLAN_NO_WEEKEND.txt and no_weekend.py: the version away from weekends and holidays.
 - PLAN_THREE_DOWN.txt and three_down.py: three down days, then the fourth.
+- PLAN_SECTOR.txt and sector.py: by sector, and the sector indices.
 
 The scripts read `LAB_ROOT` (the scratch data folder), `TA_BUILD` (the adjusted prices) and `CA_DIR` (NSE corporate
 actions, downloaded). The file of stretches (days.csv.gz, 23 MB) is not committed; build_days.py rebuilds it.

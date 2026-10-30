@@ -1,0 +1,113 @@
+signal,version,measure,index,n,share_down,others_down,mean,p,holm,bh
+2 down days,all sessions,the index,Nifty Auto,629,0.484897,0.472906,-0.0259018,0.615371,1,0.662707
+2 down days,all sessions,the index,Nifty Bank,601,0.479201,0.460641,0.0228917,0.429684,1,0.585685
+2 down days,all sessions,the index,Nifty Financial Services,598,0.494983,0.454634,-0.0024762,0.0849307,0.934238,0.244051
+2 down days,all sessions,the index,Nifty FMCG,620,0.458065,0.496322,0.0727171,0.0987143,0.987143,0.244051
+2 down days,all sessions,the index,Nifty IT,608,0.470395,0.487567,0.02605,0.460181,1,0.585685
+2 down days,all sessions,the index,Nifty Media,650,0.501538,0.479343,-0.0986454,0.343123,1,0.585685
+2 down days,all sessions,the index,Nifty Metal,575,0.474783,0.454894,-0.00303463,0.421711,1,0.585685
+2 down days,all sessions,the index,Nifty Pharma,670,0.519403,0.476621,-0.0294569,0.0605179,0.726214,0.244051
+2 down days,all sessions,the index,Nifty PSU Bank,643,0.486781,0.492063,-0.00772697,0.820965,1,0.820965
+2 down days,all sessions,the index,Nifty Private Bank,608,0.478618,0.465787,0.0318696,0.579027,1,0.662707
+2 down days,all sessions,the index,Nifty Realty,620,0.529032,0.439922,-0.14005,0.000109704,0.00153585,0.00153585
+2 down days,all sessions,the index,Nifty Healthcare Index,336,0.505952,0.454959,0.0173173,0.104593,0.987143,0.244051
+2 down days,all sessions,the index,Nifty Consumer Durables,350,0.477143,0.445636,-0.0669223,0.304269,1,0.585685
+2 down days,all sessions,the index,Nifty Oil & Gas,383,0.524804,0.435192,-0.141092,0.00232522,0.0302278,0.0162765
+2 down days,all sessions,the index minus Nifty 50,Nifty Auto,693,0.536797,0.501526,-0.00494196,0.111884,1,0.425571
+2 down days,all sessions,the index minus Nifty 50,Nifty Bank,700,0.511429,0.508423,-0.0122726,0.894975,1,0.999851
+2 down days,all sessions,the index minus Nifty 50,Nifty Financial Services,658,0.495441,0.493253,-0.00556086,0.928433,1,0.999851
+2 down days,all sessions,the index minus Nifty 50,Nifty FMCG,695,0.482014,0.533096,0.0171277,0.0216287,0.302802,0.294698
+2 down days,all sessions,the index minus Nifty 50,Nifty IT,673,0.508172,0.501511,-0.0385356,0.789023,1,0.999851
+2 down days,all sessions,the index minus Nifty 50,Nifty Media,749,0.519359,0.539791,-0.0346768,0.342217,1,0.798505
+2 down days,all sessions,the index minus Nifty 50,Nifty Metal,612,0.472222,0.483635,0.00677711,0.644817,1,0.999851
+2 down days,all sessions,the index minus Nifty 50,Nifty Pharma,730,0.520548,0.514774,-0.0281888,0.794362,1,0.999851
+2 down days,all sessions,the index minus Nifty 50,Nifty PSU Bank,740,0.52027,0.536217,0.0164457,0.461442,1,0.922884
+2 down days,all sessions,the index minus Nifty 50,Nifty Private Bank,707,0.527581,0.503338,-0.0188273,0.272562,1,0.763172
+2 down days,all sessions,the index minus Nifty 50,Nifty Realty,690,0.521739,0.487049,-0.0385154,0.121592,1,0.425571
+2 down days,all sessions,the index minus Nifty 50,Nifty Healthcare Index,384,0.507812,0.506185,0.0576906,1,1,1
+2 down days,all sessions,the index minus Nifty 50,Nifty Consumer Durables,458,0.554585,0.498331,-0.0324965,0.0420996,0.547295,0.294698
+2 down days,all sessions,the index minus Nifty 50,Nifty Oil & Gas,459,0.525054,0.517962,-0.0415277,0.826086,1,0.999851
+2 down days,no weekend or holiday inside,the index,Nifty Auto,222,0.5,0.460059,-0.10423,0.314299,1,0.733365
+2 down days,no weekend or holiday inside,the index,Nifty Bank,189,0.444444,0.464034,0.0533082,0.681451,1,0.810444
+2 down days,no weekend or holiday inside,the index,Nifty Financial Services,199,0.442211,0.460658,0.0224673,0.686925,1,0.810444
+2 down days,no weekend or holiday inside,the index,Nifty FMCG,206,0.461165,0.481214,0.107695,0.634078,1,0.810444
+2 down days,no weekend or holiday inside,the index,Nifty IT,187,0.524064,0.506329,-0.0319863,0.681731,1,0.810444
+2 down days,no weekend or holiday inside,the index,Nifty Media,207,0.497585,0.473227,-0.189088,0.578923,1,0.810444
+2 down days,no weekend or holiday inside,the index,Nifty Metal,182,0.478022,0.481844,-0.0942602,0.934003,1,0.934003
+2 down days,no weekend or holiday inside,the index,Nifty Pharma,202,0.534653,0.465517,-0.00855623,0.0930252,1,0.651176
+2 down days,no weekend or holiday inside,the index,Nifty PSU Bank,213,0.464789,0.483212,-0.0919561,0.694666,1,0.810444
+2 down days,no weekend or holiday inside,the index,Nifty Private Bank,197,0.451777,0.463519,0.017779,0.808373,1,0.870555
+2 down days,no weekend or holiday inside,the index,Nifty Realty,196,0.520408,0.437322,-0.215096,0.042624,0.596736,0.596736
+2 down days,no weekend or holiday inside,the index,Nifty Healthcare Index,99,0.545455,0.457672,-0.0240813,0.141593,1,0.660769
+2 down days,no weekend or holiday inside,the index,Nifty Consumer Durables,109,0.513761,0.450893,-0.139801,0.24114,1,0.733365
+2 down days,no weekend or holiday inside,the index,Nifty Oil & Gas,114,0.517544,0.460497,-0.15568,0.293926,1,0.733365
+2 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Auto,237,0.565401,0.479576,0.00322149,0.0279975,0.391965,0.391965
+2 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Bank,227,0.480176,0.506706,0.00733997,0.539097,1,0.845318
+2 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Financial Services,208,0.461538,0.488406,0.0393013,0.526895,1,0.845318
+2 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty FMCG,230,0.473913,0.510479,0.0490701,0.359272,1,0.845318
+2 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty IT,218,0.527523,0.504412,-0.082289,0.586025,1,0.845318
+2 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Media,231,0.536797,0.529235,-0.0801684,0.878502,1,1
+2 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Metal,199,0.487437,0.500715,0.00445604,0.748588,1,0.952749
+2 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Pharma,255,0.501961,0.502333,-0.000315479,1,1,1
+2 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty PSU Bank,249,0.497992,0.545455,0.0397426,0.205097,1,0.845318
+2 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Private Bank,253,0.525692,0.505443,-0.0130372,0.603798,1,0.845318
+2 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Realty,213,0.544601,0.480292,-0.134023,0.116512,1,0.815581
+2 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Healthcare Index,117,0.452991,0.516667,0.106147,0.243204,1,0.845318
+2 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Consumer Durables,140,0.528571,0.494005,0.00372291,0.495387,1,0.845318
+2 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Oil & Gas,158,0.5,0.501253,-0.030848,1,1,1
+3 down days,all sessions,the index,Nifty Auto,305,0.472131,0.475988,-0.00782653,0.903192,1,1
+3 down days,all sessions,the index,Nifty Bank,288,0.461806,0.464979,0.0611817,0.950146,1,1
+3 down days,all sessions,the index,Nifty Financial Services,296,0.459459,0.464014,0.07652,0.901698,1,1
+3 down days,all sessions,the index,Nifty FMCG,283,0.438163,0.493053,0.064576,0.089313,0.982443,0.312596
+3 down days,all sessions,the index,Nifty IT,286,0.475524,0.484401,0.0423651,0.802323,1,1
+3 down days,all sessions,the index,Nifty Media,326,0.47546,0.485849,0.026438,0.767435,1,1
+3 down days,all sessions,the index,Nifty Metal,273,0.461538,0.4587,0.0530034,0.948927,1,1
+3 down days,all sessions,the index,Nifty Pharma,348,0.520115,0.482251,-0.0619682,0.205665,1,0.575861
+3 down days,all sessions,the index,Nifty PSU Bank,314,0.490446,0.490614,-0.0562654,1,1,1
+3 down days,all sessions,the index,Nifty Private Bank,291,0.436426,0.472681,0.152287,0.262521,1,0.612548
+3 down days,all sessions,the index,Nifty Realty,328,0.512195,0.453219,-0.217346,0.0507826,0.609391,0.236985
+3 down days,all sessions,the index,Nifty Healthcare Index,169,0.455621,0.468676,0.105893,0.80555,1,1
+3 down days,all sessions,the index,Nifty Consumer Durables,166,0.536145,0.442579,-0.201787,0.0262044,0.340657,0.183431
+3 down days,all sessions,the index,Nifty Oil & Gas,201,0.567164,0.440165,-0.231299,0.000855373,0.0119752,0.0119752
+3 down days,all sessions,the index minus Nifty 50,Nifty Auto,372,0.543011,0.505249,-0.0120197,0.179999,1,0.372763
+3 down days,all sessions,the index minus Nifty 50,Nifty Bank,358,0.51676,0.507826,0.0217793,0.776428,1,0.776428
+3 down days,all sessions,the index minus Nifty 50,Nifty Financial Services,326,0.481595,0.495283,0.0199193,0.678984,1,0.731214
+3 down days,all sessions,the index minus Nifty 50,Nifty FMCG,335,0.453731,0.529488,0.0355753,0.0100448,0.140627,0.140627
+3 down days,all sessions,the index minus Nifty 50,Nifty IT,342,0.540936,0.497409,-0.0995517,0.147468,1,0.372763
+3 down days,all sessions,the index minus Nifty 50,Nifty Media,388,0.502577,0.539648,0.0123231,0.186382,1,0.372763
+3 down days,all sessions,the index minus Nifty 50,Nifty Metal,289,0.453287,0.484171,0.0212891,0.349652,1,0.611891
+3 down days,all sessions,the index minus Nifty 50,Nifty Pharma,380,0.505263,0.518437,-0.012173,0.657491,1,0.731214
+3 down days,all sessions,the index minus Nifty 50,Nifty PSU Bank,386,0.512953,0.534771,0.0380957,0.440198,1,0.616278
+3 down days,all sessions,the index minus Nifty 50,Nifty Private Bank,372,0.545699,0.503947,-0.00171986,0.14589,1,0.372763
+3 down days,all sessions,the index minus Nifty 50,Nifty Realty,360,0.516667,0.492602,-0.0666609,0.427467,1,0.616278
+3 down days,all sessions,the index minus Nifty 50,Nifty Healthcare Index,195,0.446154,0.51498,0.130169,0.0767055,0.997172,0.372763
+3 down days,all sessions,the index minus Nifty 50,Nifty Consumer Durables,254,0.562992,0.505353,-0.0427691,0.101452,1,0.372763
+3 down days,all sessions,the index minus Nifty 50,Nifty Oil & Gas,241,0.506224,0.521924,-0.0568004,0.675868,1,0.731214
+3 down days,no weekend or holiday inside,the index,Nifty Auto,48,0.458333,0.457447,0.325311,1,1,1
+3 down days,no weekend or holiday inside,the index,Nifty Bank,40,0.425,0.455729,0.0168534,0.74141,1,1
+3 down days,no weekend or holiday inside,the index,Nifty Financial Services,42,0.333333,0.45288,0.228352,0.145003,1,1
+3 down days,no weekend or holiday inside,the index,Nifty FMCG,47,0.468085,0.472149,0.0708814,1,1,1
+3 down days,no weekend or holiday inside,the index,Nifty IT,36,0.5,0.523196,0.0201297,0.862221,1,1
+3 down days,no weekend or holiday inside,the index,Nifty Media,48,0.5,0.465426,-0.0632239,0.759045,1,1
+3 down days,no weekend or holiday inside,the index,Nifty Metal,31,0.516129,0.48855,-0.00125114,0.852723,1,1
+3 down days,no weekend or holiday inside,the index,Nifty Pharma,47,0.638298,0.472149,-0.091794,0.0434081,0.607713,0.607713
+3 down days,no weekend or holiday inside,the index,Nifty PSU Bank,48,0.479167,0.465426,-0.267162,0.878938,1,1
+3 down days,no weekend or holiday inside,the index,Nifty Private Bank,42,0.404762,0.468421,0.266813,0.51492,1,1
+3 down days,no weekend or holiday inside,the index,Nifty Realty,45,0.511111,0.443272,-0.543353,0.429789,1,1
+3 down days,no weekend or holiday inside,the index,Nifty Healthcare Index,24,0.5,0.485149,0.0959884,1,1,1
+3 down days,no weekend or holiday inside,the index,Nifty Consumer Durables,30,0.466667,0.461538,-0.0570706,1,1,1
+3 down days,no weekend or holiday inside,the index,Nifty Oil & Gas,29,0.517241,0.429787,0.0536807,0.429597,1,1
+3 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Auto,63,0.507937,0.490305,0.059668,0.891498,1,1
+3 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Bank,49,0.530612,0.498667,0.00597849,0.761708,1,1
+3 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Financial Services,44,0.340909,0.497368,0.0917303,0.05618,0.612169,0.157304
+3 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty FMCG,55,0.418182,0.523035,0.0575047,0.151669,1,0.353895
+3 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty IT,47,0.510638,0.519894,-0.213133,1,1,1
+3 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Media,51,0.686275,0.536193,-0.500942,0.0507267,0.608721,0.157304
+3 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Metal,39,0.461538,0.490909,0.0501464,0.74024,1,1
+3 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Pharma,67,0.477612,0.507003,0.00966296,0.691004,1,1
+3 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty PSU Bank,62,0.403226,0.535912,0.0587453,0.0556518,0.612169,0.157304
+3 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Private Bank,57,0.649123,0.49863,-0.150052,0.0453396,0.589415,0.157304
+3 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Realty,51,0.529412,0.520107,-0.117192,1,1,1
+3 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Healthcare Index,29,0.310345,0.548223,0.337278,0.0179737,0.251632,0.157304
+3 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Consumer Durables,39,0.487179,0.515556,-0.0629215,0.862496,1,1
+3 down days,no weekend or holiday inside,the index minus Nifty 50,Nifty Oil & Gas,37,0.513514,0.502203,-0.0646628,1,1,1

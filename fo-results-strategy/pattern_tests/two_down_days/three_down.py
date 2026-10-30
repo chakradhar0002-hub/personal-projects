@@ -128,6 +128,7 @@ M['three_up'] = (M.r1 > 0) & (M.r2 > 0) & (M.r3 > 0)
 M['two_down'] = (M.r2 < 0) & (M.r3 < 0)
 M['big3'] = (M.r1 < -1) & (M.r2 < -1) & (M.r3 < -1)
 M['quarter'] = M.day4.str[:4] + ' Q' + ((M.day4.str[5:7].astype(int) - 1) // 3 + 1).astype(str)
+M.to_csv(f'{OUT}/windows4.csv.gz', index=False, float_format='%.8g', compression='gzip')   # for sector.py; not committed
 
 # ---------------------------------------------------------------- helpers
 rng = np.random.default_rng(SEED)
